@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/detail_container" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+    <com.sec.android.touchwiz.widget.TwScrollView android:id="@id/tfscrollview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View style="@style/LineSeperator" />
+            <com.sec.android.app.clockpackage.timer.TimerSoundStopLayout android:orientation="vertical" android:id="@id/playstop" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@id/alarm_tone_box" android:background="@drawable/list_selector_background" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginBottom="6.0dip" android:layout_weight="1.0">
+                        <TextView android:text="@string/alarmtone" style="@style/TextStyle_1" />
+                        <TextView android:id="@id/alarm_tone" style="@style/TextStyle_2" />
+                    </LinearLayout>
+                    <ImageView android:layout_gravity="center_vertical" android:background="@drawable/alarm_more_button" android:duplicateParentState="true" android:layout_width="38.0dip" android:layout_height="48.0dip" android:layout_marginRight="7.3299866dip" android:src="@drawable/alarm_more_button_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </LinearLayout>
+                <View style="@style/LineSeperator" />
+            </com.sec.android.app.clockpackage.timer.TimerSoundStopLayout>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="11.0dip" android:layout_marginBottom="4.0dip">
+                <ImageView android:gravity="center_vertical" android:id="@id/leftseek" android:layout_width="41.329987dip" android:layout_height="41.329987dip" android:layout_marginLeft="2.6599731dip" android:src="@drawable/alarm_volume_left" />
+                <com.sec.android.touchwiz.widget.TwSeekBar android:gravity="center_vertical" android:id="@id/alarm_volume" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" touchwiz:twMax="7" touchwiz:twBackgroundDrawable="@drawable/alarm_volume_progress_bg" touchwiz:twProgressDrawable="@drawable/alarm_volume_progress" touchwiz:twIndicatorThickness="12.0dip" touchwiz:twSeekBarThumb="@drawable/volume_seek_thumb" touchwiz:twSeekBarDisableAlpha="0.2" />
+                <ImageView android:gravity="center_vertical" android:id="@id/rightseek" android:layout_width="41.329987dip" android:layout_height="41.329987dip" android:layout_marginRight="13.329987dip" android:src="@drawable/alarm_volume_right" />
+            </LinearLayout>
+            <View style="@style/LineSeperator" />
+            <View android:layout_width="fill_parent" android:layout_height="7.0dip" />
+        </LinearLayout>
+    </com.sec.android.touchwiz.widget.TwScrollView>
+    <com.sec.android.touchwiz.widget.TwSoftkeyView android:id="@id/Layout_SoftKey" android:layout_width="fill_parent" android:layout_height="59.329987dip"
+      xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+        <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/alarm_save_button" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/save" />
+        <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/alarm_cancel_button" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/cancel" />
+    </com.sec.android.touchwiz.widget.TwSoftkeyView>
+</LinearLayout>

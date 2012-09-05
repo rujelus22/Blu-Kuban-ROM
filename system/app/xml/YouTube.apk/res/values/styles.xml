@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BasePagedView">
+        <item name="maxItems">150</item>
+    </style>
+    <style name="PagedListView" parent="@style/BasePagedView" />
+    <style name="PagedGridView" parent="@style/BasePagedView" />
+    <style name="Widget.PagedGridView.GridView" parent="@android:style/Widget.GridView">
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:fadingEdge">vertical</item>
+        <item name="android:listSelector">@color/full_transparent</item>
+        <item name="android:cacheColorHint">@color/full_transparent</item>
+    </style>
+    <style name="Widget.PagedListView.ListView" parent="@android:style/Widget.ListView">
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:fadingEdge">vertical</item>
+        <item name="android:listSelector">@color/full_transparent</item>
+        <item name="android:cacheColorHint">@color/full_transparent</item>
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">@dimen/video_grid_vertical_spacing</item>
+    </style>
+    <style name="FullHeightDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="TabRow" parent="@android:style/Widget">
+        <item name="android:divider">@drawable/tab_divider_dark</item>
+    </style>
+    <style name="Workspace" parent="@android:style/Widget">
+        <item name="interactionMode">flingable_scrolling</item>
+    </style>
+    <style name="AdultContentDialog">
+        <item name="android:paddingLeft">16.0dip</item>
+        <item name="android:paddingTop">16.0dip</item>
+        <item name="android:paddingRight">16.0dip</item>
+        <item name="android:paddingBottom">6.0dip</item>
+    </style>
+    <style name="AdultContentDialogText">
+        <item name="android:textSize">@dimen/medium_font_size</item>
+        <item name="android:textColor">@color/primary_font</item>
+        <item name="android:paddingBottom">12.0dip</item>
+    </style>
+    <style name="PlusOneButton">
+        <item name="android:textSize">@dimen/plus_one_button_text_size</item>
+        <item name="android:lines">@integer/plus_one_button_text_lines</item>
+        <item name="progressBarOffsetTop">@dimen/plus_one_button_icon_container_padding_top</item>
+        <item name="progressBarUseInverseStyle">@bool/plus_one_button_progress_bar_inverse</item>
+        <item name="iconTextGap">@dimen/plus_one_button_icon_text_gap</item>
+    </style>
+    <style name="Theme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/primary_background</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarView_TabView</item>
+        <item name="android:actionBarTabTextStyle">@style/ActionBarView_TabText</item>
+        <item name="LiveBadge">@style/LiveBadge</item>
+    </style>
+    <style name="Theme.Home" parent="@style/Theme">
+        <item name="android:actionBarStyle">@style/ActionBar.TopLevel</item>
+    </style>
+    <style name="Theme.Results" parent="@style/Theme" />
+    <style name="Theme.Channel" parent="@style/Theme" />
+    <style name="Theme.Watch" parent="@style/Theme" />
+    <style name="Theme.Videos" parent="@style/Theme" />
+    <style name="Theme.Settings" parent="@style/Theme" />
+    <style name="Toolbar" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/darker_transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="ContextualMenu" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@color/full_transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:icon">@drawable/ic_logo_square</item>
+        <item name="android:background">@drawable/bg_stripes_dark_drawable</item>
+        <item name="android:divider">@null</item>
+        <item name="android:logo">@drawable/ic_logo_square</item>
+        <item name="android:displayOptions">useLogo|showHome</item>
+    </style>
+    <style name="ActionBar.TopLevel" parent="@style/ActionBar">
+        <item name="android:logo">@null</item>
+    </style>
+    <style name="ActionBarView_TabText" parent="@android:style/Widget.Holo.ActionBar.TabText" />
+    <style name="ActionBarView_TabView" parent="@android:style/Widget.Holo.Light.ActionBar.TabView.Inverse">
+        <item name="android:background">@drawable/tab_drawable</item>
+        <item name="android:paddingLeft">11.0dip</item>
+        <item name="android:paddingRight">11.0dip</item>
+    </style>
+    <style name="DropdownSpinner" parent="@android:style/Widget.Holo.Spinner">
+        <item name="android:paddingLeft">4.0dip</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+    <style name="SpinnerItem" parent="@android:style/Widget.Holo.TextView">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">12.0dip</item>
+        <item name="android:minHeight">48.0dip</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="LiveBadge" parent="@android:style/Widget.Holo.TextView">
+        <item name="android:textSize">@dimen/extra_small_font_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary_contrast_font</item>
+        <item name="android:layout_gravity">top|left|center</item>
+        <item name="android:background">@drawable/bg_live_badge</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">2.0dip</item>
+        <item name="android:text">@string/live_badge_text</item>
+        <item name="android:lines">1</item>
+    </style>
+    <style name="LicensesHolo" parent="@android:style/Theme.Holo.Light.Dialog" />
+    <style name="NotificationText" parent="@android:style/TextAppearance.StatusBar.EventContent" />
+    <style name="NotificationTitle" parent="@android:style/TextAppearance.StatusBar.EventContent.Title" />
+</resources>

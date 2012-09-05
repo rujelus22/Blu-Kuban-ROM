@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="perso_lock_entry_panel">false</item>
+    <item type="id" name="perso_title">false</item>
+    <item type="id" name="perso_lock_first_entry">false</item>
+    <item type="id" name="perso_lock_sp_nsp_label">false</item>
+    <item type="id" name="perso_lock_sp_nsp_input">false</item>
+    <item type="id" name="perso_lock_cp_label">false</item>
+    <item type="id" name="perso_lock_cp_input">false</item>
+    <item type="id" name="perso_lock_control_key_input">false</item>
+    <item type="id" name="perso_lock_button">false</item>
+    <item type="id" name="perso_lock_button_dismiss">false</item>
+    <item type="id" name="perso_lock_status_panel">false</item>
+    <item type="id" name="perso_lock_status_text">false</item>
+    <item type="id" name="perso_status_entry_panel">false</item>
+    <item type="id" name="perso_status_title">false</item>
+    <item type="id" name="np_status">false</item>
+    <item type="id" name="nsp_status">false</item>
+    <item type="id" name="sp_status">false</item>
+    <item type="id" name="cp_status">false</item>
+    <item type="id" name="perso_done_button">false</item>
+    <item type="id" name="perso_unlock_entry_panel">false</item>
+    <item type="id" name="perso_unlock_title">false</item>
+    <item type="id" name="perso_unlock_label">false</item>
+    <item type="id" name="perso_unlock_control_key_entry">false</item>
+    <item type="id" name="perso_unlock_button">false</item>
+    <item type="id" name="perso_unlock_button_dismiss">false</item>
+    <item type="id" name="perso_unlock_status_panel">false</item>
+    <item type="id" name="perso_unlock_status_text">false</item>
+</resources>

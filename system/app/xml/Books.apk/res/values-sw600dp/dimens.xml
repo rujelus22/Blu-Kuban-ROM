@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="settings_padding_Top">32.0dip</dimen>
+    <dimen name="settings_padding_Bottom">32.0dip</dimen>
+    <dimen name="settings_padding_Left">16.0dip</dimen>
+    <dimen name="settings_padding_Right">16.0dip</dimen>
+    <dimen name="settings_padding_Column_H">16.0dip</dimen>
+    <dimen name="settings_padding_V">24.0dip</dimen>
+    <dimen name="widget_margin_left">9.0dip</dimen>
+    <dimen name="widget_margin_right">9.0dip</dimen>
+    <dimen name="widget_margin_top">0.0dip</dimen>
+    <dimen name="widget_margin_bottom">20.0dip</dimen>
+    <dimen name="widget_book_width">140.0dip</dimen>
+    <dimen name="widget_book_height">220.0dip</dimen>
+    <dimen name="widget_min_width">110.0dip</dimen>
+    <dimen name="widget_min_height">220.0dip</dimen>
+</resources>

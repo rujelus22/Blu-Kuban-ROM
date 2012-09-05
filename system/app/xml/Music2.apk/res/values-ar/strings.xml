@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s، %2$s</string>
+    <string name="no_network_connection">غير متصل</string>
+    <string name="authentication_failure_no_network">سيتم توصيلك بالإنترنت لمصادقة حسابك في تطبيق \"الموسيقى\".</string>
+    <string name="authentication_failure">لم تتم المصادقة</string>
+    <string name="authentication_failure_error">تعذرت مصادقة حساب تطبيق \"الموسيقى\".</string>
+    <string name="positive_button_text">موافق</string>
+    <string name="negative_button_text">إلغاء</string>
+    <string name="save_button_text">حفظ</string>
+    <string name="not_save_button_text">عدم الحفظ</string>
+    <string name="shuffle_all">ترتيب عشوائي للكل</string>
+    <string name="play_all">تشغيل الكل</string>
+    <string name="songs_all">كل الأغاني</string>
+    <string name="shuffle">ترتيب عشوائي</string>
+    <string name="search">بحث</string>
+    <string name="settings">الإعدادات</string>
+    <string name="library_options">خيارات العرض</string>
+    <string name="manage_music">جعله متاحًا في وضع عدم الاتصال</string>
+    <string name="available_offline">التوفر في وضع عدم الاتصال</string>
+    <string name="hide_labels">إخفاء التصنيفات</string>
+    <string name="show_labels">إظهار التصنيفات</string>
+    <string name="options">خيارات</string>
+    <string name="shop_artist">التسوق بحسب الفنان</string>
+    <string name="show_offline_music_only">موسيقى بلا اتصال فقط</string>
+    <string name="show_all_music">عرض كل المقاطع الموسيقية</string>
+    <string name="new_playlist_title">اسم قائمة التشغيل</string>
+    <string name="add_to_playlist_title">اسم قائمة التشغيل</string>
+    <string name="rename_playlist_title">إعادة تسمية \"%s\" إلى</string>
+    <string name="search_section_header_artists">الفنانون</string>
+    <string name="search_section_header_albums">الألبومات</string>
+    <string name="search_section_header_songs">الأغاني</string>
+    <string name="search_section_header_playlists">قوائم التشغيل</string>
+    <string name="shuffle_all_songs">ترتيب عشوائي للكل</string>
+    <string name="stream_settings">إعدادات تطبيق \"الموسيقى\"</string>
+    <string name="refresh_title">تحديث</string>
+    <string name="refresh_summary">تحديث الموسيقى من Google Play</string>
+    <string name="account_settings_title">حساب Google Play</string>
+    <string name="no_account_selected_summary">المس لاختيار حساب</string>
+    <string name="account_selected_summary">الاتصال بـ Google Play باستخدام %s</string>
+    <string name="hide_when_not_connected_title">إخفاء الموسيقى غير المتاحة</string>
+    <string name="hide_when_not_connected_summary">عرض الموسيقى المتاحة فقط عندما تكون في وضع عدم الاتصال</string>
+    <string name="stream_only_on_wifi_title">بث عبر شبكة Wi-Fi فقط</string>
+    <string name="stream_only_on_wifi_summary">بث الموسيقى فقط عند الاتصال عبر Wi-Fi</string>
+    <string name="stream_only_hq_title">البث بأعلى جودة</string>
+    <string name="stream_only_hq_summary">بث الموسيقى دائمًا بأعلى جودة</string>
+    <string name="lock_screen_controls_title">تأمين عناصر التحكم في الشاشة</string>
+    <string name="lock_screen_controls_summary">إظهار عناصر التحكم في الموسيقى أعلى تأمين الشاشة</string>
+    <string name="offlinedl_only_on_wifi_title">التنزيل عبر Wi-Fi فقط</string>
+    <string name="offlinedl_only_on_wifi_summary">تنزيل موسيقى للإتاحة في وضع عدم الاتصال فقط عبر شبكة Wi-Fi</string>
+    <string name="cache_streamed_title">موسيقى مخزنة مؤقتًا</string>
+    <string name="cache_streamed_summary">تخزين الموسيقى التي تم بثها مؤقتًا</string>
+    <string name="download_queue_title">قائمة انتظار التنزيل</string>
+    <string name="download_queue_summary">إظهار الأغاني التي يتم تنزيلها حاليًا</string>
+    <string name="help_title">مساعدة</string>
+    <string name="show_no_downloads_title">ليس هناك أغانٍ في قائمة الانتظار للتنزيل</string>
+    <string name="music_version_title">إصدار \"الموسيقى\"</string>
+    <string name="music_version_summary">إصدار غير معروف</string>
+    <string name="nowplaying_title">يجري الآن تشغيل</string>
+    <string name="artists_title">الفنانون</string>
+    <string name="albums_title">الألبومات</string>
+    <string name="genres_title">الأنواع</string>
+    <string name="tracks_title">الأغاني</string>
+    <string name="playlists_title">قوائم التشغيل</string>
+    <string name="recent_title">حديثة</string>
+    <string name="search_title">بحث</string>
+    <string name="no_tracks_title">ليس هناك أغاني</string>
+    <string name="delete_playlist_menu">حذف</string>
+    <string name="edit_playlist_menu">تعديل</string>
+    <string name="rename_playlist_menu">إعادة تسمية</string>
+    <string name="playlist_delete_confirmation">هل تريد حذف قائمة التشغيل \"%s\"؟</string>
+    <string name="delete_playlist_button_confirm">حذف</string>
+    <string name="playlist_deleted_message">تم حذف قائمة التشغيل.</string>
+    <string name="playlist_created_message">تم إنشاء قائمة التشغيل \"%s\".</string>
+    <string name="playlist_renamed_message">تمت إعادة تسمية قائمة التشغيل إلى \"%s\".</string>
+    <string name="recentlyadded">الملفات المضافة مؤخرًا</string>
+    <string name="recentlyadded_title">الملفات المضافة مؤخرًا</string>
+    <string name="all_songs_list">كل الأغاني</string>
+    <string name="all_songs_list_title">كل الأغاني</string>
+    <string name="storemusic_list">الملفات المجانية والمشتراة</string>
+    <string name="storemusic_list_title">الملفات المجانية والمشتراة</string>
+    <string name="freemusic_list">الأغاني المجانية</string>
+    <string name="freemusic_list_title">الأغاني المجانية</string>
+    <string name="thumbsup_list">الموافقة</string>
+    <string name="thumbsup_list_title">الموافقة</string>
+    <string name="unknown_artist_name">فنان غير معروف</string>
+    <string name="unknown_album_name">ألبوم غير معروف</string>
+    <string name="unknown_playlist_name">قائمة تشغيل غير معروفة</string>
+    <string name="shuffle_on_notif">تم تشغيل الترتيب العشوائي.</string>
+    <string name="shuffle_off_notif">تم إيقاف الترتيب العشوائي.</string>
+    <string name="repeat_off_notif">تم إيقاف التكرار.</string>
+    <string name="repeat_current_notif">تكرار الأغنية الحالية.</string>
+    <string name="repeat_all_notif">تكرار كل الأغاني.</string>
+    <string name="ringtone_menu">استخدام كنغمة رنين</string>
+    <string name="ringtone_set">تم تعيين \"%s\" كنغمة رنين.</string>
+    <string name="ringtone_set_failed">تعذر إنشاء نغمة رنين.</string>
+    <string name="ringtone_needs_download">سيتم تعيين نغمة الرنين عند التنزيل.</string>
+    <string name="play_selection">تشغيل</string>
+    <string name="add_to_playlist">إضافة إلى قائمة التشغيل</string>
+    <string name="rename_playlist_menu_item">إعادة تسمية</string>
+    <string name="add_to_playlist_selector_title">إضافة إلى قائمة التشغيل</string>
+    <string name="queue">قائمة التشغيل الحالية</string>
+    <string name="new_playlist_for_content">قائمة تشغيل جديدة</string>
+    <string name="new_empty_playlist">قائمة تشغيل جديدة</string>
+    <string name="new_playlist_name_template">قائمة تشغيل %d</string>
+    <string name="removed_from_playlist">تمت إزالة \"%1$s\" من قائمة التشغيل.</string>
+    <string name="playlist_too_many_songs">الأغاني كثيرة للغاية. الحد المسموح به هو %d لكل قائمة تشغيل.</string>
+    <string name="emptyplaylist">قائمة التشغيل المحددة فارغة.</string>
+    <string name="playlist_edit_label">الاسم</string>
+    <string name="create_playlist_create_text">موافق</string>
+    <string name="rename_playlist_rename_text">إعادة تسمية</string>
+    <string name="service_start_error_title">مشكلة في التشغيل</string>
+    <string name="service_start_error_msg">تعذر تشغيل الأغنية.</string>
+    <string name="service_start_error_button">موافق</string>
+    <string name="weekpicker_set">تم</string>
+    <string name="weekpicker_title">تعيين الوقت</string>
+    <string name="musicbrowserlabel">موسيقى Play</string>
+    <string name="musicshortcutlabel">قائمة تشغيل الموسيقى</string>
+    <string name="mediaplaybacklabel">موسيقى</string>
+    <string name="app_name">موسيقى Google Play</string>
+    <string name="playback_failed">تعذر تشغيل المقطع الذي طلبته.</string>
+    <string name="cancel">إلغاء</string>
+    <string name="remove_from_playlist">إزالة من قائمة التشغيل</string>
+    <string name="streamloadingtext">جارٍ الاتصال بـ %s…</string>
+    <string name="search_hint">بحث في الموسيقى</string>
+    <string name="working_artists">الفنانون...</string>
+    <string name="working_albums">الألبومات…</string>
+    <string name="loading">جارٍ التحميل…</string>
+    <string name="sort_by_track">المسارات</string>
+    <string name="music_picker_title">اختيار مقطع صوتي موسيقي</string>
+    <string name="fail_to_start_stream">تعذر تشغيل البث الذي طلبته.</string>
+    <string name="search_settings_description">الفنانون والألبومات والمقاطع الصوتية</string>
+    <string name="fast_scroll_alphabet">" أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي"</string>
+    <string name="title_tv">موسيقى</string>
+    <string name="music_library">المكتبة الموسيقية</string>
+    <string name="playlist_label">قائمة تشغيل</string>
+    <string name="faux_art_all_songs_label">كل الأغاني</string>
+    <string name="faux_art_playlist_label">قائمة التشغيل</string>
+    <string name="faux_art_playlist_instant_mix_label">مزيج أغانٍ فوري</string>
+    <string name="faux_art_playlist_auto_playlist_label">قائمة تشغيل تلقائية</string>
+    <string name="buffering">جارٍ التخزين المؤقت...</string>
+    <string name="keep_on_phone">التوفر في وضع عدم الاتصال</string>
+    <string name="no_music_add_music_header">طرق إضافة الموسيقى</string>
+    <string name="no_music_shop_body">يمكنك تسوق الملايين من الأغاني بما في ذلك مئات المقاطع الصوتية المجانية.</string>
+    <string name="no_music_shop_button">تسوق</string>
+    <string name="no_music_upload_body">يمكنك تحميل 20000 أغنية إلى Google مجانًا.</string>
+    <string name="no_music_upload_button">مزيد من المعلومات</string>
+    <string name="no_music_usb_copy_body">يمكنك نسخ الموسيقى إلى هاتفك باستخدام كابل USB.</string>
+    <string name="no_music_usb_copy_button">مزيد من المعلومات</string>
+    <string name="no_music_heading">المكتبة الموسيقية فارغة</string>
+    <string name="no_music_setup_uploader_heading">بث الموسيقى لاسلكيًا.</string>
+    <string name="no_music_setup_uploader_body">يمكنك بث مجموعتك الموسيقية الشخصية باستخدام موسيقى Google Play.</string>
+    <string name="no_music_setup_usb_heading">نسخ الموسيقى إلى جهازك</string>
+    <string name="no_music_setup_usb_body">يمكنك نسخ الموسيقى إلى هاتفك باستخدام كابل USB.</string>
+    <string name="no_local_music_heading">ليست هناك موسيقى في وضع عدم الاتصال</string>
+    <string name="no_local_music_body">"إنك في وضع عدم الاتصال فقط، لذلك لا يتم عرض سوى الموسيقى المخزنة على جهازك.
+
+لتحديد الموسيقى التي تريد تخزينها على جهازك، اختر "<b>جعلها متاحة في وضع عدم الاتصال</b> من القائمة.</string>
+    <string name="no_music_learn_more">مزيد من المعلومات</string>
+    <string name="no_playlists_heading">ليست لديك أية قوائم تشغيل في مكتبتك.</string>
+    <string name="no_playlists_body">يمكنك إنشاء قائمة تشغيل من خلال الانتقال إلى عرض قائمة \"الأغاني\" ولمس \"إضافة إلى قائمة تشغيل\" من قائمة سياقات الأغنية.</string>
+    <string name="no_music_syncing_heading">تجري حاليًا مزامنة Music.</string>
+    <string name="no_music_syncing_body">تجري حاليًا مزامنة Music من الخادم وسيظهر بعد لحظات.</string>
+    <string name="no_music_scanning_heading">جارٍ البحث عن موسيقى على الجهاز.</string>
+    <string name="no_music_scanning_body">يجري البحث على الجهاز للعثور على موسيقى.</string>
+    <string name="sync_disabled">يجب إعداد المزامنة قبل ظهور الموسيقى من \"موسيقى Google Play\". هل تريد فعل ذلك الآن؟</string>
+    <string name="tutorial_welcome_heading">مرحبًا بك في موسيقى Google Play</string>
+    <string name="tutorial_welcome_body">"يمكنك تحميل ما يصل إلى 20000 أغنية من مجموعة الموسيقى الشخصية.
+
+يمكنك تشغيل الموسيقى التي يتم شراؤها من Google Play على الفور.
+
+يمكنك الاستماع إلى جميع ما لديك من موسيقى على الويب أو على أي هاتف أو جهاز لوحي. يمكنك التنزيل بسهولة لتشغيل الموسيقى بدون اتصال.
+
+كل هذه الخدمات متوفرة مجانًا."</string>
+    <string name="tutorial_select_account_heading">تحديد حساب</string>
+    <string name="tutorial_select_account_body">"اربط حسابك بموسيقى Google Play حتى تتمكن من تشغيل مكتبة الموسيقى وما تم شراؤه من Store.
+
+ما الحساب الذي تريد استخدامه؟"</string>
+    <string name="tutorial_sign_in">يمكنك ربط حسابك بموسيقى Google Play، بحيث يمكنك تشغيل مكتبة الموسيقى وما تم شراؤه من Store.</string>
+    <string name="tutorial_free_music_heading">الحصول على موسيقى مجانية</string>
+    <string name="tutorial_free_music_body">يمكنك تصفح مئات المقاطع الصوتية المجانية على Google Play لبعض أهم الفنانين في مجال موسيقى الروك وموسيقى هيب هوب والمزيد.</string>
+    <string name="tutorial_account_heading">مرحبًا</string>
+    <string name="tutorial_account_body">أنت مدعو إلى موسيقى Google Play. يمكنك استخدام هذا المشغل للدخول فوريًا إلى الأغاني التي تضيفها إلى موسيقى Google Play والموسيقى الأخرى التي نسختها إلى جهازك في Android.</string>
+    <string name="tutorial_account_list_header">يمكنك البدء من خلال اختيار حساب Google لربط هذا المشغل بموسيقى Google Play:</string>
+    <string name="tutorial_done_heading">استمتع</string>
+    <string name="tutorial_done_body">"مشغل الموسيقى مرتبط الآن بحسابك في Google.
+
+إذا أضفت من قبل مجموعتك الموسيقية إلى موسيقى Google Play، فستبدأ في الظهور عبر هذا المشغل.
+
+إذا كنت لا تزال بحاجة إلى إضافة الموسيقى الخاصة بك إلى موسيقى Google Play، فيمكنك البدء من خلال الانتقال إلى موقع الويب من الكمبيوتر:"</string>
+    <string name="tutorial_skip">تخطي</string>
+    <string name="tutorial_next">التالي</string>
+    <string name="tutorial_done">تم</string>
+    <string name="tutorial_add_account">إضافة حساب</string>
+    <string name="tutorial_free_music">الحصول على أغانٍ مجانية</string>
+    <string name="spinner_carousel">حديث</string>
+    <string name="spinner_album">الألبومات</string>
+    <string name="spinner_artist">الفنانون</string>
+    <string name="spinner_songs">الأغاني</string>
+    <string name="spinner_playlists">قوائم التشغيل</string>
+    <string name="spinner_genres">الأنواع</string>
+    <string name="sort_by_title">تصنيف أ-ي</string>
+    <string name="sort_by_artist">تصنيف بحسب الفنان</string>
+    <string name="sort_by_album">تصنيف بحسب الألبوم</string>
+    <string name="sort_by_date">تصنيف بحسب تاريخ الاضافة</string>
+    <string name="more_by_artist">المزيد من ألبومات الفنان</string>
+    <string name="make_available_offline">جعلها متاحة في وضع عدم الاتصال</string>
+    <string name="search_web">بحث الويب</string>
+    <string name="manage_done">تم</string>
+    <string name="too_many_items_title">عناصر أكثر مما يجب</string>
+    <string name="too_many_items_body">ليست هناك مساحة كافية لتخزين جميع العناصر التي حددتها. يمكنك إلغاء تحديد بعض العناصر للحصول على مساحة كافية.</string>
+    <string name="save_manage_music_change_title">لم يتم حفظ بعض التغييرات</string>
+    <string name="save_manage_music_change_body">هل تريد إتاحة الموسيقى المحددة بدون اتصال؟</string>
+    <string name="not_all_items_can_be_kept_body">لا تتوفر مساحة كافية لتخزين جميع العناصر التي حددتها. لن يتم تحميل جميع هذه العناصر.</string>
+    <string name="free_space_overfull">وحدة التخزين ممتلئة (أكثر من %s)</string>
+    <string name="free_space">%s متوفرة</string>
+    <string name="stream_error_no_space_available">ليست هناك أية مساحة متاحة.</string>
+    <string name="stream_error_only_on_wifi">يجب أن تكون متصلاً بشبكة Wi-Fi حتى تتمكن من تشغيل هذه الأغنية.</string>
+    <string name="stream_error_no_connection">يجب أن تكون متصلاً بالإنترنت حتى تتمكن من تشغيل هذه الأغنية.</string>
+    <string name="stream_error_unauthorized">اسم المستخدم أو كلمة المرور غير صحيحة.</string>
+    <string name="stream_error_another_stream_being_played">تم إيقاف الموسيقى مؤقتًا نظرًا لأنك تستمع إلى مجموعتك الموسيقية على جهاز آخر.</string>
+    <string name="stream_error_rate_limit_reached">الموسيقى غير متاحة مؤقتًا. تأكد من تشغيل مجموعتك الموسيقية على جهاز واحد فقط في كل مرة.</string>
+    <string name="stream_error_device_not_authorized">يمكنك استخدام مكتبة الموسيقى مع ما يصل إلى 10 أجهزة. سيلزمك إلغاء مصادقة أحد أجهزتك قبل إضافة جهاز آخر.</string>
+    <string name="stream_error_learn_more">مزيد من المعلومات</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">تم إيقاف الموسيقى مؤقتًا.</string>
+    <string name="stream_error_rate_limit_reached_short">الموسيقى غير متاحة مؤقتًا.</string>
+    <string name="stream_error_device_not_authorized_short">تم استخدام أجهزة أكثر مما يجب مع مكتبة الموسيقى.</string>
+    <string name="hide_now_playing_bar">إخفاء شريط \"يجري الآن تشغيل\"</string>
+    <string name="show_now_playing_bar">عرض شريط يجري الآن تشغيل</string>
+    <string name="show_options">إظهار الخيارات</string>
+    <string name="hide_options">إخفاء الخيارات</string>
+    <string name="all_songs_in_genre">"كل الأغاني من النوع
+%s"</string>
+    <string name="preview_header">تمت مشاركته على+GOOGLE</string>
+    <string name="shared_playback_full">تشغيل كامل مجانًا</string>
+    <string name="shared_playback_partial">نموذج</string>
+    <string name="btn_buy">شراء</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">جارٍ إتاحة الموسيقى بدون اتصال...</string>
+    <string name="notification_downloading_when_on_wifi">سيتم تحميل الأغاني، التي تم وضع علامة عليها لتكون متاحة في وضع عدم الاتصال، بعد اتصالك بشبكة Wi-Fi.</string>
+    <string name="notification_downloading_excessive_errors">تعذر تنزيل الأغاني الآن. تحقق من اتصال الإنترنت.</string>
+    <string name="notification_downloading_done">الأغاني المحددة متاحة الآن دون اتصال.</string>
+    <string name="notification_ticker_ringtone_set">تم تعيين نغمة الرنين على \"%s\".</string>
+    <string name="notification_title_ringtone_set">تم تعيين نغمة رنين إلى \"%s\"</string>
+    <string name="notification_content_ringtone_set">المس لتعديل نغمة الرنين هذه.</string>
+    <string name="notification_ticker_ringtone_set_failed">تعذر إنشاء نغمة رنين.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_songcount">أغنيات جديدة %d</string>
+    <string name="notification_newsongs_subtitle">تمت الإضافة إلى موسيقى Google Play</string>
+    <string name="carousel_label_shuffle_all">ترتيب عشوائي للكل</string>
+    <string name="song_label">أغنية</string>
+    <string name="artist_label">الفنان</string>
+    <string name="album_label">ألبوم</string>
+    <string name="effectspanel">التأثيرات الصوتية</string>
+    <string name="menu_make_instant_mix">إجراء مزيج فوري</string>
+    <string name="instant_mix_default_name">مزيج %s</string>
+    <string name="creating_instant_mix">"جارٍ إضافة مزيج أغانٍ فوري
+إلى قوائم التشغيل."</string>
+    <string name="creating_instant_mix_with_seed">"جارٍ إضافة مزيج أغانٍ فوري
+إلى قوائم التشغيل، بحسب
+%s."</string>
+    <string name="create_instant_mix_failed">تعذر إنشاء مزيج أغانٍ فوري. يمكنك إعادة المحاولة.</string>
+    <string name="create_instant_mix_failed_insufficient_results">لم تكن هناك أغانٍ متشابهة كافية في مجموعتك لإنشاء مجموعة متنوعة فورية من \"%s.\" حاول إنشاء مزيج أغانٍ فوري من أغنية مختلفة.</string>
+    <string name="create_instant_mix_sync_timeout">"تم إنشاء المزيج الفوري
+وسيظهر في قوائم التشغيل
+قريبًا."</string>
+    <string name="create_instant_mix_btn_ok">موافق</string>
+    <string name="delete">حذف</string>
+    <string name="confirm_delete_local_only">هل تريد حذف \"%s\"؟</string>
+    <string name="confirm_delete_has_remote">تم نقل \"%s\" وتحميله إلى موسيقى Google Play. سيتم حذف العناصر التي تم نقلها فقط. هل تريد حذفها؟</string>
+    <string name="waiting_share">جارٍ مشاركة %s</string>
+    <string name="share">مشاركة</string>
+    <string name="share_failure">حدثت مشكلة أثناء مشاركة الموسيقى.</string>
+    <string name="share_google_plus_footer">تؤدي المشاركة إلى تمكين التشغيل الكامل مجانًا للأشخاص في دوائرك</string>
+    <string name="accessibility_play">تشغيل</string>
+    <string name="accessibility_pause">إيقاف مؤقت</string>
+    <string name="accessibility_stop">إيقاف</string>
+    <string name="accessibility_next">التالي</string>
+    <string name="accessibility_prev">السابق</string>
+    <string name="accessibility_shuffle">ترتيب عشوائي</string>
+    <string name="accessibility_repeat">تكرار</string>
+    <string name="accessibility_thumbsUp">موافقة</string>
+    <string name="accessibility_thumbsDown">معارضة</string>
+    <string name="accessibility_star1">نجمة واحدة</string>
+    <string name="accessibility_star2">نجمتان</string>
+    <string name="accessibility_star3">ثلاث نجمات</string>
+    <string name="accessibility_star4">أربع نجمات</string>
+    <string name="accessibility_star5">خمس نجمات</string>
+    <string name="accessibility_contractor">توسيع معلومات الأغنية</string>
+    <string name="accessibility_back">رجوع</string>
+    <string name="accessibility_contextMenu">قائمة الأغنية</string>
+    <string name="accessibility_home">شاشة الموسيقى الرئيسية</string>
+    <string name="accessibility_search">بحث</string>
+    <string name="accessibility_search_cancel">إلغاء البحث الحالي</string>
+    <string name="accessibility_current">الأغنية الحالية</string>
+    <string name="accessibility_createnewplaylist">إنشاء قائمة تشغيل جديدة</string>
+    <string name="accessibility_menu">القائمة</string>
+    <string name="accessibility_shop">التسوق لشراء موسيقى</string>
+    <string name="ringtone_replace_alert_button">استبدال</string>
+    <string name="ringtone_replace_alert_title">استبدال نغمة الرنين</string>
+    <string name="ringtone_replace_alert_message">هناك نغمة رنين تحمل هذا الاسم فعلاً. هل تريد استبدالها؟</string>
+    <string name="legal_information">المعلومات القانونية</string>
+    <string name="license_title">تراخيص البرامج مفتوحة المصدر</string>
+    <string name="license_error">تعذر تحميل التراخيص.</string>
+    <string name="market_wrong_account" formatted="false">"تم شراء الموسيقى التي كنت تحاول شراءها من خلال الحساب %s
+
+أنت مسجل الدخول حاليًا إلى موسيقى Google Play باستخدام الحساب %s
+
+للاستماع إلى الموسيقى التي اشتريتها، بدل الحسابين أولاً."</string>
+    <string name="gplus_wrong_account" formatted="false">"تمت مشاركة الموسيقى التي تحاول تشغيلها مع الحساب %s
+
+أنت مسجل لدخولك حاليًا في موسيقى Google Play من خلال الحساب %s
+
+للاستماع إلى الموسيقى المشتركة، بدل الحسابين أولاً."</string>
+    <string name="switch_account_button">تغيير الحسابات</string>
+    <string name="retry_button">إعادة المحاولة</string>
+    <string name="wait_for_item">في انتظار مزامنة الموسيقى</string>
+    <string name="wait_for_item_failure">حدثت مشكلة أثناء تحميل الموسيقى.</string>
+    <string name="ringtone_title">مراجعة نغمة الرنين</string>
+    <string name="edit_ringtone">تعديل نغمة الرنين</string>
+    <string name="ringtone_done">تم</string>
+    <string name="set_ringtone_title">استخدام كنغمة رنين</string>
+    <string name="set_ringtone_message">تعيين كنغمة رنين.</string>
+    <string name="start_edit_ringtone">تعديل نغمة الرنين</string>
+    <string name="ringtone_file_edited_name">مقطع من %1$s</string>
+    <string name="progress_dialog_saving">جارٍ الحفظ...</string>
+    <string name="start_handle">مقبض البدء</string>
+    <string name="resize_handle">مقبض تغيير الحجم</string>
+    <string name="menu_reset">إعادة تعيين</string>
+    <string name="save_success_message">تم حفظ %1$s كنغمة رنين افتراضية.</string>
+    <string name="save_failure_message">عذرًا، أخفق حفظ %1$s كنغمة رنين.</string>
+    <string name="play_error">تعذر تشغيل ملف الوسائط هذا.</string>
+    <string name="write_error">تعذرت الكتابة على الملف.</string>
+    <string name="read_error">تعذرت قراءة الملف.</string>
+    <string name="no_space_error">لا تتوفر مساحة كافية على بطاقة SD لحفظ هذا الملف.</string>
+    <string name="bad_extension_error">لا يمكن تعديل ملفات من هذا النوع.</string>
+    <string name="no_extension_error">لا يمكن تعديل ملف ليس بالامتداد ‎.mp3 أو الامتداد ‎.wav</string>
+    <string name="alert_title_success">نجح الإجراء</string>
+    <string name="alert_title_failure">خطأ</string>
+    <string name="alert_ok_button">موافق</string>
+    <string name="store_tutorial_title">الشراء والتشغيل فورًا</string>
+    <string name="store_tutorial_content">يمكنك التسوق لشراء الملايين من المقاطع الصوتية بتنسيق MP3 في Google Play، بما في ذلك المئات من الأغاني المجانية.</string>
+    <string name="store_tutorial_instruction">للانتقال إلى المتجر، انقر على رمز حقيبة التسوق</string>
+</resources>

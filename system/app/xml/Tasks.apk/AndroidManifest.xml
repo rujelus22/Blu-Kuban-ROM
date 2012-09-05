@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1" android:versionName="1.0" package="com.android.task"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <application android:label="@string/app_name" android:icon="@drawable/mainmenu_icon_task" android:taskAffinity="android.task.tasks">
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name=".TaskLaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="time/epoch" />
+                <data android:host="com.android.tasks" />
+                <data android:scheme="content" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/TasksTheme" android:name=".TaskMainActivity" android:configChanges="keyboardHidden|orientation|screenSize">
+            <meta-data android:name="android.app.default_searchable" android:value=".TaskSearchListActivity" />
+        </activity>
+        <activity android:theme="@style/TasksTheme" android:name=".TaskViewActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/TasksEditTheme" android:name=".TaskEditActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:theme="@style/TasksTheme" android:name=".TaskDeleteActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/search_result" android:name=".TaskSearchListActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+        </activity>
+        <activity android:theme="@style/TasksTheme" android:name=".TaskViewByActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@android:style/Theme.DeviceDefault.Dialog.Alert" android:name=".TaskChooserActivity" android:multiprocess="true" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="false">
+            <intent-filter>
+                <action android:name="android.intent.action.TASK_SEND_CHOOSER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/alert_title" android:name=".TaskAlertActivity" android:excludeFromRecents="true" android:launchMode="singleTask" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@style/TasksTheme" android:name=".TaskAttachActivity" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/x-vtodo" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/TasksTheme" android:name=".TaskAddTextActivity" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/tasks_string" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/import_title" android:name="TaskImportListActivity" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.IMPORT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/x-vtodo" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/import_title" android:name="TaskImportViewActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <receiver android:name="com.android.task.TaskGateReceiver">
+            <intent-filter>
+                <action android:name="com.sec.android.gate.GATE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".BootCompleted">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".TaskAlertReceiver">
+            <intent-filter>
+                <action android:name="com.android.task.ACTION_REFERESH_ALARM" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <data android:scheme="content" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".TaskAlertService" />
+    </application>
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15" />
+</manifest>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/menu_icon_zoom_n" android:id="@id/zoom_viewmenu" android:title="@string/dm_zoom" />
+    <item android:icon="@drawable/menu_icon_edit_n" android:id="@id/change_to_edit_mode" android:title="@string/dm_edit_mode" />
+    <item android:icon="@drawable/menu_icon_find_n" android:id="@id/find_menu" android:title="@string/dm_replacedlg_find" />
+    <item android:icon="@drawable/menu_icon_bookclip_n" android:id="@id/boolclip_viewmenu" android:title="@string/dm_bookclip" />
+    <item android:icon="@drawable/menu_icon_reflowtext_n" android:id="@id/reflowtext_viewmenu" android:title="@string/dm_reflow_text" />
+    <item android:id="@id/goto_pagemenu" android:title="@string/dm_goto_page" />
+    <item android:id="@id/sendfile_viewmenu" android:title="@string/dm_send_file" />
+    <item android:icon="@drawable/menu_icon_share_n" android:id="@id/share_dlna" android:title="@string/lg_menu_item_share" />
+    <item android:icon="@drawable/menu_icon_print_n" android:id="@id/menu_print" android:title="@string/dm_print" />
+    <item android:enabled="false" android:id="@id/tts_viewmenu" android:title="@string/dm_tts" />
+    <item android:icon="@drawable/menu_icon_setting_n" android:id="@id/setting_viewmenu" android:title="@string/dm_setting" />
+</menu>

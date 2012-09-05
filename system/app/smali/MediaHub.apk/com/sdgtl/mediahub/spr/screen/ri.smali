@@ -1,0 +1,115 @@
+.class final Lcom/sdgtl/mediahub/spr/screen/ri;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# instance fields
+.field final synthetic a:Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;
+
+
+# direct methods
+.method constructor <init>(Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;)V
+    .registers 2
+
+    iput-object p1, p0, Lcom/sdgtl/mediahub/spr/screen/ri;->a:Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .registers 13
+
+    invoke-static {}, Lcom/sdgtl/mediahub/spr/common/gk;->e()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    :goto_6
+    return-void
+
+    :cond_7
+    iget-object v0, p0, Lcom/sdgtl/mediahub/spr/screen/ri;->a:Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;
+
+    const-string v1, "02"
+
+    iget-object v2, p0, Lcom/sdgtl/mediahub/spr/screen/ri;->a:Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;
+
+    invoke-static {v2}, Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;->a(Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;)Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;
+
+    move-result-object v2
+
+    iget-object v2, v2, Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;->d:Lcom/sdgtl/mediahub/spr/common/CommonStructure$Product;
+
+    iget v2, v2, Lcom/sdgtl/mediahub/spr/common/CommonStructure$Product;->a:I
+
+    iget-object v3, p0, Lcom/sdgtl/mediahub/spr/screen/ri;->a:Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;
+
+    invoke-static {v3}, Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;->a(Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;)Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;->d:Lcom/sdgtl/mediahub/spr/common/CommonStructure$Product;
+
+    iget-object v3, v3, Lcom/sdgtl/mediahub/spr/common/CommonStructure$Product;->e:Ljava/lang/String;
+
+    iget-object v4, p0, Lcom/sdgtl/mediahub/spr/screen/ri;->a:Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;
+
+    invoke-static {v4}, Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;->a(Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;)Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;
+
+    move-result-object v4
+
+    iget-object v4, v4, Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;->c:Lcom/sdgtl/mediahub/spr/common/CommonStructure$PurchaseData;
+
+    iget-wide v4, v4, Lcom/sdgtl/mediahub/spr/common/CommonStructure$PurchaseData;->a:J
+
+    iget-object v6, p0, Lcom/sdgtl/mediahub/spr/screen/ri;->a:Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;
+
+    invoke-static {v6}, Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;->a(Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;)Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;
+
+    move-result-object v6
+
+    iget-object v6, v6, Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;->c:Lcom/sdgtl/mediahub/spr/common/CommonStructure$PurchaseData;
+
+    iget-wide v6, v6, Lcom/sdgtl/mediahub/spr/common/CommonStructure$PurchaseData;->b:J
+
+    iget-object v8, p0, Lcom/sdgtl/mediahub/spr/screen/ri;->a:Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;
+
+    invoke-static {v8}, Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;->a(Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;)Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;
+
+    move-result-object v8
+
+    iget-object v8, v8, Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;->c:Lcom/sdgtl/mediahub/spr/common/CommonStructure$PurchaseData;
+
+    iget-object v8, v8, Lcom/sdgtl/mediahub/spr/common/CommonStructure$PurchaseData;->c:Ljava/lang/String;
+
+    iget-object v9, p0, Lcom/sdgtl/mediahub/spr/screen/ri;->a:Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;
+
+    invoke-static {v9}, Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;->a(Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;)Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;
+
+    move-result-object v9
+
+    iget-object v9, v9, Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;->d:Lcom/sdgtl/mediahub/spr/common/CommonStructure$Product;
+
+    iget v9, v9, Lcom/sdgtl/mediahub/spr/common/CommonStructure$Product;->c:I
+
+    iget-object v10, p0, Lcom/sdgtl/mediahub/spr/screen/ri;->a:Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;
+
+    invoke-static {v10}, Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;->a(Lcom/sdgtl/mediahub/spr/screen/TvStoreEpisode;)Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;
+
+    move-result-object v10
+
+    iget-object v10, v10, Lcom/sdgtl/mediahub/spr/common/CommonStructure$ProductInfo;->d:Lcom/sdgtl/mediahub/spr/common/CommonStructure$Product;
+
+    iget v10, v10, Lcom/sdgtl/mediahub/spr/common/CommonStructure$Product;->b:I
+
+    invoke-static/range {v0 .. v10}, Lcom/sdgtl/mediahub/spr/common/gk;->a(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;JJLjava/lang/String;II)V
+
+    goto :goto_6
+.end method

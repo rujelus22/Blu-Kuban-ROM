@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="40.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/controller_landscape" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout android:id="@id/ctrl_progress" android:background="@drawable/videoplayer_progressbar_bg" android:layout_width="fill_parent" android:layout_height="74.0dip">
+            <SeekBar android:scrollbarStyle="outsideOverlay" android:id="@id/videocontroller_progress" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:nextFocusUp="@id/scnCtrl" android:layout_width="400.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:maxHeight="7.0dip" android:max="100" android:progress="0" android:layout_centerHorizontal="true" style="@style/progress_Seekbar_hdpi" />
+            <TextView android:textSize="24.0px" android:textColor="@color/color004" android:gravity="bottom|left|center" android:id="@id/time_current" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginBottom="6.0dip" android:shadowColor="#ff000000" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_below="@id/videocontroller_progress" android:layout_alignParentLeft="true" />
+            <TextView android:textSize="24.0px" android:textColor="#ffffffff" android:gravity="bottom|right|center" android:id="@id/time_total" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:layout_marginBottom="6.0dip" android:shadowColor="#ff000000" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_toRightOf="@id/time_current" android:layout_below="@id/videocontroller_progress" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/ctrl_button" android:background="@drawable/videoplayer_control_box_bg" android:layout_width="fill_parent" android:layout_height="50.659973dip" android:layout_below="@id/ctrl_progress">
+            <ImageButton android:id="@id/VideoPlayerSRS" android:background="#00000000" android:focusable="true" android:nextFocusLeft="@id/VideoPlayerSRS" android:layout_width="64.0dip" android:layout_height="wrap_content" android:src="@drawable/btn_srs_off_selector_port" android:layout_centerVertical="true" />
+            <ImageButton android:id="@id/VideoPlayerBtnRew" android:background="#00000000" android:focusable="true" android:layout_width="64.0dip" android:layout_height="wrap_content" android:layout_marginLeft="102.0px" android:src="@drawable/btn_rew_selector_port" android:layout_centerVertical="true" />
+            <ImageButton android:id="@id/VideoPlayerBtnPause" android:background="#00000000" android:focusable="true" android:layout_width="64.0dip" android:layout_height="wrap_content" android:layout_marginLeft="195.0px" android:src="@drawable/btn_play_selector_port" android:layout_centerVertical="true" />
+            <ImageButton android:id="@id/VideoPlayerBtnFf" android:background="#00000000" android:focusable="true" android:layout_width="64.0dip" android:layout_height="wrap_content" android:layout_marginLeft="287.0px" android:src="@drawable/btn_ff_selector_port" android:layout_centerVertical="true" />
+            <ImageButton android:id="@id/volumeCtrl" android:background="#00000000" android:focusable="true" android:nextFocusRight="@id/volumeCtrl" android:layout_width="64.0dip" android:layout_height="wrap_content" android:layout_marginLeft="387.0px" android:src="@drawable/btn_volume_selector_port" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/seek_speed" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/controller_landscape">
+        <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/seek_speed_text" android:background="@drawable/video_player_64x_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/speed_1" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/ctrl_vol_vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="200.0dip" android:layout_marginTop="220.0dip" android:layout_marginBottom="80.0dip" android:layout_weight="1.0" android:layout_alignParentTop="true">
+        <com.sec.android.touchwiz.widget.TwSeekBarBubble android:id="@id/volumeseekbubble" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/volume_slider_bg" android:layout_width="121.32999dip" android:layout_height="218.0dip">
+                <com.sec.android.touchwiz.widget.TwSeekBar android:id="@id/vol_seekbar" android:paddingTop="30.0dip" android:paddingBottom="30.0dip" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="38.659973dip" android:layout_height="fill_parent" android:layout_marginLeft="32.0dip" android:layout_weight="1.0" touchwiz:twMax="15" touchwiz:twBackgroundDrawable="@drawable/volume_slider_bar_bg" touchwiz:twProgressDrawable="@drawable/volume_slider_bar" touchwiz:twIndicatorThickness="9.329987dip" touchwiz:twProgressOrientation="vertical" touchwiz:twSeekBarThumb="@drawable/btn_vol_seekbar_thumb"
+                  xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz" />
+            </LinearLayout>
+        </com.sec.android.touchwiz.widget.TwSeekBarBubble>
+    </RelativeLayout>
+</RelativeLayout>

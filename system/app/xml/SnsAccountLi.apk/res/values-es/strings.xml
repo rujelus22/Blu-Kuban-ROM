@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account_label_linkedin">Linkedin</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="show_password">Mostrar contraseña</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="done">Finalizado</string>
+    <string name="next">Siguiente</string>
+    <string name="okay_action">Aceptar</string>
+    <string name="login_failed_message">Error de inicio de sesión. Inténtelo más tarde</string>
+    <string name="login_failed">Error al iniciar sesión</string>
+    <string name="wrong_email_address">Dirección de correo electrónico incorrecta</string>
+    <string name="wrong_password">Contraseña incorrecta</string>
+    <string name="wrong_email_or_pwd">Dirección de correo electrónico o contraseña incorrectas</string>
+    <string name="network_unavailable">Red no disponible</string>
+    <string name="progress_logging_in">Iniciando sesión...</string>
+    <string name="activity_label_linkedin">Configura tu cuenta de LinkedIn</string>
+    <string name="already_added">La cuenta %s ya está añadida</string>
+    <string name="information_01_linkedin">Bienvenido a LinkedIn sync</string>
+    <string name="information_02_linkedin">Sincronice datos con LinkedIn para acceder a su estado y mucho más desde dondequiera que esté</string>
+    <string name="information_03">Y, a continuación, puede ver las nuevas fuentes en el modo inactivo por widget</string>
+    <string name="information_04">Configuración rápida</string>
+    <string name="information_05_linkedin">Ha abierto una aplicación que requiere que vincule una cuenta de LinkedIn al teléfono. Es fácil y se realiza en tan solo unos pasos</string>
+    <string name="information_06">Seleccione Siguiente para continuar o pulse la tecla Atrás para salir</string>
+    <string name="sns_settings_title">Ajustes generales</string>
+    <string name="sns_sync_interval_settings">Intervalo de sincronización de SNS</string>
+    <string name="contacts_sync_interval">Intervalo de sincronización de contactos</string>
+    <string name="sns_settings">Ajustes SNS</string>
+    <string name="sns_settings_summary">Intervalo de sincronización y otros ajustes de SNS</string>
+    <string name="interval_value_none">Ninguno</string>
+    <string name="interval_value_3hours">3 horas</string>
+    <string name="interval_value_6hours">6 horas</string>
+    <string name="interval_value_12hours">12 horas</string>
+    <string name="interval_value_onceaday">Una vez al día</string>
+    <string name="sync_contacts">Sincronizar contactos</string>
+    <string name="sync_contacts_summary_linkedin">Sincronizar información de amigos, mensajes y estados de LinkedIn con Contactos y Social Hub</string>
+    <string name="retry_login_noti_title_linkedin">La sesión de LinkedIn ha caducado</string>
+    <string name="retry_login_noti_body">Volver a iniciar sesión</string>
+</resources>

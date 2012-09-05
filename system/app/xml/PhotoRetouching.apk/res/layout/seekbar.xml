@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:background="@drawable/editor_bg" android:layout_width="fill_parent" android:layout_height="90.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:layout_gravity="center_vertical" android:id="@id/seekbar_minus" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0px" android:src="@drawable/editor_minus" />
+    <com.sec.android.mimage.photoretouching.BubbleSeekBar android:layout_gravity="center" android:id="@id/seekbar" android:paddingLeft="12.0px" android:paddingRight="12.0px" android:focusable="false" android:layout_width="348.0px" android:layout_height="wrap_content" android:max="8" android:progress="4" android:progressDrawable="@drawable/seekbar" android:thumb="@drawable/seekbar_thumb" />
+    <ImageButton android:layout_gravity="center_vertical" android:id="@id/seekbar_plus" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0px" android:src="@drawable/editor_plus" />
+</LinearLayout>

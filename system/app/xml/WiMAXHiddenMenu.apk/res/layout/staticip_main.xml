@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/RelativeLayout1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="22.0sp" android:id="@id/TV_IP" android:layout_width="120.0sp" android:layout_height="wrap_content" android:text="@string/Static_IP" />
+        <EditText android:enabled="true" android:textSize="22.0sp" android:id="@id/ET_IP" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="220.0sp" android:singleLine="true" android:digits="0123456789." android:layout_toRightOf="@id/TV_IP" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/RelativeLayout2" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="22.0sp" android:id="@id/TV_GATEWAY" android:layout_width="120.0sp" android:layout_height="wrap_content" android:text="@string/Gateway" />
+        <EditText android:enabled="true" android:textSize="22.0sp" android:id="@id/ET_GATEWAY" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="200.0sp" android:singleLine="true" android:digits="0123456789." android:layout_toRightOf="@id/TV_GATEWAY" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/RelativeLayout3" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="22.0sp" android:id="@id/TV_NETMASK" android:layout_width="120.0sp" android:layout_height="wrap_content" android:text="@string/Netmask" />
+        <EditText android:enabled="true" android:textSize="22.0sp" android:id="@id/ET_NETMASK" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="200.0sp" android:singleLine="true" android:digits="0123456789." android:layout_toRightOf="@id/TV_NETMASK" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/RelativeLayout4" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="22.0sp" android:id="@id/TV_DNS1" android:layout_width="120.0sp" android:layout_height="wrap_content" android:text="@string/DNS1" />
+        <EditText android:enabled="true" android:textSize="22.0sp" android:id="@id/ET_DNS1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="200.0sp" android:singleLine="true" android:digits="0123456789." android:layout_toRightOf="@id/TV_DNS1" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/RelativeLayout5" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="22.0sp" android:id="@id/TV_DNS2" android:layout_width="120.0sp" android:layout_height="wrap_content" android:text="@string/DNS2" />
+        <EditText android:enabled="true" android:textSize="22.0sp" android:id="@id/ET_DNS2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="200.0sp" android:singleLine="true" android:digits="0123456789." android:layout_toRightOf="@id/TV_DNS2" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/RelativeLayout6" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Button android:textSize="22.0sp" android:id="@id/BT_Clear" android:layout_width="120.0sp" android:layout_height="wrap_content" android:text="@string/Clear" />
+        <Button android:textSize="22.0sp" android:id="@id/BT_Save" android:layout_width="120.0sp" android:layout_height="wrap_content" android:text="@string/Save" android:layout_toRightOf="@id/BT_Clear" />
+        <Button android:textSize="22.0sp" android:id="@id/BT_Load" android:layout_width="120.0sp" android:layout_height="wrap_content" android:text="@string/Load" android:layout_toRightOf="@id/BT_Save" />
+    </RelativeLayout>
+</LinearLayout>

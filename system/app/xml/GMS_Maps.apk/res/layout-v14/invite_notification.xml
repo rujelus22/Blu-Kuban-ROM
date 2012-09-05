@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/placard" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip">
+        <ImageView android:id="@id/avatar" android:background="@drawable/photo_frame" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginRight="3.0dip" android:src="@drawable/avatar_unknown" android:scaleType="fitXY" />
+        <TextView android:textSize="16.0sp" android:id="@id/explanation" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="3.0dip" />
+    </LinearLayout>
+    <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:fadeScrollbars="false" />
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/row" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/normal" android:background="@drawable/list_selector_item" android:visibility="invisible" android:layout_width="190.0px" android:layout_height="fill_parent" android:layout_marginLeft="4.0px" android:layout_marginTop="10.0px">
+        <LinearLayout android:gravity="top" android:orientation="vertical" android:layout_width="190.0px" android:layout_height="116.0px">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ImageView android:id="@id/imageBackground" android:background="@color/thumbnail_background" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <FrameLayout android:padding="1.0px" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <ImageView android:id="@id/thumbnail" android:background="@drawable/videoplayer_thumb_default_media" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+                    <ImageView android:layout_gravity="center" android:id="@id/lastPlayed" android:background="@drawable/btn_play03_selector" android:layout_width="78.0px" android:layout_height="78.0px" />
+                    <ProgressBar android:layout_gravity="bottom|center" android:id="@id/TimeProgressBar" android:background="@drawable/videoplayer_list_thumb_prograss_bg" android:layout_width="fill_parent" android:layout_height="6.0px" android:max="100" style="@style/ListProgress" />
+                </FrameLayout>
+                <CheckBox android:layout_gravity="top|right|center" android:id="@id/listcheckbox" android:focusable="false" android:visibility="gone" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0px" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/row_text" android:layout_width="190.0px" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="44.0px">
+                <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="16.0px" android:typeface="sans" android:textStyle="bold" android:textColor="@color/uncheck_videoListTitle" android:ellipsize="end" android:layout_gravity="left" android:id="@id/filename" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="14.0px" android:textColor="@color/color_1" android:layout_gravity="left|center" android:id="@id/remain" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                    <TextView android:textSize="14.0px" android:textColor="@color/color_5" android:layout_gravity="left" android:id="@id/duration" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="bottom" android:id="@id/endline" android:background="@color/Line" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:gravity="center" android:id="@id/list_count" android:background="#ff333333" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="14.0sp" android:textColor="@color/color_5" android:layout_gravity="center" android:id="@id/video_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+</LinearLayout>

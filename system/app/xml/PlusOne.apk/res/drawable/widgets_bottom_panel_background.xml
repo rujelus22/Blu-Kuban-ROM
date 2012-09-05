@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:width="1.0dip" android:color="@color/widgets_action_button_disabled_text_color" />
+        </shape>
+    </item>
+    <item android:top="1.0dip">
+        <shape android:shape="rectangle">
+            <stroke android:width="1.0dip" android:color="@android:color/white" />
+        </shape>
+    </item>
+    <item android:top="2.0dip">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/widgets_bottom_panel_light_gray" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,252 @@
+.class public final Lcom/google/common/collect/ImmutableMultiset$Builder;
+.super Lcom/google/common/collect/ImmutableCollection$Builder;
+.source "ImmutableMultiset.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/common/collect/ImmutableMultiset;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Builder"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<E:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lcom/google/common/collect/ImmutableCollection$Builder",
+        "<TE;>;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final contents:Lcom/google/common/collect/Multiset;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/common/collect/Multiset",
+            "<TE;>;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 2
+
+    .prologue
+    .line 402
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
+    invoke-direct {p0}, Lcom/google/common/collect/ImmutableCollection$Builder;-><init>()V
+
+    .line 396
+    invoke-static {}, Lcom/google/common/collect/LinkedHashMultiset;->create()Lcom/google/common/collect/LinkedHashMultiset;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$Builder;->contents:Lcom/google/common/collect/Multiset;
+
+    .line 402
+    return-void
+.end method
+
+
+# virtual methods
+.method public bridge synthetic add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableCollection$Builder;
+    .registers 3
+    .parameter "x0"
+
+    .prologue
+    .line 395
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMultiset$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMultiset$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic add([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableCollection$Builder;
+    .registers 3
+    .parameter "x0"
+
+    .prologue
+    .line 395
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMultiset$Builder;->add([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMultiset$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMultiset$Builder;
+    .registers 4
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TE;)",
+            "Lcom/google/common/collect/ImmutableMultiset$Builder",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 412
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
+    .local p1, element:Ljava/lang/Object;,"TE;"
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$Builder;->contents:Lcom/google/common/collect/Multiset;
+
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/google/common/collect/Multiset;->add(Ljava/lang/Object;)Z
+
+    .line 413
+    return-object p0
+.end method
+
+.method public varargs add([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMultiset$Builder;
+    .registers 2
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([TE;)",
+            "Lcom/google/common/collect/ImmutableMultiset$Builder",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 458
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
+    .local p1, elements:[Ljava/lang/Object;,"[TE;"
+    invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableCollection$Builder;->add([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableCollection$Builder;
+
+    .line 459
+    return-object p0
+.end method
+
+.method public bridge synthetic addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableCollection$Builder;
+    .registers 3
+    .parameter "x0"
+
+    .prologue
+    .line 395
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMultiset$Builder;->addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableMultiset$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableMultiset$Builder;
+    .registers 7
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable",
+            "<+TE;>;)",
+            "Lcom/google/common/collect/ImmutableMultiset$Builder",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 472
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
+    .local p1, elements:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TE;>;"
+    instance-of v3, p1, Lcom/google/common/collect/Multiset;
+
+    if-eqz v3, :cond_27
+
+    move-object v2, p1
+
+    .line 474
+    check-cast v2, Lcom/google/common/collect/Multiset;
+
+    .line 475
+    .local v2, multiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<+TE;>;"
+    invoke-interface {v2}, Lcom/google/common/collect/Multiset;->entrySet()Ljava/util/Set;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_f
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2a
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/collect/Multiset$Entry;
+
+    .line 476
+    .local v0, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<+TE;>;"
+    invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
+
+    move-result v4
+
+    invoke-virtual {p0, v3, v4}, Lcom/google/common/collect/ImmutableMultiset$Builder;->addCopies(Ljava/lang/Object;I)Lcom/google/common/collect/ImmutableMultiset$Builder;
+
+    goto :goto_f
+
+    .line 479
+    .end local v0           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<+TE;>;"
+    .end local v1           #i$:Ljava/util/Iterator;
+    .end local v2           #multiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<+TE;>;"
+    :cond_27
+    invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableCollection$Builder;->addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableCollection$Builder;
+
+    .line 481
+    :cond_2a
+    return-object p0
+.end method
+
+.method public addCopies(Ljava/lang/Object;I)Lcom/google/common/collect/ImmutableMultiset$Builder;
+    .registers 5
+    .parameter
+    .parameter "occurrences"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TE;I)",
+            "Lcom/google/common/collect/ImmutableMultiset$Builder",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 430
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
+    .local p1, element:Ljava/lang/Object;,"TE;"
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$Builder;->contents:Lcom/google/common/collect/Multiset;
+
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p2}, Lcom/google/common/collect/Multiset;->add(Ljava/lang/Object;I)I
+
+    .line 431
+    return-object p0
+.end method

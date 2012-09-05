@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/accept_connection" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+                <TableLayout android:layout_gravity="center" android:orientation="vertical" android:background="@android:color/black" android:layout_width="250.0dip" android:layout_height="wrap_content" android:stretchColumns="1"
+                  xmlns:android="http://schemas.android.com/apk/res/android">
+                    <TableRow>
+                        <TextView android:textSize="16.0dip" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/network_name" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView android:textSize="16.0dip" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/conn_name" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="3.0dip" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView android:textSize="16.0dip" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/security_rating" android:layout_marginLeft="10.0dip" android:layout_marginTop="3.0dip" android:layout_marginBottom="5.0dip" android:text="@string/security_manager_challange_security_rating" />
+                    </TableRow>
+                </TableLayout>
+                <TableLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchColumns="0">
+                    <TableRow android:layout_marginTop="20.0dip">
+                        <ImageView android:layout_gravity="center" android:id="@id/networksafe_icon" android:layout_marginTop="0.0dip" android:src="@drawable/network_secure" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+            <TextView android:background="#ff4f4f4f" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" />
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+                <TableLayout android:layout_gravity="center" android:orientation="vertical" android:background="@android:color/black" android:layout_width="250.0dip" android:layout_height="wrap_content" android:stretchColumns="1"
+                  xmlns:android="http://schemas.android.com/apk/res/android">
+                    <TableRow>
+                        <TextView android:textSize="26.0dip" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/title_onlyme" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:text="@string/security_manager_challange_private" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView android:textSize="14.0dip" android:textColor="#ff66aaff" android:layout_gravity="center_vertical" android:id="@id/desc_onlyme" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:text="@string/security_manager_challange_private_desc" />
+                    </TableRow>
+                </TableLayout>
+                <TableLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchColumns="0">
+                    <TableRow android:layout_marginTop="16.0dip">
+                        <RadioButton android:layout_gravity="center" android:id="@id/radiobutton1" android:layout_marginTop="0.0dip" android:checked="false" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+            <TextView android:background="#ff4f4f4f" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" />
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+                <TableLayout android:layout_gravity="center" android:orientation="vertical" android:background="@android:color/black" android:layout_width="250.0dip" android:layout_height="wrap_content" android:stretchColumns="1"
+                  xmlns:android="http://schemas.android.com/apk/res/android">
+                    <TableRow>
+                        <TextView android:textSize="26.0dip" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/title_ask" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:text="@string/security_manager_challange_public" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView android:textSize="14.0dip" android:textColor="#ff66aaff" android:layout_gravity="center_vertical" android:id="@id/desc_ask" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:text="@string/security_manager_challange_public_desc" />
+                    </TableRow>
+                </TableLayout>
+                <TableLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchColumns="0">
+                    <TableRow android:layout_marginTop="16.0dip">
+                        <RadioButton android:layout_gravity="center" android:id="@id/radiobutton2" android:layout_marginTop="0.0dip" android:checked="false" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+            <TextView android:background="#ff4f4f4f" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" />
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+                <TableLayout android:layout_gravity="center" android:orientation="vertical" android:background="@android:color/black" android:layout_width="250.0dip" android:layout_height="wrap_content" android:stretchColumns="1"
+                  xmlns:android="http://schemas.android.com/apk/res/android">
+                    <TableRow>
+                        <TextView android:textSize="26.0dip" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/title_deny" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:text="@string/security_manager_challange_deny" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView android:textSize="14.0dip" android:textColor="#ff66aaff" android:layout_gravity="center_vertical" android:id="@id/desc_deny" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:text="@string/security_manager_challange_deny_desc" />
+                    </TableRow>
+                </TableLayout>
+                <TableLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchColumns="0">
+                    <TableRow android:layout_gravity="center" android:layout_marginTop="8.0dip">
+                        <RadioButton android:layout_gravity="center" android:id="@id/radiobutton3" android:layout_marginTop="0.0dip" android:checked="false" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+            <TextView android:background="#ff4f4f4f" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+            <TableLayout android:layout_gravity="center" android:orientation="vertical" android:background="@android:color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:stretchColumns="1">
+                <TableRow android:background="@android:color/black">
+                    <CheckBox android:textSize="18.0dip" android:textColor="@android:color/white" android:layout_gravity="top|right|center" android:id="@id/checkboxRemember" android:checked="false" android:text="@string/securityManagerChallange_remember" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:gravity="bottom" android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TableLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="0">
+            <TableRow android:background="#ff4f4f4f">
+                <Button android:layout_gravity="center" android:id="@id/confirmbutton" android:layout_width="200.0dip" android:layout_height="fill_parent" android:layout_marginTop="2.0dip" android:text="@string/ok_button" android:width="200.0dip" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>

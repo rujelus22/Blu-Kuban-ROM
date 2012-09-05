@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:paddingTop="8.0px" style="@style/layout_wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.app.voicerecorder.widget.PanelButton android:id="@id/control_panel_recorder_idle_recordbtn_mms" android:background="@drawable/voice_recorder_player_rec_01_btn" android:focusable="true" style="@style/layout_match_parent" />
+</LinearLayout>

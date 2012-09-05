@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/FrameLayout03" android:paddingLeft="20.0px" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/theme_Refl" android:paddingLeft="20.0px" android:paddingRight="20.0px" android:layout_width="754.0px" android:layout_height="74.0px" android:layout_marginTop="420.0px" android:scaleType="fitXY" />
+        <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/theme_layout" android:background="@drawable/project_bg_01" android:layout_width="754.0px" android:layout_height="444.0px" android:layout_marginBottom="0.0px">
+            <ImageView android:id="@id/theme_image" android:paddingLeft="22.0px" android:paddingTop="12.0px" android:paddingRight="22.0px" android:paddingBottom="32.0px" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+            <ImageView android:layout_gravity="center" android:id="@id/conferencePlay" android:background="@drawable/video_play_small" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </FrameLayout>
+        <TextView android:textSize="52.0px" android:textColor="@color/white" android:layout_gravity="center_horizontal" android:id="@id/theme_name" android:paddingBottom="0.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="0.0px" android:singleLine="true" android:shadowDy="-1.0" android:layout_below="@id/theme_layout" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</LinearLayout>

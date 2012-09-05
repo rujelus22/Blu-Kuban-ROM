@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/place_page_action_bar" android:paddingTop="@dimen/place_page_padding_top" android:paddingBottom="@dimen/place_page_padding_top" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/list_header_secondary_grey" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/user_photo" android:padding="@dimen/place_page_action_bar_photo_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:adjustViewBounds="true" android:maxWidth="@dimen/place_page_action_bar_photo_width" android:maxHeight="@dimen/place_page_action_bar_photo_height" android:layout_weight="1.0" />
+        <FrameLayout android:id="@id/review_button" android:background="@drawable/header_bar_button" android:padding="@dimen/place_page_action_bar_photo_padding" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center" android:id="@id/review_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/review" android:adjustViewBounds="true" android:maxWidth="@dimen/place_page_action_bar_photo_width" android:maxHeight="@dimen/place_page_action_bar_photo_height" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/check_in_button" android:background="@drawable/header_bar_button" android:padding="@dimen/place_page_action_bar_photo_padding" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center" android:id="@id/check_in_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_latitude_checkin_no_padding" android:adjustViewBounds="true" android:maxWidth="@dimen/place_page_action_bar_photo_width" android:maxHeight="@dimen/place_page_action_bar_photo_height" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/add_photo_button" android:background="@drawable/header_bar_button" android:padding="@dimen/place_page_action_bar_photo_padding" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center" android:id="@id/add_photo_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:adjustViewBounds="true" android:maxWidth="@dimen/place_page_action_bar_photo_width" android:maxHeight="@dimen/place_page_action_bar_photo_height" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/share_button" android:background="@drawable/header_bar_button" android:padding="@dimen/place_page_action_bar_photo_padding" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center" android:id="@id/share_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:adjustViewBounds="true" android:maxWidth="@dimen/place_page_action_bar_photo_width" android:maxHeight="@dimen/place_page_action_bar_photo_height" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

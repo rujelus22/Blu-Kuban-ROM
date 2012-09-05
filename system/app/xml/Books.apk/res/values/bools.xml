@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="use_listview_to_manage_offline">true</bool>
+    <bool name="shift_carousel_to_manage_offline">true</bool>
+    <bool name="decrypt_resources">false</bool>
+    <bool name="lock_portrait_for_image_mode">true</bool>
+    <bool name="plus_one_button_progress_bar_inverse">true</bool>
+    <bool name="plus_one_button_with_counts_hide_global_count">false</bool>
+</resources>

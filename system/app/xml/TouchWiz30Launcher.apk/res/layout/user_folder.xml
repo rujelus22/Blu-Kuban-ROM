@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.app.twlauncher.UserFolder android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:launcher="http://schemas.android.com/apk/res/com.sec.android.app.twlauncher">
+    <com.sec.android.app.twlauncher.GLButton android:textSize="14.0dip" android:textStyle="bold" android:textColor="#ff404040" android:gravity="left|center" android:id="@id/folder_close" android:background="@drawable/box_launcher_top" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.sec.android.app.twlauncher.GLImageView android:background="@drawable/box_launcher_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.sec.android.app.twlauncher.GLGridView android:layout_gravity="top|center" android:id="@id/folder_content" android:layout_width="@dimen/userfolder_gridWidth" android:layout_height="@dimen/userfolder_gridHeight" android:listSelector="@android:drawable/list_selector_background" android:verticalSpacing="0.0dip" android:numColumns="@integer/mm_gridColumns" launcher:verticalScrollbarWidth="2.0dip" launcher:scrollbarPadding="1.0px" launcher:scrollbarColor="#80ffffff" />
+        <com.sec.android.app.twlauncher.GLTextView android:textSize="@dimen/userfolder_bgTextSize" android:textStyle="normal" android:textColor="#ffffffff" android:gravity="left|center" android:id="@id/folder_bg_text" android:paddingLeft="28.329987dip" android:visibility="gone" android:fadingEdge="horizontal" android:layout_width="@dimen/userfolder_gridWidth" android:layout_height="@dimen/userfolder_gridHeight" android:lineSpacingExtra="10.0dip" />
+    </FrameLayout>
+</com.sec.android.app.twlauncher.UserFolder>

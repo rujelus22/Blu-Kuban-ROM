@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/place_page_streetview" android:paddingTop="@dimen/place_page_padding_top" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/title" android:paddingLeft="@dimen/place_page_padding_left" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <include layout="@layout/place_page_divider" />
+    <ImageView android:id="@id/image" android:padding="@dimen/place_page_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitCenter" android:minHeight="140.0dip" />
+</LinearLayout>

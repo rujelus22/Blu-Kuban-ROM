@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preference
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LocationMap>
+        <City type="1" isoCode="af" name="Kabul" id="95" />
+        <City type="1" isoCode="dz" name="Algiers" id="49" />
+        <City type="1" isoCode="as" name="Pago Pago" id="143" />
+        <City type="1" isoCode="ag" name="St.John's" id="32" />
+        <City type="1" isoCode="ar" name="Buenos Aires" id="30" />
+        <City type="1" isoCode="am" name="Yerevan" id="82" />
+        <City type="1" isoCode="az" name="Baku" id="84" />
+        <City type="1" isoCode="bd" name="Dhaka" id="110" />
+        <City type="1" isoCode="by" name="Minsk" id="71" />
+        <City type="1" isoCode="bo" name="La Paz" id="28" />
+        <City type="1" isoCode="bg" name="Sofia" id="62" />
+        <City type="1" isoCode="kh" name="Phnom Penh" id="117" />
+        <City type="1" isoCode="co" name="Bogota" id="26" />
+        <City type="1" isoCode="cz" name="Prague" id="54" />
+        <City type="1" isoCode="ee" name="Tallinn" id="67" />
+        <City type="1" isoCode="fi" name="Helsinki" id="65" />
+        <City type="1" isoCode="ge" name="Tbilisi" id="83" />
+        <City type="1" isoCode="gr" name="Athens" id="63" />
+        <City type="1" isoCode="hu" name="Budapest" id="59" />
+        <City type="1" isoCode="ir" name="Tehran" id="87" />
+        <City type="1" isoCode="il" name="Jerusalem" id="76" />
+        <City type="1" isoCode="ke" name="Nairobi" id="79" />
+        <City type="1" isoCode="ki" name="Tarawa" id="140" />
+        <City type="1" isoCode="lv" name="Riga" id="66" />
+        <City type="1" isoCode="lt" name="Vilnius" id="69" />
+        <City type="1" isoCode="my" name="Kuala Lumpur" id="114" />
+        <City type="1" isoCode="np" name="Kathmandu" id="107" />
+        <City type="1" isoCode="pe" name="Lima" id="21" />
+        <City type="1" isoCode="ph" name="Manila" id="124" />
+        <City type="1" isoCode="pl" name="Warsaw" id="60" />
+        <City type="1" isoCode="kr" name="Seoul" id="126" />
+        <City type="1" isoCode="sg" name="Singapore" id="115" />
+        <City type="1" isoCode="ly" name="Tripoli" id="51" />
+        <City type="1" isoCode="ro" name="Bucharest" id="68" />
+        <City type="1" isoCode="lk" name="Colombo" id="104" />
+        <City type="1" isoCode="se" name="Stockholm" id="56" />
+        <City type="1" isoCode="tw" name="Taipei" id="125" />
+        <City type="1" isoCode="th" name="Bangkok" id="113" />
+        <City type="1" isoCode="tn" name="Tunis" id="50" />
+        <City type="1" isoCode="uz" name="Tashkent" id="96" />
+        <City type="1" isoCode="ve" name="Caracas" id="29" />
+        <City type="1" isoCode="vg" name="The Settlement" id="44" />
+        <City type="1" isoCode="eg" name="Cairo" id="147" />
+        <City type="1" isoCode="gh" name="Accra" id="149" />
+        <City type="1" isoCode="et" name="Addis Ababa" id="150" />
+        <City type="1" isoCode="jo" name="Amman" id="151" />
+        <City type="1" isoCode="nl" name="Amsterdam" id="152" />
+        <City type="1" isoCode="mg" name="Antananarivo" id="155" />
+        <City type="1" isoCode="tm" name="Ashgabat" id="156" />
+        <City type="1" isoCode="er" name="Asmara" id="157" />
+        <City type="1" isoCode="py" name="Asuncion" id="159" />
+        <City type="1" isoCode="iq" name="Baghdad" id="161" />
+        <City type="1" isoCode="ml" name="Bamako" id="163" />
+        <City type="1" isoCode="cf" name="Bangui" id="164" />
+        <City type="1" isoCode="gp" name="Basse-Terre" id="166" />
+        <City type="1" isoCode="lb" name="Beirut" id="167" />
+        <City type="1" isoCode="rs" name="Belgrade" id="168" />
+        <City type="1" isoCode="bz" name="Belize City" id="169" />
+        <City type="1" isoCode="kg" name="Bishkek" id="170" />
+        <City type="1" isoCode="gw" name="Bissau" id="171" />
+        <City type="1" isoCode="bb" name="Bridgetown" id="174" />
+        <City type="1" isoCode="be" name="Brussels" id="176" />
+        <City type="1" isoCode="gf" name="Cayenne" id="179" />
+        <City type="1" isoCode="md" name="Chisinau" id="181" />
+        <City type="1" isoCode="gn" name="Conakry" id="184" />
+        <City type="1" isoCode="dk" name="Copenhagen" id="185" />
+        <City type="1" isoCode="sn" name="Dakar" id="188" />
+        <City type="1" isoCode="sy" name="Damascus" id="189" />
+        <City type="1" isoCode="tz" name="Dar es Salaam" id="190" />
+        <City type="1" isoCode="dj" name="Djibouti" id="193" />
+        <City type="1" isoCode="qa" name="Doha" id="194" />
+        <City type="1" isoCode="tj" name="Dushanbe" id="196" />
+        <City type="1" isoCode="mq" name="Fort-de-France" id="201" />
+        <City type="1" isoCode="sl" name="Freetown" id="202" />
+        <City type="1" isoCode="bw" name="Gaborone" id="203" />
+        <City type="1" isoCode="gy" name="Georgetown" id="207" />
+        <City type="1" isoCode="gs" name="Grytviken" id="208" />
+        <City type="1" isoCode="gt" name="Guatemala City" id="209" />
+        <City type="1" isoCode="bl" name="Gustavia" id="210" />
+        <City type="1" isoCode="zw" name="Harare" id="212" />
+        <City type="1" isoCode="cu" name="Havana" id="213" />
+        <City type="1" isoCode="ug" name="Kampala" id="218" />
+        <City type="1" isoCode="sd" name="Khartoum" id="219" />
+        <City type="1" isoCode="jm" name="Kingston\u0009" id="220" />
+        <City type="1" isoCode="kw" name="Kuwait" id="221" />
+        <City type="1" isoCode="ng" name="Lagos" id="222" />
+        <City type="1" isoCode="ao" name="Luanda" id="227" />
+        <City type="1" isoCode="zm" name="Lusaka" id="228" />
+        <City type="1" isoCode="lu" name="Luxembourg" id="229" />
+        <City type="1" isoCode="gq" name="Malabo" id="231" />
+        <City type="1" isoCode="mv" name="Male" id="232" />
+        <City type="1" isoCode="ni" name="Managua" id="233" />
+        <City type="1" isoCode="bh" name="Manama" id="234" />
+        <City type="1" isoCode="mz" name="Maputo" id="235" />
+        <City type="1" isoCode="mf" name="Marigot" id="236" />
+        <City type="1" isoCode="so" name="Mogadishu" id="243" />
+        <City type="1" isoCode="lr" name="Monrovia" id="244" />
+        <City type="1" isoCode="uy" name="Montevideo" id="245" />
+        <City type="1" isoCode="om" name="Muscat" id="248" />
+        <City type="1" isoCode="td" name="N'Djamena" id="251" />
+        <City type="1" isoCode="ne" name="Niamey" id="252" />
+        <City type="1" isoCode="mr" name="Nouakchott" id="253" />
+        <City type="1" isoCode="nc" name="Noumea" id="254" />
+        <City type="1" isoCode="to" name="Nuku'alofa" id="255" />
+        <City type="1" isoCode="gl" name="Nuuk" id="256" />
+        <City type="1" isoCode="bf" name="Ouagadougou" id="258" />
+        <City type="1" isoCode="pa" name="Panama City" id="260" />
+        <City type="1" isoCode="sr" name="Paramaribo" id="261" />
+        <City type="1" isoCode="me" name="Podgorica" id="264" />
+        <City type="1" isoCode="mu" name="Port Louis" id="266" />
+        <City type="1" isoCode="ht" name="Port-au-Prince" id="267" />
+        <City type="1" isoCode="kp" name="Pyongyang" id="269" />
+        <City type="1" isoCode="mm" name="Yangon" id="270" />
+        <City type="1" isoCode="is" name="Reykjavik" id="272" />
+        <City type="1" isoCode="cr" name="San José" id="278" />
+        <City type="1" isoCode="pr" name="San Juan" id="279" />
+        <City type="1" isoCode="sv" name="San Salvador" id="281" />
+        <City type="1" isoCode="ye" name="Sana'a" id="282" />
+        <City type="1" isoCode="do" name="Santo Domingo" id="283" />
+        <City type="1" isoCode="mk" name="Skopje" id="286" />
+        <City type="1" isoCode="fj" name="Suva" id="288" />
+        <City type="1" isoCode="pf" name="Tahiti" id="289" />
+        <City type="1" isoCode="hn" name="Tegucigalpa" id="290" />
+        <City type="1" isoCode="li" name="Vaduz" id="295" />
+        <City type="1" isoCode="mt" name="Valletta" id="296" />
+        <City type="1" isoCode="sc" name="Victoria" id="298" />
+        <City type="1" isoCode="at" name="Vienna" id="299" />
+        <City type="1" isoCode="hr" name="Zagreb" id="302" />
+        <City type="1" isoCode="vi" name="Regina" id="305" />
+        <City type="1" isoCode="hk" name="Hong Kong" id="121" />
+        <City type="1" isoCode="vi" name="Charlotte Amalie" id="306" />
+        <City type="2" isoCode="cn" name="Beijing" id="123" />
+        <City type="2" isoCode="cn" name="Longhua" id="225" />
+        <City type="2" isoCode="cn" name="Macau" id="230" />
+        <City type="2" isoCode="cn" name="Shanghai" id="284" />
+        <City type="2" isoCode="cn" name="Shenzhen" id="285" />
+        <City type="2" isoCode="cn" name="Tianjin" id="292" />
+        <City type="2" isoCode="cn" name="Guangzhou" id="303" />
+        <City type="2" isoCode="fr" name="Paris" id="48" />
+        <City type="2" isoCode="fr" name="Trehet" id="293" />
+        <City type="2" isoCode="de" name="Berlin" id="52" />
+        <City type="2" isoCode="de" name="Hamburg" id="211" />
+        <City type="2" isoCode="de" name="Munich" id="247" />
+        <City type="2" isoCode="in" name="Mumbai" id="98" />
+        <City type="2" isoCode="in" name="Bangalore" id="101" />
+        <City type="2" isoCode="in" name="Hyderabad" id="102" />
+        <City type="2" isoCode="in" name="Delhi" id="103" />
+        <City type="2" isoCode="in" name="Chennai" id="105" />
+        <City type="2" isoCode="in" name="Kolkata" id="109" />
+        <City type="2" isoCode="ie" name="Dublin" id="41" />
+        <City type="2" isoCode="ie" name="Cork" id="186" />
+        <City type="2" isoCode="it" name="Rome" id="53" />
+        <City type="2" isoCode="it" name="Bari" id="165" />
+        <City type="2" isoCode="it" name="Bologna" id="172" />
+        <City type="2" isoCode="it" name="Catanzaro" id="178" />
+        <City type="2" isoCode="it" name="Crotone" id="187" />
+        <City type="2" isoCode="it" name="Florence" id="200" />
+        <City type="2" isoCode="it" name="Genoa" id="206" />
+        <City type="2" isoCode="it" name="Messina" id="240" />
+        <City type="2" isoCode="it" name="Milan" id="241" />
+        <City type="2" isoCode="it" name="Naples" id="249" />
+        <City type="2" isoCode="it" name="Palermo" id="259" />
+        <City type="2" isoCode="it" name="San Marino" id="280" />
+        <City type="2" isoCode="it" name="Turin" id="294" />
+        <City type="2" isoCode="it" name="Verona" id="297" />
+        <City type="2" isoCode="jp" name="Tokyo" id="132" />
+        <City type="2" isoCode="jp" name="Osaka" id="257" />
+        <City type="2" isoCode="kz" name="Almaty" id="100" />
+        <City type="2" isoCode="kz" name="Astana" id="158" />
+        <City type="2" isoCode="ma" name="Casablanca" id="40" />
+        <City type="2" isoCode="ma" name="Rabat" id="42" />
+        <City type="2" isoCode="nz" name="Auckland" id="141" />
+        <City type="2" isoCode="nz" name="Wellington" id="142" />
+        <City type="2" isoCode="pk" name="Karachi" id="94" />
+        <City type="2" isoCode="pk" name="Islamabad" id="97" />
+        <City type="2" isoCode="sa" name="Jeddah" id="80" />
+        <City type="2" isoCode="sa" name="Mecca" id="237" />
+        <City type="2" isoCode="sa" name="Riyadh" id="273" />
+        <City type="2" isoCode="sk" name="Bratislava" id="57" />
+        <City type="2" isoCode="sk" name="Ljubljana" id="224" />
+        <City type="2" isoCode="za" name="Cape Town" id="58" />
+        <City type="2" isoCode="za" name="Johannesburg" id="217" />
+        <City type="2" isoCode="tr" name="Istanbul" id="73" />
+        <City type="2" isoCode="tr" name="Ankara" id="154" />
+        <City type="2" isoCode="ae" name="Abu Dhabi" id="89" />
+        <City type="2" isoCode="ae" name="Dubai" id="90" />
+        <City type="2" isoCode="gb" name="Diego Garcia" id="16" />
+        <City type="2" isoCode="gb" name="London" id="45" />
+        <City type="2" isoCode="ua" name="L'viv" id="64" />
+        <City type="2" isoCode="ua" name="Kiev" id="75" />
+        <City type="2" isoCode="ua" name="Kharkiv" id="78" />
+        <City type="2" isoCode="vn" name="Hanoi" id="118" />
+        <City type="2" isoCode="vn" name="Ho Chi Minh City" id="291" />
+        <City type="2" isoCode="ch" name="Bern" id="145" />
+        <City type="2" isoCode="ch" name="Zurich" id="146" />
+        <City type="2" isoCode="ch" name="Geneva" id="205" />
+        <City type="2" isoCode="ch" name="Naters" id="250" />
+        <City type="2" isoCode="cl" name="Abidjan" id="148" />
+        <City type="2" isoCode="cl" name="Yamoussoukro" id="300" />
+        <City type="2" isoCode="cm" name="Douala" id="195" />
+        <City type="2" isoCode="cm" name="Yaounde" id="301" />
+        <City type="3" isoCode="au" name="Perth" id="122" />
+        <City type="3" isoCode="au" name="Adelaide" id="131" />
+        <City type="3" isoCode="au" name="Canberra" id="136" />
+        <City type="3" isoCode="au" name="Sydney" id="138" />
+        <City type="3" isoCode="au" name="Brisbane" id="175" />
+        <City type="3" isoCode="au" name="Darwin" id="191" />
+        <City type="3" isoCode="au" name="Hobart" id="214" />
+        <City type="3" isoCode="au" name="Melbourne" id="238" />
+        <City type="3" isoCode="br" name="Sao Paulo" id="33" />
+        <City type="3" isoCode="br" name="Brasilia" id="34" />
+        <City type="3" isoCode="br" name="Rio de Janeiro" id="35" />
+        <City type="3" isoCode="br" name="Fernando de Noronha" id="36" />
+        <City type="3" isoCode="br" name="Recife" id="271" />
+        <City type="3" isoCode="ca" name="Vancouver" id="6" />
+        <City type="3" isoCode="ca" name="Calgary" id="10" />
+        <City type="3" isoCode="ca" name="Winnipeg" id="15" />
+        <City type="3" isoCode="ca" name="Toronto" id="19" />
+        <City type="3" isoCode="ca" name="Ottawa" id="24" />
+        <City type="3" isoCode="ca" name="Newfoundland" id="31" />
+        <City type="3" isoCode="ca" name="Kingston" id="46" />
+        <City type="3" isoCode="ca" name="Halifax" id="134" />
+        <City type="3" isoCode="ca" name="Montreal" id="246" />
+        <City type="3" isoCode="ca" name="St John's" id="287" />
+        <City type="3" isoCode="cl" name="Santiago" id="27" />
+        <City type="3" isoCode="cl" name="Easter Island" id="197" />
+        <City type="3" isoCode="cd" name="Kinshasa" id="55" />
+        <City type="3" isoCode="cd" name="Lubumbashi" id="70" />
+        <City type="3" isoCode="ec" name="Quito" id="22" />
+        <City type="3" isoCode="ec" name="Galapagos Islands" id="204" />
+        <City type="3" isoCode="id" name="Jakarta Capital Region" id="119" />
+        <City type="3" isoCode="id" name="Ambon" id="127" />
+        <City type="3" isoCode="id" name="Denpasar" id="144" />
+        <City type="3" isoCode="mx" name="Tijuana" id="9" />
+        <City type="3" isoCode="mx" name="Mazatlan" id="12" />
+        <City type="3" isoCode="mx" name="Mexico City" id="14" />
+        <City type="3" isoCode="mn" name="Hovd" id="111" />
+        <City type="3" isoCode="mn" name="Ulaanbaatar" id="120" />
+        <City type="3" isoCode="pt" name="Azores" id="38" />
+        <City type="3" isoCode="pt" name="Lisbon" id="39" />
+        <City type="3" isoCode="pt" name="Ponta Delgada" id="265" />
+        <City type="3" isoCode="ru" name="Kaliningrad" id="61" />
+        <City type="3" isoCode="ru" name="St Petersburg" id="72" />
+        <City type="3" isoCode="ru" name="derevnya Kamchatka" id="74" />
+        <City type="3" isoCode="ru" name="selo Kamchatka" id="74" />
+        <City type="3" isoCode="ru" name="Moscow" id="77" />
+        <City type="3" isoCode="ru" name="Volgograd" id="81" />
+        <City type="3" isoCode="ru" name="Chita" id="85" />
+        <City type="3" isoCode="ru" name="Samara" id="86" />
+        <City type="3" isoCode="ru" name="Izhevsk" id="88" />
+        <City type="3" isoCode="ru" name="Yekaterinburg" id="92" />
+        <City type="3" isoCode="ru" name="Chelyabinsk" id="93" />
+        <City type="3" isoCode="ru" name="Omsk" id="99" />
+        <City type="3" isoCode="ru" name="Novosibirsk" id="106" />
+        <City type="3" isoCode="ru" name="Novokuznetsk" id="108" />
+        <City type="3" isoCode="ru" name="Krasnoyarsk" id="112" />
+        <City type="3" isoCode="ru" name="Irkutsk" id="116" />
+        <City type="3" isoCode="ru" name="Vladivostok" id="128" />
+        <City type="3" isoCode="ru" name="Yakutsk" id="129" />
+        <City type="3" isoCode="ru" name="Khabarovsk" id="130" />
+        <City type="3" isoCode="ru" name="Yuzhno-Sakhalinsk" id="133" />
+        <City type="3" isoCode="ru" name="Magadan" id="137" />
+        <City type="3" isoCode="ru" name="Petropavlovsk" id="139" />
+        <City type="3" isoCode="ru" name="Anadyr" id="153" />
+        <City type="3" isoCode="ru" name="Perm" id="262" />
+        <City type="3" isoCode="es" name="Madrid" id="43" />
+        <City type="3" isoCode="es" name="Barcelona" id="47" />
+        <City type="3" isoCode="es" name="Canary Islands" id="177" />
+        <City type="3" isoCode="us" name="Midway" id="0" />
+        <City type="3" isoCode="us" name="Honolulu" id="1" />
+        <City type="3" isoCode="us" name="Hawaii" id="2" />
+        <City type="3" isoCode="us" name="Alaska" id="3" />
+        <City type="3" isoCode="us" name="Anchorage" id="4" />
+        <City type="3" isoCode="us" name="San Francisco" id="5" />
+        <City type="3" isoCode="us" name="Seattle" id="7" />
+        <City type="3" isoCode="us" name="Los Angeles" id="8" />
+        <City type="3" isoCode="us" name="Phoenix" id="11" />
+        <City type="3" isoCode="us" name="Denver" id="13" />
+        <City type="3" isoCode="us" name="Dallas" id="17" />
+        <City type="3" isoCode="us" name="Chicago" id="18" />
+        <City type="3" isoCode="us" name="Miami" id="20" />
+        <City type="3" isoCode="us" name="Washington D.C." id="23" />
+        <City type="3" isoCode="us" name="New York" id="25" />
+        <City type="3" isoCode="us" name="Mid-Atlantic" id="37" />
+        <City type="3" isoCode="us" name="Guam" id="135" />
+        <City type="3" isoCode="us" name="Austin" id="160" />
+        <City type="3" isoCode="us" name="Baltimore" id="162" />
+        <City type="3" isoCode="us" name="Boston" id="173" />
+        <City type="3" isoCode="us" name="Charlotte" id="180" />
+        <City type="3" isoCode="us" name="Cleveland" id="182" />
+        <City type="3" isoCode="us" name="Columbus" id="183" />
+        <City type="3" isoCode="us" name="Detroit" id="192" />
+        <City type="3" isoCode="us" name="El Paso" id="199" />
+        <City type="3" isoCode="us" name="Houston" id="215" />
+        <City type="3" isoCode="us" name="Indianapolis" id="216" />
+        <City type="3" isoCode="us" name="Las Vegas" id="223" />
+        <City type="3" isoCode="us" name="Louisville" id="226" />
+        <City type="3" isoCode="us" name="Memphis" id="239" />
+        <City type="3" isoCode="us" name="Milwaukee" id="242" />
+        <City type="3" isoCode="us" name="Philadelphia" id="263" />
+        <City type="3" isoCode="us" name="Portland" id="268" />
+        <City type="3" isoCode="us" name="San Antonio" id="275" />
+        <City type="3" isoCode="us" name="San Diego" id="276" />
+        <City type="3" isoCode="us" name="San Jose" id="277" />
+        <City type="3" isoCode="us" name="Atlanta" id="307" />
+    </LocationMap>
+</Preference>

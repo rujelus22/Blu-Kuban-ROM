@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RadioButton android:id="@id/radio_disable_test_rc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/radio_disable_test_rc" />
+        <RadioButton android:id="@id/radio_f_rc1_r_rc1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/radio_f_rc1_r_rc1" />
+        <RadioButton android:id="@id/radio_f_rc2_r_rc2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/radio_f_rc2_r_rc2" />
+        <RadioButton android:id="@id/radio_f_rc3_r_rc3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/radio_f_rc3_r_rc3" />
+        <RadioButton android:id="@id/radio_f_rc4_r_rc3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/radio_f_rc4_r_rc3" />
+        <RadioButton android:id="@id/radio_f_rc5_r_rc4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/radio_f_rc5_r_rc4" />
+    </RadioGroup>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <Button android:id="@id/ok_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ok_button" />
+        <Button android:id="@id/cancel_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cancel_button" />
+    </LinearLayout>
+</LinearLayout>

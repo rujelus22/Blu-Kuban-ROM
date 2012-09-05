@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="@dimen/oob_items_padding" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:orientation="vertical" android:id="@id/contactsSyncChoice" android:paddingBottom="@dimen/oob_large_padding" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RadioButton android:id="@id/option_sync_on" android:layout_marginBottom="@dimen/oob_radio_button_margin" android:text="@string/oob_contacts_sync_on" style="@style/Signup.Entry.Checkbox" />
+        <RadioButton android:id="@id/option_sync_off" android:layout_marginTop="@dimen/oob_radio_button_margin" android:text="@string/oob_contacts_sync_off" style="@style/Signup.Entry.Checkbox" />
+    </RadioGroup>
+    <Button android:layout_gravity="center_horizontal" android:id="@id/input" android:paddingLeft="@dimen/oob_button_padding_left" android:paddingRight="@dimen/oob_button_padding_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/oob_continue_button_minimum_width" android:text="@string/signup_continue" style="@style/Signup.Entry.Layout" />
+</LinearLayout>

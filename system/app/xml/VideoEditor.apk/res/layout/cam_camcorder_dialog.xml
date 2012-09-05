@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="442.0px" android:layout_height="335.0px" android:minWidth="442.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="@drawable/popup_top_dark" android:layout_width="fill_parent" android:layout_height="80.0px">
+        <com.sec.android.app.ve.ui.HelveticaTextView android:textSize="34.0px" android:layout_gravity="center_vertical" android:id="@id/cameramode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0px" android:text="@string/launchcamera" customtypeface="bold" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:background="@drawable/popup_center_bright" android:layout_width="fill_parent" android:layout_height="193.0px">
+        <com.sec.android.app.ve.ui.HelveticaTextView android:textSize="34.0px" android:textColor="#ff000000" android:gravity="center_vertical" android:id="@id/photoMode" android:background="@drawable/popup_option_selector" android:paddingLeft="15.0px" android:layout_width="fill_parent" android:layout_height="96.0px" android:text="@string/photo" />
+        <ImageView android:background="@drawable/divider_horizontal_bright" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <com.sec.android.app.ve.ui.HelveticaTextView android:textSize="34.0px" android:textColor="#ff000000" android:gravity="center_vertical" android:id="@id/videoMode" android:background="@drawable/popup_option_selector" android:paddingLeft="15.0px" android:layout_width="fill_parent" android:layout_height="96.0px" android:text="@string/video" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:id="@id/LinearLayout01" android:background="@drawable/popup_bottom_medium" android:layout_width="fill_parent" android:layout_height="82.0px">
+        <Button android:textSize="24.0px" android:layout_gravity="center" android:id="@id/CameraCancelBtn" android:background="@drawable/volumecontrolbuttonselector" android:layout_width="300.0px" android:layout_height="70.0px" android:text="@string/cancel" />
+    </LinearLayout>
+</LinearLayout>

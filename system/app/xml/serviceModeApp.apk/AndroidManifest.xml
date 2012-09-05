@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:versionCode="15" android:versionName="4.0.4-FH13" package="com.sec.android.app.servicemodeapp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <permission android:name="com.sec.android.app.servicemodeapp.permission.KEYSTRING" android:protectionLevel="signatureOrSystem" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.HARDWARE_TEST" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.MASTER_CLEAR" />
+    <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <application android:label="@string/app_name" android:icon="@drawable/icon">
+        <uses-library android:name="sec_feature" />
+        <uses-library android:name="sechardware" />
+        <activity android:label="ServiceMode" android:name=".ServiceModeApp" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="Sec_Ril_Dump" android:name=".Sec_Ril_Dump" android:process="com.android.phone" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="Svc_Dbg_Dump" android:name=".Svc_Dbg_Dump" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="RTCTimeRead" android:name=".RTCTimeRead" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="SysDump" android:name=".SysDump" android:process="com.android.phone" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="ViewFDList" android:name=".ViewFDList" android:process="com.android.phone" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="ViewRilLog" android:name=".ViewRilLog" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="LogFileList" android:name=".LogFileList" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="FTMDialog" android:name=".FTMDialog" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="TestApnSettings" android:name=".TestApnSettings" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="BatteryRead" android:name=".BatteryRead" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="BatteryStatus" android:name=".BatteryStatus" android:process="com.android.phone" android:screenOrientation="nosensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="LightsensorRead" android:name=".LightsensorRead" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="NandFlashHeaderRead" android:name=".NandFlashHeaderRead" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="ResetTotalCallTime" android:name=".ResetTotalCallTime" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="GcfModeSettings" android:name=".GcfModeSettings" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="197328640" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="0011" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="0228" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="0283" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="32489" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="2580" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="0782" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="0011" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="9090" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="7284" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="872564" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="4238378" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="745" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="746" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="9900" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="338439" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="2263" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="1575" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="6984125*" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="2886" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="2767*2878" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="147852" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="369852" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="1478963" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="3214789650" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="73876766" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="738767633" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="7387678378" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="7387677763" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="4387264636" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="03" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="0589" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="22558463" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="1111" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="2222" />
+                <data android:scheme="android_secret_code" android:host="8888" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="301279" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="279301" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="3214789" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="0411" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="SecKeyStringBroadcastReceiver" android:permission="com.sec.android.app.servicemodeapp.permission.KEYSTRING">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

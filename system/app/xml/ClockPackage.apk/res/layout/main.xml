@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.touchwiz.widget.TwTabHost android:id="@android:id/tabhost" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twTabIndicatorType="text_and_image"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.sec.android.touchwiz.widget.TwTabWidget android:id="@android:id/tabs" android:addStatesFromChildren="true" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </LinearLayout>
+</com.sec.android.touchwiz.widget.TwTabHost>

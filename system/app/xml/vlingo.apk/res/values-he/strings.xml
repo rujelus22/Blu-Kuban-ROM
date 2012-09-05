@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">מצב נהיגה</string>
+    <string name="app_name">פקודות קוליות</string>
+    <string name="incar">הפעלה קולית</string>
+    <string name="incar_icon">הפעלה קולית</string>
+    <string name="Vlingo">פקודות קוליות</string>
+</resources>

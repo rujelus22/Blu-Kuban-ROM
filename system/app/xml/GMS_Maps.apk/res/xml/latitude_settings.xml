@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:key="background_location_reporting">
+        <CheckBoxPreference android:key="report_location" />
+        <ListPreference android:key="reporting_type" />
+    </PreferenceCategory>
+    <PreferenceCategory android:key="location_history">
+        <Preference android:key="loading_location_history" />
+        <CheckBoxPreference android:key="enable_location_history" />
+    </PreferenceCategory>
+    <PreferenceCategory android:key="latitude">
+        <Preference android:key="manage_sharing" />
+        <Preference android:key="latitude_sign_out" />
+    </PreferenceCategory>
+    <PreferenceCategory android:key="checkins">
+        <Preference android:key="loading_checkins" />
+        <CheckBoxPreference android:key="automatic_checkins" />
+        <CheckBoxPreference android:key="checkin_notifications" />
+        <CheckBoxPreference android:key="rating_reminders" />
+        <Preference android:key="manage_places" />
+    </PreferenceCategory>
+</PreferenceScreen>

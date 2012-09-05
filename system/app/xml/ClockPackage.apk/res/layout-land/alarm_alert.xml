@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/alarm_bg_h" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="90.66998dip" android:layout_marginTop="20.669983dip">
+        <com.sec.android.app.clockpackage.alarm.AnalogClock android:layout_gravity="top|left|center" android:id="@id/clock" android:layout_width="156.0dip" android:layout_height="208.0dip" android:dial="@drawable/alarm_clock_02" android:hand_hour="@drawable/alarm_hour_00" android:hand_minute="@drawable/alarm_min_00" />
+        <com.sec.android.app.clockpackage.alarm.AnalogClock android:layout_gravity="top|left|center" android:id="@id/clock_am" android:visibility="gone" android:layout_width="156.0dip" android:layout_height="208.0dip" android:dial="@drawable/alarm_clock_02" android:hand_hour="@drawable/alarm_hour_00" android:hand_minute="@drawable/alarm_min_00" />
+        <com.sec.android.app.clockpackage.alarm.AnalogClock android:layout_gravity="top|left|center" android:id="@id/clock_pm" android:visibility="gone" android:layout_width="156.0dip" android:layout_height="208.0dip" android:dial="@drawable/alarm_clock_02" android:hand_hour="@drawable/alarm_hour_00" android:hand_minute="@drawable/alarm_min_00" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:layout_width="185.34dip" android:layout_height="31.339996dip" android:layout_marginLeft="250.0dip" android:layout_marginTop="80.66998dip">
+        <TextView android:textSize="26.669983dip" android:textColor="#ffebebeb" android:id="@id/alarm_alert_current_time" android:layout_width="wrap_content" android:layout_height="31.339996dip" />
+        <TextView android:textSize="26.669983dip" android:textColor="#ffebebeb" android:id="@id/alarm_alert_current_time_ampm" android:layout_width="wrap_content" android:layout_height="31.339996dip" android:layout_marginLeft="6.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_width="185.34dip" android:layout_height="22.0dip" android:layout_marginLeft="250.0dip" android:layout_marginTop="122.0dip">
+        <TextView android:textSize="18.669983dip" android:textColor="#ffcccccc" android:id="@id/alarm_alert_alarm_time" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="22.0dip" />
+        <TextView android:textSize="18.669983dip" android:textColor="#ffcccccc" android:id="@id/alarm_alert_alarm_time_ampm" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="22.0dip" android:layout_marginLeft="6.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_width="185.34dip" android:layout_height="wrap_content" android:layout_marginLeft="250.0dip" android:layout_marginTop="145.34dip">
+        <TextView android:textSize="18.669983dip" android:textColor="#ffcccccc" android:ellipsize="marquee" android:gravity="center" android:id="@id/alarm_alert_name1" android:layout_width="wrap_content" android:layout_height="28.0dip" android:scrollHorizontally="true" android:singleLine="true" />
+    </LinearLayout>
+    <LinearLayout android:gravity="left" android:layout_gravity="left" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.sec.android.app.clockpackage.alarm.AlarmSlidingTab android:orientation="horizontal" android:id="@id/tab_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" leftHandleX="60" leftHandleY="262" rightHandleX="740" rightHandleY="262" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/image_content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ProgressBar android:id="@id/bufferingView" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:max="100" android:layout_centerInParent="true" sytle="?android:attr/progressBarStyleSmall" />
+        <ImageButton android:id="@id/ImageButtonREW" android:background="@drawable/dlna_slide_arrow_left_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.659973dip" android:layout_centerVertical="true" android:soundEffectsEnabled="false" android:hapticFeedbackEnabled="false" />
+        <ImageButton android:id="@id/ImageButtonFF" android:background="@drawable/dlna_slide_arrow_right_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.659973dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:soundEffectsEnabled="false" android:hapticFeedbackEnabled="false" />
+        <LinearLayout android:id="@id/ImagePlayerControls" android:background="@drawable/slideshow_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <RelativeLayout android:id="@id/StopBox" android:layout_width="wrap_content" android:layout_height="fill_parent" android:soundEffectsEnabled="false" android:hapticFeedbackEnabled="false">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                    <ImageButton android:id="@id/ImageButtonStop" android:background="@drawable/dlna_slide_stop_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:soundEffectsEnabled="false" android:hapticFeedbackEnabled="false" />
+                    <TextView android:textSize="15.0dip" android:textColor="@touchwiz:color/tw_color001" android:gravity="center" android:id="@id/TextStop" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/stop" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/SlideshowBox" android:layout_width="wrap_content" android:layout_height="fill_parent" android:soundEffectsEnabled="false" android:hapticFeedbackEnabled="false">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                    <ImageButton android:id="@id/ImageButtonSlideshow" android:background="@drawable/dlna_slide_play_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:soundEffectsEnabled="false" android:hapticFeedbackEnabled="false" />
+                    <TextView android:textSize="15.0dip" android:textColor="@touchwiz:color/tw_color001" android:gravity="center" android:id="@id/TextSlideShow" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/slide_show" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

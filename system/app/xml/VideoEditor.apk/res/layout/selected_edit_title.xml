@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/title_bar_selected_normal_edit" android:layout_width="wrap_content" android:layout_height="38.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/SelectedThemeTitleedit" android:background="@drawable/select_theme_unselector" android:paddingLeft="0.0px" android:focusable="true" android:clickable="true" android:layout_width="180.0px" android:layout_height="fill_parent" android:contentDescription="@string/accessibility_selecttheme">
+        <com.sec.android.app.ve.ui.HelveticaTextView android:textSize="21.0px" android:textColor="@drawable/addmedia_tab_color_unselector" android:gravity="center_vertical" android:id="@id/SelectedThemeTitleeditText" android:paddingLeft="0.0px" android:paddingTop="0.0px" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0px" android:layout_marginRight="15.0px" android:text="@string/select_theme" android:singleLine="true" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/AddMediaTitleedit" android:background="@drawable/addmedia_tab_unselector" android:focusable="true" android:layout_width="180.0px" android:layout_height="fill_parent" android:layout_marginLeft="-18.0px" android:contentDescription="@string/accessibility_addmediatitle">
+        <com.sec.android.app.ve.ui.HelveticaTextView android:textSize="21.0px" android:textColor="@drawable/addmedia_tab_color_unselector" android:gravity="center_vertical" android:id="@id/AddMediaTitleeditText" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="22.0px" android:layout_marginRight="15.0px" android:text="@string/menu_add_media" android:singleLine="true" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/EditTitleedit" android:background="@drawable/edit_tab_selector" android:focusable="true" android:layout_width="110.0px" android:layout_height="fill_parent" android:layout_marginLeft="-16.0px" android:contentDescription="@string/accessibility_edittitle">
+        <com.sec.android.app.ve.ui.HelveticaTextView android:textSize="21.0px" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@id/EditTitleeditText" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="22.0px" android:layout_marginRight="5.0px" android:text="@string/edit" android:singleLine="true" customtypeface="bold" />
+    </LinearLayout>
+</LinearLayout>

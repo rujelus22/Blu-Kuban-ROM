@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/list" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_prev" android:id="@id/prev" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_next" android:id="@id/next" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_navigate" android:id="@id/navigation" android:showAsAction="ifRoom" />
+    <item android:id="@id/clear_map" android:showAsAction="never" />
+    <item android:id="@id/more" android:showAsAction="never" />
+    <item android:id="@id/search" android:showAsAction="collapseActionView" android:actionViewClass="android.widget.SearchView" />
+    <item android:id="@id/directions" android:showAsAction="never" />
+    <item android:id="@id/layers" android:showAsAction="never" />
+    <item android:id="@id/settings" android:showAsAction="never" />
+    <item android:id="@id/help" android:showAsAction="never" />
+</menu>

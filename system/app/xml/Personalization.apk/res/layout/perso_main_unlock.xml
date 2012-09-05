@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/perso_unlock_entry_panel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/perso_unlock_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_perso_unlock_tile" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/perso_unlock_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="38.0dip" android:text="@string/label_unlock" />
+        <EditText android:id="@id/perso_unlock_control_key_entry" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:maxLines="1" android:scrollHorizontally="true" android:password="true" android:capitalize="none" android:autoText="false" />
+        <Button android:gravity="center_horizontal" android:id="@id/perso_unlock_button" android:layout_width="150.0dip" android:layout_height="wrap_content" android:text="@string/sim_perso_ok_text" android:layout_centerHorizontal="true" />
+        <Button android:gravity="center_horizontal" android:id="@id/perso_unlock_button_dismiss" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="@string/sim_perso_dismiss_text" android:layout_below="@id/perso_lock_button" android:layout_centerHorizontal="true" />
+    </LinearLayout>
+    <LinearLayout android:colorBackground="#80808080" android:panelColorBackground="#ffffffff" android:orientation="vertical" android:id="@id/perso_unlock_status_panel" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <TextView android:colorBackground="#80808080" android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:id="@id/perso_unlock_status_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/requesting_unlock" />
+    </LinearLayout>
+</RelativeLayout>

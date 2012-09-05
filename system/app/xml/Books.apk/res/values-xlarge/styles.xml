@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="PlusOneWebView">
+        <item name="android:layout_width">@dimen/plus_one_webview_size</item>
+        <item name="android:layout_height">@dimen/plus_one_webview_size</item>
+    </style>
+</resources>

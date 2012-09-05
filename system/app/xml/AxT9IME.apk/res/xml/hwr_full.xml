@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard android:keyWidth="23.334003%p" android:keyHeight="9.500003%p" android:horizontalGap="1.2500048%p" android:verticalGap="0.49999952%p"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Row android:keyHeight="4.124999%p" android:verticalGap="0.99999905%p">
+        <Key android:keyWidth="100.0%p" android:codes="-256" android:iconPreview="@drawable/handwriting_status_icon_space" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row>
+        <Key android:horizontalGap="1.4583349%p" android:codes="-5" android:keyEdgeFlags="left" android:isRepeatable="true" android:keyLabel="StrEmpty" />
+        <Key android:codes="10" android:keyLabel="StrEmpty" />
+        <Key android:codes="-102" android:keyLabel="StrModeChange" />
+        <Key android:codes="-103" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyHeight="0.0px" android:verticalGap="0.99999905%p" />
+</Keyboard>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffffff</color>
+    <color name="greyBF">#ffbfbfbf</color>
+    <color name="semi_white">#ffe5e5e5</color>
+    <color name="grey80">#ff808080</color>
+    <color name="greyA6">#ffa6a6a6</color>
+    <color name="grey40">#ff404040</color>
+    <color name="grey53">#ff535353</color>
+    <color name="grey79">#ff797979</color>
+    <color name="black">#ff000000</color>
+    <color name="semi_black">#ff0d0d0d</color>
+    <color name="semi_black_trans">#900d0d0d</color>
+    <color name="grey33">#ff333333</color>
+    <color name="grey33Trans">#90333333</color>
+    <color name="red">#ff8c0000</color>
+    <color name="blue">#ff0000bb</color>
+    <color name="green">#ff006d00</color>
+    <color name="gray">#ffa0a0a0</color>
+    <color name="sprintYellow">#ffffcc00</color>
+    <color name="actionbar_text">@color/white</color>
+    <color name="actionbar_subtext">@color/greyA6</color>
+    <color name="title_text">@color/white</color>
+    <color name="gallery_bg">#b30d0d0d</color>
+    <color name="section_header_bg">@color/grey33Trans</color>
+    <color name="body_text">@color/white</color>
+    <color name="white_Alpha40">#55ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="progress_start">#ffe69f35</color>
+    <color name="progress_end">#ffffdf4c</color>
+    <color name="expander_bg">#80676767</color>
+</resources>

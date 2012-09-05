@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@id/main_bookmark">
+        <item android:id="@id/add_bookmark_menu_id" android:title="@string/bookmark_page" />
+        <item android:id="@id/list_view_id" android:title="@string/bookmarksmenu_list_view" />
+        <item android:id="@id/thumbnail_view_id" android:title="@string/bookmarksmenu_thumbnail_view" />
+        <item android:id="@id/create_folder_menu_id" android:title="@string/bookmarksmenu_create_folder" />
+        <item android:id="@id/reorder_bookmark_menu_id" android:title="@string/bookmarksmenu_change_order" />
+        <item android:id="@id/move_bookmark_menu_id" android:title="@string/bookmarksmenu_move_to_folder" />
+        <item android:id="@id/delete_bookmark_menu_id" android:title="@string/bookmarksmenu_delete" />
+    </group>
+    <group android:id="@id/actionbar_bookmark">
+        <item android:icon="@drawable/header_button_icon_check" android:id="@id/ok" android:title="@string/ok" android:showAsAction="always|withText" />
+        <item android:icon="@drawable/header_button_icon_cancel" android:id="@id/cancel" android:title="@string/cancel" android:showAsAction="always|withText" />
+    </group>
+</menu>

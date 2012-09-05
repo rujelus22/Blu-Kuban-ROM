@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <view android:id="@id/image" android:background="#55000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_x="0.0dip" android:layout_y="0.0dip" class="com.cooliris.media.CropImageView" />
+        <TextView android:textSize="15.669983sp" android:textColor="#ffffffff" android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/crop_guide_line" android:layout_centerHorizontal="true" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="78.0dip" android:layout_marginRight="20.659973dip" android:layout_alignParentRight="true">
+            <RelativeLayout android:id="@id/sizeButtonsLayout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RelativeLayout android:id="@id/homesize_b" android:background="@drawable/homescreen_wallpaper_setting_bg_l" android:layout_width="65.72998dip" android:layout_height="67.32999dip">
+                    <Button android:id="@id/homesize" android:background="@drawable/homescreen_wallpaper_setting_multi_on" android:layout_width="65.72998dip" android:layout_height="67.32999dip" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/homesize_br" android:background="@drawable/homescreen_wallpaper_setting_bg_r" android:layout_width="65.72998dip" android:layout_height="67.32999dip" android:layout_marginTop="67.32999dip">
+                    <Button android:id="@id/locksize" android:background="@drawable/homescreen_wallpaper_setting_single_off" android:layout_width="65.72998dip" android:layout_height="67.32999dip" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_buttons" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <View android:id="@id/buttons_helper" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_centerHorizontal="true" />
+            <Button android:id="@id/save" android:background="@drawable/homescreen_wallpaper_setting_bg_01" android:layout_width="fill_parent" android:layout_height="49.329987dip" android:layout_toLeftOf="@id/buttons_helper" android:layout_alignParentLeft="true" />
+            <LinearLayout android:gravity="center" android:layout_width="241.32999dip" android:layout_height="49.329987dip">
+                <ImageView android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginRight="6.669983dip" android:src="@drawable/homescreen_wallpaper_setting_save" />
+                <TextView android:textSize="18.669983sp" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/crop_save_text" />
+            </LinearLayout>
+            <Button android:id="@id/discard" android:background="@drawable/homescreen_wallpaper_setting_bg_02" android:layout_width="fill_parent" android:layout_height="49.329987dip" android:layout_toRightOf="@id/buttons_helper" android:layout_alignParentRight="true" />
+            <LinearLayout android:gravity="center" android:layout_width="266.65625dip" android:layout_height="49.329987dip" android:layout_marginLeft="266.65625dip">
+                <ImageView android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginRight="6.669983dip" android:src="@drawable/homescreen_wallpaper_setting_cancel" />
+                <TextView android:textSize="18.669983sp" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cancel" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

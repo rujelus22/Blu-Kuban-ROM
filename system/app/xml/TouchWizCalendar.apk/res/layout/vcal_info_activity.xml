@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/main" android:background="@touchwiz:color/tw_color002" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.calendar.EventInfoScrollView android:id="@id/scrollview" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:background="@touchwiz:color/tw_color002" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <View style="@style/EditEvent_Seperator" />
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@id/color" android:layout_width="5.3299866dip" android:layout_height="fill_parent" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/alarm_tone_container" android:background="@drawable/calendars_list_selector_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:id="@id/calendar_name" android:layout_marginTop="8.0dip" style="@style/EventInfo_TextStyle_Title" />
+                    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip">
+                        <ImageView android:id="@id/calendar_type" android:layout_width="24.0dip" android:layout_height="24.0dip" />
+                        <TextView android:id="@id/dday" android:layout_marginLeft="5.3299866dip" style="@style/TextStyle_2" />
+                    </LinearLayout>
+                    <View android:layout_width="fill_parent" android:layout_height="7.799988dip" />
+                </LinearLayout>
+            </LinearLayout>
+            <View style="@style/EditEvent_Seperator" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="7.799988dip">
+                <ImageView android:id="@id/typeimage" android:visibility="gone" android:layout_width="53.329987dip" android:layout_height="53.329987dip" android:layout_marginLeft="5.3299866dip" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="@drawable/calendars_list_selector_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:id="@id/title" style="@style/EventInfo_TextStyle_1" />
+                    <TextView android:id="@id/infoview_starttime" style="@style/EventInfo_TextStyle_2" />
+                    <TextView android:id="@id/infoview_endtime" style="@style/EventInfo_TextStyle_2" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/location_container" android:background="@drawable/calendars_list_selector_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <View style="@style/EditEvent_Seperator" />
+                <TextView android:layout_marginTop="8.0dip" android:text="@string/location_label" style="@style/EventInfo_TextStyle_2" />
+                <TextView android:id="@id/location" style="@style/EventInfo_TextStyle_1" />
+                <ImageView android:id="@id/map" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="6.659973dip" android:layout_marginTop="0.0dip" android:layout_marginRight="6.659973dip" android:layout_marginBottom="7.799988dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/participants_container" android:background="@drawable/calendars_list_selector_background" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/local_participants_container" android:background="@drawable/calendars_list_selector_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <View style="@style/EditEvent_Seperator" />
+                <TextView android:layout_marginTop="8.0dip" android:text="@string/attendees_label" style="@style/EventInfo_TextStyle_2" />
+                <TextView android:id="@id/infoview_attendees" android:layout_marginBottom="7.799988dip" style="@style/EventInfo_TextStyle_1" />
+            </LinearLayout>
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/reminder_container" android:background="@drawable/calendars_list_selector_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <View style="@style/EditEvent_Seperator" />
+                <TextView android:layout_marginTop="8.0dip" android:text="@string/alarm" style="@style/EventInfo_TextStyle_2" />
+                <TextView android:id="@id/reminder" android:layout_marginBottom="7.799988dip" style="@style/EventInfo_TextStyle_1" />
+            </LinearLayout>
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/repeat_container" android:background="@drawable/calendars_list_selector_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <View style="@style/EditEvent_Seperator" />
+                <TextView android:layout_marginTop="8.0dip" android:text="@string/repeat" style="@style/EventInfo_TextStyle_2" />
+                <TextView android:id="@id/repeat" android:layout_marginBottom="7.799988dip" style="@style/EventInfo_TextStyle_1" />
+            </LinearLayout>
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/description_container" android:background="@drawable/calendars_list_selector_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <View style="@style/EditEvent_Seperator" />
+                <TextView android:visibility="gone" android:layout_marginTop="8.0dip" android:text="@string/description_label" style="@style/EventInfo_TextStyle_2" />
+                <TextView android:textSize="16.0sp" android:id="@id/description" android:layout_marginTop="8.0dip" android:layout_marginBottom="7.799988dip" style="@style/EventInfo_TextStyle_1" />
+            </LinearLayout>
+            <View style="@style/EditEvent_Seperator" />
+        </LinearLayout>
+    </com.android.calendar.EventInfoScrollView>
+    <View android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <include layout="@layout/softkeys" />
+</LinearLayout>

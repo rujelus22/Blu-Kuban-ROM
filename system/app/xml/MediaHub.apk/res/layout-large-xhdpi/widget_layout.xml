@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_layout_port" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/rl_view_content" android:background="@drawable/widget_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="15.0sp" android:textColor="@color/color29" android:gravity="center" android:id="@id/widget_title_text" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_marginTop="7.5dip" android:text="@string/whats_new" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <RelativeLayout android:id="@id/rl_leftmost" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="27.0dip" android:layout_marginTop="18.0dip">
+                        <ImageView android:id="@id/iv_leftmost" android:layout_width="102.0dip" android:layout_height="145.0dip" android:src="@drawable/empty_image" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="40.0dip" android:layout_height="140.0dip" android:layout_marginLeft="62.0dip" android:src="@drawable/widget_5" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="102.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:src="@drawable/widget_4" android:scaleType="fitXY" android:layout_below="@id/iv_leftmost" />
+                    </RelativeLayout>
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="27.0dip" android:layout_marginTop="18.0dip">
+                        <ImageView android:id="@id/iv_left" android:layout_width="102.0dip" android:layout_height="145.0dip" android:src="@drawable/empty_image" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="40.0dip" android:layout_height="145.0dip" android:layout_marginLeft="62.0dip" android:src="@drawable/widget_5" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="102.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:src="@drawable/widget_4" android:scaleType="fitXY" android:layout_below="@id/iv_left" />
+                    </RelativeLayout>
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip">
+                        <ImageView android:id="@id/iv_center" android:layout_width="107.0dip" android:layout_height="156.0dip" android:src="@drawable/empty_image" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="107.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:src="@drawable/widget_2" android:scaleType="fitXY" android:layout_below="@id/iv_center" />
+                    </RelativeLayout>
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="18.0dip">
+                        <ImageView android:id="@id/iv_right" android:layout_width="102.0dip" android:layout_height="145.0dip" android:src="@drawable/empty_image" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="40.0dip" android:layout_height="145.0dip" android:src="@drawable/widget_6" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="102.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:src="@drawable/widget_4" android:scaleType="fitXY" android:layout_below="@id/iv_right" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/rl_rightmost" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="18.0dip">
+                        <ImageView android:id="@id/iv_rightmost" android:visibility="gone" android:layout_width="102.0dip" android:layout_height="145.0dip" android:src="@drawable/empty_image" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="40.0dip" android:layout_height="145.0dip" android:src="@drawable/widget_6" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="102.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:src="@drawable/widget_4" android:scaleType="fitXY" android:layout_below="@id/iv_rightmost" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/widget_updated_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.5dip" android:layout_marginRight="3.5dip" android:layout_marginBottom="2.0dip" android:layout_alignParentBottom="true">
+                <TextView android:textSize="12.0sp" android:textColor="@color/color29" android:gravity="right" android:id="@id/update_date" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="3.5dip" android:layout_weight="1.0" />
+                <ImageView android:state_enabled="true" android:id="@id/refresh" android:visibility="visible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.5dip" android:src="@drawable/widget_bt_refresh" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_view_network_detected" android:background="@drawable/widget_bg_01" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="21.0sp" android:textColor="@color/color29" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:text="@string/no_network_detected" />
+            <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25.0dip">
+                <Button android:textSize="16.0dip" android:textColor="@color/color29" android:gravity="center" android:id="@id/btn_retry" android:background="@drawable/selector_btn_widget" android:layout_width="114.0dip" android:layout_height="38.5dip" android:text="@string/retry" />
+                <Button android:textSize="16.0dip" android:textColor="@color/color29" android:gravity="center" android:id="@id/btn_cancel" android:background="@drawable/selector_btn_widget" android:layout_width="114.0dip" android:layout_height="38.5dip" android:text="@string/cancel" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_view_using_mediahub" android:background="@drawable/widget_bg_01" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="21.0sp" android:textColor="@color/color29" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:text="@string/for_using_mediahub" />
+            <Button android:textSize="16.0dip" android:textColor="@color/color29" android:layout_gravity="center_horizontal" android:id="@id/btn_go_mediahub" android:background="@drawable/selector_btn_widget" android:layout_width="174.0dip" android:layout_height="38.5dip" android:layout_marginTop="25.0dip" android:text="@string/go_mediahub" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/progress_bar" android:visibility="gone" android:layout_width="31.0dip" android:layout_height="31.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="5.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+            <ProgressBar android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rl_layout_land" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/rl_view_content_land" android:background="@drawable/widget_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="14.0sp" android:textColor="@color/color29" android:gravity="center" android:id="@id/widget_title_text_land" android:layout_width="fill_parent" android:layout_height="16.669983dip" android:layout_marginTop="2.0dip" android:text="@string/whats_new" />
+                <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <RelativeLayout android:id="@id/rl_leftmost_land" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.6699829dip" android:layout_marginTop="-1.0dip">
+                        <ImageView android:id="@id/iv_leftmost_land" android:layout_width="68.0dip" android:layout_height="101.34dip" android:src="@drawable/empty_image" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="30.0dip" android:layout_height="101.34dip" android:layout_marginLeft="38.0dip" android:src="@drawable/widget_5" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="68.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:src="@drawable/widget_4" android:scaleType="fitXY" android:layout_below="@id/iv_leftmost_land" />
+                    </RelativeLayout>
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="9.329987dip" android:layout_marginTop="-1.0dip">
+                        <ImageView android:id="@id/iv_left_land" android:layout_width="68.0dip" android:layout_height="101.34dip" android:src="@drawable/empty_image" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="30.0dip" android:layout_height="101.34dip" android:layout_marginLeft="38.0dip" android:src="@drawable/widget_5" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="68.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:src="@drawable/widget_4" android:scaleType="fitXY" android:layout_below="@id/iv_left_land" />
+                    </RelativeLayout>
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.669983dip" android:layout_marginTop="-2.0dip">
+                        <ImageView android:id="@id/iv_center_land" android:layout_width="79.34dip" android:layout_height="114.66998dip" android:src="@drawable/empty_image" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="79.34dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:src="@drawable/widget_2" android:scaleType="fitXY" android:layout_below="@id/iv_center_land" />
+                    </RelativeLayout>
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="-1.0dip">
+                        <ImageView android:id="@id/iv_right_land" android:layout_width="68.0dip" android:layout_height="101.34dip" android:src="@drawable/empty_image" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="30.0dip" android:layout_height="101.34dip" android:src="@drawable/widget_6" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="68.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:src="@drawable/widget_4" android:scaleType="fitXY" android:layout_below="@id/iv_right_land" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/rl_rightmost_land" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.669983dip" android:layout_marginTop="-1.0dip">
+                        <ImageView android:id="@id/iv_rightmost_land" android:layout_width="68.0dip" android:layout_height="101.34dip" android:src="@drawable/empty_image" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="30.0dip" android:layout_height="101.34dip" android:src="@drawable/widget_6" android:scaleType="fitXY" />
+                        <ImageView android:layout_width="68.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:src="@drawable/widget_4" android:scaleType="fitXY" android:layout_below="@id/iv_rightmost_land" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/widget_updated_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.3299866dip" android:layout_marginRight="3.3299866dip" android:layout_marginBottom="2.669983dip" android:layout_alignParentBottom="true">
+                <TextView android:textSize="9.0sp" android:textColor="@color/color29" android:gravity="right" android:id="@id/update_date_land" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="3.3299866dip" android:layout_weight="1.0" />
+                <ImageView android:state_enabled="true" android:id="@id/refresh_land" android:visibility="visible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.3299866dip" android:src="@drawable/widget_bt_refresh" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_view_network_detected_land" android:background="@drawable/widget_bg_01" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="16.669983sp" android:textColor="@color/color29" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/no_network_detected" />
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="29.329987dip" android:layout_marginTop="24.0dip">
+                    <Button android:textSize="12.0dip" android:textColor="@color/color29" android:gravity="center" android:id="@id/btn_retry_land" android:background="@drawable/selector_btn_widget" android:layout_width="86.0dip" android:layout_height="29.329987dip" android:text="@string/retry" />
+                    <Button android:textSize="12.0dip" android:textColor="@color/color29" android:gravity="center" android:id="@id/btn_cancel_land" android:background="@drawable/selector_btn_widget" android:layout_width="86.0dip" android:layout_height="29.329987dip" android:text="@string/cancel" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_view_using_mediahub_land" android:background="@drawable/widget_bg_01" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="16.669983sp" android:textColor="@color/color29" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/for_using_mediahub" />
+                <Button android:textSize="12.0dip" android:textColor="@color/color29" android:layout_gravity="center_horizontal" android:id="@id/btn_go_mediahub_land" android:background="@drawable/selector_btn_widget" android:layout_width="138.66998dip" android:layout_height="29.329987dip" android:layout_marginTop="24.0dip" android:text="@string/go_mediahub" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:id="@id/progress_bar_land" android:visibility="gone" android:layout_width="20.669983dip" android:layout_height="20.669983dip" android:layout_marginRight="6.669983dip" android:layout_marginBottom="5.3299866dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+            <ProgressBar android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

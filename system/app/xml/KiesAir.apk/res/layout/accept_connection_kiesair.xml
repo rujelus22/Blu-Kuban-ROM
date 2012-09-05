@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/accept_connection_kiesair" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="#ff1d364d" android:layout_width="wrap_content" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TableLayout android:layout_gravity="center" android:orientation="vertical" android:background="#ff1d364d" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="1"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <TableRow>
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="16.75dip" android:layout_marginBottom="12.059998dip"
+                  xmlns:android="http://schemas.android.com/apk/res/android">
+                    <TextView android:textSize="22.0dip" android:textColor="@android:color/white" android:gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="12.059998dip" android:text="@string/access_request" />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+        <TextView android:background="#ff4e677e" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="5.3599854dip" android:layout_marginRight="5.3599854dip" />
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:background="#ff1d364d" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <TextView android:textSize="22.0dip" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/allow_access_from" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.059998dip" android:layout_marginBottom="3.0dip" android:text="@string/allow_access_from" />
+            <TextView android:textSize="22.0dip" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/device_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginBottom="3.0dip" />
+            <TextView android:textSize="18.0dip" android:textColor="@android:color/white" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/network_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginBottom="5.0dip" android:singleLine="true" />
+            <TextView android:textSize="22.0dip" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/current_connection_will_be_denied" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="@string/current_connection_will_be_denied" />
+        </LinearLayout>
+        <TextView android:background="#ff4e677e" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="5.3599854dip" android:layout_marginRight="5.3599854dip" />
+        <TableLayout android:layout_gravity="center" android:orientation="vertical" android:background="#ff1d364d" android:paddingBottom="10.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:stretchColumns="1" android:shrinkColumns="1">
+            <TableRow android:background="#ff1d364d" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <CheckBox android:textSize="18.0dip" android:textColor="@android:color/white" android:layout_gravity="top|left|center" android:id="@id/checkboxRemember" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="@string/securityManagerChallange_remember" android:soundEffectsEnabled="true" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="bottom" android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TableLayout android:background="#ff1d364d" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="0,1">
+            <TableRow android:background="#ff4f4f4f">
+                <Button android:layout_gravity="center_vertical" android:id="@id/allowbutton" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="2.0dip" android:text="@string/allow" android:layout_weight="1.0" />
+                <Button android:layout_gravity="center_vertical" android:id="@id/denybutton" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="2.0dip" android:text="@string/deny" android:layout_weight="1.0" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,53 @@
+.class public Lcom/google/android/finsky/receivers/BootCompletedReceiver;
+.super Landroid/content/BroadcastReceiver;
+.source "BootCompletedReceiver.java"
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 19
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .registers 6
+    .parameter "context"
+    .parameter "intent"
+
+    .prologue
+    .line 22
+    invoke-static {p1}, Lcom/google/android/finsky/api/AccountHandler;->getAccounts(Landroid/content/Context;)[Landroid/accounts/Account;
+
+    move-result-object v0
+
+    .line 23
+    .local v0, accounts:[Landroid/accounts/Account;
+    array-length v1, v0
+
+    if-nez v1, :cond_8
+
+    .line 38
+    :goto_7
+    return-void
+
+    .line 30
+    :cond_8
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/google/android/finsky/receivers/BootCompletedReceiver$1;
+
+    invoke-direct {v2, p0, p1}, Lcom/google/android/finsky/receivers/BootCompletedReceiver$1;-><init>(Lcom/google/android/finsky/receivers/BootCompletedReceiver;Landroid/content/Context;)V
+
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/FinskyApp;->clearCacheAsync(Ljava/lang/Runnable;)V
+
+    goto :goto_7
+.end method

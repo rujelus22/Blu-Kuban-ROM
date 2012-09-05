@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_front_page" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.sdgtl.mediahub.spr.customview.CoverFlowGL android:gravity="top" android:id="@id/glsf_cover_flow" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:spacing="0.0dip" />
+    </RelativeLayout>
+    <TextView android:textSize="20.0sp" android:textColor="@color/color29" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="42.669983dip" android:text="@string/whats_new" android:layout_centerHorizontal="true" />
+    <FrameLayout android:gravity="center" android:id="@id/fl_promotion" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="115.0dip" android:layout_alignParentBottom="true">
+        <com.sdgtl.mediahub.spr.customview.HefeGallery android:id="@id/category_gallery" android:layout_width="fill_parent" android:layout_height="wrap_content" android:spacing="6.669983dip" android:unselectedAlpha="1.0" />
+    </FrameLayout>
+    <RelativeLayout android:id="@id/rl_detail_popup_background" android:background="@color/color2_50" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="-56.0dip">
+        <FrameLayout android:id="@id/fl_detail_popup" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <include layout="@layout/common_progress_white" />
+    <ImageView android:id="@id/iv_category" android:background="@drawable/selector_softkey_btn_03" android:padding="0.0dip" android:focusable="true" android:clickable="true" android:layout_width="124.0dip" android:layout_height="44.669983dip" android:layout_marginBottom="28.0dip" android:src="@drawable/category_icon" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+</RelativeLayout>

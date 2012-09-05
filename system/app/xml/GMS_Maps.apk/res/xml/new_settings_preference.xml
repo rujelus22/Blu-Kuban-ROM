@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:key="sign_in" />
+    <ListPreference android:key="switch_account" />
+    <Preference android:key="map_tile_settings" />
+    <Preference android:key="location_settings" />
+    <Preference android:key="labs_settings" />
+    <PreferenceCategory android:key="info">
+        <Preference android:key="info_legal" />
+        <Preference android:key="info_feedback" />
+        <Preference android:key="info_about" />
+    </PreferenceCategory>
+</PreferenceScreen>

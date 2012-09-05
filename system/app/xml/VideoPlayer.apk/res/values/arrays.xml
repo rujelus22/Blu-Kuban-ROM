@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="outdoor_visibility">
+        <item>@string/on</item>
+        <item>@string/off</item>
+    </array>
+    <array name="color_tone">
+        <item>@string/normal</item>
+        <item>@string/warm</item>
+        <item>@string/cold</item>
+    </array>
+    <array name="subtitle_setting_size">
+        <item>@string/video_subtitle_size_large</item>
+        <item>@string/video_subtitle_size_medium</item>
+        <item>@string/video_subtitle_size_small</item>
+    </array>
+    <array name="sortby_menu">
+        <item>@string/sortybyname</item>
+        <item>@string/sortybydate</item>
+        <item>@string/sortybysize</item>
+        <item>@string/sortybytype</item>
+    </array>
+    <array name="autoplay_settings">
+        <item>@string/autoplayeon</item>
+        <item>@string/autoplayeoff</item>
+    </array>
+    <array name="list_popup_items">
+        <item>@string/popup_ShareVia</item>
+        <item>@string/popup_Delete</item>
+        <item>@string/popup_Details</item>
+    </array>
+    <array name="list_popup_items_drm">
+        <item>@string/popup_Delete</item>
+        <item>@string/popup_Details</item>
+    </array>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/title_bar_texture_dark" android:layout_alignParentRight="true" />
+        <ImageView android:id="@id/id_logo" style="@style/ActionBarPackLogo" />
+        <TextView android:id="@id/subtitle" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sub Title" android:layout_toRightOf="@id/id_logo" android:layout_alignBottom="@id/id_logo" style="@style/ActionBarCompatSubText" />
+        <TextView android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name" android:layout_toRightOf="@id/id_logo" android:layout_above="@id/subtitle" android:layout_centerVertical="true" style="@style/ActionBarCompatText" />
+    </RelativeLayout>
+</merge>

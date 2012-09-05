@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.youtube.coreicecream.ui.ActionBarWorkspace android:id="@id/workspace" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:yt="http://schemas.android.com/apk/res/com.google.android.youtube">
+    <com.google.android.youtube.app.honeycomb.ui.LiveTeaserVideosPagedListView android:id="@id/videos" android:tag="@string/tab_feed" android:layout_width="fill_parent" android:layout_height="fill_parent" yt:textWhenEmpty="@string/no_videos_found" yt:statusView="@layout/list_status_item" />
+    <ListView android:id="@id/categories" android:tag="@string/tab_categories" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@drawable/divider_horizontal" />
+    <LinearLayout android:orientation="vertical" android:tag="@string/tab_account" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/my_channel_header" />
+        <include layout="@layout/my_channel_stack_buttons" />
+    </LinearLayout>
+</com.google.android.youtube.coreicecream.ui.ActionBarWorkspace>

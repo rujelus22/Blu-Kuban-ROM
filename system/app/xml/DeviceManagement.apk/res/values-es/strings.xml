@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Actualizaciones del Sistema</string>
+    <string name="nothing" />
+    <string name="base_fumo">Actualización del firmware</string>
+    <string name="base_dc">Actualización Profile</string>
+    <string name="base_prl">Actualización PRL</string>
+    <string name="base_call_err">Llamada activa en el progreso. Por favor, inténtelo de nuevo tras la llamada ha terminado.</string>
+    <string name="base_active">"Período de sesiones en Progreso
+
+Por favor, espere..."</string>
+    <string name="reboot_message">Dispositivo se reiniciará...</string>
+    <string name="attention">Atención</string>
+    <string name="reset_timer_notice">Su dispositivo se restablecerá en</string>
+    <string name="reset_timer_unit">segundos</string>
+    <string name="emergency_call">Llamada de Emergencia</string>
+    <string name="nia_check">"La red está preparando sus servicios.
+
+Por favor, espere..."</string>
+    <string name="hfa">Manos Libres Activación</string>
+    <string name="dp">Datos Provisiones</string>
+    <string name="prl">PRL Actualización</string>
+    <string name="fumo">Actualización del firmware</string>
+    <string name="upd_sw">Actualización del software</string>
+    <string name="cancel">Cancelar</string>
+    <string name="restart">Reiniciar</string>
+    <string name="retry">Reintentar</string>
+    <string name="alert_dialog_ok">Aceptar</string>
+    <string name="manual">Manual</string>
+    <string name="ret_activate">Activar</string>
+    <string name="install">Instale</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="welcome">Bienvenido a Sprint</string>
+    <string name="HF_activate_Success">El dispositivo ha sido activado.</string>
+    <string name="Press_OK">Pulse ACEPTAR para seguir</string>
+    <string name="contacingnet">Ahora vamos a activar el dispositivo. Va a conectar a la red. Por favor, espere...</string>
+    <string name="activate">Ahora vamos a activar el dispositivo.</string>
+    <string name="actinfounav">La activación no se dispone de información. Nos volverá a intentar en:</string>
+    <string name="secs">xx: segundo</string>
+    <string name="retry_number">Reintentar xx de 5</string>
+    <string name="retry_failed">"Su activación no se pudo completar. Por favor, inténtelo de nuevo más tarde.
+
+Si el problema persiste,Puede que necesite contacto Servicio al Cliente."</string>
+    <string name="retry_1">Lugar para reintentar...</string>
+    <string name="retry_2">Si no está trabajando ya con un representante seleccione Activar ahora.</string>
+    <string name="congrats">Felicidades!</string>
+    <string name="dc_check">"La red está preparando sus servicios.
+
+Por favor, espere..."</string>
+    <string name="dc_update_error">"El perfil actualización no pudo completarse. Por favor, inténtelo de nuevo más tarde.
+
+Si el problema persiste,Puede que necesite contacto Servicio al Cliente.
+
+Error: ###"</string>
+    <string name="dc_updated">"El perfil ha sido actualizado. 
+Pulse ACEPTAR para seguir."</string>
+    <string name="sl_dc_updated">El perfil ha sido actualizado. Pulse ACEPTAR para seguir.</string>
+    <string name="dc_no_update">No hay Perfil Actualización disponible.</string>
+    <string name="dc_airplane_err">Apague el modo de avión a utilizar los servicios de datos.</string>
+    <string name="prl_check">Control de la actualización de PRL. Por favor, espere...</string>
+    <string name="prl_update_error">"La actualización de PRL no se pudo completar. Por favor, inténtelo de nuevo más tarde.
+
+Si el problema persiste,Puede que necesite contacto Servicio al Cliente.
+
+Error: ###"</string>
+    <string name="prl_updated">"La PRL se ha actualizado. 
+Pulse ACEPTAR para seguir."</string>
+    <string name="sl_prl_updated">La PRL se ha actualizado. Pulse ACEPTAR para seguir.</string>
+    <string name="prl_no_update">No hay actualizaciones disponibles PRL.</string>
+    <string name="prl_airplane_err">Apague el modo avión para actualizar PRL.</string>
+    <string name="fumo_batt_check">BATERÍA BAJA : Por favor, recargue la batería completamente antes de actualizar el firmware.</string>
+    <string name="fumo_check">Control de la actualización de software. Por favor, espere...</string>
+    <string name="fumo_no_upd">No actualización de Firmware está disponible</string>
+    <string name="fumo_dld">"Descarga de la actualización del firmware...
+
+Se le pedirá a instalar la actualización de la siguiente pantalla."</string>
+    <string name="sl_fumo_dld">Descarga de la actualización del firmware. Se le pedirá a instalar la actualización de la siguiente pantalla.</string>
+    <string name="upd_text1">"Una nueva actualización de software está disponible para su dispositivo!
+
+Description
+
+La actualización tendrá XX minutos para completar.
+
+¿Le gustaría que siga?"</string>
+    <string name="fumo_reset">Reajuste Teléfono...</string>
+    <string name="fumo_send_status">Informes de actualización de estado al servidor...</string>
+    <string name="fumo_cancel_dld_status">"Descargar se está cancelando.
+Por favor, espere..."</string>
+    <string name="fumo_cancel_upd_status">"Actualización se está cancelando.
+Por favor, espere..."</string>
+    <string name="fumo_dld_err">Errores en la Descarga. Por favor, inténtelo de nuevo más tarde.</string>
+    <string name="fumo_airplane_err">Apague el modo avión para actualizar el firmware.</string>
+    <string name="fumo_update_error">"La actualización de Firmware no pudo completarse. Por favor, inténtelo de nuevo más tarde.
+
+Si el problema persiste,Puede que necesite contacto Servicio al Cliente.
+
+Error: ###"</string>
+    <string name="fumo_update_defer_message">"El paquete se ha salvado en el dispositivo.
+
+Para actualizar el software en una fecha posterior, Seleccione Actualizar software bajo el menú Preferencias"</string>
+    <string name="fumo_update_conf_message">Actualización completa...</string>
+    <string name="android_update_completed">Android actualización correcta</string>
+    <string name="android_update_finalizing">Finalizando actualización de Android.</string>
+    <string name="input_password">Entrará MSL</string>
+    <string name="ok_button">Aceptar</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="omadm_Activity_Name">OMA DM Settings</string>
+    <string name="omadm_Acc_Name">DM Account Name</string>
+    <string name="omadm_Srvr_Addr">Server Address</string>
+    <string name="omadm_Srvr_Addr_Type">Server Address Type</string>
+    <string name="omadm_Srvr_Port">Server Port</string>
+    <string name="omadm_Srvr_ID">Server ID</string>
+    <string name="omadm_Client_Name">Client Name</string>
+    <string name="omadm_Auth_Pref">Authorization Preference</string>
+    <string name="omadm_Srvr_Pwd">Server Password</string>
+    <string name="omadm_Srvr_Nonce">Server Nonce</string>
+    <string name="omadm_Cli_Pwd">Client Password</string>
+    <string name="omadm_Cli_Nonce">Client Nonce</string>
+    <string name="empty">empty</string>
+    <string name="omadm_ui_mode">Enter UI Mode :</string>
+    <string name="omadm_ses_id">Enter Session Id :</string>
+    <string name="omadm_wap_push_button">Simulate Wap Push</string>
+    <string name="credential_settings">Credential Settings</string>
+    <string name="dm_logging">DM Logging</string>
+    <string name="simulate_nia">Simulate NIA</string>
+    <string name="generate_credentials">Generate Credentials</string>
+    <string name="restore">Restore</string>
+    <string name="enable_proxy">Enable Proxy</string>
+    <string name="active_mip_slot">Active MIP slot</string>
+    <string name="generate_creds_conf_msg">"Press 'OK' to Generate Credentials. Press 'Cancel to quit."</string>
+    <string name="restore_conf_msg">"Press 'OK' to Generate Credentials. Press 'Cancel to quit."</string>
+    <string name="cidc_blocked">Actualizar el perfil está actualmente bloqueado.</string>
+    <string name="ciprl_blocked">La actualización de la PRL es actualmente bloqueado.</string>
+    <string name="cifumo_blocked">La actualización del firmware se encuentra actualmente bloqueado.</string>
+    <string name="err_general">Error</string>
+    <string name="err_internal">Error interno</string>
+    <string name="err_instance">Ejemplo de error</string>
+    <string name="err_memory">Memoria baja</string>
+    <string name="err_cli_auth">Error de autenticación de clientes</string>
+    <string name="err_srvr_auth">Error de autenticación del servidor</string>
+    <string name="err_conn">Error de conexión</string>
+    <string name="err_ipc">IPC de error</string>
+    <string name="err_service">N Servicio de error</string>
+    <string name="err_unknown">Error desconocido</string>
+    <string name="update_android">Actualización de software de Samsung</string>
+    <string name="activate_device">Activar el dispositivo!!</string>
+    <string name="notification_not_completed">Activación no completada</string>
+    <string name="notification_select_retry">Selecciona esto para reintentar el proceso de activación.</string>
+</resources>

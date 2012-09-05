@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/wifi_ap_settings_category" android:key="wifi_ap_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/wifi_ap_connected_device" android:key="wifi_ap_connected_devices" />
+    <PreferenceCategory android:title="@string/mobileap_instruction_inactivate_title" />
+</PreferenceScreen>

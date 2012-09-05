@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/message_compose_action_bar_custom" android:background="@drawable/hub_title_bg" android:padding="0.0px" android:layout_width="fill_parent" android:layout_height="78.0px" android:layout_margin="0.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="24.0px" android:textColor="@color/amoled_color1" android:ellipsize="end" android:gravity="left|center" android:id="@id/header_title" android:paddingLeft="12.0px" android:paddingRight="10.0px" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_margin="0.0px" android:text="@string/notification_new_title" android:singleLine="true" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <RelativeLayout android:id="@id/dummy_layout" android:padding="0.0px" android:layout_width="10.0px" android:layout_height="fill_parent" android:layout_margin="0.0px" android:layout_alignParentRight="true" />
+    <RelativeLayout android:id="@id/header_button_icon_mail" android:background="@drawable/message_compose_header_button_icon_bg_white" android:focusable="true" android:layout_width="71.0px" android:layout_height="54.0px" android:layout_marginLeft="0.0px" android:layout_toLeftOf="@id/dummy_layout" android:layout_centerVertical="true">
+        <ImageView android:layout_gravity="center" android:padding="0.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="0.0px" android:src="@drawable/email_send_white" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/header_button_icon_cancel" android:background="@drawable/message_compose_header_button_icon_bg_white" android:focusable="true" android:layout_width="71.0px" android:layout_height="54.0px" android:layout_marginLeft="0.0px" android:layout_toLeftOf="@id/header_button_icon_mail" android:layout_centerVertical="true">
+        <ImageView android:layout_gravity="center" android:padding="0.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="0.0px" android:src="@drawable/email_cancel_white" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/header_button_icon_save" android:background="@drawable/message_compose_header_button_icon_bg_white" android:focusable="true" android:layout_width="71.0px" android:layout_height="54.0px" android:layout_marginLeft="0.0px" android:layout_toLeftOf="@id/header_button_icon_cancel" android:layout_centerVertical="true">
+        <ImageView android:layout_gravity="center" android:padding="0.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="0.0px" android:src="@drawable/email_save_white" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/header_button_icon_clip" android:background="@drawable/message_compose_header_button_icon_bg_white" android:focusable="true" android:layout_width="71.0px" android:layout_height="54.0px" android:layout_marginLeft="0.0px" android:layout_toLeftOf="@id/header_button_icon_save" android:layout_centerVertical="true">
+        <ImageView android:layout_gravity="center" android:padding="0.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="0.0px" android:src="@drawable/email_attach_white" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/header_button_icon_smemo" android:layout_width="0.0px" android:layout_height="0.0px" />
+</RelativeLayout>

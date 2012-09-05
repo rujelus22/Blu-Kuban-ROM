@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voice_effects_entries">
+        <item>Biasa</item>
+        <item>Suara dalam</item>
+        <item>Suara tinggi</item>
+        <item>Suara nipis</item>
+        <item>Suara tebal</item>
+        <item>Suara robot</item>
+        <item>Kesan gas helium</item>
+    </string-array>
+</resources>

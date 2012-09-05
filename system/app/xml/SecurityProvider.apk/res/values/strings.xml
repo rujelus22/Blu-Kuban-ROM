@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Security Storage</string>
+    <string name="provider_label">Security</string>
+    <string name="permgrouplab_security">"Services that control device's security settings"</string>
+    <string name="permgroupdesc_security">"Allows an application to read or change current device's security settings"</string>
+    <string name="permlab_readPolicies">read Security Policies</string>
+    <string name="permdesc_readPolicies">Allows an application to read current security policies</string>
+    <string name="permlab_writePolicies">write Security Policies</string>
+    <string name="permdesc_writePolicies">Allows application to write or change current security policies</string>
+</resources>

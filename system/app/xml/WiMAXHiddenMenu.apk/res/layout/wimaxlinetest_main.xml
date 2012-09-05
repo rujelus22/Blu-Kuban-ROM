@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/WiMAXLineTesthello" />
+    <Button android:textSize="17.0sp" android:id="@id/Button01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0sp" android:text="@string/write_EEPROM" />
+    <Button android:textSize="17.0sp" android:id="@id/Button02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0sp" android:text="@string/power_on" />
+    <Button android:textSize="17.0sp" android:id="@id/Button03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0sp" android:text="@string/power_off" />
+    <RelativeLayout android:id="@id/RelativeLayout01" android:paddingBottom="5.0sp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Button android:textSize="17.0sp" android:id="@id/Button04" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/write_mac" android:layout_toRightOf="@id/Button04" />
+        <EditText android:textSize="20.0sp" android:id="@id/EditText01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="150.0sp" android:singleLine="true" android:layout_toRightOf="@id/Button04" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/RelativeLayout02" android:paddingBottom="5.0sp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Button android:textSize="17.0sp" android:id="@id/Button05" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/read_mac" />
+        <TextView android:textSize="20.0sp" android:id="@id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/zeroes_twelve" android:layout_toRightOf="@id/Button05" />
+    </RelativeLayout>
+    <Button android:textSize="17.0sp" android:id="@id/Button06" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0sp" android:text="@string/check_authentication" />
+    <Button android:textSize="17.0sp" android:id="@id/Button07" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/check_calibration" />
+</LinearLayout>

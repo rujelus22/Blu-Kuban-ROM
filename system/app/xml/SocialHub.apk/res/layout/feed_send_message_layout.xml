@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/layout_send_message" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content" android:fillViewport="true" android:layout_alignParentTop="true" android:layout_alignParentBottom="true">
+            <LinearLayout android:orientation="vertical" android:background="@drawable/msg_bg" android:paddingLeft="7.0px" android:paddingRight="7.0px" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:id="@id/recipients_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="true">
+                    <TextView android:textColor="#ffffffff" android:gravity="center" android:paddingTop="18.0px" android:layout_width="54.0px" android:layout_height="46.0px" android:text="@string/sender_to" />
+                    <com.sec.android.socialhub.view.RecipientsListLayout android:id="@id/recipients_list_add" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/recipients_field" android:paddingTop="10.0px" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <MultiAutoCompleteTextView android:enabled="false" android:textSize="24.0px" android:textColor="#ff000000" android:id="@id/recipient_editText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/sender_to" android:singleLine="true" android:layout_weight="1.0" />
+                    <com.sec.android.socialhub.widget.HubOneClickImageButton android:layout_gravity="center_vertical" android:id="@id/launch_contact" android:background="@drawable/btn_send_message" android:paddingBottom="8.0px" android:focusable="true" android:layout_width="61.329987dip" android:layout_height="48.0dip" android:src="@drawable/contact_button" android:scaleType="center" />
+                </LinearLayout>
+                <LinearLayout android:id="@id/subject_field" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <EditText android:textSize="24.0px" android:textColor="#ff000000" android:id="@id/subject_field_editText" android:focusable="true" android:layout_width="fill_parent" android:layout_height="68.0px" android:hint="@string/enter_subject" android:singleLine="true" android:capitalize="sentences" />
+                </LinearLayout>
+                <LinearLayout android:background="#ff44515e" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:background="#ffaab7c4" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginBottom="8.0px" />
+                <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <com.sec.android.socialhub.view.EditTextEx android:textSize="24.0px" android:textColor="#ff000000" android:gravity="top" android:orientation="vertical" android:id="@id/send_message_editText" android:focusable="true" android:addStatesFromChildren="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/enter_your_message_here" android:maxLength="100000" android:capitalize="sentences" android:layout_weight="1.0" />
+                    <LinearLayout android:orientation="vertical" android:id="@id/softkeyleft_buttons" android:layout_width="62.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.3299866dip" android:layout_marginRight="1.3299866dip" android:layout_weight="0.0">
+                        <TextView android:textSize="20.0px" android:textColor="#ffc9c9c9" android:gravity="right" android:id="@id/common_softkey_left_bounce" android:paddingLeft="3.0px" android:paddingRight="5.0px" android:visibility="gone" android:layout_width="62.0dip" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+                        <Button android:textSize="16.0sp" android:id="@id/common_softkey_left_button_send" android:background="@drawable/btn_send_message" android:layout_width="62.0dip" android:layout_height="48.0dip" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

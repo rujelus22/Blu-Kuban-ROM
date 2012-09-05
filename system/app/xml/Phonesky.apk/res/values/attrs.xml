@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="childBackgroundDrawable" format="reference" />
+    <attr name="max_height" format="dimension" />
+    <attr name="content" format="reference" />
+    <attr name="contentId" format="reference" />
+    <attr name="decoration_position">
+        <flag name="left" value="0x00000001" />
+        <flag name="right" value="0x00000002" />
+    </attr>
+    <attr name="use_whitescale" format="boolean" />
+    <attr name="max_width" format="dimension" />
+    <attr name="max_content_width" format="dimension" />
+    <attr name="min_width_percent" format="float" />
+    <attr name="max_width_percent" format="float" />
+    <attr name="default_ratio" format="float" />
+</resources>

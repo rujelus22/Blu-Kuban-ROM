@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Almacen. de seguridad</string>
+    <string name="provider_label">Seguridad</string>
+    <string name="permgrouplab_security">Servicios que controlan los ajustes de seguridad del dispositivo</string>
+    <string name="permgroupdesc_security">Permite a una aplicación leer o cambiar los ajustes de seguridad del dispositivo actual</string>
+    <string name="permlab_readPolicies">Leer directivas de seguridad</string>
+    <string name="permdesc_readPolicies">Permite a una aplicación leer las directivas de seguridad actuales</string>
+    <string name="permlab_writePolicies">Escribir directivas de seguridad</string>
+    <string name="permdesc_writePolicies">Permite a una aplicación escribir o cambiar las directivas de seguridad actuales</string>
+</resources>

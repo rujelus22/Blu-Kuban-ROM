@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="17.0dip" android:textColor="#ffffffff" android:id="@id/line1_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="20.0dip" android:text="@string/download_line1" />
+        <TextView android:textSize="17.0dip" android:textColor="#ffffffff" android:id="@id/line2_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:text="@string/download_line2" />
+        <TextView android:textSize="17.0dip" android:textColor="#ffffffff" android:id="@id/line3_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:text="@string/download_line3" />
+        <TextView android:textSize="17.0dip" android:textColor="#ffffffff" android:id="@id/line4_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:text="@string/download_line4" />
+        <TextView android:textSize="17.0dip" android:textColor="#ffffffff" android:id="@id/line5_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="15.0dip" android:text="@string/download_line5" />
+        <ProgressBar android:id="@id/progress_transfer" android:layout_width="fill_parent" android:layout_height="5.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="5.0dip" android:max="100" android:progress="100" style="?android:attr/progressBarStyleHorizontal" />
+        <TextView android:textSize="15.0dip" android:textColor="#ffffffff" android:gravity="right" android:id="@id/progress_percent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="15.0dip" />
+    </LinearLayout>
+</ScrollView>

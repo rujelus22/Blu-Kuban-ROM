@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/preferences_general_title">
+        <CheckBoxPreference android:title="@string/preferences_hide_declined_title" android:key="preferences_hide_declined" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_alerts_title">
+        <ListPreference android:entries="@array/preferences_alert_type_labels" android:title="@string/preferences_alerts_type_title" android:key="preferences_alerts_type" android:defaultValue="@string/preferences_alerts_type_default" android:dialogTitle="@string/preferences_alerts_type_dialog" android:entryValues="@array/preferences_alert_type_values" />
+        <RingtonePreference android:layout="?android:preferenceLayoutChild" android:title="@string/preferences_alerts_ringtone_title" android:key="preferences_alerts_ringtone" android:defaultValue="default" android:ringtoneType="notification" />
+        <CheckBoxPreference android:layout="?android:preferenceLayoutChild" android:title="@string/preferences_alerts_vibrate_title" android:key="preferences_alerts_vibrate" android:defaultValue="false" />
+        <ListPreference android:entries="@array/preferences_default_reminder_labels" android:title="@string/preferences_default_reminder_title" android:key="preferences_default_reminder" android:defaultValue="@string/preferences_default_reminder_default" android:dialogTitle="@string/preferences_default_reminder_dialog" android:entryValues="@array/preferences_default_reminder_values" />
+    </PreferenceCategory>
+</PreferenceScreen>

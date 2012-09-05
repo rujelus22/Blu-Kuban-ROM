@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="floating_dialog_background">@android:drawable/screen_background_light</drawable>
+</resources>

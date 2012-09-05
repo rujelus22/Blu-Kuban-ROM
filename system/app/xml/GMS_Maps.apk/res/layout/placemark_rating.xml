@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:ellipsize="end" android:gravity="center" android:id="@id/ratingLabel" android:visibility="gone" android:layout_width="46.0dip" android:layout_height="wrap_content" android:singleLine="true" />
+    <TextView android:ellipsize="end" android:gravity="center" android:id="@id/rating" android:background="@drawable/search_list_score_bg" android:visibility="gone" android:layout_width="46.0dip" android:layout_height="27.0dip" android:singleLine="true" />
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rastreador móvil</string>
+    <string name="IMEI">IMEI</string>
+    <string name="Sender">Remitente</string>
+    <string name="Message">Conserve este mensaje</string>
+</resources>

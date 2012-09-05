@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="years_ago">
+        <item quantity="other">пре %1$d године(а)</item>
+        <item quantity="one">Пре 1 годину</item>
+    </plurals>
+    <plurals name="months_ago">
+        <item quantity="other">пре %1$d месеца(и)</item>
+        <item quantity="one">Пре 1 месец</item>
+    </plurals>
+    <plurals name="weeks_ago">
+        <item quantity="other">пре %1$d недеље(а)</item>
+        <item quantity="one">Пре 1 недељу</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">пре %1$d дана</item>
+        <item quantity="one">Пре 1 дана</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="other">пре %1$d сата(и)</item>
+        <item quantity="one">Пре 1 сат</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="other">пре %1$d минута</item>
+        <item quantity="one">Пре 1 минута</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="other">пре %1$d секунде(и)</item>
+        <item quantity="one">Пре 1 секунде</item>
+    </plurals>
+    <plurals name="recent_uploads">
+        <item quantity="other">нови отпремљени видео снимци</item>
+        <item quantity="one">нови отпремљени видео снимак</item>
+    </plurals>
+    <plurals name="recent_activity">
+        <item quantity="other">нови догађаји</item>
+        <item quantity="one">нови догађај</item>
+    </plurals>
+    <plurals name="playlist_size">
+        <item quantity="other">Видео снимака: %1$,d</item>
+        <item quantity="one">1 видео</item>
+    </plurals>
+</resources>

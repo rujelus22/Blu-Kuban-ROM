@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_edit_title_edit_group" android:id="@id/shortcutMenu1" android:title="@string/cradle_home_edit" />
+    <item android:id="@id/shortcutMenu3" android:title="@string/cradle_home_hide_shortcut" />
+    <item android:icon="@drawable/ic_menu_settings_account_weather_setting" android:id="@id/shortcutMenu2" android:title="@string/cradle_home_settings" />
+</menu>

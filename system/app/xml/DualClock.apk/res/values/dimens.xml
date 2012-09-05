@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="width_analog">320.0dip</dimen>
+    <dimen name="height_analog">200.0dip</dimen>
+    <dimen name="width_digital">160.0dip</dimen>
+    <dimen name="height_digital">200.0dip</dimen>
+</resources>

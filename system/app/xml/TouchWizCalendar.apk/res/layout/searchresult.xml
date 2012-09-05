@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/main" android:background="@touchwiz:color/tw_color002" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.android.calendar.AgendaListView android:id="@id/agenda_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <include android:id="@id/emptylist" layout="@layout/empty" />
+    </FrameLayout>
+</LinearLayout>

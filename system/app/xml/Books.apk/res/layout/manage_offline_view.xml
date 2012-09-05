@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/bg_make_available_offline_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="fill_horizontal" android:orientation="horizontal" android:id="@id/manage_offline_opaque_area" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageButton android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/done" android:background="?android:selectableItemBackground" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_cab_done_holo_dark" android:contentDescription="@string/done" />
+        <View android:background="#ffffffff" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="12.0dip" android:layout_marginBottom="12.0dip" android:alpha="0.15" />
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="vertical" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ProgressBar android:gravity="center_vertical" android:id="@id/storage_indicator" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" style="?android:progressBarStyleHorizontal" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/storage_pin" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginLeft="8.0dip" android:src="@drawable/ic_make_avaiable_offline_legend" />
+                <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/make_available_offline_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="@string/make_available_offline" android:layout_weight="1.0" />
+                <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/storage_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" android:minWidth="100.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

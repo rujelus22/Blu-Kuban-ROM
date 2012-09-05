@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="appwidget_agenda_date">#ff000000</color>
+    <color name="appwidget_date">#ff8ca31b</color>
+    <color name="appwidget_noevent_date">#ff417a03</color>
+    <color name="appwidget_when">#ff666666</color>
+    <color name="appwidget_title">#ff000000</color>
+    <color name="appwidget_where">#ff666666</color>
+    <color name="appwidget_conflict">#ff7c7c7c</color>
+    <color name="appwidget_no_events">#bb000000</color>
+    <color name="agenda_no_events">#ff000000</color>
+</resources>

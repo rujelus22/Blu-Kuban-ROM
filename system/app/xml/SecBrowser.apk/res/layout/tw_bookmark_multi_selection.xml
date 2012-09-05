@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/header" android:paddingLeft="12.0dip" android:paddingTop="13.0dip" android:paddingRight="11.0dip" android:paddingBottom="13.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="56.0dip">
+        <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListOneLine" android:textSize="20.0sp" android:textColor="#ff7fd3ec" android:id="@id/select_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/select_all" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <CheckBox android:id="@id/check_all" android:focusable="false" android:visibility="visible" android:clickable="true" android:layout_width="53.0dip" android:layout_height="wrap_content" android:src="@drawable/tw_btn_check" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <fragment android:id="@id/bookmarks" android:layout_width="fill_parent" android:layout_height="wrap_content" class="com.android.browser.BrowserBookmarksPage" />
+</LinearLayout>

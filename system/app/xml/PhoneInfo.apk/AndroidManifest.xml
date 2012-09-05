@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.phone" android:versionCode="15" android:versionName="4.0.4-FH13" package="com.samsung.phoneinfo"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <eat-comment />
+    <permission-group android:name="com.samsung.permission-group.PHONE" />
+    <permission android:name="com.samsung.permission.PHONE_INFO" android:protectionLevel="dangerous" android:permissionGroup="com.samsung.permission-group.PHONE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.sprint.internal.permission.SYSTEMPROPERTIES" />
+    <uses-permission android:name="android.permission.sec.MDM_HW_CONTROL" />
+    <uses-permission android:name="android.permission.sec.MDM_SECURITY" />
+    <uses-permission android:name="android.permission.sec.MDM_BLUETOOTH" />
+    <uses-permission android:name="android.permission.sec.MDM_WIFI" />
+    <application>
+        <service android:name=".PhoneInfoService" android:exported="true" android:process="com.android.phone" />
+        <receiver android:name=".PhoneInfoReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.samsung.internal.PHONE_BOOT_UP" />
+                <action android:name="com.coremobility.app.vnotes.intent.action.MESSAGE_COUNT_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <uses-library android:name="sec_feature" />
+    </application>
+</manifest>

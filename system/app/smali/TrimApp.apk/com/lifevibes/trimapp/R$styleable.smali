@@ -1,0 +1,69 @@
+.class public final Lcom/lifevibes/trimapp/R$styleable;
+.super Ljava/lang/Object;
+.source "R.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/lifevibes/trimapp/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "styleable"
+.end annotation
+
+
+# static fields
+.field public static final DoubleSeekbarStyleable:[I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .prologue
+    .line 2028
+    const/16 v0, 0x13
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_a
+
+    sput-object v0, Lcom/lifevibes/trimapp/R$styleable;->DoubleSeekbarStyleable:[I
+
+    return-void
+
+    :array_a
+    .array-data 0x4
+        0x0t 0x0t 0x1t 0x7ft
+        0x1t 0x0t 0x1t 0x7ft
+        0x2t 0x0t 0x1t 0x7ft
+        0x3t 0x0t 0x1t 0x7ft
+        0x4t 0x0t 0x1t 0x7ft
+        0x5t 0x0t 0x1t 0x7ft
+        0x6t 0x0t 0x1t 0x7ft
+        0x7t 0x0t 0x1t 0x7ft
+        0x8t 0x0t 0x1t 0x7ft
+        0x9t 0x0t 0x1t 0x7ft
+        0xat 0x0t 0x1t 0x7ft
+        0xbt 0x0t 0x1t 0x7ft
+        0xct 0x0t 0x1t 0x7ft
+        0xdt 0x0t 0x1t 0x7ft
+        0xet 0x0t 0x1t 0x7ft
+        0xft 0x0t 0x1t 0x7ft
+        0x10t 0x0t 0x1t 0x7ft
+        0x11t 0x0t 0x1t 0x7ft
+        0x12t 0x0t 0x1t 0x7ft
+    .end array-data
+.end method
+
+.method public constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 1981
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

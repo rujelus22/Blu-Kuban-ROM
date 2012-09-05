@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuickView</string>
+    <string name="camera_toss">Delete</string>
+    <string name="camera_share">Share</string>
+    <string name="camera_set">Set as</string>
+    <string name="video_play">Play</string>
+    <string name="camera_history">History</string>
+    <string name="OK_STRING">OK</string>
+    <string name="gridview_cancelbutton_text">Cancel</string>
+    <string name="no_way_to_share_image">No applications to share picture</string>
+    <string name="no_way_to_share_video">No applications to share video</string>
+    <string name="confirm_delete_title">Delete</string>
+    <string name="confirm_delete_message">Picture will be deleted</string>
+    <string name="confirm_delete_video_message">Video will be deleted</string>
+    <string name="setImage">Set picture as</string>
+    <string name="sendImage">Share picture via</string>
+    <string name="sendVideo">Share video via</string>
+    <string name="preparing_sd">Preparing SD card…</string>
+    <string name="media_scanner_running">Media scanner running...</string>
+    <string name="no_sdcard">No SD card detected</string>
+    <string name="no_media_found">No items</string>
+    <string name="OPTION_1">OPTION 1</string>
+    <string name="OPTION_2">OPTION 2</string>
+    <string name="OPTION_3">OPTION 3</string>
+    <string name="no_have_video">"Video file doesn't exist or invalid file."</string>
+    <string name="camera_more">More</string>
+    <string name="rename">Rename</string>
+    <string name="rename_dialog_message">Enter new file name</string>
+    <string name="name_is_empty">Name empty</string>
+    <string name="already_exists">Already exists</string>
+    <string name="unable_to_rename">Unable to rename</string>
+    <string name="failed_to_rename">Failed to rename</string>
+    <string name="invalid_character">Invalid character</string>
+    <string name="max_char_reached_msg">Maximum number of characters reached</string>
+    <string name="menu_kodak">Kodak</string>
+    <string name="menu_snapfish">Snapfish</string>
+    <string name="Title_SetDefDest">Set Default Destination</string>
+    <string name="My_Album_Online">My Album Online</string>
+    <string name="include_default_destination">Default destination</string>
+    <string name="Title_Dest">"Default
+Dest."</string>
+    <string name="app_recent_recipients">Recent recipients</string>
+    <string name="app_new_number">New Number</string>
+    <string name="app_new_email">New Email</string>
+    <string name="DEST_RECENTRECIPIENT">"Recent
+ recipient"</string>
+    <string name="DEST_PHONEBOOK">"Phone
+ Book"</string>
+    <string name="DEST_NEWNUMBER">"New
+ Number"</string>
+    <string name="DEST_NEWEMAIL">"New
+ Email"</string>
+    <string name="DEST_ONLINEALBUM">"Online
+ Album"</string>
+    <string name="DEST_CURRENTDEST">"Current
+ Destinations"</string>
+    <string name="CURRENTDESTINATION_REPLACE">Replace</string>
+    <string name="CURRENTDESTINATION_REMOVE">Remove</string>
+    <string name="remove_dialog">Are you sure you want to Remove?</string>
+    <string name="remove_dialog_removed">Removed</string>
+    <string name="remove_dialog_canceled">Canceled</string>
+    <string name="Send_to">Send to</string>
+    <string name="Dialog_Yes">Yes</string>
+    <string name="Dialog_No">No</string>
+</resources>

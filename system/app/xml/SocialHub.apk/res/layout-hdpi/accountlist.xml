@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/check_all_select" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0" android:layout_below="@id/layout" android:layout_alignParentTop="true" layout="@layout/conversation_select_list_header" />
+    <ListView android:id="@id/account_listview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/no_account_layout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/no_comments_imageview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/noitems_text_based" />
+        <TextView android:textSize="20.0dip" android:textColor="#55ffffff" android:id="@id/no_comments_text_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_accounts" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:layout_gravity="bottom" android:id="@id/Layout_btn_add_account" android:background="@drawable/winset_softkey_bg" android:layout_width="fill_parent" android:layout_height="82.0px" android:layout_weight="0.0">
+        <com.sec.android.socialhub.view.HubButton android:textSize="24.0px" android:id="@id/btn_add_account" android:layout_width="fill_parent" android:layout_height="75.0px" android:layout_marginLeft="72.0px" android:layout_marginTop="7.0px" android:layout_marginRight="72.0px" android:text="@string/add_Account" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:layout_gravity="bottom" android:id="@id/Layout_btn_delete_account" android:background="@drawable/winset_softkey_bg" android:layout_width="fill_parent" android:layout_height="82.0px" android:layout_weight="0.0">
+        <Button android:textSize="24.0px" android:id="@id/btn_delete_account" android:layout_width="fill_parent" android:layout_height="75.0px" android:layout_marginLeft="5.0px" android:layout_marginTop="7.0px" android:text="@string/deletetxt" android:layout_weight="1.0" />
+        <Button android:textSize="24.0px" android:id="@id/btn_cancel_account" android:layout_width="fill_parent" android:layout_height="75.0px" android:layout_marginTop="7.0px" android:layout_marginRight="5.0px" android:text="@string/cancel_button" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

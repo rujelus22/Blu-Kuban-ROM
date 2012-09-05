@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Mod Memandu</string>
+    <string name="app_name">Perintah suara</string>
+    <string name="incar">Cakapan suara</string>
+    <string name="incar_icon">Cakapan suara</string>
+    <string name="Vlingo">Perintah suara</string>
+</resources>

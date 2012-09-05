@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_texture_offset_y_top_row">0.65px</dimen>
+    <dimen name="detail_texture_offset_y_bottom_row">0.0px</dimen>
+    <dimen name="carousel_eye_x">0.0px</dimen>
+    <dimen name="carousel_eye_y">1.0px</dimen>
+    <dimen name="carousel_eye_z">12.0px</dimen>
+</resources>

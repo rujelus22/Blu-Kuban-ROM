@@ -1,0 +1,52 @@
+.class Lcom/sec/android/widgetapp/TwCalendarAppWidget/ImageLoader$PhotoToLoad;
+.super Ljava/lang/Object;
+.source "ImageLoader.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/sec/android/widgetapp/TwCalendarAppWidget/ImageLoader;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x2
+    name = "PhotoToLoad"
+.end annotation
+
+
+# instance fields
+.field public container:Landroid/view/View;
+
+.field public imageView:Landroid/widget/ImageView;
+
+.field final synthetic this$0:Lcom/sec/android/widgetapp/TwCalendarAppWidget/ImageLoader;
+
+.field public url:Landroid/net/Uri;
+
+
+# direct methods
+.method public constructor <init>(Lcom/sec/android/widgetapp/TwCalendarAppWidget/ImageLoader;Landroid/net/Uri;Landroid/widget/ImageView;Landroid/view/View;)V
+    .registers 5
+    .parameter
+    .parameter "uri"
+    .parameter "i"
+    .parameter "c"
+
+    .prologue
+    .line 130
+    iput-object p1, p0, Lcom/sec/android/widgetapp/TwCalendarAppWidget/ImageLoader$PhotoToLoad;->this$0:Lcom/sec/android/widgetapp/TwCalendarAppWidget/ImageLoader;
+
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+
+    .line 131
+    iput-object p2, p0, Lcom/sec/android/widgetapp/TwCalendarAppWidget/ImageLoader$PhotoToLoad;->url:Landroid/net/Uri;
+
+    .line 132
+    iput-object p3, p0, Lcom/sec/android/widgetapp/TwCalendarAppWidget/ImageLoader$PhotoToLoad;->imageView:Landroid/widget/ImageView;
+
+    .line 133
+    iput-object p4, p0, Lcom/sec/android/widgetapp/TwCalendarAppWidget/ImageLoader$PhotoToLoad;->container:Landroid/view/View;
+
+    .line 134
+    return-void
+.end method

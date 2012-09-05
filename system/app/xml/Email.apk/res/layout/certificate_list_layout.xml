@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/mainLayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@id/CertificatesList" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/noCertificateListLayout" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ImageView android:id="@id/noCertificateImg" android:background="@drawable/email_img_nodata" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@id/noCertificateText" android:text="@string/account_settings_smime_no_certificate" style="@style/noDataTextViewStyle" />
+        <TextView android:id="@id/notificationOfinstallFromRoot" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/certificate_path_error_notification" android:layout_below="@id/noCertificateText" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    </LinearLayout>
+</LinearLayout>

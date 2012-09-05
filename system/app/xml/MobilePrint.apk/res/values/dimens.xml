@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="popup_window_title_height">35.0dip</dimen>
+    <dimen name="printer_list_margin_height">70.0dip</dimen>
+    <dimen name="preview_printer_info_margin">35.0dip</dimen>
+    <dimen name="preview_printer_info_text_size">12.0dip</dimen>
+    <dimen name="preview_landscape_paper_padding_top">26.0dip</dimen>
+    <dimen name="preview_landscape_paper_padding_bottom">17.0dip</dimen>
+    <dimen name="preview_portrait_paper_padding_top">38.0dip</dimen>
+    <dimen name="preview_portrait_paper_padding_bottom">28.0dip</dimen>
+</resources>

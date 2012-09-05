@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="12.0dip">
+        <ImageView android:id="@id/iv_cover_art" android:layout_width="89.5dip" android:layout_height="128.0dip" android:scaleType="fitXY" />
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_weight="1.0">
+            <LinearLayout android:orientation="horizontal" android:id="@id/ll_tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="22.0sp" android:textColor="@color/color1" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:layout_weight="1.0" />
+                <ImageView android:layout_gravity="right|center" android:id="@id/iv_hd_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:src="@drawable/hd_icon" />
+            </LinearLayout>
+            <TextView android:textSize="14.0sp" android:textColor="@drawable/selector_movie_list_subtitle_text_color" android:ellipsize="marquee" android:id="@id/tv_purchase_data" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+            <TextView android:textSize="14.0sp" android:textColor="@drawable/selector_movie_list_subtitle_text_color" android:ellipsize="end" android:id="@id/tv_license" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <TextView android:textSize="14.0sp" android:textColor="@drawable/selector_movie_list_subtitle_text_color" android:ellipsize="end" android:id="@id/tv_price" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

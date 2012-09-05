@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="days_remaining">
+        <item quantity="other">Сконч. праз (дз.): %1$d</item>
+        <item quantity="one">Сконч. праз 1 дзень</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Сконч. праз %1$d гадз.</item>
+        <item quantity="one">Скончыцца праз 1 гадзіну</item>
+    </plurals>
+</resources>

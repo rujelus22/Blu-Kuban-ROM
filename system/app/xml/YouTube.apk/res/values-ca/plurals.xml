@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="years_ago">
+        <item quantity="other">Fa %1$d anys</item>
+        <item quantity="one">Fa 1 any</item>
+    </plurals>
+    <plurals name="months_ago">
+        <item quantity="other">Fa %1$d mesos</item>
+        <item quantity="one">Fa 1 mes</item>
+    </plurals>
+    <plurals name="weeks_ago">
+        <item quantity="other">Fa %1$d setmanes</item>
+        <item quantity="one">Fa 1 setmana</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">Fa %1$d dies</item>
+        <item quantity="one">Fa 1 dia</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="other">Fa %1$d hores</item>
+        <item quantity="one">Fa 1 hora</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="other">Fa %1$d minuts</item>
+        <item quantity="one">Fa 1 minut</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="other">Fa %1$d segons</item>
+        <item quantity="one">Fa 1 segon</item>
+    </plurals>
+    <plurals name="recent_uploads">
+        <item quantity="other">càrregues noves</item>
+        <item quantity="one">càrrega nova</item>
+    </plurals>
+    <plurals name="recent_activity">
+        <item quantity="other">esdeveniments nous</item>
+        <item quantity="one">esdeveniment nou</item>
+    </plurals>
+    <plurals name="playlist_size">
+        <item quantity="other">%1$,d vídeos</item>
+        <item quantity="one">1 vídeo</item>
+    </plurals>
+</resources>

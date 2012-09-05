@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textSize="16.0sp" android:id="@id/svc_dump_label" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <Button android:textSize="12.0sp" android:id="@id/all" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <Button android:textSize="12.0sp" android:id="@id/msg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <Button android:textSize="12.0sp" android:id="@id/cp_log" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <Button android:textSize="12.0sp" android:id="@id/cp_log2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <Button android:textSize="12.0sp" android:id="@id/ramdump" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <Button android:textSize="12.0sp" android:id="@id/dbgstringLoopBack" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <Button android:textSize="12.0sp" android:id="@id/dbgstringMSG" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <Button android:textSize="12.0sp" android:id="@id/dbgstringLOG1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <Button android:textSize="12.0sp" android:id="@id/dbgstringLOG2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <Button android:textSize="12.0sp" android:id="@id/dbgstringdisable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <Button android:textSize="12.0sp" android:id="@id/exit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/exit" />
+    </LinearLayout>
+</ScrollView>

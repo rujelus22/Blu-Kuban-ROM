@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/actionbar" />
+    <RelativeLayout android:id="@id/left_pane" android:layout_width="300.0dip" style="@style/left_pane">
+        <TextView android:id="@id/title" android:text="@string/select_items_to_remove" style="@style/TextHeaderSub" />
+        <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/title" style="@style/ListNormal" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/button_bar" android:layout_height="fill_parent" android:layout_toRightOf="@id/left_pane" android:layout_below="@id/action_bar" android:layout_alignParentBottom="true" style="@style/ButtonBar">
+        <Button android:id="@id/button_check_all" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/check_all" android:layout_alignParentTop="true" style="@style/Button" />
+        <Button android:id="@id/button_uncheck_all" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/uncheck_all" android:layout_below="@id/button_check_all" style="@style/Button" />
+        <Button android:id="@id/button_next" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/remove_selected_items" android:layout_alignParentBottom="true" style="@style/Button" />
+    </RelativeLayout>
+</RelativeLayout>

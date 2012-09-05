@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sharedUserLabel">Android Core Apps</string>
+    <string name="app_label">Almacenamiento de contactos</string>
+    <string name="provider_label">Contactos</string>
+    <string name="upgrade_msg">Actualizando contactos...</string>
+    <string name="upgrade_out_of_memory_notification_ticker">No se puede actualizar. Memoria insuficiente</string>
+    <string name="upgrade_out_of_memory_notification_title">Actualizando almacenamiento de contactos...</string>
+    <string name="upgrade_out_of_memory_notification_text">Seleccionar para finalizar actualización</string>
+    <string name="default_directory">Contactos</string>
+    <string name="local_invisible_directory">Otro</string>
+    <string name="read_write_all_voicemail_label">Acceder a todos los buzones de voz</string>
+    <string name="read_write_all_voicemail_description">Permite que una aplicación recupere y almacene todos los buzones de voz a los que puede acceder este dispositivo</string>
+    <string name="voicemail_from_column">Mensaje de voz de</string>
+</resources>

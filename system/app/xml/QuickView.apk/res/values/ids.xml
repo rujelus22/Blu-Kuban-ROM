@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="layout">false</item>
+    <item type="id" name="curr_view_layout">false</item>
+    <item type="id" name="currView">false</item>
+    <item type="id" name="pre_view_layout">false</item>
+    <item type="id" name="preView">false</item>
+    <item type="id" name="next_view_layout">false</item>
+    <item type="id" name="nextView">false</item>
+    <item type="id" name="layout_ori_1">false</item>
+    <item type="id" name="layout_menu1">false</item>
+    <item type="id" name="menu1_image">false</item>
+    <item type="id" name="menu1_text">false</item>
+    <item type="id" name="menu_splitter_1">false</item>
+    <item type="id" name="layout_menu2">false</item>
+    <item type="id" name="menu2_image">false</item>
+    <item type="id" name="menu2_text">false</item>
+    <item type="id" name="menu_splitter_2">false</item>
+    <item type="id" name="layout_menu3">false</item>
+    <item type="id" name="menu3_image">false</item>
+    <item type="id" name="menu3_text">false</item>
+    <item type="id" name="click_view">false</item>
+    <item type="id" name="main_layout">false</item>
+    <item type="id" name="preview_surface">false</item>
+    <item type="id" name="over_scroll">false</item>
+    <item type="id" name="play_icon">false</item>
+    <item type="id" name="more_option_icon">false</item>
+    <item type="id" name="more_option_text">false</item>
+    <item type="id" name="new_file_name">false</item>
+    <item type="id" name="appicon">false</item>
+    <item type="id" name="apptext">false</item>
+</resources>

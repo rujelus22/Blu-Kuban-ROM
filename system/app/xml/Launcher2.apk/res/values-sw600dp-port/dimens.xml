@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cling_text_block_offset_x">80.0dip</dimen>
+    <dimen name="cling_text_block_offset_y">160.0dip</dimen>
+    <dimen name="workspace_width_gap">0.0dip</dimen>
+    <dimen name="workspace_height_gap">32.0dip</dimen>
+    <dimen name="apps_customize_cell_width">96.0dip</dimen>
+    <dimen name="apps_customize_cell_height">96.0dip</dimen>
+    <dimen name="scroll_zone">40.0dip</dimen>
+    <dimen name="workspace_left_padding">15.0dip</dimen>
+    <dimen name="workspace_right_padding">15.0dip</dimen>
+    <dimen name="workspace_top_padding">25.0dip</dimen>
+    <dimen name="workspace_bottom_padding">25.0dip</dimen>
+    <dimen name="workspace_page_spacing">16.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutWidthGap">24.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutHeightGap">36.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingTop">25.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingBottom">10.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingLeft">30.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingRight">30.0dip</dimen>
+</resources>

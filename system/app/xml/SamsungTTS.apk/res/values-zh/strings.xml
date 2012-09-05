@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="general_settings">普通设置</string>
+    <string name="samsungtts_settings">三星TTS设置</string>
+    <string name="open_source_licenses">开源许可</string>
+    <string name="advanced_settings">高级设定</string>
+    <string name="change_voice_effects">语音效果</string>
+    <string name="change_voice_effects_summary">为口语文本应用各种语音效果</string>
+    <string name="installed_languages">安装的语言</string>
+    <string name="female">女</string>
+    <string name="male">男</string>
+</resources>

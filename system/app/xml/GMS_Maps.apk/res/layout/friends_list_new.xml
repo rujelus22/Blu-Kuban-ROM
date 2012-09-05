@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/list_header_friends_list" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.google.googlenav.ui.android.GmmListView android:id="@id/listView" android:focusableInTouchMode="true" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <RelativeLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/waiting" android:background="@color/dark_grey" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:textColor="@color/white" android:gravity="center" android:id="@id/waitingText" android:paddingLeft="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_toLeftOf="@id/waitingText" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                <ProgressBar android:id="@id/waitingProgress" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+</LinearLayout>

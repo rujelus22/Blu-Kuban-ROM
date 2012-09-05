@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="number_of_hours">12</integer>
+    <integer name="quickadd_top_margin">10</integer>
+    <integer name="quickadd_margin">10</integer>
+    <integer name="left_handle_X_center">240</integer>
+</resources>

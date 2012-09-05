@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voice_effects_entries">
+        <item>ปกติ</item>
+        <item>เสียง​ทุ้ม</item>
+        <item>เสียง​สูง</item>
+        <item>เสียง​เบา</item>
+        <item>เสียง​ดัง</item>
+        <item>เสียง​หุ่น​ยนต์</item>
+        <item>เอ​ฟเฟกต์​ก๊าซ​ฮี​เลี่ยม</item>
+    </string-array>
+</resources>

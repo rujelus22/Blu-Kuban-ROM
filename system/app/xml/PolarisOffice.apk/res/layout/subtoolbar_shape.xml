@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/subtoolbar_shape" android:layout_width="312.0dip" android:layout_height="44.0dip" android:layout_marginLeft="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="2.0dip" android:layout_marginBottom="2.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_line" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+    <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_arrow" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+    <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_rect" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+    <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_round" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+    <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_triangle" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+    <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_diamond" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+</LinearLayout>

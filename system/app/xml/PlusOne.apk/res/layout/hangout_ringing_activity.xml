@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/inviter_photo" android:layout_width="112.0dip" android:layout_height="112.0dip" android:src="@drawable/default_avatar" android:scaleType="centerCrop" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <RelativeLayout android:id="@id/call_status_bar" android:background="#fffdba31" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_toRightOf="@id/inviter_photo" android:layout_alignParentTop="true">
+        <ImageView android:id="@id/hangout_icon" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="11.0dip" android:layout_marginBottom="9.0dip" android:src="@drawable/incoming_hangout_icon" android:layout_alignParentLeft="true" />
+        <TextView android:textSize="18.0dip" android:textStyle="bold" android:textColor="@android:color/black" android:id="@id/call_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/hangout_ringing_incoming" android:layout_toRightOf="@id/hangout_icon" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/contact_header" android:background="@android:color/black" android:layout_width="wrap_content" android:layout_height="72.0dip" android:layout_toRightOf="@id/inviter_photo" android:layout_below="@id/call_status_bar">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true">
+            <TextView android:textSize="18.0dip" android:textColor="@android:color/white" android:id="@id/inviter_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:textAllCaps="true" />
+            <ImageView android:id="@id/circle_icon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/circle_icon" android:layout_below="@id/inviter_name" android:layout_alignParentLeft="true" />
+            <TextView android:textSize="13.0dip" android:textColor="@android:color/darker_gray" android:id="@id/circle_names" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="3.0dip" android:layout_toRightOf="@id/circle_icon" android:layout_below="@id/inviter_name" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <FrameLayout android:id="@id/self_video_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/inviter_photo" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/accept_ignore_bar" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="52.0dip" android:layout_alignParentBottom="true">
+        <TextView android:textSize="18.0dip" android:textStyle="bold" android:textColor="#ffff4040" android:gravity="center" android:id="@id/ignore" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/hangout_ringing_ignore" android:layout_weight="1.0" />
+        <View android:background="#ff3a3a3a" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_marginTop="12.0dip" android:layout_marginBottom="7.0dip" />
+        <TextView android:textSize="18.0dip" android:textStyle="bold" android:textColor="#ff99cc00" android:gravity="center" android:id="@id/accept" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/hangout_ringing_accept" android:layout_weight="1.0" />
+    </LinearLayout>
+    <View android:background="#ff3a3a3a" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_above="@id/accept_ignore_bar" />
+</RelativeLayout>

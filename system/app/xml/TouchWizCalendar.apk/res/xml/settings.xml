@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/preferences_view_title">
+        <Preference android:layout="@layout/calendar_preference_child" android:title="@string/menu_select_calendars" android:key="@string/menu_select_calendars" />
+        <Preference android:layout="@layout/calendar_preference_child" android:title="@string/default_calendar_title" android:key="@string/default_calendar_title" />
+        <ListPreference android:entries="@array/preferences_default_view_labels" android:layout="@layout/calendar_preference_child" android:title="@string/preferences_default_view_title" android:key="preferences_default_view" android:defaultValue="@string/preferences_default_view_default" android:dialogTitle="@string/preferences_default_view_dialog" android:entryValues="@array/preferences_default_view_values" />
+        <ListPreference android:entries="@array/preferences_day_view_labels" android:layout="@layout/calendar_preference_child" android:title="@string/preferences_day_view_title" android:key="preferences_day_view" android:defaultValue="@string/preferences_day_view_default" android:dialogTitle="@string/preferences_day_view_dialog" android:entryValues="@array/preferences_day_view_values" />
+        <ListPreference android:entries="@array/preferences_first_day_of_week_labels" android:layout="@layout/calendar_preference_child" android:title="@string/preferences_first_day_of_week_title" android:key="preferences_first_day_of_week" android:defaultValue="@string/preferences_first_day_of_week_default" android:dialogTitle="@string/preferences_first_day_of_week_dialog" android:entryValues="@array/preferences_first_day_of_week_values" />
+        <CheckBoxPreference android:layout="@layout/calendar_preference_child" android:title="@string/preferences_hide_declined_title" android:key="preferences_hide_declined" android:defaultValue="false" />
+        <CheckBoxPreference android:layout="@layout/calendar_preference_child" android:title="@string/preferences_hide_contacts_events_title" android:key="preferences_hide_contacts_events" android:defaultValue="false" />
+        <CheckBoxPreference android:layout="@layout/calendar_preference_child" android:title="@string/preferences_use_home_tz_title" android:key="preferences_home_tz_enabled" android:summary="@string/preferences_use_home_tz_descrip" android:defaultValue="false" />
+        <ListPreference android:title="@string/preferences_home_tz_title" android:key="preferences_home_tz" android:dependency="preferences_home_tz_enabled" android:dialogTitle="@string/preferences_home_tz_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_noti_title">
+        <ListPreference android:entries="@array/preferences_alert_type_labels" android:layout="@layout/calendar_preference_child" android:title="@string/preferences_alerts_type_title" android:key="preferences_alerts_type" android:defaultValue="@string/preferences_alerts_type_default" android:dialogTitle="@string/preferences_alerts_type_dialog" android:entryValues="@array/preferences_alert_type_values" />
+        <ListPreference android:entries="@array/prefEntries_alerts_vibrateWhen" android:layout="@layout/calendar_preference_child" android:title="@string/preferences_alerts_vibrateWhen_title" android:key="preferences_alerts_vibrateWhen" android:summary="@string/preferences_alerts_vibrateWhen_summary" android:defaultValue="@string/prefDefault_alerts_vibrateWhen" android:dialogTitle="@string/prefDialogTitle_vibrateWhen" android:entryValues="@array/prefValues_alerts_vibrateWhen" />
+        <RingtonePreference android:layout="@layout/calendar_preference_child" android:title="@string/preferences_alerts_ringtone_title" android:key="preferences_alerts_ringtone" android:defaultValue="content://settings/system/notification_sound" android:ringtoneType="notification" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_sync_title">
+        <Preference android:layout="@layout/calendar_preference_child" android:title="@string/calendar_sync_title" android:key="@string/calendar_sync_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

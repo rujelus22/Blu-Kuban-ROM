@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="popup_local_folder">
+        <item>잘라내기</item>
+        <item>복사하기</item>
+        <item>붙여넣기</item>
+        <item>삭제</item>
+        <item>폴더 이름 변경</item>
+        <item>속성</item>
+    </string-array>
+    <string-array name="popup_web_folder">
+        <item>붙여넣기</item>
+        <item>삭제</item>
+        <item>폴더 이름 변경</item>
+        <item>속성</item>
+    </string-array>
+    <string-array name="popup_local_file">
+        <item>잘라내기</item>
+        <item>복사하기</item>
+        <item>붙여넣기</item>
+        <item>삭제</item>
+        <item>파일 이름 변경</item>
+        <item>파일 보내기</item>
+        <item>속성</item>
+    </string-array>
+    <string-array name="popup_web_file">
+        <item>복사하기</item>
+        <item>붙여넣기</item>
+        <item>삭제</item>
+        <item>파일 이름 변경</item>
+        <item>속성</item>
+    </string-array>
+</resources>

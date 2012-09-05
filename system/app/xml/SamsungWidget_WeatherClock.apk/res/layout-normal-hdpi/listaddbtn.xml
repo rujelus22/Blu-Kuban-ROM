@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/add_btn" android:background="@drawable/linearlayoutsample1xml_header_bg" android:focusable="true" android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/add_btn2" android:layout_width="wrap_content" android:layout_height="64.0dip" android:layout_marginLeft="6.669983dip" android:scaleType="centerInside" />
+    <TextView android:textSize="22.0dip" android:textColor="@drawable/list_header" android:id="@id/add_text" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/add_city" android:layout_weight="1.0" />
+    <TextView android:textSize="14.0dip" android:textColor="@drawable/list_count" android:layout_gravity="right|center" android:id="@id/citylistcount" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.669983dip" />
+</LinearLayout>

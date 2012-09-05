@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:versionCode="1" android:versionName="1.0" android:installLocation="auto" package="com.sec.android.app.ve"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:theme="@android:style/Theme.DeviceDefault" android:label="@string/app_name" android:icon="@drawable/mainmenu_icon_videoeditor" android:debuggable="false">
+        <activity android:label="@string/app_name" android:name=".activity.ProjectListActivity" android:screenOrientation="sensorLandscape" android:configChanges="locale|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.ProjectPlayActivity" android:screenOrientation="sensorLandscape" android:configChanges="locale|orientation" />
+        <activity android:name=".activity.DrawActivity" android:screenOrientation="sensorLandscape" android:configChanges="locale|orientation" />
+        <activity android:name=".activity.CaptionEditActivity" android:screenOrientation="sensorLandscape" android:configChanges="locale|orientation" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.ProjectEditActivity" android:launchMode="singleTask" android:screenOrientation="sensorLandscape" android:configChanges="locale|keyboard|keyboardHidden|orientation|fontScale">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/mp4" />
+                <data android:mimeType="video/3gp" />
+                <data android:mimeType="video/3gpp" />
+                <data android:mimeType="video/3gpp2" />
+                <data android:mimeType="image/jpeg" />
+                <data android:mimeType="image/jpg" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.ThemeGallery" android:screenOrientation="sensorLandscape" android:configChanges="locale|orientation" />
+        <activity android:name=".activity.ThemeView" android:screenOrientation="sensorLandscape" android:configChanges="locale|orientation" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name=".activity.DrawActivity" android:screenOrientation="sensorLandscape" android:configChanges="locale|orientation" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name=".activity.PenDrawActivity" android:screenOrientation="sensorLandscape" android:configChanges="locale|orientation" />
+        <receiver android:name=".receiver.VEBTReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.media.RINGER_MODE_CHANGED" />
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+                <action android:name="android.bluetooth.a2dp.action.SINK_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-sdk android:minSdkVersion="14" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+</manifest>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:a="http://schemas.android.com/apk/res/android">
+    <item a:icon="@drawable/ic_menu_exit_navigation" a:id="@id/da_menu_exit" a:title="@string/da_exit_navigation" a:alphabeticShortcut="x" />
+    <item a:icon="@drawable/da_ic_menu_mute" a:id="@id/da_menu_mute" a:title="@string/da_mute" a:alphabeticShortcut="m" />
+    <item a:icon="@drawable/da_ic_menu_unmute" a:id="@id/da_menu_unmute" a:title="@string/da_unmute" a:alphabeticShortcut="m" />
+    <item a:icon="@drawable/da_ic_menu_route_info" a:id="@id/da_menu_route_overview" a:title="@string/da_route_overview" a:alphabeticShortcut="i" a:showAsAction="ifRoom|withText" />
+    <item a:icon="@drawable/da_ic_show_map" a:id="@id/da_menu_route_overview_back_to_map" a:title="@string/da_show_map" a:showAsAction="ifRoom|withText" />
+    <item a:icon="@drawable/da_ic_menu_dest_flag" a:id="@id/da_menu_freedrive_set_destination" a:title="@string/da_change_destination" a:showAsAction="ifRoom|withText" />
+    <item a:id="@id/da_menu_change_destination" a:title="@string/da_change_destination" />
+    <item a:icon="@drawable/da_ic_menu_search" a:id="@id/da_menu_search" a:title="@string/da_search_label" a:alphabeticShortcut="s" />
+    <item a:icon="@drawable/da_ic_menu_layers" a:id="@id/da_menu_layers" a:title="@string/da_layers" a:showAsAction="ifRoom" />
+    <item a:icon="@drawable/da_ic_menu_listview" a:id="@id/da_menu_show_list" a:title="@string/da_show_list" a:showAsAction="ifRoom" />
+    <item a:icon="@drawable/da_ic_show_map" a:id="@id/da_menu_show_list_back_to_map" a:title="@string/da_show_map" a:showAsAction="ifRoom" />
+    <item a:icon="@drawable/ic_menu_help" a:id="@id/da_menu_help" a:title="@string/da_help" />
+    <item a:id="@id/da_menu_report_a_problem" a:title="@string/da_report_a_problem" />
+    <item a:icon="@drawable/ic_menu_preferences" a:id="@id/da_menu_settings" a:title="@string/da_settings" />
+    <item a:id="@id/da_menu_debug_enable_mock_provider" a:visible="false" a:title="Enable mock location" />
+    <item a:id="@id/da_menu_debug_disable_mock_provider" a:visible="false" a:title="Disable mock location" />
+    <item a:id="@id/da_menu_debug_dump_event_log" a:visible="false" a:title="Dump event log" />
+    <item a:id="@id/da_menu_debug_dump_gl_memory_stats" a:visible="false" a:title="Dump GL memory stats" />
+</menu>

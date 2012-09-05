@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vlingo.client.car.voicedial.PhoneTypeList android:id="@id/parent_layout_buffer" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:id="@id/parent_layout" android:background="@drawable/samsung_car_popup_back" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:keepScreenOn="true"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:orientation="horizontal" android:id="@id/top_frame" android:background="@drawable/samsung_car_popup_top" android:paddingLeft="6.0dip" android:paddingTop="@dimen/car_contact_headingcontainer_vpadding" android:paddingRight="6.0dip" android:paddingBottom="@dimen/car_contact_headingcontainer_vpadding" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="@style/CarHeadingText" android:id="@id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="Joe" />
+        </LinearLayout>
+        <ListView android:id="@id/list_view" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:cacheColorHint="#ffffffff" android:minHeight="110.0dip" android:layout_below="@id/top_frame" />
+    </RelativeLayout>
+</com.vlingo.client.car.voicedial.PhoneTypeList>

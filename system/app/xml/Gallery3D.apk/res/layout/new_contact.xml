@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/label" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <EditText android:id="@id/newcontact_lable" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_below="@id/label" />
+    <Button android:id="@id/softkeyLeftRun" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/ok" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" android:onClick="softkeyLeftRun" style="?android:attr/buttonStyleSmall" />
+    <Button android:id="@id/softkeyRightRun" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/cancel" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:onClick="softkeyRightRun" style="?android:attr/buttonStyleSmall" />
+</RelativeLayout>

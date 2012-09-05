@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:id="@id/wifiap_help_orient_layout_second" android:layout_width="wrap_content" android:layout_height="wrap_content" android:isScrollContainer="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/mobileap_help_orient_image_onpc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/mobile_ap_onpc_bg_h" android:scaleType="matrix" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:textSize="32.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/wifiap_help_activate_onpc" android:paddingLeft="325.0dip" android:paddingTop="130.0dip" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/mobileap_instruction_activate_onpc" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:textSize="15.0dip" android:textColor="#ffffffff" android:id="@id/wifiap_help_activate" android:paddingLeft="16.0dip" android:scrollbars="none" android:layout_width="325.0dip" android:layout_height="fill_parent" android:text="@string/mobileap_instruction_activate" />
+</FrameLayout>

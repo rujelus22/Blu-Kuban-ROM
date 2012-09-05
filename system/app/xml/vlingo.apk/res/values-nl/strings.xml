@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Autostand</string>
+    <string name="app_name">"Spraak-
+opdrachten"</string>
+    <string name="incar">Spraak</string>
+    <string name="incar_icon">Spraak</string>
+    <string name="Vlingo">Spraakopdrachten</string>
+    <string name="widget_name">Spraak</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/sec_logo" />
+    <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout01" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:id="@id/modelLinearLayout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="14.0sp" android:textColor="@color/black" android:id="@id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/model_name_label" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="14.0sp" android:textColor="@color/black" android:id="@id/TextView09" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/manufacturer" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/black" android:id="@id/TextView22" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/serialnumber" />
+            <LinearLayout android:id="@id/LinearLayout03" android:background="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+                <TextView android:textSize="15.0sp" android:textColor="@color/black" android:gravity="center" android:id="@id/TextView_sn1" android:background="@color/background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="200.0dip" android:minWidth="200.0dip" />
+            </LinearLayout>
+            <TextView android:textColor="@color/black" android:id="@id/TextView100" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sn" />
+            <LinearLayout android:id="@id/LinearLayout04" android:background="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="15.0sp" android:textColor="@color/black" android:gravity="center" android:id="@id/TextView_sn2" android:background="@color/background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="200.0dip" android:minWidth="200.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,14 @@
+.class synthetic Lcom/swype/android/widget/PaintCommand$1;
+.super Ljava/lang/Object;
+.source "PaintCommand.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/swype/android/widget/PaintCommand;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1008
+    name = null
+.end annotation

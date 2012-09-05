@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.app.ve.view.effect.retouch.RetouchGridView android:orientation="vertical" android:background="@drawable/btn_bg" android:layout_width="200.0px" android:layout_height="340.0px" android:cacheColorHint="@android:color/transparent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="@drawable/btn_subbtn" android:layout_width="fill_parent" android:layout_height="68.0px">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="68.0px">
+            <ImageButton android:id="@id/effectControlButton" android:background="@drawable/addmedicontrolselector" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/effectselector" android:contentDescription="@string/accessibility_retouchtoeditbutton" />
+            <ImageView android:layout_gravity="right|center" android:id="@id/transition_arrow_up" android:layout_width="27.0px" android:layout_height="16.0px" android:layout_marginRight="10.0px" android:src="@drawable/arrow_up_selector" />
+        </FrameLayout>
+    </LinearLayout>
+    <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="@android:color/transparent" android:divider="@drawable/btn_line" />
+</com.sec.android.app.ve.view.effect.retouch.RetouchGridView>

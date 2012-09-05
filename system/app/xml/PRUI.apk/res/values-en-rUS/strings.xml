@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="processing">Processing...</string>
+    <string name="license_not_found">Licence not found</string>
+    <string name="domain_not_found">Domain not found</string>
+    <string name="dev_cert_revoked">Device certificate revoked. Contact service provider</string>
+    <string name="server_invalid_message">Server received invalid message.</string>
+    <string name="server_internal_error">Server experiencing problems. Try later</string>
+    <string name="server_service_specific">Server error occurred.</string>
+    <string name="server_domain_required">Join domain to play content</string>
+    <string name="server_not_a_member">Domain no longer valid. Tap OK to leave</string>
+    <string name="server_unknown_account_id">Account ID used for license acquisition not authorized. Contact customer service</string>
+    <string name="server_device_limit_reached">Maximum number of joined devices reached. Remove a device to add new</string>
+    <string name="server_protocol_version_mismatch">Old protocol version in use. Contact service provider to update</string>
+    <string name="server_protocol_redirect">Server protocol redirected</string>
+    <string name="license_acquisition_fail">Sorry, license acquisition failed</string>
+    <string name="join_domain_success">Domain joined. Now try to play media.</string>
+    <string name="join_domain_fail">Failed to join device to domain</string>
+    <string name="leave_domain_success">Device removed from domain</string>
+    <string name="leave_domain_fail">Failed to remove device from domain</string>
+    <string name="metering_success">Data sent</string>
+    <string name="metering_fail">Failed to send data</string>
+</resources>

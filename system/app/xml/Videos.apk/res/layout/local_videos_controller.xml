@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:tag="@string/tab_personal_videos" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/local_videos_status" layout="@layout/status" />
+    <GridView android:id="@id/local_videos" android:padding="6.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:horizontalSpacing="@dimen/local_video_grid_horizontal_spacing" android:verticalSpacing="@dimen/local_video_grid_horizontal_spacing" android:numColumns="@integer/local_video_grid_columns" style="@style/VideoGridView" />
+</FrameLayout>

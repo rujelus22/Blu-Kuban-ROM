@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/create_task" android:background="@drawable/view_selector_header" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/layout_height_size_1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/top_text_size" android:textColor="@color/tw_color001" android:gravity="left|center" android:paddingLeft="8.069977dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/create_task" android:drawableLeft="@drawable/task_title_add" android:drawablePadding="8.039978dip" android:layout_alignParentLeft="true" />
+    </LinearLayout>
+    <LinearLayout android:paddingRight="13.399994dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="3.0">
+        <TextView android:textSize="@dimen/info_text_size_2" android:textColor="@color/tw_color001" android:gravity="right|center" android:id="@id/done_cnt" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
+    </LinearLayout>
+</LinearLayout>

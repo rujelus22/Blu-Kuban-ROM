@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/actionbar" />
+    <ListView android:id="@id/list_of_pack_details" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/button_bar" android:layout_below="@id/action_bar" style="@style/ListNormal" />
+    <RelativeLayout android:id="@id/button_bar" android:layout_alignParentBottom="true" style="@style/ButtonBar">
+        <ProgressBar android:id="@id/download_progress" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:indeterminateOnly="false" style="@style/Progress" />
+        <TextView android:id="@id/download_progress_percentage" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignTop="@id/download_progress" android:layout_centerHorizontal="true" />
+        <Button android:id="@id/button_install" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/install" android:layout_below="@id/download_progress" android:layout_alignWithParentIfMissing="true" style="@style/Button" />
+    </RelativeLayout>
+</RelativeLayout>

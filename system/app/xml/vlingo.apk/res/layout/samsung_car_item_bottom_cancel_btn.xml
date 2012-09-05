@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="center" android:background="@drawable/samsung_car_button_back" android:padding="6.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip">
+        <Button android:textSize="28.0dip" android:textColor="@drawable/car_home_button_text_color" android:id="@id/cancel_btn" android:background="@drawable/samsung_car_red_btn" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/cancel_uc" />
+    </FrameLayout>
+</FrameLayout>

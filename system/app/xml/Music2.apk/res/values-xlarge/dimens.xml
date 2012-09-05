@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="carousel_font_size">14.0dip</dimen>
+    <dimen name="carousel_glow_scale">1.019989px</dimen>
+    <dimen name="carousel_accelerate_factor">1.0px</dimen>
+    <dimen name="carousel_eye_x">20.779999px</dimen>
+    <dimen name="carousel_eye_y">2.2599792px</dimen>
+    <dimen name="carousel_eye_z">16.97998px</dimen>
+    <dimen name="carousel_lookat_x">14.589996px</dimen>
+    <dimen name="carousel_lookat_y">-2.6599731px</dimen>
+    <dimen name="carousel_lookat_z">-1.4699707px</dimen>
+    <dimen name="carousel_icon_size">36.0dip</dimen>
+    <dimen name="carousel_detail_width">200.0dip</dimen>
+    <dimen name="carousel_detail_height">80.0dip</dimen>
+    <dimen name="carousel_detail_line_offset_y">65.0dip</dimen>
+</resources>

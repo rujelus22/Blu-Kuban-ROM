@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="sns_sync_interval_entries">
+        <item>@string/interval_value_none</item>
+        <item>@string/interval_value_3hours</item>
+        <item>@string/interval_value_6hours</item>
+        <item>@string/interval_value_12hours</item>
+        <item>@string/interval_value_onceaday</item>
+    </array>
+    <string-array name="sns_sync_interval_values">
+        <item>0</item>
+        <item>10800</item>
+        <item>21600</item>
+        <item>43200</item>
+        <item>86400</item>
+    </string-array>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/scanning" android:background="@drawable/scanning_header" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="25.329987dip">
+        <ProgressBar android:layout_gravity="center" android:id="@id/scanningimage" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="6.669983dip" android:max="100" sytle="?android:attr/progressBarStyleSmall" />
+        <TextView android:textSize="16.0dip" android:gravity="center_vertical" android:id="@id/scanningtext" android:layout_width="fill_parent" android:layout_height="25.329987dip" android:layout_marginLeft="6.669983dip" android:text="@string/scanning_device" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/container_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:id="@id/emptyview" android:background="@drawable/noitems_nodevice_based" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="102.0dip" />
+        <TextView android:textSize="24.0dip" android:textColor="@touchwiz:color/tw_color085" android:gravity="center" android:id="@id/emptytext" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/no_device" />
+        <ListView android:id="@id/device_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:drawSelectorOnTop="false" android:layout_weight="1.0" />
+    </LinearLayout>
+    <com.sec.android.touchwiz.widget.TwSoftkeyView android:id="@id/softkeyview" android:layout_width="fill_parent" android:layout_height="60.0dip"
+      xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+        <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/refresh_softkey" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="refreshList" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/refresh" />
+    </com.sec.android.touchwiz.widget.TwSoftkeyView>
+</LinearLayout>

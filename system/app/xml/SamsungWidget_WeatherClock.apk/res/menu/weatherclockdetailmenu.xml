@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_add_new_create_add_call" android:id="@id/menu_Add" android:title="@string/menu_add_title" />
+    <item android:icon="@drawable/ic_menu_remove_erase" android:id="@id/menu_Delete" android:title="@string/menu_delete_title" />
+    <item android:icon="@drawable/ic_menu_list_view_sorting" android:id="@id/menu_CityList" android:title="@string/menu_city_list_title" />
+    <item android:icon="@drawable/ic_menu_search_topic_search" android:id="@id/menu_Search" android:title="@string/menu_search_title" />
+    <item android:icon="@drawable/ic_menu_settings_account_weather_setting_preferences" android:id="@id/menu_Settings" android:title="@string/menu_settings_title" />
+</menu>

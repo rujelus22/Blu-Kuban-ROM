@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="config_workspaceSpringLoadShrinkPercentage">90</integer>
+    <integer name="config_dragViewExtraPixels">0</integer>
+    <integer name="config_workspaceShrinkPercent">17</integer>
+    <integer name="folder_max_count_x">-1</integer>
+    <integer name="folder_max_count_y">-1</integer>
+    <integer name="folder_max_num_items">-1</integer>
+</resources>

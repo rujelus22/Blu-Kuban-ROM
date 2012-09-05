@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="release">#ff008040</color>
+    <color name="working">#ff0000ff</color>
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="green">#ff00ff00</color>
+    <color name="blue">#ff0000ff</color>
+    <color name="red">#ffff0000</color>
+    <color name="background">#ffffffff</color>
+    <color name="factorytestcomplete">#ffaaffff</color>
+    <color name="pink">#ffffbfcc</color>
+    <color name="sky">#ff01ccff</color>
+</resources>

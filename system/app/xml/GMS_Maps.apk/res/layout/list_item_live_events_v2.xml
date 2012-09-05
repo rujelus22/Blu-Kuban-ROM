@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/live_events_section" android:paddingTop="@dimen/place_page_padding_top" android:focusable="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/header_text" android:paddingLeft="@dimen/place_page_padding_left" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <include layout="@layout/place_page_divider" />
+    <LinearLayout android:orientation="vertical" android:id="@id/events_group" android:paddingLeft="@dimen/place_page_padding_left" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:orientation="vertical" android:id="@id/more_events_container" android:paddingLeft="@dimen/place_page_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="13.0dip" />
+    <com.google.googlenav.ui.android.FlowLayout android:gravity="left" android:id="@id/providers_links" android:paddingLeft="@dimen/place_page_padding_left" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" verticalSpacing="8" horizontalSpacing="0" />
+</LinearLayout>

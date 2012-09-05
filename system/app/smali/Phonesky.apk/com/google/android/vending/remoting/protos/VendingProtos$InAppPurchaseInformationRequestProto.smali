@@ -1,0 +1,718 @@
+.class public final Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+.super Lcom/google/protobuf/micro/MessageMicro;
+.source "VendingProtos.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/vending/remoting/protos/VendingProtos;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "InAppPurchaseInformationRequestProto"
+.end annotation
+
+
+# instance fields
+.field private billingApiVersion_:I
+
+.field private cachedSize:I
+
+.field private hasBillingApiVersion:Z
+
+.field private hasNonce:Z
+
+.field private hasSignatureAlgorithm:Z
+
+.field private hasSignatureHash:Z
+
+.field private nonce_:J
+
+.field private notificationId_:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private signatureAlgorithm_:Ljava/lang/String;
+
+.field private signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 3
+
+    .prologue
+    .line 19082
+    invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
+
+    .line 19087
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
+
+    .line 19107
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->nonce_:J
+
+    .line 19123
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->notificationId_:Ljava/util/List;
+
+    .line 19157
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->signatureAlgorithm_:Ljava/lang/String;
+
+    .line 19174
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->billingApiVersion_:I
+
+    .line 19224
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->cachedSize:I
+
+    .line 19082
+    return-void
+.end method
+
+
+# virtual methods
+.method public addNotificationId(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 19140
+    if-nez p1, :cond_8
+
+    .line 19141
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 19143
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->notificationId_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    .line 19144
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->notificationId_:Ljava/util/List;
+
+    .line 19146
+    :cond_17
+    iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->notificationId_:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 19147
+    return-object p0
+.end method
+
+.method public getBillingApiVersion()I
+    .registers 2
+
+    .prologue
+    .line 19175
+    iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->billingApiVersion_:I
+
+    return v0
+.end method
+
+.method public getCachedSize()I
+    .registers 2
+
+    .prologue
+    .line 19226
+    iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->cachedSize:I
+
+    if-gez v0, :cond_7
+
+    .line 19228
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getSerializedSize()I
+
+    .line 19230
+    :cond_7
+    iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->cachedSize:I
+
+    return v0
+.end method
+
+.method public getNonce()J
+    .registers 3
+
+    .prologue
+    .line 19108
+    iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->nonce_:J
+
+    return-wide v0
+.end method
+
+.method public getNotificationIdList()Ljava/util/List;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 19126
+    iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->notificationId_:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getSerializedSize()I
+    .registers 8
+
+    .prologue
+    .line 19234
+    const/4 v3, 0x0
+
+    .line 19235
+    .local v3, size:I
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasSignatureHash()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_11
+
+    .line 19236
+    const/4 v4, 0x1
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getSignatureHash()Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 19239
+    :cond_11
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasNonce()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_21
+
+    .line 19240
+    const/4 v4, 0x2
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getNonce()J
+
+    move-result-wide v5
+
+    invoke-static {v4, v5, v6}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt64Size(IJ)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 19244
+    :cond_21
+    const/4 v0, 0x0
+
+    .line 19245
+    .local v0, dataSize:I
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getNotificationIdList()Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    .local v2, i$:Ljava/util/Iterator;
+    :goto_2a
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3c
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    .line 19246
+    .local v1, element:Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
+
+    move-result v4
+
+    add-int/2addr v0, v4
+
+    goto :goto_2a
+
+    .line 19249
+    .end local v1           #element:Ljava/lang/String;
+    :cond_3c
+    add-int/2addr v3, v0
+
+    .line 19250
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getNotificationIdList()Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    mul-int/lit8 v4, v4, 0x1
+
+    add-int/2addr v3, v4
+
+    .line 19252
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasSignatureAlgorithm()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_58
+
+    .line 19253
+    const/4 v4, 0x4
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getSignatureAlgorithm()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 19256
+    :cond_58
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasBillingApiVersion()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_68
+
+    .line 19257
+    const/4 v4, 0x5
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getBillingApiVersion()I
+
+    move-result v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 19260
+    :cond_68
+    iput v3, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->cachedSize:I
+
+    .line 19261
+    return v3
+.end method
+
+.method public getSignatureAlgorithm()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 19158
+    iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->signatureAlgorithm_:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getSignatureHash()Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
+    .registers 2
+
+    .prologue
+    .line 19089
+    iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
+
+    return-object v0
+.end method
+
+.method public hasBillingApiVersion()Z
+    .registers 2
+
+    .prologue
+    .line 19176
+    iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasBillingApiVersion:Z
+
+    return v0
+.end method
+
+.method public hasNonce()Z
+    .registers 2
+
+    .prologue
+    .line 19109
+    iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasNonce:Z
+
+    return v0
+.end method
+
+.method public hasSignatureAlgorithm()Z
+    .registers 2
+
+    .prologue
+    .line 19159
+    iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasSignatureAlgorithm:Z
+
+    return v0
+.end method
+
+.method public hasSignatureHash()Z
+    .registers 2
+
+    .prologue
+    .line 19088
+    iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasSignatureHash:Z
+
+    return v0
+.end method
+
+.method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+    .registers 6
+    .parameter "input"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 19268
+    :cond_0
+    :goto_0
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
+
+    move-result v0
+
+    .line 19269
+    .local v0, tag:I
+    sparse-switch v0, :sswitch_data_3a
+
+    .line 19273
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 19274
+    :sswitch_d
+    return-object p0
+
+    .line 19279
+    :sswitch_e
+    new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
+
+    invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;-><init>()V
+
+    .line 19280
+    .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 19281
+    invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->setSignatureHash(Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+
+    goto :goto_0
+
+    .line 19285
+    .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
+    :sswitch_1a
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
+
+    move-result-wide v2
+
+    invoke-virtual {p0, v2, v3}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->setNonce(J)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+
+    goto :goto_0
+
+    .line 19289
+    :sswitch_22
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->addNotificationId(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+
+    goto :goto_0
+
+    .line 19293
+    :sswitch_2a
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->setSignatureAlgorithm(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+
+    goto :goto_0
+
+    .line 19297
+    :sswitch_32
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->setBillingApiVersion(I)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+
+    goto :goto_0
+
+    .line 19269
+    :sswitch_data_3a
+    .sparse-switch
+        0x0 -> :sswitch_d
+        0xa -> :sswitch_e
+        0x10 -> :sswitch_1a
+        0x1a -> :sswitch_22
+        0x22 -> :sswitch_2a
+        0x28 -> :sswitch_32
+    .end sparse-switch
+.end method
+
+.method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
+    .registers 3
+    .parameter "x0"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 19080
+    invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public setBillingApiVersion(I)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 19178
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasBillingApiVersion:Z
+
+    .line 19179
+    iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->billingApiVersion_:I
+
+    .line 19180
+    return-object p0
+.end method
+
+.method public setNonce(J)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+    .registers 4
+    .parameter "value"
+
+    .prologue
+    .line 19111
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasNonce:Z
+
+    .line 19112
+    iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->nonce_:J
+
+    .line 19113
+    return-object p0
+.end method
+
+.method public setSignatureAlgorithm(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 19161
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasSignatureAlgorithm:Z
+
+    .line 19162
+    iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->signatureAlgorithm_:Ljava/lang/String;
+
+    .line 19163
+    return-object p0
+.end method
+
+.method public setSignatureHash(Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 19091
+    if-nez p1, :cond_8
+
+    .line 19092
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 19094
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasSignatureHash:Z
+
+    .line 19095
+    iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
+
+    .line 19096
+    return-object p0
+.end method
+
+.method public writeTo(Lcom/google/protobuf/micro/CodedOutputStreamMicro;)V
+    .registers 7
+    .parameter "output"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 19207
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasSignatureHash()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_e
+
+    .line 19208
+    const/4 v2, 0x1
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getSignatureHash()Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 19210
+    :cond_e
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasNonce()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1c
+
+    .line 19211
+    const/4 v2, 0x2
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getNonce()J
+
+    move-result-wide v3
+
+    invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
+
+    .line 19213
+    :cond_1c
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getNotificationIdList()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_24
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_35
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 19214
+    .local v0, element:Ljava/lang/String;
+    const/4 v2, 0x3
+
+    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    goto :goto_24
+
+    .line 19216
+    .end local v0           #element:Ljava/lang/String;
+    :cond_35
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasSignatureAlgorithm()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_43
+
+    .line 19217
+    const/4 v2, 0x4
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getSignatureAlgorithm()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 19219
+    :cond_43
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->hasBillingApiVersion()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_51
+
+    .line 19220
+    const/4 v2, 0x5
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;->getBillingApiVersion()I
+
+    move-result v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+
+    .line 19222
+    :cond_51
+    return-void
+.end method

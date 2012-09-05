@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/ScrollView01" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/message_1" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageView android:layout_gravity="center" android:id="@id/img" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_gravity="center" android:id="@id/message_4" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <RelativeLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/checkbox_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <CheckBox android:id="@id/checkbox" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:paddingLeft="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/do_not_ask_again" android:layout_toRightOf="@id/checkbox" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <Button android:textAppearance="?android:textAppearanceMedium" android:textSize="16.0dip" android:textColor="@android:color/white" android:layout_gravity="center" android:id="@id/calibration_button" android:background="@drawable/default_winset_button_01_bg_selector" android:paddingTop="5.0dip" android:layout_width="wrap_content" android:layout_height="55.0dip" android:text="@string/use_motion_calibration" />
+    </LinearLayout>
+</ScrollView>

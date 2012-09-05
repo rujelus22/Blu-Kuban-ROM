@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard android:keyWidth="9.159994%p" android:keyHeight="10.125006%p" android:horizontalGap="0.8299947%p" android:verticalGap="1.4999986%p"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Row android:rowEdgeFlags="top">
+        <Key android:codes="49" android:keyEdgeFlags="left" android:keyLabel="1" />
+        <Key android:codes="33" android:keyLabel="!" />
+        <Key android:codes="63" android:keyLabel="\?" />
+        <Key android:codes="64" android:keyLabel="\@" />
+        <Key android:codes="47" android:keyLabel="/" />
+        <Key android:codes="94" android:keyEdgeFlags="right" android:keyLabel="^" />
+    </Row>
+    <Row android:rowEdgeFlags="bottom">
+        <Key android:codes="126" android:keyEdgeFlags="left" android:keyLabel="~" />
+        <Key android:codes="95" android:keyLabel="_" />
+        <Key android:codes="58" android:keyLabel=":" />
+        <Key android:codes="40" android:keyLabel="(" />
+        <Key android:codes="41" android:keyLabel=")" />
+        <Key android:codes="35" android:keyEdgeFlags="right" android:keyLabel="\#" />
+    </Row>
+</Keyboard>

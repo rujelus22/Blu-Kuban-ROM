@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vlingo.client.superdialer.items.SDItemPhoneNumberView android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="67.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/ListCellPhoneTypeText" android:ellipsize="end" android:gravity="right|center" android:id="@id/item_heading" android:layout_width="63.0dip" android:layout_height="fill_parent" android:layout_marginLeft="6.0dip" android:text="phone_type" android:scrollHorizontally="false" android:singleLine="true" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/item_accessory" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/list_cell_accessory_pad_right" android:src="@drawable/call_contact" android:layout_toRightOf="@id/heading" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textAppearance="@style/ListCellPhoneNumberText" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/item_subheading" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="14.0dip" android:layout_marginRight="6.0dip" android:text="phone_number" android:singleLine="true" android:layout_toLeftOf="@id/item_accessory" android:layout_toRightOf="@id/item_heading" android:layout_centerVertical="true" />
+</com.vlingo.client.superdialer.items.SDItemPhoneNumberView>

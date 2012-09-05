@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.app.twlauncher.CellLayout android:layout_width="fill_parent" android:layout_height="fill_parent" launcher:cellWidth="@dimen/ws_cellWidth" launcher:cellHeight="@dimen/ws_cellHeight" launcher:rowStartPadding="0.0dip" launcher:rowEndPadding="0.0dip" launcher:columnStartPadding="0.0dip" launcher:columnEndPadding="0.0dip" launcher:columnCells="@integer/ws_gridColumns" launcher:rowCells="@integer/ws_gridRows"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:launcher="http://schemas.android.com/apk/res/com.sec.android.app.twlauncher" />

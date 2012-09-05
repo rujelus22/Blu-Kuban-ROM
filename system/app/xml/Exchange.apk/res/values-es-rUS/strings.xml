@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exchange_name">Corporativo</string>
+    <string name="exchange_name_alternate">Microsoft Exchange ActiveSync</string>
+    <string name="meeting_accepted">Aceptado: %s</string>
+    <string name="meeting_declined">No aceptado: %s</string>
+    <string name="meeting_tentative">Provisional: %s</string>
+    <string name="meeting_canceled">Cancelada: %1$s</string>
+    <string name="meeting_updated">Actualizado: %s</string>
+    <string name="meeting_when">Cuándo: %s</string>
+    <string name="meeting_where">Dónde: %s</string>
+    <string name="meeting_recurring">Cuándo: %s (recurrente)</string>
+    <string name="provider_label">Tareas</string>
+    <string name="meeting_allday">Cuando: %s (todo el día)</string>
+    <string name="meeting_allday_recurring">Cuando: %s (todo el día, recurrente)</string>
+    <string name="notification_exchange_calendar_added">Calendario de Exchange ActiveSync añadido</string>
+    <string name="app_name">Servicios de Exchange</string>
+    <string name="exception_cancel">Evento del %s cancelado</string>
+    <string name="exception_updated">Se han cambiado los detalles para el evento del %s</string>
+    <string name="account_settings_resync_label">Resincronizar</string>
+    <string name="account_settings_resync_in_progress_message">Resincronizando...</string>
+    <string name="account_settings_resync_complete_message">Resincronizado. Sincronización inicial iniciada</string>
+    <string name="blocked_device_message">Permiso denegado</string>
+    <string name="search_error">No se puede buscar</string>
+    <string name="policy_app_blacklist">No se permiten aplicaciones seleccionadas</string>
+    <string name="policy_app_whitelist">Solo se permiten aplicaciones seleccionadas</string>
+    <string name="message_compose_display_name">%1$s y %2$d otros</string>
+    <string name="messageview_body_overflow_message">Correo truncado</string>
+    <string name="policy_dont_allow_unsigned_apps">No se permiten aplicaciones sin firma</string>
+    <string name="policy_dont_allow_unsigned_installers">No permitir instaladores de aplic. sin firma</string>
+</resources>

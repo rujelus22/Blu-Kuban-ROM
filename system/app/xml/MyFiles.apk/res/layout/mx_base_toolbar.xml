@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/toolbar" android:background="@drawable/winset_tab_bg" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="fill_parent" android:layout_height="50.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/LinearLayout01" android:background="@drawable/myfiles_btn_bg" android:layout_width="fill_parent" android:layout_height="36.0dip" android:layout_marginLeft="50.0dip" android:layout_marginRight="50.0dip" android:layout_centerInParent="true">
+        <com.sec.android.app.myfiles.fileselector.views.MxBaseToolBarButton android:id="@id/toolbar_home" android:background="@drawable/toolbar_left_button" android:focusable="true" android:focusableInTouchMode="false" android:nextFocusDown="@id/toolbar_up" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <ImageView android:id="@id/ImageView01" android:background="@drawable/status_bar_header_line" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.sec.android.app.myfiles.fileselector.views.MxBaseToolBarButton android:id="@id/toolbar_up" android:background="@drawable/toolbar_right_button" android:focusable="true" android:focusableInTouchMode="false" android:nextFocusUp="@id/toolbar_home" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_toRightOf="@id/toolbar_home" />
+    </LinearLayout>
+</RelativeLayout>

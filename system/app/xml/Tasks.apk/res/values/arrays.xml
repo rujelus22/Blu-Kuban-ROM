@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="priority_items">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+    <string-array name="priority_dialog_items">
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+    </string-array>
+    <string-array name="reminder_type_labels">
+        <item>Off</item>
+        <item>On start date</item>
+        <item>On due date</item>
+        <item>Customize</item>
+    </string-array>
+    <string-array name="Reminder_tone">
+        <item>Sounds</item>
+        <item>Go to my files</item>
+    </string-array>
+    <string-array name="preferences_default_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="list_by_array">
+        <item>Due date</item>
+        <item>Status</item>
+        <item>Priority</item>
+    </string-array>
+</resources>

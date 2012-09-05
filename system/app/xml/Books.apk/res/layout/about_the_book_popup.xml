@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/about_the_book" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="?android:colorBackground" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/about_the_book_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="@dimen/about_the_book_cover_height" style="@style/PaddedView.Horizontal">
+                <FrameLayout android:id="@id/cover_spinner" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <ProgressBar android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </FrameLayout>
+                <ImageView android:gravity="center" android:id="@id/cover" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="centerInside" android:adjustViewBounds="true" />
+            </FrameLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+                <TextView android:textSize="@dimen/about_the_book_large_text_size" android:textColor="@color/about_the_book_title_text_color" android:gravity="bottom|left|center" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/PaddedView.Vertical" />
+                <TextView android:textSize="@dimen/about_the_book_small_text_size" android:textColor="@color/about_the_book_author_text_color" android:gravity="top|left|center" android:id="@id/author" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/PaddedView.Last" />
+            </LinearLayout>
+        </LinearLayout>
+        <View style="@style/AboutTheBookSeparator.Blue" />
+        <LinearLayout android:gravity="left" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/about_the_book_metadata_text_size" android:id="@id/publisher" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="0.0dip" style="@style/PaddedView.Vertical" />
+            <TextView android:textSize="@dimen/about_the_book_metadata_text_size" android:id="@id/page_count" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/PaddedView.Last" />
+        </LinearLayout>
+        <View style="@style/AboutTheBookSeparator.Gray" />
+        <FrameLayout android:gravity="center" android:id="@id/plus_one_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="48.0dip">
+            <FrameLayout android:id="@id/plus_one_spinner" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/PaddedView.Last">
+                <ProgressBar android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleSmall" />
+            </FrameLayout>
+            <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:id="@id/plus_one_row" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageButton android:id="@id/plus_one_button" android:background="@color/clear" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_plusone_off" style="@style/PaddedView.Horizontal" />
+                <TextView android:textSize="@dimen/about_the_book_metadata_text_size" android:id="@id/plus_one_text" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/PaddedView.Last" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Tryb jazdy</string>
+    <string name="app_name">Polecenia głosowe</string>
+    <string name="incar">Obsługa głosowa</string>
+    <string name="incar_icon">Obsługa głosowa</string>
+    <string name="Vlingo">Polecenia głosowe</string>
+    <string name="widget_name">Głos</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/placesHeader" android:background="@drawable/actionbar_background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="top" android:orientation="horizontal" android:id="@id/headerButtonPanel" android:layout_width="fill_parent" android:layout_height="@dimen/action_bar_height">
+        <include layout="@layout/feature_switcher_anchor" />
+        <TextView android:textAppearance="@style/PlacesTitle" android:gravity="center_vertical" android:id="@id/headerTitle" android:paddingLeft="5.0dip" android:focusable="false" android:layout_width="fill_parent" android:layout_height="@dimen/action_bar_icon_height" android:layout_weight="9999.0" />
+        <View android:background="@drawable/actionbar_seperator" android:layout_width="2.0px" android:layout_height="fill_parent" android:layout_marginTop="2.0dip" />
+        <ImageView android:id="@id/searchView" android:layout_width="@dimen/action_bar_icon_width" android:layout_height="@dimen/action_bar_icon_height" android:src="@drawable/actionbar_search" android:scaleType="fitStart" />
+    </LinearLayout>
+</LinearLayout>

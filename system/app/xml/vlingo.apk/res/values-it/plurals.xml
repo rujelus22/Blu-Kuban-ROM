@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="samsung_schedule_multiple_events">
+        <item quantity="other">Hai %1$d eventi oggi.</item>
+        <item quantity="one">Hai un evento.</item>
+    </plurals>
+    <plurals name="checkEventNameTimeDetail">
+        <item quantity="other">da %1$s ricevuto alle %2$s</item>
+    </plurals>
+    <plurals name="checkEventTimeDetail">
+        <item quantity="other">ricevuto alle %1$s</item>
+    </plurals>
+    <plurals name="numberOfUnreadSMS">
+        <item quantity="other">%1$d nuovi messaggi</item>
+        <item quantity="one">%1$d nuovo messaggio</item>
+    </plurals>
+    <plurals name="numberOfMissedCalls">
+        <item quantity="other">%1$d chiamate perse</item>
+        <item quantity="one">%1$d chiamata persa</item>
+    </plurals>
+    <plurals name="numberOfFiredEvents">
+        <item quantity="other">%1$d eventi mancati</item>
+        <item quantity="one">%1$d evento mancato</item>
+    </plurals>
+</resources>

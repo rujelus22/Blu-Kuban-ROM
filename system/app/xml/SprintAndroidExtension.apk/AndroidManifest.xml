@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.sprintextension" android:versionCode="7" android:versionName="2.1-update1" package="com.samsung.internal"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="7" />
+    <eat-comment />
+    <permission-group android:label="@string/permgrouplab_messages" android:name="com.sprint.internal.permission-group.SPRINT_ANDROID_EXTENSION" android:description="@string/permgroupdesc_messages" />
+    <permission android:label="@string/permlab_systemproperties" android:name="com.sprint.internal.permission.SYSTEMPROPERTIES" android:protectionLevel="signature" android:permissionGroup="com.sprint.internal.permission-group.SPRINT_ANDROID_EXTENSION" android:description="@string/permdesc_systemproperties" />
+    <permission android:label="@string/permlab_connectionmanager" android:name="com.sprint.internal.permission.CONNECTIONMANAGER" android:protectionLevel="signature" android:permissionGroup="com.sprint.internal.permission-group.SPRINT_ANDROID_EXTENSION" android:description="@string/permdesc_connectionmanager" />
+    <permission android:label="@string/permlab_omadm" android:name="com.sprint.internal.permission.OMADM" android:protectionLevel="signature" android:permissionGroup="com.sprint.internal.permission-group.SPRINT_ANDROID_EXTENSION" android:description="@string/permdesc_omadm" />
+    <permission android:label="@string/permlab_diagnastics" android:name="com.sprint.internal.permission.DIAGNOSTICS" android:protectionLevel="signature" android:permissionGroup="com.sprint.internal.permission-group.SPRINT_ANDROID_EXTENSION" android:description="@string/permdesc_diagnastics" />
+    <permission android:name="com.sprint.internal.permission.PLATFORM" android:protectionLevel="signature" android:permissionGroup="com.sprint.internal.permission-group.SPRINT_ANDROID_EXTENSION" />
+    <permission android:name="com.sprint.internal.permission.SYSTEMPROPERTIES_WRITE" android:protectionLevel="signature" android:permissionGroup="com.sprint.internal.permission-group.SPRINT_ANDROID_EXTENSION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="com.samsung.permission.PHONE_INFO" />
+    <uses-permission android:name="com.sprint.internal.permission.SYSTEMPROPERTIES" />
+    <uses-permission android:name="com.sprint.internal.permission.CONNECTIONMANAGER" />
+    <application>
+        <service android:name=".AndroidSprintExtensionService" android:exported="true" />
+        <receiver android:name=".AndroidSprintExtensionReceiver">
+            <intent-filter>
+                <action android:name="com.samsung.internal.PHONEINFO_STARTED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

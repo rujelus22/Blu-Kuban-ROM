@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="progress_bar_color">#ff47ef47</color>
+    <color name="darkgray">#ff5a5a5a</color>
+    <color name="colorless">#00ffffff</color>
+    <color name="no_item_text">#ff4f4f4f</color>
+    <color name="sdcard_error_text">@touchwiz:color/tw_color011</color>
+    <color name="list_nowplaying_sub_text">#ff96c9e3</color>
+    <color name="music_player_list_group_title">@touchwiz:color/tw_color001</color>
+    <color name="music_player_title_sub">@touchwiz:color/tw_color005</color>
+    <color name="music_player_title_main">@touchwiz:color/tw_color001</color>
+    <color name="music_player_list_count">@touchwiz:color/tw_color005</color>
+    <color name="music_player_list_text1">@touchwiz:color/tw_textappearance_listtwolineprimary</color>
+    <color name="music_player_list_text2">@touchwiz:color/tw_textappearance_listtwolinesecondary</color>
+    <color name="music_player_visualization_background">#bb000000</color>
+    <color name="music_player_lyric_text_background">#77000000</color>
+    <color name="list_main_header_text">@touchwiz:color/tw_color001</color>
+    <color name="list_main_header_text_shadow">@touchwiz:color/tw_color002</color>
+    <color name="tw_white">@touchwiz:color/tw_color001</color>
+    <color name="tw_black">@touchwiz:color/tw_color002</color>
+    <color name="tw_dark_blue">@touchwiz:color/tw_color003</color>
+    <color name="music_menu_text_color">@touchwiz:color/tw_textappearance_listoneline</color>
+</resources>

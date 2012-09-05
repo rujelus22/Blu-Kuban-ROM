@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.phone" android:versionCode="15" android:versionName="4.0.4-FH13" package="com.android.sprintmenu"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.HARDWARE_TEST" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.MASTER_CLEAR" />
+    <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.WRITE_CDMA_CARRIER_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CHANGE_DUN_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIMAX_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIMAX_STATE" />
+    <application android:icon="@drawable/icon">
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/MSL_Checker" android:name=".MSL_Checker" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hdata" android:name=".hdata" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hdata" android:name=".hdata_options" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//------------------------------------------------------------------------------------- <activity android:label="@string/hdata" android:name=".hdata_edit" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//------------------------------------------------------------------------------------- <activity android:label="@string/EVDO_Menu_Title" android:name=".EVDO_View" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//------------------------------------------------------------------------------------- <activity android:label="@string/EVDO_Menu_Title" android:name=".EVDO_Edit" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//------------------------------------------------------------------------------------- <activity android:label="@string/Advanced_Menu_Title" android:name=".Advanced_View" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//------------------------------------------------------------------------------------- <activity android:label="@string/Advanced_Menu_Title" android:name=".Advanced_Edit" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//------------------------------------------------------------------------------------- <activity android:label="@string/hdata" android:name=".DEBUG" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hRTN" android:name=".RTN" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/GPSCLRX" android:name=".GPSCLRX" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/SCRTN" android:name=".SCRTN" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hdata" android:name=".viewgateway1" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/hdata" android:name=".viewgateway2" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/hdata" android:name=".editgateway1" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/hdata" android:name=".editgateway2" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hdata" android:name=".MMSC_view" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/Advanced" android:name=".Advanced" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hdata" android:name=".AKEY" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hdata" android:name=".AKEY2" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hdata" android:name=".OTKSL" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="TerminalMode" android:name=".TerminalMode" android:process="com.android.phone" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hdata" android:name=".DEBUGMENU" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/usb_charging" android:name=".USBChargeMenu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:name=".SprintMenu" android:process="com.android.phone" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hdata" android:name=".VoicePrivacy" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hdata" android:name=".RC_DATA" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="RC_DATA" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hdata" android:name=".HDR1X_Selection" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="HDR1X_Selection" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/restore_nai" android:name=".RestoreNAI" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="RestoreNAI" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/enable_hfa" android:name=".Enable_HFA" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Enable_HFA" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/DSA_Title" android:name=".DSA" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DSA" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/MMSC_Title" android:name=".MMSC" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="MMSC" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/dtmf_set" android:name=".DTMF_Set" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DTMF_Set" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/korea_mode" android:name=".KOREA_Mode" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Korea_mode_title" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/WiMax_Menu" android:name=".WiMAX_Menu" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="WiMax_Menu" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/Toggle_NAI" android:name=".Toggle_NAI" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Toggle_NAI" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/user_name" android:name=".Username_MSL" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Username_MSL" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/user_name" android:name=".Username_Edit" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Username_Edit" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/user_name" android:name=".Username_View" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Username_View" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/user_name" android:name=".Dataprofile_Edit" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Dataprofile_Edit" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/user_name" android:name=".Dataprofile_View" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Username_View" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hRTN" android:name=".RTN_View" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="RTN_View" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/hRTN" android:name=".RTN_Reset" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="RTN_Reset" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/TTY" android:name=".TTY" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="TTY" />
+            </intent-filter>
+        </activity> //-------------------------------------------------------------------------------------
+<activity android:label="@string/usb_name" android:name=".PhoneUtil" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="UPST" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/phoneutil_oldrev_name" android:name=".PhoneUtil_OldRev" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="UPST" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/usb_name" android:name=".PhoneUtil" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DIAG" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/phoneutil_oldrev_name" android:name=".PhoneUtil_OldRev" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DIAG" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/DUN_title" android:name=".DUN" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DUN_title" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/dns_set" android:name=".DNS_Set" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DNS_Set" />
+            </intent-filter>
+        </activity>
+//----------------------------------------------------------------------------------------
+<activity android:label="@string/DSS_Title" android:name=".DSA_View" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DSA_View" />
+            </intent-filter>
+        </activity>
+//---------------------------------------------------------------------------------------
+<activity android:label="@string/DSS_Title" android:name=".DSA_Edit" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DSA_Edit" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/Multimedia_Title" android:name=".Multimedia_Edit" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Multimedia" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/Multimedia_Title" android:name=".Multimedia_View" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Multimedia_View" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/Work_Mode_Title" android:name=".WORK_Mode" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Work_Mode" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/CLEAR" android:name=".CLEAR_Reset" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="CLEAR_Reset" />
+            </intent-filter>
+        </activity>
+//------------------------------------------------------------------------------------- <activity android:label="@string/DUN_title" android:name=".DUNHidden" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DUN_title" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/Others_title" android:name=".Others" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Others_title" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/Others_title" android:name=".Hdata_others" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Others_title" />
+            </intent-filter>
+        </activity>
+//-------------------------------------------------------------------------------------
+<activity android:label="@string/Others_title" android:name=".Hdata_edit_others" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="Others_title" />
+            </intent-filter>
+        </activity>
+//-------------INTENTs--------------------------------------------
+<receiver android:name="HiddenmenuBroadcastReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="MSL_Checker" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DATA" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="RTN" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DEBUG" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="CLEAR" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="AKEY" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="OTKSL" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="GPSCLRX" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="SCRTN" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="TESTMODE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="NAMBASIC" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="TTY" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="UPST" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DIAG" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="DNSSET" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+//-------------------------------------------------------------------------------------
+</application>
+</manifest>

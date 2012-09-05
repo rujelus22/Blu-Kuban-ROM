@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/container_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/emptyview" android:background="@drawable/noitems_multi_based" android:visibility="gone" android:layout_width="116.0dip" android:layout_height="116.0dip" android:layout_marginTop="160.0dip" />
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/emptymusicview" android:background="@drawable/noitems_music_based" android:visibility="gone" android:layout_width="116.0dip" android:layout_height="116.0dip" android:layout_marginTop="160.0dip" />
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/emptyimageview" android:background="@drawable/noitems_image_based" android:visibility="gone" android:layout_width="116.0dip" android:layout_height="116.0dip" android:layout_marginTop="160.0dip" />
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/emptyvideoview" android:background="@drawable/noitems_video_based" android:visibility="gone" android:layout_width="116.0dip" android:layout_height="116.0dip" android:layout_marginTop="160.0dip" />
+        <TextView android:textSize="24.0dip" android:textColor="@touchwiz:color/tw_color085" android:gravity="center" android:id="@id/emptytext" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/no_content" />
+        <TextView android:textSize="24.0dip" android:textColor="@touchwiz:color/tw_color085" android:gravity="center" android:id="@id/emptymusictext" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/no_content" />
+        <TextView android:textSize="24.0dip" android:textColor="@touchwiz:color/tw_color085" android:gravity="center" android:id="@id/emptyimagetext" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/no_content" />
+        <TextView android:textSize="24.0dip" android:textColor="@touchwiz:color/tw_color085" android:gravity="center" android:id="@id/emptyvideotext" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/no_content" />
+        <com.sec.android.app.dlna.view.MultiSelectListView android:id="@id/media_list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:drawSelectorOnTop="false" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

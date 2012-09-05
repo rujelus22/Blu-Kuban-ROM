@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="realtimechat_acl_options_keys">
+        <item>@string/key_acl_setting_anyone</item>
+        <item>@string/key_acl_setting_my_circles</item>
+        <item>@string/key_acl_setting_extended_circles</item>
+    </array>
+    <array name="realtimechat_acl_options_labels">
+        <item>@string/realtimechat_acl_anyone</item>
+        <item>@string/realtimechat_acl_my_circles</item>
+        <item>@string/realtimechat_acl_extended_circles</item>
+    </array>
+    <string-array name="photo_connection_preference_entry_values">
+        <item>WIFI_OR_MOBILE</item>
+        <item>WIFI_ONLY</item>
+    </string-array>
+    <array name="photo_connection_preference_entry_labels">
+        <item>@string/photo_connection_wifi_and_mobile</item>
+        <item>@string/photo_connection_wifi_only</item>
+    </array>
+    <string-array name="video_connection_preference_entry_values">
+        <item>WIFI_OR_MOBILE</item>
+        <item>WIFI_ONLY</item>
+    </string-array>
+    <array name="video_connection_preference_entry_labels">
+        <item>@string/photo_connection_wifi_and_mobile</item>
+        <item>@string/photo_connection_wifi_only</item>
+    </array>
+    <string-array name="realtimechat_backends">
+        <item>realtime-chat@bot.talk.google.com</item>
+        <item>realtime-chat-dev@bot.talk.google.com</item>
+        <item>realtime-chat-canary@bot.talk.google.com</item>
+    </string-array>
+</resources>

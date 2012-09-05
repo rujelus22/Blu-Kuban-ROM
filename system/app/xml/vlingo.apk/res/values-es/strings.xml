@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="phrasespotter_SEARCH_GRAMMAR_RES_NAME">es_galaxy_cg_2_5</string>
+    <string name="phrasespotter_ACOUSTIC_MODEL_RES_NAME">nn_es_mfcc_16k_15_big_250_v1_1_raw</string>
+    <string name="phrasespotter_PHRASESPOT_BEAM">20</string>
+    <string name="phrasespotter_PHRASESPOT_ABSBEAM">40</string>
+    <string name="phrasespotter_PHRASESPOT_AOFFSET">0</string>
+    <string name="phrasespotter_PHRASESPOT_DELAY">100</string>
+    <string name="util_WEB_SEARCH_URL_BING_DEFAULT">http://m.bing.com/search/search.aspx?q={query}&amp;go=&amp;d=&amp;dl=&amp;a=results&amp;MID=10006&amp;asq=&amp;asems</string>
+    <string name="util_WEB_SEARCH_URL_BING_HOME_DEFAULT">http://www.bing.com</string>
+    <string name="util_WEB_SEARCH_URL_DEFAULT">http://www.google.com/m?cx=partner-pub-5324388728707269:o6qccq-17aj&amp;q={query}</string>
+    <string name="util_WEB_SEARCH_URL_HOME_DEFAULT">http://www.google.com/m?cx=partner-pub-5324388728707269:o6qccq-17aj</string>
+    <string name="util_WEB_SEARCH_URL_YAHOO_DEFAULT">http://search.yahoo.com/mobile/s?submit=oneSearch&amp;.tsrc=vlingo&amp;.sep=fp&amp;cat=&amp;subcat=&amp;p={query}</string>
+    <string name="util_WEB_SEARCH_URL_YAHOO_HOME_DEFAULT">http://www.yahoo.com</string>
+    <string name="back">Atrás</string>
+    <string name="call">Llamar</string>
+    <string name="call_and_string">Llamar %1$s</string>
+    <string name="call_joe">Llamar a Juan</string>
+    <string name="cancel">Cancelar</string>
+    <string name="cancel_uc">Cancelar</string>
+    <string name="car_dial">Marcar </string>
+    <string name="car_exit">Salir</string>
+    <string name="car_home_reco_button_text_ex">Escribir mensaje Carlos el mensaje: ¿Qué pasa?</string>
+    <string name="car_item_sms_message_send">Enviar</string>
+    <string name="car_item_tts_tester_cancel">Cancelar</string>
+    <string name="car_iux_ex1">&lt;font color=#9fd5f7>Llamar a&lt;/font> &lt;font color=#9fd5f7>Antonio&lt;/font> &lt;font color=#9fd5f7>al móvil&lt;/font>\"</string>
+    <string name="car_iux_ex2">&lt;font color=#d0d0d0>Enviar a&lt;/font> &lt;font color=#d0d0d0>Alicia&lt;/font> &lt;font color=#d0d0d0>el mensaje&lt;/font> &lt;font color=#d0d0d0>¡Hola!&lt;/font>\"</string>
+    <string name="car_iux_ex3">&lt;font color=#d0d0d0>Ir a&lt;/font> &lt;font color=#d0d0d0>Toledo&lt;/font>\"</string>
+    <string name="car_iux_ex4">&lt;font color=#d0d0d0>Responder a&lt;/font> &lt;font color=#d0d0d0>David&lt;/font>\"</string>
+    <string name="car_iux_ex5">&lt;font color=#9fd5f7>Mirar el calendario&lt;/font>\"</string>
+    <string name="car_iux_ex6">&lt;font color=#9fd5f7>Reproducir música&lt;/font>\"</string>
+    <string name="car_iux_ex7">&lt;font color=#d0d0d0>Memo nuevo&lt;/font> &lt;font color=#d0d0d0>Comprar leche.&lt;/font>\"</string>
+    <string name="car_iux_item_spotter_you_can_say">Puede decir &lt;font color=#8fc6ff>Hola, Galaxy&lt;/font> desde Conversación de voz para encender automáticamente Conversación de voz.</string>
+    <string name="car_memo_empty">Memo vacío</string>
+    <string name="car_memo_is_empty">Memo está vacío.</string>
+    <string name="car_memo_memo_colon">Memo:</string>
+    <string name="car_memo_save_confirm">. Diga guardar, Cancelar, o repite tu mensaje</string>
+    <string name="car_memo_speak_memo">Di tu memo.</string>
+    <string name="car_memo_update_confirm">. Di guardar, Cancelar o di algo.</string>
+    <string name="car_msg_social_update">Actualización Social...</string>
+    <string name="car_nav_open_maps">Abrir Mapas</string>
+    <string name="car_nav_open_nav">Abrir navegación</string>
+    <string name="car_safereader_shownprompt">Modo conducir: Envíe un texto o responda</string>
+    <string name="car_sms_error_help_tts">¡Uy! Para enviar un texto, diga en voz alta el nombre de un contacto y luego el mensaje.</string>
+    <string name="car_sms_error_sending">Ocurrió algo mientras se enviaba este mensaje.</string>
+    <string name="car_sms_send_cancel_repeat_tts">. Diga Enviar...Cancelar, o diga su mensaje en voz alta nuevamente</string>
+    <string name="car_sms_send_cancel_speak_tts">. Diga Enviar...Cancelar, o diga su mensaje en voz alta.</string>
+    <string name="car_sms_text_command">texto</string>
+    <string name="car_sms_text_who">¿A quién desea enviar un texto?</string>
+    <string name="car_sr_shown_prompt">Diga Contestar, llamar, Cancelar o Léeme.</string>
+    <string name="car_tts_HOME_PROMPT_DEMAND_FIRST_TIME">Diga qué desea hacer. Siempre puede decir \"Cancelar\" para comenzar de nuevo.</string>
+    <string name="car_tts_KEYWORD_SPOT_ON_DEMAND">"Detección de palabra de activación 'activada'. Diga 'Hola, Galaxy' desde la pantalla de inicio de Conversación de voz para activar Conversación de voz."</string>
+    <string name="car_tts_MEMO_NEW_MEMO">Memo nuevo</string>
+    <string name="car_tts_MEMO_SAVED">Memo guardado</string>
+    <string name="car_tts_MESSAGE_NEXT_REPLY">Di siguiente, contester, llamar o Cancelar.</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_CMD_READ">Diga Léeme, llamar o Cancelar.</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_CMD_REPLY">Diga responder, llamar o Cancelar.</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_CMD_REPLY_OR_READ">Di responder, llamar, Cancelar o leer.</string>
+    <string name="car_tts_SAFEREADER_OFF">Modo conducir. Desactivar.</string>
+    <string name="car_tts_SAFEREADER_ON">Modo conducir. Notificaciones nuevas serán leídas por voz</string>
+    <string name="car_tts_SMS_SEND_CONFIRM_DEMAND">Enviar mensaje de texto.</string>
+    <string name="car_tts_SMS_SEND_TO_CONFIRM_DEMAND">Enviar mensaje de texto a %1$s.</string>
+    <string name="car_tts_VD_SMS_SEND_TYPE_CONFIRM_DEMAND">Enviar mensaje de texto a %1$s, %2$s.</string>
+    <string name="car_tts_SMS_SEND_ERROR_DEMAND">Error al enviar el mensaje.</string>
+    <string name="car_tts_SMS_SENDING_CONFIRM_DEMAND">Enviando mensaje...</string>
+    <string name="car_tts_SMS_SENT_CONFIRM_DEMAND">Mensaje enviado.</string>
+    <string name="car_tts_social_update">Actualización Social.</string>
+    <string name="car_tts_VD_CALL">Llamar</string>
+    <string name="car_tts_who_would_you_like_to_call">¿A quién desea llamar?</string>
+    <string name="car_vvs_handlers_no_contact_tts">No se encontraron contactos para responder. Intente de nuevo y diga un contacto en voz alta</string>
+    <string name="contact_top_choice_detail_item_call_mobile">Llame a un móvil</string>
+    <string name="dial_hint1">&lt;font color=#85bee0>Llamar a&lt;/font> Gonzalo &lt;font color=#85bee0>al móvil&lt;/font></string>
+    <string name="dial_hint2">&lt;font color=#85bee0>Llamar a&lt;/font> Carlos &lt;font color=#85bee0>a su móvil&lt;/font></string>
+    <string name="dial_hint3">&lt;font color=#85bee0>Llamar a&lt;/font> Sebastián &lt;font color=#85bee0>al trabajo&lt;/font></string>
+    <string name="dial_hint4">&lt;font color=#85bee0>Marcar&lt;/font> Luisa</string>
+    <string name="dial_hint5">&lt;font color=#85bee0>Llamar a&lt;/font> Juan Pulido &lt;font color=#85bee0>al trabajo&lt;/font></string>
+    <string name="dial_hint6">&lt;font color=#85bee0>Llamar a&lt;/font> Juan Carlos &lt;font color=#85bee0>a su móvil&lt;/font></string>
+    <string name="driving_mode">Modo conducir</string>
+    <string name="driving_mode_newline">"Modo
+conducir"</string>
+    <string name="email_hint1">&lt;font color=#85bee0>Enviar correo electrónico a&lt;/font> Pepe &lt;font color=#85bee0>asunto&lt;/font> Perdido &lt;font color=#85bee0>mensaje&lt;/font> Llego tarde para la reunión.</string>
+    <string name="email_hint2">&lt;font color=#85bee0>Enviar correo electrónico a&lt;/font> Julia &lt;font color=#85bee0>asunto&lt;/font> Este fin de semana &lt;font color=#85bee0>mensaje&lt;/font> Iré a Nueva York, ¿estarás ahí?</string>
+    <string name="email_hint3">&lt;font color=#85bee0>Enviar correo electrónico a&lt;/font> Carlos &lt;font color=#85bee0>mensaje&lt;/font> Envíame algunos más de esos ritmos. ¡Necesito más!</string>
+    <string name="email_hint4">&lt;font color=#85bee0>Enviar correo electrónico a&lt;/font> Luis &lt;font color=#85bee0>asunto&lt;/font> ¿Sigue en pie la propuesta de encontrarnos en el café?</string>
+    <string name="email_hint5">&lt;font color=#85bee0>Enviar correo electrónico a&lt;/font> Julio &lt;font color=#85bee0>asunto&lt;/font> Ésta es la mejor forma de hacerlo</string>
+    <string name="email_hint6">&lt;font color=#85bee0>Enviar correo electrónico a&lt;/font> Fernando &lt;font color=#85bee0>asunto&lt;/font> Cerveza &lt;font color=#85bee0>mensaje&lt;/font> ¡Tomemos una cerveza luego de la reunión!</string>
+    <string name="help_using_vlingo_secrets_auto_or_manual">Vlingo insertará la puntuación automáticamente, pero usted también puede decir la puntuación en voz alta. Por ejemplo, cuando dice: \"Cómo estás signo de interrogación\" Vlingo le devolverá \"¿Cómo estás?\".</string>
+    <string name="help_using_vlingo_with_safereader">con Modo conducir</string>
+    <string name="help_wcis_alarm">Despertador</string>
+    <string name="help_wcis_alarm_sub1">\"&lt;font color=#85bee0>Poner despertador&lt;/font> 6:30\"&lt;b>&lt;br/>\"&lt;/b>&lt;font color=#85bee0>Poner despertador&lt;/font> para dentro de 30 minutos\"</string>
+    <string name="help_wcis_contact_sub1">\"&lt;font color=#85bee0>Contactar&lt;/font> Pedro\"</string>
+    <string name="help_wcis_dial_sub1">\"&lt;font color=#76acdf>Llamar a&lt;/font> Carlos &lt;font color=#76acdf>al móvil.&lt;/font>\"</string>
+    <string name="help_wcis_driving_mode">Modo conducir</string>
+    <string name="help_wcis_driving_mode_sub1">\"&lt;font color=#85bee0>Modo conducir&lt;/font> encendido/apagado\"</string>
+    <string name="help_wcis_email_sub1">\"&lt;font color=#76acdf>Enviar correo electrónico a&lt;/font> Antonio &lt;font color=#76acdf>asunto&lt;/font> Esta noche &lt;font color=#76acdf>mensaje&lt;/font> ¡Llegaré un poco tarde!\"</string>
+    <string name="help_wcis_go_website">Ir a páginas web</string>
+    <string name="help_wcis_go_website_sub1">\"&lt;font color=#85bee0>Ir a&lt;/font> google.com\"</string>
+    <string name="help_wcis_go_website_sub1_china">\"&lt;font color=#85bee0>Ir a&lt;/font> baidu.com\"</string>
+    <string name="help_wcis_local_search_sub1">\"&lt;font color=#76acdf>Encontrar&lt;/font> cafeterías en Cambridge\"</string>
+    <string name="help_wcis_maps_sub1">\"&lt;font color=#76acdf>Mapa de&lt;/font> Sevilla\"&lt;br/>\"&lt;font color=#76acdf>Indicaciones para llegar a la&lt;/font> calle Marina, numero 324, Barcelona\"&lt;br/>\"&lt;font color=#76acdf>Navegar a la&lt;/font> Giralda\"</string>
+    <string name="help_wcis_social_sub1">\"&lt;font color=#76acdf>actualizar Twitter&lt;/font> ¿Por qué la gente vive tan al Norte?\"</string>
+    <string name="help_wcis_memo">Memo</string>
+    <string name="help_wcis_memo_sub1">\"&lt;font color=#76acdf>Memo&lt;/font> Mandar tarjeta a mamá.\"</string>
+    <string name="help_wcis_music">Reproducir música</string>
+    <string name="help_wcis_music_sub1">\"&lt;font color=#86bcef>Reproducir música&lt;/font>\"</string>
+    <string name="help_wcis_nav">Navegar</string>
+    <string name="help_wcis_nav_sub1">\"&lt;font color=#85bee0>Navegar a&lt;/font> Cambridge, MA\"</string>
+    <string name="help_wcis_open_apps_sub1">\"&lt;font color=#85bee0>Abrir&lt;/font> Música\"</string>
+    <string name="help_wcis_recordvoice">Grabar voz</string>
+    <string name="help_wcis_recordvoice_sub1">\"&lt;font color=#85bee0>Grabar voz&lt;/font>\"</string>
+    <string name="help_wcis_schedule_sub1">\"&lt;font color=#85bee0>Verificar calendario&lt;/font>\"</string>
+    <string name="help_wcis_search_sub1">\"&lt;font color=#76acdf>Buscar&lt;/font> bonobos\"</string>
+    <string name="help_wcis_superdialer_sub1">\"&lt;font color=#76acdf>Llamar a&lt;/font> Carlos &lt;font color=#76acdf>al móvil&lt;/font>\"&lt;br/>\"&lt;font color=#76acdf>Llamar a&lt;/font> Taxi&lt;/font>\"</string>
+    <string name="help_wcis_text_message_sub1">\"&lt;font color=#76acdf>Texto a&lt;/font> Alicia &lt;font color=#76acdf>mensaje&lt;/font> ¿Tienes esta noche libre para quedar a cenar?\"</string>
+    <string name="help_wcis_text_message_sub2">\"&lt;font color=#76acdf>Responder&lt;/font> el último mensaje\"</string>
+    <string name="hint_call1">Llamar a Gonzalo</string>
+    <string name="hint_call2">Llamar a Vicky</string>
+    <string name="hint_call3">Llamar a Juan Marcos al móvil</string>
+    <string name="hint_call4">Llamar a Jaime a su casa</string>
+    <string name="hint_call5">Llamar a Bozo el payaso</string>
+    <string name="hint_nav1">Ir a la página de inicio</string>
+    <string name="hint_nav2">Ir a Castellana 99</string>
+    <string name="hint_nav3">"Ir a Pizzeria Mario's"</string>
+    <string name="hint_nav4">Ir al número 7 de Apolonio Morales, Madrid</string>
+    <string name="hint_nav5">Ir a Segovia</string>
+    <string name="hint_reply1">Responder a David</string>
+    <string name="hint_reply2">Responder a Erica</string>
+    <string name="hint_reply3">Responder a Juan el mensaje: Eso suena genial</string>
+    <string name="hint_text1">Enviar a Carlos el mensaje: ¿Tomamos un aperitivo a las 5?</string>
+    <string name="hint_text2">Enviar a Ramón el mensaje: ¡No puedo creer que no sea mantequilla!</string>
+    <string name="hint_text3">Enviar a Carlos el mensaje: ¿Qué sucede?</string>
+    <string name="hint_text4">Enviar a Sara el mensaje: ¡Eres fenomenal!</string>
+    <string name="hint_text5">Enviar a Juan el mensaje: Partida de bolos</string>
+    <string name="hint_xml_call1">&lt;font color=#9fd5f7>Llamar a&lt;/font> Ron\"</string>
+    <string name="hint_xml_call2">&lt;font color=#9fd5f7>Llamar a&lt;/font> Vicky\"</string>
+    <string name="hint_xml_call3">&lt;font color=#9fd5f7>Llamar a&lt;/font> Joe Pirone &lt;font color=#9fd5f7>al móvil&lt;/font>\"</string>
+    <string name="hint_xml_call4">&lt;font color=#9fd5f7>Llamar a&lt;/font> James &lt;font color=#9fd5f7>a su casa&lt;/font>\"</string>
+    <string name="hint_xml_call5">&lt;font color=#9fd5f7>Llamar a&lt;/font> Bozo el payaso\"</string>
+    <string name="hint_xml_nav1">&lt;font color=#9fd5f7>Ir a la&lt;/font> página de inicio\"</string>
+    <string name="hint_xml_nav2">&lt;font color=#9fd5f7>Ir a&lt;/font> 17 Dunster St.\"</string>
+    <string name="hint_xml_nav3">"&lt;font color=#9fd5f7>Ir a&lt;/font> Mario's pizza\""</string>
+    <string name="hint_xml_nav4">&lt;font color=#9fd5f7>Ir a&lt;/font> No. 9 Park, Boston\"</string>
+    <string name="hint_xml_nav5">&lt;font color=#9fd5f7>Ir a&lt;/font> Steele City\"</string>
+    <string name="hint_xml_reply1">&lt;font color=#9fd5f7>Responder a&lt;/font> Dave\"</string>
+    <string name="hint_xml_reply2">&lt;font color=#9fd5f7>Responder a&lt;/font> Erin\"</string>
+    <string name="hint_xml_reply3">"&lt;font color=#9fd5f7>Responder a&lt;/font> Joe '&lt;font color=#9fd5f7>el mensaje&lt;/font>Eso suena genial'\""</string>
+    <string name="hint_xml_text1">&lt;font color=#9fd5f7>Enviar a&lt;/font> Chris &lt;font color=#9fd5f7>el mensaje&lt;/font> ¿Tomamos un aperitivo a las 5?\"</string>
+    <string name="hint_xml_text2">&lt;font color=#9fd5f7>Enviar a&lt;/font> Ryan &lt;font color=#9fd5f7>el mensaje&lt;/font> ¡No puedo creer que no sea mantequilla!\"</string>
+    <string name="hint_xml_text3">&lt;font color=#9fd5f7>Enviar a&lt;/font> Chris &lt;font color=#9fd5f7>el mensaje&lt;/font> ¿Qué sucede?\"</string>
+    <string name="hint_xml_text4">&lt;font color=#9fd5f7>Enviar a&lt;/font> Sheila &lt;font color=#9fd5f7>el mensaje&lt;/font> ¡Eres fenomenal!\"</string>
+    <string name="hint_xml_text5">&lt;font color=#9fd5f7>Enviar a&lt;/font> Joe &lt;font color=#9fd5f7>el mensaje&lt;/font> Partida de bolos\"</string>
+    <string name="home">casa</string>
+    <string name="home_safereader_info">Modo conducir le lee los mensajes entrantes y correos electrónicos.</string>
+    <string name="iux_welcome_exit">Salir</string>
+    <string name="label_next_key">Siguiente</string>
+    <string name="label_send_key">Enviar</string>
+    <string name="map_hint1">&lt;font color=#85bee0>Encontrar&lt;/font> El Bodegón en Madrid</string>
+    <string name="map_hint10">&lt;font color=#85bee0>Encontrar&lt;/font> La Diagonal 50 en Barcelona</string>
+    <string name="map_hint11">&lt;font color=#85bee0>Encontrar&lt;/font> Ricardo Soriano 50 en Marbella</string>
+    <string name="map_hint2">&lt;font color=#85bee0>Encontrar&lt;/font> Can Punyetes en Barcelona</string>
+    <string name="map_hint3">&lt;font color=#85bee0>Encontrar&lt;/font> mozzarella de búfalo</string>
+    <string name="map_hint4">&lt;font color=#85bee0>Encontrar&lt;/font> lavadero de autos en la Coruña</string>
+    <string name="map_hint5">&lt;font color=#85bee0>Encontrar&lt;/font> la Moncloa en Madrid</string>
+    <string name="map_hint6">&lt;font color=#85bee0>Encontrar&lt;/font> cafeterías en la Castellana</string>
+    <string name="map_hint7">&lt;font color=#85bee0>Encontrar&lt;/font> tiendas de tenis en Barcelona</string>
+    <string name="map_hint8">&lt;font color=#85bee0>Encontrar&lt;/font> tiendas de esnórkel en Kauai</string>
+    <string name="map_hint9">&lt;font color=#85bee0>Encontrar&lt;/font> parapente en Half Moon Bay California</string>
+    <string name="memo">Memo</string>
+    <string name="memo_layout_save_button">Guardar</string>
+    <string name="message">Mensaje</string>
+    <string name="message_btn">Mensaje</string>
+    <string name="mobile">móvil</string>
+    <string name="music">"Reproducir
+música"</string>
+    <string name="navigate">Navegar</string>
+    <string name="next">Siguiente</string>
+    <string name="no_number_found_to_redial">No se encontró ningún número para volver a marcar.</string>
+    <string name="notify_safereader_on">Modo conducir Encendido</string>
+    <string name="play_music">Reproducir música</string>
+    <string name="progress_screen_button_cancel">Cancelar</string>
+    <string name="prompt_dial_ex1">&lt;font color=#85bee0>Llamar&lt;/font> Pedro Morales</string>
+    <string name="prompt_dial_ex2">&lt;font color=#85bee0>Llamar&lt;/font> Pedro a su &lt;font color=#85bee0>móvil&lt;/font></string>
+    <string name="prompt_dial_ex3">&lt;font color=#85bee0>Llamar&lt;/font> Juan &lt;font color=#85bee0>trabajo&lt;/font></string>
+    <string name="prompt_generic_hintset_first_1">&lt;font color=#85bee0>Llamar&lt;/font> Lulu a su &lt;font color=#85bee0>móvil&lt;/font></string>
+    <string name="prompt_generic_hintset_first_2">&lt;font color=#85bee0>Marcar&lt;/font> Han &lt;font color=#85bee0>trabajo&lt;/font></string>
+    <string name="prompt_generic_hintset_first_3">&lt;font color=#85bee0>Llamar&lt;/font> John</string>
+    <string name="prompt_generic_hintset_second_1">&lt;font color=#85bee0>Texto a&lt;/font> Katie &lt;font color=#85bee0>mensaje&lt;/font> ¡Eh!</string>
+    <string name="prompt_generic_hintset_second_2">&lt;font color=#85bee0>Mandar mensaje a&lt;/font> Juan &lt;font color=#85bee0>mensaje&lt;/font> ¿Cómo te va?</string>
+    <string name="prompt_generic_hintset_second_3">&lt;font color=#85bee0>Mapa&lt;/font> de Pisa</string>
+    <string name="prompt_generic_hintset_second_4">&lt;font color=#85bee0>Indicaciones a&lt;/font> Annecy</string>
+    <string name="prompt_generic_hintset_second_5">&lt;font color=#85bee0>Navegar&lt;/font> a Cambridge, MA</string>
+    <string name="prompt_generic_hintset_third_1">&lt;font color=#85bee0>Reproducir música&lt;/font></string>
+    <string name="prompt_generic_hintset_third_2">&lt;font color=#85bee0>Verificar calendario&lt;/font></string>
+    <string name="prompt_generic_hintset_third_3">&lt;font color=#85bee0>Modo conducir encender/apagar&lt;/font></string>
+    <string name="prompt_generic_hintset_third_4">&lt;font color=#85bee0>Memo&lt;/font> Mandar tarjeta a mamá</string>
+    <string name="prompt_generic_hintset_third_5">&lt;font color=#85bee0>Memo&lt;/font> Comprar leche</string>
+    <string name="prompt_memo_ex2">\"&lt;font color=#85bee0>Memo&lt;/font> Mandar tarjeta a mamá\"</string>
+    <string name="prompt_memo_ex3">\"&lt;font color=#85bee0>Memo&lt;/font> Comprar leche\"</string>
+    <string name="prompt_nav_ex1">\"&lt;font color=#85bee0>Mapa de&lt;/font> Pisa\"</string>
+    <string name="prompt_nav_ex2">\"&lt;font color=#85bee0>Indicaciones a&lt;/font> Annecy\"</string>
+    <string name="prompt_nav_ex3">\"&lt;font color=#85bee0>Navegar a&lt;/font> Cambridge, MA\"</string>
+    <string name="prompt_sms_ex2">\"&lt;font color=#85bee0>Texto&lt;/font> a Dorita &lt;font color=#85bee0>mensaje&lt;/font> ¡Hola!\"</string>
+    <string name="prompt_sms_ex3">\"&lt;font color=#85bee0>Mandar mensaje a&lt;/font> Juan&lt;/font> ¿Cómo te va?\"</string>
+    <string name="read_out_btn">Léeme</string>
+    <string name="reply">Contestar</string>
+    <string name="safe_reader_default_error">Modo conducir todavía no está disponible en su idioma.</string>
+    <string name="safereader">Modo conducir</string>
+    <string name="safereader_enabled">Modo conducir Habilitado</string>
+    <string name="safereader_notif_reading_ticker">De Modo conducir: Haga clic para omitir.</string>
+    <string name="safereader_options">Opciones de Modo conducir</string>
+    <string name="safereader_paused">Modo conducir Pausado</string>
+    <string name="safereader_reading_email_from">Leyendo correo electrónico de</string>
+    <string name="safereader_reading_text_from">Leyendo texto de</string>
+    <string name="say_command">Di Siguiente o Cancelar</string>
+    <string name="search_hint10">&lt;font color=#85bee0>Buscar&lt;/font> horarios de películas en el centro</string>
+    <string name="search_hint11">&lt;font color=#85bee0>Buscar&lt;/font> capillas de matrimonio en Las Vegas</string>
+    <string name="search_hint12">&lt;font color=#85bee0>Buscar&lt;/font> lugares de citas</string>
+    <string name="search_hint13">&lt;font color=#85bee0>Buscar&lt;/font> pinturas de bananas</string>
+    <string name="search_hint5">&lt;font color=#85bee0>Google&lt;/font> hábitos del bonobo</string>
+    <string name="search_hint6">&lt;font color=#85bee0>Google&lt;/font> la mejor fabada en Madrid</string>
+    <string name="search_hint7">&lt;font color=#85bee0>Google&lt;/font> fechas para Seminarios de música de invierno</string>
+    <string name="search_hint8">&lt;font color=#85bee0>Google&lt;/font> fechas de la filarmónica</string>
+    <string name="search_hint9">&lt;font color=#85bee0>Buscar&lt;/font> ventas de pisos en Santander</string>
+    <string name="send">Enviar</string>
+    <string name="settings_incar_prompt_after_summary">Avisos para comandos como leer, responder o llamar después de leer un mensaje entrante.</string>
+    <string name="settings_incar_speakshow_msgbodies_summary">Mostrar cuerpo del mensaje cuando llegue un mensaje nuevo y el Modo conducir esté encendido.</string>
+    <string name="settings_incar_SRstart_summary">Encender Modo conducir cuando se enciende</string>
+    <string name="settings_incar_SRstart_title">Auto-encender Modo conducir</string>
+    <string name="settings_incar_wakeup_summary">"Diga 'Hola, Galaxy' desde Conversación de voz para activar Conversación de voz automáticamente. Nota: esto puede agotar su batería"</string>
+    <string name="settings_need_email_account">Agregue una cuenta de correo electrónico para que Modo conducir diga los correos electrónicos entrantes en voz alta.</string>
+    <string name="sms_hint1">&lt;font color=#85bee0>Enviar texto a&lt;/font> Daniel ¿Cuándo me vas a traer flores, chico?</string>
+    <string name="sms_hint10">&lt;font color=#85bee0>Enviar texto a&lt;/font> Hilario ¿Hay partido de fútbol esta noche?</string>
+    <string name="sms_hint11">&lt;font color=#85bee0>Enviar texto a&lt;/font> Juan ¿Vas esta noche?</string>
+    <string name="sms_hint12">&lt;font color=#85bee0>Enviar texto a&lt;/font> Ana ¡Hagamos esto!</string>
+    <string name="sms_hint13">&lt;font color=#85bee0>Enviar texto a&lt;/font> Pilar ¡Felicitaciones por el nuevo condominio!</string>
+    <string name="sms_hint14">&lt;font color=#85bee0>Enviar texto a&lt;/font> Juan ¡Haz lo que sea!</string>
+    <string name="sms_hint15">&lt;font color=#85bee0>Enviar texto a&lt;/font> Erica ¿Cómo está Barcelona?</string>
+    <string name="sms_hint2">&lt;font color=#85bee0>Enviar texto a&lt;/font> Olga &lt;font color=#85bee0>mensaje&lt;/font> ¿Sigue en pie la propuesta de ir al gimnasio esta noche?</string>
+    <string name="sms_hint3">&lt;font color=#85bee0>Enviar texto a&lt;/font> Cristina ¿Dónde has estado?</string>
+    <string name="sms_hint4">&lt;font color=#85bee0>Enviar texto a&lt;/font> Juan &lt;font color=#85bee0>mensaje&lt;/font> ¿Cómo va todo, John?</string>
+    <string name="sms_hint5">&lt;font color=#85bee0>Enviar texto a&lt;/font> Miguel Llego un poco tarde. ¡Nos vemos en un rato!</string>
+    <string name="sms_hint6">&lt;font color=#85bee0>Enviar texto a&lt;/font> Laura &lt;font color=#85bee0>mensaje&lt;/font> Recogeré la compra hoy.</string>
+    <string name="sms_hint7">&lt;font color=#85bee0>Enviar texto a&lt;/font> Raquel ¿Por qué eres tan bonita?</string>
+    <string name="sms_hint8">&lt;font color=#85bee0>Enviar texto a&lt;/font> Charo ¡Feliz cumpleaños!</string>
+    <string name="sms_hint9">&lt;font color=#85bee0>Enviar texto a&lt;/font> Cristina ¿Dónde estás? ¡Estamos esperando!</string>
+    <string name="sms_reply1">&lt;font color=#85bee0>Responder&lt;/font> el último mensaje</string>
+    <string name="sms_reply2">&lt;font color=#85bee0>Responder&lt;/font> el último mensaje de texto</string>
+    <string name="sms_reply3">&lt;font color=#85bee0>Responder&lt;/font> Hola cariño, te extraño.</string>
+    <string name="sms_reply4">&lt;font color=#85bee0>Responder&lt;/font> Me parece bien. Llegaré en 5.</string>
+    <string name="sms_reply5">&lt;font color=#85bee0>Responder&lt;/font> ¡Tiene que ser una broma!</string>
+    <string name="social_hint1">&lt;font color=#85bee0>actualizar Twitter&lt;/font> ¿Por qué la gente vive tan al Norte?</string>
+    <string name="social_hint10">&lt;font color=#85bee0>Registrarme en&lt;/font> Starbucks</string>
+    <string name="social_hint11">&lt;font color=#85bee0>Registrarme en&lt;/font> The Office</string>
+    <string name="social_hint12">&lt;font color=#85bee0>Registrarme en&lt;/font> The Rave Cave</string>
+    <string name="social_hint13">&lt;font color=#85bee0>Registrarme en&lt;/font> The Cantab Lounge</string>
+    <string name="social_hint14">&lt;font color=#85bee0>Registrarme en&lt;/font> 1369 Coffee Shop</string>
+    <string name="social_hint15">&lt;font color=#85bee0>Registrarme en&lt;/font> Sony Theater</string>
+    <string name="social_hint16">&lt;font color=#85bee0>¿Dónde están mis amigos?&lt;/font></string>
+    <string name="social_hint17">&lt;font color=#85bee0>¿Mis amigos estaban en?&lt;/font></string>
+    <string name="social_hint18">&lt;font color=#85bee0>¿Mis chicas estaban en?&lt;/font></string>
+    <string name="social_hint19">&lt;font color=#85bee0>¿Mis chicos estaban en?&lt;/font></string>
+    <string name="social_hint2">&lt;font color=#85bee0>actualizar Twitter&lt;/font> ¿Alguien tiene buenos nombres para una perra siberiana Husky?</string>
+    <string name="social_hint3">&lt;font color=#85bee0>actualizar Twitter&lt;/font> Buscando actualizaciones del estado del tráfico en la Ruta 2</string>
+    <string name="social_hint4">&lt;font color=#85bee0>actualizar Facebook&lt;/font> No puedo dejar de escuchar a Billy Ocean.</string>
+    <string name="social_hint5">&lt;font color=#85bee0>actualizar Facebook&lt;/font> Sin dudas, debes agregar como amigo a Fernando.</string>
+    <string name="social_hint6">&lt;font color=#85bee0>actualizar Facebook&lt;/font> Cuidado, es una trampa.</string>
+    <string name="social_hint7">&lt;font color=#85bee0>actualizar Facebook&lt;/font> No se quiere sacar las gafas de sol hoy.</string>
+    <string name="social_hint8">&lt;font color=#85bee0>gritar Foursquare&lt;/font> Encontrémonos en el centro esta noche.</string>
+    <string name="social_hint9">&lt;font color=#85bee0>Gritar&lt;/font> Tengo el rumor de que tu banda favorita da un concierto gratuito esta noche.</string>
+    <string name="social_update">Actualización Social</string>
+    <string name="super_dial_hint1">&lt;font color=#85bee0>Marcar&lt;/font> Taxi</string>
+    <string name="super_dial_hint10">&lt;font color=#85bee0>Llamar a&lt;/font> Comida china</string>
+    <string name="super_dial_hint11">&lt;font color=#85bee0>Marcar&lt;/font> Caprabo</string>
+    <string name="super_dial_hint12">&lt;font color=#85bee0>Llamar a&lt;/font> Caprabo en Madrid</string>
+    <string name="super_dial_hint13">&lt;font color=#85bee0>Llamar a&lt;/font> Decatlón en Madrid</string>
+    <string name="super_dial_hint14">&lt;font color=#85bee0>Llamar al&lt;/font> Apple Store</string>
+    <string name="super_dial_hint15">&lt;font color=#85bee0>Llamar a&lt;/font> McDonnalds en Córdoba</string>
+    <string name="super_dial_hint16">&lt;font color=#85bee0>Llamar al&lt;/font> Centro Médico de la Princesa en Madrid</string>
+    <string name="super_dial_hint17">&lt;font color=#85bee0>Llamar a&lt;/font> Mercadona</string>
+    <string name="super_dial_hint18">&lt;font color=#85bee0>Llamar a&lt;/font> Mercadona cerca de Majadahonda</string>
+    <string name="super_dial_hint19">&lt;font color=#85bee0>Llamar a&lt;/font> Mercadona</string>
+    <string name="super_dial_hint2">&lt;font color=#85bee0>Llamar a&lt;/font> Pizza</string>
+    <string name="super_dial_hint3">&lt;font color=#85bee0>Marcar&lt;/font> Fontaneros</string>
+    <string name="super_dial_hint4">&lt;font color=#85bee0>Llamar a&lt;/font> contratistas</string>
+    <string name="super_dial_hint5">&lt;font color=#85bee0>Llamar a&lt;/font> Telepizza</string>
+    <string name="super_dial_hint6">&lt;font color=#85bee0>Llamar a&lt;/font> Rodilla</string>
+    <string name="super_dial_hint7">&lt;font color=#85bee0>Llamar a&lt;/font> VIPs</string>
+    <string name="super_dial_hint8">&lt;font color=#85bee0>Llamar al&lt;/font> Corte Inglés en Barcelona</string>
+    <string name="super_dial_hint9">&lt;font color=#85bee0>Llamar a&lt;/font> Alcampo en Madrid</string>
+    <string name="text">Escribir Texto</string>
+    <string name="text_and_string">Escribir Texto %1$s</string>
+    <string name="text_message">Mensaje de texto</string>
+    <string name="vc_hints_alarm_1">&lt;font color=#139cff>Poner despertador&lt;/font> 6:30</string>
+    <string name="vc_hints_alarm_2">&lt;font color=#139cff>Poner despertador&lt;/font> para dentro de 30 minutos</string>
+    <string name="vc_hints_checkschedule_1">&lt;font color=#139cff>Verificar calendario&lt;/font></string>
+    <string name="vc_hints_contact_1">&lt;font color=#139cff>Contactar&lt;/font> Carlos</string>
+    <string name="vc_hints_contact_2">&lt;font color=#139cff>Contactar&lt;/font> Carmen</string>
+    <string name="vc_hints_drivingmode_1">&lt;font color=#139cff>Modo conducir&lt;/font> encendido</string>
+    <string name="vc_hints_drivingmode_2">&lt;font color=#139cff>Modo conducir&lt;/font> apagado</string>
+    <string name="vc_hints_email_1">&lt;font color=#139cff>Mandar correo electrónico a&lt;/font> Carlos Rodriguez</string>
+    <string name="vc_hints_email_2">&lt;font color=#139cff>Email a&lt;/font> Laura &lt;font color=#139cff>Mensaje&lt;/font> ¡Vamos a hacerlo!</string>
+    <string name="vc_hints_email_3">&lt;font color=#139cff>Email a&lt;/font> Carmen</string>
+    <string name="vc_hints_goto_1">&lt;font color=#139cff>Ir a&lt;/font> google.com</string>
+    <string name="vc_hints_goto_1_china">&lt;font color=#139cff>Ir a&lt;/font> baidu.com</string>
+    <string name="vc_hints_map_1">&lt;font color=#139cff>Mapa de&lt;/font> Sevilla</string>
+    <string name="vc_hints_map_2">&lt;font color=#139cff>Indicaciones para llegar a la&lt;/font> calle Marina, numero 324, Barcelona</string>
+    <string name="vc_hints_map_3">&lt;font color=#139cff>Navegar a la&lt;/font> Giralda</string>
+    <string name="vc_hints_memo_1">&lt;font color=#139cff>Memo&lt;/font> Rellenar los impuestos esta noche.</string>
+    <string name="vc_hints_memo_2">&lt;font color=#139cff>Nota para mí&lt;/font> Mirar los vuelos a Cadiz.</string>
+    <string name="vc_hints_message_1">&lt;font color=#139cff>Escribir Texto a&lt;/font> Luis &lt;font color=#139cff>Mensaje&lt;/font> ¡Eh!</string>
+    <string name="vc_hints_message_2">&lt;font color=#139cff>Escribir Texto&lt;/font> Carmen &lt;font color=#139cff>Mensaje&lt;/font> Hallo!</string>
+    <string name="vc_hints_message_3">&lt;font color=#139cff>Enviar mensaje an&lt;/font> Miguel Cano &lt;font color=#139cff>Mensaje&lt;/font> ¿Cómo te va?</string>
+    <string name="vc_hints_open_1">&lt;font color=#139cff>Abrir&lt;/font> Traductor</string>
+    <string name="vc_hints_recordvoice_1">&lt;font color=#139cff>Grabar voz&lt;/font></string>
+    <string name="vc_hints_recordvoice_2">&lt;font color=#139cff>Grabar voz&lt;/font> Acta de reunion</string>
+    <string name="vc_hints_search_1">&lt;font color=#139cff>Buscar&lt;/font> población de Portugal</string>
+    <string name="vc_hints_search_2">&lt;font color=#139cff>Buscar&lt;/font> monos Bonobo</string>
+    <string name="vc_hints_search_3">Tiempo en San Juan</string>
+    <string name="vc_hints_social_1">&lt;font color=#139cff>Actualización Social&lt;/font> ¿Por qué viven los seres humanos tan al norte?</string>
+    <string name="vc_hints_social_2">&lt;font color=#139cff>Actualización de Facebook&lt;/font> Estoy en Cadiz...¿y tú?</string>
+    <string name="vc_hints_social_3">&lt;font color=#139cff>Actualización de Twitter&lt;/font> ¡Deseadme suerte en mi primer día de trabajo!</string>
+    <string name="vc_hints_superdial">\"&lt;font color=#568ab3>Llamar&lt;/font> Taxi\"&lt;br/>\"&lt;font color=#568ab3>Llamar a&lt;/font> Telepizza\"</string>
+    <string name="vc_hints_voicedial_1">&lt;font color=#139cff>Llamar&lt;/font> a Carmen Mendez</string>
+    <string name="vc_hints_voicedial_2">&lt;font color=#139cff>Llamar&lt;/font> a Lola a su &lt;font color=#139cff>móvil&lt;/font></string>
+    <string name="vc_hints_voicedial_3">&lt;font color=#139cff>Marcar trabajo&lt;/font> de John</string>
+    <string name="wake_up_ready">O diga \"Hola Galaxy\"</string>
+    <string name="wcis_alarm">Poner la alarma hablando</string>
+    <string name="wcis_alarm_ex">\"&lt;font color=#85bee0>Poner despertador&lt;/font> 6:30\"&lt;br/>\"&lt;font color=#85bee0>Poner despertador&lt;/font> para dentro de 30 minutos\"</string>
+    <string name="wcis_contact_ex">\"Juan\"&lt;br/>\"&lt;font color=#85bee0>Contactar&lt;/font> Pedro\"</string>
+    <string name="wcis_driving_mode">Encender Modo conducir</string>
+    <string name="wcis_driving_mode_ex">\"&lt;font color=#85bee0>Encender Modo conducir&lt;/font>\"&lt;br/>\"&lt;font color=#85bee0>Apagar Modo conducir&lt;/font>\"</string>
+    <string name="wcis_email_ex">\"&lt;font color=#85bee0>Email a&lt;/font> Carlos Rodriguez\"&lt;br/>\"&lt;font color=#85bee0>Email a&lt;/font> Laura &lt;font color=#85bee0>mensaje&lt;/font> ¡Vamos a hacerlo!\"&lt;br/>\"&lt;font color=#85bee0>Email a&lt;/font> Laura &lt;font color=#85bee0>asunto&lt;/font> horneando &lt;font color=#85bee0>mensaje&lt;/font> ¿tienes algo de azucar?\"</string>
+    <string name="wcis_email_speak_punctuation">Puede decir la puntuación. Por ejemplo, cuando dice \"Cómo estás &lt;font color=#85bee0>cerrar interrogación&lt;/font>\" le devolveremos \"¿Cómo estás?\"</string>
+    <string name="wcis_local_search_ex">\"&lt;font color=#85bee0>Encontrar&lt;/font> La Diagonal 50 en Barcelona\"</string>
+    <string name="wcis_maps_ex">\"&lt;font color=#85bee0>Encontrar&lt;/font> tiendas de surf en San Diego\"&lt;br/>\"&lt;font color=#85bee0>Indicaciones para&lt;/font> llegar a Madrid\"</string>
+    <string name="wcis_memo_ex">\"&lt;font color=#85bee0>Memo nuevo,&lt;/font> rellenar los impuestos esta noche\"&lt;br/>\"&lt;font color=#85bee0>Memo nuevo,&lt;/font> mirar los vuelos a Cadiz.\"&lt;br/></string>
+    <string name="wcis_music">Reproducir música con comando de voz</string>
+    <string name="wcis_music_ex">\"&lt;font color=#85bee0>Reproducir&lt;/font>\"&lt;br/>\"&lt;font color=#85bee0>Reproducir música&lt;/font>\"&lt;br/>\"&lt;font color=#85bee0>Reproducir&lt;/font> Let It Be\"&lt;br/>\"&lt;font color=#85bee0>Reproducir&lt;/font> los Beatles\"&lt;br/>\"&lt;font color=#85bee0>Reproducir radio&lt;/font>\"</string>
+    <string name="wcis_music_tip">Puede escuchar la última canción reproducida diciendo \"&lt;font color=#85bee0>Reproducir&lt;/font>.\"</string>
+    <string name="wcis_nav_ex">\"&lt;font color=#85bee0>Mapa de&lt;/font> Pisa\"&lt;br/>\" &lt;font color=#85bee0>a&lt;/font> Annecy\"&lt;br/>\"&lt;font color=#85bee0>Navegar a&lt;/font> Cambridge, MA\"</string>
+    <string name="wcis_openapps_ex">\"&lt;font color=#568ab3>Abrir&lt;/font> Traductor\"&lt;br/>\"&lt;font color=#568ab3>Abrir&lt;/font> Música\"&lt;br/>\"&lt;font color=#568ab3>Abrir&lt;/font> Calculadora\"</string>
+    <string name="wcis_recordvoice">Iniciar grabadora de voz y empezar a grabar</string>
+    <string name="wcis_recordvoice_ex">\"&lt;font color=#85bee0>Grabar voz&lt;/font>\"&lt;br/>\"&lt;font color=#85bee0>Grabar voz&lt;/font> Acta de reunion\"</string>
+    <string name="wcis_schedule_ex">\"&lt;font color=#85bee0>Verificar calendario de hoy&lt;/font>\"</string>
+    <string name="wcis_search_ex">\"&lt;font color=#568ab3>Tiempo en&lt;/font> San Juan\"&lt;br/>\"&lt;font color=#568ab3>Buscar&lt;/font> monos Bonobo\"&lt;br/>\"&lt;font color=#568ab3>Google&lt;/font> población de Portugal\"&lt;br/>\"&lt;font color=#568ab3>Bing&lt;/font> aerolíneas Delta vuelo 640\"&lt;br/>\"&lt;font color=#568ab3>Yahoo&lt;/font> resultados deportivos\"</string>
+    <string name="wcis_search_ex_china">\"&lt;font color=#568ab3>Tiempo en&lt;/font> San Juan\"&lt;br/>\"&lt;font color=#568ab3>Buscar&lt;/font> monos Bonobo\"&lt;br/>\"&lt;font color=#568ab3>Baidu&lt;/font> población de Portugal\"&lt;br/>\"&lt;font color=#568ab3>Bing&lt;/font> aerolíneas Delta vuelo 640\"&lt;br/>\"&lt;font color=#568ab3>Yahoo&lt;/font> resultados deportivos\"</string>
+    <string name="wcis_sms_ex">\"&lt;font color=#85bee0>Texto&lt;/font> a Luis &lt;font color=#85bee0>mensaje&lt;/font> ¡Eh!\"&lt;br/>\"&lt;font color=#85bee0>Mandar mensaje a&lt;/font> Miguel Cano &lt;font color=#85bee0>mensaje&lt;/font> ¿Cómo te va?</string>
+    <string name="wcis_social_facebook">Facebook</string>
+    <string name="wcis_social_facebook_ex">\"&lt;font color=#568ab3>Facebook&lt;/font> Estoy en Cadiz...¿y tú?\"</string>
+    <string name="wcis_social_foursquare">Foursquare</string>
+    <string name="wcis_social_foursquare_ex">\"&lt;font color=#568ab3>Grita&lt;/font> ¡Queda conmigo en Harvard Square!\"&lt;br/>\"&lt;font color=#568ab3>Registrar en&lt;/font> Starbucks\"&lt;br/>\"&lt;font color=#568ab3>Dónde están mis amigos&lt;/font>\"</string>
+    <string name="wcis_social_twitter">Twitter</string>
+    <string name="wcis_social_twitter_ex">\"&lt;font color=#568ab3>Twitter&lt;/font> ¡Deseadme suerte en mi primer día de trabajo!\"&lt;br/>\"&lt;font color=#568ab3>Actualización de Twitter&lt;/font> ¿Por qué viven los seres humanos tan al norte?\"</string>
+    <string name="wcis_super_dial_ex">\"&lt;font color=#568ab3>Llamar&lt;/font> Taxi\"&lt;br/>\"&lt;font color=#568ab3>Llamar a&lt;/font> Telepizza\"</string>
+    <string name="wcis_super_dial_you_can">Puede decir un nombre de empresa específico o el nombre de una categoría, como \"&lt;font color=#85bee0>Llamar Taxi&lt;/font>\" o \"&lt;font color=#85bee0>Llamar&lt;/font> Pizza\".&lt;br/>&lt;br/>Si no dice la ubicación, buscaremos empresas del mismo tipo cerca de su ubicación actual.</string>
+    <string name="wcis_voice_dial_contact_ex">\"&lt;font color=#568ab3>Llamar a&lt;/font> Carmen Mendez\"&lt;br/>\"&lt;font color=#568ab3>Llamar a&lt;/font> Lola a su &lt;font color=#568ab3>móvil&lt;/font>\"&lt;br/>\"&lt;font color=#568ab3>Marcar&lt;/font> &lt;font color=#568ab3>trabajo&lt;/font>&lt;br/> de John\"</string>
+    <string name="wcis_voice_dial_tip">También puedes decir \"&lt;font color=#85bee0>volver a llamar&lt;/font>\" la última llamada marcada.</string>
+    <string name="wcis_website_ex">\"&lt;font color=#85bee0>Ir a&lt;/font> google.com\"</string>
+    <string name="wcis_website_ex_china">\"&lt;font color=#85bee0>Ir a&lt;/font> baidu.com\"</string>
+    <string name="who_would_you_like_to_call">¿A quién desea llamar?</string>
+    <string name="work">profesional</string>
+    <string name="car_tts_NAV_NAVIGATING_TO_CONFIRM_DEMAND">Navegar a %1$s</string>
+    <string name="note_to_self_subject">Nota-para-mí</string>
+    <string name="alarm_no_time">No se especificó la hora.</string>
+    <string name="alarm_not_supported">Función Configurar alarma no admitida.</string>
+    <string name="alert_dialog_text_entry_email_or_phone">Dirección de correo electrónico o número de teléfono</string>
+    <string name="alert_dialog_text_entry_password">Contraseña</string>
+    <string name="android_core_audio_too_short">Audio demasiado corto. Inténtelo de nuevo.</string>
+    <string name="android_core_listening">Escuchando…</string>
+    <string name="android_core_missing_permissions">A Comandos de voz le falta un(os) permiso(s) obligatorio. método: %1$s ex: %2$s</string>
+    <string name="android_input_method">Método de entrada</string>
+    <string name="app_launcher_apps">Aplicaciones</string>
+    <string name="app_name">Comandos de voz</string>
+    <string name="arrays_autodial_always">Siempre</string>
+    <string name="arrays_autodial_confident">Cuando esté seguro</string>
+    <string name="arrays_autodial_never">Nunca</string>
+    <string name="arrays_interval_five_min">5 minutos</string>
+    <string name="arrays_interval_ten_min">10 minutos</string>
+    <string name="arrays_interval_thirty_min">30 minutos</string>
+    <string name="arrays_interval_two_min">2 minutos</string>
+    <string name="arrays_security_none">Ninguno</string>
+    <string name="arrays_security_ssl">SSL</string>
+    <string name="arrays_security_tls">TLS</string>
+    <string name="arrays_server_imap">IMAP</string>
+    <string name="arrays_server_popthree">POP3</string>
+    <string name="auto_cap">Colocar mayúsculas automáticamente</string>
+    <string name="auto_complete">Autocompletar</string>
+    <string name="auto_complete_summary">La barra espaciadora y la puntuación ingresan automáticamente la palabra resaltada</string>
+    <string name="auto_dial_dialog_contact_name">Nombre del contacto</string>
+    <string name="auto_dial_dialog_dialing">Marcando...</string>
+    <string name="auto_dial_dialog_phone_number_format">xx xxx xxxx</string>
+    <string name="auto_dial_dialog_type">tipo</string>
+    <string name="business_detail_screen_map">Mapa</string>
+    <string name="cantconnect">"No se puede conectar al servidor
+
+ Compruebe su red e intente de nuevo."</string>
+    <string name="car_app_name_youtube">YouTube</string>
+    <string name="car_call_from">Llamar desde</string>
+    <string name="car_dial_business">Marcar tiendas...</string>
+    <string name="car_easter_egg_uri">http://www.youtube.com/watch?v=ntdxhJu_MBM</string>
+    <string name="car_help">Ayuda</string>
+    <string name="car_home_header_view_listening">Habla ahora</string>
+    <string name="car_home_header_view_processing">Procesando</string>
+    <string name="car_home_header_view_wait">Espere</string>
+    <string name="car_item_answer_answer">respuesta</string>
+    <string name="car_item_answer_play">Reproducir</string>
+    <string name="car_item_answer_question">Pregunta</string>
+    <string name="car_item_check_schedule_location">ubicación</string>
+    <string name="car_item_check_schedule_time">hora</string>
+    <string name="car_item_control_buttons_wake_up_command">Comando Activación</string>
+    <string name="car_item_exit_carmode_concert_tickets">entradas de concierto</string>
+    <string name="car_item_exit_carmode_leave_incar">¿Salir de Conversación de voz para completar esta acción?</string>
+    <string name="car_item_exit_carmode_web_search">Búsqueda en Internet…</string>
+    <string name="car_item_memo_saving">Guardando...</string>
+    <string name="car_item_nav_list_item_choice">Opción</string>
+    <string name="car_item_phone_type_mobile">móvil</string>
+    <string name="car_item_phone_type_phone_ex">617.627.5555</string>
+    <string name="car_item_safereader_main_speak_incoming">Decir en voz alta los mensajes entrantes</string>
+    <string name="car_item_safereader_message_sender">Remitente</string>
+    <string name="car_item_sms_message_msg">msj:</string>
+    <string name="car_item_sms_recent_time_ex">2 min. atrás</string>
+    <string name="car_item_sms_sending_sending">Enviando...</string>
+    <string name="car_item_vd_autodial_calling">Llamando</string>
+    <string name="car_iux_bluetooth_note">Nota Bluetooth</string>
+    <string name="car_iux_continue">Continuar</string>
+    <string name="car_iux_item_spotter_double_tap">Para activar Conversación de voz se puede hacer doble clic en el botón de Inicio.</string>
+    <string name="car_iux_item_spotter_fouroffour">4/4</string>
+    <string name="car_iux_item_spotter_get_started">Introducción</string>
+    <string name="car_iux_item_spotter_long_press">Para activar Conversación de voz mantener presionado el botón de búsqueda.</string>
+    <string name="car_iux_item_spotter_might_drain">Nota: esto puede agotar su batería</string>
+    <string name="car_iux_item_spotter_when_you_see">Cuando vea este ícono</string>
+    <string name="car_iux_item_tips_instructions">"1) Espere el tono antes de hablar.
+
+2) Hable directamente al teléfono, a menos que posea auriculares Bluetooth de alta calidad.
+
+3) Utilice el botón Tocar y Hablar de la pantalla de inicio como acceso directo para decir todo lo que desee."</string>
+    <string name="car_iux_item_tips_threeofthree">3/3</string>
+    <string name="car_iux_item_tips_tips">Consejos</string>
+    <string name="car_iux_item_welcome_oneofthree">1/3</string>
+    <string name="car_iux_item_welcome_vlingo_is">"Conversación de voz es una forma nueva y más segura de usar su teléfono mientras se encuentra en el auto.
+
+Desplácese hacia la izquierda para ver algunos consejos mientras lo configura por primera vez..."</string>
+    <string name="car_iux_item_welcome_welcome">Bienvenido</string>
+    <string name="car_iux_item_wycs_instructions">Presione el Botón azul Tocar y Hablar que se encuentra en la parte inferior de la pantalla y diga lo que desea hacer.</string>
+    <string name="car_iux_item_wycs_twoofthree">2/3</string>
+    <string name="car_iux_item_wycs_using_vlingo">Usando Comandos de voz</string>
+    <string name="car_iux_item_wycs_using_zero">Usando Conversación de voz</string>
+    <string name="car_iux_later">Más tarde</string>
+    <string name="car_iux_need_froyo">Desafortunadamente, Android 2.1 no permite que las aplicaciones escuchen el audio por medio de un auricular Bluetooth. Si desea hablar a Comandos de voz utilizando un auricular Bluetooth, actualice su OS a la versión 2.2 (Froyo).</string>
+    <string name="car_iux_ok">Aceptar</string>
+    <string name="car_iux_oops">Error</string>
+    <string name="car_iux_setting_up">Configurando...</string>
+    <string name="car_leave_vlingo">. ¿Salir de Conversación de voz para completar la acción?</string>
+    <string name="car_mms_subj_empty_header">asunto vacío</string>
+    <string name="car_mms_subject_empty_tts">El asunto está vacío.</string>
+    <string name="car_msg_email">Correo electrónico...</string>
+    <string name="car_msg_local_search">Búsqueda local...</string>
+    <string name="car_msg_open">Abrir...</string>
+    <string name="car_nav_address_blank">Dirección en blanco</string>
+    <string name="car_nav_address_saved">Dirección guardada</string>
+    <string name="car_nav_alert_dialog_enter_address">Ingrese su domicilio</string>
+    <string name="car_nav_enter_home">Ingrese su domicilio</string>
+    <string name="car_nav_go">IR</string>
+    <string name="car_nav_go_home">Ir a casa</string>
+    <string name="car_nav_home_confirm">Por favor introduce tu dirección de casa</string>
+    <string name="car_nav_where_to_go">¿Dónde quieres ir?</string>
+    <string name="car_safereader_easter_egg_trigger">¿Quién es My Speaker?</string>
+    <string name="car_safereader_hidden_message_body">Cuerpo del mensaje oculto</string>
+    <string name="car_safereader_hidden_message_subject">Asunto del mensaje oculto</string>
+    <string name="car_safereader_no_messages">No hay mensajes en la Bandeja de entrada.</string>
+    <string name="car_server_connect_fail">Disculpe, no se puede conectar al servidor. Inténtelo de nuevo</string>
+    <string name="car_sms_menu_edit">Editar</string>
+    <string name="car_sms_message_empty_tts">El mensaje está vacío.</string>
+    <string name="car_sms_message_tts">Mensaje</string>
+    <string name="car_sms_msg_colon_header">msj:</string>
+    <string name="car_sms_msg_empty_header">mensaje vacío</string>
+    <string name="car_sms_no_favorites">No hay contactos favoritos. Debería agregar algunos.</string>
+    <string name="car_sms_no_recent_msgs">No hay mensajes recibidos recientemente.</string>
+    <string name="car_sms_open_sms_app_dialog">¿Abrir en aplicación SMS?</string>
+    <string name="car_sms_radio_off">Parece que su teléfono está apagado.</string>
+    <string name="car_sms_speak_msg_tts">. Diga su mensaje en voz alta.</string>
+    <string name="car_sms_to_tts">a</string>
+    <string name="car_sr_msg_readback">Volver a leer texto</string>
+    <string name="car_tts_BLUETOOTH_OFF">"Bluetooth 'desactivado'."</string>
+    <string name="car_tts_BLUETOOTH_ON">"Bluetooth 'activado'."</string>
+    <string name="car_tts_email">Correo electrónico. </string>
+    <string name="car_tts_ERROR_OCCURRED">Lo siento, inténtalo otra vez</string>
+    <string name="car_tts_HOME_PROMPT_DEFAULT">¿Qué desea hacer?</string>
+    <string name="car_tts_KEYWORD_SPOT_OFF_BRIEF_DEMAND">"Detección de palabra de activación 'desactivada'."</string>
+    <string name="car_tts_KEYWORD_SPOT_ON_BRIEF_DEMAND">"Detección de palabra de activación 'activada'."</string>
+    <string name="car_tts_local_search">Búsqueda local. </string>
+    <string name="car_tts_MEMO_PROMPT">¿Qué te gustaría escribir?</string>
+    <string name="car_tts_MESSAGES_NO_UNREAD">No hay mensajes no leidos.</string>
+    <string name="car_tts_NAV_PROMPT_DEMAND">¿A dónde desea ir?</string>
+    <string name="car_tts_NO_MATCH_DEMAND">No se encuentran contactos que hagan juego. Por favor intente de nuevo</string>
+    <string name="car_tts_PHONE_NO_MATCH_DEMAND">No se encuentran contactos que hagan juego. Por favor intente de nuevo</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_FROM">Nuevo mensaje. </string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_FROM_INTRO">Nuevo mensaje desde %1$s</string>
+    <string name="car_tts_safereader_speak_reply">Diga su respuesta.</string>
+    <string name="car_tts_SCHEDULE_NO_EVENTS_TODAY">No más eventos hoy.</string>
+    <string name="car_tts_SMS_MESSAGE_BLANK_DEMAND">Mensaje vacío. Diga un mensaje en voz alta.</string>
+    <string name="car_tts_SMS_MESSAGE_FROM">Mensaje de</string>
+    <string name="car_tts_SMS_REPLY">Contestar </string>
+    <string name="car_tts_SMS_SAY_MESSAGE">Diga su mensaje.</string>
+    <string name="car_tts_SMS_SAY_MESSAGE_CONFIRM_DEMAND">Habla tu mensaje.</string>
+    <string name="car_tts_SMS_SAY_MESSAGE_CONFIRM_DEMAND_DOT">%1$s. Habla tu mensaje.</string>
+    <string name="car_tts_STARTUP_PROMPT_DEFAULT">Conversación de voz</string>
+    <string name="car_tts_STARTUP_PROMPT_DEFAULT_SAMSUNG">Conversación de voz</string>
+    <string name="car_tts_TASK_CANCELLED">Aceptar, cancelado.</string>
+    <string name="car_tts_VD_CALLING_CONFIRM_DEMAND">Llamando.</string>
+    <string name="car_tts_VD_CALLING_TO_CONFIRM_DEMAND">Llamando, a %1$s</string>
+    <string name="car_tts_VD_CALLING_TO_TYPE_CONFIRM_DEMAND">Llamando, a %1$s, %2$s</string>
+    <string name="car_tts_VD_CHOOSE_TYPE_DEMAND">Elegir un número de teléfono </string>
+    <string name="car_tts_VD_MULTIPLE_CONTACTS_DEMAND">Varios contactos encontrados. </string>
+    <string name="car_tts_VD_MULTIPLE_TYPES_DEMAND">Varios números de teléfonos para</string>
+    <string name="car_tts_VD_NO_MATCHING_TYPE">No se encuentran tipos que hagan juego. Por favor intente de nuevo</string>
+    <string name="car_tts_web_search">Búsqueda en Internet</string>
+    <string name="car_unsupported_action">Esta acción no es compatible. Por favor inténtalo otra vez.</string>
+    <string name="car_util_loading">Cargando...</string>
+    <string name="car_voicedial_multiple">Varios %1$s números encontrados. Por favor haz click en el número que deseas.</string>
+    <string name="car_voicedial_no_recent_called">No llamó a ningún contacto recientemente.</string>
+    <string name="car_voicedial_or">o</string>
+    <string name="car_voicedial_recobutton_voice_dial">Marque por voz</string>
+    <string name="car_voicedial_which">¿qué %1$s quieres hacer %2$s?</string>
+    <string name="car_vvs_handlers_home_spoken">inicio</string>
+    <string name="car_vvs_handlers_open_tts">abrir %1$s</string>
+    <string name="checkEventTitleTimeDetail">con nombre %1$s a las %2$s</string>
+    <string name="checkEventYouHave">Tienes </string>
+    <string name="client_core_connecting">Conectando...</string>
+    <string name="client_core_initializing">Inicializando...</string>
+    <string name="client_core_network_busy">La red del dispositivo está ocupada. Espere un minuto e inténtelo de nuevo.</string>
+    <string name="client_core_RECOGNITION_ABORTED">Se detuvo el reconocimiento. Inténtelo de nuevo.</string>
+    <string name="client_core_RECORDED_MAX">Sólo puedo escuchar 50 segundos de habla por vez. Estoy trabajando en lo que dijo hasta el momento.</string>
+    <string name="client_core_RECORDER_ERROR">No se puede registrar. Inténtelo de nuevo.</string>
+    <string name="client_core_thinking">Pensando...</string>
+    <string name="client_core_TOO_LONG">Su mensaje era muy largo. Intente una solicitud más corta.</string>
+    <string name="client_core_TOO_SHORT1">Audio demasiado corto. Inténtelo de nuevo.</string>
+    <string name="client_core_TOO_SHORT2">Mantenga pulsada la tecla del costado y hable. Suéltela cuando termine. Inténtelo de nuevo.</string>
+    <string name="client_core_UNKNOWN_STATE">Estado desconocido %1$s</string>
+    <string name="concat_for">Para %1$s</string>
+    <string name="concat_for_nbsp">Para %1$s </string>
+    <string name="concat_to">A %1$s</string>
+    <string name="concat_to_nbsp">A %1$s </string>
+    <string name="concat_to_nbsp_2">A %1$s, %2$s</string>
+    <string name="contact_top_choice_detail_item_other_choices">Otras opciones</string>
+    <string name="contact_top_choice_item_no_match">No se encontraron coincidencias</string>
+    <string name="contact_top_choice_item_top_choice">Opción de arriba</string>
+    <string name="contacts_available_choices">Opciones disponibles:</string>
+    <string name="contacts_choose_contact">Elija el contacto</string>
+    <string name="contacts_email_space">Correo electrónico </string>
+    <string name="contacts_no_match_openquote">"No se encontraron coincidencias para '%1$s'"</string>
+    <string name="contacts_no_matching_contact">No se encontraron coincidencias para el contacto</string>
+    <string name="contacts_other_choices_openparen">Otras opciones (%1$s)</string>
+    <string name="did_you_know">Sabía…</string>
+    <string name="done">Acabar</string>
+    <string name="email_account_add_manual_add_account">Agregar cuenta de correo electrónico</string>
+    <string name="email_account_add_manual_email_address">Dirección de correo electrónico</string>
+    <string name="email_account_add_manual_port">Puerto</string>
+    <string name="email_account_add_manual_security_type">Tipo de seguridad</string>
+    <string name="email_account_add_manual_server_address">Dirección del servidor</string>
+    <string name="email_account_add_manual_server_details">Detalles del servidor</string>
+    <string name="email_account_add_manual_username">Nombre de usuario</string>
+    <string name="email_account_detail_view_delete_account">Borrar cuenta</string>
+    <string name="email_account_detail_view_speak_email">Decir el correo electrónico en voz alta desde esta cuenta</string>
+    <string name="email_account_list_accounts">Cuentas</string>
+    <string name="english_ime_name">Teclado Vlingo</string>
+    <string name="english_ime_settings">Ajustes de teclado Vlingo</string>
+    <string name="examples">Ejemplos</string>
+    <string name="favorites">Favoritos</string>
+    <string name="fifth_space">Quinto </string>
+    <string name="first_space">Primero </string>
+    <string name="fourth_space">Cuarto </string>
+    <string name="handlers_select_email_recipient">Seleccionar el destinatario del correo electrónico</string>
+    <string name="handlers_select_message_recipient">Seleccionar destinatario del mensaje</string>
+    <string name="handlers_send_email_to_tts">Enviar correo electrónico a</string>
+    <string name="handlers_send_email_tts">Enviar correo electrónico</string>
+    <string name="handlers_send_message_to_tts">Enviar mensaje a</string>
+    <string name="handlers_send_message_tts">Enviar mensaje</string>
+    <string name="handlers_social_update">Actualización social</string>
+    <string name="handlers_subject_space_tts">Asunto </string>
+    <string name="help_about_copyright">(c)2011 Vlingo Corporation</string>
+    <string name="help_about_privacy">Política de privacidad</string>
+    <string name="help_about_terms">Términos del servicio</string>
+    <string name="help_about_vlingo">Acerca de Comandos de voz</string>
+    <string name="help_about_wakeup_powered_by">Palabra de activación con tecnología de:</string>
+    <string name="help_about_by_vlingo">de</string>
+    <string name="help_bluetooth_audio_reqs">Para que Comandos de voz reproduzca el sonido desde su auricular Bluetooth, éste debe ser compatible con &lt;b>A2DP&lt;/b> y debe tener Android OS 2.1 o superior.</string>
+    <string name="help_bluetooth_crashes">¿Se bloquea?</string>
+    <string name="help_bluetooth_froyo_bug">Si su teléfono a veces se bloquea cuando desconecta el auricular Bluetooth, es debido a un error en el Android 2.2 OS de algunos teléfonos. Si experimenta este problema, puede apagar su Bluetooth (en los ajustes de Vlingo > Avanzado)</string>
+    <string name="help_bluetooth_info">Comandos de voz puede escuchar comandos y responderle a través de un auricular Bluetooth. Esto funciona en la mayoría de los auriculares, pero existen algunos problemas a los que debería estar alerta.</string>
+    <string name="help_bluetooth_issues">Problemas del Bluetooth</string>
+    <string name="help_bluetooth_need_froyo">Para poder hablar a Comandos de voz a través de su auricular, debe tener Android OS 2.2 (Froyo) o superior.</string>
+    <string name="help_bluetooth_no_audio">¿No escucha el sonido?</string>
+    <string name="help_bluetooth_not_recording">¿No graba?</string>
+    <string name="help_bt_help">Ayuda Bluetooth</string>
+    <string name="help_btn_privacy_uri">http://www.vlingo.com/wap/privacy/es</string>
+    <string name="help_btn_tos_uri">http://www.vlingo.com/wap/terms/es</string>
+    <string name="help_menu1">Cómo usar Comandos de voz</string>
+    <string name="help_menu2">Cómo usar Conversación de voz</string>
+    <string name="help_menu3">Configuración de teclado</string>
+    <string name="help_menu4">Accesos directos</string>
+    <string name="help_menu5">Problemas del Bluetooth</string>
+    <string name="help_menu6">Asistencia en línea</string>
+    <string name="help_menu7">Ajustes</string>
+    <string name="help_menu8">Acerca de</string>
+    <string name="help_menu9">Secretos de Comandos de voz</string>
+    <string name="help_setup_keyboard_add_microphone">Agregar un botón de micrófono a su teclado.</string>
+    <string name="help_setup_keyboard_check">Compruebe el &lt;font color=#85bee0>teclado Vlingo&lt;/font></string>
+    <string name="help_setup_keyboard_enable">1) Activar el teclado Vlingo</string>
+    <string name="help_setup_keyboard_open_chooser">Abra el seleccionador de teclado</string>
+    <string name="help_setup_keyboard_open_settings">Abra la pantalla de ajustes</string>
+    <string name="help_setup_keyboard_select">Seleccione &lt;font color=#85bee0>Vlingo Teclado&lt;/font></string>
+    <string name="help_setup_keyboard_speak_anywhere">Hablar en cualquier lugar donde pueda escribir.</string>
+    <string name="help_setup_keyboard_switch">2) Cambiar al teclado Vlingo</string>
+    <string name="help_setup_keyboard_tap_below">Puntee abajo para abrir el selector de teclado</string>
+    <string name="help_setup_keyboard_tap_to_open">Puntee abajo para abrir la pantalla de ajustes de su teléfono</string>
+    <string name="help_shortcuts_add_shortcut">Agregar Comandos de voz a su pantalla de inicio</string>
+    <string name="help_shortcuts_choose_widgets">2) Elija &lt;font color=#85bee0>Widgets&lt;/font> del menú emergente</string>
+    <string name="help_shortcuts_long_press">1) Mantenga pulsada cualquier área en blanco de su pantalla de inicio</string>
+    <string name="help_shortcuts_scroll_select">3) Desplácese para seleccionar uno de los &lt;font color=#85bee0>Comandos de voz&lt;/font> widgets</string>
+    <string name="help_shortcuts_search_key">Si su teléfono posee una clave de búsqueda, puede presionarla y mantenerla pulsada para activar Comandos de voz.</string>
+    <string name="help_shortcuts_vlingo_search">Utilizar Comandos de voz con la clave de búsqueda</string>
+    <string name="help_subtext1">Conceptos básicos</string>
+    <string name="help_subtext2">Consejos para el uso de Conversación de voz</string>
+    <string name="help_subtext3">Hablar en cualquier lugar donde pueda escribir</string>
+    <string name="help_subtext4">Acceso más rápido a Comandos de voz</string>
+    <string name="help_subtext5">¿Problemas con los auriculares?</string>
+    <string name="help_subtext6">¿Todavía tiene problemas? Obtenga ayuda</string>
+    <string name="help_subtext7">Cambie el comportamiento de Comandos de voz</string>
+    <string name="help_subtext8">Información legal y sobre la versión</string>
+    <string name="help_using_vlingo_actionbar_locations">Puede acceder a ActionBar desde la pantalla de inicio de Comandos de voz o desde el Widget Comandos de voz.</string>
+    <string name="help_using_vlingo_example">"Por ejemplo: &lt;font color=#85bee0>enviar mensaje&lt;/font> a Juan: ¿Cenamos hoy? "</string>
+    <string name="help_using_vlingo_keyboard">Con el teclado vlingo</string>
+    <string name="help_using_vlingo_listen_to_new">Escuche mensajes nuevos</string>
+    <string name="help_using_vlingo_secrets_commands">No necesita memorizar los comandos. Vlingo entiende un montón de palabras diferentes para cada función: \"Enviar mensaje\", \"Texto\", \"SMS\"... pruebe con lo que usted desea.</string>
+    <string name="help_using_vlingo_secrets_flexible">Vlingo es flexible...</string>
+    <string name="help_using_vlingo_secrets_punctuation">Puntuación automática...</string>
+    <string name="help_using_vlingo_secrets_recognition">Cuanto más use Vlingo, con más precisión éste podrá reconocer su voz. A través del tiempo, Vlingo se adapta a usted personalmente a medida que aprende cómo usted dice las palabras y qué palabras y frases menciona más seguido.</string>
+    <string name="help_using_vlingo_secrets_vlingo_learns">Vlingo aprende...</string>
+    <string name="help_using_vlingo_speak">Hable en voz alta para que se lleve a cabo una tarea</string>
+    <string name="help_using_vlingo_speak_anywhere">Hablar en cualquier lugar donde pueda escribir</string>
+    <string name="help_using_vlingo_type_instead">escribe en lugar de hablar</string>
+    <string name="help_using_vlingo_using_actionbar">Ahora puede escribir todo lo que puede decir a Comandos de voz utilizando ActionBar.</string>
+    <string name="help_using_vlingo_with_vlingo">con el teclado Vlingo</string>
+    <string name="help_version">Versión </string>
+    <string name="help_wcis_contact">Contacto</string>
+    <string name="help_wcis_dial">Marcar por voz</string>
+    <string name="help_wcis_email">Correo electrónico</string>
+    <string name="help_wcis_hotel">Reservaciones hoteleras</string>
+    <string name="help_wcis_hotel_sub1">\"&lt;font color=#85bee0>Encontrar hoteles&lt;/font> en Cambridge para el domingo por la noche\"</string>
+    <string name="help_wcis_local_search">Búsqueda local &amp; Mapas</string>
+    <string name="help_wcis_maps">Mapas</string>
+    <string name="help_wcis_movie">Entradas para el cine</string>
+    <string name="help_wcis_movie_sub1">\"&lt;font color=#85bee0>Comprar entradas para &lt;/font> Harry Potter\"</string>
+    <string name="help_wcis_open_applications">Abrir aplicaciones</string>
+    <string name="help_wcis_open_apps">Abrir aplicaciones</string>
+    <string name="help_wcis_schedule">Agenda</string>
+    <string name="help_wcis_search">Buscar</string>
+    <string name="help_wcis_social">Social</string>
+    <string name="help_wcis_super_dial">Marcado súper</string>
+    <string name="help_wcis_superdialer">SuperDialer</string>
+    <string name="help_wcis_text_message">Mensaje</string>
+    <string name="help_wcis_web_search">Búsqueda en Internet</string>
+    <string name="home_activation_failed">No se puede establecer contacto con el servidor de activación Comandos de voz. Compruebe la red e inténtelo de nuevo.</string>
+    <string name="home_activation_url">http://www.vlingo.com/</string>
+    <string name="home_check_activation">Compruebe el estado de la activación</string>
+    <string name="home_checking_activation">Comprobando el estado de la activación...</string>
+    <string name="home_enter_code">Ingrese el código de activación</string>
+    <string name="home_hint_first_time_examples">Deslícese hacia la izquierda para ver ejemplos >></string>
+    <string name="home_hint_first_time_vlingo_learns">Vlingo aprende. La precisión se mejora a través del tiempo.</string>
+    <string name="home_hint_first_time_welcome">¡Bienvenido a Vlingo!</string>
+    <string name="home_hint_item_empty">Vacío</string>
+    <string name="home_hint_needs_activation">Active Vlingo para comenzar.</string>
+    <string name="home_hint_needs_activation_activate">Activar Vlingo</string>
+    <string name="home_please_activate">Active Comandos de voz para comenzar.</string>
+    <string name="home_setup_email">Configurar correo electrónico</string>
+    <string name="hotel_hint1">&lt;font color=#85bee0>Encontrar hoteles &lt;/font>en la ciudad de Nueva York</string>
+    <string name="hotel_hint2">&lt;font color=#85bee0>Encontrar hoteles &lt;/font>en Palm Springs California</string>
+    <string name="hotel_hint3">&lt;font color=#85bee0>Encontrar hoteles &lt;/font>en Miami Beech Florida para el viernes por la noche</string>
+    <string name="hotel_hint4">&lt;font color=#85bee0>Encontrar hoteles &lt;/font>en Las Vegas para el sábado</string>
+    <string name="incar">Conversación de voz</string>
+    <string name="incar_icon">Convers. de voz</string>
+    <string name="invite_all_contacts">Todos los contactos</string>
+    <string name="invite_choose_contacts">Elija los contactos a continuación para enviar la invitación</string>
+    <string name="invite_contact_selected">contacto seleccionado</string>
+    <string name="invite_contacts_selected">contactos seleccionados</string>
+    <string name="invite_downloading_link">Descargando enlace de la invitación...</string>
+    <string name="invite_error">Ocurrió algo mientras se enviaba la invitación a</string>
+    <string name="invite_getting_link">Obteniendo el enlace...</string>
+    <string name="invite_hold_on">Este proceso puede llevar unos minutos; espere.</string>
+    <string name="invite_invite_sent">Invitación enviada</string>
+    <string name="invite_invites_sent">Invitaciones enviadas</string>
+    <string name="invite_no_contacts">No hay contactos. Realmente, debería agregar algunos.</string>
+    <string name="invite_no_name">Ningún nombre</string>
+    <string name="invite_one_sec">Un seg...</string>
+    <string name="invite_please_wait">Espere</string>
+    <string name="invite_radio_off">Parece que su teléfono está apagado.</string>
+    <string name="invite_recently_texted">Contactos a los que les escribió recientemente</string>
+    <string name="invite_request_failed">La solicitud falló. Inténtelo de nuevo</string>
+    <string name="invite_request_timeout">Tiempo de espera de la solicitud agotado. Inténtelo de nuevo.</string>
+    <string name="invite_screen_choose_parties">Elija los contactos a continuación para enviar la invitación</string>
+    <string name="invite_screen_send_invite">Enviar invitación</string>
+    <string name="invite_sending">Enviando</string>
+    <string name="invite_sending_invites">Enviando invitaciones</string>
+    <string name="invite_TAF_FALLBACK_DOWNLOAD_URL">http://www.vlingo.com/vlingo/go?r=21</string>
+    <string name="invite_url_retrieve_fail">Ocurrió un problema al recuperar la dirección URL de la invitación. Inténtelo de nuevo más tarde.</string>
+    <string name="invite_vlingo_pitch">Hola, échele un vistazo a Comandos de voz, una aplicación de voz gratuita que convierte sus palabras en acciones. Haga clic aquí</string>
+    <string name="iux_howto_voicetogo">Como usar Comandos de voz</string>
+    <string name="iux_using_vlingo_finish">Terminar</string>
+    <string name="iux_using_vlingo_go_handsfree">Permite manos libres</string>
+    <string name="iux_using_vlingo_with_incar">con Conversación de voz</string>
+    <string name="iux_welcome_anthem">Habla a tu teléfono para realizar cualquier cosa.</string>
+    <string name="iux_welcome_talk_to_phone">Hable en voz alta a su teléfono para que lleve a cabo una tarea.</string>
+    <string name="joe">Joe</string>
+    <string name="joe_pirone">Joe Pirone</string>
+    <string name="label_done_key">Listo</string>
+    <string name="label_go_key">Ir</string>
+    <string name="launchhandler_appnotsupported">Aplicación no se instala. Por favor, inténtelo de nuevo.</string>
+    <string name="launchhandler_appnotsupported_noretry">Aplicación no se instala.</string>
+    <string name="line1">Primera Linea</string>
+    <string name="line2">Segunda linea</string>
+    <string name="local_search_listing_detail_screen_description">Descripción</string>
+    <string name="local_search_listing_detail_screen_powered_by">Con tecnología de</string>
+    <string name="local_search_listing_detail_screen_sponsored">Listado patrocinado</string>
+    <string name="local_search_listing_detail_screen_web">Web</string>
+    <string name="localsearch_no_number">No hay ningún número de teléfono disponible</string>
+    <string name="localsearch_no_web_address">No hay ninguna dirección Web disponible</string>
+    <string name="localsearch_reviews">Evaluaciones</string>
+    <string name="localsearch_space_review">revisar</string>
+    <string name="location">ubicación</string>
+    <string name="memo_layout_speak_button">Hablar</string>
+    <string name="movie_hint1">&lt;font color=#85bee0>Entradas para el cine &lt;/font>para La red social</string>
+    <string name="movie_hint2">&lt;font color=#85bee0>Entradas para el cine &lt;/font>para Alicia en el país de las maravillas</string>
+    <string name="movie_hint3">&lt;font color=#85bee0>Comprar entradas &lt;/font>para Zoolander en Los Angeles</string>
+    <string name="movie_hint4">&lt;font color=#85bee0>Comprar entradas &lt;/font>para Indiana Jones en Austin Texas</string>
+    <string name="new_features_action_bar">3) ActionBar</string>
+    <string name="new_features_action_bar_body">Ahora puedes escribir tus peticiones en lugar de hablarlas.</string>
+    <string name="new_features_action_bar_ex">Para aprender más, haz click en el botón de &lt;b>&lt;font color=#ffffff>¿Qué puedes decir?&lt;/font>&lt;/b></string>
+    <string name="new_features_hotel_body">Puedes encontrar hotels diciendo el nombre del hotel o su ubicación.</string>
+    <string name="new_features_hotel_reservations">1) Reserva de hoteles</string>
+    <string name="new_features_movie_body">Puedes ver que películas hay cerca, encontrar el horario y comprar entradas.</string>
+    <string name="new_features_movie_tickets">2) Entradas de cine</string>
+    <string name="new_features_title">Nuevas funciones</string>
+    <string name="no_network">Compruebe su red e intente de nuevo.</string>
+    <string name="nofify_safereader_on_body">Mensajes nuevos serán leidos en voz alta.</string>
+    <string name="ok_lc">Aceptar</string>
+    <string name="ok_uc">Aceptar</string>
+    <string name="opening_translate_app">Abriendo aplicación Traducir.</string>
+    <string name="phone_type_prompt_2">Di</string>
+    <string name="popular_domain_0">.com</string>
+    <string name="popular_domain_1">.net</string>
+    <string name="popular_domain_2">.org</string>
+    <string name="popular_domain_3">.gov</string>
+    <string name="popular_domain_4">.edu</string>
+    <string name="prediction">sugerencia de palabras</string>
+    <string name="prediction_category">Ajustes de sugerencia de palabras</string>
+    <string name="previous">Anterior</string>
+    <string name="processing">Procesando</string>
+    <string name="progress_dialog_getting_ready">Comienzo...</string>
+    <string name="progress_screen_button_go">Ir</string>
+    <string name="prompt_dial_subheading">Llamar contactos</string>
+    <string name="prompt_memo_ex1">Diga lo que quiere escribir</string>
+    <string name="prompt_memo_subheading">Escribir memo</string>
+    <string name="prompt_nav_subheading">Encontrar direcciones</string>
+    <string name="prompt_sms_subheading">Mensaje de texto</string>
+    <string name="quick_fixes">Soluciones rápidas</string>
+    <string name="quick_fixes_summary">Corregir errores de escritura comunes</string>
+    <string name="radio_player_not_supported">Reproductor de radio no admitido.</string>
+    <string name="recent">Reciente</string>
+    <string name="reco_error_0">No se puede procesar tu petición. Por favor inténtalo de nuevo</string>
+    <string name="reco_error_1">Agotado el tiempo de procesamiento en la red. Por favor inténtalo de nuevo</string>
+    <string name="reco_error_11">Operación cancelada. Por favor inténtalo de nuevo</string>
+    <string name="reco_error_12">No se puede iniciar el reconocimiento de voz mientras el teléfono está en uso</string>
+    <string name="reco_error_2">Error en la red. Por favor inténtalo de nuevo</string>
+    <string name="reco_error_3">No he oído lo que has dicho. Por favor dilo otra vez</string>
+    <string name="reco_error_4">Error en el servidor. Por favor inténtalo de nuevo</string>
+    <string name="reco_error_5">Error inesperado del cliente</string>
+    <string name="reco_error_6">No he oído lo que has dicho. Por favor dilo otra vez</string>
+    <string name="reco_error_7">No he entendido lo que has dicho. Por favor dilo de otra manera</string>
+    <string name="reco_error_8">El servicio de reconocimiento está ocupado. Por favor inténtalo de nuevo</string>
+    <string name="reco_error_9">Has hablado demasiado rápido. Por favor inténtalo de nuevo</string>
+    <string name="recordVoiceNotSupported">Grabación de voz no es compatible con tu teléfono</string>
+    <string name="redialing">Volviendo a marcar</string>
+    <string name="request_timeout">"Tiempo de espera de solicitud agotado
+
+ Compruebe la red e inténtelo de nuevo."</string>
+    <string name="safereader_blank_message">Mensaje vacío</string>
+    <string name="safereader_body">Cuerpo:</string>
+    <string name="safereader_email_too_large">Correo electrónico demasiado largo.</string>
+    <string name="safereader_notif_reading_title">De: Haga clic para omitir.</string>
+    <string name="safereader_notif_title">Los nuevos mensajes se leerán en voz alta</string>
+    <string name="safereader_notif_title_silenced">El timbre del teléfono está en silencio</string>
+    <string name="safereader_notification_main_removing">Eliminación en 30 segundos</string>
+    <string name="safereader_re">ASUNTO:</string>
+    <string name="safereader_re_lowercase">Asunto:</string>
+    <string name="safereader_reading_message">Leyendo mensaje</string>
+    <string name="safereader_removing_in">Eliminación en</string>
+    <string name="safereader_replay">Reproducir</string>
+    <string name="safereader_space_seconds">segundos</string>
+    <string name="safereader_speak_reply">Diga Responder en voz alta</string>
+    <string name="safereader_subj">Asunto:</string>
+    <string name="safereader_text_space">Enviar texto</string>
+    <string name="samsung_car_help_continue">Continuar</string>
+    <string name="samsung_car_help_setting_up">Instalando...</string>
+    <string name="samsung_powered_by_vlingo">Con tecnología de Vlingo</string>
+    <string name="samsung_schedule_all_day">Del día . </string>
+    <string name="samsung_schedule_at">en %1$s. </string>
+    <string name="samsung_schedule_event">%1$s evento. </string>
+    <string name="samsung_schedule_from">desde </string>
+    <string name="samsung_schedule_to">Hasta </string>
+    <string name="samsung_schedule_with">Con %1$s. </string>
+    <string name="schedule">Agenda</string>
+    <string name="sdial_screen_contacts">Contactos</string>
+    <string name="search_hint">Vlingo ActionBar</string>
+    <string name="search_hint1">Programa del Real Madrid</string>
+    <string name="search_hint2">Población de Portugal</string>
+    <string name="search_hint3">Clima en Valencia</string>
+    <string name="search_hint4">Centros turísticos en la Costa Brava</string>
+    <string name="search_label">Vlingo</string>
+    <string name="searchable_button_title">Ir</string>
+    <string name="second_space">Segundo </string>
+    <string name="setting_alarm">Configurando alarma</string>
+    <string name="settings_add_account">Agregar cuentas</string>
+    <string name="settings_advanced_autopunc_summary">Insertar la puntuación automáticamente donde corresponda</string>
+    <string name="settings_advanced_autopunc_title">Puntuación automática</string>
+    <string name="settings_advanced_BTlisten_summary">Usar un auricular Bluetooth conectado cuando escuche los comandos</string>
+    <string name="settings_advanced_BTlisten_title">Escuchar a través de Bluetooth</string>
+    <string name="settings_advanced_useloc_summary">Usar su ubicación actual para mejorar la precisión</string>
+    <string name="settings_advanced_useloc_title">Usar ubicación</string>
+    <string name="settings_auto_start_listening_summary">Empezar a escuchar inmediatamente cuando se abre Comandos de voz</string>
+    <string name="settings_auto_start_listening_title">Auto-encender escuchar</string>
+    <string name="settings_autodial_dialogtitle">Marcado automático</string>
+    <string name="settings_autodial_summary">Comportamiento de marcado automático</string>
+    <string name="settings_autodial_title">Marcado automático</string>
+    <string name="settings_AutoPunctuation">Puntuación automática</string>
+    <string name="settings_click_to_login">Haga clic para iniciar sesión</string>
+    <string name="settings_configure_home_address">Configure su domicilio</string>
+    <string name="settings_default_support_url">http://vlingo-en.custhelp.com/app/home/p/180</string>
+    <string name="settings_email_accounts">Cuentas de correo electrónico</string>
+    <string name="settings_email_confirm_delete">Confirme que desea borrar</string>
+    <string name="settings_email_confirm_delete_msg">¿Está seguro de que desea borrar esta cuenta?</string>
+    <string name="settings_email_disabled">Deshabilitado</string>
+    <string name="settings_email_enabled">Habilitado</string>
+    <string name="settings_email_err">Error</string>
+    <string name="settings_email_err_access_fail">Disculpe, pero no se puede acceder a la cuenta de correo electrónico. Compruebe sus detalles e inténtelo de nuevo.</string>
+    <string name="settings_email_err_account_exists">Disculpe, esta cuenta de correo electrónico ya existe.</string>
+    <string name="settings_email_err_unknown">Ha ocurrido un error desconocido</string>
+    <string name="settings_email_please_wait">Espere...</string>
+    <string name="settings_email_verifying_settings">Verificando los ajustes de correo electrónico…</string>
+    <string name="settings_EnableAudioFileLog">Habilitar registro de archivo de audio</string>
+    <string name="settings_EnableServerLog">Habilitar registro del servidor</string>
+    <string name="settings_EnableTimingLog">Habilitar registro de tiempo</string>
+    <string name="settings_general">General</string>
+    <string name="settings_incar_autolisten_summary">Comienza a escuchar automáticamente una vez que se indica una confirmación por voz</string>
+    <string name="settings_incar_autolisten_title">Escucha automática</string>
+    <string name="settings_incar_autostart_speakerphone_summary">Encender manos libres cuando se realiza llamada con</string>
+    <string name="settings_incar_autostart_speakerphone_title">Auto-encendero manos libres</string>
+    <string name="settings_incar_BTlanuch_summary">Lanzar Conversación de voz cada vez que se conecte un auricular Bluetooth</string>
+    <string name="settings_incar_BTlaunch_title">Lanzar en Bluetooth</string>
+    <string name="settings_incar_customprompt_summary">¿Qué desea hacer?</string>
+    <string name="settings_incar_customprompt_title">Personalice los avisos principales</string>
+    <string name="settings_incar_homeaddress_summary">Configure su domicilio</string>
+    <string name="settings_incar_homeaddress_title">Domicilio</string>
+    <string name="settings_incar_homescreen">Pantalla de inicio</string>
+    <string name="settings_incar_motion_summary">Configurar gestos para que Voice talk empieze a escuchar.</string>
+    <string name="settings_incar_motion_title">Moción</string>
+    <string name="settings_incar_navigation">Navegación</string>
+    <string name="settings_incar_onwhilecharging_summary">El comando Activación sólo está encendido cuando su teléfono se está cargando.</string>
+    <string name="settings_incar_onwhilecharging_title">Sólo encendido cuando esté cargando</string>
+    <string name="settings_incar_prompt_after_title">Aviso después de leer</string>
+    <string name="settings_incar_speakanswers_summary">Decir en voz alta las respuestas de las preguntas que usted formule, como \"¿Cuántos pies hay en una milla?\"</string>
+    <string name="settings_incar_speakanswers_title">Decir respuestas en voz alta</string>
+    <string name="settings_incar_speakintro_summary">"Dice 'Conversación de voz' en voz alta cuando se inicia Conversación de voz"</string>
+    <string name="settings_incar_speakintro_title">Decir introducción en voz alta</string>
+    <string name="settings_incar_speakprompts_summary">Dice los avisos en voz alta antes de escuchar</string>
+    <string name="settings_incar_speakprompts_title">Avisos en voz alta</string>
+    <string name="settings_incar_speakshow_msgbodies_title">Mostrar cuerpo del mensaje</string>
+    <string name="settings_incar_summary">Ajustes para Conversación de voz</string>
+    <string name="settings_incar_texttospeech">Text to Speech</string>
+    <string name="settings_incar_title">Ajustes Conversación de voz</string>
+    <string name="settings_incar_wakeup">Comando Activación</string>
+    <string name="settings_incar_wakeup_title">Comando Activación</string>
+    <string name="settings_language_dialogtitle">Idioma</string>
+    <string name="settings_language_summary">Elegir un idioma de entrada</string>
+    <string name="settings_language_title">Idioma</string>
+    <string name="settings_Location">Usar ubicación</string>
+    <string name="settings_logged_in_as">Sesión iniciada como</string>
+    <string name="settings_login_facebook">Inicie sesión en Facebook</string>
+    <string name="settings_login_foursquare">Inicie sesión en Foursquare</string>
+    <string name="settings_login_twitter">Inicie sesión en Twitter</string>
+    <string name="settings_logout">Haga clic para cerrar sesión</string>
+    <string name="settings_profanityfilter_summary">Sustituir las posibles palabras ofensivas por asteriscos</string>
+    <string name="settings_profanityfilter_title">Esconder palabras ofensivas</string>
+    <string name="settings_ProfanityFiltering">Esconder palabras ofensivas</string>
+    <string name="settings_search_engine_dialogtitle">Elegir motor de búsqueda</string>
+    <string name="settings_search_engine_title">Motor de búsqueda en la Web</string>
+    <string name="settings_social_facebook_summary">Haga clic para iniciar sesión en Facebook</string>
+    <string name="settings_social_facebook_title">Facebook</string>
+    <string name="settings_social_foursquare_summary">Haga clic para iniciar sesión en Foursquare</string>
+    <string name="settings_social_foursquare_title">Foursquare</string>
+    <string name="settings_social_summary">Ajustes de Facebook y Twitter</string>
+    <string name="settings_social_title">Ajustes sociales</string>
+    <string name="settings_social_twitter_summary">Haga clic para iniciar sesión en Twitter</string>
+    <string name="settings_social_twitter_title">Twitter</string>
+    <string name="settings_space_accounts">cuentas</string>
+    <string name="settings_space_minute">minuto</string>
+    <string name="settings_space_minutes">minutos</string>
+    <string name="settings_TextToSpeechPlayback">Reproductor de Text To Speech</string>
+    <string name="settings_TTSOptions_full">Mensaje completo</string>
+    <string name="settings_TTSOptions_header">Sólo encabezado</string>
+    <string name="settings_TTSOptions_off">Desactivar</string>
+    <string name="settings_voice_command_help_summary">Empezar a escuchar inmediatamente cuando se abre Comandos de voz</string>
+    <string name="settings_voice_command_help_title">Comandos de voz ayuda</string>
+    <string name="settings_voice_talk_help_summary">Ayuda para Conversación de voz</string>
+    <string name="settings_voice_talk_help_title">Conversación de voz ayuda</string>
+    <string name="settings_voice_talk_prompt_too_long">Error El mensaje debe de ser inferior a 110 caracteres</string>
+    <string name="show_suggestions">Mostrar sugerencias</string>
+    <string name="show_suggestions_summary">Mostrar palabras sugeridas al escribir</string>
+    <string name="showmessage_warning">Advertencia</string>
+    <string name="showmessage_websearchnotsupported">Búsqueda en la web no es compatible. Por favor, inténtelo de nuevo.</string>
+    <string name="skip">Saltar intro</string>
+    <string name="social_and_no_spaces">y</string>
+    <string name="social_api_days_ago">días atrás</string>
+    <string name="social_api_err_auth1">Ocurrió un error mientras se autenticaba (1).</string>
+    <string name="social_api_err_auth2">Ocurrió un error mientras se autenticaba (2).</string>
+    <string name="social_api_error">Error:</string>
+    <string name="social_api_hours_ago">horas atrás</string>
+    <string name="social_api_just_now">En este momento</string>
+    <string name="social_api_mins_ago">min. atrás</string>
+    <string name="social_api_no_name">Ningún nombre</string>
+    <string name="social_api_twitter_err_login">Ocurrió un problema mientras se iniciaba sesión en Twitter. Compruebe su nombre de usuario/contraseña e inténtelo de nuevo más tarde.</string>
+    <string name="social_api_twitter_error">Error de Twitter:</string>
+    <string name="social_api_twitter_update_error">Ocurrió un error mientras se actualizaba su estado en Twitter. Inténtelo de nuevo.</string>
+    <string name="social_dl_foursquare">¿Descargar Foursquare?</string>
+    <string name="social_dl_foursquare_msg">Parece que le gustaría usar Comandos de voz para hablar a Foursquare, pero no lo tiene instalado. ¿Desea descargar Foursquare ahora?</string>
+    <string name="social_err_msg1">Ocurrió un error mientras se intentaba actualizar</string>
+    <string name="social_err_msg2">. Si este problema persiste, intente cerrar sesión y volver a iniciar sesión en</string>
+    <string name="social_facebook_comm_error">No se puede recuperar información del usuario en Facebook. Intente iniciar sesión de nuevo más tarde.</string>
+    <string name="social_facebook_login_error">Ocurrió un problema mientras se iniciaba sesión en Facebook. Compruebe su nombre de usuario/contraseña e inténtelo de nuevo.</string>
+    <string name="social_follow_twitter">¿Seguir a Vlingo?</string>
+    <string name="social_follow_twitter_msg">¿Desea seguir a Vlingo en Twitter?</string>
+    <string name="social_foursquare_id">Dirección de correo electrónico o número de teléfono</string>
+    <string name="social_foursquare_login">Inicio de sesión en Foursquare</string>
+    <string name="social_foursquare_login_error">Ocurrió un error mientras se iniciaba sesión en Foursquare. Compruebe su nombre de usuario/contraseña e inténtelo de nuevo.</string>
+    <string name="social_login">Inicio de sesión</string>
+    <string name="social_login_problem">Hubo un problema en el inicio de la sesión. Por favor comprueba tu nombre/contraseña y prueba otra vez.</string>
+    <string name="social_login_to_facebook">¿Iniciar sesión en Facebook?</string>
+    <string name="social_login_to_facebook_msg">Debe iniciar sesión en Facebook para actualizar su estado.</string>
+    <string name="social_login_to_foursquare">¿Iniciar sesión en Foursquare?</string>
+    <string name="social_login_to_foursquare_msg">Debe iniciar sesión en Foursquare para actualizar su estado.</string>
+    <string name="social_login_to_network">Iniciar sesión en la red...</string>
+    <string name="social_login_to_network_msg">Debe iniciar sesión en una red social para actualizar su estado. Elija la/s red/es que desea usar a continuación.</string>
+    <string name="social_login_to_twitter">¿Iniciar sesión en Twitter?</string>
+    <string name="social_login_to_twitter_msg">Debe iniciar sesión en Twitter para actualizar su estado.</string>
+    <string name="social_logout_facebook">¿Cerrar sesión en Facebook?</string>
+    <string name="social_logout_facebook_msg">¿Está seguro de que desea cerrar sesión en Facebook?</string>
+    <string name="social_logout_foursquare">¿Cerrar sesión en Foursquare?</string>
+    <string name="social_logout_foursquare_msg">¿Está seguro de que desea cerrar sesión en Foursquare?</string>
+    <string name="social_logout_twitter">¿Cerrar sesión en Twitter?</string>
+    <string name="social_logout_twitter_msg">¿Está seguro de que desea cerrar sesión en Twitter?</string>
+    <string name="social_no">No</string>
+    <string name="social_no_network">No se seleccionó ninguna red social.</string>
+    <string name="social_no_status">Estado de la red social en blanco.</string>
+    <string name="social_none_selected">ninguna seleccionada</string>
+    <string name="social_not_now">Ahora no</string>
+    <string name="social_password_blank">La contraseña está vacía.</string>
+    <string name="social_space_selected">seleccionada</string>
+    <string name="social_status_updated">Estado actualizado</string>
+    <string name="social_too_long">Tiene demasiados caracteres. Limítese a 140.</string>
+    <string name="social_twitter_id">Nombre de usuario o dirección de correo electrónico</string>
+    <string name="social_twitter_login">Inicio de sesión en Twitter</string>
+    <string name="social_twitter_login_error">Ocurrió un problema mientras se iniciaba sesión en Twitter. Compruebe su nombre de usuario/contraseña e inténtelo de nuevo.</string>
+    <string name="social_update_layout_no_network">No se seleccionó ninguna red</string>
+    <string name="social_update_layout_share">Compartir</string>
+    <string name="social_update_layout_update_on">Actualizar en:</string>
+    <string name="social_update_layout_zero_of_140">0 / 140</string>
+    <string name="social_updating">Actualizando...</string>
+    <string name="social_username_blank">El nombre de usuario está vacío.</string>
+    <string name="social_wait_a_moment">Espere un momento.</string>
+    <string name="social_wait_logging_in">Espere mientras inicia sesión…</string>
+    <string name="social_yes">Sí</string>
+    <string name="sound_on_keypress">Sonido en keypress</string>
+    <string name="speak_again">Habla de nuevo</string>
+    <string name="speak_now">Habla ahora</string>
+    <string name="superdialer_business_listings">Listado de tiendas</string>
+    <string name="superdialer_business_search_error">Disculpe, ocurrió un error mientras se buscaban las listas de tiendas. Inténtelo de nuevo.</string>
+    <string name="superdialer_find">&lt;font color=#85bee0>Encontrar&lt;/font></string>
+    <string name="superdialer_google">&lt;font color=#ffffff>Google&lt;/font> </string>
+    <string name="superdialer_local_search">Búsqueda local</string>
+    <string name="superdialer_match_paren">coincidencia)</string>
+    <string name="superdialer_matches_paren">coincidencias)</string>
+    <string name="superdialer_no_matches">No se encontraron coincidencias</string>
+    <string name="superdialer_no_matches_paren">(no se encontraron coincidencias)</string>
+    <string name="superdialer_no_results">&lt;font color=#909090>Disculpe, no se encontró ningún resultado&lt;/font></string>
+    <string name="superdialer_recent_contacts">Contactos recientes</string>
+    <string name="superdialer_searching_for">&lt;font color=#ffffff>Buscando&lt;/font> </string>
+    <string name="tap_and_speak">Tocar y Hablar</string>
+    <string name="tap_to_cancel">Toca para cancelar</string>
+    <string name="tap_when_done">Toca cuando acabes de hablar</string>
+    <string name="testing">Probando</string>
+    <string name="third_space">Tercero </string>
+    <string name="tos_accept">Aceptar</string>
+    <string name="tos_accept_samsung">Confirmar</string>
+    <string name="tos_decline">Declinar</string>
+    <string name="tos_decline_samsung">Anterior</string>
+    <string name="tos_dialog_view_terms">Al hacer click en el botón de “Aceptar”, estás de acuerdo con los &lt;a href=\"http://www.vlingo.com/wap/terms/es\">Términos de Servicios &lt;/a> de Vlingo por el cual Vlingo puede recoger y usar información, incluyendo (sin limitación) ubicación, búsqueda, y otra información, como está descrito en la &lt;a href=\"http://www.vlingo.com/wap/privacy/es\">Política de Privacidad&lt;/a> de Vlingo.</string>
+    <string name="tos_dialog_view_terms_samsung">POR LA PRESENTE RECONOCE Y ACEPTA QUE CUALQUIER APLICACIÓN AQUÍ INCLUIDA, Y CUALQUIER SERVICIO Y CONTENIDO QUE LE OFREZCA DICHA APLICACIÓN, SE LO PROPORCIONA UN PROVEEDOR DE SERVICIOS TERCERO Y NO SAMSUNG ELECTRONICS CO., LTD. (\"SAMSUNG\"). &lt;br/>&lt;br/> TAMBIÉN RECONOCE Y ACEPTA QUE LA DESCARGA, INSTALACIÓN Y USO DE LA APLICACIÓN, SERVICIO O CONTENIDO DE TERCEROS SE RIGE POR LAS CONDICIONES DE USO, ACUERDO DE LICENCIA, POLÍTICA DE PRIVACIDAD O CUALQUIER OTRO ACUERDO DEL PROVEEDOR DE SERVICIOS TERCERO Y QUE TODA LA INFORMACIÓN Y DATOS PERSONALES QUE FACILITE A DICHO PROVEEDOR DE SERVICIOS ESTARÁ SUJETA A LA POLÍTICA DE PRIVACIDAD DEL PROVEEDOR DE SERVICIOS TERCERO.&lt;br/>&lt;br/>SAMSUNG NO ES RESPONSABLE DE LA PRIVACIDAD NI DE NINGUNA OTRA PRÁCTICA DE DICHO PROVEEDOR DE SERVICIO TERCERO Y RENUNCIA EXPLÍCITAMENTE DE TODA RESPONSABILIDAD EN CONEXIÓN CON LAS APLICACIONES, SERVICIOS Y CONTENIDOS DE TERCEROS, ASÍ COMO DE SU USO.</string>
+    <string name="tos_must_accept_to_use">Disculpe, debe aceptar los Términos de servicio para usar Comandos de voz .</string>
+    <string name="tos_please_uninstall">Disculpe, desinstale la versión antigua de Comandos de voz.</string>
+    <string name="tos_uninstall">Desinstalar</string>
+    <string name="tos_uninstall_old">Desinstalar versión antigua</string>
+    <string name="tos_uninstall_old_msg">Parece que tiene instalada una versión de Comandos de voz más antigua. Desafortunadamente, esta nueva versión de Comandos de voz requiere que se desinstale la versión anterior para que pueda continuar.</string>
+    <string name="tos_vlingo_terms">Términos de servicio de Vlingo</string>
+    <string name="tos_vlingo_terms_samsung">Renuncia de Responsabilidad</string>
+    <string name="touch_to_continue">Toque este consejo para continuar »</string>
+    <string name="touch_to_finish">Toque aquí para cerrar este consejo y comenzar a escribir</string>
+    <string name="translate_app_not_supported">Aplicación Traducir no admitida.</string>
+    <string name="try_saying">Pruebe diciendo</string>
+    <string name="type">Escribir</string>
+    <string name="unknown_contact">Contacto desconocido.</string>
+    <string name="update_google_maps">Para navegar con Comandos de voz necesita instalar la última versión de Google Maps</string>
+    <string name="update_nav_app_china">Para navegar con Comandos de voz necesita instalar la última versión de AutoNavi</string>
+    <string name="util_day_ago">día atrás</string>
+    <string name="util_hour_ago">hora atrás</string>
+    <string name="util_min_ago">min. atrás</string>
+    <string name="vibrate_on_keypress">Vibrar en keypress</string>
+    <string name="Vlingo">Vlingo</string>
+    <string name="vlingo_answers_answer">Respuesta</string>
+    <string name="vlingo_answers_confirm_question">¿Ésta es la pregunta que formuló?</string>
+    <string name="vlingo_answers_search_google">Buscar Google</string>
+    <string name="vlingo_answers_speak_answer">Decir respuesta en voz alta</string>
+    <string name="vlingo_answers_this_is_answer">Ésta es la respuesta</string>
+    <string name="vlingo_answers_unknown_location">Lo siento, no coy capaz de detectar tu ubicación actual.</string>
+    <string name="vlingo_not_authorized">Active Vlingo para usar esta función.</string>
+    <string name="voice_suggestions">Sugerencias de voz</string>
+    <string name="voice_suggestions_summary">Mostrar opciones alternativas cuando punteo una palabra</string>
+    <string name="wcis">¿Qué puedo decir?</string>
+    <string name="wcis_contact">Buscar contacto por voz.</string>
+    <string name="wcis_email_send">Enviar un correo electrónico diciendo el contacto, el asunto y el mensaje en voz alta</string>
+    <string name="wcis_general_help">Ayuda general</string>
+    <string name="wcis_hotels_example">&lt;font color=#85bee0>Encontrar hotels&lt;/font> en Barcelona&lt;br/>&lt;font color=#85bee0>Encontrar hotels&lt;/font> en La Coruña para el viernes por la noche.</string>
+    <string name="wcis_hotels_example_text">Puedes encontrar hotels por nombre o ubicación. &lt;br/>&lt;br/>Si no dices una ubicación, Vlingo buscará los hoteles cerca de tu ubicación actual.</string>
+    <string name="wcis_hotels_tag_line">Encontrar hoteles y hacer reserva hablando</string>
+    <string name="wcis_how_to_use">Cómo usar la función</string>
+    <string name="wcis_how_to_use_caption">Guía par funciones de Voice talk</string>
+    <string name="wcis_how_to_use_VC_caption">Guía par funciones de Comandos de voz</string>
+    <string name="wcis_info_row_more_info">Más información</string>
+    <string name="wcis_maps_directions">Obtener mapas o indicaciones de cómo llegar a algún lugar</string>
+    <string name="wcis_maps_find_businesses">Encuentre tiendas sólo con la voz</string>
+    <string name="wcis_memo">Escribir memos por voz.</string>
+    <string name="wcis_movies_example">&lt;font color=#85bee0>Comprar entradas&lt;/font> para La Red Social&lt;br/>&lt;font color=#85bee0>Encontrar entradas&lt;/font> para la película de Tron en Segovia.</string>
+    <string name="wcis_movies_tag_line">Encontrar quién juega y comprar entradas</string>
+    <string name="wcis_nav">Lanzar mapa diciendo la dirección y nombre de empresa</string>
+    <string name="wcis_openapps_open">Abra aplicaciones diciendo el nombre de la aplicación en voz alta</string>
+    <string name="wcis_schedule">Revisar el calendario de hoy</string>
+    <string name="wcis_search_speak_query">Busque en Internet haciendo su consulta en voz alta</string>
+    <string name="wcis_sms_speak_text">Mandar un mensaje diciendo el contacto y mensaje</string>
+    <string name="wcis_social_update">Actualice Facebook y Twitter con la voz</string>
+    <string name="wcis_social_update_fb">Actualice Facebook con la voz</string>
+    <string name="wcis_social_update_fb_and_tw">Actualice Facebook y Twitter con la voz</string>
+    <string name="wcis_social_update_tw">Actualice Twitter con la voz</string>
+    <string name="wcis_super_dial_call_any">Llame a cualquier tienda de los Estados Unidos con la voz</string>
+    <string name="wcis_voice_dial_call">Llame a contactos o a cualquier tienda de los Estados Unidos con la voz</string>
+    <string name="wcis_voice_dial_call_contacts">Llamar contactos por voz</string>
+    <string name="wcis_wake_up">Despertar Voice talk</string>
+    <string name="wcis_wake_up_caption">Guia para despertar Voice talk</string>
+    <string name="wcis_website">Ir a URL diciendo el nombre de la página de web</string>
+    <string name="WebSearchEngine">Motor de búsqueda en la Web</string>
+    <string name="what_can_i_say">¿Qué puedo decir?</string>
+    <string name="widget_name">Voz</string>
+    <string name="widget_vlingo_incar">Conversación de voz</string>
+    <string name="settings_launch_voicetalk_summary">Ejecute Conversación de voz pulsando dos veces la tecla de inicio</string>
+    <string name="settings_launch_voicetalk_title">Lanzamiento de transmisión de voz</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pda_to_modem">Módem</string>
+    <string name="modem_to_pda">PDA</string>
+    <string name="usb_name">USB</string>
+    <string name="enable_name">Activar</string>
+    <string name="disable_name">Desactiv.</string>
+    <string name="type_name">Tipo</string>
+    <string name="aponly_name">Sólo AP</string>
+</resources>

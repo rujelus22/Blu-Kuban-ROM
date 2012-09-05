@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/news" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:background="@drawable/title_bar_normal" android:layout_width="fill_parent" android:layout_height="36.659973dip">
+            <ImageView android:id="@id/title_bar" android:background="@drawable/title_bar" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/apmobile_logo" android:scaleType="center" />
+        </LinearLayout>
+        <com.sec.android.touchwiz.widget.TwTabHost android:orientation="horizontal" android:id="@id/tabHost" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twTabIndicatorType="text"
+          xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.sec.android.touchwiz.widget.TwTabWidget android:id="@android:id/tabs" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <ListView android:id="@id/apnewslist" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="166.0dip" android:divider="@color/colCCCCCC" android:dividerHeight="0.666dip" android:fadeScrollbars="true" />
+                    <RelativeLayout android:gravity="center" android:id="@id/no_news_data_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="166.0dip">
+                        <TextView android:textSize="18.659973dip" android:textColor="@drawable/app_no_data_news" android:gravity="center" android:id="@id/no_news" android:padding="10.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/no_news" android:layout_centerInParent="true" />
+                    </RelativeLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </com.sec.android.touchwiz.widget.TwTabHost>
+    </LinearLayout>
+</LinearLayout>

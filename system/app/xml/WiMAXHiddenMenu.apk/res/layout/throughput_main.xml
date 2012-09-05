@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/RelativeLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Button android:textSize="25.0sp" android:id="@id/BT_START" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_START" />
+        <Button android:textSize="25.0sp" android:id="@id/BT_STOP" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_STOP" android:layout_toRightOf="@id/BT_START" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/RelativeLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="25.0sp" android:id="@id/TV_TIME" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/TV_TIME" />
+        <TextView android:textSize="25.0sp" android:id="@id/TV_TIMERESULT" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_TIME" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/RelativeLayout03" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="25.0sp" android:id="@id/TV_DATA" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/TV_DATA" />
+        <TextView android:textSize="25.0sp" android:id="@id/TV_DATARESULT" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_DATA" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/RelativeLayout04" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="25.0sp" android:id="@id/TV_TP" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/TV_TP" />
+        <TextView android:textSize="25.0sp" android:id="@id/TV_TPRESULT" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_TP" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.media" android:versionCode="15" android:versionName="4.0.4-FH13" package="com.sec.android.providers.downloads"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <permission android:label="@string/permlab_downloadManager" android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" android:protectionLevel="signatureOrSystem" android:description="@string/permdesc_downloadManager" />
+    <permission android:label="@string/permlab_downloadManagerAdvanced" android:name="android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED" android:protectionLevel="signatureOrSystem" android:description="@string/permdesc_downloadManagerAdvanced" />
+    <permission android:label="@string/permlab_cacheFilesystem" android:name="android.permission.ACCESS_CACHE_FILESYSTEM" android:protectionLevel="signature" android:description="@string/permdesc_cacheFilesystem" />
+    <permission android:label="@string/permlab_downloadCompletedIntent" android:name="android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS" android:protectionLevel="signature" android:description="@string/permdesc_downloadCompletedIntent" />
+    <permission android:label="@string/permlab_seeAllExternal" android:name="android.permission.SEE_ALL_EXTERNAL" android:protectionLevel="normal" android:description="@string/permdesc_seeAllExternal" />
+    <permission android:label="@string/permlab_accessAllDownloads" android:name="android.permission.ACCESS_ALL_DOWNLOADS" android:protectionLevel="signature" android:description="@string/permdesc_accessAllDownloads" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.ACCESS_DRM" />
+    <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
+    <uses-permission android:name="android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INSTALL_DRM" />
+    <uses-permission android:name="android.permission.ACCESS_ALL_DOWNLOADS" />
+    <uses-permission android:name="android.permission.ACCESS_DEV_STORAGE" />
+    <application android:process="android.process.media">
+        <provider android:name=".SecDownloadProvider" android:permission="android.permission.ACCESS_ALL_DOWNLOADS" android:authorities="sisodownloads">
+            <path-permission android:permission="android.permission.INTERNET" android:pathPrefix="/sisodownloads" />
+        </provider>
+        <service android:name=".SecDownloadService" android:permission="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+        <receiver android:name=".SecDownloadReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <uses-library android:name="sec_feature" />
+    </application>
+</manifest>

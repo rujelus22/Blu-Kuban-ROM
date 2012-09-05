@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="chinese_spelling_font_default">18.0sp</dimen>
+    <dimen name="chinese_candidate_font_default">20.0sp</dimen>
+    <dimen name="chinese_button_margin_left">3.0sp</dimen>
+    <dimen name="chinese_button_margin_right">3.0sp</dimen>
+    <dimen name="chinese_button_margin_top">2.0sp</dimen>
+    <dimen name="chinese_button_margin_bottom">2.0sp</dimen>
+    <dimen name="chinese_button_min_width">20.0sp</dimen>
+    <dimen name="chinese_spelling_segment_spacing">3.0sp</dimen>
+    <dimen name="inputwindow_font_default">11.799988sp</dimen>
+    <dimen name="choicewindow_font_default">20.799988sp</dimen>
+    <dimen name="choicewindow_font_big">20.0sp</dimen>
+    <dimen name="help_dialog_font_size">15.0px</dimen>
+    <dimen name="width_margin">1.0px</dimen>
+    <dimen name="height_margin">2.0px</dimen>
+</resources>

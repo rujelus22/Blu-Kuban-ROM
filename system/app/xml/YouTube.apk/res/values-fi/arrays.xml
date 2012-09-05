@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="safe_search_levels">
+        <item>Älä suodata</item>
+        <item>Keskitaso</item>
+        <item>Tiukka</item>
+    </string-array>
+    <string-array name="subtitles_size_entries">
+        <item>Pieni</item>
+        <item>Keskikokoinen</item>
+        <item>Suuri</item>
+        <item>Valtava</item>
+    </string-array>
+</resources>

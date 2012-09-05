@@ -1,0 +1,118 @@
+{
+  "pseudo_locales": [
+    {
+      "Locale": "EnglishUK", 
+      "Help": "EnglishUS", 
+      "Tutorial": "EnglishUS"
+    }, 
+    {
+      "Locale": "EnglishAU", 
+      "Help": "EnglishUS", 
+      "Tutorial": "EnglishUS"
+    }, 
+    {
+      "Locale": "FrenchCA", 
+      "Help": "French", 
+      "Tutorial": "FrenchCA"
+    }, 
+    {
+      "Locale": "FrenchCH", 
+      "Help": "French", 
+      "Tutorial": "FrenchCH"
+    }, 
+    {
+      "Locale": "ItalianCH", 
+      "Help": "Italian", 
+      "Tutorial": "ItalianCH"
+    }, 
+    {
+      "Locale": "TurkishTR", 
+      "Help": "Turkish", 
+      "Tutorial": "TurkishTR"
+    }, 
+    {
+      "Locale": "ChineseHK", 
+      "Help": "ChineseTW", 
+      "Tutorial": "ChineseTW"
+    }, 
+    {
+      "Locale": "ChineseSG", 
+      "Help": "ChineseCN", 
+      "Tutorial": "ChineseCN"
+    }, 
+    {
+      "Locale": "SwedishSV", 
+      "Help": "Swedish", 
+      "Tutorial": "Swedish"
+    }, 
+    {
+      "Locale": "FinnishFI", 
+      "Help": "Finnish", 
+      "Tutorial": "Finnish"
+    }
+  ], 
+  "zkbs_per_language": {
+    "EnglishUS": [
+      "Numbers-LS-Latin1.zkb.le", 
+      "Numbers-PT-Latin1.zkb.le", 
+      "Qwerty-PT-Latin1.zkb.le", 
+      "Edit-PT-Latin1.zkb.le", 
+      "Edit-LS-Latin1.zkb.le", 
+      "Qwerty-LS-Latin1.zkb.le"
+    ], 
+    "Spanish": [
+      "Numbers-LS-Latin1.zkb.le", 
+      "Numbers-PT-Latin1.zkb.le", 
+      "Qwerty-PT-Latin1.zkb.le", 
+      "Edit-PT-Latin1.zkb.le", 
+      "Edit-LS-Latin1.zkb.le", 
+      "Qwerty-LS-Latin1.zkb.le"
+    ]
+  }, 
+  "bmps_per_language": {
+    "EnglishUS": [
+      "SwypeRef_LS_Blue_%LS_SS%.png", 
+      "SwypeRef_LS_Standard_Shifted_wBlue_%LS_SS%.png", 
+      "SwypeRef_PT_Blue_Shifted_%PT_SS%.png", 
+      "SwypeRef_PT_Standard_wBlue_%PT_SS%.png", 
+      "SwypeRef_PT_Editing_%PT_SS%.png", 
+      "SwypeRef_LS_Editing_Select_%LS_SS%.png", 
+      "SwypeRef_LS_Editing_Jump_Select_%LS_SS%.png", 
+      "SwypeRef_PT_Blue_%PT_SS%.png", 
+      "SwypeRef_LS_Editing_Jump_%LS_SS%.png", 
+      "SwypeRef_LS_Blue_Shifted_%LS_SS%.png", 
+      "SwypeRef_LS_Standard_wBlue_%LS_SS%.png", 
+      "SwypeRef_LS_Numeric_%LS_SS%.png", 
+      "SwypeRef_PT_Editing_Select_%PT_SS%.png", 
+      "SwypeRef_LS_Editing_%LS_SS%.png", 
+      "SwypeRef_PT_Editing_Jump_%PT_SS%.png", 
+      "SwypeRef_PT_Editing_Jump_Select_%PT_SS%.png", 
+      "SwypeRef_PT_Standard_CapsLock_wBlue_%PT_SS%.png", 
+      "SwypeRef_PT_Numeric_%PT_SS%.png", 
+      "SwypeRef_PT_Standard_Shifted_wBlue_%PT_SS%.png", 
+      "SwypeRef_LS_Standard_CapsLock_wBlue_%LS_SS%.png"
+    ], 
+    "Spanish": [
+      "SwypeRef_LS_Blue_%LS_SS%.png", 
+      "SwypeRef_LS_Standard_Shifted_wBlue_%LS_SS%.png", 
+      "SwypeRef_PT_Blue_Shifted_%PT_SS%.png", 
+      "SwypeRef_PT_Standard_wBlue_%PT_SS%.png", 
+      "SwypeRef_PT_Editing_%PT_SS%.png", 
+      "SwypeRef_LS_Editing_Select_%LS_SS%.png", 
+      "SwypeRef_LS_Editing_Jump_Select_%LS_SS%.png", 
+      "SwypeRef_PT_Blue_%PT_SS%.png", 
+      "SwypeRef_LS_Editing_Jump_%LS_SS%.png", 
+      "SwypeRef_LS_Blue_Shifted_%LS_SS%.png", 
+      "SwypeRef_LS_Standard_wBlue_%LS_SS%.png", 
+      "SwypeRef_LS_Numeric_%LS_SS%.png", 
+      "SwypeRef_PT_Editing_Select_%PT_SS%.png", 
+      "SwypeRef_LS_Editing_%LS_SS%.png", 
+      "SwypeRef_PT_Editing_Jump_%PT_SS%.png", 
+      "SwypeRef_PT_Editing_Jump_Select_%PT_SS%.png", 
+      "SwypeRef_PT_Standard_CapsLock_wBlue_%PT_SS%.png", 
+      "SwypeRef_PT_Numeric_%PT_SS%.png", 
+      "SwypeRef_PT_Standard_Shifted_wBlue_%PT_SS%.png", 
+      "SwypeRef_LS_Standard_CapsLock_wBlue_%LS_SS%.png"
+    ]
+  }
+}

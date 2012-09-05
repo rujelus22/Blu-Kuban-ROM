@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="spinner" format="reference" />
+    <attr name="imageView" format="reference" />
+    <attr name="imageViewContainer" format="reference" />
+    <attr name="banner" format="reference" />
+    <attr name="errorView" format="reference" />
+    <attr name="dimmedCover" format="reference" />
+    <attr name="carouselBackgroundDrawable" format="reference" />
+    <attr name="actionBarDrawable" format="reference" />
+    <attr name="navigationColor" format="reference" />
+    <attr name="menuShopDrawable" format="reference" />
+    <attr name="menuAboutDrawable" format="reference" />
+    <attr name="menuAccountsDrawable" format="reference" />
+    <attr name="menuDeleteDrawable" format="reference" />
+    <attr name="menuPinDrawable" format="reference" />
+    <attr name="menuSearchDrawable" format="reference" />
+    <attr name="menuSettingsDrawable" format="reference" />
+    <attr name="menuTocDrawable" format="reference" />
+    <attr name="scrubberBackgroundDrawable" format="reference" />
+    <attr name="scrubberDrawable" format="reference" />
+    <attr name="scrubberCalloutDrawable" format="reference" />
+    <attr name="scrubberTrackDrawable" format="reference" />
+    <attr name="scrubberUndoDrawable" format="reference" />
+    <attr name="dropdownButtonBackground" format="reference" />
+    <attr name="nightMode" format="boolean" />
+    <attr name="primaryTextColor" format="reference" />
+    <attr name="key" format="string" />
+    <attr name="entries" format="reference" />
+    <attr name="entryValues" format="reference" />
+    <attr name="entryIcons" format="reference" />
+    <attr name="progressBarOffsetTop" format="dimension" />
+    <attr name="progressBarUseInverseStyle" format="boolean" />
+    <attr name="iconTextGap" format="dimension" />
+    <attr name="buttonImageSize">
+        <enum name="small" value="0" />
+        <enum name="medium" value="1" />
+        <enum name="tall" value="2" />
+        <enum name="standard" value="3" />
+    </attr>
+    <attr name="hideGlobalCount" format="boolean" />
+</resources>

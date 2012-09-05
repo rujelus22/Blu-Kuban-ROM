@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="main_frame">false</item>
+    <item type="id" name="panning_try_actually_drawer">false</item>
+    <item type="id" name="info_btn">false</item>
+    <item type="id" name="icon_text">false</item>
+    <item type="id" name="icon">false</item>
+    <item type="id" name="done_button">false</item>
+    <item type="id" name="preview_button_bar">false</item>
+    <item type="id" name="ok_button">false</item>
+    <item type="id" name="back_button">false</item>
+    <item type="id" name="ScrollView01">false</item>
+    <item type="id" name="message">false</item>
+    <item type="id" name="img">false</item>
+</resources>

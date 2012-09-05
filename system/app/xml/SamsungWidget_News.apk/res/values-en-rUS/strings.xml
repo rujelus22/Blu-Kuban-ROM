@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alert_not_use_network">Network not available</string>
+    <string name="alert_not_use_network_dialog_title">Network error</string>
+    <string name="Server_unavailable">Server unavailable</string>
+    <string name="Server_unavailable_dialog_title">Server error</string>
+    <string name="string_retry">Retry</string>
+    <string name="default_dialog_title">Information</string>
+    <string name="setting_ok">OK</string>
+    <string name="setting_yes">Yes</string>
+    <string name="setting_no">No</string>
+    <string name="Last_updated">Updated</string>
+    <string name="today">Today</string>
+    <string name="auto_scroll_widget">Auto scrolling</string>
+    <string name="auto_refresh_widget">Auto refresh</string>
+    <string name="string_on">On</string>
+    <string name="string_off">Off</string>
+    <string name="please_wait">Please wait</string>
+    <string name="now_loading">Loading...</string>
+    <string name="app_name">AP mobile news</string>
+    <string name="APNews_name">AP Mobile news</string>
+    <string name="Settings">Settings</string>
+    <string name="no_news">Tap to get news</string>
+    <string name="ar_none">None</string>
+    <string name="ar_every30mins">Every 30 minutes</string>
+    <string name="ar_every1hour">Every 1 hour</string>
+    <string name="ar_every3hours">Every %d hours</string>
+    <string name="string_cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="check_do_not_used_popup">"Don't ask again"</string>
+    <string name="Mobile_Use_Toast_widget_dialog_title">Network</string>
+    <string name="Mobile_Use_Toast">Updating information will require connection to network. This may incur charges. Continue?</string>
+    <string name="not_enough_space_dialog_title">Not enough space</string>
+    <string name="widget_news_name">AP mobile news</string>
+    <string name="problem_loading_widget">Problem loading widget</string>
+    <string name="seconds">Every %d seconds</string>
+    <string name="slog_all_logs">All logs</string>
+</resources>

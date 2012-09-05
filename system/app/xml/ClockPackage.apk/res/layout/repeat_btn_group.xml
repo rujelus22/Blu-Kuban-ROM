@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:id="@id/repeat_linearlayout" android:layout_width="fill_parent" android:layout_height="49.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ToggleButton android:id="@id/repeat_at_sun" android:textOn="@string/sun1" android:textOff="@string/sun1" style="@style/ToggleButton.RepeatSunday" />
+    <ToggleButton android:id="@id/repeat_at_mon" android:textOn="@string/mon1" android:textOff="@string/mon1" style="@style/ToggleButton.RepeatDay" />
+    <ToggleButton android:id="@id/repeat_at_tue" android:textOn="@string/tue1" android:textOff="@string/tue1" style="@style/ToggleButton.RepeatDay" />
+    <ToggleButton android:id="@id/repeat_at_wed" android:textOn="@string/wed1" android:textOff="@string/wed1" style="@style/ToggleButton.RepeatDay" />
+    <ToggleButton android:id="@id/repeat_at_thu" android:textOn="@string/thu1" android:textOff="@string/thu1" style="@style/ToggleButton.RepeatDay" />
+    <ToggleButton android:id="@id/repeat_at_fri" android:textOn="@string/fri1" android:textOff="@string/fri1" style="@style/ToggleButton.RepeatDay" />
+    <ToggleButton android:id="@id/repeat_at_sat" android:textOn="@string/sat1" android:textOff="@string/sat1" style="@style/ToggleButton.RepeatDay" />
+</LinearLayout>

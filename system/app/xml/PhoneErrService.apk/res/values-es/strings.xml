@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Error</string>
+    <string name="app_name">Error</string>
+    <string name="ok">Aceptar</string>
+    <string name="sms_fdn_title">Error</string>
+    <string name="sms_fdn_body">Número FDN restringido</string>
+    <string name="sms_fdn_restricted">Número FDN restringido</string>
+    <string name="sim_not_inserted">Inserte la tarjeta SIM</string>
+    <string name="sdcard_copy_err">Error al copiar</string>
+    <string name="data_copy_err">Error de copia de datos</string>
+    <string name="sim_crash_title">Error en tarjeta SIM</string>
+    <string name="sim_crash_text">Compruebe su tarjeta SIM o póngase en contacto con Atención al cliente</string>
+    <string name="unknown_err">Error desconocido</string>
+    <string name="sim_removed_text">Tarjeta SIM extraída. Reiniciar teléfono</string>
+    <string name="sim_removed_title">Tarjeta SIM extraída</string>
+    <string name="sim_permernent_title">Error de tarjeta SIM</string>
+    <string name="sim_permernent_blocked">PUK bloqueado</string>
+    <string name="dialog_ok">Aceptar</string>
+</resources>

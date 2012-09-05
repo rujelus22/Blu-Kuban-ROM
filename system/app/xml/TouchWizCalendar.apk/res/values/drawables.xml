@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="agenda_item_declined">@color/tw_color001_dim</drawable>
+    <item type="drawable" name="text_color">#ffffffff</item>
+    <item type="drawable" name="APKTOOL_DUMMY_002a">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00a9">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00ad">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00ae">false</item>
+</resources>

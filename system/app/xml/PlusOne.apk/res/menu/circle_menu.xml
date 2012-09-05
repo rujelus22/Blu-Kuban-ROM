@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_new_post_action_bar" android:id="@id/new_post" android:title="@string/menu_post" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_start_new_huddle_action_bar" android:id="@id/new_conversation" android:title="@string/menu_new_conversation" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_refresh" android:id="@id/refresh" android:title="@string/menu_refresh" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_preferences" android:id="@id/settings" android:title="@string/home_menu_settings" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_remove" android:id="@id/remove_people" android:title="@string/menu_remove_people" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_delete" android:id="@id/delete_circle" android:title="@string/menu_delete_circle" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_feedback" android:id="@id/feedback" android:title="@string/home_menu_feedback" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_help" android:id="@id/help" android:title="@string/menu_home_help" android:showAsAction="never" />
+</menu>

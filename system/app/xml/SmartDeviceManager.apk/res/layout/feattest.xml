@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:id="@id/widget28" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <com.locationlabs.util.ui.FillinLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="killSelf" android:onClick="systemExit" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ANR" android:onClick="anr" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="forceClose" android:onClick="forceClose" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="failAssert" android:onClick="badAssert" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="exit" android:onClick="finish" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DISABLE" android:onClick="killAutos" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Autostart" android:onClick="enableAutostart" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="v3START" android:onClick="startupLogic" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="regPush" android:onClick="registerPush" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="unregPush" android:onClick="unregisterPush" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ENABLE" android:onClick="enableAutos" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="testSound" android:onClick="test" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="speak" android:onClick="speak" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="testLock" android:onClick="testLockScreen" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DWDfeatFake" android:onClick="fakeDWD" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="startDD" android:onClick="startDD" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="stopDD" android:onClick="stopDD" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="appWL" android:onClick="appWhitelist" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="appALL" android:onClick="stopAppWhitelist" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="fonWL" android:onClick="phoneWhitelist" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="fonALL" android:onClick="stopPhoneWhitelist" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="autoreply" android:onClick="enableAutoReply" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="!reply" android:onClick="disableAutoReply" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="featConfig" android:onClick="showFeatureConfig" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="msgs" android:onClick="showMessageState" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="apps" android:onClick="sendAppList" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="cntcts" android:onClick="sendContactList" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="calls" android:onClick="sendCallList" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SIMΔ" android:onClick="fakeSimSwitch" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="exception" android:onClick="doException" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="fone411" android:onClick="showPhoneInfo" />
+        </com.locationlabs.util.ui.FillinLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="appId:" />
+            <EditText android:textSize="18.0sp" android:id="@id/appId" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:numeric="integer" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="rows:" />
+            <EditText android:textSize="18.0sp" android:id="@id/rows" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:numeric="integer" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="wait (sec):" />
+            <EditText android:id="@id/wait1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:numeric="integer" />
+            <TextView android:id="@id/widget31" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="lock (sec):" />
+            <EditText android:textSize="18.0sp" android:id="@id/wait2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="240" android:numeric="integer" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="fakeDriving" android:onClick="fakeDrive" />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="stopOverride" android:onClick="stopOverride" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioGroup android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RadioButton android:id="@id/dwd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="DWD" />
+                <RadioButton android:id="@id/locking" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="LOCKING" />
+                <RadioButton android:id="@id/none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="(none)" />
+            </RadioGroup>
+        </LinearLayout>
+        <com.locationlabs.util.ui.FillinLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <CheckBox android:textSize="12.0sp" android:id="@id/smsAutoReply" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="autoR" />
+            <CheckBox android:textSize="12.0sp" android:id="@id/enableOverride" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="enOvr" />
+            <CheckBox android:textSize="12.0sp" android:id="@id/smsIncomingWhitelist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="smsWht" />
+            <CheckBox android:textSize="12.0sp" android:id="@id/allowHandsFree" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="hndsFr" />
+        </com.locationlabs.util.ui.FillinLayout>
+        <TextView android:id="@id/status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Feature Test" />
+    </LinearLayout>
+</ScrollView>

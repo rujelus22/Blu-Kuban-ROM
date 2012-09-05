@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/sns_settings_title" />
+    <PreferenceScreen android:title="@string/sns_settings" android:key="sns_settings" android:summary="@string/sns_sync_interval_settings">
+        <intent android:targetPackage="com.sec.android.app.snsaccounttw" android:action="com.sec.android.app.snsaccounttw.ACCOUNT_MANAGER_ENTRY" android:targetClass="com.sec.android.app.snsaccounttw.activity.SnsAccountTwIntervalSetupActivity" />
+    </PreferenceScreen>
+</PreferenceScreen>

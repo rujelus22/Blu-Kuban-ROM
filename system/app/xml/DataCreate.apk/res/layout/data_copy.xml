@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:gravity="center" android:id="@id/buttonToFileCopy" android:layout_width="100.0dip" android:layout_height="fill_parent" android:text="@string/data_copy_tofilecopy" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_sms" />
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_inbox" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_inbox" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_outbox" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_outbox" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_sentbox" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_sentbox" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_draftbox" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" /> />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_draftbox" />
+        </LinearLayout>
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_mms" />
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_mmsinbox" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_inbox" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_mmsoutbox" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_outbox" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_mmssentbox" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_sentbox" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_mmsdraftbox" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" /> />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_draftbox" />
+        </LinearLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_phonebook" />
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_people_phonebook" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_person" />
+        </LinearLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_calllog" />
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_incoming" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_incoming_call" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_outgoing" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_outgoing_call" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_missed" android:background="@android:drawable/editbox_background" android:layout_width="100.0dip" android:layout_height="wrap_content" android:numeric="integer" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/data_copy_missed_call" />
+        </LinearLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View android:layout_width="140.0dip" android:layout_height="100.0dip" />
+            <Button android:gravity="center" android:id="@id/button_ok" android:layout_width="80.0dip" android:layout_height="fill_parent" android:text="@string/data_copy_button_ok" />
+            <Button android:gravity="center" android:id="@id/buttonMax_ok" android:layout_width="80.0dip" android:layout_height="fill_parent" android:text="@string/data_copy_button_max_ok" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#ffffffff</color>
+    <color name="release">#ff008040</color>
+    <color name="blue">#ff0000ff</color>
+    <color name="working">#ff0000ff</color>
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="red">#ffff0000</color>
+    <color name="mag">#ff800080</color>
+    <color name="green">#ff00c000</color>
+    <color name="yellow">#ffffff00</color>
+    <color name="bluesky">#ffaaffff</color>
+    <color name="bluesky2">#ff00ff00</color>
+    <color name="bluesky3">#ff0000ff</color>
+    <color name="bluesky4">#ff000000</color>
+    <color name="bluesky5">#ff00ffff</color>
+    <color name="bluesky6">#ffffff00</color>
+    <color name="factorytestcomplete">#ffaaffff</color>
+</resources>

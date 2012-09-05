@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher">
+    <com.sprint.w.installer.widget.Workspace android:id="@id/workspace" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ImageView android:id="@id/nav_left" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:src="@drawable/slide_ic_arrow_left" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/nav_right" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/slide_ic_arrow_right" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Жүргізу режимі</string>
+    <string name="app_name">Дауыс командалары</string>
+    <string name="Vlingo">Дауыс командалары</string>
+    <string name="widget_name">Дауыс</string>
+</resources>

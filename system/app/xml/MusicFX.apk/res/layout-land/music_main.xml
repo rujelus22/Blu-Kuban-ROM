@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center" android:id="@id/noEffectsTextView" android:visibility="gone" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_effects" android:layout_weight="1.0" />
+    <FrameLayout android:gravity="center" android:id="@id/contentSoundEffects" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <Spinner android:id="@id/eqSpinner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawSelectorOnTop="true" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <include layout="@layout/music_eq" />
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/bBLayout" android:background="@android:drawable/list_selector_background" android:paddingRight="?android:scrollbarSize" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip" android:minHeight="?android:listPreferredItemHeight">
+                        <TextView android:textAppearance="?android:textAppearanceLarge" android:ellipsize="marquee" android:id="@id/bBStrengthText" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bass_boost_strength" android:layout_weight="1.0" />
+                        <com.android.musicfx.seekbar.SeekBar android:id="@id/bBStrengthSeekBar" android:paddingLeft="20.0dip" android:paddingTop="2.0dip" android:paddingRight="20.0dip" android:layout_width="170.0dip" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/vILayout" android:background="@android:drawable/list_selector_background" android:paddingRight="?android:scrollbarSize" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip" android:minHeight="?android:listPreferredItemHeight">
+                        <TextView android:textAppearance="?android:textAppearanceLarge" android:ellipsize="marquee" android:id="@id/vIStrengthText" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/virtualizer_strength" android:layout_weight="1.0" />
+                        <com.android.musicfx.seekbar.SeekBar android:id="@id/vIStrengthSeekBar" android:paddingLeft="20.0dip" android:paddingTop="2.0dip" android:paddingRight="20.0dip" android:layout_width="170.0dip" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <Spinner android:id="@id/prSpinner" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:drawSelectorOnTop="true" android:minHeight="?android:listPreferredItemHeight" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

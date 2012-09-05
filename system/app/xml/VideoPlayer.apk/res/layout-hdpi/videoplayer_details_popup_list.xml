@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="96.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="28.0px" android:textColor="@color/check_videoListTitle" android:gravity="left|center" android:id="@id/Details_ID" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="21.0px" />
+    <TextView android:textSize="28.0px" android:textColor="@color/detail_list_value" android:ellipsize="end" android:gravity="left|center" android:id="@id/Details_Value" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="21.0px" />
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Perso</string>
+    <string name="label_perso">Network Lock</string>
+    <string name="label_mcc_mnc">MCC/MNC</string>
+    <string name="label_nsp">NSP</string>
+    <string name="label_sp">SP</string>
+    <string name="label_cp">CP</string>
+    <string name="label_second">NCK</string>
+    <string name="label_control_key">Control Key</string>
+    <string name="sim_perso_ok_text">OK</string>
+    <string name="sim_perso_dismiss_text">Dismiss</string>
+    <string name="requesting_lock">Requesting lock…</string>
+    <string name="lock_failed">lock request unsuccessful</string>
+    <string name="lock_success">lock successful</string>
+    <string name="requesting_unlock">Requesting unlock...</string>
+    <string name="unlock_failed">Unlock request unsuccessful</string>
+    <string name="unlock_success">Unlock successful</string>
+    <string name="label_perso_unlock_tile">Network UnLock</string>
+    <string name="label_unlock">Enter Control key</string>
+    <string name="label_unlock_np">Network Lock</string>
+    <string name="label_unlock_nsp">Network Subset Lock</string>
+    <string name="label_unlock_sp">SP lock</string>
+    <string name="label_unlock_cp">CP lock</string>
+    <string name="label_controlkey_np">Enter Network Lock Control Key</string>
+    <string name="label_controlkey_nsp">Enter Network Subset Lock Control Key</string>
+    <string name="label_controlkey_sp">Enter SP Lock Control Key</string>
+    <string name="label_controlkey_cp">Enter CP Lock Control Key</string>
+</resources>

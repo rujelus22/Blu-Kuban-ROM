@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="direction">
+        <enum name="vertical" value="0" />
+        <enum name="horizontal" value="1" />
+    </attr>
+    <attr name="defaultScreen" format="integer" />
+    <attr name="deviceType" format="integer" />
+    <attr name="cellWidth" format="dimension" />
+    <attr name="cellHeight" format="dimension" />
+    <attr name="longAxisStartPadding" format="dimension" />
+    <attr name="longAxisEndPadding" format="dimension" />
+    <attr name="shortAxisStartPadding" format="dimension" />
+    <attr name="shortAxisEndPadding" format="dimension" />
+    <attr name="shortAxisCells" format="integer" />
+    <attr name="longAxisCells" format="integer" />
+    <attr name="previous" format="integer" />
+</resources>

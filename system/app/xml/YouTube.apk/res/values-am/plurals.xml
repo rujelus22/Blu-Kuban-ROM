@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="years_ago">
+        <item quantity="other">ከ%1$d አመቶች በፊት</item>
+        <item quantity="one">" ከ1 አመትበፊት"</item>
+    </plurals>
+    <plurals name="months_ago">
+        <item quantity="other">ከ%1$d ወሮች በፊት</item>
+        <item quantity="one">ከ1 ወር በፊት</item>
+    </plurals>
+    <plurals name="weeks_ago">
+        <item quantity="other">ከ%1$d ሳምንቶችበፊት</item>
+        <item quantity="one">ከ 1 ሳም ንትበፊት</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">ከ %1$d ቀናቶች በፊት</item>
+        <item quantity="one">ከ 1 ቀን በፊት</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="other">ከ %1$d ሰዓቶች በፊት</item>
+        <item quantity="one">ከ1 ሰዓት በፊት</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="other">ከ%1$d ደቂቃዎች በፊት</item>
+        <item quantity="one">ከ 1 ደቂቃ በፊት</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="other">ከ%1$d ሰከንዶች በፊት</item>
+        <item quantity="one">ከ1 ሰከንድ በፊት</item>
+    </plurals>
+    <plurals name="recent_uploads">
+        <item quantity="other">አዲስ ስቀሎች</item>
+        <item quantity="one">አዲስ ስቀል</item>
+    </plurals>
+    <plurals name="recent_activity">
+        <item quantity="other">አዲስ ክስተቶች</item>
+        <item quantity="one">አዲስ ክስተት</item>
+    </plurals>
+    <plurals name="playlist_size">
+        <item quantity="other">%1$,d ቪዲዮዎች</item>
+        <item quantity="one">1 ቪዲዮ</item>
+    </plurals>
+</resources>

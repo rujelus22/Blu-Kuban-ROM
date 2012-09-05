@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/voice_clip_list_base_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <include layout="@layout/listview_empty" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+            <LinearLayout android:gravity="center" android:id="@id/voice_clip_record_layout" android:background="@drawable/voice_recorder_list_player_bg" android:layout_width="fill_parent" android:layout_height="100.0px" android:layout_alignParentBottom="true">
+                <com.sec.android.app.voicerecorder.widget.PanelButton android:id="@id/control_panel_recorder_recordbtn" android:background="@drawable/voice_recorder_player_rec_01_01_btn_h" android:focusable="true" android:layout_width="390.0px" android:layout_height="79.0px" />
+                <ImageView android:background="@drawable/voice_recorder_player_rec_01_01" android:layout_width="390.0px" android:layout_height="79.0px" android:layout_marginLeft="-400.0px" />
+            </LinearLayout>
+            <FrameLayout android:id="@id/voice_clip_play_layout" android:background="@drawable/voice_recorder_play_box_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="229.0px" android:layout_alignParentBottom="true">
+                <RelativeLayout android:gravity="center_vertical" android:layout_gravity="clip_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0px" android:layout_marginTop="11.0px" android:layout_marginRight="20.0px">
+                    <TextView android:textSize="33.0px" android:textColor="@color/twcolor1" android:ellipsize="marquee" android:id="@id/PlayerTitleTextView" android:layout_width="680.0px" android:layout_height="57.0px" android:singleLine="true" />
+                    <ImageButton android:id="@id/VolIcon" android:focusable="true" android:nextFocusDown="@id/progressbar" android:layout_width="67.0px" android:layout_height="57.0px" android:layout_alignParentRight="true" />
+                </RelativeLayout>
+                <LinearLayout style="@style/layout_match_parent">
+                    <com.sec.android.touchwiz.widget.TwSeekBarBubble android:id="@id/mSeekbubble" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="75.0px">
+                        <LinearLayout style="@style/layout_match_parent">
+                            <com.sec.android.touchwiz.widget.TwSeekBar android:gravity="center" android:id="@id/progressbar" android:paddingLeft="112.0px" android:paddingRight="125.0px" android:focusable="true" android:nextFocusUp="@id/VolIcon" android:layout_width="fill_parent" android:layout_height="wrap_content" touchwiz:twBackgroundDrawable="@drawable/music_player_progressive_bg" touchwiz:twProgressDrawable="@drawable/music_player_progressive" touchwiz:twIndicatorThickness="10.0px" touchwiz:twProgressOrientation="horizontal" touchwiz:twSeekBarThumb="@drawable/music_player_progressive_seek_thumb" />
+                        </LinearLayout>
+                    </com.sec.android.touchwiz.widget.TwSeekBarBubble>
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:layout_gravity="clip_vertical" android:layout_width="100.0px" android:layout_height="30.0px" android:layout_marginLeft="20.0px" android:layout_marginTop="85.0px">
+                    <TextView android:textSize="22.0px" android:textColor="#ff11a411" android:id="@id/PlayerPlayTimeTextView" android:layout_width="100.0px" android:layout_height="30.0px" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:layout_gravity="clip_vertical" android:layout_width="100.0px" android:layout_height="30.0px" android:layout_marginLeft="696.0px" android:layout_marginTop="85.0px">
+                    <TextView android:textSize="22.0px" android:textColor="@color/normal" android:id="@id/PlayerFullTimeTextView" android:layout_width="wrap_content" android:layout_height="30.0px" />
+                </LinearLayout>
+                <LinearLayout android:gravity="bottom|center" android:orientation="horizontal" android:id="@id/idle_record" android:paddingBottom="10.0px" android:layout_width="800.0px" android:layout_height="229.0px">
+                    <com.sec.android.app.voicerecorder.widget.PanelButton android:id="@id/PlayerStopImageButton" android:background="@drawable/voice_recorder_player_stop_02_btn_h" android:focusable="true" android:layout_width="378.0px" android:layout_height="79.0px" />
+                    <com.sec.android.app.voicerecorder.widget.PanelButton android:id="@id/PlayerPlayImageButton" android:focusable="true" android:layout_width="378.0px" android:layout_height="79.0px" />
+                </LinearLayout>
+            </FrameLayout>
+        </FrameLayout>
+    </LinearLayout>
+    <com.sec.android.touchwiz.widget.TwSeekBarBubble android:id="@id/vSeekbubble" android:paddingLeft="70.0px" android:paddingTop="0.0px" android:visibility="invisible" android:layout_width="170.0px" android:layout_height="328.0px" android:layout_marginLeft="550.0px">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/volume_slider_bg" android:layout_width="90.0px" android:layout_height="fill_parent">
+            <com.sec.android.touchwiz.widget.TwSeekBar android:id="@id/vSeekbar" android:paddingLeft="1.0px" android:paddingTop="40.0px" android:paddingBottom="36.0px" android:focusableInTouchMode="true" android:layout_width="60.0px" android:layout_height="fill_parent" android:shadowColor="@color/twcolor1" android:shadowDx="1.0" android:shadowDy="-1.0" android:shadowRadius="1.0" touchwiz:twMax="15" touchwiz:progress="12" touchwiz:twBackgroundDrawable="@drawable/volume_slider_bar_bg" touchwiz:twProgressDrawable="@drawable/volume_slider_bar" touchwiz:twIndicatorThickness="15.0px" touchwiz:twProgressOrientation="vertical" touchwiz:twSeekBarThumb="@drawable/progress_button_btn" touchwiz:twSeekThumbFontColor="@color/twcolor140" touchwiz:twSeekThumbFontSize="30.0px" />
+        </LinearLayout>
+    </com.sec.android.touchwiz.widget.TwSeekBarBubble>
+</RelativeLayout>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TabHost android:id="@id/tabhost" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TabWidget android:id="@android:id/tabs" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <FrameLayout android:id="@android:id/tabcontent" android:paddingTop="110.0px" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="vertical" android:id="@id/tab1" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:textColor="#ff7fff00" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_DM_TITLE" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_MACADDR" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_MACADDR" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_MACADDR" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_MACADDR" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_NETWORKID" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_NETWORKID" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_NETWORKID" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_NETWORKID" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_STATE" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_STATE" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:textColor="#ffffff00" android:id="@id/SP_WIMAX_API_STATE" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_STATE" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_MODE" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_MODE" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:textColor="#ffff8c00" android:id="@id/SP_WIMAX_API_MODE" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_MODE" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_FREQUENCY" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_FREQUENCY" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_FREQUENCY" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_FREQUENCY" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_BANDWIDTH" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_BANDWIDTH" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_BANDWIDTH" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_BANDWIDTH" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_DUPLEXMODE" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_DUPLEXMODE" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_DUPLEXMODE" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_DUPLEXMODE" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_BSID" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_BSID" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_BSID" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_BSID" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_RSSI" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_RSSI" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_RSSI" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_RSSI" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_CINR" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_CINR" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_CINR" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_CINR" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_DEVTEMP" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_DEVTEMP" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_DEVTEMP" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_DEVTEMP" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_IP_ADDR" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_IP_ADDR" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_IP_ADDR" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_IP_ADDR" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_NETMASK" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_NETMASK" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_NETMASK" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_NETMASK" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_GW" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_GW" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_GW" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_GW" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_DNS1" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_DNS1" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_DNS1" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_DNS1" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_DNS2" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_DNS2" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_DNS2" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_DNS2" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_DHCP" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_DHCP" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_DHCP" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_DHCP" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout20" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_NSP_NAME" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_NSP_NAME" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_NSP_NAME" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_NSP_NAME" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_NSP_ID" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_NSP_ID" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_NSP_ID" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_NSP_ID" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_NAP_ID" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_NAP_ID" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_NAP_ID" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_NAP_ID" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout50" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_WIMAX_API_NSP_ACTIVATED" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WIMAX_API_NSP_ACTIVATED" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_WIMAX_API_NSP_ACTIVATED" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_WIMAX_API_NSP_ACTIVATED" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/tab2" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <RelativeLayout android:id="@id/RelativeLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <Button android:id="@id/BT_START_DM" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/START_DM" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_MAC_VER" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/MAC_VER" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/ET_MAC_VER" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_MAC_VER" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout03" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_MAC_STATE" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/MAC_STATE" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:textColor="#ffffff00" android:id="@id/ET_MAC_STATE" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_MAC_STATE" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout04" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_SIGNAL_RSSI" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/SIGNAL_RSSI" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_SIGNAL_RSSI" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_SIGNAL_RSSI" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout05" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_SIGNAL_CINR" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/SIGNAL_CINR" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_SIGNAL_CINR" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_SIGNAL_CINR" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout06" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_SIGNAL_TXPWR" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/SIGNAL_TXPWR" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_SIGNAL_TXPWR" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_SIGNAL_TXPWR" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout07" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_SIGNAL_PER" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/SIGNAL_PER" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_SIGNAL_PER" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_SIGNAL_PER" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout08" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_PASSLOSS" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/PASSLOSS" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_PASSLOSS" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_PASSLOSS" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout09" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_CELLID" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/CELLID" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_CELLID" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_CELLID" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout12" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_FRAMERATIO" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/FRAMERATIO" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/FRAMERATIO_VALUE" android:layout_toRightOf="@id/TV_FRAMERATIO" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout13" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_DATARATE" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/DATARATE" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_DATARATE" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_DATARATE" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout11" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NETWORK_FA" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NETWORK_FA" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NETWORK_FA" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_NETWORK_FA" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout15" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_HO_LATENCY" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/HO_LATENCY" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_HO_LATENCY" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_HO_LATENCY" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout16" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_HO_ATTEMPT" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/HO_ATTEMPT" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_HO_ATTEMPT" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_HO_ATTEMPT" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout17" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_MCS_U1" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/MCS_U1" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_MCS_U1" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_MCS_U1" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout17" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_MCS_U2" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/MCS_U2" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_MCS_U2" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_MCS_U2" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout18" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_MCS_D1" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/MCS_D1" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_MCS_D1" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_MCS_D1" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout18" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_MCS_D2" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/MCS_D2" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_MCS_D2" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_MCS_D2" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/base_band_chip_ver" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/base_band_label" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/base_band_chip_label" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/base_band_val" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/base_band_chip_val" android:layout_toRightOf="@id/base_band_label" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/Rf_chip_ver" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/Rf_chip_label" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Rf_chip_label" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/Rf_chip_val" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Rf_chip_val" android:layout_toRightOf="@id/Rf_chip_label" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout19" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout20" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout21" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/tab3" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <RelativeLayout android:id="@id/RelativeLayout31" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NE_LATENCY_TOTAL" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NE_LATENCY_TOTAL" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NE_LATENCY_TOTAL" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_NE_LATENCY_TOTAL" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout32" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NE_LATENCY_INIT" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NE_LATENCY_INIT" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NE_LATENCY_INIT" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_NE_LATENCY_INIT" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout32" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NE_LATENCY_SBC" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NE_LATENCY_SBC" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NE_LATENCY_SBC" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_NE_LATENCY_SBC" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout32" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NE_LATENCY_PKM" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NE_LATENCY_PKM" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NE_LATENCY_PKM" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_NE_LATENCY_PKM" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout32" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NE_LATENCY_REG" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NE_LATENCY_REG" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NE_LATENCY_REG" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_NE_LATENCY_REG" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout32" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NE_LATENCY_DSA" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NE_LATENCY_DSA" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NE_LATENCY_DSA" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_NE_LATENCY_DSA" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout32" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NE_LATENCY_IP" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NE_LATENCY_IP" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NE_LATENCY_IP" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_NE_LATENCY_IP" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout20" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout33" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NEIGHBOR_INFO" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NEIGHBOR_INFO" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout33" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NEIGHBOR_INFO_BS" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NEIGHBOR_INFO_BS" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NEIGHBOR_INFO_BS" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_NEIGHBOR_INFO_BS" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout34" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NEIGHBOR_INTRA_INFO" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NEIGHBOR_INTRA_INFO" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NEIGHBOR_INTRA_INFO" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_NEIGHBOR_INTRA_INFO" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout37" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NEIGHBOR_INTRA_INFO2" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout38" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NEIGHBOR_INTRA_INFO3" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout35" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:id="@id/TV_NEIGHBOR_INTER_INFO" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/NEIGHBOR_INTER_INFO" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:id="@id/SP_NEIGHBOR_INTER_INFO" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/TV_NEIGHBOR_INTER_INFO" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout20" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                        <TextView android:textSize="15.0sp" android:paddingLeft="5.0sp" android:paddingTop="1.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewSize" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/RelativeLayout36" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <RelativeLayout android:id="@id/RelativeLayout36" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <Button android:id="@id/BT_NBR_LIST_REQ" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/REQ_NBR_LIST" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </TabHost>
+    </LinearLayout>
+</ScrollView>

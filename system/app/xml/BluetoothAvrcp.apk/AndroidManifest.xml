@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1" android:versionName="1.0" package="com.samsung.avrcp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <application android:label="@string/app_name" android:icon="@drawable/icon" android:enabled="@android:bool/config_bluetooth_metadata_capable">
+        <receiver android:name=".BtAvrcpHandler">
+            <intent-filter>
+                <action android:name="com.android.music.metachanged" />
+                <action android:name="com.android.music.playbackcomplete" />
+                <action android:name="com.android.music.queuechanged" />
+                <action android:name="com.android.music.playstatechanged" />
+                <action android:name="com.samsung.avrcpservice.first" />
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+                <action android:name="com.android.music.settingchanged" />
+                <action android:name="android.bluetooth.a2dp.profile.action.PLAYING_STATE_CHANGED" />
+                <action android:name="android.bluetooth.a2dp.profile.action.CONNECTION_STATE_CHANGED" />
+                <action android:name="com.android.music.musicservicecommand" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".AvrcpService">
+            <intent-filter>
+                <action android:name="com.android.music.metachanged" />
+                <action android:name="com.android.music.playbackcomplete" />
+                <action android:name="com.android.music.queuechanged" />
+                <action android:name="com.android.music.playstatechanged" />
+                <action android:name="com.samsung.avrcpservice.first" />
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+                <action android:name="com.android.music.settingchanged" />
+                <action android:name="android.bluetooth.a2dp.profile.action.PLAYING_STATE_CHANGED" />
+                <action android:name="android.bluetooth.a2dp.profile.action.CONNECTION_STATE_CHANGED" />
+                <action android:name="com.android.music.musicservicecommand" />
+            </intent-filter>
+        </service>
+        <provider android:name=".AudioProvider" android:authorities="com.samsung.avrcp" />
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_BLUETOOTH_SHARE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+</manifest>

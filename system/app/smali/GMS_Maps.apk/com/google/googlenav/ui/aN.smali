@@ -1,0 +1,174 @@
+.class public Lcom/google/googlenav/ui/aN;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/googlenav/aR;
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;)V
+    .registers 4
+
+    const-string v0, "hosted_images/"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_10
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "File not in hosted_images/"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_10
+    invoke-static {p0}, Lcom/google/googlenav/ui/aN;->c(Ljava/lang/String;)Lah/f;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2b
+
+    const/4 v0, 0x1
+
+    :goto_17
+    if-nez v0, :cond_2a
+
+    invoke-static {}, Lat/h;->a()Lat/h;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/googlenav/aP;
+
+    new-instance v2, Lcom/google/googlenav/ui/aN;
+
+    invoke-direct {v2}, Lcom/google/googlenav/ui/aN;-><init>()V
+
+    invoke-direct {v1, p0, v2}, Lcom/google/googlenav/aP;-><init>(Ljava/lang/String;Lcom/google/googlenav/aR;)V
+
+    invoke-virtual {v0, v1}, Lat/h;->c(Lat/g;)V
+
+    :cond_2a
+    return-void
+
+    :cond_2b
+    const/4 v0, 0x0
+
+    goto :goto_17
+.end method
+
+.method protected static b(Ljava/lang/String;)Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "I_"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "hosted_images/"
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static c(Ljava/lang/String;)Lah/f;
+    .registers 5
+
+    invoke-static {}, Laf/b;->a()Laf/b;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Laf/b;->n()Lak/m;
+
+    move-result-object v0
+
+    invoke-static {p0}, Lcom/google/googlenav/ui/aN;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lak/m;->d(Ljava/lang/String;)[B
+
+    move-result-object v0
+
+    if-eqz v0, :cond_21
+
+    invoke-static {}, Laf/b;->a()Laf/b;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Laf/b;->o()Lah/h;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    array-length v3, v0
+
+    invoke-interface {v1, v0, v2, v3}, Lah/h;->a([BII)Lah/f;
+
+    move-result-object v0
+
+    :goto_20
+    return-object v0
+
+    :cond_21
+    const/4 v0, 0x0
+
+    goto :goto_20
+.end method
+
+
+# virtual methods
+.method public a(Ljava/lang/String;[B)V
+    .registers 5
+
+    if-eqz p2, :cond_11
+
+    invoke-static {}, Laf/b;->a()Laf/b;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Laf/b;->n()Lak/m;
+
+    move-result-object v0
+
+    invoke-static {p1}, Lcom/google/googlenav/ui/aN;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, p2, v1}, Lak/m;->b([BLjava/lang/String;)I
+
+    :cond_11
+    return-void
+.end method

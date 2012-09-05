@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="menu_choice_filename">
+        <item>@string/menu_originalName</item>
+        <item>@string/menu_newName</item>
+    </array>
+</resources>

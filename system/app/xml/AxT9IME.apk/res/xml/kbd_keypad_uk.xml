@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard android:keyWidth="59.0dip" android:keyHeight="@dimen/keypad_keyheight" android:horizontalGap="5.0dip" android:verticalGap="8.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Row android:keyHeight="0.0dip" android:verticalGap="10.0dip" />
+    <Row android:rowEdgeFlags="top">
+        <Key android:horizontalGap="2.0dip" android:codes="113" android:keyEdgeFlags="left" android:keyLabel="йц" />
+        <Key android:codes="101" android:keyLabel="ук" />
+        <Key android:keyWidth="58.0dip" android:codes="116" android:keyLabel="ен" />
+        <Key android:codes="117" android:keyLabel="гшщ" />
+        <Key android:codes="111" android:keyEdgeFlags="right" android:isRepeatable="false" android:keyLabel="зхъ" />
+    </Row>
+    <Row android:keyboardMode="@id/keypad_mode_text">
+        <Key android:horizontalGap="2.0dip" android:codes="97" android:keyEdgeFlags="left" android:keyLabel="фы" />
+        <Key android:codes="100" android:keyLabel="ва" />
+        <Key android:keyWidth="58.0dip" android:codes="103" android:keyLabel="пр" />
+        <Key android:codes="106" android:keyLabel="ол" />
+        <Key android:codes="108" android:keyEdgeFlags="right" android:keyLabel="джэ ," />
+    </Row>
+    <Row android:keyboardMode="@id/keypad_mode_email">
+        <Key android:horizontalGap="2.0dip" android:codes="97" android:keyEdgeFlags="left" android:keyLabel="фы" />
+        <Key android:codes="100" android:keyLabel="ва" />
+        <Key android:keyWidth="58.0dip" android:codes="103" android:keyLabel="пр" />
+        <Key android:codes="106" android:keyLabel="ол" />
+        <Key android:codes="108" android:keyEdgeFlags="right" android:keyLabel="джэ @" />
+    </Row>
+    <Row android:keyboardMode="@id/keypad_mode_url">
+        <Key android:horizontalGap="2.0dip" android:codes="97" android:keyEdgeFlags="left" android:keyLabel="фы" />
+        <Key android:codes="100" android:keyLabel="ва" />
+        <Key android:keyWidth="58.0dip" android:codes="103" android:keyLabel="пр" />
+        <Key android:codes="106" android:keyLabel="ол" />
+        <Key android:codes="108" android:keyEdgeFlags="right" android:keyLabel="джэ /" />
+    </Row>
+    <Row>
+        <Key android:horizontalGap="2.0dip" android:codes="-1" android:keyEdgeFlags="left" android:keyLabel="StrEmpty" />
+        <Key android:codes="122" android:keyLabel="яч" />
+        <Key android:keyWidth="58.0dip" android:codes="99" android:keyLabel="см" />
+        <Key android:codes="98" android:keyLabel="ит" />
+        <Key android:codes="109" android:keyEdgeFlags="right" android:keyLabel="ьбю ." />
+    </Row>
+    <Row android:keyHeight="@dimen/softkey_secondline_keyheight" android:horizontalGap="4.0dip" android:verticalGap="4.0dip" android:rowEdgeFlags="bottom">
+        <Key android:keyWidth="48.0dip" android:horizontalGap="2.0dip" android:codes="-114" android:keyEdgeFlags="left" android:keyLabel="T9" />
+        <Key android:keyWidth="48.0dip" android:codes="-109" android:keyLabel="123" />
+        <Key android:keyWidth="108.0dip" android:codes="32" android:keyLabel="StrEmpty" />
+        <Key android:keyWidth="48.0dip" android:codes="10" android:keyLabel="StrEmpty" />
+        <Key android:keyWidth="48.0dip" android:codes="-5" android:keyEdgeFlags="right" android:isRepeatable="true" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyHeight="0.0dip" />
+</Keyboard>

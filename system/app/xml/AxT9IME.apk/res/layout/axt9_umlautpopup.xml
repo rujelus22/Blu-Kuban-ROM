@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/popuplayout" android:background="@drawable/alternative_character_bg" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/numberlayout" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <LinearLayout android:id="@id/buttonlayout" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

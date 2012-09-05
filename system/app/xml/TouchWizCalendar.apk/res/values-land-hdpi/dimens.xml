@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_height">46.669983dip</dimen>
+    <dimen name="month_day_name_height">26.0dip</dimen>
+    <dimen name="month_first_column_cell_width">32.0dip</dimen>
+    <dimen name="month_cell_width">64.0dip</dimen>
+    <dimen name="tab_width">64.0dip</dimen>
+    <dimen name="tab_height">73.32999dip</dimen>
+    <dimen name="month_weekday_height">28.0px</dimen>
+    <dimen name="month_week_text_size">14.0sp</dimen>
+    <dimen name="tab_height_1">74.0dip</dimen>
+    <dimen name="tab_height_2">73.32999dip</dimen>
+</resources>

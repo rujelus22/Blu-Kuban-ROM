@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voice_effects_entries">
+        <item>Обычный</item>
+        <item>Глубокий голос</item>
+        <item>Высокий голос</item>
+        <item>Тонкий голос</item>
+        <item>Хриплый голос</item>
+        <item>Голос робота</item>
+        <item>Эффект гелия</item>
+    </string-array>
+</resources>

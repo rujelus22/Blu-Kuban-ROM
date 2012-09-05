@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/actionbar" />
+    <TextView android:id="@id/developer_body" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip" android:text="@string/dev_body" android:layout_below="@id/action_bar" style="@style/TextBody" />
+    <Button android:id="@id/load_sd" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/install_from_sd" android:layout_below="@id/developer_body" android:layout_alignWithParentIfMissing="true" style="@style/Button" />
+    <Button android:id="@id/load_url" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/install_from_url" android:layout_below="@id/load_sd" style="@style/Button" />
+    <TextView android:id="@id/sub_header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/adp_info" android:layout_below="@id/load_url" style="@style/TextHeaderSub" />
+    <WebView android:id="@id/whats_new" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/sub_header" />
+</RelativeLayout>

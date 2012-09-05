@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/status_update_area" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="14.0px" android:layout_marginTop="15.0px" android:layout_marginRight="14.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.widgetapp.socialhub.view.LinkTextView android:textSize="20.0px" android:textColor="@color/widget_input_text_color" android:gravity="left|center" android:id="@id/et_input" android:background="@drawable/sns_2dview_input_selector" android:paddingLeft="15.0px" android:focusable="true" android:clickable="true" android:layout_width="397.0px" android:layout_height="44.0px" android:hint="@string/widget_input_text" android:layout_weight="1.0" android:contentDescription="@string/widget_input_text" />
+    <FrameLayout android:gravity="center" android:id="@id/layout_refresh_button" android:background="@drawable/sns_bt_bg" android:layout_width="44.0px" android:layout_height="44.0px" android:layout_marginLeft="11.0px">
+        <ProgressBar android:layout_gravity="center" android:id="@id/refresh_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:progressDrawable="@drawable/sns_bt_update_3d_focus" style="@style/CustomProgressBarSmall" />
+        <ImageView android:id="@id/iv_refresh" android:focusable="true" android:duplicateParentState="true" android:layout_width="44.0px" android:layout_height="44.0px" android:src="@drawable/sns_bt_2dview_update_selector" android:contentDescription="@string/widget_update_feeds" />
+    </FrameLayout>
+</LinearLayout>

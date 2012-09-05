@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="15" android:versionName="4.0.4-FH13" package="touchwiz"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <permission-group android:name="android.permission-group.COST_MONEY" />
+    <application android:allowClearUserData="false" android:hasCode="false" android:persistent="true" android:process="system" />
+</manifest>

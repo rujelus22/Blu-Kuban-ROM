@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="24.0px" android:paddingTop="27.0px" android:paddingRight="24.0px" android:paddingBottom="27.0px" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="24.0px" android:textColor="@color/white" android:gravity="left" android:id="@id/alert_text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <CheckBox android:textSize="24.0px" android:id="@id/alert_check" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alert_dialog_dont_ask_again" />
+</LinearLayout>

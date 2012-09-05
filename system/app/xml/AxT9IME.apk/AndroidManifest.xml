@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="15" android:versionName="4.0.4-FH13" package="com.sec.android.inputmethod.axt9" coreApp="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <application android:label="@string/s_app_name">
+        <receiver android:name="CSCReadAndSet">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <service android:name="AxT9IME" android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method" />
+        </service>
+        <activity android:name="AxT9Option" android:excludeFromRecents="true" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/s_xt9_advanced_settings" android:name="AxT9OptonAdvancedSettings" android:excludeFromRecents="true" />
+        <activity android:label="@string/s_writing_language" android:name="AxT9OptionWritingLanguage" android:excludeFromRecents="true" />
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:name="AxT9optionsAbout" android:excludeFromRecents="true" />
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:name="AxT9optionsHelp" android:excludeFromRecents="true" />
+        <activity android:label="@string/s_T9_My_Words" android:name="AxT9optionsMyWords" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/s_T9_My_Words" android:name="AxT9optionsMyWordsAdd" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/s_T9_Auto_substitution" android:name="AxT9optionsAutoSubs" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/s_T9_Auto_substitution" android:name="AxT9optionsAutoSubsAdd" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/s_Add_Word" android:name="AxT9AddWord" android:taskAffinity="com.sec.android.inputmethod.axt9.AxT9AddWord" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation" />
+        <activity android:label="@string/s_T9_My_Words" android:name="AxT9optionsMyWordsDel" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/s_T9_Auto_substitution" android:name="AxT9optionsAutoSubsDel" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/s_about" android:name="com.diotek.dhwr.eur.b2b.DioHWRAbout" android:excludeFromRecents="true" />
+        <activity android:label="@string/s_Tutorial" android:name="AxT9IMETutorial" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.sec.android.inputmethod.axt9.tutorial" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/s_handwriting_settings" android:name="AxT9optionsHwrOption" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation" />
+        <uses-library android:name="touchwiz" />
+        <activity android:label="@string/s_umlaut_settings" android:name="AxT9OptionUmlautSettings" />
+        <activity android:label="@string/s_writing_language" android:name="AxT9OptionXT9Language" />
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="AxT9UmlautPopup" android:taskAffinity="com.samsung.sec.android.inputmethod.axt9.AxTUmlautPopup" android:excludeFromRecents="true" />
+        <service android:name="com.google.android.voiceime.ServiceHelper" />
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.voiceime.ActivityHelper" android:finishOnTaskLaunch="true" android:excludeFromRecents="true" android:configChanges="keyboard|keyboardHidden|navigation|orientation" android:windowSoftInputMode="stateAlwaysHidden" />
+    </application>
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="15" />
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+</manifest>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.app.ve.view.timeline.caption.Caption android:id="@id/textbar" android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/captionbg" android:layout_width="fill_parent" android:layout_height="55.0px" android:layout_marginLeft="5.0px" android:layout_marginRight="5.0px">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:background="@drawable/music_bar4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+            <include layout="@layout/music_text" />
+            <ImageView android:id="@id/textLeftBar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/timeline_trimline_left1_n" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/textRightBar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/timeline_trimline_right1_n" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</com.sec.android.app.ve.view.timeline.caption.Caption>

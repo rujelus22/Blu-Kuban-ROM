@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="screenshot" parent="@style/screenshot_base">
+        <item name="android:layout_height">160.0dip</item>
+    </style>
+    <style name="featured_gallery_item" parent="@style/featured_gallery_item_base">
+        <item name="android:layout_width">116.0dip</item>
+        <item name="android:layout_height">158.0dip</item>
+    </style>
+    <style name="pack_browser_coverflow">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:spacing">-20.0dip</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+    <style name="home_gallery_item" parent="@style/featured_gallery_item_base">
+        <item name="android:layout_width">160.0dip</item>
+        <item name="android:layout_height">167.0dip</item>
+    </style>
+    <style name="home_subtitle" parent="@style/TextHeaderSub">
+        <item name="android:layout_width">280.0dip</item>
+        <item name="android:layout_below">@id/action_bar</item>
+    </style>
+    <style name="home_coverflow">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">9.0dip</item>
+        <item name="android:spacing">-35.0dip</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+    <style name="home_pack_title" parent="@style/TextHeaderBasic">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">7.0dip</item>
+        <item name="android:layout_alignBottom">@id/my_packs</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="featured_gallery_coverflow">
+        <item name="android:spacing">-35.0dip</item>
+    </style>
+    <style name="home_coverflow_wrapper">
+        <item name="android:layout_width">280.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_below">@id/subheader</item>
+    </style>
+    <style name="pack_browser_subtitle" parent="@style/TextHeaderSub">
+        <item name="android:layout_width">230.0dip</item>
+    </style>
+    <style name="pack_browser_coverflow_wrapper">
+        <item name="android:layout_width">230.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_below">@id/subheader</item>
+    </style>
+    <style name="left_pane">
+        <item name="android:layout_width">230.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_below">@id/action_bar</item>
+    </style>
+    <style name="left_pane_list" parent="@style/ListNormal">
+        <item name="android:layout_width">250.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_below">@id/action_bar</item>
+    </style>
+</resources>

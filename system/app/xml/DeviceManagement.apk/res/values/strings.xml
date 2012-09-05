@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">System Updates</string>
+    <string name="nothing" />
+    <string name="base_fumo">Update Firmware</string>
+    <string name="base_dc">Update Profile</string>
+    <string name="base_prl">Update PRL</string>
+    <string name="base_call_err">Active Call in progress. Please try again after call has ended.</string>
+    <string name="base_active">"Session in Progress
+
+Please wait..."</string>
+    <string name="reboot">Reboot</string>
+    <string name="reboot_message">Device will Reboot...</string>
+    <string name="attention">Attention</string>
+    <string name="reset_timer_notice">Your device will reset in</string>
+    <string name="reset_timer_unit">seconds</string>
+    <string name="emergency_call">Emergency Call</string>
+    <string name="nia_check">"The network is preparing your services.
+
+Please wait..."</string>
+    <string name="hfa">Hands Free Activation</string>
+    <string name="dp">Data Provisioning</string>
+    <string name="prl">PRL Update</string>
+    <string name="fumo">Firmware Update</string>
+    <string name="upd_sw">Update Software</string>
+    <string name="cancel">Cancel</string>
+    <string name="restart">Restart</string>
+    <string name="retry">Retry</string>
+    <string name="alert_dialog_ok">OK</string>
+    <string name="manual">Manual</string>
+    <string name="ret_activate">Activate</string>
+    <string name="install">Install</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="welcome">Welcome to Sprint</string>
+    <string name="HF_activate_Success">Device has been activated.</string>
+    <string name="Press_OK">Press OK to continue</string>
+    <string name="contacingnet">We will now activate your device. Contacting the network. Please wait...</string>
+    <string name="activate">We will now activate your device.</string>
+    <string name="actinfounav">Activation information not available. We will retry in:</string>
+    <string name="secs">xx: seconds</string>
+    <string name="retry_number">Retry xx of yy</string>
+    <string name="retry_failed">"Your activation could not be completed. Please try again later.
+
+If the problem persists, you may need to contact Customer Service."</string>
+    <string name="retry_1">Waiting for retry...</string>
+    <string name="retry_2">If you are not already working with a representative select Activate now.</string>
+    <string name="congrats">Congratulations!</string>
+    <string name="dc_check">"The network is preparing your services.
+
+Please wait..."</string>
+    <string name="dc_update_error">"The profile update could not be completed. Please try again later.
+
+If the problem persists, you may need to contact Customer Service.
+
+Error: ###"</string>
+    <string name="dc_updated">"The profile has been updated. 
+Press OK to continue."</string>
+    <string name="sl_dc_updated">The profile has been updated. Press OK to continue.</string>
+    <string name="dc_no_update">No Profile Update available.</string>
+    <string name="dc_airplane_err">Turn off airplane mode to use data services.</string>
+    <string name="prl_check">Checking for PRL update. Please wait...</string>
+    <string name="prl_update_error">"The PRL update could not be completed. Please try again later.
+
+If the problem persists, you may need to contact Customer Service.
+
+Error: ###"</string>
+    <string name="prl_updated">"The PRL has been upgraded.
+Press OK to continue."</string>
+    <string name="sl_prl_updated">The PRL has been updated. Press OK to continue.</string>
+    <string name="prl_no_update">No PRL update available.</string>
+    <string name="prl_airplane_err">Turn off airplane mode to update PRL.</string>
+    <string name="fumo_batt_check">LOW BATTERY : Please recharge your battery completely before updating firmware.</string>
+    <string name="fumo_check">Checking for firmware update. Please wait...</string>
+    <string name="fumo_no_upd">No Firmware update is available</string>
+    <string name="fumo_dld">"Downloading the firmware update...
+
+You will be asked to install the update on the next screen."</string>
+    <string name="sl_fumo_dld">Downloading the firmware update. You will be asked to install the update on the next screen.</string>
+    <string name="upd_text1">"A New software update is available for your device!
+
+Description
+
+The update will take XX minutes to complete.
+
+Would you like to continue?"</string>
+    <string name="fumo_reset">Resetting Phone...</string>
+    <string name="fumo_send_status">Reporting Update Status to server...</string>
+    <string name="fumo_cancel_dld_status">"Download is being cancelled
+Please Wait..."</string>
+    <string name="fumo_cancel_upd_status">"Update is being cancelled
+Please Wait..."</string>
+    <string name="fumo_dld_err">Download Error. Please try again later.</string>
+    <string name="fumo_airplane_err">Turn off airplane mode to update firmware.</string>
+    <string name="fumo_update_error">"The Firmware update could not be completed. Please try again later.
+
+If the problem persists, you may need to contact Customer Service
+
+Error: ###"</string>
+    <string name="fumo_update_defer_message">"The package has been saved on your device.
+
+To update the software at a later date, select Update Firmware under the Settings menu"</string>
+    <string name="fumo_update_conf_message">Updating complete...</string>
+    <string name="android_update_completed">Android update successful</string>
+    <string name="android_update_finalizing">Finalizing Android update.</string>
+    <string name="input_password">Enter MSL</string>
+    <string name="ok_button">OK</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="omadm_Activity_Name">OMA DM Settings</string>
+    <string name="omadm_Acc_Name">DM Account Name</string>
+    <string name="omadm_Srvr_Addr">Server Address</string>
+    <string name="omadm_Srvr_Addr_Type">Server Address Type</string>
+    <string name="omadm_Srvr_Port">Server Port</string>
+    <string name="omadm_Srvr_ID">Server ID</string>
+    <string name="omadm_Client_Name">Client Name</string>
+    <string name="omadm_Auth_Pref">Authorization Preference</string>
+    <string name="omadm_Srvr_Pwd">Server Password</string>
+    <string name="omadm_Srvr_Nonce">Server Nonce</string>
+    <string name="omadm_Cli_Pwd">Client Password</string>
+    <string name="omadm_Cli_Nonce">Client Nonce</string>
+    <string name="empty">empty</string>
+    <string name="omadm_ui_mode">Enter UI Mode :</string>
+    <string name="omadm_ses_id">Enter Session Id :</string>
+    <string name="omadm_wap_push_button">Simulate Wap Push</string>
+    <string name="credential_settings">Credential Settings</string>
+    <string name="dm_logging">DM Logging</string>
+    <string name="simulate_nia">Simulate NIA</string>
+    <string name="generate_credentials">Generate Credentials</string>
+    <string name="restore">Restore</string>
+    <string name="enable_proxy">Enable Proxy</string>
+    <string name="active_mip_slot">Active MIP slot</string>
+    <string name="generate_creds_conf_msg">"Press 'OK' to Generate Credentials. Press 'Cancel to quit."</string>
+    <string name="restore_conf_msg">"Press 'OK' to Generate Credentials. Press 'Cancel to quit."</string>
+    <string name="phone_config">Phone Configuration</string>
+    <string name="dsa_intent_name">com.sprint.dsa.DSA_ACTIVITY</string>
+    <string name="dsa_intent_category">android.intent.category.DEFAULT</string>
+    <string name="dsa_intent_mimeType">vnd.sprint.dsa/vnd.sprint.dsa.main</string>
+    <string name="dsa_intent_extra_name">com.sprint.dsa.source</string>
+    <string name="cidc_blocked">Updating the Profile is currently blocked.</string>
+    <string name="ciprl_blocked">Updating the PRL is currently blocked.</string>
+    <string name="cifumo_blocked">Updating the Firmware is currently blocked.</string>
+    <string name="err_general">Error</string>
+    <string name="err_internal">Internal Error</string>
+    <string name="err_instance">Instance Error</string>
+    <string name="err_memory">Low Memory</string>
+    <string name="err_cli_auth">Client Authentication Error</string>
+    <string name="err_srvr_auth">Server Authentication Error</string>
+    <string name="err_conn">Connection Error</string>
+    <string name="err_ipc">IPC Error</string>
+    <string name="err_service">No Service Error</string>
+    <string name="err_unknown">Unknown Error</string>
+    <string name="update_android">Update Samsung software</string>
+    <string name="activate_device">Activate Device!!</string>
+    <string name="notification_not_completed">Activation Not Completed</string>
+    <string name="notification_select_retry">Select to retry activation process</string>
+</resources>

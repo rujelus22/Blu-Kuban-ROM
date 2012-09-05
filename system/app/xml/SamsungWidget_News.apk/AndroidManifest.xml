@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="4" android:versionName="12.01.09.01" package="com.sec.android.widgetapp.apnews"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <application android:theme="@touchwiz:style/TwTheme" android:label="@string/app_name" android:icon="@drawable/apmobile_trayicon">
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:label="@string/app_name" android:name=".activity.APNews" android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <receiver android:label="@string/widget_news_name" android:icon="@drawable/thumb_apmobile" android:name=".widget.APNewsWidgetNews">
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widgetnewsprovider" />
+            <meta-data android:name="com.sec.android.appwidget.widgetinfo" android:resource="@xml/mytabloidwidgetinfo" />
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.sec.android.widgetapp.APPWIDGET_RESIZE" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="Updated.result" />
+                <action android:name="News.updated" />
+                <action android:name="APNewsWidget.action.widget.news.scroll" />
+                <action android:name="APNewsWidget.action.widget.news.refresh" />
+                <action android:name="APNewsWidget.action.widget.news.autorefresh" />
+                <action android:name="APNewsWidget.action.widget.news.err.retry" />
+                <action android:name="APNewsWidget.action.widget.news.err.cancel" />
+                <action android:name="APNewsWidget.action.widget.news.progress" />
+                <action android:name="sec.android.intent.action.HOME_RESUME" />
+                <action android:name="sec.android.intent.action.HOME_PAUSE" />
+                <action android:name="action.widget.news.Updated_image_each" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="clock.date_format_changed" />
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/Settings" android:name=".activity.settings.Settings" android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/Settings" android:name=".activity.settings.SettingsNews" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".engine.APNewsWidgetReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="APNewsWidgetIntents.ACTION_SERVICE_UPDATE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".engine.BootCompleteReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".engine.DataService" />
+        <service android:name=".engine.WidgetService">
+            <intent-filter>
+                <action android:name="apnews.widget.action.startservice" />
+                <action android:name="apnews.widget.action.stopservice" />
+            </intent-filter>
+        </service>
+        <provider android:name=".engine.APNewsProvider" android:authorities="ApNews" />
+        <uses-library android:name="touchwiz" />
+    </application>
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="15" />
+</manifest>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:keepScreenOn="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+            <TextView android:textSize="17.0sp" android:id="@id/type_text_length" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/file_copy_set_path" />
+            <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+            <RadioGroup android:orientation="vertical" android:id="@id/copy_path" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RadioButton android:textSize="24.0sp" android:id="@id/system_space" android:layout_height="60.0dip" android:text="@string/file_copy_system_space" />
+                <RadioButton android:textSize="24.0sp" android:id="@id/user_space" android:layout_height="60.0dip" android:text="@string/file_copy_user_space" />
+            </RadioGroup>
+            <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        </LinearLayout>
+        <TableLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:stretchColumns="1">
+            <TextView android:gravity="left" android:text="@string/file_copy_info1" />
+            <TextView android:gravity="left" android:id="@id/info_image" android:text="@string/file_copy_info_image" />
+            <TextView android:gravity="left" android:id="@id/info_sound" android:text="@string/file_copy_info_sound" />
+            <TextView android:gravity="left" android:id="@id/info_video" android:text="@string/file_copy_info_video" />
+            <TextView android:gravity="left" android:id="@id/info_voice_memo" android:text="@string/file_copy_info_voice_memo" />
+            <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+            <TextView android:gravity="left" android:text="@string/file_copy_info2" />
+            <TextView android:gravity="left" android:id="@id/info_image2" android:text="@string/file_copy_info_image" />
+            <TextView android:gravity="left" android:id="@id/info_sound2" android:text="@string/file_copy_info_sound" />
+            <TextView android:gravity="left" android:id="@id/info_video2" android:text="@string/file_copy_info_video" />
+            <TextView android:gravity="left" android:id="@id/info_voice_memo2" android:text="@string/file_copy_info_voice_memo" />
+            <TextView android:gravity="left" android:text="@string/file_copy_info3" />
+            <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+            <TableRow>
+                <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/file_copy_max" />
+                <Button android:id="@id/full_button" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_column="1" android:text="@string/file_copy_max_button" />
+            </TableRow>
+            <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+            <TextView android:gravity="left" android:text="@string/file_copy_input_instruction" />
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/file_copy_photo" />
+                <EditText android:id="@id/image" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_column="1" android:singleLine="true" android:numeric="integer" />
+            </TableRow>
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/file_copy_mp3" />
+                <EditText android:id="@id/sound" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_column="1" android:singleLine="true" android:numeric="integer" />
+            </TableRow>
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/file_copy_video" />
+                <EditText android:id="@id/video" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_column="1" android:singleLine="true" android:numeric="integer" />
+            </TableRow>
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/file_copy_voice_memo" />
+                <EditText android:id="@id/input" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_column="1" android:singleLine="true" android:numeric="integer" />
+            </TableRow>
+            <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="100.0dip" android:layout_height="fill_parent">
+                <FrameLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+                    <ProgressBar android:id="@android:attr/theme" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" style="?android:attr/progressBarStyleLarge" />
+                    <Button android:id="@id/reset_button" android:layout_width="75.0dip" android:layout_height="fill_parent" android:text="@string/file_copy_reset" />
+                </FrameLayout>
+                <Button android:id="@id/button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/file_copy_copy" />
+            </LinearLayout>
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

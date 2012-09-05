@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_enable_grass_wallpaper">true</bool>
+    <bool name="config_enable_galaxy_wallpaper">true</bool>
+    <bool name="config_enable_fall_wallpaper">false</bool>
+    <bool name="config_enable_nexus_wallpaper">true</bool>
+    <bool name="config_enable_polar_clock_wallpaper">true</bool>
+    <bool name="config_enable_touch_event">false</bool>
+</resources>

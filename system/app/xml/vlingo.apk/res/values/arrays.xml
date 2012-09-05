@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="web_search_engine_preference">
+        <item>Google</item>
+        <item>Bing</item>
+        <item>Yahoo</item>
+    </string-array>
+    <string-array name="web_search_names">
+        <item>google</item>
+        <item>bing</item>
+        <item>yahoo</item>
+    </string-array>
+    <string-array name="web_search_engine_preference_cn">
+        <item>Baidu</item>
+        <item>Bing</item>
+        <item>Yahoo</item>
+    </string-array>
+    <string-array name="web_search_names_cn">
+        <item>baidu</item>
+        <item>bing</item>
+        <item>yahoo</item>
+    </string-array>
+    <string-array name="web_search_engine_preference_jk">
+        <item>Google</item>
+        <item>Bing</item>
+        <item>Yahoo</item>
+        <item>Naver</item>
+        <item>Daum</item>
+    </string-array>
+    <string-array name="web_search_names_jk">
+        <item>google</item>
+        <item>bing</item>
+        <item>yahoo</item>
+        <item>naver</item>
+        <item>daum</item>
+    </string-array>
+    <string-array name="languages_iso_superset">
+        <item>en-US</item>
+        <item>en-GB</item>
+        <item>fr-FR</item>
+        <item>it-IT</item>
+        <item>de-DE</item>
+        <item>es-ES</item>
+        <item>zh-CN</item>
+        <item>ru-RU</item>
+        <item>ja-JP</item>
+        <item>ko-KR</item>
+    </string-array>
+    <string-array name="languages_iso">
+        <item>en-US</item>
+        <item>en-GB</item>
+        <item>fr-FR</item>
+        <item>it-IT</item>
+        <item>de-DE</item>
+        <item>es-ES</item>
+        <item>v-es-LA</item>
+    </string-array>
+    <string-array name="languages_iso_cn">
+        <item>zh-CN</item>
+        <item>en-US</item>
+        <item>en-GB</item>
+        <item>fr-FR</item>
+        <item>it-IT</item>
+        <item>de-DE</item>
+        <item>es-ES</item>
+        <item>v-es-LA</item>
+    </string-array>
+    <string-array name="languages_iso_jk">
+        <item>en-US</item>
+        <item>en-GB</item>
+        <item>fr-FR</item>
+        <item>it-IT</item>
+        <item>de-DE</item>
+        <item>es-ES</item>
+        <item>v-es-LA</item>
+        <item>ja-JP</item>
+        <item>ko-KR</item>
+    </string-array>
+    <string-array name="languages_iso_ru">
+        <item>en-US</item>
+        <item>en-GB</item>
+        <item>fr-FR</item>
+        <item>it-IT</item>
+        <item>de-DE</item>
+        <item>es-ES</item>
+        <item>v-es-LA</item>
+        <item>ru-RU</item>
+    </string-array>
+    <array name="auto_dial_preference">
+        <item>@string/arrays_autodial_always</item>
+        <item>@string/arrays_autodial_confident</item>
+        <item>@string/arrays_autodial_never</item>
+    </array>
+    <string-array name="auto_dial_preference_values">
+        <item>always</item>
+        <item>confident</item>
+        <item>never</item>
+    </string-array>
+    <array name="safereader_poll_interval">
+        <item>@string/arrays_interval_two_min</item>
+        <item>@string/arrays_interval_five_min</item>
+        <item>@string/arrays_interval_ten_min</item>
+        <item>@string/arrays_interval_thirty_min</item>
+    </array>
+    <string-array name="safereader_poll_interval_values">
+        <item>120000</item>
+        <item>300000</item>
+        <item>600000</item>
+        <item>1800000</item>
+    </string-array>
+    <array name="email_server_types">
+        <item>@string/arrays_server_imap</item>
+        <item>@string/arrays_server_popthree</item>
+    </array>
+    <array name="email_security_types">
+        <item>@string/arrays_security_none</item>
+        <item>@string/arrays_security_ssl</item>
+        <item>@string/arrays_security_tls</item>
+    </array>
+    <string-array name="email_security_types_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <array name="wcis_voice_dial_examples">
+        <item>@string/wcis_voice_dial_contact_ex</item>
+    </array>
+    <array name="wcis_voice_and_super_dial_examples">
+        <item>@string/wcis_voice_dial_contact_ex</item>
+        <item>@string/vc_hints_superdial</item>
+    </array>
+    <array name="wcis_voice_dial_car_examples">
+        <item>@string/wcis_voice_dial_contact_ex</item>
+    </array>
+    <array name="wcis_sms_examples">
+        <item>@string/wcis_sms_ex</item>
+    </array>
+    <array name="wcis_search_examples">
+        <item>@string/wcis_search_ex</item>
+    </array>
+    <array name="wcis_search_examples_china">
+        <item>@string/wcis_search_ex_china</item>
+    </array>
+    <array name="wcis_email_examples">
+        <item>@string/wcis_email_ex</item>
+    </array>
+    <array name="wcis_social_examples">
+        <item>@string/wcis_social_facebook_ex</item>
+        <item>@string/wcis_social_twitter_ex</item>
+    </array>
+    <array name="wcis_music_examples">
+        <item>@string/wcis_music_ex</item>
+    </array>
+    <array name="wcis_maps_examples">
+        <item>@string/wcis_maps_ex</item>
+    </array>
+    <array name="wcis_website_examples">
+        <item>@string/wcis_website_ex</item>
+    </array>
+    <array name="wcis_website_examples_china">
+        <item>@string/wcis_website_ex_china</item>
+    </array>
+    <array name="wcis_openapps_examples">
+        <item>@string/wcis_openapps_ex</item>
+    </array>
+    <array name="wcis_driving_mode_examples">
+        <item>@string/wcis_driving_mode_ex</item>
+    </array>
+    <array name="wcis_recordvoice_examples">
+        <item>@string/wcis_recordvoice_ex</item>
+    </array>
+    <array name="wcis_alarm_examples">
+        <item>@string/wcis_alarm_ex</item>
+    </array>
+    <array name="wcis_local_search_examples">
+        <item>@string/wcis_local_search_ex</item>
+    </array>
+    <array name="wcis_hotels_examples">
+        <item>@string/wcis_hotels_example</item>
+    </array>
+    <array name="wcis_movies_examples">
+        <item>@string/wcis_movies_example</item>
+    </array>
+    <array name="wcis_memo_examples">
+        <item>@string/wcis_memo_ex</item>
+    </array>
+    <array name="wcis_nav_examples">
+        <item>@string/wcis_nav_ex</item>
+    </array>
+    <array name="wcis_schedule_examples">
+        <item>@string/wcis_schedule_ex</item>
+    </array>
+    <string-array name="languages_names">
+        <item>English (US)</item>
+        <item>English (UK)</item>
+        <item>Français</item>
+        <item>Italiano</item>
+        <item>Deutsch</item>
+        <item>Español (España)</item>
+        <item>Español (América Latina)</item>
+    </string-array>
+    <string-array name="languages_names_cn">
+        <item>中文</item>
+        <item>English (US)</item>
+        <item>English (UK)</item>
+        <item>Français</item>
+        <item>Italiano</item>
+        <item>Deutsch</item>
+        <item>Español (España)</item>
+        <item>Español (América Latina)</item>
+    </string-array>
+    <string-array name="languages_names_jk">
+        <item>English (US)</item>
+        <item>English (UK)</item>
+        <item>Français</item>
+        <item>Italiano</item>
+        <item>Deutsch</item>
+        <item>Español (España)</item>
+        <item>Español (América Latina)</item>
+        <item>日本語</item>
+        <item>한국어</item>
+    </string-array>
+    <string-array name="languages_names_ru">
+        <item>English (US)</item>
+        <item>English (UK)</item>
+        <item>Français</item>
+        <item>Italiano</item>
+        <item>Deutsch</item>
+        <item>Español (España)</item>
+        <item>Español (América Latina)</item>
+        <item>Русский</item>
+    </string-array>
+    <string-array name="prediction_modes_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <array name="TTSOptions">
+        <item>@string/settings_TTSOptions_full</item>
+        <item>@string/settings_TTSOptions_header</item>
+        <item>@string/settings_TTSOptions_off</item>
+    </array>
+    <string-array name="TTSOptionValues">
+        <item>Full</item>
+        <item>Header</item>
+        <item>Off</item>
+    </string-array>
+    <string-array name="prediction_modes">
+        <item>Advanced</item>
+        <item>Basic</item>
+        <item>None</item>
+    </string-array>
+</resources>

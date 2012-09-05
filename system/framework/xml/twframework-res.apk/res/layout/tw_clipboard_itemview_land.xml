@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.server.sec.ClippedItemViewContainer android:id="@id/clipitemlayout" android:background="@android:color/transparent" android:focusable="false" android:clickable="false" android:duplicateParentState="false" android:addStatesFromChildren="true" android:layout_width="214.0dip" android:layout_height="160.0dip" android:layout_marginRight="17.0dip" android:layout_marginBottom="17.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:clickable="false" android:duplicateParentState="false" android:addStatesFromChildren="true" android:layout_width="214.0dip" android:layout_height="160.0dip">
+        <TextView android:textSize="18.0sp" android:typeface="sans" android:textColor="@android:color/black" android:gravity="left" android:layout_gravity="bottom" android:id="@id/clipTextContentBody" android:background="@drawable/APKTOOL_DUMMY_01ea" android:paddingLeft="8.0dip" android:paddingTop="9.0dip" android:paddingRight="5.0dip" android:paddingBottom="8.0dip" android:visibility="gone" android:fadingEdge="vertical" android:fadingEdgeLength="35.0dip" android:clickable="false" android:duplicateParentState="false" android:layout_width="214.0dip" android:layout_height="160.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:clickable="false" android:duplicateParentState="false" android:addStatesFromChildren="true" android:layout_width="214.0dip" android:layout_height="160.0dip">
+        <ImageView android:layout_gravity="center" android:id="@id/clipImagecontentBody" android:background="@drawable/APKTOOL_DUMMY_01e8" android:paddingLeft="4.0dip" android:paddingTop="4.0dip" android:paddingRight="4.0dip" android:paddingBottom="4.0dip" android:focusable="false" android:visibility="gone" android:clickable="false" android:duplicateParentState="false" android:layout_width="214.0dip" android:layout_height="160.0dip" android:scaleType="centerCrop" android:cropToPadding="true" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:clickable="false" android:duplicateParentState="false" android:addStatesFromChildren="true" android:layout_width="214.0dip" android:layout_height="160.0dip">
+        <TextView android:textSize="18.0sp" android:typeface="sans" android:textColor="@android:color/black" android:gravity="left" android:layout_gravity="bottom" android:id="@id/clipHTMLcontentBody" android:background="@drawable/APKTOOL_DUMMY_01ea" android:paddingLeft="8.0dip" android:paddingTop="8.0dip" android:paddingRight="8.0dip" android:paddingBottom="8.0dip" android:visibility="gone" android:fadingEdge="vertical" android:fadingEdgeLength="35.0dip" android:clickable="false" android:duplicateParentState="false" android:layout_width="214.0dip" android:layout_height="160.0dip" android:lineSpacingExtra="4.0dip" />
+    </LinearLayout>
+    <RelativeLayout android:layout_gravity="top|right|center" android:id="@id/buttons" android:visibility="gone" android:clickable="false" android:duplicateParentState="false" android:addStatesFromChildren="false" android:layout_width="95.0dip" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginRight="9.0dip">
+        <ImageButton android:id="@id/deletebutton" android:background="@drawable/tw_clipboard_button_selector" android:visibility="visible" android:clickable="true" android:duplicateParentState="false" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/APKTOOL_DUMMY_01f8" android:layout_alignParentRight="true" />
+        <ImageButton android:id="@id/protectbutton" android:background="@drawable/tw_clipboard_button_selector" android:visibility="visible" android:clickable="true" android:duplicateParentState="false" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/APKTOOL_DUMMY_01f9" android:layout_alignParentLeft="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_gravity="top|right|center" android:id="@id/savelayout" android:visibility="gone" android:duplicateParentState="false" android:addStatesFromChildren="false" android:layout_width="50.0dip" android:layout_height="wrap_content">
+        <ImageButton android:layout_gravity="top|right|center" android:id="@id/savebutton" android:background="@drawable/tw_clipboard_button_selector" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/APKTOOL_DUMMY_01fa">	android:clickable="true"
+				android:layout_marginTop="7dp" 
+				android:layout_marginRight="9dp"
+				android:duplicateParentState="false"
+</ImageButton>
+    </RelativeLayout>
+    <RelativeLayout android:layout_gravity="center" android:id="@id/protectview" android:visibility="gone" android:clickable="false" android:duplicateParentState="false" android:addStatesFromChildren="false" android:layout_width="216.0dip" android:layout_height="160.0dip">
+        <ImageView android:id="@id/fix_top" android:visibility="visible" android:clickable="true" android:duplicateParentState="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/APKTOOL_DUMMY_01f6" android:layout_alignParentLeft="true" />
+        <ImageView android:id="@id/fix_bottom" android:visibility="visible" android:clickable="true" android:duplicateParentState="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/APKTOOL_DUMMY_01f7" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</com.android.server.sec.ClippedItemViewContainer>

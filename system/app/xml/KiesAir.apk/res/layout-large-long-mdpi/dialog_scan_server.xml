@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/scan_result" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="195.0dip">
+        <RelativeLayout android:id="@id/scan_notification" android:background="#ffc3d7e7" android:layout_width="fill_parent" android:layout_height="25.329987dip">
+            <TextView android:textSize="17.0dip" android:textStyle="bold" android:textColor="#ff164e76" android:id="@id/scanning" android:paddingLeft="13.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/scanning" android:layout_centerVertical="true" />
+            <ProgressBar android:id="@id/spinner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:progressDrawable="@drawable/spinner_black_16" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="?android:attr/progressBarStyleSmall" />
+        </RelativeLayout>
+        <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" />
+    </LinearLayout>
+    <ScrollView android:id="@id/scan_no_result" android:visibility="invisible" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="195.0dip">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:layout_gravity="center" android:id="@id/no_item" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/noitems_device_based" />
+            <TextView android:textSize="21.0dip" android:textColor="#ff808080" android:gravity="center_horizontal" android:id="@id/no_devices_found" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/no_devices" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

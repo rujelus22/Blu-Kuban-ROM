@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="general_settings">การ​ตั้ง​ค่า​ทั่ว​ไป</string>
+    <string name="samsungtts_settings">การ​ตั้ง​ค่า Samsung ​TTS</string>
+    <string name="open_source_licenses">ใบ​อนุญาต​ของ​โอ​เพ่นซอร์ส</string>
+    <string name="advanced_settings">การ​ตั้ง​ค่า​แอด​วา​นซด์</string>
+    <string name="change_voice_effects">เอ​ฟเฟ็ก​ต์​เสียง</string>
+    <string name="change_voice_effects_summary">ใช้​เอ​ฟเฟ็กต์​เสียง​ต่างๆ สำหรับ​ข้อ​ความ​ที่​พูด</string>
+    <string name="installed_languages">ภาษา​ที่​ติด​ตั้ง</string>
+    <string name="female">หญิง</string>
+    <string name="male">ชาย</string>
+</resources>

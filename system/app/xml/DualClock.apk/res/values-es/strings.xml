@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Reloj dual</string>
+    <string name="am">AM</string>
+    <string name="pm">PM</string>
+    <string name="taptxt">Buscar ciudades</string>
+    <string name="default_country">Londres</string>
+    <string name="no_result">Ningún resultado</string>
+    <string name="max_input">Hasta %d caracteres disponibles</string>
+    <string name="current_location">Ubicación actual</string>
+    <string name="search">Buscando...</string>
+    <string name="set_city">Definir ciudad</string>
+    <string name="min_width">310</string>
+    <string name="min_height">200</string>
+    <string name="analogclock">"Analógico
+reloj dual"</string>
+    <string name="digitalclock">"Digital
+reloj dual"</string>
+    <string name="citychoice_popup">Seleccionar ciudad</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/agenda_no_event_layout" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/no_events_blank" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="30.659973dip" />
+    <RelativeLayout android:orientation="horizontal" android:id="@id/agenda_no_event_layout2" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textSize="24.0sp" android:textStyle="bold" android:textColor="@color/appwidget_noevent_date" android:id="@id/no_events_ag_day" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="28.659973dip" android:singleLine="true" android:layout_alignParentRight="true" />
+        <TextView android:textSize="24.0sp" android:textStyle="bold" android:textColor="@color/appwidget_noevent_date" android:id="@id/no_events_ag_dayOfmonth" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:singleLine="true" android:layout_toLeftOf="@id/no_events_ag_day" />
+    </RelativeLayout>
+    <TextView android:textSize="16.0sp" android:textColor="@color/agenda_no_events" android:ellipsize="end" android:gravity="right|center" android:id="@id/no_events_ag" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="31.0dip" android:text="@string/agenda_no_events" android:maxLines="2" />
+</LinearLayout>

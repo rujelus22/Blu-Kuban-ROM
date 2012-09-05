@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false" id="selected"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="250" android:drawable="@drawable/kiesair_ball_ani_01" />
+    <item android:duration="250" android:drawable="@drawable/kiesair_ball_ani_02" />
+    <item android:duration="250" android:drawable="@drawable/kiesair_ball_ani_03" />
+    <item android:duration="250" android:drawable="@drawable/kiesair_ball_ani_02" />
+</animation-list>

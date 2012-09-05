@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/ShowListButton" android:background="@drawable/music_play_control_list_button_bg" android:focusable="true" android:visibility="invisible" android:clickable="true" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="40.0dip" android:layout_marginRight="40.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:contentDescription="@string/IDS_MUSIC_SK_SLIDESHOW_LIST">
+        <TextView android:textSize="19.0sp" android:textColor="@color/tw_white" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/IDS_MUSIC_SK_SLIDESHOW_LIST" android:drawableLeft="@drawable/music_play_controller_list_icon" android:drawablePadding="5.0dip" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/music_player_control_view" android:layout_width="fill_parent" android:layout_height="56.0dip" android:layout_marginBottom="@dimen/music_player_view_control_margin_bottom" android:layout_above="@id/ShowListButton">
+        <ImageView android:id="@id/ImageButtonREW" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/music_play_control_prev_btn_selector" android:layout_weight="1.0" android:contentDescription="@string/tts_rew_button" />
+        <ImageView android:id="@id/ImageButtonPlay" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <ImageView android:id="@id/ImageButtonPause" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <ImageView android:id="@id/ImageButtonFF" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/music_play_control_next_btn_selector" android:layout_weight="1.0" android:contentDescription="@string/tts_ff_button" />
+    </LinearLayout>
+</merge>

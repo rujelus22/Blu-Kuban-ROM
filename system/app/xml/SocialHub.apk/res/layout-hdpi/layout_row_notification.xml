@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:paddingLeft="10.0px" android:paddingRight="15.0px" android:paddingBottom="12.0px" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/image_notification_owner" android:layout_width="80.0px" android:layout_height="80.0px" android:layout_marginTop="12.0px" android:layout_marginRight="13.0px" android:src="@drawable/hub_list_img_facebook_2" android:scaleType="fitXY" android:layout_alignParentTop="true" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0px" android:layout_alignParentTop="true">
+        <TextView android:textSize="24.0px" android:textColor="@color/color_palette_01" android:id="@id/text_content" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/image_type_icon" android:layout_width="24.0px" android:layout_height="24.0px" android:layout_marginRight="10.0px" />
+            <TextView android:textSize="21.0px" android:id="@id/text_time" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

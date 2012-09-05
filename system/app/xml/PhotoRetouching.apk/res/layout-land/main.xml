@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/btn_bg_h" android:layout_width="80.0px" android:layout_height="fill_parent">
+        <ImageButton android:id="@id/bt_brushsize" android:background="@drawable/bt_bg_h" android:focusable="true" android:src="@drawable/stroke" style="@style/main_button_style_h" />
+        <View android:background="@drawable/btn_line_h" android:layout_width="80.0px" android:layout_height="2.0px" />
+        <ImageButton android:id="@id/bt_adddel" android:background="@drawable/bt_bg_h" android:focusable="true" android:src="@drawable/select0" style="@style/main_toggle_button_style_h" />
+        <View android:background="@drawable/btn_line_h" android:layout_width="80.0px" android:layout_height="2.0px" />
+        <ImageButton android:id="@id/bt_crop" android:background="@drawable/bt_bg_h" android:focusable="true" android:src="@drawable/crop" style="@style/main_button_style_h" />
+        <View android:background="@drawable/btn_line_h" android:layout_width="80.0px" android:layout_height="2.0px" />
+        <ImageButton android:id="@id/bt_rotate" android:background="@drawable/bt_bg_h" android:focusable="true" android:src="@drawable/rotate" style="@style/main_button_style_h" />
+        <View android:background="@drawable/btn_line_h" android:layout_width="80.0px" android:layout_height="2.0px" />
+        <ImageButton android:id="@id/bt_move" android:background="@drawable/bt_bg_h" android:focusable="true" android:src="@drawable/move" style="@style/main_toggle_button_style_h" />
+    </LinearLayout>
+    <FrameLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.sec.android.mimage.photoretouching.mask.ImageViewWithMask android:id="@id/mainimage" android:layout_width="640.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:layout_gravity="right" android:orientation="vertical" android:id="@id/bottom_bottons" android:background="@drawable/btn_bg_h" android:layout_width="80.0px" android:layout_height="fill_parent">
+            <ImageButton android:id="@id/bt_tool" android:background="@drawable/bt_bg_h" android:focusable="true" android:src="@drawable/tool" style="@style/main_button_style_h" />
+            <View android:background="@drawable/btn_line_h" android:layout_width="80.0px" android:layout_height="2.0px" />
+            <ImageButton android:id="@id/bt_filter" android:background="@drawable/bt_bg_h" android:focusable="true" android:src="@drawable/filter" style="@style/main_button_style_h" />
+            <View android:background="@drawable/btn_line_h" android:layout_width="80.0px" android:layout_height="2.0px" />
+            <ImageButton android:id="@id/bt_color" android:background="@drawable/bt_bg_h" android:focusable="true" android:src="@drawable/color" style="@style/main_button_style_h" />
+            <View android:background="@drawable/btn_line_h" android:layout_width="80.0px" android:layout_height="2.0px" />
+            <ImageButton android:id="@id/bt_redo" android:background="@drawable/bt_bg_h" android:focusable="true" android:src="@drawable/redo" style="@style/main_button_style_h" />
+            <View android:background="@drawable/btn_line_h" android:layout_width="80.0px" android:layout_height="2.0px" />
+            <ImageButton android:id="@id/bt_undo" android:background="@drawable/bt_bg_h" android:focusable="true" android:src="@drawable/undo" style="@style/main_button_style_h" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

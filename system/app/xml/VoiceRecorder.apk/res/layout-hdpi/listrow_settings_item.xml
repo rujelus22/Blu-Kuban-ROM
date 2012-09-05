@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+    <LinearLayout android:gravity="center_vertical" android:layout_marginLeft="20.0px" android:layout_marginTop="5.0px" android:layout_weight="0.8" style="@style/layout_match_parent">
+        <TextView android:id="@id/listrow_settings_item_upper_label" style="@style/tw_list_item_text.upper_label" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:layout_marginLeft="20.0px" android:layout_marginBottom="5.0px" android:layout_weight="1.0" style="@style/layout_match_parent">
+        <TextView android:id="@id/listrow_settings_item_bottom_label" style="@style/tw_list_item_text.bottom_label" />
+    </LinearLayout>
+</LinearLayout>

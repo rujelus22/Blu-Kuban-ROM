@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="album_photo_count">
+        <item quantity="other">Picha %d</item>
+        <item quantity="zero">Picha %d</item>
+        <item quantity="one">Picha %d</item>
+    </plurals>
+    <plurals name="from_your_phone_selected_count">
+        <item quantity="other">%d zimeteuliwa.</item>
+        <item quantity="one">%d zimeteuliwa.</item>
+    </plurals>
+    <plurals name="delete_photo_dialog_title">
+        <item quantity="other">Ungependa kufuta nakala zote za picha hizi?</item>
+        <item quantity="one">Ungependa kufuta nakala zote za picha hii?</item>
+    </plurals>
+    <plurals name="delete_remote_photo_dialog_message">
+        <item quantity="other">Una uhakika unataka kufuta picha hizi kutoka albamu hii ya Google+? Hatua hii haiwezi kutanguliwa.</item>
+        <item quantity="one">Una uhakika unataka kufuta hii picha kutoka albamu hii ya Google+? Hatua hii haiwezi kutanguliwa.</item>
+    </plurals>
+    <plurals name="delete_local_photo_dialog_message">
+        <item quantity="other">Una uhakika unataka kufuta picha hizi kutoka kwa simu yako na hii albamu ya Google +? Hatua hii haiwezi kutanguliwa.</item>
+        <item quantity="one">Una uhakika unataka kufuta hii picha kutoka kwa simu yako na hii albamu ya Google +? Hatua hii haiwezi kutanguliwa.</item>
+    </plurals>
+    <plurals name="delete_photo_pending">
+        <item quantity="other">Inafuta picha...</item>
+        <item quantity="one">Inafuta picha...</item>
+    </plurals>
+    <plurals name="plus_one_people_more_plus_ones">
+        <item quantity="other">+ %d wengine</item>
+        <item quantity="one">+1 zaidi</item>
+    </plurals>
+    <plurals name="plusoned_by_unknowns">
+        <item quantity="other">na watu %d</item>
+        <item quantity="one">na mtu 1</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_unknowns">
+        <item quantity="other">na wewe na %d wengine</item>
+        <item quantity="one">na wewe na 1 mwengine</item>
+    </plurals>
+    <plurals name="plusoned_by_one_known_and_unknowns">
+        <item quantity="other">na %s na %d } wengine</item>
+        <item quantity="one">na %s na 1 mwengine</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_one_known_and_unknowns">
+        <item quantity="other">na wewe,%s , na %d wengine</item>
+        <item quantity="one">na wewe, %s, , na 1 mwengine</item>
+    </plurals>
+    <plurals name="plusoned_by_two_known_and_unknowns">
+        <item quantity="other">na %s, %s, na %d wengine</item>
+        <item quantity="one">na %s, %s, , na 1 mwengine</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_two_known_and_unknowns">
+        <item quantity="other">na wewe, %s, %s, na %d wengine</item>
+        <item quantity="one">na wewe,%s , %s, na 1 mwengine</item>
+    </plurals>
+    <plurals name="comments">
+        <item quantity="other">maoni %d</item>
+        <item quantity="one">maoni %d</item>
+    </plurals>
+    <plurals name="delete_photo">
+        <item quantity="other">Futa picha</item>
+        <item quantity="one">Futa picha</item>
+    </plurals>
+    <plurals name="circle_entry_content_description">
+        <item quantity="other">Wanachama %s ; %d</item>
+        <item quantity="one">Wanachama %s ; %d</item>
+    </plurals>
+    <plurals name="notifications_ticker_text">
+        <item quantity="other">Arifa mpya za Google+</item>
+        <item quantity="one">Arifa mpya ya Google+</item>
+    </plurals>
+    <plurals name="notifications_content_text">
+        <item quantity="other">%1$s (%2$d)</item>
+        <item quantity="one">%1$s (%2$d)</item>
+    </plurals>
+    <plurals name="audience_display_selection_count">
+        <item quantity="other">%d zimeteuliwa</item>
+        <item quantity="one">%d zimeteuliwa</item>
+    </plurals>
+    <plurals name="circle_count_and_matched_email">
+        <item quantity="other">%d miduara, %s</item>
+        <item quantity="one">Miduara %d , %s</item>
+    </plurals>
+    <plurals name="circle_selection_count">
+        <item quantity="other">midurara %d</item>
+        <item quantity="one">Mduara %d</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_title">
+        <item quantity="other">Futa miduara</item>
+        <item quantity="one">Futa mduara</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_message">
+        <item quantity="other">Je, unataka kufuta miduara hii kabisa?</item>
+        <item quantity="one">Je, ungependa kufuta chapisho hili kabisa?</item>
+    </plurals>
+    <plurals name="delete_circles_operation_pending">
+        <item quantity="other">Inafuta miduara ...</item>
+        <item quantity="one">Inafuta mduara...</item>
+    </plurals>
+    <plurals name="circle_people_count">
+        <item quantity="other">Watu %d</item>
+        <item quantity="one">Mtu %d</item>
+    </plurals>
+    <plurals name="remove_people_dialog_title">
+        <item quantity="other">Ondoa watu</item>
+        <item quantity="one">Ondoa mtu</item>
+    </plurals>
+    <plurals name="remove_people_dialog_message">
+        <item quantity="other">Je, unataka kuondoa watu hawa kutoka kwenye mduara huu?</item>
+        <item quantity="one">Je, unataka kuondoa mtu huyu kutoka kwenye mduara huu?</item>
+    </plurals>
+    <plurals name="add_people_operation_pending">
+        <item quantity="other">Inaongeza watu ...</item>
+        <item quantity="one">Inaongeza mtu...</item>
+    </plurals>
+    <plurals name="remove_people_operation_pending">
+        <item quantity="other">Inaondoa watu ...</item>
+        <item quantity="one">Inaondoa mtu ...</item>
+    </plurals>
+    <plurals name="dismiss_people_operation_pending">
+        <item quantity="other">Anawaondoa watu ...</item>
+        <item quantity="one">Anamwondoa mtu...</item>
+    </plurals>
+    <plurals name="circle_button_more_circles">
+        <item quantity="other">%d zaidi</item>
+        <item quantity="one">%d zaidi</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">Dakika %d</item>
+        <item quantity="one">"Dakika &amp;lt;span class='ph'>%d&amp;lt;/span>"</item>
+    </plurals>
+    <plurals name="num_hours_ago">
+        <item quantity="other">Saa %d</item>
+        <item quantity="one">Saa %d</item>
+    </plurals>
+    <plurals name="num_days_ago">
+        <item quantity="other">Siku %d</item>
+        <item quantity="one">"Siku &amp;lt;span class='ph'>%d&amp;lt;/span>"</item>
+    </plurals>
+    <plurals name="ads_plus_one_annotation_count_only">
+        <item quantity="other">Watu %1$d wengine pia</item>
+        <item quantity="one">Mtu %1$d mwingine pia</item>
+    </plurals>
+</resources>

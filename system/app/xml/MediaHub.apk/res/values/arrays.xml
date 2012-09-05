@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="movie_store_detail_category">
+        <item>@string/movie_details</item>
+        <item>@string/reviews</item>
+    </array>
+    <array name="tv_store_season_detail_category">
+        <item>@string/season_details</item>
+        <item>@string/reviews</item>
+    </array>
+    <array name="tv_store_episode_detail_category">
+        <item>@string/episode_details</item>
+        <item>@string/reviews</item>
+    </array>
+    <array name="pricing_type_code">
+        <item>@string/hd_price</item>
+        <item>@string/sd</item>
+    </array>
+    <array name="my_media_category">
+        <item>@string/my_media_all_media</item>
+        <item>@string/category_downloading</item>
+        <item>@string/downloadable</item>
+        <item>@string/downloaded</item>
+        <item>@string/my_media_expired</item>
+        <item>@string/archive</item>
+    </array>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:background="@color/color_palette_29" android:paddingRight="9.0px" android:layout_width="fill_parent" android:layout_height="96.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.socialhub.view.HubButton android:textSize="22.0px" android:gravity="center" android:id="@id/common_softkey_button" android:background="@drawable/btn_search_content" android:padding="0.0px" android:layout_width="128.0px" android:layout_height="82.0px" android:layout_marginTop="7.0px" android:layout_marginBottom="7.0px" android:text="@string/str_search_contents" />
+    <com.sec.android.socialhub.view.EditTextEx android:id="@id/common_edit_text" android:background="@drawable/edit_text_search" android:layout_width="fill_parent" android:layout_height="64.0px" android:layout_marginLeft="4.0px" android:hint="@string/search" android:singleLine="true" android:imeOptions="actionDone" />
+</LinearLayout>

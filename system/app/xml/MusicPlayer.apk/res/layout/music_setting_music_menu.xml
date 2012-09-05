@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/SettingsScrollView" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/MusicMenuLayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/MusicMenuLayoutMenu_0" android:background="@drawable/settingslinearlayout" android:paddingLeft="11.329987dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="65.32999dip">
+                <TextView android:textSize="23.0sp" android:textColor="@color/music_menu_text_color" android:id="@id/TextView01" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.9" />
+                <CheckBox android:id="@id/MusicMenuCheckBox_0" android:clickable="false" android:layout_width="36.659973dip" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:button="@drawable/settingscheckbox" />
+            </LinearLayout>
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/MusicMenuLayoutMenu_1" android:background="@drawable/settingslinearlayout" android:paddingLeft="11.329987dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="65.32999dip">
+                <TextView android:textSize="23.0sp" android:textColor="@color/music_menu_text_color" android:id="@id/TextView01" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.9" />
+                <CheckBox android:id="@id/MusicMenuCheckBox_1" android:clickable="false" android:layout_width="36.659973dip" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:button="@drawable/settingscheckbox" />
+            </LinearLayout>
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/MusicMenuLayoutMenu_2" android:background="@drawable/settingslinearlayout" android:paddingLeft="11.329987dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="65.32999dip">
+                <TextView android:textSize="23.0sp" android:textColor="@color/music_menu_text_color" android:id="@id/TextView01" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.9" />
+                <CheckBox android:id="@id/MusicMenuCheckBox_2" android:clickable="false" android:layout_width="36.659973dip" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:button="@drawable/settingscheckbox" />
+            </LinearLayout>
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/MusicMenuLayoutMenu_3" android:background="@drawable/settingslinearlayout" android:paddingLeft="11.329987dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="65.32999dip">
+                <TextView android:textSize="23.0sp" android:textColor="@color/music_menu_text_color" android:id="@id/TextView01" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.9" />
+                <CheckBox android:id="@id/MusicMenuCheckBox_3" android:clickable="false" android:layout_width="36.659973dip" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:button="@drawable/settingscheckbox" />
+            </LinearLayout>
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/MusicMenuLayoutMenu_4" android:background="@drawable/settingslinearlayout" android:paddingLeft="11.329987dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="65.32999dip">
+                <TextView android:textSize="23.0sp" android:textColor="@color/music_menu_text_color" android:id="@id/TextView01" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.9" />
+                <CheckBox android:id="@id/MusicMenuCheckBox_4" android:clickable="false" android:layout_width="36.659973dip" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:button="@drawable/settingscheckbox" />
+            </LinearLayout>
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/MusicMenuLayoutMenu_5" android:background="@drawable/settingslinearlayout" android:paddingLeft="11.329987dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="65.32999dip">
+                <TextView android:textSize="23.0sp" android:textColor="@color/music_menu_text_color" android:id="@id/TextView01" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.9" />
+                <CheckBox android:id="@id/MusicMenuCheckBox_5" android:clickable="false" android:layout_width="36.659973dip" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:button="@drawable/settingscheckbox" />
+            </LinearLayout>
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/MusicMenuMostPlayedLayout" android:background="@drawable/settingslinearlayout" android:paddingLeft="11.329987dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="65.32999dip">
+                <TextView android:textSize="23.0sp" android:textColor="@color/music_menu_text_color" android:id="@id/TextView01" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.9" />
+                <CheckBox android:id="@id/MusicMenuMostPlayedCheckBox" android:clickable="false" android:layout_width="36.659973dip" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:button="@drawable/settingscheckbox" />
+            </LinearLayout>
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/MusicMenuRecentlyPlayedLayout" android:background="@drawable/settingslinearlayout" android:paddingLeft="11.329987dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="65.32999dip">
+                <TextView android:textSize="23.0sp" android:textColor="@color/music_menu_text_color" android:id="@id/TextView01" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.9" />
+                <CheckBox android:id="@id/MusicMenuRecentlyPlayedCheckBox" android:clickable="false" android:layout_width="36.659973dip" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:button="@drawable/settingscheckbox" />
+            </LinearLayout>
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/MusicMenuRecentlyAddedLayout" android:background="@drawable/settingslinearlayout" android:paddingLeft="11.329987dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="65.32999dip">
+                <TextView android:textSize="23.0sp" android:textColor="@color/music_menu_text_color" android:id="@id/TextView01" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.9" />
+                <CheckBox android:id="@id/MusicMenuRecentlyAddedCheckBox" android:clickable="false" android:layout_width="36.659973dip" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:button="@drawable/settingscheckbox" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

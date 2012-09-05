@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/post_bar" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/divider_line" android:background="@android:drawable/divider_horizontal_bright" android:layout_width="fill_parent" android:layout_height="2.0px" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?android:attr/buttonBarStyle">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@color/dark_grey" android:id="@id/user_identity" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:layout_weight="1.0" />
+        <Button android:id="@id/post" android:paddingLeft="38.0dip" android:paddingRight="38.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
+</LinearLayout>

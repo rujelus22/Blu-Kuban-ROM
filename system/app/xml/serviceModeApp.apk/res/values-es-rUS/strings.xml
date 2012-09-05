@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Dialog_title">Valor de entrada</string>
+    <string name="Dialog_subscript">Introducir un valor</string>
+    <string name="Dialog_ok">Aceptar</string>
+    <string name="Dialog_cancel">Cancelar</string>
+    <string name="select_title">Seleccionar fila</string>
+    <string name="select_subscript">Introducir fila</string>
+    <string name="select_ok">Aceptar</string>
+    <string name="select_cancel">Cancelar</string>
+    <string name="help_title">Ayuda</string>
+    <string name="help_subscript">Ayuda</string>
+    <string name="help_ok">Aceptar</string>
+    <string name="rtc_get">PDA RTC Get</string>
+    <string name="rtc_back">Atrás</string>
+    <string name="bat_get">Visualización de la batería</string>
+    <string name="bat_back">Atrás</string>
+    <string name="them">Them ADC :</string>
+    <string name="vbatt">Vbatt ADC :</string>
+    <string name="bat_level">Nivel de la batería:</string>
+    <string name="not_set">No definido</string>
+    <string name="light_get">Pantalla de sensor de luz</string>
+    <string name="lux_value">Valor en lux</string>
+    <string name="nand_flash">Número exclusivo de NAND Flash</string>
+    <string name="ril_dump_label">¡Ril Log completo!</string>
+    <string name="logcat_radio">Ejecutar Ril Log</string>
+    <string name="view_log">View Ril Log</string>
+    <string name="clear_log">Eliminar Ril Log</string>
+    <string name="next_page">Página siguiente</string>
+    <string name="first_page">Primera página</string>
+    <string name="last_page">Última página</string>
+    <string name="mms_ua_string">Cadena de UA</string>
+    <string name="all">Todo</string>
+    <string name="msg">Mensaje</string>
+    <string name="sys_dump_label">Pulse el botón siguiente. Se guardarán tres tipos de registro en la memoria del teléfono</string>
+    <string name="run_dump">ejecutar dumpstate/logcat</string>
+    <string name="kernel_log">Copiar registro de núcleo en la tarjeta de memoria</string>
+    <string name="exit">Salir</string>
+    <string name="ril_log">Wait...on Loading Ril Log</string>
+    <string name="back">Atrás</string>
+    <string name="move_to_end">Mover al final</string>
+    <string name="find_text">Encontrar</string>
+    <string name="file_open">Apertura de archivo</string>
+    <string name="proxy">Proxy</string>
+</resources>

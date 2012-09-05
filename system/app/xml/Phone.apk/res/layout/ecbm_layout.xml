@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/ecbm_parent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/button_emergency" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:src="@drawable/call_emergency" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="18.0dip" android:textColor="@color/twcolor001" android:gravity="center" android:id="@id/text_instruction" android:layout_width="wrap_content" android:layout_height="144.0dip" android:layout_marginTop="185.0dip" android:text="@string/ecbm_instruction_text" android:layout_centerHorizontal="true" android:lineSpacingExtra="3.0dip" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/emergencycall_buttons" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Button android:id="@id/button_call" android:background="@drawable/green_button" android:text="@string/ecbm_redial_text" android:drawableTop="@drawable/incall_button_accept_icon" style="@style/EmergencyCallbackTouchButton" />
+        <Button android:id="@id/button_home" android:text="@string/ecbm_ok_text" android:drawableTop="@drawable/emergency_button_home_icon" style="@style/EmergencyCallbackTouchButton" />
+        <Button android:id="@id/button_exit" android:text="@string/ecbm_exit_text" android:drawableTop="@drawable/emergency_button_exit_icon" style="@style/EmergencyCallbackTouchButton" />
+    </LinearLayout>
+</RelativeLayout>

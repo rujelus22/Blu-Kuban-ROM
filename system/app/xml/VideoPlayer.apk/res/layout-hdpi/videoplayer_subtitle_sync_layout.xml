@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/videoholdLayout" android:background="@drawable/winset_information_popup_bg" android:layout_width="fill_parent" android:layout_height="138.0dip" android:layout_marginTop="50.0dip">
+        <LinearLayout android:orientation="horizontal" android:id="@id/titlelayout" android:layout_width="fill_parent" android:layout_height="46.0dip" android:weightSum="1.0">
+            <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/subtitle_sync_text" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@id/TextView01" android:shadowColor="#ff000000" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_weight="1.0" />
+            <Button android:textColor="#ffffffff" android:id="@id/subtitle_sync_reset" android:background="@drawable/btn_subtitle_sync_reset" android:focusable="true" android:layout_width="70.0dip" android:layout_height="34.0dip" android:text="@string/Title_Reset" android:layout_weight="0.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/controllayout" android:layout_width="fill_parent" android:layout_height="92.0dip" android:weightSum="1.0">
+            <ImageButton android:id="@id/subtitle_sync_down" android:background="#00000000" android:focusable="true" android:layout_width="38.659973dip" android:layout_height="38.659973dip" android:src="@drawable/btn_subtitle_sync_down" android:layout_weight="0.0" />
+            <LinearLayout android:gravity="center" android:id="@id/subtitle_progress_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_toRightOf="@id/subtitle_sync_down" android:layout_centerVertical="true">
+                <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <SeekBar android:layout_gravity="center" android:id="@id/subtitle_sync_progress" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="7.0dip" android:max="120" android:progress="60" android:progressDrawable="@drawable/progress_slider_bar_bg" />
+                    <ImageView android:layout_gravity="center" android:background="@drawable/popup_slide_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" />
+                </FrameLayout>
+            </LinearLayout>
+            <ImageButton android:id="@id/subtitle_sync_up" android:background="#00000000" android:focusable="true" android:layout_width="38.659973dip" android:layout_height="38.659973dip" android:src="@drawable/btn_subtitle_sync_up" android:layout_weight="0.0" android:layout_toRightOf="@id/subtitle_progress_layout" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

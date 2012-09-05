@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/settingscroll" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/settinglayout" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:id="@id/divider1" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <View android:id="@id/divider1" android:layout_width="fill_parent" android:layout_height="45.0dip" />
+        <TextView android:textSize="24.0sp" android:gravity="center" android:layout_gravity="center" android:id="@id/divx_deregistration_code" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" />
+        <TextView android:textSize="24.0sp" android:gravity="center" android:layout_gravity="center" android:id="@id/divx_deregistration" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:text="@string/divx_deregister_website" />
+        <TextView android:textSize="24.0sp" android:gravity="center" android:layout_gravity="center" android:id="@id/divx_deregistration_info" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:text="@string/divx_deregistration_info" />
+        <View android:id="@id/divider1" android:layout_width="fill_parent" android:layout_height="30.0dip" />
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:id="@id/settinglayout" android:scrollbars="vertical" android:layout_width="260.0dip" android:layout_height="wrap_content">
+            <Button android:textSize="17.0sp" android:gravity="center" android:layout_gravity="center" android:id="@id/divx_register_button" android:duplicateParentState="false" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/dialog_registration_button" android:layout_weight="1.0" />
+            <Button android:textSize="17.0sp" android:gravity="center" android:layout_gravity="center" android:id="@id/divx_cancel_register_button" android:duplicateParentState="false" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/dialog_cancel_registration_button" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

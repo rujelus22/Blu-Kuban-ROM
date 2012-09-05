@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pcwdone_text">Sonar mi teléfono</string>
+    <string name="btn_stop">Parar</string>
+    <string name="str_tracking_noti">Rastrear mi móvil</string>
+    <string name="str_tracking_start_title">Rastreando mi móvil...</string>
+    <string name="str_tracking_stop_title">Rastreado mi móvil</string>
+    <string name="str_unlock_noti">Restablecer al bloqueo de pantalla predeterminado de fábrica</string>
+    <string name="str_unlock_title">Bloqueo de pantalla: restablecer a la configuración de fábrica</string>
+    <string name="str_via_samsungdive">Vía SamsungDive</string>
+</resources>

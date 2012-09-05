@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/margin_fill" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:finsky="http://schemas.android.com/apk/res/com.android.vending">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:id="@id/top_banner" android:layout_width="fill_parent" android:layout_height="@dimen/framed_details_top_banner_height" android:layout_weight="1.0">
+            <View android:id="@id/pinstripe_overlay" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="6.0dip" />
+        </FrameLayout>
+        <View android:background="@color/title_background" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+    </LinearLayout>
+    <com.google.android.finsky.layout.SimpleMarginBox android:layout_width="fill_parent" android:layout_height="fill_parent" finsky:max_content_width="@dimen/framed_content_max_width">
+        <include layout="@layout/creator_details_content" />
+    </com.google.android.finsky.layout.SimpleMarginBox>
+</FrameLayout>

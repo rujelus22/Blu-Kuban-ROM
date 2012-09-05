@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="general_settings">Opšta podešav.</string>
+    <string name="samsungtts_settings">Podešavanja za Samsung TTS</string>
+    <string name="open_source_licenses">Licence za otvoreni kod</string>
+    <string name="advanced_settings">Napredna podešavanja</string>
+    <string name="change_voice_effects">Glasovni efekti</string>
+    <string name="change_voice_effects_summary">Primenjuje različite glasovne efekte za tekst koji se govori</string>
+    <string name="installed_languages">Instalirani jezici</string>
+    <string name="female">Ženski</string>
+    <string name="male">Muško</string>
+</resources>

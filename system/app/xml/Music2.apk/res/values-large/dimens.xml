@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="grid_context_menu_mark_offset_x">9.0dip</dimen>
+    <dimen name="grid_context_menu_mark_offset_y">7.0dip</dimen>
+    <dimen name="grid_context_menu_mark_width">32.0dip</dimen>
+    <dimen name="grid_context_menu_mark_height">32.0dip</dimen>
+</resources>

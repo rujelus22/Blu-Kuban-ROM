@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:versionCode="2" android:versionName="2.0.0" package="com.wssnps"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="14" />
+    <application android:label="@string/app_name" android:icon="@drawable/icon">
+        <service android:name=".smlNpsService" />
+        <receiver android:name=".smlNpsReceiver">
+            <intent-filter>
+                <action android:name="com.intent.action.KIES_WSSERVICE_START" />
+                <action android:name="com.intent.action.KIES_WSSERVICE_START_WIFI" />
+                <action android:name="com.intent.action.KIES_WSSERVICE_STOP" />
+                <action android:name="android.intent.action.SET_KIES_STATUS" />
+                <action android:name="Intent.ACTION_DB_DEVICE_STORAGE_LOW" />
+                <action android:name="android.intent.action.DB_DEVICE_STORAGE_LOW" />
+                <action android:name="com.intent.action.EBOOK_SCAN_COMPLETED" />
+                <action android:name="android.intent.action.CHECK_USB_CONNECTED" />
+                <action android:name="com.sec.mms.action.BACKUP_FINISH" />
+                <action android:name="com.sec.mms.action.RESTORE_FINISH" />
+                <action android:name="com.android.email.service.BACKUP_FINISH" />
+                <action android:name="com.android.email.service.RESTORE_FINISH" />
+                <action android:name="com.sec.android.app.fm.BACKUP_FINISH" />
+                <action android:name="com.sec.android.app.fm.RESTORE_FINISH" />
+                <action android:name="com.sec.android.app.minidiary.service.BACKUP_FINISH" />
+                <action android:name="com.sec.android.app.minidiary.service.RESTORE_FINISH" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".smlMmsStatusReceiver">
+            <intent-filter>
+                <action android:name="com.wssyncmlnps.MmsStatusReceiver.STATUS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="com.samsung.android.permission.READ_MEMO" />
+    <uses-permission android:name="com.samsung.android.permission.WRITE_MEMO" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_MMS" />
+    <uses-permission android:name="android.permission.WRITE_MMS" />
+    <uses-permission android:name="android.permission.READ_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_TASKS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="com.android.email.permission.ACCESS_PROVIDER" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="com.android.email.service.BROADCAST_DETECT" />
+    <uses-permission android:name="com.sec.android.app.fm.BROADCAST_DETECT" />
+    <uses-permission android:name="com.sec.mms.action.MMS_BNR" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="com.sec.android.app.minidiary.service.BROADCAST_DETECT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+</manifest>

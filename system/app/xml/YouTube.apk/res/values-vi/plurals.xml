@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="years_ago">
+        <item quantity="other">%1$d năm trước</item>
+        <item quantity="one">1 năm trước</item>
+    </plurals>
+    <plurals name="months_ago">
+        <item quantity="other">%1$d tháng trước</item>
+        <item quantity="one">1 tháng trước</item>
+    </plurals>
+    <plurals name="weeks_ago">
+        <item quantity="other">%1$d tuần trước</item>
+        <item quantity="one">1 tuần trước</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">%1$d ngày trước</item>
+        <item quantity="one">1 ngày trước</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="other">%1$d giờ trước</item>
+        <item quantity="one">1 giờ trước</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="other">%1$d phút trước</item>
+        <item quantity="one">1 phút trước</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="other">%1$d giây trước</item>
+        <item quantity="one">1 giây trước</item>
+    </plurals>
+    <plurals name="recent_uploads">
+        <item quantity="other">Video tải lên mới</item>
+        <item quantity="one">Video tải lên mới</item>
+    </plurals>
+    <plurals name="recent_activity">
+        <item quantity="other">sự kiện mới</item>
+        <item quantity="one">sự kiện mới</item>
+    </plurals>
+    <plurals name="playlist_size">
+        <item quantity="other">%1$,d video</item>
+        <item quantity="one">1 video</item>
+    </plurals>
+</resources>

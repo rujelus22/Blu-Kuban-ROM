@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ListHeaderText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="ListHeaderSubText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff909090</item>
+    </style>
+    <style name="ListCellContactText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="ListCellContactTextSmall" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="ListCellContactTextAlt" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="ListCellPhoneNumberText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="ListCellPhoneNumberTextBlack" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="ListCellPhoneTypeText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff909090</item>
+    </style>
+    <style name="ListCellPhoneTypeTextSmall" parent="@android:style/TextAppearance">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff909090</item>
+    </style>
+    <style name="ListCellPhoneNumberTextSmall" parent="@android:style/TextAppearance">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff909090</item>
+    </style>
+    <style name="ListCellTextDefault" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff909090</item>
+    </style>
+    <style name="ListCellTextSmall" parent="@android:style/TextAppearance">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff909090</item>
+    </style>
+    <style name="SafeReaderMessageNotificationHeading" parent="@android:style/TextAppearance">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="SafeReaderMessageNotificationSubHeading" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="SafeReaderMessageNotificationFooter" parent="@android:style/TextAppearance">
+        <item name="android:textSize">10.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff808080</item>
+    </style>
+    <style name="ListCellSingleLineText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">21.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="AwesomeBarSingleLineText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="AwesomeBarResultMainText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="AwesomeBarResultSecondaryText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff707070</item>
+    </style>
+    <style name="SuggestBarExampleHeading" parent="@android:style/TextAppearance">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff606060</item>
+    </style>
+    <style name="SuggestBarExample" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffa0a0a0</item>
+    </style>
+    <style name="CarHeadingCommand" parent="@android:style/TextAppearance">
+        <item name="android:textSize">24.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffdddddd</item>
+    </style>
+    <style name="CarHeadingText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/car_heading_textsize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">2.0</item>
+    </style>
+    <style name="CarListCellText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/car_listcell_textsize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="CarListCellTextWhite" parent="@android:style/TextAppearance">
+        <item name="android:textSize">30.0dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="CarListPhoneType" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/car_phone_type_textsize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff3d85c6</item>
+    </style>
+    <style name="CarListPhoneTypeWhite" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/car_phone_number_textsize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="CarListPhoneNumber" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/car_phone_number_textsize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="CarListPhoneNumberWhite" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/car_phone_number_textsize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="CarSMSMessageHeading" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff888888</item>
+    </style>
+    <style name="CarSMSMessageHeadingWhite" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="CarSMSMessageText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/car_message_textsize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="CarSMSMessageTextHidden" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/car_hidden_message_textsize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="CarSMSMessageTextWhite" parent="@android:style/TextAppearance">
+        <item name="android:textSize">25.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="SamsungButtonPanel">
+        <item name="android:background">@drawable/samsung_car_action_btn_panel</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="SamsungButtonPanel.Single" parent="@style/SamsungButtonPanel">
+        <item name="android:paddingLeft">45.0dip</item>
+        <item name="android:paddingRight">45.0dip</item>
+    </style>
+    <style name="SamsungButton">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:background">@drawable/samsung_car_black_action_btn</item>
+        <item name="android:layout_width">1.0dip</item>
+        <item name="android:layout_height">42.0dip</item>
+        <item name="android:layout_margin">3.0dip</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="SamsungButtonDefaultBackground">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:layout_width">1.0dip</item>
+        <item name="android:layout_height">42.0dip</item>
+        <item name="android:layout_margin">3.0dip</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="SamsungDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Theme.HazeBackground" parent="@android:style/Theme">
+        <item name="android:windowBackground">@drawable/haze_background</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Theme.NoBackground" parent="@android:style/Theme">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Theme.CarInitializingTheme" parent="@android:style/Theme">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+    <style name="Theme.CarHome" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Theme.NoTitleTranslucent" parent="@android:style/Theme.Translucent">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Theme.NoTitle" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

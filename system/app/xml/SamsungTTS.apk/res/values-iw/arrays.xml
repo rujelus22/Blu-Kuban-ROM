@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voice_effects_entries">
+        <item>רגיל</item>
+        <item>קול עמוק</item>
+        <item>קול גבוה</item>
+        <item>קול דק</item>
+        <item>קול עבה</item>
+        <item>קול של רובוט</item>
+        <item>אפקט גז הליום</item>
+    </string-array>
+</resources>

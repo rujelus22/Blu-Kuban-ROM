@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="album_photo_count">
+        <item quantity="other">%d फ़ोटो</item>
+        <item quantity="zero">%d फ़ोटो</item>
+        <item quantity="one">%d फ़ोटो</item>
+    </plurals>
+    <plurals name="from_your_phone_selected_count">
+        <item quantity="other">%d चयनित किए गए.</item>
+        <item quantity="one">%d का चयन किया गया.</item>
+    </plurals>
+    <plurals name="delete_photo_dialog_title">
+        <item quantity="other">क्‍या इन फ़ोटो की सभी प्रतिलिपियां हटाएं?</item>
+        <item quantity="one">क्‍या इस फ़ोटो की सभी प्रतिलिपियां हटाएं?</item>
+    </plurals>
+    <plurals name="delete_remote_photo_dialog_message">
+        <item quantity="other">क्‍या आप वाकई इन फ़ोटो को इस Google+ एल्‍बम से हटाना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती.</item>
+        <item quantity="one">क्‍या आप वाकई इस फ़ोटो को इस Google+ एल्‍बम से हटाना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती.</item>
+    </plurals>
+    <plurals name="delete_local_photo_dialog_message">
+        <item quantity="other">क्‍या आप वाकई इन फ़ोटो को अपने फ़ोन और इस Google+ एल्‍बम, दोनों से हटाना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती.</item>
+        <item quantity="one">क्‍या आप वाकई इस फ़ोटो को अपने फ़ोन और इस Google+ एल्‍बम, दोनों से हटाना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती.</item>
+    </plurals>
+    <plurals name="delete_photo_pending">
+        <item quantity="other">फ़ोटो हटाए जा रहे हैं...</item>
+        <item quantity="one">फ़ोटो हटाया जा रहा है...</item>
+    </plurals>
+    <plurals name="plus_one_people_more_plus_ones">
+        <item quantity="other">+%d अन्य</item>
+        <item quantity="one">+1 और</item>
+    </plurals>
+    <plurals name="plusoned_by_unknowns">
+        <item quantity="other">%d लोगों द्वारा</item>
+        <item quantity="one">1 व्यक्ति द्वारा</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_unknowns">
+        <item quantity="other">आपके और %d अन्य द्वारा</item>
+        <item quantity="one">आपके और 1 अन्य द्वारा</item>
+    </plurals>
+    <plurals name="plusoned_by_one_known_and_unknowns">
+        <item quantity="other">%s और %d अन्य द्वारा</item>
+        <item quantity="one">%s और 1 अन्य द्वारा</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_one_known_and_unknowns">
+        <item quantity="other">आपके, %s, और %d अन्य द्वारा</item>
+        <item quantity="one">आपके, %s, और 1 अन्य द्वारा</item>
+    </plurals>
+    <plurals name="plusoned_by_two_known_and_unknowns">
+        <item quantity="other">%s, %s, और %d अन्य द्वारा</item>
+        <item quantity="one">%s, %s, और 1 अन्य द्वारा</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_two_known_and_unknowns">
+        <item quantity="other">आपके, %s, %s, और %d अन्य द्वारा</item>
+        <item quantity="one">आपके, %s, %s, और 1 अन्य द्वारा</item>
+    </plurals>
+    <plurals name="comments">
+        <item quantity="other">%d टिप्पणियां</item>
+        <item quantity="one">%d टिप्पणी</item>
+    </plurals>
+    <plurals name="delete_photo">
+        <item quantity="other">फ़ोटो हटाएं</item>
+        <item quantity="one">फ़ोटो हटाएं</item>
+    </plurals>
+    <plurals name="circle_entry_content_description">
+        <item quantity="other">%s; %d सदस्य</item>
+        <item quantity="one">%s; %d सदस्य</item>
+    </plurals>
+    <plurals name="notifications_ticker_text">
+        <item quantity="other">नई Google+ सूचनाएं</item>
+        <item quantity="one">नई Google+ सूचना</item>
+    </plurals>
+    <plurals name="notifications_content_text">
+        <item quantity="other">%1$s (%2$d)</item>
+        <item quantity="one">%1$s (%2$d)</item>
+    </plurals>
+    <plurals name="audience_display_selection_count">
+        <item quantity="other">%d चयनित</item>
+        <item quantity="one">%d चयनित</item>
+    </plurals>
+    <plurals name="circle_count_and_matched_email">
+        <item quantity="other">%d मंडली, %s</item>
+        <item quantity="one">%d मंडली, %s</item>
+    </plurals>
+    <plurals name="circle_selection_count">
+        <item quantity="other">%d मंडलियां</item>
+        <item quantity="one">%d मंडली</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_title">
+        <item quantity="other">मंडलियां हटाएं</item>
+        <item quantity="one">मंडली हटाएं</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_message">
+        <item quantity="other">क्या आप स्थायी रूप से इन मंडलियों को हटाना चाहते हैं?</item>
+        <item quantity="one">क्या आप इस मंडली को स्‍थायी रूप से हटाना चाहते हैं?</item>
+    </plurals>
+    <plurals name="delete_circles_operation_pending">
+        <item quantity="other">मंडलियों को हटाया जा रहा है...</item>
+        <item quantity="one">मंडली हटाई जा रही है...</item>
+    </plurals>
+    <plurals name="circle_people_count">
+        <item quantity="other">%d लोग</item>
+        <item quantity="one">%d व्‍यक्ति</item>
+    </plurals>
+    <plurals name="remove_people_dialog_title">
+        <item quantity="other">लोगों को निकालें</item>
+        <item quantity="one">व्यक्ति को निकालें</item>
+    </plurals>
+    <plurals name="remove_people_dialog_message">
+        <item quantity="other">क्या आप इस मंडली से इन लोगों को निकालना चाहते हैं?</item>
+        <item quantity="one">क्या आप इस मंडली से इस व्यक्ति को निकालना चाहते हैं?</item>
+    </plurals>
+    <plurals name="add_people_operation_pending">
+        <item quantity="other">लोग शामिल किए जा रहे हैं...</item>
+        <item quantity="one">व्यक्ति को शामिल किया जा रहा है...</item>
+    </plurals>
+    <plurals name="remove_people_operation_pending">
+        <item quantity="other">लोगों को निकाला जा रहा है...</item>
+        <item quantity="one">व्यक्ति को निकाला जा रहा है...</item>
+    </plurals>
+    <plurals name="dismiss_people_operation_pending">
+        <item quantity="other">लोग खारिज किए जा रहे हैं...</item>
+        <item quantity="one">व्यक्ति को खारिज किया जा रहा है...</item>
+    </plurals>
+    <plurals name="circle_button_more_circles">
+        <item quantity="other">%d और</item>
+        <item quantity="one">%d और</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d मिनट</item>
+        <item quantity="one">%d मिनट</item>
+    </plurals>
+    <plurals name="num_hours_ago">
+        <item quantity="other">%d घंटे</item>
+        <item quantity="one">%d घंटा</item>
+    </plurals>
+    <plurals name="num_days_ago">
+        <item quantity="other">%d दिन</item>
+        <item quantity="one">%d दिन</item>
+    </plurals>
+    <plurals name="ads_plus_one_annotation_count_only">
+        <item quantity="other">%1$d अन्य लोगों ने भी</item>
+        <item quantity="one">%1$d अन्य व्यक्ति ने भी</item>
+    </plurals>
+</resources>

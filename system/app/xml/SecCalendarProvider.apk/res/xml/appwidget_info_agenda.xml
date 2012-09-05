@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider android:minWidth="127.0px" android:minHeight="73.0px" android:updatePeriodMillis="0" android:initialLayout="@layout/agenda_appwidget_2x1"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

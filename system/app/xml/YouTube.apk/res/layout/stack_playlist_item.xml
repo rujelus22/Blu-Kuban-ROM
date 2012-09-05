@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingLeft="@dimen/list_item_padding" android:paddingRight="@dimen/list_item_padding" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:yt="http://schemas.android.com/apk/res/com.google.android.youtube">
+    <com.google.android.youtube.app.ui.StackButton android:orientation="horizontal" android:id="@id/stack_button" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" yt:fontSize="16.0dip" />
+    <ImageView android:gravity="center" android:id="@id/more" android:tag="contextual_menu_anchor" android:paddingLeft="8.0dip" android:paddingTop="4.0dip" android:paddingRight="8.0dip" android:paddingBottom="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/contextual_menu_anchor" android:scaleType="center" android:layout_weight="0.0" />
+</LinearLayout>

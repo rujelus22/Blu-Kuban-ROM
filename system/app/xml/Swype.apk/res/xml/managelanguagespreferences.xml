@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:swypeime="http://schemas.android.com/apk/res/com.swype.android.inputmethod">
+    <PreferenceCategory android:title="@string/pref_manage_languages_cat_desc" android:key="pref_manage_languages_cat">
+        <Preference android:title="@string/settings_connect_manage_languages_download_title" android:key="pref_manage_languages_download_btn" android:summary="@string/settings_connect_manage_languages_download_desc">
+            <intent android:action="com.swype.android.connect.settings.DownloadLanguagesActivity" />
+        </Preference>
+        <Preference android:title="@string/pref_manage_languages_remove_title" android:key="pref_manage_languages_remove_btn" android:summary="@string/pref_manage_languages_remove_desc">
+            <intent android:action="com.swype.android.connect.settings.RemoveLanguagesActivity" />
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

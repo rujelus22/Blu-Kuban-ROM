@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RadioButton android:id="@id/dns_enable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dns_enable" />
+        <RadioButton android:id="@id/dns_disable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dns_disable" />
+    </RadioGroup>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <Button android:id="@id/cancel_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/cancel_button" />
+    </LinearLayout>
+</LinearLayout>

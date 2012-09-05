@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="years_ago">
+        <item quantity="other">%1$d jaar geleden</item>
+        <item quantity="one">1 jaar geleden</item>
+    </plurals>
+    <plurals name="months_ago">
+        <item quantity="other">%1$d maanden geleden</item>
+        <item quantity="one">1 maand geleden</item>
+    </plurals>
+    <plurals name="weeks_ago">
+        <item quantity="other">%1$d weken geleden</item>
+        <item quantity="one">1 week geleden</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">%1$d dagen geleden</item>
+        <item quantity="one">1 dag geleden</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="other">%1$d uur geleden</item>
+        <item quantity="one">1 uur geleden</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="other">%1$d minuten geleden</item>
+        <item quantity="one">1 minuut geleden</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="other">%1$d seconden geleden</item>
+        <item quantity="one">1 seconde geleden</item>
+    </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Verloopt over %1$d dagen</item>
+        <item quantity="one">Verloopt over 1 dag</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Verloopt over %1$d uur</item>
+        <item quantity="one">Verloopt over 1 uur</item>
+    </plurals>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/wl_app_icon" android:background="@drawable/app_click_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentTop="true" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:onClick="runWhitelistedApp" />
+    <TextView android:textSize="12.0dip" android:typeface="sans" android:textStyle="normal" android:textColor="#ffffffff" android:id="@id/wl_app_name" android:background="@drawable/app_click_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:singleLine="true" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+</RelativeLayout>

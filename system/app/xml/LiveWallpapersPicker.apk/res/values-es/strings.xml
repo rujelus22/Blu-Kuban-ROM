@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="application_name">Recolector de fondos de pantalla en movimiento</string>
+    <string name="live_wallpaper_picker_title">Fondos de pantalla en movimiento</string>
+    <string name="live_wallpaper_preview_title">Vista previa de fondo de pantalla en movimiento</string>
+    <string name="configure_wallpaper">Ajustes</string>
+    <string name="wallpaper_instructions">Definir fondo de pantalla</string>
+    <string name="live_wallpaper_empty">Sin fondos de pantalla en movimiento</string>
+    <string name="set_live_wallpaper">Definir fondo de pantalla</string>
+    <string name="wallpaper_title_and_author">%1$s de %2$s</string>
+    <string name="live_wallpaper_loading">Cargando fondo de pantalla en movimiento...</string>
+    <string name="picker_dialog_title">Def fondo de pan</string>
+    <string name="picker_dialog_sentence">El mismo fondo de pantalla en movimiento se aplicará también a la pantalla de inicio</string>
+    <string name="picker_positive_button">OK</string>
+    <string name="picker_nagative_button">Cancelar</string>
+</resources>

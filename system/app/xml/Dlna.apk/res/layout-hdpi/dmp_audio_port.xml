@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:orientation="horizontal" android:background="@drawable/music_play_title_bg" android:layout_width="fill_parent" android:layout_height="66.66dip">
+            <ImageButton android:id="@id/music_srs" android:background="@drawable/music_play_menu_srs_off_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:soundEffectsEnabled="false" android:hapticFeedbackEnabled="false" />
+            <ImageButton android:id="@id/music_volume" android:background="@drawable/music_volume_controller_launch_v_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:soundEffectsEnabled="false" android:hapticFeedbackEnabled="false" />
+            <TextView android:textSize="13.329987dip" android:textColor="@touchwiz:color/tw_color005" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/music_artist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.659973dip" android:maxWidth="180.0dip" android:singleLine="true" android:layout_centerHorizontal="true" android:marqueeRepeatLimit="marquee_forever" />
+            <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/music_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22.659973dip" android:maxWidth="190.0dip" android:singleLine="true" android:layout_centerHorizontal="true" android:marqueeRepeatLimit="marquee_forever" />
+        </RelativeLayout>
+        <LinearLayout android:id="@id/view_holder" android:layout_width="fill_parent" android:layout_height="320.0dip" android:layout_marginTop="66.66dip" />
+        <ImageView android:id="@id/no_content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="320.0dip" android:layout_marginTop="66.66dip" />
+        <ImageView android:id="@id/image_content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="320.0dip" android:layout_marginTop="66.66dip" />
+        <ProgressBar android:id="@id/bufferingView" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:max="100" android:layout_centerInParent="true" sytle="?android:attr/progressBarStyleSmall" />
+        <TextView android:textSize="22.0dip" android:textColor="@touchwiz:color/tw_color001" android:id="@id/bufferingMessage" android:paddingLeft="18.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="@string/bufferingUpdate" android:layout_alignParentBottom="true" />
+        <com.sec.android.touchwiz.widget.TwSeekBarBubble android:id="@id/volumeseekbubble" android:paddingLeft="265.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="68.0dip">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/volume_slider_bg" android:layout_width="54.669983dip" android:layout_height="219.0dip">
+                <com.sec.android.touchwiz.widget.TwSeekBar android:id="@id/volumeseekbar" android:paddingTop="21.659973dip" android:paddingBottom="21.659973dip" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="38.659973dip" android:layout_height="fill_parent" android:layout_weight="1.0" touchwiz:twMax="15" touchwiz:twBackgroundDrawable="@drawable/volume_slider_bar_bg" touchwiz:twProgressDrawable="@drawable/volume_slider_bar" touchwiz:twIndicatorThickness="9.329987dip" touchwiz:twProgressOrientation="vertical" touchwiz:twSeekBarThumb="@drawable/btn_vol_seekbar_thumb"
+                  xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz" />
+            </LinearLayout>
+        </com.sec.android.touchwiz.widget.TwSeekBarBubble>
+        <com.sec.android.app.dlna.view.MediaControlViewDMP android:id="@id/home_media_control" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

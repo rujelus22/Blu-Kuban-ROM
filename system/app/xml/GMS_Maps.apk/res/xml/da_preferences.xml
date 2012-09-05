@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/da_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.google.android.apps.maps">
+    <com.google.android.maps.driveabout.app.RmiPreference android:title="@string/da_one_button_map_issue_reporting" android:key="OneButtonRmi" android:summary="" />
+    <PreferenceCategory android:title="@string/da_power_settings_category" android:key="PowerSettingsCategory">
+        <com.google.android.maps.driveabout.power.PowerManagerPreference android:title="@string/da_screen_dimming_setting_title" android:key="PowerManagerEnabled" android:summary="@string/da_screen_dimming_setting_summary" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/da_info_settings_category" android:key="InfoCategory">
+        <Preference android:title="@string/da_about" android:key="AboutDriveabout" android:summary="Not shown in release versions." />
+        <PreferenceScreen android:title="@string/da_terms_privacy_notices" android:key="TermsPrivacyAndNotices">
+            <Preference android:title="@string/da_terms_and_conditions" android:key="TermsAndConditions" />
+            <Preference android:title="@string/da_privacy_policy" android:key="Privacy" />
+            <Preference android:title="@string/da_legal_notices" android:key="Notices" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>

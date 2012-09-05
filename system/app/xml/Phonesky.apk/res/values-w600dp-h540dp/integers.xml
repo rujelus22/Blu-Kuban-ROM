@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="category_tab_width_in_percent">30</integer>
+</resources>

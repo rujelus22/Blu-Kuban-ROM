@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="safe_search_levels">
+        <item>አታጣራ</item>
+        <item>አወያይ፡</item>
+        <item>ጥብቅ</item>
+    </string-array>
+    <string-array name="prefetch_quota_entries">
+        <item>128 ሜባ</item>
+        <item>256 ሜባ</item>
+        <item>512 ሜባ</item>
+        <item>1 ጊባ</item>
+        <item>2 ጊባ</item>
+        <item>4 ጊባ</item>
+    </string-array>
+    <string-array name="subtitles_size_entries">
+        <item>አነስተኛ</item>
+        <item>መካከለኛ</item>
+        <item>ትልቅ</item>
+        <item>ግዙፍ</item>
+    </string-array>
+</resources>

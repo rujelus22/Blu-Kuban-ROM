@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/LinearLayout01" android:background="#ffffffff" android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout02" android:layout_width="wrap_content" android:layout_height="380.0px">
+        <TextView android:textSize="25.0sp" android:id="@id/title_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/light_get" />
+        <TableLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:stretchColumns="1">
+            <View android:background="#ff909090" android:layout_height="2.0dip" />
+            <TableRow>
+                <TextView android:textSize="25.0sp" android:padding="3.0dip" android:layout_column="0" android:text="@string/lux_value" /> android:textColor="@color/black"
+<TextView android:textSize="25.0sp" android:gravity="left" android:id="@id/lux_val" android:layout_marginLeft="10.0dip" android:layout_column="1" android:text="@string/not_set" /> android:textColor="@color/black"
+</TableRow>
+            <View android:background="#ff909090" android:layout_height="2.0dip" />
+        </TableLayout>
+        <TableLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:stretchColumns="2">
+            <View android:layout_height="2.0dip" />
+            <TableRow>
+                <TextView android:textSize="80.0sp" android:gravity="left" android:id="@id/lux_val2" android:layout_marginLeft="10.0dip" android:layout_column="0" android:text="@string/not_set" /> android:textColor="@color/red"
+</TableRow>
+            <View android:background="#ff909090" android:layout_height="2.0dip" />
+        </TableLayout>
+    </LinearLayout>
+    <Button android:id="@id/btn_back" android:layout_width="100.0px" android:layout_height="wrap_content" android:text="@string/bat_back" />
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="years_ago">
+        <item quantity="other">pred %1$d rokmi</item>
+        <item quantity="one">Pred 1 rokom</item>
+    </plurals>
+    <plurals name="months_ago">
+        <item quantity="other">pred %1$d mesiacmi</item>
+        <item quantity="one">Pred 1 mesiacom</item>
+    </plurals>
+    <plurals name="weeks_ago">
+        <item quantity="other">pred %1$d týždňami</item>
+        <item quantity="one">Pred 1 týždňom</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">pred %1$d dňami</item>
+        <item quantity="one">Pred 1 dňom</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="other">pred %1$d hodinami</item>
+        <item quantity="one">Pred 1 hodinou</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="other">Pred %1$d minútami</item>
+        <item quantity="one">Pred 1 minútou</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="other">pred %1$d sekundami</item>
+        <item quantity="one">Pred 1 sekundou</item>
+    </plurals>
+    <plurals name="recent_uploads">
+        <item quantity="other">nové odovzdané videá</item>
+        <item quantity="one">nové odovzdané video</item>
+    </plurals>
+    <plurals name="recent_activity">
+        <item quantity="other">nové udalosti</item>
+        <item quantity="one">nová udalosť</item>
+    </plurals>
+    <plurals name="playlist_size">
+        <item quantity="other">Počet videí: %1$,d</item>
+        <item quantity="one">1 video</item>
+    </plurals>
+</resources>

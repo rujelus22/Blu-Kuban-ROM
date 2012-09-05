@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Tidak bersambung</string>
+    <string name="authentication_failure_no_network">Anda perlu bersambung ke Internet bagi mengesahkan akaun Music anda.</string>
+    <string name="authentication_failure">Tidak disahkan</string>
+    <string name="authentication_failure_error">Tidak dapat mengesahkan akaun Music anda.</string>
+    <string name="positive_button_text">OK</string>
+    <string name="negative_button_text">Batal</string>
+    <string name="save_button_text">Simpan</string>
+    <string name="not_save_button_text">Jangan simpan</string>
+    <string name="shuffle_all">Rombak semua</string>
+    <string name="play_all">Mainkan semua</string>
+    <string name="songs_all">Semua lagu</string>
+    <string name="shuffle">Rombak</string>
+    <string name="search">Cari</string>
+    <string name="settings">Tetapan</string>
+    <string name="library_options">Pilihan paparan</string>
+    <string name="manage_music">Jdkan tersedia l.talian</string>
+    <string name="available_offline">Tersedia di luar talian</string>
+    <string name="hide_labels">Sembunyikan label</string>
+    <string name="show_labels">Tunjukkan label</string>
+    <string name="options">Pilihan</string>
+    <string name="shop_artist">Beli artis</string>
+    <string name="show_offline_music_only">Muzik luar talian sahaja</string>
+    <string name="show_all_music">Papar semua muzik</string>
+    <string name="new_playlist_title">Nama senarai main</string>
+    <string name="add_to_playlist_title">Nama senarai main</string>
+    <string name="rename_playlist_title">Namakan semula \"%s\" kepada</string>
+    <string name="search_section_header_artists">ARTIS</string>
+    <string name="search_section_header_albums">ALBUM</string>
+    <string name="search_section_header_songs">LAGU</string>
+    <string name="search_section_header_playlists">SENARAI MAIN</string>
+    <string name="shuffle_all_songs">Rombak semua</string>
+    <string name="stream_settings">Tetapan Music</string>
+    <string name="refresh_title">Muat semula</string>
+    <string name="refresh_summary">Muat semula muzik dari Google Play</string>
+    <string name="account_settings_title">Akaun Google Play</string>
+    <string name="no_account_selected_summary">Sentuh untuk memilih akaun</string>
+    <string name="account_selected_summary">Sambung ke Google Play menggunakan %s</string>
+    <string name="hide_when_not_connected_title">Sembunyikan muzik yang tidak tersedia</string>
+    <string name="hide_when_not_connected_summary">Hanya tunjukkan muzik yang tersedia semasa di luar talian sahaja</string>
+    <string name="stream_only_on_wifi_title">Strim melalui Wi-Fi sahaja</string>
+    <string name="stream_only_on_wifi_summary">Strim muzik hanya apabila bersambung melalui Wi-Fi</string>
+    <string name="stream_only_hq_title">Strim kualiti tinggi</string>
+    <string name="stream_only_hq_summary">Sentiasa strim muzik pada kualiti tertinggi</string>
+    <string name="lock_screen_controls_title">Kawalan kunci skrin</string>
+    <string name="lock_screen_controls_summary">Tunjukkan kawalan muzik pada atas skrin kunci</string>
+    <string name="offlinedl_only_on_wifi_title">Muat turun melalui Wi-Fi sahaja</string>
+    <string name="offlinedl_only_on_wifi_summary">Muat turun muzik untuk ketersediaan di luar talian hanya melalui Wi-Fi</string>
+    <string name="cache_streamed_title">Cache muzik</string>
+    <string name="cache_streamed_summary">Simpan sementara muzik yang distrim</string>
+    <string name="download_queue_title">Baris menunggu muat turun</string>
+    <string name="download_queue_summary">Tunjukkan lagu yang sedang dimuat turun pada masa ini</string>
+    <string name="help_title">Bantuan</string>
+    <string name="show_no_downloads_title">Tiada baris gilir lagu untuk dimuat turun</string>
+    <string name="music_version_title">Versi Muzik</string>
+    <string name="music_version_summary">Versi tidak diketahui</string>
+    <string name="nowplaying_title">Sedang dimainkan</string>
+    <string name="artists_title">Artis</string>
+    <string name="albums_title">Album</string>
+    <string name="genres_title">Genre</string>
+    <string name="tracks_title">Lagu</string>
+    <string name="playlists_title">Senarai main</string>
+    <string name="recent_title">Baru-baru ini</string>
+    <string name="search_title">Cari</string>
+    <string name="no_tracks_title">Tiada lagu</string>
+    <string name="delete_playlist_menu">Padam</string>
+    <string name="edit_playlist_menu">Edit</string>
+    <string name="rename_playlist_menu">Namakan semula</string>
+    <string name="playlist_delete_confirmation">Adakah anda mahu memadamkan senarai main \"%s\"?</string>
+    <string name="delete_playlist_button_confirm">Padamkan</string>
+    <string name="playlist_deleted_message">Senarai main dipadamkan.</string>
+    <string name="playlist_created_message">Senarai main \"%s\" dibuat.</string>
+    <string name="playlist_renamed_message">Senarai main dinamakan semula sebagai \"%s\".</string>
+    <string name="recentlyadded">Terakhir ditambah</string>
+    <string name="recentlyadded_title">Terakhir ditambah</string>
+    <string name="all_songs_list">Semua lagu</string>
+    <string name="all_songs_list_title">Semua lagu</string>
+    <string name="storemusic_list">Percuma dan dibeli</string>
+    <string name="storemusic_list_title">Percuma dan dibeli</string>
+    <string name="freemusic_list">Lagu percuma</string>
+    <string name="freemusic_list_title">Lagu percuma</string>
+    <string name="thumbsup_list">Diterima</string>
+    <string name="thumbsup_list_title">Diterima</string>
+    <string name="unknown_artist_name">Artis tidak dikenali</string>
+    <string name="unknown_album_name">Album tidak diketahui</string>
+    <string name="unknown_playlist_name">Snarai main tdk diketahui</string>
+    <string name="shuffle_on_notif">Rombak dihidupkan.</string>
+    <string name="shuffle_off_notif">Rombak dimatikan.</string>
+    <string name="repeat_off_notif">Ulangan dimatikan.</string>
+    <string name="repeat_current_notif">Mengulangi lagu semasa.</string>
+    <string name="repeat_all_notif">Mengulangi semua lagu.</string>
+    <string name="ringtone_menu">Guna sbg dering</string>
+    <string name="ringtone_set">\"%s\" ditetapkan sebagai nada dering.</string>
+    <string name="ringtone_set_failed">Tidak dapat membuat nada dering.</string>
+    <string name="ringtone_needs_download">Nada dering akan ditetapkan apabila dimuat turun.</string>
+    <string name="play_selection">Main</string>
+    <string name="add_to_playlist">Tambah ke senarai main</string>
+    <string name="rename_playlist_menu_item">Namakan semula</string>
+    <string name="add_to_playlist_selector_title">Tambah ke senarai main</string>
+    <string name="queue">Senarai main semasa</string>
+    <string name="new_playlist_for_content">Senarai main baharu</string>
+    <string name="new_empty_playlist">Senarai main baru</string>
+    <string name="new_playlist_name_template">Senarai main %d</string>
+    <string name="removed_from_playlist">\"%1$s\" dialih keluar daripada senarai main.</string>
+    <string name="playlist_too_many_songs">Terlalu byk lagu. Had adalh %d setiap snri main.</string>
+    <string name="emptyplaylist">Senarai main pilihan kosong.</string>
+    <string name="playlist_edit_label">NAMA</string>
+    <string name="create_playlist_create_text">OK</string>
+    <string name="rename_playlist_rename_text">Namakan semula</string>
+    <string name="service_start_error_title">Masalah main semula</string>
+    <string name="service_start_error_msg">Tidak dapat memainkan lagu tersebut.</string>
+    <string name="service_start_error_button">OK</string>
+    <string name="weekpicker_set">Selesai</string>
+    <string name="weekpicker_title">Tetapkan masa</string>
+    <string name="musicbrowserlabel">Muzik Play</string>
+    <string name="musicshortcutlabel">Senarai main muzik</string>
+    <string name="mediaplaybacklabel">Muzik</string>
+    <string name="app_name">Muzik Google Play</string>
+    <string name="playback_failed">Tidak dapat memainkan trek yang anda minta.</string>
+    <string name="cancel">Batal</string>
+    <string name="remove_from_playlist">Alih keluar daripada senarai main</string>
+    <string name="streamloadingtext">Menyambung ke %s…</string>
+    <string name="search_hint">Cari muzik</string>
+    <string name="working_artists">Artis...</string>
+    <string name="working_albums">Album...</string>
+    <string name="loading">Memuatkan…</string>
+    <string name="sort_by_track">Runut</string>
+    <string name="music_picker_title">Pilih trek muzik</string>
+    <string name="fail_to_start_stream">Tidak dapat memainkan strim yang anda minta.</string>
+    <string name="search_settings_description">Artis, album dan lagu</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">Muzik</string>
+    <string name="music_library">Perpustakaan muzik</string>
+    <string name="playlist_label">Senarai main</string>
+    <string name="faux_art_all_songs_label">Semua lagu</string>
+    <string name="faux_art_playlist_label">Senarai main</string>
+    <string name="faux_art_playlist_instant_mix_label">Adunan segera</string>
+    <string name="faux_art_playlist_auto_playlist_label">Senarai main auto</string>
+    <string name="buffering">Menimbal...</string>
+    <string name="keep_on_phone">Tersedia di luar talian</string>
+    <string name="no_music_add_music_header">CARA UNTUK MENAMBAH MUZIK</string>
+    <string name="no_music_shop_body">Membeli-belah berjuta-juta lagu, termasuk beratus-ratus lagu percuma.</string>
+    <string name="no_music_shop_button">BELI-BELAH</string>
+    <string name="no_music_upload_body">Muat naik 20,000 lagu ke Google Play secara percuma.</string>
+    <string name="no_music_upload_button">KETAHUI LEBIH LANJUT</string>
+    <string name="no_music_usb_copy_body">Salin muzik ke telefon anda dengan kabel USB.</string>
+    <string name="no_music_usb_copy_button">KETAHUI LEBIH LANJUT</string>
+    <string name="no_music_heading">Perpustakaan muzik kosong</string>
+    <string name="no_music_setup_uploader_heading">Strim muzik anda secara wayarles.</string>
+    <string name="no_music_setup_uploader_body">Anda boleh menstrim koleksi muzik peribadi anda dengan Muzik Google Play.</string>
+    <string name="no_music_setup_usb_heading">Salin muzik ke peranti anda.</string>
+    <string name="no_music_setup_usb_body">Salin muzik ke telefon anda dengan kabel USB.</string>
+    <string name="no_local_music_heading">Tiada muzik luar talian</string>
+    <string name="no_local_music_body">"Anda berada dalam mod luar talian sahaja, jadi hanya muzik yang disimpan pada peranti anda yang dipaparkan.
+
+Untuk memilih muzik yang anda mahu simpan pada peranti anda, pilih "<b>Jadikan tersedia di luar talian</b>dari menu.</string>
+    <string name="no_music_learn_more">Ketahui lebih lanjut</string>
+    <string name="no_playlists_heading">Anda tidak mempunyai senarai main di perpustakaan anda.</string>
+    <string name="no_playlists_body">Anda boleh membuat senarai main dengan pergi ke paparan senarai Lagu dan menyentuh Tambah ke Senarai Main dari menu konteks lagu.</string>
+    <string name="no_music_syncing_heading">Muzik sedang disegerakkan.</string>
+    <string name="no_music_syncing_body">Muzik sedang disegerakkan dari pelayan dan akan muncul sebentar lagi.</string>
+    <string name="no_music_scanning_heading">Mengimbas muzik pada peranti.</string>
+    <string name="no_music_scanning_body">Peranti sedang diimbas untuk mencari muzik.</string>
+    <string name="sync_disabled">Anda perlu menyediakan penyegerakan sebelum muzik dapat muncul dari Muzik Google Play. Adakah anda mahu melakukannya sekarang?</string>
+    <string name="tutorial_welcome_heading">Selamat datang ke Muzik Google Play</string>
+    <string name="tutorial_select_account_heading">Pilih akaun</string>
+    <string name="tutorial_free_music_heading">Dapatkan muzik percuma</string>
+    <string name="tutorial_account_heading">Selamat datang</string>
+    <string name="tutorial_account_body">Anda dijemput ke Muzik Google Play. Anda boleh menggunakan pemain ini untuk terus mengakses ke lagu yang anda tambahkan ke Muzik Google Play dan muzik lain yang anda telah salin ke peranti Android anda.</string>
+    <string name="tutorial_account_list_header">Mulakan dengan memilih Akaun Google untuk memaut pemain ini ke Muzik Google Play:</string>
+    <string name="tutorial_done_heading">Nikmati</string>
+    <string name="tutorial_done_body">"Alat main Muzik kini dipautkan ke Akaun Google anda.
+
+Jika anda telah menambah koleksi muzik anda ke Muzik Google Play, koleksi itu akan mula muncul pada alat main ini.
+
+Jika anda masih perlu menambah muzik anda ke Muzik Google Play, mulakan dengan melawati laman web kami dari komputer anda:"</string>
+    <string name="tutorial_skip">Langkau</string>
+    <string name="tutorial_next">Seterusnya</string>
+    <string name="tutorial_done">Selesai</string>
+    <string name="tutorial_add_account">Tambah akaun</string>
+    <string name="tutorial_free_music">Dapatkan lagu percuma</string>
+    <string name="spinner_carousel">Terbaru</string>
+    <string name="spinner_album">Album</string>
+    <string name="spinner_artist">Artis</string>
+    <string name="spinner_songs">Lagu</string>
+    <string name="spinner_playlists">Senarai main</string>
+    <string name="spinner_genres">Genre</string>
+    <string name="sort_by_title">Isih mengikut A-Z</string>
+    <string name="sort_by_artist">Isih mengikut artis</string>
+    <string name="sort_by_album">Isih mengikut album</string>
+    <string name="sort_by_date">Isih mengikut tarikh yang ditambah</string>
+    <string name="more_by_artist">Lagi oleh artis</string>
+    <string name="make_available_offline">Jadikan tersedia luar talian</string>
+    <string name="search_web">Cari di web</string>
+    <string name="manage_done">Selesai</string>
+    <string name="too_many_items_title">Terlalu banyak item</string>
+    <string name="too_many_items_body">Tidak ada ruang yang mencukupi untuk menyimpan semua item yang anda pilih. Nyahpilih beberapa item untuk membuat ruang.</string>
+    <string name="save_manage_music_change_title">Perubahan yang tidak disimpan</string>
+    <string name="save_manage_music_change_body">Adakah anda ingin menjadikan muzik yang dipilih tersedia di luar talian?</string>
+    <string name="not_all_items_can_be_kept_body">Tidak ada ruang mencukupi untuk menyimpan semua item yang anda pilih. Bukan semua item ini akan dimuat turun.</string>
+    <string name="free_space_overfull">Storan penuh (melebihi %s)</string>
+    <string name="free_space">%s PERCUMA</string>
+    <string name="stream_error_no_space_available">Tiada ruang tersedia</string>
+    <string name="stream_error_only_on_wifi">Anda perlu berada pada rangkaian Wi-Fi untuk memainkan lagu ini.</string>
+    <string name="stream_error_no_connection">Anda perlu berada dalam talian untuk memainkan lagu ini.</string>
+    <string name="stream_error_unauthorized">Nama pengguna atau kata laluan salah.</string>
+    <string name="stream_error_another_stream_being_played">Muzik dijeda kerana anda sedang mendengar koleksi anda pada peranti lain.</string>
+    <string name="stream_error_rate_limit_reached">Muzik tidak tersedia buat sementara waktu. Pastikan anda sedang memainkan koleksi anda pada satu peranti pada satu masa.</string>
+    <string name="stream_error_device_not_authorized">Perpustakaan muzik anda boleh digunakan pada sehingga 10 peranti. Anda perlu menyahsahkan salah satu peranti anda sebelum menambahkan satu lagi.</string>
+    <string name="stream_error_learn_more">Ketahui lebih lanjut</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Muzik dijeda.</string>
+    <string name="stream_error_rate_limit_reached_short">Muzik tidak tersedia buat sementara waktu.</string>
+    <string name="stream_error_device_not_authorized_short">Terlalu banyak peranti digunakan dengan perpustakaan muzik.</string>
+    <string name="hide_now_playing_bar">Sembunyikan bar kini dimainkan</string>
+    <string name="show_now_playing_bar">Tunjukkan bar kini dimainkan</string>
+    <string name="show_options">Tunjukkan pilihan</string>
+    <string name="hide_options">Sembunyikan pilihan</string>
+    <string name="all_songs_in_genre">"Semua lagu dari genre
+ %s"</string>
+    <string name="preview_header">Dikongsi di Google+</string>
+    <string name="shared_playback_full">MAIN PENUH PERCUMA</string>
+    <string name="shared_playback_partial">SAMPEL</string>
+    <string name="btn_buy">Beli</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Menjadikan muzik tersedia di luar talian...</string>
+    <string name="notification_downloading_when_on_wifi">Lagu yang ditandakan sebagai di luar talian akan dimuatkan selepas anda bersambung ke rangkaian Wi-Fi.</string>
+    <string name="notification_downloading_excessive_errors">Tidak boleh memuat turun lagu sekarang. Periksa sambungan Internet anda.</string>
+    <string name="notification_downloading_done">Lagu pilihan kini tersedia di luar talian.</string>
+    <string name="notification_ticker_ringtone_set">Nada dering ditetapkan pada \"%s\".</string>
+    <string name="notification_title_ringtone_set">Nada dering ditetapkan pada \"%s\"</string>
+    <string name="notification_content_ringtone_set">Sentuh untuk mengedit nada dering ini.</string>
+    <string name="notification_ticker_ringtone_set_failed">Tidak dapat membuat nada dering.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_songcount">%d lagu baharu</string>
+    <string name="notification_newsongs_subtitle">Ditambahkan pada Muzik Google Play</string>
+    <string name="carousel_label_shuffle_all">Rombak semua</string>
+    <string name="song_label">LAGU</string>
+    <string name="artist_label">ARTIS</string>
+    <string name="album_label">ALBUM</string>
+    <string name="effectspanel">Kesan bunyi</string>
+    <string name="menu_make_instant_mix">Buat adunan segera</string>
+    <string name="instant_mix_default_name">Adunan %s</string>
+    <string name="creating_instant_mix">"Menambah adunan segera
+ke senarai main."</string>
+    <string name="creating_instant_mix_with_seed">"Menambah adunan segera
+ke senarai main, berdasarkan 
+%s."</string>
+    <string name="create_instant_mix_failed">Tidak dapat membuat adunan segera. Cuba lagi.</string>
+    <string name="create_instant_mix_failed_insufficient_results">Tiada lagu sama dalam koleksi anda yang mencukupi untuk membuat adunan segera daripada \"%s.\" Cuba buat adunan segera dari lagu yang lain.</string>
+    <string name="create_instant_mix_sync_timeout">"Adunan segera telah
+dibuat dan akan muncul dalam
+senarai main anda sebentar lagi."</string>
+    <string name="create_instant_mix_btn_ok">OK</string>
+    <string name="delete">Padam</string>
+    <string name="confirm_delete_local_only">Adakah anda mahu memadamkan \"%s\"?</string>
+    <string name="confirm_delete_has_remote">\"%s\" telah dimuat sisi dan dimuat naik ke Muzik Google Play. Hanya item yang dimuat sisi akan dipadamkan. Adakah anda pasti ingin memadamkannya?</string>
+    <string name="waiting_share">Berkongsi %s</string>
+    <string name="share">Kongsi</string>
+    <string name="share_failure">Berlaku masalah berkongsi muzik anda.</string>
+    <string name="share_google_plus_footer">Perkongsian membolehkan main penuh percuma untuk mereka dalam kalangan anda</string>
+    <string name="accessibility_play">Main</string>
+    <string name="accessibility_pause">Jeda</string>
+    <string name="accessibility_stop">Henti</string>
+    <string name="accessibility_next">Seterusnya</string>
+    <string name="accessibility_prev">Sebelumnya</string>
+    <string name="accessibility_shuffle">Rombak</string>
+    <string name="accessibility_repeat">Ulang</string>
+    <string name="accessibility_thumbsUp">Diterima</string>
+    <string name="accessibility_thumbsDown">Tidak diterima</string>
+    <string name="accessibility_star1">Satu bintang</string>
+    <string name="accessibility_star2">Dua bintang</string>
+    <string name="accessibility_star3">Tiga bintang</string>
+    <string name="accessibility_star4">Empat bintang</string>
+    <string name="accessibility_star5">Lima bintang</string>
+    <string name="accessibility_contractor">Kembangkan maklumat lagu</string>
+    <string name="accessibility_back">Kembali</string>
+    <string name="accessibility_contextMenu">Menu lagu</string>
+    <string name="accessibility_home">Laman utama muzik</string>
+    <string name="accessibility_search">Carian</string>
+    <string name="accessibility_search_cancel">Batalkan carian semasa</string>
+    <string name="accessibility_current">Lagu semasa</string>
+    <string name="accessibility_createnewplaylist">Buat senarai main baru</string>
+    <string name="accessibility_menu">Menu</string>
+    <string name="accessibility_shop">Membeli-belah muzik</string>
+    <string name="ringtone_replace_alert_button">Ganti</string>
+    <string name="ringtone_replace_alert_title">Ganti nada dering?</string>
+    <string name="ringtone_replace_alert_message">Nada dering dengan nama ini sudah wujud. Adakah anda ingin menggantikannya?</string>
+    <string name="legal_information">Maklumat undang-undang</string>
+    <string name="license_title">Lesen sumber terbuka</string>
+    <string name="license_error">Tidak dapat memuatkan lesen.</string>
+    <string name="market_wrong_account" formatted="false">"Muzik yang anda cuba mainkan telah dibeli dengan akaun %s
+
+Anda sedang dilog masuk ke Muzik Google Play dengan akaun%s
+
+Untuk mendengar pembelian anda, tukar akaun dahulu."</string>
+    <string name="gplus_wrong_account" formatted="false">"Muzik yang cuba anda mainkan telah dikongsi dengan akaun %s
+
+ Anda sedang dilog masuk ke Muzik Google Play dengan akaun %s
+
+Untuk mendengar muzik perkongsian anda, mula-mula tukar akaun."</string>
+    <string name="switch_account_button">Tukar akaun</string>
+    <string name="retry_button">Cuba lagi</string>
+    <string name="wait_for_item">Menunggu muzik disegerakkan</string>
+    <string name="wait_for_item_failure">Terdapat masalah memuatkan muzik anda.</string>
+    <string name="ringtone_title">Dengar semula nada dering</string>
+    <string name="edit_ringtone">Edit nada dering</string>
+    <string name="ringtone_done">SELESAI</string>
+    <string name="set_ringtone_title">Guna sebagai nada dering</string>
+    <string name="set_ringtone_message">Tetapkan sebagai nada dering.</string>
+    <string name="start_edit_ringtone">Edit nada dering</string>
+    <string name="ringtone_file_edited_name">Klip %1$s</string>
+    <string name="progress_dialog_saving">Menyimpan…</string>
+    <string name="start_handle">Pemegang mula</string>
+    <string name="resize_handle">Pemegang saiz semula</string>
+    <string name="menu_reset">Tetapkan semula</string>
+    <string name="save_success_message">%1$s disimpan sebagai nada dering lalai.</string>
+    <string name="save_failure_message">Maaf, %1$s gagal disimpan sebagai nada dering.</string>
+    <string name="play_error">Tidak boleh memainkan fail media ini.</string>
+    <string name="write_error">Tidak dapat menulis kepada fail.</string>
+    <string name="read_error">Tidak dapat membaca fail.</string>
+    <string name="no_space_error">Tiada ruang mencukupi pada kad SD anda untuk menyimpan fail ini.</string>
+    <string name="bad_extension_error">Tidak boleh mengedit fail jenis ini.</string>
+    <string name="no_extension_error">Tidak boleh mengedit fail yang tidak mempunyai lanjutan .mp3 atau .wav.</string>
+    <string name="alert_title_success">Berjaya</string>
+    <string name="alert_title_failure">Ralat</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="store_tutorial_title">Beli dan main serta-merta</string>
+    <string name="store_tutorial_instruction">Untuk melawati kedai, ketik ikon beg beli-belah</string>
+</resources>

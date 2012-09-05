@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="phrasespotter_SEARCH_GRAMMAR_RES_NAME">ko_hi_galaxy_cg_2_5</string>
+    <string name="phrasespotter_ACOUSTIC_MODEL_RES_NAME">nn_ko_mfcc_16k_15_big_250_v2_1_raw</string>
+    <string name="phrasespotter_PHRASESPOT_BEAM">20</string>
+    <string name="phrasespotter_PHRASESPOT_ABSBEAM">40</string>
+    <string name="phrasespotter_PHRASESPOT_AOFFSET">0</string>
+    <string name="phrasespotter_PHRASESPOT_DELAY">100</string>
+    <string name="util_WEB_SEARCH_URL_BAIDU_DEFAULT">http://www.baidu.com/s?wd={query}</string>
+    <string name="util_WEB_SEARCH_URL_BAIDU_HOME_DEFAULT">http://www.baidu.com</string>
+    <string name="util_WEB_SEARCH_URL_BING_DEFAULT">http://m.bing.com/search/search.aspx?q={query}&amp;go=&amp;d=&amp;dl=&amp;a=results&amp;MID=10006&amp;asq=&amp;asems</string>
+    <string name="util_WEB_SEARCH_URL_BING_HOME_DEFAULT">http://www.bing.com</string>
+    <string name="util_WEB_SEARCH_URL_DEFAULT">http://www.google.com/m?cx=partner-pub-5324388728707269:o6qccq-17aj&amp;q={query}</string>
+    <string name="util_WEB_SEARCH_URL_DEFAULT_CN">http://www.baidu.com/s?wd={query}</string>
+    <string name="util_WEB_SEARCH_URL_GOOGLE_DEFAULT">http://www.google.com/m?cx=partner-pub-5324388728707269:o6qccq-17aj&amp;q={query}</string>
+    <string name="util_WEB_SEARCH_URL_GOOGLE_HOME_DEFAULT">http://www.google.com/m?cx=partner-pub-5324388728707269:o6qccq-17aj</string>
+    <string name="util_WEB_SEARCH_URL_HOME_DEFAULT">http://www.google.com/m?cx=partner-pub-5324388728707269:o6qccq-17aj</string>
+    <string name="util_WEB_SEARCH_URL_HOME_DEFAULT_CN">http://www.baidu.com</string>
+    <string name="util_WEB_SEARCH_URL_YAHOO_DEFAULT">http://search.yahoo.com/mobile/s?submit=oneSearch&amp;.tsrc=vlingo&amp;.sep=fp&amp;cat=&amp;subcat=&amp;p={query}</string>
+    <string name="util_WEB_SEARCH_URL_YAHOO_HOME_DEFAULT">http://www.yahoo.com</string>
+    <string name="back">뒤로</string>
+    <string name="call">통화</string>
+    <string name="call_and_string">통화%1$s</string>
+    <string name="call_joe">통화 홍길동</string>
+    <string name="cancel">취소</string>
+    <string name="cancel_uc">취소</string>
+    <string name="car_dial">통화 </string>
+    <string name="car_exit">종료</string>
+    <string name="car_home_reco_button_text_ex">문자 홍길동 메시지 잘 지내지?</string>
+    <string name="car_item_sms_message_send">보내기</string>
+    <string name="car_item_tts_tester_cancel">취소</string>
+    <string name="car_iux_ex1">&lt;font color=#9fd5f7>통화&lt;/font> 홍길동 &lt;font color=#9fd5f7>휴대폰&lt;/font></string>
+    <string name="car_iux_ex2">&lt;font color=#d0d0d0>문자&lt;/font> 홍길동 &lt;font color=#d0d0d0>메시지&lt;/font> 안녕</string>
+    <string name="car_iux_ex3">&lt;font color=#d0d0d0>네비게이트&lt;/font> 잠실 올림픽경기장</string>
+    <string name="car_iux_ex4">&lt;font color=#d0d0d0>회신&lt;/font> 홍길동</string>
+    <string name="car_iux_ex5">&lt;font color=#9fd5f7>일정 확인&lt;/font></string>
+    <string name="car_iux_ex6">\"&lt;font color=#9fd5f7>뮤직 실행&lt;/font>\"</string>
+    <string name="car_iux_ex7">&lt;font color=#d0d0d0>새 메모&lt;/font> &lt;font color=#d0d0d0>우유 사기.&lt;/font></string>
+    <string name="car_iux_item_spotter_you_can_say">운전 중 음성대화를 자동으로 실행하기 위해서는 &lt;font color=#8fc6ff>하이 갤럭시&lt;/font> 라고 말하세요.</string>
+    <string name="car_memo_empty">메모 없음</string>
+    <string name="car_memo_is_empty">메모 없음.</string>
+    <string name="car_memo_memo_colon">메모:</string>
+    <string name="car_memo_save_confirm">. 메모 저장, 취소, 또는 메시지 다시 말하기 라고 말하기</string>
+    <string name="car_memo_speak_memo">메모를 말하세요</string>
+    <string name="car_memo_update_confirm">. 메모 저장, 취소 또는 메시지 말하기.</string>
+    <string name="car_msg_social_update">SNS 업데이트....</string>
+    <string name="car_nav_open_maps">지도 열기</string>
+    <string name="car_nav_open_nav">내비게이션 열기</string>
+    <string name="car_safereader_shownprompt">안전 읽기 문자 또는 회신</string>
+    <string name="car_sms_error_help_tts">운전 모드: 문자 혹은 회신</string>
+    <string name="car_sms_error_sending">문자를 보내는 와중에 무슨 일이 생겼습니다.</string>
+    <string name="car_sms_send_cancel_repeat_tts">. 보내기 라고 말하기, 취소, 메시지 다시 말하기</string>
+    <string name="car_sms_send_cancel_speak_tts">. 보내기 라고 말하기, 취소, 메시지 다시 말하기.</string>
+    <string name="car_sms_text_command">메시지</string>
+    <string name="car_sms_text_who">누구에게 메시지를 보내시겠어요?</string>
+    <string name="car_sr_shown_prompt">회신, 통화, 취소, 소리내어 말하기 라고 말하기.</string>
+    <string name="car_tts_HOME_PROMPT_DEMAND_FIRST_TIME">하고 싶은 것 말하기, 다시 시작하기 위해 취소 라고 말할 수 있음.</string>
+    <string name="car_tts_KEYWORD_SPOT_ON_DEMAND">음성 대화 자동실행 켜기. 운전 중 음성대화를 자동으로 실행하기 위해서는 하이 갤럭시 라고 말하세요.</string>
+    <string name="car_tts_MEMO_NEW_MEMO">새 메모</string>
+    <string name="car_tts_MEMO_SAVED">메모 저장</string>
+    <string name="car_tts_MESSAGE_NEXT_REPLY">다음, 회신, 통화 또는 취소 라고 말하기.</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_CMD_READ">소리내어 읽기, 통화, 또는 취소 라고 말하기.</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_CMD_REPLY">말하기, 회신, 통화 또는 취소 .</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_CMD_REPLY_OR_READ">회신, 통화, 취소, 읽기 라고 말하기.</string>
+    <string name="car_tts_SAFEREADER_OFF">운전 모드 끄기.</string>
+    <string name="car_tts_SAFEREADER_ON">운전 모드. 새로운 안내문이 읽어짐.</string>
+    <string name="car_tts_SMS_SEND_CONFIRM_DEMAND">메시지 보냅니다</string>
+    <string name="car_tts_SMS_SEND_TO_CONFIRM_DEMAND">%1$s님에게 메시지 보냅니다</string>
+    <string name="car_tts_VD_SMS_SEND_TYPE_CONFIRM_DEMAND">%1$s님 %2$s 으로 메시지 보냅니다</string>
+    <string name="car_tts_SMS_SEND_ERROR_DEMAND">메시지 보내기 에러 .</string>
+    <string name="car_tts_SMS_SENDING_CONFIRM_DEMAND">메시지 보내기…</string>
+    <string name="car_tts_SMS_SENT_CONFIRM_DEMAND">발송된 메시지.</string>
+    <string name="car_tts_social_update">SNS 업데이트.</string>
+    <string name="car_tts_VD_CALL">통화</string>
+    <string name="car_tts_who_would_you_like_to_call">누구와 통화하시겠어요?</string>
+    <string name="car_vvs_handlers_no_contact_tts">회신 하고자 하는 통화처를 찾지 못하였습니다. 다시 시도해 주십시오 그리고 통화처를 말씀하여 주십시오.</string>
+    <string name="contact_top_choice_detail_item_call_mobile">통화 휴대폰</string>
+    <string name="dial_hint1">&lt;font color=#85bee0>통화&lt;/font> 홍길동 &lt;font color=#85bee0>휴대폰&lt;/font></string>
+    <string name="dial_hint2">&lt;font color=#85bee0>통화&lt;/font> 홍길동 &lt;font color=#85bee0>휴대폰&lt;/font></string>
+    <string name="dial_hint3">&lt;font color=#85bee0>통화&lt;/font> 홍길동 &lt;font color=#85bee0>회사&lt;/font></string>
+    <string name="dial_hint4">&lt;font color=#85bee0>통화&lt;/font> 홍길동</string>
+    <string name="dial_hint5">&lt;font color=#85bee0>통화&lt;/font> 홍길동 &lt;font color=#85bee0>휴대폰&lt;/font></string>
+    <string name="dial_hint6">&lt;font color=#85bee0>통화&lt;/font> 홍길동 &lt;font color=#85bee0>휴대폰&lt;/font></string>
+    <string name="driving_mode">운전 모드</string>
+    <string name="driving_mode_newline">운전 모드</string>
+    <string name="email_hint1">&lt;font color=#85bee0>이메일&lt;/font> 홍길동 &lt;font color=#85bee0>주제&lt;/font> 길 잃다 &lt;font color=#85bee0>메시지&lt;/font> 회의 시간에 늦을것 같습니다.</string>
+    <string name="email_hint2">&lt;font color=#85bee0>이메일&lt;/font> 홍길동 &lt;font color=#85bee0>주제&lt;/font> 이번 주말 &lt;font color=#85bee0>메시지&lt;/font> 나는 서울에 있을거야, 넌?</string>
+    <string name="email_hint3">&lt;font color=#85bee0>이메일&lt;/font> 홍길동 &lt;font color=#85bee0>주제&lt;/font> 그 비트좀 더 보내줘. 나 더 필요해!</string>
+    <string name="email_hint4">&lt;font color=#85bee0>이메일&lt;/font> 홍길동 &lt;font color=#85bee0>주제&lt;/font> 오늘 명동에서 만나는거야?</string>
+    <string name="email_hint5">&lt;font color=#85bee0>이메일&lt;/font> 홍길동 &lt;font color=#85bee0>주제&lt;/font> 이렇게 하는거야</string>
+    <string name="email_hint6">&lt;font color=#85bee0>이메일&lt;/font> 홍길동 &lt;font color=#85bee0>주제&lt;/font> 맥주 &lt;font color=#85bee0>메시지&lt;/font> 회의 끝나고 맥주나 한잔 하러가자!</string>
+    <string name="help_using_vlingo_secrets_auto_or_manual">문법의 구두점은 자동으로 삽입되지만 직접 구두점을 언급할 수도 있습니다. 예를들어, \"안녕 물음표\" 라고 말할 경우 시스템은 \"안녕?\" 으로 인식할 겁니다.</string>
+    <string name="help_using_vlingo_with_safereader">운전모드 사용</string>
+    <string name="help_wcis_alarm">알람</string>
+    <string name="help_wcis_alarm_sub1">\"&lt;font color=#85bee0>알람 설정&lt;/font> 지금부터 30분 후\"</string>
+    <string name="help_wcis_contact_sub1">\"&lt;font color=#85bee0>통화하기&lt;/font> 홍길동\"</string>
+    <string name="help_wcis_dial_sub1">\"&lt;font color=#76acdf>통화&lt;/font> 홍길동 &lt;font color=#76acdf>휴대폰&lt;/font>\"</string>
+    <string name="help_wcis_driving_mode">운전 모드</string>
+    <string name="help_wcis_driving_mode_sub1">\"&lt;font color=#85bee0>운전 모드&lt;/font> 켜기/끄기\"</string>
+    <string name="help_wcis_email_sub1">\"&lt;font color=#76acdf>이메일&lt;/font> 홍길동 &lt;font color=#76acdf>제목&lt;/font> 미팅 &lt;font color=#76acdf>내용&lt;/font> 내일 오후 2시입니다.\"</string>
+    <string name="help_wcis_go_website">웹사이트 실행</string>
+    <string name="help_wcis_go_website_sub1">\"Google &lt;font color=#85bee0>가기&lt;/font>\"</string>
+    <string name="help_wcis_go_website_sub1_china">\"바이두 &lt;font color=#85bee0>가기&lt;/font>\"</string>
+    <string name="help_wcis_local_search_sub1">\"&lt;font color=#76acdf>찾기&lt;/font> 서대문구 대현동 카페\"</string>
+    <string name="help_wcis_maps_sub1">\"&lt;font color=#76acdf>길 찾기&lt;/font> 서울역\"&lt;br/> \"&lt;font color=#76acdf>위치찾기&lt;/font> 서울역\"</string>
+    <string name="help_wcis_social_sub1">\"&lt;font color=#76acdf>Twitter 업데이트&lt;/font> 오늘도 힘든 하루였어\"</string>
+    <string name="help_wcis_memo">메모</string>
+    <string name="help_wcis_memo_sub1">\"&lt;font color=#76acdf>메모&lt;/font> 일정 확인\"</string>
+    <string name="help_wcis_music">뮤직</string>
+    <string name="help_wcis_music_sub1">\"&lt;font color=#86bcef>뮤직 실행&lt;/font>\"</string>
+    <string name="help_wcis_nav">위치 찾기</string>
+    <string name="help_wcis_nav_sub1">\"&lt;font color=#85bee0>위치 찾기&lt;/font> 서울역\"</string>
+    <string name="help_wcis_open_apps_sub1">\"음악 &lt;font color=#85bee0>열기&lt;/font>\"</string>
+    <string name="help_wcis_recordvoice">음성 녹음</string>
+    <string name="help_wcis_recordvoice_sub1">\"&lt;font color=#85bee0>열기 음성 녹음&lt;/font>\"</string>
+    <string name="help_wcis_schedule_sub1">\"&lt;font color=#85bee0>일정 확인&lt;/font>\"</string>
+    <string name="help_wcis_search_sub1">\"&lt;font color=#76acdf>검색&lt;/font> 내일의 날씨\"</string>
+    <string name="help_wcis_superdialer_sub1">\"&lt;font color=#76acdf>통화&lt;/font> 홍길동 &lt;font color=#76acdf>휴대폰&lt;/font>\"&lt;br/>\"&lt;font color=#76acdf>통화&lt;/font>택시&lt;/font>\"</string>
+    <string name="help_wcis_text_message_sub1">\"&lt;font color=#76acdf>메시지 보내기&lt;/font> 홍길동 &lt;font color=#76acdf>메시지&lt;/font> 안녕하세요\"</string>
+    <string name="help_wcis_text_message_sub2">\"&lt;font color=#76acdf>회신&lt;/font> 마지막 메시지\"</string>
+    <string name="hint_call1">통화 홍길동</string>
+    <string name="hint_call2">통화 홍길동</string>
+    <string name="hint_call3">통화 홍길동 휴대폰</string>
+    <string name="hint_call4">통화 홍길동 집</string>
+    <string name="hint_call5">$통화; 홍길동</string>
+    <string name="hint_nav1">네비게이트 집</string>
+    <string name="hint_nav2">네비게이트 광화문 사거리</string>
+    <string name="hint_nav3">네비게이트 핏자헛</string>
+    <string name="hint_nav4">위치 찾기 압구정동 현대백화점</string>
+    <string name="hint_nav5">네비게이트 일산 호수공원</string>
+    <string name="hint_reply1">회신 홍길동</string>
+    <string name="hint_reply2">회신 홍길동</string>
+    <string name="hint_reply3">회신 홍길동 메시지 듣기 좋다</string>
+    <string name="hint_text1">문자 홍길동 메시지 5시에 술한잔 어때?</string>
+    <string name="hint_text2">문자 홍길동 메시지 버터가 아니라니 믿을수없어</string>
+    <string name="hint_text3">문자 홍길동 메시지 어떻게 지내?</string>
+    <string name="hint_text4">문자 홍길동 메시지 잘했어!</string>
+    <string name="hint_text5">문자 홍길동 메시지 뭐해?</string>
+    <string name="hint_xml_call1">&lt;font color=#9fd5f7>통화&lt;/font> 홍길동</string>
+    <string name="hint_xml_call2">&lt;font color=#9fd5f7>통화&lt;/font> 홍길동</string>
+    <string name="hint_xml_call3">&lt;font color=#9fd5f7>통화&lt;/font> 홍길동 &lt;font color=#9fd5f7>휴대폰&lt;/font></string>
+    <string name="hint_xml_call4">&lt;font color=#9fd5f7>통화&lt;/font> 홍길동</string>
+    <string name="hint_xml_call5">&lt;font color=#9fd5f7>통화&lt;/font> 홍길동</string>
+    <string name="hint_xml_nav1">&lt;font color=#9fd5f7>네비게이트&lt;/font> 집</string>
+    <string name="hint_xml_nav2">&lt;font color=#9fd5f7>네비게이트&lt;/font> 광화문 사거리</string>
+    <string name="hint_xml_nav3">&lt;font color=#9fd5f7>네비게이트&lt;/font> 핏자헛</string>
+    <string name="hint_xml_nav4">&lt;font color=#9fd5f7>위치 찾기&lt;/font> 압구정동 현대백화점</string>
+    <string name="hint_xml_nav5">&lt;font color=#9fd5f7>네비게이트&lt;/font> 일산 호수공원</string>
+    <string name="hint_xml_reply1">&lt;font color=#9fd5f7>회신&lt;/font> 홍길동</string>
+    <string name="hint_xml_reply2">&lt;font color=#9fd5f7>회신&lt;/font> 홍길동</string>
+    <string name="hint_xml_reply3">&lt;font color=#9fd5f7>회신&lt;/font> 홍길동 &lt;font color=#9fd5f7>메시지&lt;/font> 듣기 좋다</string>
+    <string name="hint_xml_text1">&lt;font color=#9fd5f7>문자&lt;/font> 홍길동 &lt;font color=#9fd5f7>메시지&lt;/font> 5시에 술한잔 어때?</string>
+    <string name="hint_xml_text2">&lt;font color=#9fd5f7>문자&lt;/font> 홍길동 &lt;font color=#9fd5f7>메시지&lt;/font> 버터가 아니라니 믿을수없어</string>
+    <string name="hint_xml_text3">&lt;font color=#9fd5f7>문자&lt;/font> 홍길동 &lt;font color=#9fd5f7>메시지&lt;/font> 뭐해?</string>
+    <string name="hint_xml_text4">&lt;font color=#9fd5f7>문자&lt;/font> 홍길동 &lt;font color=#9fd5f7>메시지&lt;/font> 잘했어!</string>
+    <string name="hint_xml_text5">&lt;font color=#9fd5f7>문자&lt;/font> 홍길동 &lt;font color=#9fd5f7>메시지&lt;/font> 뭐해?</string>
+    <string name="home">집</string>
+    <string name="home_safereader_info">운전모드가 새 문자와 이메일을 읽고 있습니다</string>
+    <string name="iux_welcome_exit">종료</string>
+    <string name="label_next_key">다음</string>
+    <string name="label_send_key">보내기</string>
+    <string name="map_hint1">&lt;font color=#85bee0>찾기&lt;/font> 부산 해운대 횟집</string>
+    <string name="map_hint10">&lt;font color=#85bee0>찾기&lt;/font> 해운대에 있는 횟집</string>
+    <string name="map_hint11">&lt;font color=#85bee0>찾기&lt;/font> 서대문구 신촌동 134</string>
+    <string name="map_hint2">&lt;font color=#85bee0>찾기&lt;/font>서울 민들레영토 카페</string>
+    <string name="map_hint3">&lt;font color=#85bee0>찾기&lt;/font> 설렁탕집</string>
+    <string name="map_hint4">&lt;font color=#85bee0>찾기&lt;/font> 강남구 세차장</string>
+    <string name="map_hint5">&lt;font color=#85bee0>찾기&lt;/font> 서울시 홍대 버거킹</string>
+    <string name="map_hint6">&lt;font color=#85bee0>찾기&lt;/font> 대학로 커피숍</string>
+    <string name="map_hint7">&lt;font color=#85bee0>찾기&lt;/font> 광주 맛집</string>
+    <string name="map_hint8">&lt;font color=#85bee0>찾기&lt;/font> 서울 자전거 대여</string>
+    <string name="map_hint9">&lt;font color=#85bee0>찾기&lt;/font> 서울에 있는 워터파크</string>
+    <string name="memo">메모</string>
+    <string name="memo_layout_save_button">메모 저장</string>
+    <string name="message">메시지</string>
+    <string name="message_btn">메시지</string>
+    <string name="mobile">휴대폰</string>
+    <string name="music">뮤직</string>
+    <string name="navigate">위치 찾기</string>
+    <string name="next">다음</string>
+    <string name="no_number_found_to_redial">재통화를 위한 번호 못찾았음</string>
+    <string name="notify_safereader_on">운전 모드 켜져있음</string>
+    <string name="play_music">뮤직</string>
+    <string name="progress_screen_button_cancel">취소</string>
+    <string name="prompt_dial_ex1">&lt;font color=#85bee0>통화&lt;/font> 홍길동</string>
+    <string name="prompt_dial_ex2">&lt;font color=#85bee0>통화&lt;/font> 홍길동 &lt;font color=#85bee0>휴대폰&lt;/font></string>
+    <string name="prompt_dial_ex3">&lt;font color=#85bee0>통화&lt;/font> 홍길동 &lt;font color=#85bee0>회사&lt;/font></string>
+    <string name="prompt_generic_hintset_first_1">&lt;font color=#85bee0>통화&lt;/font> 홍길동 &lt;font color=#85bee0>휴대폰&lt;/font></string>
+    <string name="prompt_generic_hintset_first_2">&lt;font color=#85bee0>통화&lt;/font> 홍길동 &lt;font color=#85bee0>회사&lt;/font></string>
+    <string name="prompt_generic_hintset_first_3">&lt;font color=#85bee0>통화&lt;/font> 홍길동</string>
+    <string name="prompt_generic_hintset_second_1">&lt;font color=#85bee0>메시지 보내기&lt;/font> 홍길동</string>
+    <string name="prompt_generic_hintset_second_2">&lt;font color=#85bee0>메시지 보내기&lt;/font> 홍길동 &lt;font color=#85bee0>메시지&lt;/font> 잘 지내?</string>
+    <string name="prompt_generic_hintset_second_3">&lt;font color=#85bee0>지도&lt;/font> 서울시 인사동</string>
+    <string name="prompt_generic_hintset_second_4">&lt;font color=#85bee0>길 찾기&lt;/font> 서울역</string>
+    <string name="prompt_generic_hintset_second_5">&lt;font color=#85bee0>위치 찾기&lt;/font> 서울역</string>
+    <string name="prompt_generic_hintset_third_1">&lt;font color=#85bee0>뮤직 실행&lt;/font></string>
+    <string name="prompt_generic_hintset_third_2">&lt;font color=#85bee0>일정 확인&lt;/font></string>
+    <string name="prompt_generic_hintset_third_3">&lt;font color=#85bee0>운전모드 켜기/끄기&lt;/font></string>
+    <string name="prompt_generic_hintset_third_4">&lt;font color=#85bee0>메모&lt;/font> 일정 확인</string>
+    <string name="prompt_generic_hintset_third_5">&lt;font color=#85bee0>메모&lt;/font> 우유 사기</string>
+    <string name="prompt_memo_ex2">&lt;font color=#85bee0>메모&lt;/font> 일정 확인</string>
+    <string name="prompt_memo_ex3">&lt;font color=#85bee0>메모&lt;/font> 우유 사기</string>
+    <string name="prompt_nav_ex1">&lt;font color=#85bee0>지도&lt;/font> 서울</string>
+    <string name="prompt_nav_ex2">&lt;font color=#85bee0>길 찾기&lt;/font> 서울역</string>
+    <string name="prompt_nav_ex3">&lt;font color=#85bee0>위치 찾기&lt;/font> 서울역</string>
+    <string name="prompt_sms_ex2">&lt;font color=#85bee0>메시지 보내기&lt;/font> 홍길동</string>
+    <string name="prompt_sms_ex3">&lt;font color=#85bee0>메시지 보내기&lt;/font> 홍길동 &lt;font color=#85bee0>메시지&lt;/font> 안녕하세요</string>
+    <string name="read_out_btn">소리내어 읽기</string>
+    <string name="reply">회신</string>
+    <string name="safe_reader_default_error">운전모드가 고객의 언어로 지원되지 않고 있습니다.</string>
+    <string name="safereader">운전 모드</string>
+    <string name="safereader_enabled">운전 모드 켜져있음</string>
+    <string name="safereader_notif_reading_ticker">운전모드 말하기: 다음으로 이동하려면 클릭하세요</string>
+    <string name="safereader_options">운전모드 옵션</string>
+    <string name="safereader_paused">운전모드 정지</string>
+    <string name="safereader_reading_email_from">\" \"로부터 온 이메일 읽기</string>
+    <string name="safereader_reading_text_from">\" \"로부터 온 문자 읽기</string>
+    <string name="say_command">다음, 또는 취소 라고 말하기.</string>
+    <string name="search_hint10">&lt;font color=#85bee0>검색&lt;/font> 시지브이 영화</string>
+    <string name="search_hint11">&lt;font color=#85bee0>검색&lt;/font> 청주 결혼식장</string>
+    <string name="search_hint12">&lt;font color=#85bee0>검색&lt;/font> 데이팅 사이트</string>
+    <string name="search_hint13">&lt;font color=#85bee0>검색&lt;/font> 바나나 그림들</string>
+    <string name="search_hint5">&lt;font color=#85bee0>Google&lt;/font> 원숭이의 습관</string>
+    <string name="search_hint6">&lt;font color=#85bee0>Google&lt;/font> 자갈치 시장</string>
+    <string name="search_hint7">&lt;font color=#85bee0>Google&lt;/font> 겨울 음악 콘서트의 날짜</string>
+    <string name="search_hint8">&lt;font color=#85bee0>Google&lt;/font> 김치 만드는 법</string>
+    <string name="search_hint9">&lt;font color=#85bee0>검색&lt;/font> 비즈공예</string>
+    <string name="send">보내기</string>
+    <string name="settings_incar_prompt_after_summary">새로 들어온 메시지를 읽은후 읽기, 회신 아니면 통화 명령조로 실행</string>
+    <string name="settings_incar_speakshow_msgbodies_summary">운전모드가 켜져있을 경우 새 메시지가 왔을때 메시지 보여주기</string>
+    <string name="settings_incar_SRstart_summary">음성 대화가 실행될 경우 운전모드도 켜짐</string>
+    <string name="settings_incar_SRstart_title">자동 시작 운전 모드</string>
+    <string name="settings_incar_wakeup_summary">"음성 대화를 실행하려면 '하이 갤럭시'라고 말씀하세요. 주의) 배터리 소모량이 증가될 수 있습니다"</string>
+    <string name="settings_need_email_account">운전모드 이메일 읽기를 실행하기 위하여 새 이메일 계좌를 임력해주세요.</string>
+    <string name="sms_hint1">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font> 언제 매그넘을 떨어트릴거야?</string>
+    <string name="sms_hint10">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font> 오늘 축구게임 있어?</string>
+    <string name="sms_hint11">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font>오늘 저녁에 갈거야?</string>
+    <string name="sms_hint12">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font> 그래 그렇게 하자</string>
+    <string name="sms_hint13">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font> 새 콘도를 사신걸 축하합니다!</string>
+    <string name="sms_hint14">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font> 그렇게 하도록 해!</string>
+    <string name="sms_hint15">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font> 바르셀로나는 어때?</string>
+    <string name="sms_hint2">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0>메시지&lt;/font> 오늘 체육관에 갈거야?</string>
+    <string name="sms_hint3">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font> 어디 있었어?</string>
+    <string name="sms_hint4">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0>메시지&lt;/font> 성주야 어떻게 지내?</string>
+    <string name="sms_hint5">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font> 조금 늦어요. 곧 봐요!</string>
+    <string name="sms_hint6">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0>메시지&lt;/font> 오늘 만나요.</string>
+    <string name="sms_hint7">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font> 너 왜이렇게 귀엽니?</string>
+    <string name="sms_hint8">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font> 생일 축하해!</string>
+    <string name="sms_hint9">&lt;font color=#85bee0>문자&lt;/font> 홍길동 &lt;font color=#85bee0> &lt;/font> 너 어디있어? 우리 기다리고 있어!</string>
+    <string name="sms_reply1">&lt;font color=#85bee0>회신&lt;/font> 마지막 메시지</string>
+    <string name="sms_reply2">&lt;font color=#85bee0>회신&lt;/font> 마지막 문자메시지</string>
+    <string name="sms_reply3">&lt;font color=#85bee0>회신&lt;/font> 자기야, 보고싶어</string>
+    <string name="sms_reply4">&lt;font color=#85bee0>회신&lt;/font> 좋아, 5분안에 도착할것임</string>
+    <string name="sms_reply5">&lt;font color=#85bee0>회신&lt;/font> 농담하지 마!</string>
+    <string name="social_hint1">\"&lt;font color=#85bee0>Twitter 업데이트&lt;/font> 오늘도 힘든 하루였어\"</string>
+    <string name="social_hint10">&lt;font color=#85bee0>확인&lt;/font> 스타벅스</string>
+    <string name="social_hint11">&lt;font color=#85bee0>확인&lt;/font> 카페 베네</string>
+    <string name="social_hint12">&lt;font color=#85bee0>확인&lt;/font> 민들레 영토</string>
+    <string name="social_hint13">&lt;font color=#85bee0>확인&lt;/font> 교보문고</string>
+    <string name="social_hint14">&lt;font color=#85bee0>확인&lt;/font> 민들레 영토</string>
+    <string name="social_hint15">&lt;font color=#85bee0>확인&lt;/font> 시지비 영화관</string>
+    <string name="social_hint16">&lt;font color=#85bee0>나의 친구들 어디에 있어?&lt;/font></string>
+    <string name="social_hint17">&lt;font color=#85bee0>내 친구들은 어디에?&lt;/font></string>
+    <string name="social_hint18">&lt;font color=#85bee0>내 친구들은 어디에?&lt;/font></string>
+    <string name="social_hint19">&lt;font color=#85bee0>내 친구들은 어디에?&lt;/font></string>
+    <string name="social_hint2">&lt;font color=#85bee0>Twitter 업데이트&lt;/font> 누구 암놈 허스키를 위한 좋은 개이름 아는분?</string>
+    <string name="social_hint3">&lt;font color=#85bee0>Twitter 업데이트&lt;/font> 경부고속도로 교통상황 업데이트 찾기</string>
+    <string name="social_hint4">&lt;font color=#85bee0>Facebook 업데이트&lt;/font> 지금 듣는 이 노래 새벽기차 강추</string>
+    <string name="social_hint5">&lt;font color=#85bee0>Facebook 업데이트&lt;/font> 송중기와 꼭 친추 강추</string>
+    <string name="social_hint6">&lt;font color=#85bee0>Facebook 업데이트&lt;/font> 조심해, 그건 함정이야</string>
+    <string name="social_hint7">&lt;font color=#85bee0>Facebook 업데이트&lt;/font> 선글라스 뒤로 숨고 싶은 날</string>
+    <string name="social_hint8">&lt;font color=#85bee0>포스퀘어 샤우트 샤우트&lt;/font> 홍대앞에서 만나자</string>
+    <string name="social_hint9">&lt;font color=#85bee0>샤우트&lt;/font> 소문 네가 좋아하는 밴드가 오늘밤 공짜 콘서트를 한대</string>
+    <string name="social_update">SNS 업데이트</string>
+    <string name="super_dial_hint1">&lt;font color=#85bee0>통화&lt;/font> 택시</string>
+    <string name="super_dial_hint10">&lt;font color=#85bee0>통화&lt;/font> 중국집</string>
+    <string name="super_dial_hint11">&lt;font color=#85bee0>통화&lt;/font> 아파트 관리사무소</string>
+    <string name="super_dial_hint12">&lt;font color=#85bee0>통화&lt;/font> 신세계 백화점 분당</string>
+    <string name="super_dial_hint13">&lt;font color=#85bee0>통화&lt;/font> 롯데마트 인천</string>
+    <string name="super_dial_hint14">&lt;font color=#85bee0>통화&lt;/font> 애플스토어</string>
+    <string name="super_dial_hint15">&lt;font color=#85bee0>통화&lt;/font> 맥도날드</string>
+    <string name="super_dial_hint16">&lt;font color=#85bee0>통화&lt;/font> 삼성병원 강북</string>
+    <string name="super_dial_hint17">&lt;font color=#85bee0>통화&lt;/font> 월마트</string>
+    <string name="super_dial_hint18">&lt;font color=#85bee0>통화&lt;/font> 이마트 산본</string>
+    <string name="super_dial_hint19">&lt;font color=#85bee0>통화&lt;/font> 이마트</string>
+    <string name="super_dial_hint2">&lt;font color=#85bee0>통화&lt;/font> 피자</string>
+    <string name="super_dial_hint3">&lt;font color=#85bee0>통화&lt;/font> 배관공 서비스</string>
+    <string name="super_dial_hint4">&lt;font color=#85bee0>통화&lt;/font> 거래처</string>
+    <string name="super_dial_hint5">&lt;font color=#85bee0>통화&lt;/font> 피자헛</string>
+    <string name="super_dial_hint6">&lt;font color=#85bee0>통화&lt;/font> 파파존스</string>
+    <string name="super_dial_hint7">&lt;font color=#85bee0>통화&lt;/font> 명동칼국수</string>
+    <string name="super_dial_hint8">&lt;font color=#85bee0>통화&lt;/font> 아웃백 명동</string>
+    <string name="super_dial_hint9">&lt;font color=#85bee0>통화&lt;/font> 아울렛</string>
+    <string name="text">메시지</string>
+    <string name="text_and_string">메시지 %1$s</string>
+    <string name="text_message">메시지</string>
+    <string name="vc_hints_alarm_1">&lt;font color=#139cff>알람 설정&lt;/font> 오전 6시 30분</string>
+    <string name="vc_hints_alarm_2">&lt;font color=#139cff>알람 설정&lt;/font> 지금부터 30분 후</string>
+    <string name="vc_hints_checkschedule_1">&lt;font color=#139cff>일정 확인&lt;/font></string>
+    <string name="vc_hints_contact_1">&lt;font color=#139cff>통화&lt;/font> 홍길동</string>
+    <string name="vc_hints_contact_2">&lt;font color=#139cff>통화&lt;/font> 홍길동</string>
+    <string name="vc_hints_drivingmode_1">&lt;font color=#139cff>운전모드&lt;/font> 켜기</string>
+    <string name="vc_hints_drivingmode_2">&lt;font color=#139cff>운전 모드&lt;/font> 끄기</string>
+    <string name="vc_hints_email_1">&lt;font color=#139cff>이메일&lt;/font> 홍길동</string>
+    <string name="vc_hints_email_2">&lt;font color=#139cff>이메일&lt;/font> 홍길동 &lt;font color=#139cff>제목&lt;/font> 회의 &lt;font color=#139cff>내용&lt;/font> 미팅은 내일 오후 2시입니다.</string>
+    <string name="vc_hints_email_3">&lt;font color=#139cff>이메일&lt;/font> 홍길동 &lt;font color=#139cff>제목&lt;/font> 회의 &lt;font color=#139cff>내용&lt;/font> 미팅은 내일 오후 2시입니다.</string>
+    <string name="vc_hints_goto_1">Google &lt;font color=#139cff>가기&lt;/font></string>
+    <string name="vc_hints_goto_1_china">바이두 &lt;font color=#139cff>가기&lt;/font></string>
+    <string name="vc_hints_map_1">&lt;font color=#139cff>지도&lt;/font> 서울역</string>
+    <string name="vc_hints_map_2">&lt;font color=#139cff>길 찾기&lt;/font> 서울시 서초동</string>
+    <string name="vc_hints_map_3">&lt;font color=#139cff>위치찾기&lt;/font> 서울역</string>
+    <string name="vc_hints_memo_1">&lt;font color=#139cff>메모&lt;/font> 일정 확인</string>
+    <string name="vc_hints_memo_2">&lt;font color=#139cff>메모&lt;/font> 우유 사기</string>
+    <string name="vc_hints_message_1">&lt;font color=#139cff>메시지 보내기&lt;/font> 홍길동</string>
+    <string name="vc_hints_message_2">&lt;font color=#139cff>메시지 보내기&lt;/font> 홍길동 &lt;font color=#139cff>메시지&lt;/font> 어떻게 지내?</string>
+    <string name="vc_hints_message_3">&lt;font color=#139cff>메시지 보내기&lt;/font> 홍길동 &lt;font color=#139cff>메시지&lt;/font> 어떻게 지내?</string>
+    <string name="vc_hints_open_1">계산기 &lt;font color=#139cff>열기&lt;/font></string>
+    <string name="vc_hints_recordvoice_1">&lt;font color=#139cff>음성 녹음&lt;/font></string>
+    <string name="vc_hints_recordvoice_2">&lt;font color=#139cff>음성 녹음&lt;/font> 회의 시간</string>
+    <string name="vc_hints_search_1">&lt;font color=#139cff>검색&lt;/font> 오늘의 날씨</string>
+    <string name="vc_hints_search_2">&lt;font color=#139cff>Twitter 업데이트&lt;/font> 사람들은 왜 북쪽에 살까?</string>
+    <string name="vc_hints_search_3">서울의 기온</string>
+    <string name="vc_hints_social_1">&lt;font color=#139cff>SNS 업데이트&lt;/font> 오늘 하루 잘 지내</string>
+    <string name="vc_hints_social_2">&lt;font color=#139cff>Facebook 업데이트&lt;/font> 나는 지금 명동이야</string>
+    <string name="vc_hints_social_3">&lt;font color=#139cff>Twitter 업데이트&lt;/font> 오늘도 힘든 하루였어</string>
+    <string name="vc_hints_superdial">\"&lt;font color=#568ab3>통화 택시&lt;/font>\"&lt;br/>\"&lt;font color=#568ab3>통화&lt;/font>스테이크하우스 대구\"&lt;br/>\"&lt;font color=#568ab3>통화&lt;/font>한우갈비 부산\"</string>
+    <string name="vc_hints_voicedial_1">&lt;font color=#139cff>통화&lt;/font> 홍길동</string>
+    <string name="vc_hints_voicedial_2">&lt;font color=#139cff>통화&lt;/font> 홍길동</string>
+    <string name="vc_hints_voicedial_3">&lt;font color=#139cff>다시 걸기&lt;/font></string>
+    <string name="wake_up_ready">또는 \"하이 갤럭시\"라고 말하기</string>
+    <string name="wcis_alarm">음성으로 알람 설정하기</string>
+    <string name="wcis_alarm_ex">\"&lt;font color=#85bee0>알람 설정&lt;/font> 오후 6시 30분\"&lt;br/>\"&lt;font color=#85bee0>알람 설정&lt;/font> 지금부터 30분 후\"</string>
+    <string name="wcis_contact_ex">\"&lt;font color=#85bee0>통화하기&lt;/font> 홍길동\"&lt;br/>\"김지우\"</string>
+    <string name="wcis_driving_mode">음성으로 운전모드 켜고 끄기</string>
+    <string name="wcis_driving_mode_ex">\"&lt;font color=#85bee0>운전 모드 켜기&lt;/font>\" &lt;br/> \"&lt;font color=#85bee0>운전 모드 끄기&lt;/font>\"</string>
+    <string name="wcis_email_ex">\"&lt;font color=#85bee0>이메일&lt;/font> 홍길동\"&lt;br/>\"&lt;font color=#85bee0>이메일&lt;/font> 홍길동 &lt;font color=#85bee0>내용&lt;/font> 안녕하세요\"</string>
+    <string name="wcis_email_speak_punctuation">문법의 구두점을 말하셔도 됩니다. 예들들어, 안녕 &lt;font color=#85bee0>물음표&lt;/font> 라고 말할 경우, 시스템은 \"안녕?\" 으로 인식할 겁니다.</string>
+    <string name="wcis_local_search_ex">\"&lt;font color=#85bee0>찾기&lt;/font> 부산 해운대\"</string>
+    <string name="wcis_maps_ex">\"&lt;font color=#85bee0>길 찾기&lt;/font> 서울역\"&lt;br/>\"&lt;font color=#85bee0>지도&lt;/font> 서울역\"</string>
+    <string name="wcis_memo_ex">“&lt;font color=#85bee0>메모&lt;/font> 마트에서 장보기” &lt;br/>\"&lt;font color=#85bee0>메모&lt;/font> 서울역 2시 KTX” &lt;br/></string>
+    <string name="wcis_music">음성으로 뮤직 실행</string>
+    <string name="wcis_music_ex">\"&lt;font color=#85bee0>뮤직 실행&lt;/font>\"&lt;br/></string>
+    <string name="wcis_music_tip">\"&lt;font color=#85bee0>플레이&lt;/font>\" 라고 말하면 최근 재생된 노래를 다시 들을 수 있습니다.</string>
+    <string name="wcis_nav_ex">\"&lt;font color=#85bee0>지도&lt;/font> 서울\"&lt;br/>\"&lt;font color=#85bee0>길 찾기&lt;/font> 서울역\"&lt;br/>\"&lt;font color=#85bee0>위치 찾기&lt;/font> 서울역\"</string>
+    <string name="wcis_openapps_ex">\"계산기 &lt;font color=#568ab3>열기&lt;/font>\"&lt;br/>\"뮤직 &lt;font color=#568ab3>열기&lt;/font>\"</string>
+    <string name="wcis_recordvoice">음성 녹음 실행 및 시작하기</string>
+    <string name="wcis_recordvoice_ex">\"&lt;font color=#85bee0>음성 녹음&lt;/font>\"&lt;br/>\"&lt;font color=#85bee0>음성 녹음&lt;/font> 회의 시간\"</string>
+    <string name="wcis_schedule_ex">\"&lt;font color=#85bee0>일정 확인&lt;/font>\"</string>
+    <string name="wcis_search_ex">\"&lt;font color=#568ab3>Google&lt;/font> 대한민국 인구수 \"&lt;br/>\"&lt;font color=#568ab3>검색&lt;/font> 내일의 날씨\"</string>
+    <string name="wcis_search_ex_china">\"&lt;font color=#568ab3>Baidu&lt;/font> 대한민국 인구수 \"&lt;br/>\"&lt;font color=#568ab3>검색&lt;/font> 내일의 날씨\"</string>
+    <string name="wcis_sms_ex">\"&lt;font color=#85bee0>메시지 보내기&lt;/font> 홍길동\"&lt;br/>\"&lt;font color=#85bee0>메시지 보내기&lt;/font> 홍길동 &lt;font color=#85bee0>메시지&lt;/font> 안녕하세요\"</string>
+    <string name="wcis_social_facebook">Facebook</string>
+    <string name="wcis_social_facebook_ex">\"&lt;font color=#568ab3>Facebook 업데이트&lt;/font> 나 명동에 있어\"</string>
+    <string name="wcis_social_foursquare">포스퀘어</string>
+    <string name="wcis_social_foursquare_ex">\"&lt;font color=#568ab3>확인&lt;/font>스타벅스\"&lt;br/>\"&lt;font color=#568ab3>샤우트&lt;/font>홍대앞에서 만나자\"&lt;br/>\"&lt;font color=#568ab3>나의 친구들 어디에 있어?&lt;/font>\"</string>
+    <string name="wcis_social_twitter">Twitter</string>
+    <string name="wcis_social_twitter_ex">\"&lt;font color=#568ab3>Twitter 업데이트&lt;/font> 오늘도 힘든 하루였어\"&lt;br/>\"&lt;font color=#568ab3>Twitter&lt;/font> 오늘도 잘 지내\"</string>
+    <string name="wcis_super_dial_ex">\"&lt;font color=#568ab3>통화 택시&lt;/font>\"&lt;br/>\"&lt;font color=#568ab3>통화&lt;/font>스테이크하우스 대구\"&lt;br/>\"&lt;font color=#568ab3>통화&lt;/font>한우갈비 부산\"</string>
+    <string name="wcis_super_dial_you_can">\"&lt;font color=#85bee0>전화&lt;/font> 택시\" 또는 \"&lt;font color=#85bee0>전화&lt;/font> 피자\" 등처럼 특정 비지니스 항목이나 분야등도 지시할수 있습니다.&lt;br/>&lt;br/>특정 위치를 언급하지 않을 경우, 현재 위치에서 가장 가까운 영업점을 찾을 것입니다.</string>
+    <string name="wcis_voice_dial_contact_ex">\"&lt;font color=#568ab3>통화&lt;/font> 홍길동\" &lt;br/>\"&lt;font color=#568ab3>통화&lt;/font> 홍길동 &lt;font color=#568ab3>회사&lt;/font>\" &lt;br/>\"&lt;font color=#568ab3>통화&lt;/font> 홍길동 &lt;font color=#568ab3>휴대폰&lt;/font>\"</string>
+    <string name="wcis_voice_dial_tip">마지막 통화한 번호로 다시 걸기 위해 \"&lt;font color=#85bee0>다시 걸기&lt;/font>\"라고 말할수 있습니다</string>
+    <string name="wcis_website_ex">\"Google &lt;font color=#85bee0>가기&lt;/font>\"</string>
+    <string name="wcis_website_ex_china">\"바이두 &lt;font color=#85bee0>가기&lt;/font>\"</string>
+    <string name="who_would_you_like_to_call">누구와 통화하시겠어요?</string>
+    <string name="work">회사</string>
+    <string name="car_tts_NAV_NAVIGATING_TO_CONFIRM_DEMAND">%1$s가는 길 찾기</string>
+    <string name="note_to_self_subject">메모</string>
+    <string name="alarm_no_time">지정한 시간이 없습니다.</string>
+    <string name="alarm_not_supported">알람 설정 기능이 지원되지 않습니다.</string>
+    <string name="alert_dialog_text_entry_email_or_phone">이메일 주소 또는 전화번호</string>
+    <string name="alert_dialog_text_entry_password">암호</string>
+    <string name="android_core_audio_too_short">오디오가 너무 짧습니다. 나중에 다시 시도하십시오.</string>
+    <string name="android_core_listening">청취 중...</string>
+    <string name="android_core_missing_permissions">음성 명령에서 일부 필요한 권한 방법이 누락되어 있습니다.%1$s 예: %2$s</string>
+    <string name="android_input_method">입력 방법</string>
+    <string name="app_launcher_apps">애플리케이션</string>
+    <string name="app_name">음성 명령</string>
+    <string name="arrays_autodial_always">통화처 순으로</string>
+    <string name="arrays_autodial_confident">자주 사용한 통화처로</string>
+    <string name="arrays_autodial_never">사용 안함</string>
+    <string name="arrays_interval_five_min">5분</string>
+    <string name="arrays_interval_ten_min">5분</string>
+    <string name="arrays_interval_thirty_min">30분</string>
+    <string name="arrays_interval_two_min">2분</string>
+    <string name="arrays_security_none">없음</string>
+    <string name="arrays_security_ssl">SSL</string>
+    <string name="arrays_security_tls">TLS</string>
+    <string name="arrays_server_imap">IMAP</string>
+    <string name="arrays_server_popthree">POP3</string>
+    <string name="auto_cap">자동 대문자 표시</string>
+    <string name="auto_complete">자동 완성</string>
+    <string name="auto_complete_summary">강조표시 단어에 스페이스바 및 자동 쉼표 제공</string>
+    <string name="auto_dial_dialog_contact_name">통화처 이름</string>
+    <string name="auto_dial_dialog_dialing">전화거는 중...</string>
+    <string name="auto_dial_dialog_phone_number_format">(xxx) xxx-xxxx</string>
+    <string name="auto_dial_dialog_type">입력</string>
+    <string name="business_detail_screen_map">지도</string>
+    <string name="cantconnect">"서버에 연결할 수 없습니다.
+
+ 네트워크를 확인하고 다시 시도하십시오."</string>
+    <string name="car_app_name_youtube">YouTube</string>
+    <string name="car_call_from">전화</string>
+    <string name="car_dial_business">회사에 전화...</string>
+    <string name="car_easter_egg_uri">http://www.youtube.com/watch?v=fgsFH4W36FQ</string>
+    <string name="car_help">도움말</string>
+    <string name="car_home_header_view_listening">지금 말씀하세요.</string>
+    <string name="car_home_header_view_processing">처리 중</string>
+    <string name="car_home_header_view_wait">잠시만 기다려 주세요.</string>
+    <string name="car_item_answer_answer">대답</string>
+    <string name="car_item_answer_play">재생</string>
+    <string name="car_item_answer_question">질문</string>
+    <string name="car_item_check_schedule_location">위치</string>
+    <string name="car_item_check_schedule_time">시간</string>
+    <string name="car_item_control_buttons_wake_up_command">음성 대화 자동 실행</string>
+    <string name="car_item_exit_carmode_concert_tickets">콘서트 티켓</string>
+    <string name="car_item_exit_carmode_leave_incar">이 작업을 완료하기 위해 음성 대화를 그대로 사용하시겠습니까?</string>
+    <string name="car_item_exit_carmode_web_search">웹 검색...</string>
+    <string name="car_item_memo_saving">저장 중...</string>
+    <string name="car_item_nav_list_item_choice">선택</string>
+    <string name="car_item_phone_type_mobile">휴대폰</string>
+    <string name="car_item_phone_type_phone_ex">617.627.5555</string>
+    <string name="car_item_safereader_main_speak_incoming">수신 메시지 말하기</string>
+    <string name="car_item_safereader_message_sender">발신인</string>
+    <string name="car_item_sms_message_msg">메시지:</string>
+    <string name="car_item_sms_recent_time_ex">2분 전</string>
+    <string name="car_item_sms_sending_sending">보내는 중...</string>
+    <string name="car_item_vd_autodial_calling">호출 중</string>
+    <string name="car_iux_bluetooth_note">블루투스 노트</string>
+    <string name="car_iux_continue">계속</string>
+    <string name="car_iux_download_now">지금 다운로드</string>
+    <string name="car_iux_item_spotter_double_tap">설정에서 음성 대화 실행을 켠 후, 홈 키를 두 번 누르거나 헤드셋 버튼을 누르면 음성 대화를 실행할 수 있습니다.</string>
+    <string name="car_iux_item_spotter_fouroffour">4/4</string>
+    <string name="car_iux_item_spotter_get_started">시작하기</string>
+    <string name="car_iux_item_spotter_long_press">설정에서 음성 대화 실행을 켠 후, 홈 키를 두 번 누르거나 헤드셋 버튼을 누르면 음성 대화를 실행할 수 있습니다.</string>
+    <string name="car_iux_item_spotter_might_drain">주의) 배터리 소모량이 증가할 수 있습니다</string>
+    <string name="car_iux_item_spotter_when_you_see">이 아이콘이 표시되는 경우</string>
+    <string name="car_iux_item_tips_instructions">"1)신호음이 들리면 말하세요.
+
+2)고품질 블루투스 헤드셋을 사용 하고 있지 않을 경우, 휴대폰에 직접 말하세요.
+
+3)홈 화면 에서 [누르고 말하기] 버튼을 누른 후 원하는 작업을 말하세요."</string>
+    <string name="car_iux_item_tips_threeofthree">3/3</string>
+    <string name="car_iux_item_tips_tips">팁</string>
+    <string name="car_iux_item_welcome_oneofthree">1/3</string>
+    <string name="car_iux_item_welcome_vlingo_is">음성 대화는 운전하면서 안전하게 전화하는 새로운 방식입니다. 처음 설정할 때 몇 가지 팁을 보려면 &lt;font color=#8fc6ff>왼쪽으로 스크롤합니다&lt;/font>.</string>
+    <string name="car_iux_item_welcome_welcome">환영</string>
+    <string name="car_iux_item_wycs_instructions">화면 하단의 파란색 [누르고 말하기] 버튼을 눌러 수행하려는 작업을 말합니다.</string>
+    <string name="car_iux_item_wycs_twoofthree">2/3</string>
+    <string name="car_iux_item_wycs_using_vlingo">음성 명령 사용</string>
+    <string name="car_iux_item_wycs_using_zero">음성 대화 사용</string>
+    <string name="car_iux_later">나중에 다운로드</string>
+    <string name="car_iux_missing_speech">언어 팩 없음</string>
+    <string name="car_iux_need_froyo">죄송하지만 Android 2.1은 블루투스 헤드셋에서 오디오를 들을 수 있는 애플리케이션을 사용할 수 없습니다. 블루투스 헤드셋을 통해 음성 명령에 말하려면 운영 체제를 최신 2.2 버전()으로 업그레이드해야 합니다.</string>
+    <string name="car_iux_need_speech_synth">음성 대화를 사용하려면 마켓에서 음성 합성 언어 팩을 다운로드해야 합니다.</string>
+    <string name="car_iux_ok">확인</string>
+    <string name="car_iux_oops">오류</string>
+    <string name="car_iux_setting_up">설정 중...</string>
+    <string name="car_leave_vlingo">. 이 작업을 완료하기 위해 음성 대화를 그대로 사용하시겠습니까?</string>
+    <string name="car_mms_subj_empty_header">제목이 비어 있음</string>
+    <string name="car_mms_subject_empty_tts">제목이 비어 있습니다.</string>
+    <string name="car_msg_email">이메일...</string>
+    <string name="car_msg_local_search">로컬 검색...</string>
+    <string name="car_msg_open">열기...</string>
+    <string name="car_nav_address_blank">빈 주소</string>
+    <string name="car_nav_address_saved">저장된 주소</string>
+    <string name="car_nav_alert_dialog_enter_address">집 주소 입력</string>
+    <string name="car_nav_enter_home">집 주소 입력</string>
+    <string name="car_nav_go">이동</string>
+    <string name="car_nav_go_home">홈으로 이동</string>
+    <string name="car_nav_home_confirm">집 주소를 입력하십시오.</string>
+    <string name="car_nav_where_to_go">어디로 가시겠어요?</string>
+    <string name="car_safereader_easter_egg_trigger">내 대화 상대?</string>
+    <string name="car_safereader_hidden_message_body">메시지 본문 숨김</string>
+    <string name="car_safereader_hidden_message_subject">메시지 제목 숨김</string>
+    <string name="car_safereader_no_messages">수신함에 메시지가 없습니다.</string>
+    <string name="car_server_connect_fail">죄송합니다. 서버에 연결할 수 없습니다. 나중에 다시 시도하십시오.</string>
+    <string name="car_sms_menu_edit">편집</string>
+    <string name="car_sms_message_empty_tts">메시지가 비어 있습니다.</string>
+    <string name="car_sms_message_tts">메시지</string>
+    <string name="car_sms_msg_colon_header">메시지:</string>
+    <string name="car_sms_msg_empty_header">메시지 비어 있음</string>
+    <string name="car_sms_no_favorites">자주 사용하는 통화처가 없습니다. 일부 통화처를 추가해야 합니다.</string>
+    <string name="car_sms_no_recent_msgs">최근에 수신한 메시지가 없습니다.</string>
+    <string name="car_sms_open_sms_app_dialog">SMS 애플리케이션에서 엽니까?</string>
+    <string name="car_sms_radio_off">전화 라디오 모양이 꺼져 있습니다.</string>
+    <string name="car_sms_speak_msg_tts">. 메시지를 말하십시오.</string>
+    <string name="car_sms_to_tts">까지</string>
+    <string name="car_sr_msg_readback">메시지 리드백</string>
+    <string name="car_tts_BLUETOOTH_OFF">"블루투스 '끔'"</string>
+    <string name="car_tts_BLUETOOTH_ON">"블루투스 '켬'"</string>
+    <string name="car_tts_email">이메일.</string>
+    <string name="car_tts_ERROR_OCCURRED">죄송합니다. 다시 시도하십시오.</string>
+    <string name="car_tts_HOME_PROMPT_DEFAULT">어떻게 하시겠습니까?</string>
+    <string name="car_tts_KEYWORD_SPOT_OFF_BRIEF_DEMAND">"웨이크업 단어 검색을 '해제'합니다."</string>
+    <string name="car_tts_KEYWORD_SPOT_ON_BRIEF_DEMAND">"웨이크업 단어 검색을 '작동'합니다."</string>
+    <string name="car_tts_local_search">로컬 검색.</string>
+    <string name="car_tts_MEMO_PROMPT">무엇을 메모하시겠어요?</string>
+    <string name="car_tts_MESSAGES_NO_UNREAD">읽지 않은 메시지가 없습니다.</string>
+    <string name="car_tts_NAV_PROMPT_DEMAND">어디로 가시겠어요?</string>
+    <string name="car_tts_NO_MATCH_DEMAND">일치하는 통화처 없음</string>
+    <string name="car_tts_PHONE_NO_MATCH_DEMAND">%1$s 님은 전화번호가 없거나, 전화번호부에 등록되지 않은 이름입니다</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_FROM">새 메시지.</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_FROM_INTRO">%1$s 님으로부터 새 메시지가 도착했습니다.</string>
+    <string name="car_tts_safereader_speak_reply">대답하십시오.</string>
+    <string name="car_tts_SCHEDULE_NO_EVENTS_TODAY">오늘 더 이상의 행사가 없습니다.</string>
+    <string name="car_tts_SMS_MESSAGE_BLANK_DEMAND">메시지가 비었습니다. 메시지를 말하십시오.</string>
+    <string name="car_tts_SMS_MESSAGE_FROM">메시지</string>
+    <string name="car_tts_SMS_REPLY">회신</string>
+    <string name="car_tts_SMS_SAY_MESSAGE">메시지를 말하십시오.</string>
+    <string name="car_tts_SMS_SAY_MESSAGE_CONFIRM_DEMAND">메시지를 말하십시오.</string>
+    <string name="car_tts_SMS_SAY_MESSAGE_CONFIRM_DEMAND_DOT">%1$s메시지를 말하십시오.</string>
+    <string name="car_tts_STARTUP_PROMPT_DEFAULT">음성 대화</string>
+    <string name="car_tts_STARTUP_PROMPT_DEFAULT_SAMSUNG">음성 대화</string>
+    <string name="car_tts_TASK_CANCELLED">네, 취소했습니다.</string>
+    <string name="car_tts_VD_CALLING_CONFIRM_DEMAND">전화하기.</string>
+    <string name="car_tts_VD_CALLING_TO_CONFIRM_DEMAND">%1$s님에게 전화 합니다</string>
+    <string name="car_tts_VD_CALLING_TO_TYPE_CONFIRM_DEMAND">%1$s님 %2$s으로 전화 합니다</string>
+    <string name="car_tts_VD_CHOOSE_TYPE_DEMAND">전화번호 선택</string>
+    <string name="car_tts_VD_MULTIPLE_CONTACTS_DEMAND">일치하는 통화처가 여러 개 검색되었습니다.</string>
+    <string name="car_tts_VD_MULTIPLE_TYPES_DEMAND">여러 전화번호</string>
+    <string name="car_tts_VD_NO_MATCHING_TYPE">일치하는 유형이 없습니다. 나중에 다시 시도하십시오.</string>
+    <string name="car_tts_web_search">웹 검색.</string>
+    <string name="car_unsupported_action">이 작업을 지원하지 않습니다. 나중에 다시 시도하십시오.</string>
+    <string name="car_util_loading">로드 중...</string>
+    <string name="car_voicedial_multiple">복수의 %1$s 번호가 검색되었습니다. 원하는 번호를 클릭하십시오.</string>
+    <string name="car_voicedial_no_recent_called">최근에 통화한 통화처가 없습니다.</string>
+    <string name="car_voicedial_or">또는</string>
+    <string name="car_voicedial_recobutton_voice_dial">음성통화</string>
+    <string name="car_voicedial_which">다음 중 누구와 통화하시겠어요?</string>
+    <string name="car_vvs_handlers_home_spoken">홈</string>
+    <string name="car_vvs_handlers_open_tts">열기 %1$s</string>
+    <string name="checkEventTitleTimeDetail">제목%1$s%2$s</string>
+    <string name="checkEventYouHave">존재하는</string>
+    <string name="client_core_connecting">연결 중...</string>
+    <string name="client_core_initializing">초기화 중...</string>
+    <string name="client_core_network_busy">장치 네트워크를 사용 중입니다. 잠시 기다린 후 다시 시도하십시오.</string>
+    <string name="client_core_RECOGNITION_ABORTED">인식을 중지했습니다. 나중에 다시 시도하십시오.</string>
+    <string name="client_core_RECORDED_MAX">한 번에 메시지를 50초까지만 들을 수 있습니다. 지금까지 말씀하신 내용으로 작동 중입니다.</string>
+    <string name="client_core_RECORDER_ERROR">기록할 수 없습니다. 나중에 다시 시도하십시오.</string>
+    <string name="client_core_thinking">생각 중…</string>
+    <string name="client_core_TOO_LONG">메시지가 너무 깁니다. 더 짧은 내용으로 요청하십시오.</string>
+    <string name="client_core_TOO_SHORT1">오디오가 너무 짧습니다. 나중에 다시 시도하십시오.</string>
+    <string name="client_core_TOO_SHORT2">사이드 키를 누른 상태로 말씀하십시오. 끝났으면 손을 떼십시오. 나중에 다시 시도하십시오.</string>
+    <string name="client_core_UNKNOWN_STATE">알 수 없는 상태%1$s</string>
+    <string name="concat_for">%1$s 를 위하여</string>
+    <string name="concat_for_nbsp">%1$s 를 위하여</string>
+    <string name="concat_to">%1$s까지</string>
+    <string name="concat_to_nbsp">%1$s까지</string>
+    <string name="concat_to_nbsp_2">%1$s%2$s까지</string>
+    <string name="contact_top_choice_detail_item_other_choices">기타 선택</string>
+    <string name="contact_top_choice_item_no_match">일치 항목 없음</string>
+    <string name="contact_top_choice_item_top_choice">상단 선택</string>
+    <string name="contacts_available_choices">사용 가능한 선택:</string>
+    <string name="contacts_choose_contact">통화처 선택</string>
+    <string name="contacts_email_space">이메일</string>
+    <string name="contacts_no_match_openquote">"%1$s'에 대해 일치 항목 없음"</string>
+    <string name="contacts_no_matching_contact">일치하는 통화처 없음</string>
+    <string name="contacts_other_choices_openparen">기타 선택(%1$s)</string>
+    <string name="did_you_know">알고 계세요?</string>
+    <string name="done">완료</string>
+    <string name="email_account_add_manual_add_account">이메일 계정 추가</string>
+    <string name="email_account_add_manual_email_address">이메일 주소</string>
+    <string name="email_account_add_manual_port">포트</string>
+    <string name="email_account_add_manual_security_type">보안 유형</string>
+    <string name="email_account_add_manual_server_address">서버 주소</string>
+    <string name="email_account_add_manual_server_details">서버 상세 정보</string>
+    <string name="email_account_add_manual_username">사용자 이름</string>
+    <string name="email_account_detail_view_delete_account">계정 삭제</string>
+    <string name="email_account_detail_view_speak_email">이 계정의 이메일 말하기</string>
+    <string name="email_account_list_accounts">계정</string>
+    <string name="english_ime_name">음성 명령 키보드</string>
+    <string name="english_ime_settings">음성 명령 키보드 설정</string>
+    <string name="examples">예시</string>
+    <string name="favorites">즐겨찾기</string>
+    <string name="fifth_space">다섯 번째</string>
+    <string name="first_space">첫 번째</string>
+    <string name="fourth_space">네 번째</string>
+    <string name="handlers_select_email_recipient">이메일 수신인 선택</string>
+    <string name="handlers_select_message_recipient">메시지 수신인 선택</string>
+    <string name="handlers_send_email_to_tts">이메일 수신인</string>
+    <string name="handlers_send_email_tts">이메일 보내기</string>
+    <string name="handlers_send_message_to_tts">메시지 수신인</string>
+    <string name="handlers_send_message_tts">메시지 보내기</string>
+    <string name="handlers_social_update">SNS 업데이트</string>
+    <string name="handlers_subject_space_tts">제목</string>
+    <string name="help_about_copyright">(c)2011 Vlingo Corporation</string>
+    <string name="help_about_privacy">개인 정보 보호 정책</string>
+    <string name="help_about_terms">사용 약관</string>
+    <string name="help_about_vlingo">음성명령 정보</string>
+    <string name="help_about_wakeup_powered_by">웨이크업 단어 기능 제공:</string>
+    <string name="help_bluetooth_audio_reqs">음성 명령의 경우 블루투스 헤드셋을 통해 오디오를 재생하려면 기기가 A2DP를 지원하고 Android OS 2.1 이상의 버전을 사용해야 합니다.</string>
+    <string name="help_bluetooth_crashes">충돌 있음</string>
+    <string name="help_bluetooth_froyo_bug">블루투스 헤드셋의 연결을 끊을 때 전화에 가끔씩 충돌이 발생하는 경우 특정 전화의 Android 2.2 운영 체제에 버그가 발생했을 수 있습니다. 이러한 문제가 발생할 경우 블루투스(음성 명령 설정 &amp;gt 고급)를 끕니다.</string>
+    <string name="help_bluetooth_info">음성 명령은 명령을 듣고 블루투스 헤드셋을 통해 사용자에게 다시 말합니다. 대부분의 헤드셋에서는 이 기능이 제대로 작동하지만 몇 가지 문제가 발생할 수 있습니다.</string>
+    <string name="help_bluetooth_issues">블루투스 문제점</string>
+    <string name="help_bluetooth_need_froyo">헤드셋을 통해 음성 명령으로 말할 수 있으려면 Android OS 2.2(Froyo) 이상이 설치되어 있어야 합니다.</string>
+    <string name="help_bluetooth_no_audio">오디오가 들리지 않음</string>
+    <string name="help_bluetooth_not_recording">녹화되지 않음</string>
+    <string name="help_bt_help">블루투스 도움말</string>
+    <string name="help_btn_privacy_uri">http://www.vlingo.com/wap/privacy/ko</string>
+    <string name="help_btn_tos_uri">http://www.vlingo.com/wap/terms/ko</string>
+    <string name="help_menu1">음성명령사용방법</string>
+    <string name="help_menu2">음성 대화 사용 방법</string>
+    <string name="help_menu3">키보드 설정</string>
+    <string name="help_menu4">바로가기</string>
+    <string name="help_menu5">블루투스 문제점</string>
+    <string name="help_menu6">온라인 지원</string>
+    <string name="help_menu7">설정</string>
+    <string name="help_menu8">정보</string>
+    <string name="help_menu9">음성 명령 비밀</string>
+    <string name="help_setup_keyboard_add_microphone">키보드에 마이크 버튼을 추가합니다.</string>
+    <string name="help_setup_keyboard_check">음성 명령 키보드 점검</string>
+    <string name="help_setup_keyboard_enable">1) 음성인식 키보드 사용</string>
+    <string name="help_setup_keyboard_open_chooser">키보드 선택기 열기</string>
+    <string name="help_setup_keyboard_open_settings">설정 화면 열기</string>
+    <string name="help_setup_keyboard_select">음성 명령 키보드 선택</string>
+    <string name="help_setup_keyboard_speak_anywhere">입력할 수 있는 모든 장소를 말합니다.</string>
+    <string name="help_setup_keyboard_switch">2) 음성명령 키보드로 전환</string>
+    <string name="help_setup_keyboard_tap_below">키보드 선택기를 열려면 아래 단계에 따라 누릅니다.</string>
+    <string name="help_setup_keyboard_tap_to_open">전화 설정 화면을 열려면 아래 단계에 따라 누릅니다.</string>
+    <string name="help_shortcuts_add_shortcut">음성명령을 홈 스크린에 추가</string>
+    <string name="help_shortcuts_choose_widgets">2) 팝업에서 위젯을 선택합니다.</string>
+    <string name="help_shortcuts_long_press">1) 홈 화면의 빈 영역을 계속 누르고 있습니다.</string>
+    <string name="help_shortcuts_scroll_select">3) 음성명령 위젯 중 하나를 스크롤하여 선택합니다.</string>
+    <string name="help_shortcuts_search_key">전화에 검색 키가 있을 경우 음성 명령을 활성화하려면 검색 키를 길게 누릅니다.</string>
+    <string name="help_shortcuts_vlingo_search">검색 키가 있는 음성 명령 사용</string>
+    <string name="help_subtext1">기본</string>
+    <string name="help_subtext2">음성 대화 팁</string>
+    <string name="help_subtext3">입력할 수 있는 장소를 말하기</string>
+    <string name="help_subtext4">음성 명령에 빠른 액세스</string>
+    <string name="help_subtext5">헤드셋에 문제가 있습니까?</string>
+    <string name="help_subtext6">문제가 여전히 발생합니까? 도움말 가져오기</string>
+    <string name="help_subtext7">음성 명령 동작 변경</string>
+    <string name="help_subtext8">법률 및 버전 정보</string>
+    <string name="help_using_vlingo_actionbar_locations">음성 명령 홈스크린이나 음성 명령 위젯에서 액션바를 접속하실수 있습니다.</string>
+    <string name="help_using_vlingo_example">예를 들어 \"&lt;font color=#85bee0>메시지 보내기&lt;/font> 홍길동 &lt;font color=#85bee0>메시지&lt;/font> 오늘 저녁 어때?\"</string>
+    <string name="help_using_vlingo_keyboard">음성 명령 키보드를 이용하여</string>
+    <string name="help_using_vlingo_listen_to_new">새 알람 듣기</string>
+    <string name="help_using_vlingo_secrets_commands">명령을 다 외우실 필요는 없습니다. 음성 명령은 다른 기능에 따라 많은 단어들을 이해할수 있습니다: \"문자 보내기,\" \"문자,\" \"sms\"...편하신대로 다른 단어들을 이용해 보십시오.</string>
+    <string name="help_using_vlingo_secrets_flexible">음성 명령은 유연성이 있습니다...</string>
+    <string name="help_using_vlingo_secrets_punctuation">자동 쉼표 제공…</string>
+    <string name="help_using_vlingo_secrets_recognition">음성 명령을 많이 사용할 수록, 귀하의 음성을 더욱 정확히 인식할 수 있습니다. 음성 명령은 시간이 지날수록 귀하의 발음 방법과 귀하께서 자주 사용하시는 구문을 개인적으로 인식하게 됩니다.</string>
+    <string name="help_using_vlingo_secrets_vlingo_learns">음성 명령 학습...</string>
+    <string name="help_using_vlingo_speak">원하는 내용 말하기</string>
+    <string name="help_using_vlingo_speak_anywhere">입력할 수 있는 장소를 말하기</string>
+    <string name="help_using_vlingo_type_instead">말하기 대신 입력</string>
+    <string name="help_using_vlingo_using_actionbar">액션바를 이용하여</string>
+    <string name="help_using_vlingo_with_vlingo">음성 명령 키보드를 이용하여</string>
+    <string name="help_version">버전</string>
+    <string name="help_wcis_contact">통화처</string>
+    <string name="help_wcis_dial">음성 통화</string>
+    <string name="help_wcis_email">이메일</string>
+    <string name="help_wcis_hotel">호텔 예약</string>
+    <string name="help_wcis_hotel_sub1">토요일 저녁 서울에 있는 &lt;font color=#85bee0>호텔들 찾기&lt;/font></string>
+    <string name="help_wcis_local_search">로컬 검색</string>
+    <string name="help_wcis_maps">지도</string>
+    <string name="help_wcis_movie">영화 티켓</string>
+    <string name="help_wcis_movie_sub1">해리 포터 &lt;font color=#85bee0>영화 티켓 사기&lt;/font></string>
+    <string name="help_wcis_open_applications">애플리케이션 열기</string>
+    <string name="help_wcis_open_apps">애플리케이션 열기</string>
+    <string name="help_wcis_schedule">일정</string>
+    <string name="help_wcis_search">검색</string>
+    <string name="help_wcis_social">SNS</string>
+    <string name="help_wcis_super_dial">Super Dial</string>
+    <string name="help_wcis_superdialer">SuperDialer</string>
+    <string name="help_wcis_text_message">메시지</string>
+    <string name="help_wcis_web_search">웹 검색</string>
+    <string name="home_activation_failed">Vlingo 활성화 서버에 연결할 수 없습니다. 네트워크를 확인하고 다시 시도하십시오.</string>
+    <string name="home_activation_url">http://www.vlingo.com/</string>
+    <string name="home_check_activation">활성화 상태 점검</string>
+    <string name="home_checking_activation">활성화 상태 점검 중...</string>
+    <string name="home_enter_code">활성화 코드 입력</string>
+    <string name="home_hint_first_time_examples">예시를 보려면 왼쪽 슬라이드 참조 >></string>
+    <string name="home_hint_first_time_vlingo_learns">음성 명령을 학습합니다. 시간이 지날수록 정확성이 향상됩니다.</string>
+    <string name="home_hint_first_time_welcome">음성 명령에 오신걸 환영합니다!</string>
+    <string name="home_hint_item_empty">비어 있음</string>
+    <string name="home_hint_needs_activation">시작하려면 음성 명령을 활성화하십시오.</string>
+    <string name="home_hint_needs_activation_activate">음성명령 활성화</string>
+    <string name="home_please_activate">시작하려면 음성 명령을 활성화하십시오.</string>
+    <string name="home_setup_email">설정 이메일</string>
+    <string name="hotel_hint1">&lt;font color=#85bee0>찾기&lt;/font> 서울 &lt;font color=#85bee0>호텔들&lt;/font></string>
+    <string name="hotel_hint2">&lt;font color=#85bee0>찾기&lt;/font> 부산 해운대 &lt;font color=#85bee0>호텔들&lt;/font></string>
+    <string name="hotel_hint3">&lt;font color=#85bee0>찾기&lt;/font> 금요일밤 인천 앞바다 &lt;font color=#85bee0>호텔들&lt;/font></string>
+    <string name="hotel_hint4">&lt;font color=#85bee0>찾기&lt;/font> 토요일 설악산 &lt;font color=#85bee0>민박&lt;/font></string>
+    <string name="incar">음성 대화</string>
+    <string name="incar_icon">음성 대화</string>
+    <string name="invite_all_contacts">모든 통화처</string>
+    <string name="invite_choose_contacts">아래에서 초대할 통화처 선택</string>
+    <string name="invite_contact_selected">통화처 선택됨</string>
+    <string name="invite_contacts_selected">통화처 선택됨</string>
+    <string name="invite_downloading_link">초대 링크 다운로드 중...</string>
+    <string name="invite_error">에게 초대를 보내는 동안 문제 발생</string>
+    <string name="invite_getting_link">링크 가져오기...</string>
+    <string name="invite_hold_on">이 과정은 몇 분 정도 소요될 수 있으므로 끊지 말고 기다려 주십시오.</string>
+    <string name="invite_invite_sent">초대 전송됨</string>
+    <string name="invite_invites_sent">초대 전송됨</string>
+    <string name="invite_no_contacts">통화처가 없습니다. 실제로 통화처를 추가해야 합니다.</string>
+    <string name="invite_no_name">이름 없음</string>
+    <string name="invite_one_sec">1초...</string>
+    <string name="invite_please_wait">잠시만 기다려 주세요</string>
+    <string name="invite_radio_off">전화 라디오 모양이 꺼져 있습니다.</string>
+    <string name="invite_recently_texted">최근에 추가된 통화처</string>
+    <string name="invite_request_failed">요청에 실패했습니다. 나중에 다시 시도하십시오.</string>
+    <string name="invite_request_timeout">요청 시간이 지났습니다. 나중에 다시 시도하십시오.</string>
+    <string name="invite_screen_choose_parties">아래에서 초대할 통화처 선택</string>
+    <string name="invite_screen_send_invite">초대 보내기</string>
+    <string name="invite_sending">보내는 중...</string>
+    <string name="invite_sending_invites">초대 보내는 중</string>
+    <string name="invite_TAF_FALLBACK_DOWNLOAD_URL">http://www.vlingo.com/vlingo/go?r=21</string>
+    <string name="invite_url_retrieve_fail">초대 URL을 검색하는 동안 문제가 발생했습니다. 나중에 다시 시도하십시오.</string>
+    <string name="invite_vlingo_pitch">단어를 행동으로 바꾸는 무료 음성 애플리케이션인 음성 명령을 확인하십시오. 여기를 클릭</string>
+    <string name="iux_howto_voicetogo">음성 명령 사용 방법</string>
+    <string name="iux_using_vlingo_finish">마침</string>
+    <string name="iux_using_vlingo_go_handsfree">핸즈프리로 이동</string>
+    <string name="iux_using_vlingo_with_incar">음성 대화와 함께</string>
+    <string name="iux_welcome_anthem">전화에 대고 수행할 내용을 말합니다.</string>
+    <string name="iux_welcome_talk_to_phone">전화에 대고 수행할 내용을 말합니다.</string>
+    <string name="joe">조</string>
+    <string name="joe_pirone">조 파이론</string>
+    <string name="label_done_key">완료</string>
+    <string name="label_go_key">이동</string>
+    <string name="launchhandler_appnotsupported">애플리케이션이 설치되어 있지 않습니다. 나중에 다시 시도하십시오.</string>
+    <string name="launchhandler_appnotsupported_noretry">애플리케이션이 설치되어 있지 않습니다.</string>
+    <string name="line1">라인 1</string>
+    <string name="line2">라인 2</string>
+    <string name="local_search_listing_detail_screen_description">설명</string>
+    <string name="local_search_listing_detail_screen_powered_by">제공처</string>
+    <string name="local_search_listing_detail_screen_sponsored">스폰서 청취</string>
+    <string name="local_search_listing_detail_screen_web">웹</string>
+    <string name="localsearch_no_number">사용 가능한 전화번호 없음</string>
+    <string name="localsearch_no_web_address">사용 가능한 웹 주소 없음</string>
+    <string name="localsearch_reviews">검토</string>
+    <string name="localsearch_service_miles_abbrev">mi</string>
+    <string name="localsearch_space_review">검토</string>
+    <string name="location">위치</string>
+    <string name="memo_layout_speak_button">말하기</string>
+    <string name="movie_hint1">아저씨 &lt;font color=#85bee0>영화 티켓&lt;/font></string>
+    <string name="movie_hint2">앨리스 원더랜드 &lt;font color=#85bee0>영화 티켓&lt;/font></string>
+    <string name="movie_hint3">에버랜드&lt;font color=#85bee0>티켓 구매&lt;/font></string>
+    <string name="movie_hint4">롯데월드 &lt;font color=#85bee0>티켓 구매&lt;/font></string>
+    <string name="new_features_action_bar">3) ActionBar</string>
+    <string name="new_features_action_bar_body">이제 원하시는것을 말로 하지 마시고 쓰실수 있습니다.</string>
+    <string name="new_features_action_bar_ex">자세한 내용을 알고 싶으시면 [메뉴 별 명령어 예시] 버튼을 클릭하십시오.</string>
+    <string name="new_features_hotel_body">호텔 이름을 얘기하시거나 지역을 얘기하셔서 호텔을 찾으실수 있습니다.</string>
+    <string name="new_features_hotel_reservations">1) 호텔 예약</string>
+    <string name="new_features_movie_body">어떤 영화들이 상영하는지, 영화 시간과 영화 티켓 예매를 하실수 있습니다.</string>
+    <string name="new_features_movie_tickets">2) 영화 티켓</string>
+    <string name="new_features_title">새 기능</string>
+    <string name="no_network">네트워크를 확인하고 다시 시도하십시오.</string>
+    <string name="nofify_safereader_on_body">새 메시지를 소리내어 읽습니다.</string>
+    <string name="ok_lc">확인</string>
+    <string name="ok_uc">확인</string>
+    <string name="opening_translate_app">번역 애플리케이션을 여는 중입니다.</string>
+    <string name="phone_type_prompt">%1$s에 대해 %2$s까지</string>
+    <string name="phone_type_prompt_2">말하십시오.</string>
+    <string name="popular_domain_0">.com</string>
+    <string name="popular_domain_1">.net</string>
+    <string name="popular_domain_2">.org</string>
+    <string name="popular_domain_3">.gov</string>
+    <string name="popular_domain_4">.edu</string>
+    <string name="prediction">단어 제안</string>
+    <string name="prediction_category">단어 제시어 설정</string>
+    <string name="previous">이전</string>
+    <string name="processing">처리 중...</string>
+    <string name="progress_dialog_getting_ready">준비하기...</string>
+    <string name="progress_screen_button_go">이동</string>
+    <string name="prompt_dial_subheading">통화처로 전화</string>
+    <string name="prompt_memo_ex1">작성하고 싶은 내용을 말하세요.</string>
+    <string name="prompt_memo_subheading">메모 쓰기</string>
+    <string name="prompt_nav_subheading">길 찾기</string>
+    <string name="prompt_sms_subheading">메시지</string>
+    <string name="quick_fixes">빠른 수정</string>
+    <string name="quick_fixes_summary">자주 발생하는 입력 오류 수정</string>
+    <string name="radio_player_not_supported">라디오 플레이어는 지원되지 않습니다.</string>
+    <string name="recent">최근</string>
+    <string name="reco_error_0">사용자의 요청을 처리할 수 없습니다. 나중에 다시 시도하십시오.</string>
+    <string name="reco_error_1">네트워크 작동 시간이 초과되었습니다. 나중에 다시 시도하십시오.</string>
+    <string name="reco_error_10">음성 명령(or 대화)을 사용하려면 사용 약관에 동의해야 합니다.</string>
+    <string name="reco_error_11">작동이 중단되었습니다. 나중에 다시 시도하십시오.</string>
+    <string name="reco_error_12">통화를 하시는 도중에는 음성 인식을 할수없습니다.</string>
+    <string name="reco_error_2">네트워크 오류입니다. 나중에 다시 시도하십시오.</string>
+    <string name="reco_error_3">잘 들을 수 없습니다. 다시 말씀해 주십시오.</string>
+    <string name="reco_error_4">서버 오류입니다. 나중에 다시 시도하십시오.</string>
+    <string name="reco_error_5">예상치 못한 클라이언트 오류입니다.</string>
+    <string name="reco_error_6">인식이 되지 않았습니다. 다시 말씀 해 주세요.</string>
+    <string name="reco_error_7">인식이 되지 않았습니다. 다시 말씀 해 주세요.</string>
+    <string name="reco_error_8">인식 서비스가 사용 중입니다. 나중에 다시 시도하십시오.</string>
+    <string name="reco_error_9">너무 빨리 말씀하셨습니다. 나중에 다시 시도하십시오.</string>
+    <string name="recordVoiceNotSupported">전화기에서 지원되지 않는 음성 녹음</string>
+    <string name="redialing">다시 전화걸기</string>
+    <string name="request_timeout">"요청 시간 초과
+
+ 네트워크를 확인하고 다시 시도하십시오."</string>
+    <string name="safereader_blank_message">빈 메시지</string>
+    <string name="safereader_body">본문:</string>
+    <string name="safereader_email_too_large">이메일이 너무 큽니다. (이메일 용량이 너무 큽니다)</string>
+    <string name="safereader_notif_reading_title">말하기: 건너뛰려면 클릭하십시오.</string>
+    <string name="safereader_notif_title">새 메시지를 소리내어 읽음</string>
+    <string name="safereader_notif_title_silenced">전화 벨소리 묵음</string>
+    <string name="safereader_notification_main_removing">30초 내 제거 중</string>
+    <string name="safereader_re">회신:</string>
+    <string name="safereader_re_lowercase">회신:</string>
+    <string name="safereader_reading_message">메시지 읽는 중</string>
+    <string name="safereader_removing_in">에서 제거 중</string>
+    <string name="safereader_replay">재생</string>
+    <string name="safereader_space_seconds">초</string>
+    <string name="safereader_speak_reply">회신</string>
+    <string name="safereader_subj">제목:</string>
+    <string name="safereader_text_space">텍스트 문자)</string>
+    <string name="samsung_car_help_continue">계속</string>
+    <string name="samsung_car_help_setting_up">설정 중...</string>
+    <string name="samsung_powered_by_vlingo">Powered by Vlingo</string>
+    <string name="samsung_schedule_all_day">하루 종일.</string>
+    <string name="samsung_schedule_at">에%1$s. </string>
+    <string name="samsung_schedule_event">%1$s 이벤트 </string>
+    <string name="samsung_schedule_from">부터</string>
+    <string name="samsung_schedule_to">까지</string>
+    <string name="samsung_schedule_with">같이 %1$s.</string>
+    <string name="schedule">일정</string>
+    <string name="sdial_screen_contacts">통화처</string>
+    <string name="search_hint">Vlingo ActionBar</string>
+    <string name="search_hint1">맨체스터 유나이티드 일정</string>
+    <string name="search_hint2">대한 민국 인구수</string>
+    <string name="search_hint3">제주도의 기온</string>
+    <string name="search_hint4">내일의 날씨</string>
+    <string name="search_label">Vlingo</string>
+    <string name="searchable_button_title">이동</string>
+    <string name="second_space">두 번째</string>
+    <string name="setting_alarm">알람 설정 중</string>
+    <string name="settings_add_account">계정 추가</string>
+    <string name="settings_advanced_autopunc_summary">적절한 위치에 자동으로 쉼표 삽입</string>
+    <string name="settings_advanced_autopunc_title">자동 쉼표 제공</string>
+    <string name="settings_advanced_BTlisten_summary">음성 명령을 말하거나 들을 때 연결된 블루투스 헤드셋 사용</string>
+    <string name="settings_advanced_BTlisten_title">블루투스 헤드셋 사용</string>
+    <string name="settings_advanced_useloc_summary">정확성을 높이려면 현재 위치 사용</string>
+    <string name="settings_advanced_useloc_title">위치 사용</string>
+    <string name="settings_auto_start_listening_summary">자동 수신</string>
+    <string name="settings_auto_start_listening_title">청취 자동 시작</string>
+    <string name="settings_autodial_dialogtitle">자동 발신</string>
+    <string name="settings_autodial_summary">자동 발신 동작</string>
+    <string name="settings_autodial_title">자동 발신</string>
+    <string name="settings_AutoPunctuation">자동쉼표제공</string>
+    <string name="settings_click_to_login">로그인 하려면 클릭</string>
+    <string name="settings_configure_home_address">집 주소 구성</string>
+    <string name="settings_default_support_url">http://vlingo-ko.custhelp.com/app/home/p/180</string>
+    <string name="settings_email_accounts">이메일 계정</string>
+    <string name="settings_email_confirm_delete">삭제 확인</string>
+    <string name="settings_email_confirm_delete_msg">이 계정을 삭제하시겠습니까?</string>
+    <string name="settings_email_disabled">비활성화</string>
+    <string name="settings_email_enabled">활성화</string>
+    <string name="settings_email_err">오류</string>
+    <string name="settings_email_err_access_fail">죄송합니다. 이메일 계정에 액세스할 수 없습니다. 죄송합니다. 세부 정보를 확인하고 다시 시도하십시오.</string>
+    <string name="settings_email_err_account_exists">죄송합니다. 이 이메일 계정이 이미 있습니다. (죄송합니다. 이미 존재하는 이메일 계정입니다.)</string>
+    <string name="settings_email_err_unknown">알 수 없는 오류 발생</string>
+    <string name="settings_email_please_wait">잠시만 기다려 주세요</string>
+    <string name="settings_email_verifying_settings">이메일 설정 확인 중...</string>
+    <string name="settings_EnableAudioFileLog">오디오 파일 로그 활성화</string>
+    <string name="settings_EnableServerLog">서버 로그 활성화</string>
+    <string name="settings_EnableTimingLog">타이밍 로그 활성화</string>
+    <string name="settings_general">일반</string>
+    <string name="settings_incar_autolisten_summary">확인을 말한 후 자동 청취 시작</string>
+    <string name="settings_incar_autolisten_title">자동 청취</string>
+    <string name="settings_incar_autostart_speakerphone_summary">음성 대화로 통화를 할 때는 한뼘 통화로 연결 됩니다.</string>
+    <string name="settings_incar_autostart_speakerphone_title">한뼘 통화 자동 시작</string>
+    <string name="settings_incar_BTlanuch_summary">블루투스 헤드셋이 연결될 때마다 음성 대화 시작</string>
+    <string name="settings_incar_BTlaunch_title">블루투스 시작</string>
+    <string name="settings_incar_customprompt_summary">어떻게 하시겠습니까?</string>
+    <string name="settings_incar_customprompt_title">주요 명령어 사용자 정의</string>
+    <string name="settings_incar_homeaddress_summary">집 주소 구성</string>
+    <string name="settings_incar_homeaddress_title">집 주소</string>
+    <string name="settings_incar_homescreen">일반</string>
+    <string name="settings_incar_motion_summary">음성 대화에서 청취를 시작하도록 제스처 구성</string>
+    <string name="settings_incar_motion_title">모션</string>
+    <string name="settings_incar_navigation">탐색</string>
+    <string name="settings_incar_onwhilecharging_summary">음성 대화 자동 실행은 휴대폰을 충전하는 중에만 사용</string>
+    <string name="settings_incar_onwhilecharging_title">충전 중에만 사용</string>
+    <string name="settings_incar_prompt_after_title">읽은 후 프롬프트 표시</string>
+    <string name="settings_incar_speakanswers_summary">당신 질문의 답변 말하기</string>
+    <string name="settings_incar_speakanswers_title">답변 말하기</string>
+    <string name="settings_incar_speakintro_summary">"음성 대화가 시작되면 '음성 대화'라고 말하십시오."</string>
+    <string name="settings_incar_speakintro_title">말하기 모드로 들어가기</string>
+    <string name="settings_incar_speakprompts_summary">청취 중 말하기 명령어 표시</string>
+    <string name="settings_incar_speakprompts_title">말하기 명령어</string>
+    <string name="settings_incar_speakshow_msgbodies_title">메시지 본문 보기</string>
+    <string name="settings_incar_summary">음성 대화에 대한 설정</string>
+    <string name="settings_incar_texttospeech">말할 텍스트</string>
+    <string name="settings_incar_title">음성 대화 설정</string>
+    <string name="settings_incar_wakeup">음성 대화 자동 실행</string>
+    <string name="settings_incar_wakeup_title">음성 대화 자동 실행</string>
+    <string name="settings_language_dialogtitle">언어</string>
+    <string name="settings_language_summary">입력 언어 선택</string>
+    <string name="settings_language_title">언어</string>
+    <string name="settings_Location">위치 사용</string>
+    <string name="settings_logged_in_as">로그인 권한 </string>
+    <string name="settings_login_facebook">Facebook에 로그인</string>
+    <string name="settings_login_foursquare">Foursquare에 로그인</string>
+    <string name="settings_login_twitter">Twitter에 로그인</string>
+    <string name="settings_logout">로그아웃하려면 클릭</string>
+    <string name="settings_profanityfilter_summary">불쾌감을 주는 음성검색 결과 숨기기</string>
+    <string name="settings_profanityfilter_title">불쾌감을 주는 단어 차단</string>
+    <string name="settings_ProfanityFiltering">불쾌감을 주는 단어 차단</string>
+    <string name="settings_search_engine_dialogtitle">웹 검색 엔진</string>
+    <string name="settings_search_engine_title">웹 검색 엔진</string>
+    <string name="settings_social_facebook_summary">Facebook에 로그인하려면 클릭</string>
+    <string name="settings_social_facebook_title">Facebook</string>
+    <string name="settings_social_foursquare_summary">Foursquare에 로그인하려면 클릭</string>
+    <string name="settings_social_foursquare_title">Foursquare</string>
+    <string name="settings_social_summary">Facebook및 Twitter 설정</string>
+    <string name="settings_social_title">SNS 설정</string>
+    <string name="settings_social_twitter_summary">Twitter에 로그인하려면 클릭</string>
+    <string name="settings_social_twitter_title">Twitter</string>
+    <string name="settings_space_accounts">계정</string>
+    <string name="settings_space_minute">분</string>
+    <string name="settings_space_minutes">분</string>
+    <string name="settings_TextToSpeechPlayback">음성을 재생하는 텍스트</string>
+    <string name="settings_TTSOptions_full">전체 메시지</string>
+    <string name="settings_TTSOptions_header">머리글만</string>
+    <string name="settings_TTSOptions_off">해제</string>
+    <string name="settings_uuid_title">음성 대화 고유 ID</string>
+    <string name="settings_uuid_summary">음성 대화 고유 ID</string>
+    <string name="settings_voice_command_help_summary">음성 명령에 대한 도움말</string>
+    <string name="settings_voice_command_help_title">음성 명령 도움말</string>
+    <string name="settings_voice_talk_help_summary">음성 대화에 대한 도움말</string>
+    <string name="settings_voice_talk_help_title">음성 대화 도움말</string>
+    <string name="settings_voice_talk_prompt_too_long">오류 프롬프트는 110자 이내여야만 합니다. 확인</string>
+    <string name="show_suggestions">제시어 표시</string>
+    <string name="show_suggestions_summary">입력하는 동안 제안되는 단어 표시</string>
+    <string name="showmessage_warning">경고</string>
+    <string name="showmessage_websearchnotsupported">웹 검색이 지원되지 않고있습니다. 다시 시도해 주십시오.</string>
+    <string name="skip">건너뛰기</string>
+    <string name="social_and_no_spaces">및</string>
+    <string name="social_api_days_ago">일 전</string>
+    <string name="social_api_err_auth1">(1)을 인증하는 동안 오류가 발생했습니다.</string>
+    <string name="social_api_err_auth2">(2)를 인증하는 동안 오류가 발생했습니다.</string>
+    <string name="social_api_error">오류:</string>
+    <string name="social_api_hours_ago">시간 전</string>
+    <string name="social_api_just_now">지금</string>
+    <string name="social_api_mins_ago">분 전</string>
+    <string name="social_api_no_name">이름 없음</string>
+    <string name="social_api_twitter_err_login">Twitter에 로그인하는 동안 오류가 발생했습니다. 사용자 이름과 암호를 확인하고 다시 시도하십시오.</string>
+    <string name="social_api_twitter_error">Twitter 오류:</string>
+    <string name="social_api_twitter_update_error">Twitter 상태를 업데이트하는 동안 오류가 발생했습니다. 나중에 다시 시도하십시오.</string>
+    <string name="social_dl_foursquare">Foursquare를 다운로드하시겠습니까?</string>
+    <string name="social_dl_foursquare_msg">Foursquare에 말하려면 Vlingo를 사용하는 것이 좋으나 Vlingo가 설치되어 있지 않습니다. 지금 Foursquare를 다운로드하시겠습니까?</string>
+    <string name="social_err_msg1">업데이트하려는 동안 오류가 발생했습니다.</string>
+    <string name="social_err_msg2">. 문제가 지속되면 로그아웃 후 다시 시도해 주십시오.</string>
+    <string name="social_facebook_comm_error">Facebook에서 사용자 정보를 가져올 수 없습니다. 나중에 다시 로그인하십시오.</string>
+    <string name="social_facebook_login_error">Facebook에 로그인하는 동안 오류가 발생했습니다. 사용자 이름/암호를 확인하고 다시 시도하십시오.</string>
+    <string name="social_follow_twitter">Vlingo를 팔로우하시겠습니까?</string>
+    <string name="social_follow_twitter_msg">Twitter에서 Vlingo를 사용하시겠습니까?</string>
+    <string name="social_foursquare_id">이메일 주소 또는 전화번호</string>
+    <string name="social_foursquare_login">Foursquare 로그인</string>
+    <string name="social_foursquare_login_error">Foursquare에 로그인하는 동안 오류가 발생했습니다. 사용자 이름/암호를 확인하고 다시 시도하십시오.</string>
+    <string name="social_login">로그인</string>
+    <string name="social_login_problem">로그인하는 중 문제점이 발생했습니다. 사용자 이름과 암호를 확인한 후 다시 시도하십시오.</string>
+    <string name="social_login_to_facebook">Facebook에 로그인하시겠습니까?</string>
+    <string name="social_login_to_facebook_msg">Facebook에 로그인을 하셔야 최근 근황을 업데이트 하실수 있습니다.</string>
+    <string name="social_login_to_foursquare">Foursquare에 로그인하시겠습니까?</string>
+    <string name="social_login_to_foursquare_msg">포스퀘어에 로그인을 하셔야 최근 근황을 업데이트 하실수 있습니다.</string>
+    <string name="social_login_to_network">네트워크에 로그인 중...</string>
+    <string name="social_login_to_network_msg">SNS에 로그인하여 상태를 업데이트해야 합니다. 위에서 사용할 네트워크를 선택합니다.</string>
+    <string name="social_login_to_twitter">Twitter에 로그인하시겠습니까?</string>
+    <string name="social_login_to_twitter_msg">Twitter에 로그인을 하셔야 최근 근황을 업데이트 하실수 있습니다.</string>
+    <string name="social_logout_facebook">Facebook으로부터 로그아웃</string>
+    <string name="social_logout_facebook_msg">Facebook에서 로그아웃하시겠습니까?</string>
+    <string name="social_logout_foursquare">Foursquare를 로그아웃하시겠습니까?</string>
+    <string name="social_logout_foursquare_msg">Foursquare에 로그아웃하시겠습니까?</string>
+    <string name="social_logout_twitter">Twitter로부터 로그아웃</string>
+    <string name="social_logout_twitter_msg">Twitter에서 로그아웃하시겠습니까?</string>
+    <string name="social_no">아니요</string>
+    <string name="social_no_network">선택한 SNS가 없습니다.</string>
+    <string name="social_no_status">SNS 상태가 비었습니다.</string>
+    <string name="social_none_selected">선택 안 함</string>
+    <string name="social_not_now">아니요</string>
+    <string name="social_password_blank">암호가 비어 있습니다.</string>
+    <string name="social_space_selected">선택함</string>
+    <string name="social_status_updated">상태 업데이트 완료</string>
+    <string name="social_too_long">문자수가 너무 많습니다. 140자 이내로 제한해 주십시오.</string>
+    <string name="social_twitter_id">사용자 이름 또는 이메일 주소</string>
+    <string name="social_twitter_login">Twitter 로그인</string>
+    <string name="social_twitter_login_error">Twitter에 로그인하는 동안 오류가 발생했습니다. 사용자 이름/암호를 확인하고 다시 시도하십시오.</string>
+    <string name="social_update_layout_no_network">선택한 네트워크 없음</string>
+    <string name="social_update_layout_share">공유</string>
+    <string name="social_update_layout_update_on">업데이트 일자:</string>
+    <string name="social_update_layout_zero_of_140">0/140</string>
+    <string name="social_updating">업데이트 중...</string>
+    <string name="social_username_blank">사용자 이름이 비어 있습니다.</string>
+    <string name="social_wait_a_moment">잠시 기다려 주십시오.</string>
+    <string name="social_wait_logging_in">로그인하는 동안 잠시 기다려 주십시오.</string>
+    <string name="social_yes">예</string>
+    <string name="sound_on_keypress">키 누를 때 사운드</string>
+    <string name="speak_again">다시 말하기</string>
+    <string name="speak_now">지금 말씀하세요.</string>
+    <string name="superdialer_business_listings">사업 목록</string>
+    <string name="superdialer_business_search_error">죄송합니다. 회사 목록을 검색하는 동안 오류가 발생했습니다. 나중에 다시 시도하십시오.</string>
+    <string name="superdialer_find">&lt;font color=#85bee0>찾기&lt;/font></string>
+    <string name="superdialer_google">&lt;font color=#ffffff>Google&lt;/font></string>
+    <string name="superdialer_local_search">로컬 검색</string>
+    <string name="superdialer_match_paren">일치)</string>
+    <string name="superdialer_matches_paren">일치)</string>
+    <string name="superdialer_no_matches">일치 항목 없음</string>
+    <string name="superdialer_no_matches_paren">일치 항목 없음)</string>
+    <string name="superdialer_no_results">&lt;font color=#909090>죄송합니다. 결과가 없습니다.&lt;/font></string>
+    <string name="superdialer_recent_contacts">최근 통화처</string>
+    <string name="superdialer_searching_for">&lt;font color=#ffffff> 검색 중&lt;/font></string>
+    <string name="tap_and_speak">누르고 말하기</string>
+    <string name="tap_to_cancel">눌러서 취소</string>
+    <string name="tap_when_done">말하기가 완료되면 누르십시오.</string>
+    <string name="testing">테스트</string>
+    <string name="third_space">세 번째</string>
+    <string name="tos_accept">동의</string>
+    <string name="tos_accept_samsung">확인</string>
+    <string name="tos_decline">거부</string>
+    <string name="tos_decline_samsung">이전</string>
+    <string name="tos_dialog_view_terms">"아래의 '동의' 버튼을 터치하시면, Vlingo &lt;a href=\"http://www.vlingo.com/wap/privacy/ko\"> 개인 정보 보호 정책&lt;/a>에 설명되어 있는 바와 같이 위치, 검색 및 기타 정보를 포함하여 Vlingo가 정보를 수집하고 사용할 수 있습니다. &lt;a href=\"http://www.vlingo.com/wap/terms/ko\">서비스 약관&lt;/a>에 동의하시겠습니까?"</string>
+    <string name="tos_dialog_view_terms_samsung">"귀하는 여기에 포함된 모든 애플리케이션 및 이러한 애플리케이션을 통해 제공되는 서비스와 컨텐츠가 제3자 서비스 제공업체가 제공하는 것이며 삼성전자(주)가 제공하는 것이 아님을 인정하고 동의합니다.
+
+
+
+또한 귀하는 이러한 제3자 애플리케이션 및 서비스와 컨텐츠를 다운로드하고, 설치하고, 사용하는 것이 제3자 서비스 제공업체의 이용약관, 사용권 계약, 개인정보 보호정책, 기타 동의서 등을 따름을, 그리고 이러한 제3자 서비스 제공업체에게 제공한 여러 정보 및 개인 정보가 해당 제3자 서비스 제공업체의 개인정보 보호정책을 따름을 인정하고 동의합니다.
+
+
+
+삼성은 이러한 제3자 서비스 제공업체의 개인정보 보호정책 및 기타 약관에 대해 아무런 책임이 없으며, 제3자 애플리케이션, 서비스, 컨텐츠와 관련하여 또는 이를 사용하는 것과 관련하여 아무런 법적 책임이 없음을 명확히 밝힙니다."</string>
+    <string name="tos_must_accept_to_use">음성 명령(or 대화)을 사용하려면 사용 약관에 동의해야 합니다.</string>
+    <string name="tos_please_uninstall">죄송합니다. 음성 명령의 이전 버전을 제거하십시오.</string>
+    <string name="tos_uninstall">제거</string>
+    <string name="tos_uninstall_old">이전 버전 제거</string>
+    <string name="tos_uninstall_old_msg">음성 명령의 이전 버전이 설치되어 있습니다. 죄송합니다. 계속하려면 음성 명령의 이전 버전을 새 버전으로 교체해야 합니다.</string>
+    <string name="tos_vlingo_terms">Vlingo 서비스 약관</string>
+    <string name="tos_vlingo_terms_samsung">삼성 약관동의</string>
+    <string name="touch_to_continue">계속하려면 이 힌트 누르기 »</string>
+    <string name="touch_to_finish">이 힌트를 종료하고 입력을 시작하려면 여기를 누르십시오.</string>
+    <string name="translate_app_not_supported">번역 애플리케이션은 지원되지 않습니다.</string>
+    <string name="try_saying">말씀하십시오.</string>
+    <string name="type">입력</string>
+    <string name="unknown_contact">알 수 없는 통화처입니다.</string>
+    <string name="update_google_maps">블링고의 내비게이션을 이용하시려면 최신 구글 지도를 설치하십시오.</string>
+    <string name="update_nav_app_china">블링고의 내비게이션을 이용하시려면 최신 오토내비를 설치하십시오.</string>
+    <string name="util_day_ago">일 전</string>
+    <string name="util_hour_ago">시간 전</string>
+    <string name="util_min_ago">분 전</string>
+    <string name="vibrate_on_keypress">키 누를 때 진동</string>
+    <string name="Vlingo">음성 명령</string>
+    <string name="vlingo_answers_answer">답변</string>
+    <string name="vlingo_answers_confirm_question">귀하가 요청한 질문이 맞습니까?</string>
+    <string name="vlingo_answers_search_google">Google 검색</string>
+    <string name="vlingo_answers_speak_answer">답변을 말하십시오.</string>
+    <string name="vlingo_answers_this_is_answer">답변입니다.</string>
+    <string name="vlingo_answers_unknown_location">죄송합니다. 귀하의 현재 위치를 감지할 수 없습니다.</string>
+    <string name="vlingo_not_authorized">이 기능을 사용하려면 음성 명령을 활성화하십시오.</string>
+    <string name="voice_suggestions">음성 제안</string>
+    <string name="voice_suggestions_summary">한 단어를 누를 때 대체 선택 문구 표시</string>
+    <string name="wcis">메뉴 별 명령어 예시</string>
+    <string name="wcis_contact">음성으로 통화처 검색하기</string>
+    <string name="wcis_email_send">연락처, 제목 및 내용을 통해 이메일 보내기</string>
+    <string name="wcis_general_help">일반 도움말</string>
+    <string name="wcis_hotels_example">서울에 있는 &lt;font color=#85bee0>호텔 찾기&lt;/font>&lt;br/>\"금요일 저녁 제주도에 있는 &lt;font color=#85bee0>호텔 찾기&lt;/font></string>
+    <string name="wcis_hotels_example_text">호텔을 이름이나 지역으로 검색하실수 있습니다.&lt;br/>&lt;br/> 만약 장소를 말씀하시지 않을경우 블링고가 현재 위치에서 가장 가까운 호텔을 찾을것입니다.</string>
+    <string name="wcis_hotels_tag_line">호텔 예약을 음성으로 하기</string>
+    <string name="wcis_how_to_use">음성 대화 사용 방법</string>
+    <string name="wcis_how_to_use_caption">음성 대화 기능에 대한 지침</string>
+    <string name="wcis_how_to_use_VC_caption">음성 명령 기능에 대한 지침</string>
+    <string name="wcis_info_row_more_info">추가 정보</string>
+    <string name="wcis_maps_directions">지도 또는 길 찾기</string>
+    <string name="wcis_maps_find_businesses">말하여 회사 찾기</string>
+    <string name="wcis_memo">음성으로 메모 작성</string>
+    <string name="wcis_movies_example">SNS 네트워크 &lt;font color=#85bee0>영화 티켓 예매&lt;/font>&lt;br/>\"신촌 영화관에서 해리포터 &lt;font color=#85bee0>영화 티켓 찾기&lt;/font></string>
+    <string name="wcis_movies_tag_line">어떤것이 상영하는지 보고 티켓 예매하기</string>
+    <string name="wcis_nav">주소 및 업체명으로 지도 검색</string>
+    <string name="wcis_openapps_open">음성으로 애플리케이션 실행</string>
+    <string name="wcis_schedule">음성으로 일정 확인</string>
+    <string name="wcis_search_speak_query">음성으로 인터넷 검색</string>
+    <string name="wcis_sms_speak_text">음성으로 메시지 보내기</string>
+    <string name="wcis_social_update">음성으로 Facebook 또는 Twitter 업데이트 하기</string>
+    <string name="wcis_social_update_fb">음성으로 Facebook을 업데이트 합니다.</string>
+    <string name="wcis_social_update_fb_and_tw">음성으로 Facebook 및 Twitter를 업데이트 합니다.</string>
+    <string name="wcis_social_update_tw">음성으로 Twitter를 업데이트 합니다.</string>
+    <string name="wcis_super_dial_call_any">음성으로 미국의 회사에 전화</string>
+    <string name="wcis_tutorial">사용 지침서</string>
+    <string name="wcis_tutorial_caption">비디오를 보시고 음성 대화에 대해 배우기</string>
+    <string name="wcis_voice_dial_call">음성으로 미국의 회사 또는 통화처에 전화</string>
+    <string name="wcis_voice_dial_call_contacts">음성으로 전화 걸기</string>
+    <string name="wcis_wake_up">음성 대화 자동 실행</string>
+    <string name="wcis_wake_up_caption">음성 대화 자동 실행에 대한 지침</string>
+    <string name="wcis_website">음성으로 웹사이트 바로가기</string>
+    <string name="WebSearchEngine">웹 검색 엔진</string>
+    <string name="what_can_i_say">메뉴 별 명령어 예시</string>
+    <string name="widget_name">음성</string>
+    <string name="widget_vlingo_incar">음성 대화</string>
+    <string name="settings_launch_voicetalk_summary">홈 버튼을 두 번 눌러 음성 대화를 실행합니다</string>
+    <string name="settings_launch_voicetalk_title">음성 대화를 실행</string>
+    <string name="phrasespotter_localized">true</string>
+</resources>

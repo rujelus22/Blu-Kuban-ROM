@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:versionCode="1" android:versionName="1.0" package="com.android.samsungtest.FactoryTest"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <permission android:name="com.sec.factory.permission.KEYSTRING" android:protectionLevel="signatureOrSystem" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="com.samsung.android.permission.READ_MEMO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <application android:label="@string/app_name">
+        <activity android:name=".BluetoothSearchTest" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/factory_format" android:name="com.android.samsungtest.rilsupport.FactoryReset" android:screenOrientation="portrait" />
+        <activity android:label="@string/factory_format" android:name="com.android.samsungtest.SimpleFunctionTest.Factory_reset" android:process="com.android.phone" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.EtcTest.touch_noise" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.android.samsungtest.rilsupport.ModemReset" android:process="com.android.phone" />
+        <receiver android:name="FactoryTestBroadcastReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MAX_2" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MIN_2" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_OFF_2" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MAX_L_2" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MIN_L_2" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MAX_R_2" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MIN_R_2" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.MP3_TEST_START_2" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.MP3_TEST_STOP_2" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="FactoryTestBroadcastReceiver" android:permission="com.sec.factory.permission.KEYSTRING" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$$15" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$$0" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$$2" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$$3" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$$8" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$$9" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$0" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$1" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$2" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$3" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$4" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$5" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$6" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$7" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$8" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$9" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$*" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="$#" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="0*" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="0283" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="SOCRESET" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+.	<data android:scheme="android_secret_code" android:host="WLan_RF_Test" />
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="436324" />
+                <data android:scheme="android_secret_code" android:host="4747" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="FactoryModeKeyStringBroadcastReceiver" android:permission="com.sec.factory.permission.KEYSTRING" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="46744674" />
+                <data android:scheme="android_secret_code" android:host="80" />
+                <data android:scheme="android_secret_code" android:host="251" />
+                <data android:scheme="android_secret_code" android:host="250" />
+                <data android:scheme="android_secret_code" android:host="350" />
+                <data android:scheme="android_secret_code" android:host="4327" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="FactoryStatusBroadcastReceiver" android:permission="com.sec.factory.permission.KEYSTRING" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="TEST_HISTORY" />
+                <data android:scheme="android_secret_code" android:host="07" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.samsungtest.rilsupport.RilSupportBroadcastReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SimpleFunctionTest.LoopbackTest" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.ExternalMemoryTest" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.MagneticTest_yamaha" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.CameraStart" />
+                <action android:name="com.android.samsungtest.CameraStart.Retry" />
+                <action android:name="com.android.samsungtest.CameraStart.Pass" />
+                <action android:name="com.android.samsungtest.CameraStart.Fail" />
+                <action android:name="com.android.samsungtest.CameraStop" />
+                <action android:name="com.android.samsungtest.CameraStop.Pass" />
+                <action android:name="com.android.samsungtest.CameraStop.Fail" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.DFTExternalMemoryTest" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.RESETACK" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_SCANNER_FINISHED" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SELECTIVEACK" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.STAModeSet" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SIOModeSet" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.InFTA" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.DFTExternalMemoryTest" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.LcdOffSet" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.BtIdWrite" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.WlanIdWrite" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.samsungtest.rilsupport.rilcommunicator.RilCommandReceiver">
+            <intent-filter>
+                <action android:name="com.android.samsungtest.RilCommand" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.samsungtest.rilsupport.rilcommunicator.RilCommandSender" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.android.action.RilCommandSend" />
+                <action android:name="com.android.samsungtest.LoopbackCMD" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.android.samsungtest.rilsupport.commandaction.RilActionService" android:enabled="true" />
+        <activity android:name="com.android.samsungtest.rilsupport.commandaction.RilActionActivity" android:screenOrientation="portrait" />
+        <receiver android:name="com.android.samsungtest.dftrilsupport.dftrilcommunicator.DftRilCommandReceiver">
+            <intent-filter>
+                <action android:name="com.android.samsungtest.RilDFTCommand" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.samsungtest.dftrilsupport.dftrilcommunicator.DftRilCommandSender" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.android.action.RilDftCommandSend" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.android.samsungtest.dftrilsupport.dftcommandaction.DftRilActionService" android:enabled="true" />
+        <receiver android:name="com.android.samsungtest.miscrilsupport.miscrilcommunicator.MiscRilCommandReceiver">
+            <intent-filter>
+                <action android:name="com.android.samsungtest.RilMISCCommand" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.samsungtest.miscrilsupport.miscrilcommunicator.MiscRilCommandSender" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.android.action.RilMiscCommandSend" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.android.samsungtest.factorytest.SdcardTestService" />
+        <service android:name="com.android.samsungtest.factorytest.CallTestService" android:exported="true" />
+        <service android:name="com.android.samsungtest.factorytest.EarphoneTestService" android:exported="true" />
+        <service android:name="com.android.samsungtest.miscrilsupport.misccommandaction.MiscRilActionService" android:enabled="true" />
+        <receiver android:name="com.android.samsungtest.dftrilsupport.dftrilcommunicator.DftBootBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.samsungtest.rilsupport.RilSupportBroadcastReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SendResultToRil" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SendGetResultToRil" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SendGetResultToRilRsp" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.FactoryTestStatus" />
+                <action android:name="com.android.samsungtest.RequestFactoryTestHistoryView" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.MemoryFormatCmd" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.MemoryFormatCheck" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.MemorySizeCheck" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MAX" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MIN" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_OFF" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MAX_L" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MIN_L" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MAX_R" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.SPEAKER_TEST_MIN_R" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.Mp3_TEST_START" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.Mp3_TEST_STOP" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.samsungtest.rilsupport.RilSupportBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="767*3855" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.OrientationTest" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="FactoryModeInitialSettingBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.samsungtest.DELETE_RESETVERIFY_FILE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="FactoryModeInitialSettingBroadcastReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.android.samsungtest.RilOmissionCommand" />
+            </intent-filter>
+        </receiver>
+        <receiver android:label="TransFactorytestAppBootCompletedReceiver" android:name=".FactoryTestAppBootCompletedReceiver" android:enabled="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/test_result" android:name="com.android.samsungtest.rilsupport.TestResult" android:exported="true" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.SimpleFunctionTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.LoopbackTest" android:exported="true" android:process="com.android.phone" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.EarphoneTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.SendEndTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.SdCardTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.VersionTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.MotorTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.UsbTest" android:process="com.android.phone" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.OrientationTest" android:process="com.android.phone" android:configChanges="orientation" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.IntensityTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.ProximityTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.TouchTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.TouchkeyTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.GripTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.KeypadTest" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Light.NoTitleBar" android:name="com.sec.android.app.EtcTest.HdmiTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.HdmiTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.LoudSpkLoopbackTest" android:process="com.android.phone" android:screenOrientation="portrait" />
+        <activity android:label="@string/function_test_text" android:name="com.android.samsungtest.SimpleFunctionTest.FunctionTest" android:screenOrientation="portrait" />
+        <activity android:label="@string/phoneuitl_app_name" android:name="com.android.samsungtest.FactoryTest.PhoneUtil" android:screenOrientation="portrait" />
+        <activity android:label="@string/simple_test" android:name="com.android.samsungtest.SimpleFunctionTest.SFTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.FactoryTest.FactoryTestMainHistoryView" android:process="com.android.phone" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.android.samsungtest.SimpleFunctionTest.CameraPreview" />
+        <activity android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" android:label="@string/app_name" android:name="com.android.samsungtest.camera.Camera" android:process="com.android.phone" android:screenOrientation="landscape" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/oj_key_test" android:name="com.android.samsungtest.SimpleFunctionTest.ojKeyTest" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.button_sensor" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.button_grip" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.AccImageTest" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.Keypad2Test" android:screenOrientation="landscape" />
+        <activity android:label="@string/secondary_test_title" android:name="com.android.samsungtest.SimpleFunctionTest.SecondaryTest" android:process="com.android.phone" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.SensorTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.MagneticSensorTest" android:screenOrientation="portrait" />
+        <activity android:label="@string/function_test_text" android:name="com.android.samsungtest.SimpleFunctionTest.ListFunctionTest" android:screenOrientation="portrait" />
+        <activity android:label="@string/Gyroscope_test_text" android:name="com.android.samsungtest.SimpleFunctionTest.GyroscopeSensorTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.WLanRFTest" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.SimpleFunctionTest.UsbPath" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoDisplay" android:name="TransFactorytestApp" />
+        <activity android:label="@string/factorytest_app" android:name="com.android.samsungtest.FactoryTest.FactoryTestApp" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.android.samsungtest.FactoryTest.SpeakerTestService" android:exported="true" />
+        <service android:name="com.android.samsungtest.FactoryTest.MP3TestService" android:exported="true" />
+        <service android:name="com.android.samsungtest.rilsupport.SensorReadingService" android:process="com.android.phone" />
+        <service android:name="com.android.samsungtest.EtcTest.WakeLockOnService" android:enabled="true" android:exported="true" />
+        <receiver android:name="com.android.samsungtest.FactoryTest.MmiCheck" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.android.samsungtest.FactoryTest.MMICHECK" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.samsungtest.FactoryTest.ReadData">
+            <intent-filter>
+                <action android:name="com.android.samsungtest.FactoryTest.MMICHECK_READDATA" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".WifiTestBroadcastReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.android.samsungtest.FactoryTest.WIFION" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.FactoryTest.WIFISTATUS" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.samsungtest.FactoryTest.WIFIOFF" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.samsungtest.rilsupport.RilSupportBroadcastReceiver" android:sharedUserId="android.uid.system" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.android.samsungtest.rilsupport.RilSupportBroadcastReceiver.TEST_HISTORY" />
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/camera_firmware_title" android:name="com.android.samsungtest.camerafirmware.CameraFirmware" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.android.samsungtest.FactoryTest.HdcpCheckDialog" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/camera_firmware_title" android:name="com.android.samsungtest.camerafirmware.CameraFirmware_user" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.android.samsungtest.camerafirmware.CameraFirmwareBroadCastReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="34971539" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.samsungtest.camerafirmware.CameraFirmwareBroadCastReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="7412365" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.samsungtest.camerafirmware.CameraFirmwareBroadCastReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.sec.android.app.samsungapps.una.COMPLETED_FILL_DATA_IN_DB" />
+            </intent-filter>
+        </receiver>
+        <uses-library android:name="seccamera" />
+        <uses-library android:name="sechardware" />
+        <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    </application>
+</manifest>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.touchwiz.widget.TwScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0"
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="14.0dip" android:textStyle="bold" android:gravity="center_vertical" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="25.319977dip" android:scaleType="fitXY" android:text="@string/alarm_snooze_duration" android:shadowColor="#ff000000" android:shadowRadius="1.0" android:layout_centerHorizontal="false" android:layout_centerVertical="true" style="?android:attr/listSeparatorTextViewStyle" />
+            <com.sec.android.touchwiz.widget.TwRadioGroup android:orientation="vertical" android:id="@id/duration_radio" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/duration_item1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarm_snooze_3min" style="@style/AlarmRadioButtonText" />
+                <View style="@style/LineSeperator" />
+                <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/duration_item2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarm_snooze_5min" style="@style/AlarmRadioButtonText" />
+                <View style="@style/LineSeperator" />
+                <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/duration_item3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarm_snooze_10min" style="@style/AlarmRadioButtonText" />
+                <View style="@style/LineSeperator" />
+                <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/duration_item4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarm_snooze_15min" style="@style/AlarmRadioButtonText" />
+                <View style="@style/LineSeperator" />
+                <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/duration_item5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarm_snooze_30min" style="@style/AlarmRadioButtonText" />
+            </com.sec.android.touchwiz.widget.TwRadioGroup>
+            <TextView android:textSize="14.0dip" android:textStyle="bold" android:gravity="center_vertical" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="25.319977dip" android:scaleType="fitXY" android:text="@string/alarm_snooze_repeat" android:shadowColor="#ff000000" android:shadowRadius="1.0" android:layout_centerHorizontal="false" android:layout_centerVertical="true" style="?android:attr/listSeparatorTextViewStyle" />
+            <com.sec.android.touchwiz.widget.TwRadioGroup android:orientation="vertical" android:id="@id/repeat_radio" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/repeat_item1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarm_snooze_1time" style="@style/AlarmRadioButtonText" />
+                <View style="@style/LineSeperator" />
+                <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/repeat_item2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarm_snooze_2times" style="@style/AlarmRadioButtonText" />
+                <View style="@style/LineSeperator" />
+                <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/repeat_item3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarm_snooze_3times" style="@style/AlarmRadioButtonText" />
+                <View style="@style/LineSeperator" />
+                <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/repeat_item4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarm_snooze_5times" style="@style/AlarmRadioButtonText" />
+                <View style="@style/LineSeperator" />
+                <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/repeat_item5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarm_snooze_10times" style="@style/AlarmRadioButtonText" />
+                <View style="@style/LineSeperator" />
+            </com.sec.android.touchwiz.widget.TwRadioGroup>
+        </LinearLayout>
+    </com.sec.android.touchwiz.widget.TwScrollView>
+    <com.sec.android.touchwiz.widget.TwSoftkeyView android:id="@id/Layout_SoftKey" android:layout_width="fill_parent" android:layout_height="59.329987dip"
+      xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+        <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/snooze_save" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/save" sytle="@style/AlarmButtonControlLeft" />
+        <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/snooze_cancel" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/cancel" sytle="@style/AlarmButtonControlRight" />
+    </com.sec.android.touchwiz.widget.TwSoftkeyView>
+</LinearLayout>

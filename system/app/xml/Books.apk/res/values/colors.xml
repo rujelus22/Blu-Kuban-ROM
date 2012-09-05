@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="about_the_book_gray_separator">#ffbdbdbd</color>
+    <color name="about_the_book_blue_separator">#ff3f9ddd</color>
+    <color name="about_the_book_background">#ff3d3f40</color>
+    <color name="about_the_book_title_text_color">#ffffffff</color>
+    <color name="about_the_book_author_text_color">#ff848484</color>
+    <color name="clear">#00000000</color>
+    <color name="plus_one_button_text_color">@android:color/secondary_text_dark</color>
+    <color name="plus_one_button_with_counts_text_color">#ff222222</color>
+</resources>

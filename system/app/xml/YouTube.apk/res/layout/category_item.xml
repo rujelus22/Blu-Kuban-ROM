@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.youtube.app.ui.StackButton android:orientation="horizontal" android:paddingLeft="@dimen/list_item_padding" android:paddingTop="5.0dip" android:paddingRight="@dimen/list_item_padding" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" yt:fontSize="18.0dip" yt:labelPadding="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:yt="http://schemas.android.com/apk/res/com.google.android.youtube" />

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cable_title">Ajustes USB</string>
+    <string name="cable_basic">Ajustes predeterminados</string>
+    <string name="cable_list_samsungkies">Samsung Kies</string>
+    <string name="cable_list_movabledisk">Almacenam masivo</string>
+    <string name="cable_list_selectmenu">Preguntar al conectar</string>
+    <string name="cable_lock">Lock mass storage</string>
+    <string name="cable_lock_info">Password required to connect</string>
+    <string name="sdcard_missing_message">El teléfono no tiene ninguna tarjeta SD insertada</string>
+</resources>

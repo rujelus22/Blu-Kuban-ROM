@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:id="@id/rename_edittext" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0px" android:layout_marginRight="10.0px" android:minWidth="300.0px" android:singleLine="true" android:capitalize="sentences" android:imeOptions="actionDone" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0px" android:layout_marginRight="10.0px">
+        <Button android:textSize="16.0sp" android:gravity="center" android:id="@id/button_ok" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/ok" android:singleLine="true" android:layout_weight="1.0" />
+        <Button android:textSize="16.0sp" android:gravity="center" android:id="@id/button_cancel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/cancel" android:singleLine="true" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

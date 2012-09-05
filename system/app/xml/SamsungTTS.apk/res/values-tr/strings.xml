@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="general_settings">Genel ayarlar</string>
+    <string name="samsungtts_settings">Samsung TTS ayarları</string>
+    <string name="open_source_licenses">Açık kaynak lisansları</string>
+    <string name="advanced_settings">Gelişmiş ayarlar</string>
+    <string name="change_voice_effects">Video efektleri</string>
+    <string name="change_voice_effects_summary">Seslendirilen metne çeşitli ses efektleri uygular</string>
+    <string name="installed_languages">Yüklenmiş diller</string>
+    <string name="female">Kadın</string>
+    <string name="male">Erkek</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/alarm_bg_h" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="121.34dip" android:layout_marginTop="12.669983dip" android:src="@drawable/timer" />
+    <TextView android:textSize="28.669983dip" android:typeface="sans" android:textColor="@touchwiz:color/tw_color001" android:gravity="left|center" android:id="@id/timer_running_time" android:layout_width="fill_parent" android:layout_height="36.0dip" android:layout_marginLeft="304.0dip" android:layout_marginTop="73.34dip" android:shadowColor="@touchwiz:color/tw_color002" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="0.5" />
+    <TextView android:textSize="22.0dip" android:typeface="sans" android:textColor="#ffcccccc" android:gravity="left|center" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginLeft="304.0dip" android:layout_marginTop="109.34dip" android:text="@string/timer_times_out" android:shadowColor="@touchwiz:color/tw_color002" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="0.5" />
+    <com.sec.android.app.clockpackage.timer.TimerSlidingTab android:orientation="horizontal" android:id="@id/tab_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" leftHandleX="400" leftHandleY="351" rightHandleX="800" rightHandleY="262" />
+</RelativeLayout>

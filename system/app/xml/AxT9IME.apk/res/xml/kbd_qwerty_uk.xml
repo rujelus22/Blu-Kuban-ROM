@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard android:screenOrientation="portrait" android:keyWidth="7.500005%p" android:keyHeight="8.000004%p" android:horizontalGap="0.83340406%p" android:verticalGap="1.9999981%p"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Row android:keyHeight="0.0px" android:verticalGap="1.7500043%p">
+        <Key android:keyWidth="100.0%p" android:codes="-255" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:rowEdgeFlags="top">
+        <Key android:horizontalGap="0.41667223%p" android:codes="106" android:keyEdgeFlags="left" android:keyLabel="й" />
+        <Key android:codes="119" android:keyLabel="ц" />
+        <Key android:codes="116" android:keyLabel="у" />
+        <Key android:codes="107" android:keyLabel="к" />
+        <Key android:codes="102" android:keyLabel="е" />
+        <Key android:codes="110" android:keyLabel="н" />
+        <Key android:codes="100" android:keyLabel="г" />
+        <Key android:codes="121" android:keyLabel="ш" />
+        <Key android:codes="122" android:keyLabel="щ" />
+        <Key android:codes="104" android:keyLabel="з" />
+        <Key android:codes="118" android:keyLabel="х" />
+        <Key android:codes="128" android:keyEdgeFlags="right" android:keyLabel="ї" />
+    </Row>
+    <Row>
+        <Key android:horizontalGap="4.583335%p" android:codes="117" android:keyEdgeFlags="left" android:keyLabel="ф" />
+        <Key android:codes="127" android:keyLabel="і" />
+        <Key android:codes="99" android:keyLabel="в" />
+        <Key android:codes="97" android:keyLabel="а" />
+        <Key android:codes="112" android:keyLabel="п" />
+        <Key android:codes="113" android:keyLabel="р" />
+        <Key android:codes="111" android:keyLabel="о" />
+        <Key android:codes="108" android:keyLabel="л" />
+        <Key android:codes="101" android:keyLabel="д" />
+        <Key android:codes="103" android:keyLabel="ж" />
+        <Key android:codes="126" android:keyEdgeFlags="right" android:keyLabel="є" />
+    </Row>
+    <Row>
+        <Key android:keyWidth="11.667002%p" android:horizontalGap="0.41667223%p" android:codes="-1" android:keyEdgeFlags="left" android:keyLabel="StrEmpty" />
+        <Key android:codes="125" android:keyLabel="я" />
+        <Key android:codes="120" android:keyLabel="ч" />
+        <Key android:codes="114" android:keyLabel="с" />
+        <Key android:codes="109" android:keyLabel="м" />
+        <Key android:codes="105" android:keyLabel="и" />
+        <Key android:codes="115" android:keyLabel="т" />
+        <Key android:codes="123" android:keyLabel="ь" />
+        <Key android:codes="98" android:keyLabel="б" />
+        <Key android:codes="124" android:keyLabel="ю" />
+        <Key android:keyWidth="11.667002%p" android:codes="-5" android:keyEdgeFlags="right" android:isRepeatable="true" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyWidth="8.334005%p" android:horizontalGap="1.6669989%p" android:rowEdgeFlags="bottom" android:keyboardMode="@id/mode_text">
+        <Key android:keyWidth="18.75%p" android:horizontalGap="0.83340406%p" android:codes="-102" android:keyEdgeFlags="left" android:keyLabel="StrModeChange" />
+        <Key android:codes="-103" android:keyLabel="StrEmpty" />
+        <Key android:keyWidth="41.250706%p" android:codes="32" android:keyLabel="StrEmpty" />
+        <Key android:codes="46" android:popupKeyboard="@xml/kbd_popup_symbol" android:keyLabel="." />
+        <Key android:keyWidth="14.999998%" android:codes="10" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyWidth="8.334005%p" android:horizontalGap="1.6669989%p" android:rowEdgeFlags="bottom" android:keyboardMode="@id/mode_text_voice">
+        <Key android:keyWidth="13.332998%p" android:horizontalGap="0.83340406%p" android:codes="-102" android:keyEdgeFlags="left" android:keyLabel="StrModeChange" />
+        <Key android:codes="-103" android:keyLabel="StrEmpty" />
+        <Key android:codes="-310" android:keyLabel="StrEmpty" />
+        <Key android:keyWidth="36.669994%p" android:codes="32" android:keyLabel="StrEmpty" />
+        <Key android:codes="46" android:popupKeyboard="@xml/kbd_popup_symbol" android:keyLabel="." />
+        <Key android:keyWidth="14.999998%" android:codes="10" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyWidth="8.334005%p" android:horizontalGap="1.6669989%p" android:rowEdgeFlags="bottom" android:keyboardMode="@id/mode_url">
+        <Key android:keyWidth="13.332998%p" android:horizontalGap="0.83340406%p" android:codes="-102" android:keyEdgeFlags="left" android:keyLabel="StrModeChange" />
+        <Key android:codes="-103" android:keyLabel="StrEmpty" />
+        <Key android:keyWidth="10.834206%p" android:codes="47" android:keyLabel="/" />
+        <Key android:keyWidth="17.501402%p" android:codes="-201" android:keyOutputText="@string/s_www_dot" android:keyLabel="@string/s_www_dot" />
+        <Key android:keyWidth="15.000999%p" android:codes="32" android:keyLabel="StrEmpty" />
+        <Key android:codes="46" android:popupKeyboard="@xml/kbd_popup_symbol" android:keyLabel="." />
+        <Key android:keyWidth="14.999998%" android:codes="10" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyWidth="8.334005%p" android:horizontalGap="1.6669989%p" android:rowEdgeFlags="bottom" android:keyboardMode="@id/mode_email">
+        <Key android:keyWidth="13.332998%p" android:horizontalGap="0.83340406%p" android:codes="-102" android:keyEdgeFlags="left" android:keyLabel="StrModeChange" />
+        <Key android:codes="-103" android:keyLabel="StrEmpty" />
+        <Key android:keyWidth="10.834206%p" android:codes="64" android:keyLabel="\@" />
+        <Key android:keyWidth="21.667994%p" android:codes="-202" android:popupKeyboard="@xml/kbd_popup_domain_all_land" android:keyOutputText="@string/s_dot_com" android:keyLabel="@string/s_dot_com" />
+        <Key android:keyWidth="10.834206%p" android:codes="32" android:keyLabel="StrEmpty" />
+        <Key android:codes="46" android:popupKeyboard="@xml/kbd_popup_symbol" android:keyLabel="." />
+        <Key android:keyWidth="14.999998%" android:codes="10" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyHeight="0.0px" android:verticalGap="1.7500043%p" />
+</Keyboard>

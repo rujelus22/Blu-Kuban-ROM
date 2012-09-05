@@ -1,0 +1,582 @@
+.class public Lcom/google/android/maps/driveabout/power/a;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field private static final a:Lcom/google/android/maps/driveabout/power/a;
+
+.field private static b:Lcom/google/android/maps/driveabout/power/a;
+
+.field private static final c:Ljava/util/Set;
+
+.field private static final d:Lcom/google/android/maps/driveabout/power/g;
+
+
+# instance fields
+.field private final e:Lcom/google/android/maps/driveabout/power/i;
+
+.field private final f:Landroid/view/Window;
+
+.field private final g:Lcom/google/android/maps/driveabout/power/e;
+
+.field private final h:F
+
+.field private final i:Ls/o;
+
+.field private final j:I
+
+.field private k:I
+
+.field private final l:Ljava/lang/Runnable;
+
+.field private final m:Ljava/lang/Runnable;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    new-instance v0, Lcom/google/android/maps/driveabout/power/b;
+
+    invoke-direct {v0}, Lcom/google/android/maps/driveabout/power/b;-><init>()V
+
+    sput-object v0, Lcom/google/android/maps/driveabout/power/a;->a:Lcom/google/android/maps/driveabout/power/a;
+
+    sget-object v0, Lcom/google/android/maps/driveabout/power/a;->a:Lcom/google/android/maps/driveabout/power/a;
+
+    sput-object v0, Lcom/google/android/maps/driveabout/power/a;->b:Lcom/google/android/maps/driveabout/power/a;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    sput-object v0, Lcom/google/android/maps/driveabout/power/a;->c:Ljava/util/Set;
+
+    new-instance v0, Lcom/google/android/maps/driveabout/power/g;
+
+    invoke-direct {v0}, Lcom/google/android/maps/driveabout/power/g;-><init>()V
+
+    sput-object v0, Lcom/google/android/maps/driveabout/power/a;->d:Lcom/google/android/maps/driveabout/power/g;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .registers 8
+
+    const/4 v1, 0x0
+
+    new-instance v3, Lcom/google/android/maps/driveabout/power/h;
+
+    invoke-direct {v3}, Lcom/google/android/maps/driveabout/power/h;-><init>()V
+
+    const/high16 v4, 0x7fc0
+
+    const/4 v6, -0x1
+
+    move-object v0, p0
+
+    move-object v2, v1
+
+    move-object v5, v1
+
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/maps/driveabout/power/a;-><init>(Lcom/google/android/maps/driveabout/power/i;Landroid/view/Window;Lcom/google/android/maps/driveabout/power/e;FLs/o;I)V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/maps/driveabout/power/b;)V
+    .registers 2
+
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/power/a;-><init>()V
+
+    return-void
+.end method
+
+.method private constructor <init>(Lcom/google/android/maps/driveabout/power/i;Landroid/view/Window;Lcom/google/android/maps/driveabout/power/e;FLs/o;I)V
+    .registers 8
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lcom/google/android/maps/driveabout/power/a;->k:I
+
+    new-instance v0, Lcom/google/android/maps/driveabout/power/c;
+
+    invoke-direct {v0, p0}, Lcom/google/android/maps/driveabout/power/c;-><init>(Lcom/google/android/maps/driveabout/power/a;)V
+
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->l:Ljava/lang/Runnable;
+
+    new-instance v0, Lcom/google/android/maps/driveabout/power/d;
+
+    invoke-direct {v0, p0}, Lcom/google/android/maps/driveabout/power/d;-><init>(Lcom/google/android/maps/driveabout/power/a;)V
+
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->m:Ljava/lang/Runnable;
+
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/power/a;->e:Lcom/google/android/maps/driveabout/power/i;
+
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/power/a;->f:Landroid/view/Window;
+
+    iput-object p3, p0, Lcom/google/android/maps/driveabout/power/a;->g:Lcom/google/android/maps/driveabout/power/e;
+
+    iput p4, p0, Lcom/google/android/maps/driveabout/power/a;->h:F
+
+    iput-object p5, p0, Lcom/google/android/maps/driveabout/power/a;->i:Ls/o;
+
+    iput p6, p0, Lcom/google/android/maps/driveabout/power/a;->j:I
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/maps/driveabout/power/i;Landroid/view/Window;Lcom/google/android/maps/driveabout/power/e;FLs/o;ILcom/google/android/maps/driveabout/power/b;)V
+    .registers 8
+
+    invoke-direct/range {p0 .. p6}, Lcom/google/android/maps/driveabout/power/a;-><init>(Lcom/google/android/maps/driveabout/power/i;Landroid/view/Window;Lcom/google/android/maps/driveabout/power/e;FLs/o;I)V
+
+    return-void
+.end method
+
+.method static synthetic a(Lcom/google/android/maps/driveabout/power/a;)Landroid/view/Window;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->f:Landroid/view/Window;
+
+    return-object v0
+.end method
+
+.method public static a()Lcom/google/android/maps/driveabout/power/f;
+    .registers 1
+
+    new-instance v0, Lcom/google/android/maps/driveabout/power/f;
+
+    invoke-direct {v0}, Lcom/google/android/maps/driveabout/power/f;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static declared-synchronized a(Ljava/lang/String;)V
+    .registers 5
+
+    const-class v1, Lcom/google/android/maps/driveabout/power/a;
+
+    monitor-enter v1
+
+    :try_start_3
+    sget-object v0, Lcom/google/android/maps/driveabout/power/a;->b:Lcom/google/android/maps/driveabout/power/a;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Veto has been cast by "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Lcom/google/android/maps/driveabout/power/a;->f(Ljava/lang/String;)V
+
+    sget-object v0, Lcom/google/android/maps/driveabout/power/a;->c:Ljava/util/Set;
+
+    invoke-interface {v0, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    :try_end_20
+    .catchall {:try_start_3 .. :try_end_20} :catchall_22
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_22
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method public static a(Lu/r;)V
+    .registers 2
+
+    sget-object v0, Lcom/google/android/maps/driveabout/power/a;->d:Lcom/google/android/maps/driveabout/power/g;
+
+    invoke-virtual {p0, v0}, Lu/r;->a(Lu/o;)V
+
+    return-void
+.end method
+
+.method static synthetic b(Lcom/google/android/maps/driveabout/power/a;)F
+    .registers 2
+
+    iget v0, p0, Lcom/google/android/maps/driveabout/power/a;->h:F
+
+    return v0
+.end method
+
+.method static synthetic b()Lcom/google/android/maps/driveabout/power/a;
+    .registers 1
+
+    sget-object v0, Lcom/google/android/maps/driveabout/power/a;->b:Lcom/google/android/maps/driveabout/power/a;
+
+    return-object v0
+.end method
+
+.method public static declared-synchronized b(Ljava/lang/String;)V
+    .registers 3
+
+    const-class v1, Lcom/google/android/maps/driveabout/power/a;
+
+    monitor-enter v1
+
+    :try_start_3
+    sget-object v0, Lcom/google/android/maps/driveabout/power/a;->c:Ljava/util/Set;
+
+    invoke-interface {v0, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    :try_end_8
+    .catchall {:try_start_3 .. :try_end_8} :catchall_a
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_a
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method public static b(Lu/r;)V
+    .registers 2
+
+    sget-object v0, Lcom/google/android/maps/driveabout/power/a;->d:Lcom/google/android/maps/driveabout/power/g;
+
+    invoke-virtual {p0, v0}, Lu/r;->b(Lu/o;)V
+
+    return-void
+.end method
+
+.method private c()V
+    .registers 5
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->e:Lcom/google/android/maps/driveabout/power/i;
+
+    if-eqz v0, :cond_8
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->f:Landroid/view/Window;
+
+    if-nez v0, :cond_9
+
+    :cond_8
+    :goto_8
+    return-void
+
+    :cond_9
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->e:Lcom/google/android/maps/driveabout/power/i;
+
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/power/a;->l:Ljava/lang/Runnable;
+
+    const-wide/32 v2, 0xea60
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/google/android/maps/driveabout/power/i;->a(Ljava/lang/Runnable;J)V
+
+    goto :goto_8
+.end method
+
+.method public static declared-synchronized c(Ljava/lang/String;)V
+    .registers 3
+
+    const-class v1, Lcom/google/android/maps/driveabout/power/a;
+
+    monitor-enter v1
+
+    :try_start_3
+    sget-object v0, Lcom/google/android/maps/driveabout/power/a;->b:Lcom/google/android/maps/driveabout/power/a;
+
+    invoke-direct {v0, p0}, Lcom/google/android/maps/driveabout/power/a;->e(Ljava/lang/String;)V
+    :try_end_8
+    .catchall {:try_start_3 .. :try_end_8} :catchall_a
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_a
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method static synthetic c(Lcom/google/android/maps/driveabout/power/a;)Z
+    .registers 2
+
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/power/a;->g()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic d(Lcom/google/android/maps/driveabout/power/a;)I
+    .registers 2
+
+    iget v0, p0, Lcom/google/android/maps/driveabout/power/a;->k:I
+
+    return v0
+.end method
+
+.method private d()V
+    .registers 3
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->e:Lcom/google/android/maps/driveabout/power/i;
+
+    if-eqz v0, :cond_8
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->f:Landroid/view/Window;
+
+    if-nez v0, :cond_9
+
+    :cond_8
+    :goto_8
+    return-void
+
+    :cond_9
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->e:Lcom/google/android/maps/driveabout/power/i;
+
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/power/a;->l:Ljava/lang/Runnable;
+
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/power/i;->b(Ljava/lang/Runnable;)V
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->e:Lcom/google/android/maps/driveabout/power/i;
+
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/power/a;->m:Ljava/lang/Runnable;
+
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/power/i;->a(Ljava/lang/Runnable;)V
+
+    goto :goto_8
+.end method
+
+.method public static declared-synchronized d(Ljava/lang/String;)V
+    .registers 3
+
+    const-class v1, Lcom/google/android/maps/driveabout/power/a;
+
+    monitor-enter v1
+
+    :try_start_3
+    sget-object v0, Lcom/google/android/maps/driveabout/power/a;->b:Lcom/google/android/maps/driveabout/power/a;
+
+    invoke-direct {v0, p0}, Lcom/google/android/maps/driveabout/power/a;->f(Ljava/lang/String;)V
+    :try_end_8
+    .catchall {:try_start_3 .. :try_end_8} :catchall_a
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_a
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method private e()V
+    .registers 4
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->i:Ls/o;
+
+    if-nez v0, :cond_5
+
+    :goto_4
+    return-void
+
+    :cond_5
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->i:Ls/o;
+
+    invoke-virtual {v0}, Ls/o;->g()V
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->i:Ls/o;
+
+    iget v1, p0, Lcom/google/android/maps/driveabout/power/a;->j:I
+
+    int-to-long v1, v1
+
+    invoke-virtual {v0, v1, v2}, Ls/o;->a(J)V
+
+    goto :goto_4
+.end method
+
+.method static synthetic e(Lcom/google/android/maps/driveabout/power/a;)V
+    .registers 1
+
+    invoke-static {p0}, Lcom/google/android/maps/driveabout/power/a;->f(Lcom/google/android/maps/driveabout/power/a;)V
+
+    return-void
+.end method
+
+.method private e(Ljava/lang/String;)V
+    .registers 3
+
+    sget-object v0, Lcom/google/android/maps/driveabout/power/a;->c:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    :goto_8
+    return-void
+
+    :cond_9
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/power/a;->c()V
+
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/power/a;->e()V
+
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/power/a;->h()V
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lcom/google/android/maps/driveabout/power/a;->k:I
+
+    goto :goto_8
+.end method
+
+.method private f()V
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->i:Ls/o;
+
+    if-nez v0, :cond_5
+
+    :goto_4
+    return-void
+
+    :cond_5
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->i:Ls/o;
+
+    invoke-virtual {v0}, Ls/o;->g()V
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->i:Ls/o;
+
+    invoke-virtual {v0}, Ls/o;->e()V
+
+    goto :goto_4
+.end method
+
+.method private static declared-synchronized f(Lcom/google/android/maps/driveabout/power/a;)V
+    .registers 3
+
+    const-class v1, Lcom/google/android/maps/driveabout/power/a;
+
+    monitor-enter v1
+
+    :try_start_3
+    const-string v0, "New power manager created"
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/power/a;->d(Ljava/lang/String;)V
+
+    sput-object p0, Lcom/google/android/maps/driveabout/power/a;->b:Lcom/google/android/maps/driveabout/power/a;
+    :try_end_a
+    .catchall {:try_start_3 .. :try_end_a} :catchall_c
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_c
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method private f(Ljava/lang/String;)V
+    .registers 3
+
+    sget-object v0, Lcom/google/android/maps/driveabout/power/a;->c:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    :goto_8
+    return-void
+
+    :cond_9
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/power/a;->d()V
+
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/power/a;->f()V
+
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/power/a;->i()V
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lcom/google/android/maps/driveabout/power/a;->k:I
+
+    goto :goto_8
+.end method
+
+.method private g()Z
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->g:Lcom/google/android/maps/driveabout/power/e;
+
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/power/e;->a()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private h()V
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->i:Ls/o;
+
+    if-nez v0, :cond_5
+
+    :goto_4
+    return-void
+
+    :cond_5
+    iget v0, p0, Lcom/google/android/maps/driveabout/power/a;->j:I
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/bT;->a(I)V
+
+    goto :goto_4
+.end method
+
+.method private i()V
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/power/a;->i:Ls/o;
+
+    if-nez v0, :cond_5
+
+    :goto_4
+    return-void
+
+    :cond_5
+    const/16 v0, 0x7d0
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/bT;->a(I)V
+
+    goto :goto_4
+.end method

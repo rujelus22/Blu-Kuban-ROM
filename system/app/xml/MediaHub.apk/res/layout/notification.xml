@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/iv_thumbnail" android:paddingTop="6.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:scaleType="fitCenter" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@android:color/tab_indicator_text" android:ellipsize="end" android:id="@id/tv_notifi_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="14.0sp" android:textStyle="normal" android:textColor="@android:color/tab_indicator_text" android:id="@id/tv_notifi_download_status" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="14.0sp" android:textStyle="normal" android:textColor="@android:color/tab_indicator_text" android:id="@id/tv_notifi_download_percent" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.3299866dip" />
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <LinearLayout android:id="@id/ll_pb_notifi_download" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ProgressBar android:id="@id/pb_notifi_download" android:layout_width="fill_parent" android:layout_height="10.0dip" android:progressDrawable="@drawable/notification_download_progressbar" style="?android:attr/progressBarStyleHorizontal" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_pb_notifi_download_complete" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ProgressBar android:id="@id/pb_notifi_download_complete" android:layout_width="fill_parent" android:layout_height="10.0dip" android:progressDrawable="@drawable/my_media_list_progressbar_complete_style" style="?android:attr/progressBarStyleHorizontal" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="top|left|center" android:orientation="horizontal" android:id="@id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:layout_gravity="top|left|center" android:orientation="vertical" android:id="@id/FrameLayout_weather_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.3332825dip">
+            <TextView android:textSize="22.666656sp" android:typeface="sans" android:textColor="@color/white" android:ellipsize="none" android:layout_gravity="top|left|center" android:id="@id/weather_location" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="29.333313dip" android:maxWidth="240.0dip" android:singleLine="true" />
+            <RelativeLayout android:layout_gravity="top|left|center" android:id="@id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="22.0dip">
+                <TextView android:textSize="16.0sp" android:textColor="@color/white" android:ellipsize="none" android:gravity="center_vertical" android:layout_gravity="top|left|center" android:id="@id/weather_temperature" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" android:shadowColor="#ff000000" android:shadowRadius="2.0" />
+                <ImageView android:textSize="16.0sp" android:typeface="sans" android:textColor="@color/white" android:gravity="center" android:layout_gravity="top|left|center" android:id="@id/weather_temperature_under_zero" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="0.66700006dip" android:src="@drawable/tem_minus" />
+                <ImageView android:layout_gravity="top|left|center" android:id="@id/weather_temperature0" android:background="@drawable/tem_01" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/weather_temperature_under_zero" />
+                <ImageView android:layout_gravity="top|left|center" android:id="@id/weather_temperature1" android:background="@drawable/tem_02" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/weather_temperature0" />
+                <ImageView android:layout_gravity="top|left|center" android:id="@id/weather_temperature2" android:background="@drawable/tem_03" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/weather_temperature1" />
+                <ImageView android:layout_gravity="top|left|center" android:id="@id/weather_temperature_symbol" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/weather_temperature2" />
+            </RelativeLayout>
+            <ImageView android:layout_gravity="top|left|center" android:id="@id/accuweather" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/unlock_accuweather_logo" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="top|left|center" android:id="@id/weather_image" android:layout_width="60.0dip" android:layout_height="40.666656dip" />
+        <ImageView android:layout_gravity="top|left|center" android:id="@id/weather_image_special" android:layout_width="60.0dip" android:layout_height="40.666656dip" />
+    </LinearLayout>
+</merge>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/searchlayout" android:background="@drawable/search_bg_global" android:layout_width="fill_parent" android:layout_height="64.66dip">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <EditText android:textSize="18.599976dip" android:typeface="sans" android:gravity="center_vertical" android:id="@id/addcurrencytext" android:background="@drawable/textfield_selector" android:paddingLeft="10.0dip" android:paddingRight="38.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:maxLength="512" android:capitalize="sentences" android:layout_weight="1.0" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:imeOptions="actionSearch" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="-4.0dip" android:layout_weight="1.0" android:layout_below="@id/searchlayout">
+        <ListView android:id="@id/currency_list" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListOneLine" android:id="@id/nosearch" android:paddingLeft="13.0dip" android:paddingTop="10.0dip" android:focusable="true" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/error_no_search_data" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/menu_changeorder_keyview" android:background="@drawable/winset_softkey_bg" android:layout_width="fill_parent" android:layout_height="54.599976dip" android:layout_alignParentBottom="true">
+        <Button android:textColor="#ffffffff" android:id="@id/change_country_button" android:background="@drawable/btn_sort_sel_left" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="6.5999756dip" android:layout_marginTop="6.0dip" android:layout_marginBottom="5.299988dip" android:text="@string/currencies_country" android:layout_weight="1.0" />
+        <Button android:textColor="#ff000000" android:id="@id/change_symbol_button" android:background="@drawable/btn_sort_nor_right" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="6.0dip" android:layout_marginRight="6.5999756dip" android:layout_marginBottom="5.299988dip" android:text="@string/currencies_country_code" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

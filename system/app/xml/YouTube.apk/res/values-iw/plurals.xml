@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="years_ago">
+        <item quantity="other">לפני %1$d שנים</item>
+        <item quantity="one">לפני שנה</item>
+    </plurals>
+    <plurals name="months_ago">
+        <item quantity="other">לפני %1$d חודשים</item>
+        <item quantity="one">לפני חודש אחד</item>
+    </plurals>
+    <plurals name="weeks_ago">
+        <item quantity="other">לפני %1$d שבועות</item>
+        <item quantity="one">לפני שבוע</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">לפני %1$d ימים</item>
+        <item quantity="one">לפני יום</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="other">לפני %1$d שעות</item>
+        <item quantity="one">לפני שעה</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="other">לפני %1$d דקות</item>
+        <item quantity="one">לפני דקה אחת</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="other">לפני %1$d שניות</item>
+        <item quantity="one">לפני שנייה אחת</item>
+    </plurals>
+    <plurals name="recent_uploads">
+        <item quantity="other">העלאות חדשות</item>
+        <item quantity="one">העלאה חדשה</item>
+    </plurals>
+    <plurals name="recent_activity">
+        <item quantity="other">אירועים חדשים</item>
+        <item quantity="one">אירוע חדש</item>
+    </plurals>
+    <plurals name="playlist_size">
+        <item quantity="other">%1$,d סרטונים</item>
+        <item quantity="one">סרטון אחד</item>
+    </plurals>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="samsung_schedule_multiple_events">
+        <item quantity="other">У Вас %1$d событий сегодня.</item>
+        <item quantity="one">У Вас одно событие.</item>
+    </plurals>
+    <plurals name="checkEventNameTimeDetail">
+        <item quantity="other">от %1$s в %2$s</item>
+    </plurals>
+    <plurals name="checkEventTimeDetail">
+        <item quantity="other">в %1$s</item>
+    </plurals>
+    <plurals name="numberOfUnreadSMS">
+        <item quantity="other">%1$d новых сообщений</item>
+        <item quantity="one">%1$d новое сообщение</item>
+    </plurals>
+    <plurals name="numberOfMissedCalls">
+        <item quantity="other">%1$d неотвеченных звонков</item>
+        <item quantity="one">%1$d неотвеченный звонок</item>
+    </plurals>
+    <plurals name="numberOfFiredEvents">
+        <item quantity="other">%1$d пропущенных событий</item>
+        <item quantity="one">%1$d пропущенное событие</item>
+    </plurals>
+</resources>

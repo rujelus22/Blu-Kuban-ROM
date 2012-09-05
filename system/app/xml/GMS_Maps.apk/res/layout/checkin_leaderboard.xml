@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/titleHeaderOld" android:background="@color/checkin_awards_header_background_black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/headerIcon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/checkin_awards_default_margin" android:src="@drawable/checkin_starburst_icon" />
+        <TextView android:textAppearance="@style/CheckinLeaderboardHeaderTitle" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/checkin_awards_default_margin" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/pagerFrame" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <android.support.v4.view.ViewPager android:id="@id/boardPager" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <android.support.v4.view.PagerTitleStrip android:textAppearance="@style/CheckinLeaderboardTitleBarText" android:layout_gravity="top" android:background="@drawable/primary_background" android:paddingLeft="@dimen/checkin_awards_pager_titlebar_horizontal_padding" android:paddingTop="@dimen/checkin_awards_pager_titlebar_padding" android:paddingRight="@dimen/checkin_awards_pager_titlebar_horizontal_padding" android:paddingBottom="@dimen/checkin_awards_pager_titlebar_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </android.support.v4.view.ViewPager>
+        <LinearLayout android:orientation="horizontal" android:id="@id/pagerTitleBarOverlay" android:layout_width="fill_parent" android:layout_height="@dimen/checkin_awards_text_link_height">
+            <TextView android:textAppearance="@style/CheckinLeaderboardTitleBarText" android:gravity="top|left|center" android:id="@id/pagerGoLeft" android:padding="@dimen/checkin_awards_pager_titlebar_padding" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="&lt;" android:layout_weight="1.0" />
+            <View android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+            <TextView android:textAppearance="@style/CheckinLeaderboardTitleBarText" android:gravity="top|right|center" android:id="@id/pagerGoRight" android:padding="@dimen/checkin_awards_pager_titlebar_padding" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text=">" android:layout_weight="1.0" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

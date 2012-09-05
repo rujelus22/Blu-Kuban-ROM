@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/layout_ori_1" android:layout_width="fill_parent" android:layout_height="92.0px" android:layout_alignParentBottom="true"
+      xmlns:app="http://schemas.android.com/apk/res/com.arcsoft.quickview">
+        <RelativeLayout android:id="@id/layout_menu1" android:background="@drawable/menu_btn_bg_l1" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <RelativeLayout android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <ImageView android:id="@id/menu1_image" android:duplicateParentState="true" android:layout_width="60.0px" android:layout_height="60.0px" />
+                <TextView android:textSize="30.0px" android:textColor="#ffffffff" android:ellipsize="marquee" android:id="@id/menu1_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0px" android:singleLine="true" android:shadowColor="#ff000000" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_toRightOf="@id/menu1_image" android:layout_centerVertical="true" android:marqueeRepeatLimit="1" />
+            </RelativeLayout>
+            <ImageView android:id="@id/menu_splitter_1" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/menu_splitter_l1" android:scaleType="center" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_menu2" android:background="@drawable/menu_btn_bg_l1" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <RelativeLayout android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <ImageView android:id="@id/menu2_image" android:duplicateParentState="true" android:layout_width="60.0px" android:layout_height="60.0px" />
+                <TextView android:textSize="30.0px" android:textColor="#ffffffff" android:ellipsize="marquee" android:id="@id/menu2_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0px" android:singleLine="true" android:shadowColor="#ff000000" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_toRightOf="@id/menu2_image" android:layout_centerVertical="true" android:marqueeRepeatLimit="1" />
+            </RelativeLayout>
+            <ImageView android:id="@id/menu_splitter_2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/menu_splitter_l1" android:scaleType="center" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_menu3" android:background="@drawable/menu_btn_bg_l1" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <RelativeLayout android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <ImageView android:id="@id/menu3_image" android:duplicateParentState="true" android:layout_width="60.0px" android:layout_height="60.0px" />
+                <TextView android:textSize="30.0px" android:textColor="#ffffffff" android:ellipsize="marquee" android:id="@id/menu3_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0px" android:singleLine="true" android:shadowColor="#ff000000" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_toRightOf="@id/menu3_image" android:layout_centerVertical="true" android:marqueeRepeatLimit="1" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

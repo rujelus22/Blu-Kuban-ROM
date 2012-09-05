@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:scrollbarAlwaysDrawVerticalTrack="true" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout android:id="@id/RelativeLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="20.0sp" android:id="@id/TV_ON" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WiBroPath_app_name" />
+            <Button android:textSize="20.0sp" android:id="@id/BT_OK" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0sp" android:text="@string/OK" android:layout_toRightOf="@id/TV_ON" />
+        </RelativeLayout>
+        <RadioGroup android:id="@id/RadioGroup01" android:layout_width="wrap_content" android:layout_height="wrap_content"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <RadioButton android:textSize="20.0sp" android:id="@id/RB_SDIO" android:paddingRight="0.0sp" android:paddingBottom="10.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/SDIO" android:layout_centerHorizontal="true" />
+            <RadioButton android:textSize="20.0sp" android:id="@id/RB_WTM" android:paddingBottom="10.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WTM" />
+            <RadioButton android:textSize="20.0sp" android:id="@id/RB_DM" android:paddingBottom="10.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/DM" />
+            <RadioButton android:textSize="20.0sp" android:id="@id/RB_USB" android:paddingBottom="10.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/USB" />
+            <RadioButton android:textSize="20.0sp" android:id="@id/RB_AUTH" android:paddingBottom="10.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Auth" />
+        </RadioGroup>
+    </LinearLayout>
+</ScrollView>

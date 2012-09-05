@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Hindi nakakonekta</string>
+    <string name="authentication_failure_no_network">Makokonekta ka sa Internet upang patunayan ang iyong Music account.</string>
+    <string name="authentication_failure">Hindi napatunayan</string>
+    <string name="authentication_failure_error">Hindi mapatunayan ang iyong Music account.</string>
+    <string name="positive_button_text">OK</string>
+    <string name="negative_button_text">Kanselahin</string>
+    <string name="save_button_text">I-save</string>
+    <string name="not_save_button_text">Huwag i-save</string>
+    <string name="shuffle_all">I-shuffle lahat</string>
+    <string name="play_all">I-play lahat</string>
+    <string name="songs_all">Lahat ng mga kanta</string>
+    <string name="shuffle">I-shuffle</string>
+    <string name="search">Paghahanap</string>
+    <string name="settings">Mga Setting</string>
+    <string name="library_options">Mga pagpipilian sa pagpapakita</string>
+    <string name="manage_music">Gawing available sa offline</string>
+    <string name="available_offline">Available sa offline</string>
+    <string name="hide_labels">Itago ang mga label</string>
+    <string name="show_labels">Ipakita ang mga label</string>
+    <string name="options">Mga Pagpipilian</string>
+    <string name="shop_artist">Bilhin ang sa artist</string>
+    <string name="show_offline_music_only">Offline na musika lamang</string>
+    <string name="show_all_music">Ipakita ang lahat ng musika</string>
+    <string name="new_playlist_title">Pangalan ng playlist</string>
+    <string name="add_to_playlist_title">Pangalan ng playlist</string>
+    <string name="rename_playlist_title">Palitan ang pangalan ng \"%s\" sa</string>
+    <string name="search_section_header_artists">MGA ARTIST</string>
+    <string name="search_section_header_albums">MGA ALBUM</string>
+    <string name="search_section_header_songs">MGA KANTA</string>
+    <string name="search_section_header_playlists">MGA PLAYLIST</string>
+    <string name="shuffle_all_songs">I-shuffle lahat</string>
+    <string name="stream_settings">Mga setting ng musika</string>
+    <string name="refresh_title">I-refresh</string>
+    <string name="refresh_summary">I-refresh ang musika mula sa Google Play</string>
+    <string name="account_settings_title">Google Play account</string>
+    <string name="no_account_selected_summary">Pindutin upang pumili ng account</string>
+    <string name="account_selected_summary">Kumonekta sa Google Play gamit ang %s</string>
+    <string name="hide_when_not_connected_title">Itago ang musikang hindi available</string>
+    <string name="hide_when_not_connected_summary">Ipakita lang ang available na musika kapag offline</string>
+    <string name="stream_only_on_wifi_title">Mag-stream sa pamamagitan ng Wi-Fi lamang</string>
+    <string name="stream_only_on_wifi_summary">Mag-stream lang ng musika kapag nakakonekta gamit ang Wi-Fi</string>
+    <string name="stream_only_hq_title">Stream taas kalidad</string>
+    <string name="stream_only_hq_summary">Palaging mag-stream ng musika sa pinakamataas na kalidad</string>
+    <string name="lock_screen_controls_title">I-lock ang mga kontrol ng screen</string>
+    <string name="lock_screen_controls_summary">Ipakita ang mga kontrol sa musika sa tuktok ng lock screen</string>
+    <string name="offlinedl_only_on_wifi_title">Mag-download sa pamamagitan lang ng Wi-Fi</string>
+    <string name="offlinedl_only_on_wifi_summary">I-download ang musika para sa availability offline lamang sa Wi-Fi</string>
+    <string name="cache_streamed_title">Cache music</string>
+    <string name="cache_streamed_summary">Pansamantalang iimbak ang na-stream na musika</string>
+    <string name="download_queue_title">I-download ang queue</string>
+    <string name="download_queue_summary">Ipakita ang mga kantang kasalukuyang dina-download</string>
+    <string name="help_title">Tulong</string>
+    <string name="show_no_downloads_title">Walang naka-queue na mga kanta para sa pag-download</string>
+    <string name="music_version_title">Bersyon ng musika</string>
+    <string name="music_version_summary">Hindi kilalang bersyon</string>
+    <string name="nowplaying_title">Nagpe-play ngayon</string>
+    <string name="artists_title">Mga Artist</string>
+    <string name="albums_title">Mga Album</string>
+    <string name="genres_title">Mga Genre</string>
+    <string name="tracks_title">Mga Kanta</string>
+    <string name="playlists_title">Mga Playlist</string>
+    <string name="recent_title">Kamakailan</string>
+    <string name="search_title">Paghahanap</string>
+    <string name="no_tracks_title">Walang mga kanta</string>
+    <string name="delete_playlist_menu">Tanggalin</string>
+    <string name="edit_playlist_menu">I-edit</string>
+    <string name="rename_playlist_menu">Palitan ang pangalan</string>
+    <string name="playlist_delete_confirmation">Nais mo bang tanggalin ang playlist na \"%s\"?</string>
+    <string name="delete_playlist_button_confirm">Tanggalin</string>
+    <string name="playlist_deleted_message">Tinanggal ang playlist.</string>
+    <string name="playlist_created_message">Nalikha ang playlist na \"%s\".</string>
+    <string name="playlist_renamed_message">Pinalitan ang pangalan ng playlist sa \"%s\".</string>
+    <string name="recentlyadded">Huling idinagdag</string>
+    <string name="recentlyadded_title">Huling idinagdag</string>
+    <string name="all_songs_list">Lahat ng kanta</string>
+    <string name="all_songs_list_title">Lahat ng kanta</string>
+    <string name="storemusic_list">Libre at binili</string>
+    <string name="storemusic_list_title">Libre at binili</string>
+    <string name="freemusic_list">Mga libreng kanta</string>
+    <string name="freemusic_list_title">Mga libreng kanta</string>
+    <string name="thumbsup_list">Thumbs up</string>
+    <string name="thumbsup_list_title">Thumbs up</string>
+    <string name="unknown_artist_name">Hindi kilalang artist</string>
+    <string name="unknown_album_name">Hindi kilalang album</string>
+    <string name="unknown_playlist_name">Di-kilalang playlist</string>
+    <string name="shuffle_on_notif">Naka-on ang shuffle.</string>
+    <string name="shuffle_off_notif">Naka-off ang shuffle.</string>
+    <string name="repeat_off_notif">Naka-off ang ulitin.</string>
+    <string name="repeat_current_notif">Inuulit ang kasalukuyang kanta.</string>
+    <string name="repeat_all_notif">Inuulit ang lahat ng mga kanta.</string>
+    <string name="ringtone_menu">Gamit ringtone</string>
+    <string name="ringtone_set">Itakda ang \"%s\" bilang ringtone.</string>
+    <string name="ringtone_set_failed">Hindi malikha ang ringtone.</string>
+    <string name="ringtone_needs_download">Itatakda ang ringtone kapag na-download.</string>
+    <string name="play_selection">I-play</string>
+    <string name="add_to_playlist">Idagdag sa playlist</string>
+    <string name="rename_playlist_menu_item">Palitan ang pangalan</string>
+    <string name="add_to_playlist_selector_title">Idagdag sa playlist</string>
+    <string name="queue">Kasalukuyang playlist</string>
+    <string name="new_playlist_for_content">Bagong playlist</string>
+    <string name="new_empty_playlist">Bagong playlist</string>
+    <string name="new_playlist_name_template">Playlist %d</string>
+    <string name="removed_from_playlist">Inalis ang \"%1$s\" mula sa playlist.</string>
+    <string name="playlist_too_many_songs">Masyadong maraming kanta. Ang limitasyon ay %d sa bawat playlist.</string>
+    <string name="emptyplaylist">Walang laman ang napiling playlist.</string>
+    <string name="playlist_edit_label">PANGALAN</string>
+    <string name="create_playlist_create_text">OK</string>
+    <string name="rename_playlist_rename_text">Palitan ang pangalan</string>
+    <string name="service_start_error_title">Problema sa Pag-playback</string>
+    <string name="service_start_error_msg">Hindi mapatugtog ang kanta.</string>
+    <string name="service_start_error_button">OK</string>
+    <string name="weekpicker_set">Tapos na</string>
+    <string name="weekpicker_title">Itakda ang oras</string>
+    <string name="musicbrowserlabel">Play Music</string>
+    <string name="musicshortcutlabel">Playlist ng musika</string>
+    <string name="mediaplaybacklabel">Musika</string>
+    <string name="app_name">Google Play Music</string>
+    <string name="playback_failed">Hindi mapatugtog ang track na iyong hiniling.</string>
+    <string name="cancel">Kanselahin</string>
+    <string name="remove_from_playlist">Alisin mula sa playlist</string>
+    <string name="streamloadingtext">Kumukonekta sa %s...</string>
+    <string name="search_hint">Maghanap ng musika</string>
+    <string name="working_artists">Mga Artist…</string>
+    <string name="working_albums">Mga Album…</string>
+    <string name="loading">Naglo-load...</string>
+    <string name="sort_by_track">Mga Track</string>
+    <string name="music_picker_title">Pumili ng track ng musika</string>
+    <string name="fail_to_start_stream">Hindi mapatugtog ang stream na iyong hiniling.</string>
+    <string name="search_settings_description">Mga artist, album, at track</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">Music</string>
+    <string name="music_library">Library ng musika</string>
+    <string name="playlist_label">Playlist</string>
+    <string name="faux_art_all_songs_label">Lahat ng kanta</string>
+    <string name="faux_art_playlist_label">Playlist</string>
+    <string name="faux_art_playlist_instant_mix_label">Instant na mix</string>
+    <string name="faux_art_playlist_auto_playlist_label">Awtomatikong playlist</string>
+    <string name="buffering">Nagba-buffer...</string>
+    <string name="keep_on_phone">Available sa offline</string>
+    <string name="no_music_add_music_header">MGA PARAAN UPANG MAGDAGDAG NG MUSIKA</string>
+    <string name="no_music_shop_body">Mamili ng milyun-milyong kanta, kabilang ang daan-daang libreng track.</string>
+    <string name="no_music_shop_button">MAMILI</string>
+    <string name="no_music_upload_body">Mag-upload ng 20,000 kanta sa Google Play nang libre.</string>
+    <string name="no_music_upload_button">MATUTO NANG HIGIT PA</string>
+    <string name="no_music_usb_copy_body">Magkopya ng musika sa iyong telepono gamit ang isang USB cable.</string>
+    <string name="no_music_usb_copy_button">MATUTO NANG HIGIT PA</string>
+    <string name="no_music_heading">Walang laman ang iyong library ng musika</string>
+    <string name="no_music_setup_uploader_heading">I-stream nang wireless ang iyong musika.</string>
+    <string name="no_music_setup_uploader_body">Maaari mong i-stream ang iyong personal na koleksyon ng musika gamit ang Google Play Music.</string>
+    <string name="no_music_setup_usb_heading">Kopyahin ang musika sa iyong device</string>
+    <string name="no_music_setup_usb_body">Kopyahin ang musika sa iyong telepono gamit ang isang USB cable.</string>
+    <string name="no_local_music_heading">Walang offline na musika</string>
+    <string name="no_local_music_body">"Nasa mode na offline-only ka, kaya tanging ang musikang naka-imbak sa iyong device lang ang ipapakita.
+
+Upang piliin ang musikang nais mong iimbak sa iyong device, piliin ang "<b>Gawing available offline</b> mula sa menu.</string>
+    <string name="no_music_learn_more">Matuto nang higit pa</string>
+    <string name="no_playlists_heading">Wala kang anumang playlist sa iyong library</string>
+    <string name="no_playlists_body">Maaari kang lumikha ng playlist sa pamamagitan ng pagpunta sa view na listahan ng Mga Kanta at pagpili sa Idagdag sa Playlist mula sa menu ng konteksto ng isang kanta.</string>
+    <string name="no_music_syncing_heading">Kasalukuyang sini-sync ang musika.</string>
+    <string name="no_music_syncing_body">Kasalukuyang sini-sync ang musika mula sa server at dapat lumitaw pagkalipas ng ilang sandali.</string>
+    <string name="no_music_scanning_heading">Nag-i-scan ng musika sa device.</string>
+    <string name="no_music_scanning_body">Ini-scan ang device upang maghanap ng musika.</string>
+    <string name="sync_disabled">Kailangan mong i-set up ang pag-sync bago lumabas ang musika mula sa Google Play Music. Nais mo ba iyong gawin ngayon?</string>
+    <string name="tutorial_welcome_heading">Maligayang pagdating sa Google Play Music</string>
+    <string name="tutorial_welcome_body">"Mag-upload ng hanggang 20,000 kanta mula sa iyong personal na koleksyon ng musika.
+
+Agad na i-play ang musikang binili mula sa Google Play.
+
+Pakinggan ang lahat ng iyong musika sa web o sa anumang telepono o tablet. Mag-download nang madali upang i-play ang iyong musika offline.
+
+Ang lahat ay libre."</string>
+    <string name="tutorial_select_account_heading">Pumili ng isang account</string>
+    <string name="tutorial_select_account_body">"I-link ang iyong account sa Google Play Music nang sa gayon ay ma-play mo ang iyong library ng musika at makapag-imbak ng mga binili.
+
+Aling account ang nais mong gamitin?"</string>
+    <string name="tutorial_sign_in">I-link ang iyong account sa Google Play Music nang sa gayon ay ma-play mo ang iyong library ng musika at makapag-imbak ng mga binili.</string>
+    <string name="tutorial_free_music_heading">Kumuha ng libreng musika</string>
+    <string name="tutorial_free_music_body">Mag-browse ng daan-daang libreng kanta sa Google Play mula sa ilan sa mga pinakasikat sa rock, hip-hop, at higit pa.</string>
+    <string name="tutorial_account_heading">Maligayang Pagdating</string>
+    <string name="tutorial_account_body">Inimbitahan ka sa Google Play Music. Magagamit mo ang player na ito upang instant na i-access ang mga kantang idinaragdag mo sa Google Play Music at ang iba pang musikang nakopya mo sa iyong Android na device.</string>
+    <string name="tutorial_account_list_header">Magsimula sa pamamagitan ng pagpili ng Google Account upang i-link ang player na ito sa Google Play Music:</string>
+    <string name="tutorial_done_heading">Mag-enjoy</string>
+    <string name="tutorial_done_body">"Naka-link na ngayon ang Music player sa iyong Google Account.
+
+Kung naidagdag mo na ang iyong koleksyon ng musika sa Google Play Music, magsisimula na itong lumabas sa player na ito.
+
+Kung kailangan mo pang idagdag ang iyong musika sa Google Play Music, magsimula sa pamamagitan ng pagbisita sa aming website mula sa iyong computer:"</string>
+    <string name="tutorial_skip">Laktawan</string>
+    <string name="tutorial_next">Susunod</string>
+    <string name="tutorial_done">Tapos na</string>
+    <string name="tutorial_add_account">Magdagdag ng account</string>
+    <string name="tutorial_free_music">Kumuha ng mga libreng kanta</string>
+    <string name="spinner_carousel">Kamakailan</string>
+    <string name="spinner_album">Mga Album</string>
+    <string name="spinner_artist">Mga Artist</string>
+    <string name="spinner_songs">Mga Kanta</string>
+    <string name="spinner_playlists">Mga Playlist</string>
+    <string name="spinner_genres">Mga Genre</string>
+    <string name="sort_by_title">Pagbukud-bukurin sa A-Z</string>
+    <string name="sort_by_artist">Pagbukud-bukurin ayon sa artist</string>
+    <string name="sort_by_album">Pagbukud-bukurin ayon sa album</string>
+    <string name="sort_by_date">Pag-uri-uriin ayon sa petsa ng pagdaragdag</string>
+    <string name="more_by_artist">Higit pa mula sa artist</string>
+    <string name="make_available_offline">Gawing available sa offline</string>
+    <string name="search_web">Hanapan ang web</string>
+    <string name="manage_done">Tapos na</string>
+    <string name="too_many_items_title">Masyadong maraming item</string>
+    <string name="too_many_items_body">Walang sapat na espasyo upang iimbak ang lahat ng item na iyong pinili. Alisin sa pagkakapili ang ilang item upang maglaan ng espasyo.</string>
+    <string name="save_manage_music_change_title">Mga hindi na-save na pagbabago</string>
+    <string name="save_manage_music_change_body">Nais mo bang gawing available offline ang piniling musika?</string>
+    <string name="not_all_items_can_be_kept_body">Walang sapat na espasyo upang iimbak ang lahat ng item na iyong pinili. Hindi mada-download ang lahat ng item na ito.</string>
+    <string name="free_space_overfull">Puno ang storage (%s na mahigit)</string>
+    <string name="free_space">%s LIBRE</string>
+    <string name="stream_error_no_space_available">Walang magagamit na espasyo</string>
+    <string name="stream_error_only_on_wifi">Kakailanganin mong mapunta sa isang Wi-Fi network upang patugtugin ang kantang ito.</string>
+    <string name="stream_error_no_connection">Kailangang online ka upang ma-play ang kantang ito.</string>
+    <string name="stream_error_unauthorized">Maling username o password.</string>
+    <string name="stream_error_another_stream_being_played">Naka-pause ang musika dahil nakikinig ka sa iyong koleksyon sa isa pang device.</string>
+    <string name="stream_error_rate_limit_reached">Pansamantalang hindi available ang musika. Tiyakin na pinapatugtog mo ang iyong koleksyon sa isang device lang nang paisa-isa.</string>
+    <string name="stream_error_device_not_authorized">Magagamit ang iyong library ng musika sa hanggang 10 device. Kakailanganin mong alisan ng pahintulot ang isa sa iyong mga device bago ka magdagdag ng isa pa.</string>
+    <string name="stream_error_learn_more">Matuto nang higit pa</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?hl=tl&amp;answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Naka-pause ang musika.</string>
+    <string name="stream_error_rate_limit_reached_short">Pansamantalang hindi available ang musika.</string>
+    <string name="stream_error_device_not_authorized_short">Masyadong maraming device ang ginagamit sa library ng musika.</string>
+    <string name="hide_now_playing_bar">Itago ang bar ng nagpe-play ngayon</string>
+    <string name="show_now_playing_bar">Ipakita ang bar ng nagpe-play ngayon</string>
+    <string name="show_options">Ipakita pagpipilian</string>
+    <string name="hide_options">Itago pagpipilian</string>
+    <string name="all_songs_in_genre">"Ang lahat mga kanta ay mula sa genre na 
+%s"</string>
+    <string name="preview_header">IBINAHAGI SA GOOGLE+</string>
+    <string name="shared_playback_full">LIBRENG PAG-PLAY NANG BUO</string>
+    <string name="shared_playback_partial">SAMPLE</string>
+    <string name="btn_buy">Bumili</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Ginagawang available offline ang musika...</string>
+    <string name="notification_downloading_when_on_wifi">Malo-load ang mga kanta na minarkahang offline sa sandaling makakonekta ka sa Wi-Fi network.</string>
+    <string name="notification_downloading_excessive_errors">Hindi makapag-download ng mga kanta sa ngayon. Tingnan ang iyong koneksyon sa Internet.</string>
+    <string name="notification_downloading_done">Available na ngayon ang mga piniling kanta offline.</string>
+    <string name="notification_ticker_ringtone_set">Nakatakda ang ringtone sa \"%s\".</string>
+    <string name="notification_title_ringtone_set">Itakda ang ringtone sa \"%s\"</string>
+    <string name="notification_content_ringtone_set">Pindutin upang i-edit ang ringtone na ito.</string>
+    <string name="notification_ticker_ringtone_set_failed">Hindi malikha ang ringtone.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_songcount">%d (na) bagong kanta</string>
+    <string name="notification_newsongs_subtitle">Idinagdag sa Google Play Music</string>
+    <string name="carousel_label_shuffle_all">I-shuffle lahat</string>
+    <string name="song_label">KANTA</string>
+    <string name="artist_label">ARTIST</string>
+    <string name="album_label">ALBUM</string>
+    <string name="effectspanel">Mga sound effect</string>
+    <string name="menu_make_instant_mix">Gawa ng instant mix</string>
+    <string name="instant_mix_default_name">%s Mix</string>
+    <string name="creating_instant_mix">"Nagdaragdag ng instant mix
+sa mga playlist"</string>
+    <string name="creating_instant_mix_with_seed">"Nagdaragdag ng instant mix
+sa mga playlist, batay sa
+%s."</string>
+    <string name="create_instant_mix_failed">Hindi malikha ang instant mix. Subukang muli.</string>
+    <string name="create_instant_mix_failed_insufficient_results">Walang mga sapat na katulad na kanta sa iyong koleksyon upang lumikha ng instant mix mula sa \"%s.\" Subukang gumawa ng instant mix mula sa ibang kanta.</string>
+    <string name="create_instant_mix_sync_timeout">"Ang instant mix ay
+nalikha at lilitaw sa
+iyong mga playlist sa ilang saglit."</string>
+    <string name="create_instant_mix_btn_ok">OK</string>
+    <string name="delete">Tanggalin</string>
+    <string name="confirm_delete_local_only">Nais mo bang tanggalin ang \"%s\"?</string>
+    <string name="confirm_delete_has_remote">Na-sideload at na-upload ang \"%s\" sa Google Play Music. Ang mga na-sideload na item lamang ang tatanggalin. Nais mo bang tanggalin ang mga ito?</string>
+    <string name="waiting_share">Ibinabahagi ang %s</string>
+    <string name="share">Ibahagi</string>
+    <string name="share_failure">Nagkaroon ng isang problema sa pagbabahagi ng iyong musika.</string>
+    <string name="share_google_plus_footer">Pinapagana ng pagbabahagi ang isang libreng ganap na pag-play para sa mga tao sa iyong mga lupon</string>
+    <string name="accessibility_play">Patugtugin</string>
+    <string name="accessibility_pause">I-pause</string>
+    <string name="accessibility_stop">Ihinto</string>
+    <string name="accessibility_next">Susunod</string>
+    <string name="accessibility_prev">Nakaraan</string>
+    <string name="accessibility_shuffle">I-shuffle</string>
+    <string name="accessibility_repeat">Ulitin</string>
+    <string name="accessibility_thumbsUp">Thumbs up</string>
+    <string name="accessibility_thumbsDown">Thumbs down</string>
+    <string name="accessibility_star1">Isang star</string>
+    <string name="accessibility_star2">Dalawang star</string>
+    <string name="accessibility_star3">Tatlong star</string>
+    <string name="accessibility_star4">Apat na star</string>
+    <string name="accessibility_star5">Limang star</string>
+    <string name="accessibility_contractor">Palawakin ang impormasyon ng kanta</string>
+    <string name="accessibility_back">Bumalik</string>
+    <string name="accessibility_contextMenu">Menu ng kanta</string>
+    <string name="accessibility_home">home ng Music</string>
+    <string name="accessibility_search">Hanapin</string>
+    <string name="accessibility_search_cancel">Kanselahin ang kasalukuyang paghahanap</string>
+    <string name="accessibility_current">Kasalukuyang kanta</string>
+    <string name="accessibility_createnewplaylist">Lumikha ng bagong playlist</string>
+    <string name="accessibility_menu">Menu</string>
+    <string name="accessibility_shop">Mamili ng musika</string>
+    <string name="ringtone_replace_alert_button">Palitan</string>
+    <string name="ringtone_replace_alert_title">Palitan ang ringtone</string>
+    <string name="ringtone_replace_alert_message">Umiiral na ang isang ringtone na may ganitong pangalan. Nais mo ba itong palitan?</string>
+    <string name="legal_information">Legal na impormasyon</string>
+    <string name="license_title">Mga lisensya ng open source</string>
+    <string name="license_error">Hindi makapag-load ng mga lisensya.</string>
+    <string name="market_wrong_account" formatted="false">"Ang musikang sinusubukan mong i-play ay binili gamit ang account na %s
+
+Kasalukuyan kang naka-sign in sa Google Play Music gamit ang account na %s
+
+Upang mapakinggan ang iyong binili, lumipat muna ng account."</string>
+    <string name="gplus_wrong_account" formatted="false">"Ang musikang sinusubukan mong i-play ay ibinahagi gamit ang account na %s
+
+Kasalukuyan kang naka-sign in sa Google Play Music gamit ang account na %s
+
+Upang mapakinggan ang iyong nakabahaging musika, lumipat muna ng account."</string>
+    <string name="switch_account_button">Baguhin ang Account</string>
+    <string name="retry_button">Subukan muli</string>
+    <string name="wait_for_item">Hinihintay na mag-sync ang musika</string>
+    <string name="wait_for_item_failure">Nagkaproblema sa paglo-load sa iyong musika.</string>
+    <string name="ringtone_title">I-review ang ringtone</string>
+    <string name="edit_ringtone">I-edit ang ringtone</string>
+    <string name="ringtone_done">TAPOS NA</string>
+    <string name="set_ringtone_title">Gamitin bilang ringtone</string>
+    <string name="set_ringtone_message">Itakda bilang ringtone.</string>
+    <string name="start_edit_ringtone">I-edit ang ringtone</string>
+    <string name="ringtone_file_edited_name">Clip ng %1$s</string>
+    <string name="progress_dialog_saving">Sine-save...</string>
+    <string name="start_handle">Handle ng simula</string>
+    <string name="resize_handle">Handle ng baguhin ang laki</string>
+    <string name="menu_reset">I-reset</string>
+    <string name="save_success_message">Na-save ang %1$s bilang default na ringtone.</string>
+    <string name="save_failure_message">Paumanhin, nabigong ma-save ang %1$s bilang ringtone.</string>
+    <string name="play_error">Hindi mapatugtog ang media file na ito.</string>
+    <string name="write_error">Hindi makapagsulat sa file.</string>
+    <string name="read_error">Hindi mabasa ang file.</string>
+    <string name="no_space_error">Walang sapat na espasyo sa iyong SD card upang i-save ang file na ito.</string>
+    <string name="bad_extension_error">Hindi makapag-edit ng mga file na may ganitong uri.</string>
+    <string name="no_extension_error">Hindi makapag-edit ng file na walang .mp3 o .wav na extension.</string>
+    <string name="alert_title_success">Tagumpay</string>
+    <string name="alert_title_failure">Error</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="store_tutorial_title">Bilhin at i-play kaagad</string>
+    <string name="store_tutorial_content">Mamili ng milyun-milyong MP3 track sa Google Play, kabilang ang daan-daang libreng kanta.</string>
+    <string name="store_tutorial_instruction">Upang bisitahin ang store, i-tap ang icon na shopping bag</string>
+</resources>

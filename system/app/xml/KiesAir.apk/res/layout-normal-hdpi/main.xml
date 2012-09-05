@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/screen_layout" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/layoutKiesairStopped" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/kiesairlogo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="78.66998dip" android:src="@drawable/kiesair_logo" />
+        <FrameLayout android:id="@id/layoutHelpTextStopped" android:paddingLeft="13.329987dip" android:paddingTop="41.0dip" android:paddingRight="13.329987dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="#ffebebeb" android:gravity="top|center" android:id="@id/helpTextInStop" android:focusable="true" android:nextFocusDown="@id/copyright" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/help_in_stop" android:lineSpacingMultiplier="1.25" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffebebeb" android:gravity="top|center" android:id="@id/connectToNetworkText" android:focusable="true" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingMultiplier="1.25" />
+            <TextView android:textSize="12.0dip" android:textColor="#ffebebeb" android:gravity="center" android:id="@id/copyright" android:paddingTop="169.66998dip" android:focusable="true" android:nextFocusUp="@id/helpTextInStop" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/copyright" />
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/softkey_area" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="54.669983dip" android:layout_alignParentBottom="true" style="@android:style/ButtonBar">
+        <Button android:textSize="16.0dip" android:layout_gravity="center" android:id="@id/lighttpdButton" android:layout_width="fill_parent" android:layout_height="49.329987dip" android:layout_marginLeft="44.0dip" android:layout_marginRight="44.0dip" android:text="@string/start" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/layoutKiesairRunning" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/layoutHelpTextRunning" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.669983dip">
+            <ImageView android:id="@id/kiesairlogoRunning" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/kiesair_bg_device" />
+            <ImageView android:id="@id/kiesairAnimatedIcon" android:layout_width="61.329987dip" android:layout_height="16.0dip" android:layout_marginLeft="105.32999dip" android:layout_marginTop="77.32999dip" android:scaleType="center" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="191.32999dip">
+                <TextView android:textSize="14.0dip" android:textColor="#ffcccccc" android:ellipsize="end" android:gravity="center" android:id="@id/connectNetwork" android:focusable="true" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/help_in_start_msg2" />
+                <TextView android:textSize="14.0dip" android:textColor="#ff6e9cba" android:ellipsize="end" android:gravity="center" android:id="@id/networkText" android:focusable="true" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <TextView android:textSize="13.329987dip" android:textColor="#ffebebeb" android:gravity="top|center" android:id="@id/enter_url_in_browser" android:focusable="true" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="13.329987dip" android:text="@string/help_in_start_msg4" android:lineSpacingMultiplier="1.25" />
+                <TextView android:textSize="18.669983dip" android:textColor="#ffefad2e" android:gravity="center" android:id="@id/internetAddress" android:focusable="true" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/layoutAuthorisedDeviceInfo" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/softkey_area">
+        <TextView android:textSize="14.669983dip" android:textStyle="bold" android:textColor="#ffebebeb" android:gravity="left|center" android:id="@id/authorisedDeviceHeadingLine" android:background="@drawable/kiesair_list_title" android:paddingLeft="10.0dip" android:focusable="true" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="25.329987dip" android:text="@string/authorised_device" />
+        <RelativeLayout android:orientation="horizontal" android:id="@id/authorisedDeviceArea" android:background="@android:drawable/list_selector_background" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="22.0dip" android:textColor="#ffebebeb" android:ellipsize="end" android:gravity="left|center" android:layout_gravity="left" android:id="@id/authorisedDeviceText" android:focusable="true" android:layout_width="wrap_content" android:layout_height="64.0dip" android:layout_marginLeft="13.329987dip" android:singleLine="true" android:layout_alignParentLeft="true" />
+            <ImageView android:gravity="center" android:id="@id/arrowicon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="13.329987dip" android:src="@drawable/ic_keisair_laptop" android:scaleType="matrix" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView android:id="@id/offsetWithConnectedDevice" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" android:text="0" />
+    <TextView android:id="@id/offsetWithoutConnectedDevice" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" android:text="0" />
+</RelativeLayout>

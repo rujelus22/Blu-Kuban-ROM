@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip">
+        <ImageView android:id="@id/iv_hd_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/hd_icon" />
+        <ImageView android:id="@id/iv_3d_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/hd3d_icon" />
+        <ImageView android:id="@id/iv_hdmi_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/hdmi_icon" />
+    </LinearLayout>
+    <TextView android:textSize="17.5sp" android:textColor="@color/color5" android:ellipsize="end" android:id="@id/tv_released" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" />
+    <ImageView android:id="@id/iv_mpaa_rating" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <TextView android:textSize="17.5sp" android:textColor="@color/color5" android:ellipsize="end" android:id="@id/tv_running_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" />
+    <TextView android:textSize="17.5sp" android:textColor="@color/color5" android:ellipsize="end" android:id="@id/tv_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" />
+    <TextView android:textSize="17.5sp" android:textColor="@color/color5" android:ellipsize="end" android:id="@id/tv_availability" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" />
+    <TextView android:textSize="17.5sp" android:textColor="@color/color5" android:gravity="center_vertical" android:id="@id/tv_license_info" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="2.5dip" android:maxLines="3" />
+</LinearLayout>

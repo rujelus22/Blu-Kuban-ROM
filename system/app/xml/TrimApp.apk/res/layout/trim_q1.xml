@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:trimapp="http://schemas.android.com/apk/res/com.lifevibes.trimapp">
+    <VideoView android:layout_gravity="center" android:id="@id/full_video" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    <ImageView android:layout_gravity="center" android:id="@id/full_image" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:gravity="center" android:id="@id/control_layout" android:layout_width="fill_parent" android:layout_height="145.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="horizontal" android:id="@id/button_layout" android:background="@drawable/trimming_control_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true">
+            <Button android:id="@id/btn_play" android:paddingLeft="25.0dip" android:text="@string/button_preview" android:drawableLeft="@drawable/btn_play_selector" android:drawablePadding="-45.0dip" style="@style/buttonStyle" />
+            <Button android:id="@id/btn_pause" android:paddingLeft="25.0dip" android:visibility="gone" android:text="@string/button_pause" android:drawableLeft="@drawable/btn_pause_selector" android:drawablePadding="-45.0dip" style="@style/buttonStyle" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/trimming_control_bg_line" />
+            <Button android:id="@id/btn_trim" android:paddingLeft="35.0dip" android:text="@string/button_trim" android:drawableLeft="@drawable/btn_trim_selector" android:drawablePadding="-45.0dip" style="@style/buttonStyle" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/trimming_control_bg_line" />
+            <Button android:id="@id/btn_cancel" android:paddingLeft="25.0dip" android:text="@string/button_cancel" android:drawableLeft="@drawable/btn_cancel_selector" android:drawablePadding="-45.0dip" style="@style/buttonStyle" />
+        </LinearLayout>
+        <com.lifevibes.trimapp.widget.DoubleSeekBar android:id="@id/double_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="-10.0dip" android:layout_above="@id/button_layout" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" trimapp:TIME_HEIGHT="58" trimapp:TIME_WIDTH="85" trimapp:TIME_MARGIN_LR="14" trimapp:TIME_MARGIN_T="15" trimapp:IMAGE_WIDTH="99" trimapp:IMAGE_HEIGHT="96" trimapp:IMAGE_CONTAINER_HEIGHT="103" trimapp:IMAGE_CONTAINER_MARGIN_LR="42" trimapp:IMAGE_CONTAINER_MARGIN_T="76" trimapp:IMAGE_CONTAINER_PADDING="3" trimapp:HANDLE_WIDTH="91" trimapp:HANDLE_HEIGHT="178" trimapp:HANDLE_MARGIN_T="43" trimapp:HANDLE_PADDING="30" trimapp:HANDLE_PADDING_SPACE="-46" trimapp:HANDLE_USER_WIDTH="91" trimapp:HANDLE_USER_HEIGHT="143" trimapp:HANDLE_USER_MARGIN_T="56" trimapp:LAYOUT_HEIGHT="128" />
+    </RelativeLayout>
+    <ProgressBar android:id="@id/progress_bar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="?android:attr/progressBarStyleLarge" />
+</RelativeLayout>

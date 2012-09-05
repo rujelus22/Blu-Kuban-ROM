@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/kies_logo" android:layout_width="480.0px" android:layout_height="106.0px" android:layout_marginTop="10.0px" android:src="@drawable/kies_logo" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/kies_bg_device" android:layout_width="480.0px" android:layout_height="252.0px" android:layout_marginTop="66.0px" android:src="@drawable/kies_bg_device" android:layout_centerHorizontal="true" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/waiting_bg" android:layout_width="fill_parent" android:layout_height="32.0px" android:layout_marginTop="284.0px">
+            <LinearLayout android:layout_width="25.0px" android:layout_height="25.0px" android:layout_marginLeft="334.0px">
+                <ProgressBar android:id="@id/progress" android:layout_width="fill_parent" android:layout_height="fill_parent" style="?android:attr/progressBarStyleSmallInverse" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="32.0px" android:layout_marginLeft="2.0px">
+                <TextView android:textSize="14.0dip" android:textColor="@touchwiz:color/tw_color001" android:gravity="center_vertical" android:id="@id/text_waiting" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/waiting" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/wating_confirm_bg" android:layout_width="fill_parent" android:layout_height="45.0px" android:layout_marginTop="320.0px">
+            <TextView android:textSize="14.0dip" android:typeface="sans" android:gravity="center_horizontal" android:id="@id/text_confirm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/waiting_confirmation" />
+        </LinearLayout>
+        <RelativeLayout android:orientation="vertical" android:id="@id/connect_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="284.0px">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="25.0px">
+                    <TextView android:textSize="14.0dip" android:typeface="sans" android:textColor="@touchwiz:color/tw_color001" android:gravity="center_horizontal" android:id="@id/text_connected" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:text="@string/connected_with" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="45.0px">
+                    <TextView android:textSize="14.0dip" android:typeface="sans" android:textColor="@touchwiz:color/tw_color001" android:gravity="center_horizontal" android:id="@id/text_sync" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="4.0dip" android:text="@string/sync_with" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <com.sec.android.touchwiz.widget.TwSoftkeyView android:id="@id/cancel_softkeyview" android:layout_width="fill_parent" android:layout_height="82.0px"
+      xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+        <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/cancel_softkey" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/cancel" />
+    </com.sec.android.touchwiz.widget.TwSoftkeyView>
+    <com.sec.android.touchwiz.widget.TwSoftkeyView android:id="@id/disconn_softkeyview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="82.0px"
+      xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+        <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/disconn_softkey" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/disconn" />
+    </com.sec.android.touchwiz.widget.TwSoftkeyView>
+</LinearLayout>

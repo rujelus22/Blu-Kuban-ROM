@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="nav_bar_buttons" />
+    <item type="id" name="choice">false</item>
+    <item type="id" name="horizontal_choice_view">false</item>
+    <item type="id" name="keyboard">false</item>
+    <item type="id" name="buttons">false</item>
+    <item type="id" name="video">false</item>
+    <item type="id" name="change_ime">false</item>
+    <item type="id" name="help">false</item>
+    <item type="id" name="layout">false</item>
+    <item type="id" name="image">false</item>
+    <item type="id" name="text">false</item>
+    <item type="id" name="progressbar">false</item>
+    <item type="id" name="ml_header">false</item>
+    <item type="id" name="subject">false</item>
+    <item type="id" name="timestamp">false</item>
+    <item type="id" name="message_container">false</item>
+    <item type="id" name="message_subject">false</item>
+    <item type="id" name="message_time">false</item>
+    <item type="id" name="message_body">false</item>
+    <item type="id" name="preference_super_container">false</item>
+    <item type="id" name="relativeLayout1">false</item>
+    <item type="id" name="preference_progress_label">false</item>
+    <item type="id" name="preference_progress_bar">false</item>
+    <item type="id" name="valueLabel">false</item>
+    <item type="id" name="seekbar">false</item>
+    <item type="id" name="leftLabel">false</item>
+    <item type="id" name="rightLabel">false</item>
+    <item type="id" name="video_view">false</item>
+    <item type="id" name="version_title">false</item>
+    <item type="id" name="version_number">false</item>
+    <item type="id" name="swib_title">false</item>
+    <item type="id" name="swib_number">false</item>
+    <item type="id" name="copyright_title">false</item>
+    <item type="id" name="copyright_text">false</item>
+    <item type="id" name="voice_animation">false</item>
+    <item type="id" name="voice_message">false</item>
+    <item type="id" name="voice_button">false</item>
+</resources>

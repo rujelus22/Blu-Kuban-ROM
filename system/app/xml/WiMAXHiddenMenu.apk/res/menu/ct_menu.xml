@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/MENU_OPEN_DEVICE" android:title="@string/OPEN_DEVICE" />
+    <item android:id="@id/MENU_LOAD_DEFAULT" android:title="@string/LOAD_DEFAULT" />
+    <item android:id="@id/MENU_ODB_DEFAULT" android:title="@string/ODB_DEFAULT" />
+</menu>

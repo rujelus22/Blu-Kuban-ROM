@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="workspace_page_spacing">24.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutWidthGap">36.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutHeightGap">36.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingLeft">24.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingRight">24.0dip</dimen>
+</resources>

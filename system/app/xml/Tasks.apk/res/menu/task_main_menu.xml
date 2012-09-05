@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_create" android:id="@id/create" android:title="@string/create_task" />
+    <item android:icon="@drawable/ic_menu_list_view" android:id="@id/view_by" android:title="@string/view_by_tasks" />
+    <item android:icon="@drawable/ic_menu_delete" android:id="@id/delete" android:title="@string/delete" />
+    <item android:icon="@drawable/ic_menu_search" android:id="@id/search" android:title="@string/search" />
+    <item android:icon="@drawable/ic_menu_list_by" android:id="@id/list_by" android:title="@string/list_by" />
+    <item android:icon="@drawable/ic_menu_refresh" android:id="@id/account_sync" android:title="@string/account_and_sync" />
+</menu>

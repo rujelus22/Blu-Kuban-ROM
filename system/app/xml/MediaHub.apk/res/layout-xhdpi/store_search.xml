@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_search_container" android:background="@drawable/search_box_bg" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <include layout="@layout/search_box" />
+    </RelativeLayout>
+    <TextView android:textSize="17.5sp" android:textStyle="normal" android:textColor="@color/white" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/tv_subtitle" android:background="@drawable/dark_header" android:paddingLeft="7.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="25.0dip" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/rl_mainlist" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/common_list_view" />
+            <include layout="@layout/common_grid_view" />
+            <ImageView android:id="@id/iv_top_shadow" android:background="@drawable/grid_view_top_shadow_h" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
+            <ImageView android:id="@id/iv_bottom_shadow" android:background="@drawable/grid_view_bottom_shadow_h" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <include layout="@layout/common_progress_white" />
+        <include layout="@layout/common_noitem_view" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/block_a" android:layout_width="fill_parent" android:layout_height="36.599976dip">
+        <LinearLayout android:gravity="center_vertical" android:background="@drawable/title_bar_normal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center_vertical" android:layout_width="222.0dip" android:layout_height="fill_parent">
+                <ImageView android:id="@id/top_title" android:background="@drawable/title_bar_selector" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/finance_logo_title_normal" />
+            </LinearLayout>
+            <com.sec.android.widgetapp.stockclock.stockview.MyViewFlipper android:id="@id/indices_flipper" android:layout_width="308.0dip" android:layout_height="29.299988dip" android:layout_marginRight="3.2999878dip">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/block_a_1" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <TextView android:textSize="13.299988dip" android:typeface="sans" android:textColor="#ffffffff" android:id="@id/indices_name" android:paddingLeft="6.5999756dip" android:paddingRight="6.5999756dip" android:layout_width="fill_parent" android:layout_height="19.299988dip" android:includeFontPadding="false" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <TextView android:textSize="13.299988dip" android:typeface="sans" android:textColor="#ffffffff" android:id="@id/indices_price" android:paddingRight="13.299988dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+                        <ImageView android:id="@id/indices_stocksub_arrow_updown" android:paddingRight="3.2999878dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <TextView android:textSize="13.299988dip" android:typeface="sans" android:textColor="#ff7b7b7b" android:id="@id/indices_change" android:paddingRight="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+                        <ImageView android:id="@id/indices_stocksub_icon_plusminus" android:paddingRight="3.2999878dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <TextView android:textSize="13.299988dip" android:typeface="sans" android:textColor="#ff7b7b7b" android:id="@id/indices_percent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.sec.android.widgetapp.stockclock.stockview.MyViewFlipper>
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/block_b" android:focusable="true" android:clickable="true" android:layout_width="222.0dip" android:layout_height="219.29999dip" android:layout_below="@id/block_a">
+        <RelativeLayout android:id="@id/block_a_2" android:background="@drawable/finance_bg_01" android:layout_width="fill_parent" android:layout_height="98.0dip">
+            <ScrollView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.299988dip" android:layout_marginTop="7.399994dip">
+                <TextView android:textSize="14.599976dip" android:typeface="sans" android:textStyle="bold" android:textColor="#fffff000" android:ellipsize="marquee" android:gravity="left" android:id="@id/detail_name" android:focusable="true" android:layout_width="155.29999dip" android:layout_height="wrap_content" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            </ScrollView>
+            <ScrollView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.299988dip" android:layout_marginTop="25.5dip">
+                <TextView android:textSize="14.599976dip" android:typeface="sans" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="left" android:id="@id/detail_exchage" android:paddingLeft="2.0dip" android:layout_width="158.6dip" android:layout_height="wrap_content" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            </ScrollView>
+            <ImageView android:id="@id/detail_switch_btn" android:background="@drawable/btn_m_selector" android:focusable="true" android:clickable="true" android:layout_width="44.599976dip" android:layout_height="42.0dip" android:layout_marginLeft="173.29999dip" android:layout_marginTop="10.0dip" android:src="@drawable/finance_add" android:scaleType="center" />
+            <TextView android:textSize="26.599976dip" android:typeface="sans" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="left" android:id="@id/detail_price" android:layout_width="161.29999dip" android:layout_height="wrap_content" android:layout_marginLeft="13.299988dip" android:layout_marginTop="40.299988dip" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="11.299988dip" android:layout_marginTop="76.0dip">
+                <ImageView android:id="@id/detail_stocksub_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="13.299988dip" android:typeface="sans" android:textColor="#ff7b7b7b" android:ellipsize="marquee" android:id="@id/detail_change" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.2999878dip" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+                <ImageView android:id="@id/detail_stocksub_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" />
+                <TextView android:textSize="13.299988dip" android:typeface="sans" android:textColor="#ff7b7b7b" android:ellipsize="marquee" android:id="@id/detail_percent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.2999878dip" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/more_info_btn_layout" android:background="@drawable/btn_more_info_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/block_a_2">
+            <Button android:id="@id/more_info_btn" android:background="@drawable/more_btn_selector" android:layout_width="fill_parent" android:layout_height="32.659973dip" />
+            <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_more_info_logo" />
+                <TextView android:textSize="12.0sp" android:textColor="#ffffffff" android:ellipsize="marquee" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/more_info" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            </LinearLayout>
+        </RelativeLayout>
+        <ScrollView android:id="@id/detail_list" android:background="@drawable/finance_bg_06" android:layout_width="222.0dip" android:layout_height="323.0dip" android:layout_marginTop="131.32999dip">
+            <RelativeLayout android:id="@id/block_c" android:layout_width="222.0dip" android:layout_height="106.0dip">
+                <LinearLayout android:orientation="vertical" android:id="@id/block_c_3" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.299988dip" android:layout_marginTop="9.299988dip" android:layout_marginRight="11.299988dip">
+                        <TextView android:textSize="14.5dip" android:ellipsize="end" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/detail_high" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" />
+                        <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.599976dip" android:layout_weight="1.0">
+                            <TextView android:textSize="14.5dip" android:textColor="#ff5fcfff" android:ellipsize="marquee" android:id="@id/detailhigh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:background="#ff2b2b2b" android:layout_width="fill_parent" android:layout_height="0.6dip" android:layout_marginLeft="3.1999817dip" android:layout_marginTop="5.299988dip" android:layout_marginRight="1.8999939dip" android:layout_marginBottom="5.299988dip" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.299988dip" android:layout_marginRight="11.299988dip">
+                        <TextView android:textSize="14.5dip" android:ellipsize="end" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/detail_low" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" />
+                        <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.599976dip" android:layout_weight="1.0">
+                            <TextView android:textSize="14.5dip" android:textColor="#ff5fcfff" android:ellipsize="marquee" android:id="@id/detaillow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:background="#ff2b2b2b" android:layout_width="fill_parent" android:layout_height="0.6dip" android:layout_marginLeft="3.1999817dip" android:layout_marginTop="5.299988dip" android:layout_marginRight="1.8999939dip" android:layout_marginBottom="5.299988dip" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.299988dip" android:layout_marginRight="11.299988dip">
+                        <TextView android:textSize="14.5dip" android:ellipsize="end" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/detail_volume" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" />
+                        <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.599976dip" android:layout_weight="1.0">
+                            <TextView android:textSize="14.5dip" android:textColor="#ff5fcfff" android:ellipsize="marquee" android:id="@id/detailvolume" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:background="#ff2b2b2b" android:layout_width="fill_parent" android:layout_height="0.6dip" android:layout_marginLeft="3.1999817dip" android:layout_marginTop="5.299988dip" android:layout_marginRight="1.8999939dip" android:layout_marginBottom="5.299988dip" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.299988dip" android:layout_marginRight="11.299988dip">
+                        <TextView android:textSize="14.5dip" android:ellipsize="end" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/detail_prev_close" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" />
+                        <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.599976dip" android:layout_weight="1.0">
+                            <TextView android:textSize="14.5dip" android:textColor="#ff5fcfff" android:ellipsize="marquee" android:id="@id/detail_prev_close" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:background="#ff2b2b2b" android:layout_width="fill_parent" android:layout_height="0.6dip" android:layout_marginLeft="3.1999817dip" android:layout_marginTop="5.299988dip" android:layout_marginRight="1.8999939dip" android:layout_marginBottom="5.299988dip" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.299988dip" android:layout_marginRight="11.299988dip">
+                        <TextView android:textSize="14.5dip" android:ellipsize="end" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/detail_open" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" />
+                        <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.599976dip" android:layout_weight="1.0">
+                            <TextView android:textSize="14.5dip" android:textColor="#ff5fcfff" android:ellipsize="marquee" android:id="@id/detail_open" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:background="#ff2b2b2b" android:layout_width="fill_parent" android:layout_height="0.6dip" android:layout_marginLeft="3.1999817dip" android:layout_marginTop="5.299988dip" android:layout_marginRight="1.8999939dip" android:layout_marginBottom="5.299988dip" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.299988dip" android:layout_marginRight="11.299988dip">
+                        <TextView android:textSize="14.5dip" android:ellipsize="end" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/detail_market_cap" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" />
+                        <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.599976dip" android:layout_weight="1.0">
+                            <TextView android:textSize="14.5dip" android:textColor="#ff5fcfff" android:ellipsize="marquee" android:id="@id/detail_cap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:background="#ff2b2b2b" android:layout_width="fill_parent" android:layout_height="0.6dip" android:layout_marginLeft="3.1999817dip" android:layout_marginTop="5.299988dip" android:layout_marginRight="1.8999939dip" android:layout_marginBottom="5.299988dip" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.299988dip" android:layout_marginRight="11.299988dip">
+                        <TextView android:textSize="14.5dip" android:ellipsize="end" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/detail_eps" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" />
+                        <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.599976dip" android:layout_weight="1.0">
+                            <TextView android:textSize="14.5dip" android:textColor="#ff5fcfff" android:ellipsize="marquee" android:id="@id/detail_eps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:background="#ff2b2b2b" android:layout_width="fill_parent" android:layout_height="0.6dip" android:layout_marginLeft="3.1999817dip" android:layout_marginTop="5.299988dip" android:layout_marginRight="1.8999939dip" android:layout_marginBottom="5.299988dip" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.299988dip" android:layout_marginRight="11.299988dip">
+                        <TextView android:textSize="14.5dip" android:ellipsize="end" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/detail_per" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" />
+                        <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.599976dip" android:layout_weight="1.0">
+                            <TextView android:textSize="14.5dip" android:textColor="#ff5fcfff" android:ellipsize="marquee" android:id="@id/detail_per" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:background="#ff2b2b2b" android:layout_width="fill_parent" android:layout_height="0.6dip" android:layout_marginLeft="3.1999817dip" android:layout_marginTop="5.299988dip" android:layout_marginRight="1.8999939dip" android:layout_marginBottom="5.299988dip" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.299988dip" android:layout_marginRight="11.299988dip">
+                        <TextView android:textSize="14.5dip" android:ellipsize="end" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/detail_wk_high" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" />
+                        <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.599976dip" android:layout_weight="1.0">
+                            <TextView android:textSize="14.5dip" android:textColor="#ff5fcfff" android:ellipsize="marquee" android:id="@id/detail_52wk_high" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:background="#ff2b2b2b" android:layout_width="fill_parent" android:layout_height="0.6dip" android:layout_marginLeft="3.1999817dip" android:layout_marginTop="5.299988dip" android:layout_marginRight="1.8999939dip" android:layout_marginBottom="5.299988dip" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.299988dip" android:layout_marginRight="11.299988dip" android:layout_marginBottom="6.5999756dip">
+                        <TextView android:textSize="14.5dip" android:ellipsize="end" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/detail_wk_low" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" />
+                        <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.599976dip" android:layout_weight="1.0">
+                            <TextView android:textSize="14.5dip" android:textColor="#ff5fcfff" android:ellipsize="marquee" android:id="@id/detail_52wk_low" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+    <TabHost android:id="@id/detailtabhost" android:background="@drawable/no_chart_img" android:layout_width="311.29688dip" android:layout_height="219.29999dip" android:layout_marginLeft="0.0dip" android:layout_marginTop="0.0dip" android:layout_weight="1.0" android:layout_toRightOf="@id/block_b" android:layout_below="@id/block_a">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TabWidget android:id="@android:id/tabs" android:layout_width="301.0dip" android:layout_height="28.0dip" android:layout_marginLeft="4.0dip" android:layout_marginTop="6.5999756dip" android:layout_marginBottom="1.2999878dip" />
+            </RelativeLayout>
+            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:id="@id/tab1" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="horizontal" android:id="@id/linevalue" android:layout_width="fill_parent" android:layout_height="96.29999dip">
+                        <LinearLayout android:gravity="right" android:layout_gravity="right" android:orientation="vertical" android:paddingRight="9.0dip" android:layout_width="88.599976dip" android:layout_height="100.0dip" android:layout_marginTop="4.0dip">
+                            <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="right|center" android:id="@id/tab1_linemaxvalue" android:layout_width="fill_parent" android:layout_height="29.099976dip" android:layout_marginTop="17.0dip" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" android:marqueeRepeatLimit="marquee_forever" />
+                            <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="right|center" android:id="@id/tab1_linemidvalue" android:layout_width="fill_parent" android:layout_height="29.099976dip" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" android:marqueeRepeatLimit="marquee_forever" />
+                            <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="right|center" android:id="@id/tab1_lineminvalue" android:layout_width="fill_parent" android:layout_height="29.099976dip" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" android:marqueeRepeatLimit="marquee_forever" />
+                        </LinearLayout>
+                        <RelativeLayout android:gravity="center" android:id="@id/tab1_linegraphlayout" android:paddingRight="4.5999756dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="-14.0dip" android:layout_marginTop="10.0dip" />
+                    </LinearLayout>
+                    <ImageView android:id="@id/stock_detail_bg_below" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-10.0dip" android:layout_below="@id/stock_detail_bg" />
+                    <LinearLayout android:orientation="horizontal" android:id="@id/barvalue" android:layout_width="fill_parent" android:layout_height="44.599976dip" android:layout_marginTop="29.0dip">
+                        <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="right" android:id="@id/tab1_volume_text" android:paddingRight="9.0dip" android:visibility="invisible" android:layout_width="88.599976dip" android:layout_height="fill_parent" android:layout_marginTop="13.0dip" android:text="@string/detail_volume" />
+                        <RelativeLayout android:id="@id/tab1_bargraphlayout" android:paddingRight="4.5999756dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="-14.0dip" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="right" android:orientation="horizontal" android:id="@id/barvalues" android:paddingLeft="25.0dip" android:layout_width="240.0dip" android:layout_height="18.0dip" android:layout_marginLeft="72.0dip" android:layout_marginTop="8.0dip">
+                        <TextView android:textSize="11.0dip" android:textColor="#ffffffff" android:gravity="center_horizontal" android:id="@id/tab1_barmaxvalue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                        <TextView android:textSize="11.0dip" android:textColor="#ffffffff" android:gravity="center_horizontal" android:id="@id/tab1_barmidvalue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                        <TextView android:textSize="11.0dip" android:textColor="#ffffffff" android:gravity="center_horizontal" android:id="@id/tab1_barminvalue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+        <RelativeLayout android:id="@id/no_chart" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="17.299988dip" android:typeface="sans" android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="14.0dip" android:layout_marginTop="37.299988dip" android:layout_marginRight="14.0dip" android:text="@string/message_no_data" />
+        </RelativeLayout>
+    </TabHost>
+    <ImageView android:id="@id/bottomline" android:background="@drawable/bottom_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/detailtabhost" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottom_bg" android:layout_width="fill_parent" android:layout_height="36.599976dip" android:layout_below="@id/bottomline">
+        <LinearLayout android:gravity="right|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <Button android:textSize="10.599976dip" android:textColor="#80ffffff" android:gravity="center" android:id="@id/detailquotesdelayedbg" android:background="@drawable/quotes_delayed_selector" android:paddingLeft="5.299988dip" android:paddingRight="5.299988dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1.2999878dip" android:text="@string/detail_quotesdelayed" />
+            <TextView android:textSize="10.599976dip" android:textColor="#80ffffff" android:gravity="center_vertical" android:id="@id/detailupdate" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="6.5999756dip" android:includeFontPadding="false" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/detailfreshbtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.2999878dip">
+                <ImageView android:id="@id/detailupdatebutton" android:background="@drawable/refresh_selector" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/refresh_anim" android:scaleType="center" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

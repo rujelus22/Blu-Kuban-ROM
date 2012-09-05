@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/cell" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+    <ImageView android:id="@id/nodata" android:background="@drawable/widget_default_4x1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ImageView android:id="@id/backcell" android:background="@drawable/clock_button" android:focusable="true" android:nextFocusDown="@id/refresh" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" android:layout_centerHorizontal="true">
+        <RelativeLayout android:id="@id/notempty_city" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="9.0dip" android:layout_marginTop="7.0dip">
+            <LinearLayout android:id="@id/temp_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+                        <TextView android:textSize="33.299988sp" android:typeface="sans" android:textColor="#ffffffff" android:id="@id/temp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:shadowColor="#ff000000" android:shadowDx="0.0" android:shadowDy="0.0" android:shadowRadius="3.0" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView android:id="@id/ic_fc" android:layout_width="19.329987dip" android:layout_height="30.669983dip" android:src="@drawable/widget_centigrade" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@id/hilow_temp_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_below="@id/temp_layout">
+                <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+                        <TextView android:textSize="9.329987sp" android:typeface="sans" android:textColor="#ffffffff" android:id="@id/high_temp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:shadowColor="#ff000000" android:shadowDx="0.0" android:shadowDy="0.0" android:shadowRadius="3.0" />
+                        <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <ImageView android:background="@drawable/widget_temperature" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <ImageView android:layout_width="2.669983dip" android:layout_height="wrap_content" android:src="@drawable/widget_bar" />
+                        </LinearLayout>
+                        <TextView android:textSize="9.329987sp" android:typeface="sans" android:textColor="#ffffffff" android:id="@id/low_temp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:shadowColor="#ff000000" android:shadowDx="0.0" android:shadowDy="0.0" android:shadowRadius="3.0" />
+                        <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <ImageView android:background="@drawable/widget_temperature" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@id/weather_img_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.3329773dip" android:layout_marginRight="69.33298dip" android:layout_alignParentRight="true">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/weather_img" android:layout_width="103.33298dip" android:layout_height="58.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@id/weather_city_name_layout" android:layout_width="144.0dip" android:layout_height="wrap_content" android:layout_marginLeft="102.0dip" android:layout_marginTop="10.0dip">
+                <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="13.299988dip" android:typeface="sans" android:textStyle="bold" android:textColor="#ffffffff" android:ellipsize="marquee" android:id="@id/city_name" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:shadowColor="#ff000000" android:shadowDx="0.0" android:shadowDy="0.0" android:shadowRadius="3.0" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@id/weather_info_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="102.0dip" android:layout_marginTop="4.0dip" android:layout_below="@id/weather_city_name_layout">
+                <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="16.0dip" android:typeface="sans" android:textColor="#ffffffff" android:id="@id/weather_decription" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:includeFontPadding="false" android:shadowColor="#ff000000" android:shadowDx="0.0" android:shadowDy="0.0" android:shadowRadius="3.0" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@id/refresh_lay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+                <LinearLayout android:id="@id/refreshflipper" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:layout_marginBottom="5.3299866dip" android:layout_centerInParent="true">
+                    <ProgressBar android:layout_width="21.329987dip" android:layout_height="21.329987dip" android:indeterminateOnly="true" />
+                </LinearLayout>
+                <RelativeLayout android:id="@id/refresh" android:focusable="true" android:nextFocusLeft="@id/backcell" android:nextFocusUp="@id/backcell" android:layout_width="66.66998dip" android:layout_height="33.329987dip" android:contentDescription="@string/app_name">
+                    <ImageView android:background="@drawable/widget_refresh_button" android:duplicateParentState="true" android:layout_width="21.329987dip" android:layout_height="21.329987dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="5.3299866dip" android:src="@drawable/widget_btn_refresh" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@id/weather_update_date_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="27.299988dip" android:layout_marginBottom="9.299988dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="8.699982dip" android:typeface="sans" android:textColor="#ffffffff" android:id="@id/update_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/empty_city" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true">
+            <TextView android:textSize="20.0dip" android:gravity="center" android:id="@id/emptyselect" android:layout_width="304.0dip" android:layout_height="wrap_content" android:text="@string/add_city_message" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <LinearLayout android:id="@id/locating_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:layout_marginBottom="5.299988dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+            <ProgressBar android:layout_width="20.0dip" android:layout_height="20.0dip" android:indeterminateOnly="true" android:layout_centerInParent="true" />
+        </LinearLayout>
+        <ImageView android:id="@id/logo_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginBottom="7.299988dip" android:src="@drawable/widget_logo" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/loading" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:indeterminateOnly="true" />
+            <TextView android:textSize="20.0dip" android:textColor="#ccffffff" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/loading_message" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/error" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <TextView android:textSize="20.0dip" android:textColor="#ccffffff" android:gravity="center" android:id="@id/error_message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/message_network_connnection_failed" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

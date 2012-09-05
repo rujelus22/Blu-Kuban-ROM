@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="2531" android:versionName="SZ_2.5.31" package="com.sprint.dsa"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" />
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="14" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <application android:theme="@style/Theme.SpintZone" android:label="@string/app_name" android:icon="@drawable/sprint_icon" android:name=".SprintZone" android:debuggable="false" android:anyDensity="true" android:hardwareAccelerated="false">
+        <activity android:label="@string/app_name" android:name=".PageMain" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.sprint.dsa" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.sprint.dsa.DSA_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.sprint.dsa/vnd.sprint.dsa.main" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.sprint.dsa.ACTION_UPDATE_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PageActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name=".AirPlaneModeActivity" />
+        <activity android:label="" android:name=".PageMore">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.sprint.dsa.VIEW_MORE" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name_settings" android:name=".PageSettings">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.sprint.dsa.VIEW_SETTINGS" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name_advsettings" android:name=".PageAdvSettings">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.sprint.dsa.VIEW_ADV_SETTINGS" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name_about" android:name=".PageAbout">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.sprint.dsa.VIEW_ABOUT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name_alerts" android:name=".PageAlerts">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.sprint.dsa.VIEW_ALERTS" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.sprint.dsa.dss.DsaClient" android:configChanges="keyboardHidden|orientation" class="com.sprint.dsa.dss.DsaClient">
+            <intent-filter>
+                <action android:name="com.sprint.dsa.DSA_CLIENT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/more_diagnostics" android:name=".DiagnosticsActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:label="@string/power_configuration" android:name=".PowerConfigActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:label="@string/sd_card_usage" android:name=".MicroSdUsageActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:label="@string/memory_usage" android:name=".MemoryUsageActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:label="@string/learn_more" android:name=".DiagnosticsInfoActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:label="@string/notification" android:name=".DiagnosticsNotificationActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:label="@string/app_name" android:name=".ActivationActivity" android:configChanges="keyboardHidden|orientation" android:noHistory="true" />
+        <service android:name="UpdateService" />
+        <receiver android:name="BootCompleteReceiver" android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.sprint.dsa.pack.PackBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.sprint.action.PACK_INSTALLED" />
+                <action android:name="com.sprint.action.PACK_REMOVED" />
+                <action android:name="com.sprint.action.PACK_ACTIVATED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="UpgradeAvailableReceiver">
+            <intent-filter>
+                <action android:name="com.sprint.action.VERSION_UPDATE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".SettingsReceiver" />
+        <provider android:name="com.sprint.dsa.data.ReportContentProvider" android:authorities="com.sprint.dsa.data.reportcontentprovider" />
+    </application>
+    <uses-permission android:name="com.sprint.internal.permission.SLOT0" />
+    <uses-permission android:name="com.sprint.internal.permission.CONNECTIONMANAGER" />
+    <uses-permission android:name="com.sprint.internal.permission.OMADM" />
+    <uses-permission android:name="com.sprint.internal.permission.SYSTEMPROPERTIES" />
+    <uses-permission android:name="com.sprint.permission.INSTALL_UPDATES" />
+    <uses-permission android:name="com.sprint.internal.permission.SYSTEMPROPERTIES_WRITE" />
+    <uses-permission android:name="com.sprint.internal.permission.PLATFORM" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+</manifest>

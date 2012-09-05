@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Modo de conducción</string>
+    <string name="app_name">Comandos de voz</string>
+    <string name="incar">Conversación de voz</string>
+    <string name="incar_icon">Convers. de voz</string>
+    <string name="Vlingo">Comandos de voz</string>
+</resources>

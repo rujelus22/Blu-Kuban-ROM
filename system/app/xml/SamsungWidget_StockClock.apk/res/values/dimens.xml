@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="resizewidget_width_2">160.0dip</dimen>
+    <dimen name="resizewidget_width_4">320.0dip</dimen>
+    <dimen name="resizewidget_height_1">100.0dip</dimen>
+    <dimen name="resizewidget_height_2">200.0dip</dimen>
+    <dimen name="resizewidget_height_4">400.0dip</dimen>
+    <dimen name="cell_size_height_1">40.0dip</dimen>
+    <dimen name="cell_size_height_2">144.0dip</dimen>
+    <dimen name="cell_size_height_3">216.0dip</dimen>
+    <dimen name="cell_size_height_4">288.0dip</dimen>
+    <dimen name="cell_size_height_5">360.0dip</dimen>
+    <dimen name="cell_size_width_2">147.0dip</dimen>
+    <dimen name="cell_size_width_3">220.5dip</dimen>
+    <dimen name="cell_size_width_4">250.0dip</dimen>
+    <dimen name="wxvga_cell_size_width_3">219.0dip</dimen>
+    <dimen name="wxvga_cell_size_height_1">73.0dip</dimen>
+    <dimen name="wxvga_cell_size_height_2">146.0dip</dimen>
+    <dimen name="wxvga_cell_size_height_3">219.0dip</dimen>
+    <dimen name="wxvga_cell_size_height_4">292.0dip</dimen>
+    <dimen name="wxvga_cell_size_height_5">365.0dip</dimen>
+    <dimen name="hvga_cell_size_width_2">147.0dip</dimen>
+    <dimen name="hvga_cell_size_width_4">294.0dip</dimen>
+    <dimen name="hvga_cell_size_height_1">73.5dip</dimen>
+    <dimen name="hvga_cell_size_height_2">147.0dip</dimen>
+    <dimen name="hvga_cell_size_height_4">294.0dip</dimen>
+    <dimen name="lqvga_cell_size_width_4">294.0dip</dimen>
+    <dimen name="lqvga_cell_size_height_2">146.0dip</dimen>
+    <dimen name="lqvga_cell_size_height_4">294.0dip</dimen>
+</resources>

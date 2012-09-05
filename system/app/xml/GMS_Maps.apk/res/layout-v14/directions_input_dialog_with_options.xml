@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/directionsPanel" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:id="@id/fromInputPanel" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="16.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="16.0dip">
+                <com.google.googlenav.suggest.android.SuggestView android:textSize="18.0sp" android:id="@id/fromField" android:nextFocusDown="@id/toField" android:layout_width="0.0dip" android:layout_height="fill_parent" android:scrollHorizontally="true" android:singleLine="true" android:capitalize="none" android:autoText="false" android:freezesText="true" android:layout_weight="1.0" android:imeOptions="actionNext" />
+                <ImageView android:id="@id/fromChooseButton" android:layout_width="32.0dip" android:layout_height="fill_parent" android:src="@drawable/spinner_ab_holo_light" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/toInputPanel" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip">
+                <com.google.googlenav.suggest.android.SuggestView android:textSize="18.0sp" android:id="@id/toField" android:nextFocusDown="@id/getDirectionsButton" android:layout_width="0.0dip" android:layout_height="fill_parent" android:scrollHorizontally="true" android:singleLine="true" android:capitalize="none" android:autoText="false" android:freezesText="true" android:layout_weight="1.0" android:imeOptions="actionGo" />
+                <ImageView android:id="@id/toChooseButton" android:layout_width="32.0dip" android:layout_height="fill_parent" android:src="@drawable/spinner_ab_holo_light" />
+            </LinearLayout>
+            <RadioGroup android:orientation="horizontal" android:id="@id/travelTypePanel" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_marginLeft="16.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="16.0dip" android:layout_weight="8.0">
+                <RadioButton android:id="@id/drivingButton" android:background="@drawable/mode_driving" android:layout_width="0.0dip" android:layout_height="fill_parent" android:button="@null" android:layout_weight="1.0" />
+                <RadioButton android:id="@id/transitButton" android:background="@drawable/mode_transit" android:layout_width="0.0dip" android:layout_height="fill_parent" android:button="@null" android:layout_weight="1.0" />
+                <RadioButton android:id="@id/bikingButton" android:background="@drawable/mode_bike" android:layout_width="0.0dip" android:layout_height="fill_parent" android:button="@null" android:layout_weight="1.0" />
+                <RadioButton android:id="@id/walkingButton" android:background="@drawable/mode_walk" android:layout_width="0.0dip" android:layout_height="fill_parent" android:button="@null" android:layout_weight="1.0" />
+            </RadioGroup>
+            <LinearLayout android:orientation="vertical" android:id="@id/optionsPanel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="16.0dip" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

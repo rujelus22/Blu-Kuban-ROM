@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/subtoolbar_fontcolor" android:layout_width="312.0dip" android:layout_height="176.0dip" android:layout_marginLeft="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="2.0dip" android:layout_marginBottom="2.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="44.0dip">
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor01" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor02" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor03" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor04" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor05" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor06" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="44.0dip">
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor07" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor08" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor09" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor10" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor11" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor12" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="44.0dip">
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor13" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor14" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor15" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor16" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor17" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor18" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="44.0dip">
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor19" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor20" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor21" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor22" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor23" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+        <com.infraware.office.basetoolbar.SubToolbarBtn android:id="@id/subtoolbtn_fontcolor24" android:clickable="true" android:layout_width="52.0dip" android:layout_height="fill_parent" />
+    </LinearLayout>
+</LinearLayout>

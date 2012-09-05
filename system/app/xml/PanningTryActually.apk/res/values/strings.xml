@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panning_tutorial">"Let's try, panning!"</string>
+    <string name="hold_me">Hold me</string>
+    <string name="move_left_or_right">Move device left or right</string>
+    <string name="done">Done</string>
+    <string name="ok">OK</string>
+    <string name="back">Back</string>
+    <string name="panning">Panning</string>
+    <string name="panning_dialog_message">Move device left or right while holding selected icon to reposition it to another page</string>
+    <string name="try_button">Try</string>
+    <string name="try_again">Try again</string>
+    <string name="good_job">Good job!</string>
+</resources>

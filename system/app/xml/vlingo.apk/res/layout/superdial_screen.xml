@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/sd_parent_layout" android:padding="0.0px" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="0.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:id="@id/sd_search_bar" android:background="@drawable/sdial_search_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <ImageView android:id="@id/ImageView01" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/ic_launcher_contacts" android:scaleType="fitXY" />
+        <EditText android:id="@id/sd_textbox" android:background="@drawable/textfield_search" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip" android:maxLines="2" android:minLines="1" android:layout_weight="1.0" android:inputType="textPersonName|textMultiLine" android:imeOptions="actionSearch" />
+        <ImageButton android:id="@id/btn_speak_again" android:background="@drawable/btn_search_dialog" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="2.0dip" android:src="@drawable/ic_btn_speak_now" android:scaleType="center" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/sd_list_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/sd_search_bar">
+        <ListView android:id="@id/sd_listview_1" android:background="#ff000000" android:descendantFocusability="beforeDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="40.0dip" android:layout_weight="1.0" android:isScrollContainer="false" />
+        <ListView android:id="@id/sd_listview_2" android:background="#ff000000" android:descendantFocusability="beforeDescendants" android:layout_width="fill_parent" android:layout_height="40.0dip" android:minHeight="40.0dip" android:isScrollContainer="false" />
+    </LinearLayout>
+</RelativeLayout>

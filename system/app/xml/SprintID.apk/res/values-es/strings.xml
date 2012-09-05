@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="install">Instalar</string>
+    <string name="app_name">Sprint ID</string>
+    <string name="pack_switcher_label">Elige tu ID</string>
+    <string name="title_firstrun">Bienvenido a Sprint ID</string>
+    <string name="intro_firstrun">Sprint ID te ayuda a aprovechar al máximo tu teléfono al permitirte personalizarlo completamente en base a tus necesidades e intereses. Elige el Sprint ID que sea adecuado para ti y recibe automáticamente timbres, imágenes de fondo, aplicaciones y widgets descargados a tu teléfono con un solo clic. Toca Instalar para empezar.</string>
+    <string name="title_landing">Sprint ID</string>
+    <string name="install_button_text">Instalar un ID</string>
+    <string name="emergency_call">Hacer una llamada de emergencia</string>
+    <string name="all_content">Todo el contenido</string>
+    <string name="all_packs">Todos los IDs</string>
+    <string name="content_by_pack">Contenido por ID</string>
+    <string name="enter_file_name">Nombre del archivo</string>
+    <string name="search_label">Buscar</string>
+    <string name="search_hint">Búsqueda de un ID</string>
+    <string name="searching">Buscando...</string>
+    <string name="search_result">Resultado de la búsqueda</string>
+    <string name="search_no_match">No se encontraron resultados que concuerden</string>
+    <string name="search_found_msg">"Tu búsqueda de '%1$s' encontró los siguientes paquetes"</string>
+    <string name="search_notfound_msg">"Tú búsqueda de '%1$s' no encontró ningún paquete. Por favor verifica que lo hayas escrito correctamente e inténtalo de nuevo."</string>
+    <string name="pack_details">Detalles del ID</string>
+    <string name="current_pack">Actual</string>
+    <string name="installed_pack">Instalado</string>
+    <string name="open_pack_details">Abrir los detalles del ID</string>
+    <string name="enter_url">URL</string>
+    <string name="nothing_installed">No se encontró contenido</string>
+    <string name="nothing_installed_for_pack">No se encontró contenido de este ID</string>
+    <string name="no_packs_found">No se encontró ningún paquete</string>
+    <string name="install_selected">Se ha seleccionado Instalar</string>
+    <string name="install_success">¡Se ha realizado la instalación!</string>
+    <string name="install_success_title">Instalación completa</string>
+    <string name="installing">Instalando</string>
+    <string name="installing_ellipse">Instalando...</string>
+    <string name="install_skip">Saltado</string>
+    <string name="installing_wallpapers">Instalando imágenes de fondo</string>
+    <string name="installing_ringtones">Instalando timbres</string>
+    <string name="preparing_download">Preparando la descarga</string>
+    <string name="preparing_install">Preparando la instalación</string>
+    <string name="configuring_home">Configurando \"Inicio\"</string>
+    <string name="setting_wallpaper">Configurando imagen de fondo</string>
+    <string name="set_wallpaper">Configurar imagen de fondo</string>
+    <string name="pick_wallpaper">Imágenes de fondo del ID</string>
+    <string name="wifi_settings">configuraciones de Wi-Fi</string>
+    <string name="open_pack_gallery">Galería</string>
+    <string name="manage_content">Manejo de contenido</string>
+    <string name="uninstall_options">Administrar</string>
+    <string name="remove">Eliminar</string>
+    <string name="close">Cerrar</string>
+    <string name="reinstall_pack">Reinstalar</string>
+    <string name="no_packs_installed">No hay paquetes instalados</string>
+    <string name="please_reinstall">Por favor, reinstalar este ID para dar soporte a esta acción</string>
+    <string name="reset_default">Reconfigurar el ID</string>
+    <string name="check_to_uninstall">Los elementos seleccionados serán eliminados</string>
+    <string name="install_from_url">Instalar a partir de la URL</string>
+    <string name="advanced">Avanzada</string>
+    <string name="advanced_settings">Configuraciones avanzadas</string>
+    <string name="install_from_sd">Instalar a partir de tarjeta SD</string>
+    <string name="content_server_base_url">Contenido de la base del servidor de URL</string>
+    <string name="meta_server_base_url">URL del meta servidor de base</string>
+    <string name="uaprof_url">URL de UAProf</string>
+    <string name="folder_id">ID de la carpeta</string>
+    <string name="uncheck_all">No seleccionar nada</string>
+    <string name="check_all">Seleccionar todo</string>
+    <string name="next">Siguiente</string>
+    <string name="back">Atrás</string>
+    <string name="done">Concluido</string>
+    <string name="retry">Volver a intentar</string>
+    <string name="version">Versión</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="show_password">Mostrar la contraseña</string>
+    <string name="password">Contraseña</string>
+    <string name="stop">Detener</string>
+    <string name="removing">Eliminando</string>
+    <string name="removing_content">Eliminando contenido...</string>
+    <string name="removing_wallpapers">Eliminando imágenes de fondo</string>
+    <string name="removing_ringtones">Eliminando timbres</string>
+    <string name="removing_ringtone">Eliminando timbre</string>
+    <string name="untitled_pack">ID sin título</string>
+    <string name="downloading">Descargando . . .</string>
+    <string name="get_new_pack">Obtener nuevos IDs</string>
+    <string name="confirm_remove_title">Eliminar este ID</string>
+    <string name="confirm_remove_message">Este ID será eliminado de tu teléfono pero puedes conservar las aplicaciones y el contenido que veían incluidos con él. Utiliza la siguiente pantalla para elegir qué borrar junto con este ID.</string>
+    <string name="uninstaller_continue">Borrar</string>
+    <string name="uninstaller_confirm_title">Confirmar borrar</string>
+    <string name="uninstaller_confirm_message">Esto borrará las aplicaciones, timbres e imágenes de fondo que seleccionaste. ¿Estás seguro de que deseas borrar estos elementos?</string>
+    <string name="update_available">Actualización disponible</string>
+    <string name="currently_installed">Instalado actualmente</string>
+    <string name="update_available_message">Hay una nueva versión de Sprint ID disponible. Es altamente recomendable que realices la actualización.</string>
+    <string name="update_yes">Actualizar</string>
+    <string name="update_no">No, gracias</string>
+    <string name="details_author">Desarrollado por</string>
+    <string name="details_about_developer">Acerca del desarrollador</string>
+    <string name="details_web_site">Sitio Web</string>
+    <string name="details_visit_web">Visita el sitio web del desarrollador</string>
+    <string name="details_email">Email</string>
+    <string name="details_email_developer">Mandar email a desarrollador</string>
+    <string name="details_phone">Teléfono</string>
+    <string name="details_screenshots">Capturas de pantalla</string>
+    <string name="details_video">Video</string>
+    <string name="play_video">Obtén más información</string>
+    <string name="details_call_developer">Llama a la línea de soporte de ID</string>
+    <string name="details_unknown_developer">Desarrollador desconocido</string>
+    <string name="description">Descripción</string>
+    <string name="swipe_to_view">Deslizar de un lado a otro para ver otras capturas de pantalla</string>
+    <string name="loading_message">Cargando...</string>
+    <string name="please_wait">Por favor espera</string>
+    <string name="switching_to_pack">Aplicando cambios...</string>
+    <string name="label_packs">Seleccionar un ID</string>
+    <string name="label_wallpapers">Seleccionar una imagen de fondo</string>
+    <string name="label_ringers">Seleccionar un timbre</string>
+    <string name="check_for_update">Verificar si hay actualizaciones</string>
+    <string name="server_error_title">Lo sentimos...</string>
+    <string name="server_error_message">Ha ocurrido un error inesperado en el servidor. Por favor vuelve a intentarlo.</string>
+    <string name="unexpected_error_message">Un error inesperado ha ocurrido al instalar este ID.</string>
+    <string name="no_space_error_title">No hay suficiente espacio</string>
+    <string name="no_space_error_message">No hay suficiente espacio disponible en el equipo. Por favor borra algunos archivos o aplicaciones y vuelve a intentarlo.</string>
+    <string name="invalid_spk_error_title">Paquete no válido</string>
+    <string name="invalid_spk_error_message">Hay un problema con el Paquete y no puede estar instalado.</string>
+    <string name="switcher_prompt">Elige tu ID</string>
+    <string name="switcher_home">Mi ID</string>
+    <string name="switcher_get_new">Obtener nuevo</string>
+    <string name="switcher_manage">Administrar</string>
+    <string name="agree">Aceptar</string>
+    <string name="decline">Declinar</string>
+    <string name="title_terms_and_conditions">Términos y Condiciones</string>
+    <string name="sub_title_terms_and_conditions">Al instalar este paquete, convienes en los términos y condiciones de abajo.</string>
+    <string name="sub_title_terms_and_conditions_land">Al instalar este paquete, convienes en los términos y condiciones.</string>
+    <string name="show_tc">Mostrar los Términos y Condiciones</string>
+    <string name="current_id_pack">Paquete actual</string>
+    <string name="msg_too_many_packs">Ya has llenado todas las ranuras de paquetes disponibles. Para añadir un nuevo paquete debes borrar uno existente. Toca Administrar para ver una lista de tus paquetes instalados y para elegir uno que borrar</string>
+    <string name="msg_too_many_packs_toast">Ya has llenado todas las ranuras de paquetes disponibles. Para añadir un nuevo paquete debes borrar uno existente.</string>
+    <string name="invalid_url">Por favor verifica la URL e inténtalo de nuevo.</string>
+    <string name="pack_on_sd">Paquete en la tarjeta SD</string>
+    <string name="file_not_found">No se encontró el archivo en la tarjeta multimedia</string>
+    <string name="saving_config">Guardando configuración anterior</string>
+    <string name="current_remove_title">ID activo</string>
+    <string name="current_remove_message">Si deseas eliminar este ID por favor primero cambia a otro ID.</string>
+    <string name="switch_to_other">Cambiar</string>
+    <string name="msg_almost_max_packs">Puedes instalar hasta %s paquetes en este teléfono. Después de esta instalación, necesitarás borrar un paquete existente si quieres instalar otro.</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="wait_for_hfa">Por favor, espera mientras configuramos los servicios de tu equipo...</string>
+    <string name="sprint_zone_tip">Toca Menú > %s si estás experimentandodificultades</string>
+    <string name="manage_all_content">Seleccionar para manejar todo el contenido</string>
+    <string name="checking_for_update">Verificando si hay actualización...</string>
+    <string name="updating_installer">Actualizando Sprint ID</string>
+    <string name="ongoing_download_title">Se está realizando descarga de ID</string>
+    <string name="ongoing_download_message">Descargando %1$s (%2$d%%)</string>
+    <string name="download_retrying">No se realizó descarga de ID. Intentando de nuevo.</string>
+    <string name="download_complete_ticker">Descarga concluida</string>
+    <string name="download_complete_title">ID listo para su instalación</string>
+    <string name="download_complete_message">" Seleccionar para instalar "<b>%s</b>" "</string>
+    <string name="downloading_in_bg_message">Tu %s ID está siendo descargado y se te notificará cuando esté listo para su instalación. Esto puede tomar varios minutos.</string>
+    <string name="downloading_in_bg_extra_message">Mientras tanto, puedes seguir utilizando tu equipo.</string>
+    <string name="downloading_first_time_extra_message">Mientras tanto echemos un vistazo a tu ID, un lugar para que lo personalices y lo hagas tuyo.</string>
+    <string name="cont">Continuar</string>
+    <string name="download_failed_ticker">No se realizó descarga de ID</string>
+    <string name="download_failed_title">Falló descarga de ID:</string>
+    <string name="download_failed_message">" "<b>%s</b>". Selecciona para volver a intentarlo. "</string>
+    <string name="download_failed_full_message">" No hay suficiente espacio en el equipo para "<b>%s</b>". Libera un poco de memoria de tu equipo y vuelve a intentarlo. "</string>
+    <string name="download_failed_forbidden_message">Se requiere autorización para acceder al contenido.</string>
+    <string name="download_failed_server_error_message">El servidor indicó un error. Por favor inténtalo más tarde.</string>
+    <string name="download_failed_preparing_message">" Error al preparar descarga para "<b>%s</b>". Seleccionar para volver a intentarlo. "</string>
+    <string name="download_failed_message_file_too_short">Tamaño menor al esperado. Seleccionar para volver a intentarlo.</string>
+    <string name="ready_to_install">Completar instalación</string>
+    <string name="cancel_download">Cancelar descarga</string>
+    <string name="cancel_install">Cancelar la instalación</string>
+    <string name="digital_lounge_fail">No es posible acceder a la sala digital, por favor intenta más tarde.</string>
+    <string name="no_data_error_title">Red no disponible</string>
+    <string name="no_data_error_message">Se requiere conexión a la red Sprint para ver este contenido. Por favor verifica el estatus de tu conexión y vuelve a intentarlo.</string>
+    <string name="ignore">Ignorar</string>
+    <string name="no_wallpapers_found">No se encontraron imágenes de fondo de ID.</string>
+    <string name="install_incomplete">¡La instalación del ID ha sido cancelada! Si deseas utilizar este ID por favor instálalo nuevamente.</string>
+    <string name="still_working">Por favor espera, trabajando...</string>
+    <string name="switching_in_progress">Por favor espera, tu pantalla deberá cambiar en un momento...</string>
+    <string name="msg_pack_replace">Ya has instalado el %1$s ID. Instalarlo nuevamente reemplazará a tu actual ID y lo reconfigurará a sus ajustes preestablecidos. ¿Deseas reemplazar y reconfigurar el %2$s ID?</string>
+    <string name="replace">Reemplazar</string>
+    <string name="replace_title">¿Reemplazar ID?</string>
+    <string name="no_packs_on_sd">No se encontraron paquetes en la tarjeta SD, coloca al menos un *.spk archivo en %s</string>
+    <string name="no_dir_on_sd">No se pudo encontrar directorio en la tarjeta SD llamada: %s</string>
+    <string name="no_sd_card">La tarjeta SD no está disponible. Por favor cerciórate de que la tarjeta esté en el equipo y que esté montada.</string>
+    <string name="pack_downloading_msg">Descargando &lt;br/>%d%%</string>
+    <string name="pack_ready_tap_to_install">ID listo &lt;br/>Toca para instalar</string>
+    <string name="in_multiple_packs">En paquetes múltiples:</string>
+    <string name="non_data_title">No se detectó red %s</string>
+    <string name="non_data_body">"Para buscar e instalar paquetes de %1$s debes ser suscriptor de %1$s utilizando la red de %1$s.
+
+Si te gustaría inscribirte en el servicio de %1$s o si consideras que este mensaje es un error, por favor toca el botón de la %2$s para obtener mayor información.
+
+Para instalar paquetes que no son de %1$s por favor toca el botón Más información."</string>
+    <string name="non_data_button">Más Opciones de instalación</string>
+    <string name="more_title">Más Opciones de instalación</string>
+    <string name="more_body">Algunas organizaciones como negocios o escuelas eligen proporcionar paquetes desde sus propios servidores. Para descargar esos paquetes, por favor toca el botón Buscar e ingresa la palabra clave que tu organización te proporcionó.</string>
+    <string name="config_wifi">Para configurar tu conexión WiFi, toca Menú > Configuración de WiFi.</string>
+    <string name="more_info">Más información</string>
+    <string name="more_search">Ingresa la palabra clave aquí</string>
+    <string name="go_button">Ir</string>
+    <string name="keyword_wait">Verificando tu palabra clave, un momento por favor.</string>
+    <string name="search_error_title">Palabra clave no reconocida</string>
+    <string name="search_error_body">" La palabra clave que ingresaste: 
+ "<b>%s</b>" 
+ no se encontró. Por favor verifica que hayas deletreado correctamente e inténtalo de nuevo. "</string>
+    <string name="auth_title">Se requiere autenticación</string>
+    <string name="auth_body">Para buscar este contenido por favor proporciona las credenciales suministradas por tu organización</string>
+    <string name="invalid_cred">El nombre de usuario o contraseña que suministraste es incorrecto. Por favor verifica tus credenciales y vuelve a intentarlo.</string>
+    <string name="invalid_cred_title">Credenciales no válidas</string>
+    <string name="auth_wait">Verificando tus credenciales, un momento por favor.</string>
+    <string name="keyword_server_error_title">Error de servidor</string>
+    <string name="keyword_server_error">El servidor de la palabra clave no está respondiendo, por favor vuelve a intentar más tarde.</string>
+    <string name="please_enter_keyword">Por favor, introduce una palabra clave válida</string>
+    <string name="rss_server_error_title">Error de servidor</string>
+    <string name="rss_server_error">El servidor de paquetes no está respondiendo, por favor vuelve a intentar más tarde.</string>
+    <string name="network_problem_title">Problema de red</string>
+    <string name="network_problem">"No se detectó conexión de red.
+ Si tienes un plan de datos de %1$s, por favor toca Menú > %1$s Zone para obtener ayuda. Para configurar la función de WiFi, Toca Menú > Configuraciones de Wifi"</string>
+    <string name="home_tips">Sugerencias y seminarios</string>
+    <string name="home_switch_ids">Cambiar IDs</string>
+    <string name="home_get_new_id">Obtener un nuevo ID</string>
+    <string name="home_manage_ids">Administrar IDs</string>
+    <string name="home_more_installation">"Más 
+ Opciones de instalación"</string>
+    <string name="home_check_for_updates">Verificar Actualizaciones</string>
+    <string name="body_firstrun">"Un ID es un paquete de contenido y aplicaciones que puedes descargar a tu equipo.
+
+ Al instalar un paquete, añade otro juego de pantallas iniciales a tu equipo. Puedes cambiar rapidamente entre IDs al tocar el botón ID en la pantalla inicials del equipo.
+
+ Puedes encontrar todas tus aplicaciones en la bandeja del menú de la pantalla de inicio, sin importar cuál sea el ID que estés utilizando.
+
+Toca Continuar > Obtener nuevo ID para buscar cuáles paquetes están disponibles."</string>
+    <string name="d2c_check_title">Por favor espera mientras configuramos tu equipo y tus servicios.</string>
+    <string name="d2c_check_sprint_zone">Si estás experimentando dificultades, por favor toca Menú > %s para obtener ayuda.</string>
+    <string name="d2c_welcome_title">Bienvenido a tu equipo %s.</string>
+    <string name="dev_tools">Herramientas para Desarrolladores</string>
+    <string name="dev_body">El modo de desarrollador no está habilitado.</string>
+    <string name="sd_title">Insertar una Tarjeta SD</string>
+    <string name="sd_message">"A fin de conserver el almacenamiento interno del teléfono, es recomendable que insertes una tarjeta SD antes de instalar un paquete.
+
+Si no tienes una tarjeta SD, de todas maneras podrías instalar paquetes. ¿Te gustaría instalar este paquete de cualquier manera?"</string>
+    <string name="adp_info">Noticias y Anuncios</string>
+    <string name="http_header_accept_language">es-US, en-US</string>
+    <string name="delivery_server_error">El servidor no está respondiendo, por favor vuelve a intentarlo más tarde.</string>
+    <string name="delivery_auth_instructions">Para buscar este contenido por favor proporciona las credenciales suministradas por tu organización</string>
+    <string name="delivery_auth_fail_msg">¡Falló intento de autenticación!</string>
+    <string name="delivery_auth_fail_max_msg">¡Error de autenticación! No podemos continuar con tu solicitud.</string>
+    <string name="delivery_wait">Procesando tu solicitud, un momento por favor.</string>
+    <string name="delivery_generic_error_message">Un error inesperado se ha producido.</string>
+    <string name="delivery_err_msg_unaproved_pack">Paquete de identificación no puede ser verificado. Descarga cancelada.</string>
+    <string name="delivery_err_msg_card_no_continue">¡Descarga de ID cancelada!</string>
+    <string name="delivery_err_msg_id_download_failed">No se realizó descarga de ID!</string>
+    <string name="delivery_err_msg_card_no_continue_title">Estado</string>
+    <string name="customer_care">Atención al Cliente</string>
+    <string name="call_care">Si estás experimentando dificultades, toca Menú > Atención al Cliente.</string>
+    <string name="network_problem_wifi">"No hay conexión de red detectada.
+
+Para configurar Wi-Fi, toca Menú > Configuración de Wi-Fi."</string>
+    <string name="developer_tools">Herramientas para Desarrolladores Sprint ID</string>
+    <string name="account_verification">Verificación de la cuenta en el sitio web de Sprint ID de desarrolladores. Por favor espera ...</string>
+    <string name="call_care_no_network">"Si deseas inscribirte para %1$s servicio o si crees que este mensaje es un error, por favor, toca Menú > Atención al Cliente.
+
+Para los equipos que no tienen un %1$s plan de datos o paradescargar un paquete de otros lugares por favor, toca en Más información."</string>
+    <string name="default_care_number">611</string>
+    <string name="install_default_msg">Antes de instalar otros IDs, primero debes concluir la instalación del ID de %1$s.</string>
+    <string name="install_default_msg_ready">Tu ID de %1$s ya está listo para ser instalado.</string>
+    <string name="install_default_ready">Toca Instalar para concluir la instalación y cambia al ID de %1$s.</string>
+    <string name="install_default_notready">El ID de %1$s aún está siendo descargado.</string>
+    <string name="install_default_failed">No se realizó la descarga del ID de %1$s.</string>
+    <string name="not_now">Después</string>
+    <string name="reinstall_default_pack_message">"Tu equipo carece de ID de %1$s.
+
+Lo descargaremos y te notificaremos cuando esté listo para ser instalado.
+
+Tendrás que instalar el ID de %1$s antes de que puedas instalar otros IDs."</string>
+    <string name="featured">Paquetes de ID destacados</string>
+    <string name="remove_selected_items">Eliminar elementos seleccionados</string>
+    <string name="select_items_to_remove">Selecciona los elementos que deseas que sean eliminados</string>
+</resources>

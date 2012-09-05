@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="month_cell_height">38</integer>
+    <integer name="month_cell_width">56</integer>
+    <integer name="quickadd_height">36</integer>
+    <integer name="month_day_text_size">24</integer>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="years_ago">
+        <item quantity="other">%1$d سال قبل</item>
+        <item quantity="one">1 سال قبل</item>
+    </plurals>
+    <plurals name="months_ago">
+        <item quantity="other">%1$d ماه قبل</item>
+        <item quantity="one">1 ماه قبل</item>
+    </plurals>
+    <plurals name="weeks_ago">
+        <item quantity="other">%1$d هفته قبل</item>
+        <item quantity="one">1 هفته قبل</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">%1$d روز قبل</item>
+        <item quantity="one">1 روز قبل</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="other">%1$d ساعت قبل</item>
+        <item quantity="one">1 ساعت قبل</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="other">%1$d دقیقه قبل</item>
+        <item quantity="one">1 دقیقه قبل</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="other">%1$d ثانیه قبل</item>
+        <item quantity="one">1 ثانیه قبل</item>
+    </plurals>
+    <plurals name="recent_uploads">
+        <item quantity="other">آپلودهای جدید</item>
+        <item quantity="one">آپلود جدید</item>
+    </plurals>
+    <plurals name="recent_activity">
+        <item quantity="other">رویدادهای جدید</item>
+        <item quantity="one">رویداد جدید</item>
+    </plurals>
+    <plurals name="playlist_size">
+        <item quantity="other">%1$,d ویدیو</item>
+        <item quantity="one">1 ویدیو</item>
+    </plurals>
+</resources>

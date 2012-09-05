@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.google.android.music.TouchInterceptor android:id="@android:id/list" android:paddingRight="32.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:drawSelectorOnTop="false" android:fastScrollEnabled="true" android:headerDividersEnabled="true" />
+        <include layout="@layout/manage_music_menu" />
+    </LinearLayout>
+</FrameLayout>

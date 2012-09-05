@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panning_tutorial">Intente desplazarse</string>
+    <string name="hold_me">Retenerme</string>
+    <string name="move_left_or_right">Mueva el dispositivo a izquierda o derecha</string>
+    <string name="done">Final.</string>
+    <string name="ok">Aceptar</string>
+    <string name="back">Atrás</string>
+    <string name="panning">Panorámica</string>
+    <string name="panning_dialog_message">Mueva el dispositivo hacia la derecha o la izquierda mientras mantiene el icono seleccionado para reubicarlo en otra página</string>
+    <string name="try_button">Intentar</string>
+    <string name="try_again">Reintentar</string>
+    <string name="good_job">Bien hecho</string>
+</resources>

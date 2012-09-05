@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"Reloj
+digital"</string>
+    <string name="hour">Hora</string>
+    <string name="minute">Minuto</string>
+    <string name="day_of_week_medium_sunday">Dom</string>
+    <string name="day_of_week_medium_monday">Lun</string>
+    <string name="day_of_week_medium_tuesday">Mar</string>
+    <string name="day_of_week_medium_wednesday">Mié</string>
+    <string name="day_of_week_medium_thursday">Jue</string>
+    <string name="day_of_week_medium_friday">Vie</string>
+    <string name="day_of_week_medium_saturday">Sáb</string>
+</resources>

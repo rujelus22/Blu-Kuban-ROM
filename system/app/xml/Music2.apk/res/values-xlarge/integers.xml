@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="carousel_visible_details">3</integer>
+    <integer name="carousel_texture_width">256</integer>
+    <integer name="carousel_texture_height">256</integer>
+</resources>

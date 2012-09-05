@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata widgetId="com.sec.android.widgetapp.TwCalendarAppWidget" description="@string/mini_theme" icon="@drawable/app_icon" themeName="Mini" preview="@drawable/calendar_mini_theme" width="@dimen/width_mini" height="@dimen/height_mini" class="com.sec.android.widgetapp.TwCalendarAppWidget.TWCalendarAppWidgetActivity" />

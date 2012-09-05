@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.google.android.apps.maps">
+    <LinearLayout android:orientation="horizontal" android:id="@id/da_menu_top_row" android:layout_width="fill_parent" android:layout_height="@dimen/da_menu_row_height">
+        <com.google.android.maps.driveabout.widgets.NavigationMenuItem android:id="@id/da_menu_freedrive_set_destination" android:background="@drawable/da_navigation_menu_item_button" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="onMenuItemClick" app:title="@string/da_change_destination" app:icon="@drawable/da_ic_menu_dest_flag" />
+        <com.google.android.maps.driveabout.widgets.NavigationMenuItem android:id="@id/da_menu_search" android:background="@drawable/da_navigation_menu_item_button" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="onMenuItemClick" app:title="@string/da_search_label" app:icon="@drawable/da_ic_menu_search" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/da_menu_middle_row" android:layout_width="fill_parent" android:layout_height="@dimen/da_menu_row_height">
+        <com.google.android.maps.driveabout.widgets.NavigationMenuItem android:id="@id/da_menu_layers" android:background="@drawable/da_navigation_menu_item_button" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="onMenuItemClick" app:title="@string/da_layers" app:icon="@drawable/da_ic_menu_layers" />
+        <com.google.android.maps.driveabout.widgets.NavigationMenuItem android:id="@id/da_menu_settings" android:background="@drawable/da_navigation_menu_item_button" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="onMenuItemClick" app:title="@string/da_settings" app:icon="@drawable/ic_menu_preferences" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/da_menu_bottom_row" android:layout_width="fill_parent" android:layout_height="@dimen/da_menu_row_height">
+        <com.google.android.maps.driveabout.widgets.NavigationMenuItem android:id="@id/da_menu_exit" android:background="@drawable/da_navigation_menu_item_button" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="onMenuItemClick" app:title="@string/da_exit_navigation" app:icon="@drawable/ic_menu_exit_navigation" />
+        <com.google.android.maps.driveabout.widgets.NavigationMenuItem android:id="@id/da_menu_help" android:background="@drawable/da_navigation_menu_item_button" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="onMenuItemClick" app:title="@string/da_help" app:icon="@drawable/ic_menu_help" />
+    </LinearLayout>
+</LinearLayout>

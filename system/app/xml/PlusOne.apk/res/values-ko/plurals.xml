@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="album_photo_count">
+        <item quantity="other">사진 %d장</item>
+        <item quantity="zero">사진 %d장</item>
+        <item quantity="one">사진 %d장</item>
+    </plurals>
+    <plurals name="from_your_phone_selected_count">
+        <item quantity="other">%d장 선택함</item>
+        <item quantity="one">%d장 선택함</item>
+    </plurals>
+    <plurals name="delete_photo_dialog_title">
+        <item quantity="other">이 사진의 사본을 모두 삭제하시겠습니까?</item>
+        <item quantity="one">이 사진의 사본을 모두 삭제하시겠습니까?</item>
+    </plurals>
+    <plurals name="delete_remote_photo_dialog_message">
+        <item quantity="other">이 사진을 Google+ 앨범에서 삭제하시겠습니까? 이 작업은 실행취소할 수 없습니다.</item>
+        <item quantity="one">이 사진을 Google+ 앨범에서 삭제하시겠습니까? 이 작업은 실행취소할 수 없습니다.</item>
+    </plurals>
+    <plurals name="delete_local_photo_dialog_message">
+        <item quantity="other">이 사진을 휴대전화와 Google+ 앨범에서 모두 삭제하겠습니까? 이 작업은 실행취소할 수 없습니다.</item>
+        <item quantity="one">이 사진을 휴대전화와 Google+ 앨범에서 모두 삭제하겠습니까? 이 작업은 실행취소할 수 없습니다.</item>
+    </plurals>
+    <plurals name="delete_photo_pending">
+        <item quantity="other">사진 삭제 중...</item>
+        <item quantity="one">사진 삭제 중...</item>
+    </plurals>
+    <plurals name="plus_one_people_more_plus_ones">
+        <item quantity="other">외 %d명</item>
+        <item quantity="one">외 1명</item>
+    </plurals>
+    <plurals name="plusoned_by_unknowns">
+        <item quantity="other">%d명</item>
+        <item quantity="one">1명</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_unknowns">
+        <item quantity="other">나 외 %d명</item>
+        <item quantity="one">나 외 1명</item>
+    </plurals>
+    <plurals name="plusoned_by_one_known_and_unknowns">
+        <item quantity="other">%s님 외 %d명</item>
+        <item quantity="one">%s님 외 1명</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_one_known_and_unknowns">
+        <item quantity="other">나, %s님 외 %d명</item>
+        <item quantity="one">나, %s님 외 1명</item>
+    </plurals>
+    <plurals name="plusoned_by_two_known_and_unknowns">
+        <item quantity="other">%s님, %s님 외 %d명</item>
+        <item quantity="one">%s님, %s님 외 1명</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_two_known_and_unknowns">
+        <item quantity="other">나, %s님, %s님 외 %d명</item>
+        <item quantity="one">나, %s님, %s님 외 1명</item>
+    </plurals>
+    <plurals name="comments">
+        <item quantity="other">댓글 %d개</item>
+        <item quantity="one">댓글 %d개</item>
+    </plurals>
+    <plurals name="delete_photo">
+        <item quantity="other">사진 삭제</item>
+        <item quantity="one">사진 삭제</item>
+    </plurals>
+    <plurals name="circle_entry_content_description">
+        <item quantity="other">%s: 회원 %d명</item>
+        <item quantity="one">%s: 회원 %d명</item>
+    </plurals>
+    <plurals name="notifications_ticker_text">
+        <item quantity="other">새 Google+ 알림</item>
+        <item quantity="one">새 Google+ 알림</item>
+    </plurals>
+    <plurals name="notifications_content_text">
+        <item quantity="other">%1$s(%2$d개)</item>
+        <item quantity="one">%1$s(%2$d개)</item>
+    </plurals>
+    <plurals name="audience_display_selection_count">
+        <item quantity="other">%d개 선택</item>
+        <item quantity="one">%d개 선택됨</item>
+    </plurals>
+    <plurals name="circle_count_and_matched_email">
+        <item quantity="other">서클 %d개, %s</item>
+        <item quantity="one">서클 %d개, %s</item>
+    </plurals>
+    <plurals name="circle_selection_count">
+        <item quantity="other">서클 %d개</item>
+        <item quantity="one">서클 %d개</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_title">
+        <item quantity="other">서클 삭제</item>
+        <item quantity="one">서클 삭제</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_message">
+        <item quantity="other">이 서클을 완전히 삭제하시겠습니까?</item>
+        <item quantity="one">이 서클을 완전히 삭제하시겠습니까?</item>
+    </plurals>
+    <plurals name="delete_circles_operation_pending">
+        <item quantity="other">서클 삭제 중...</item>
+        <item quantity="one">서클 삭제 중...</item>
+    </plurals>
+    <plurals name="circle_people_count">
+        <item quantity="other">%d명</item>
+        <item quantity="one">%d명</item>
+    </plurals>
+    <plurals name="remove_people_dialog_title">
+        <item quantity="other">사용자 삭제</item>
+        <item quantity="one">사용자 삭제</item>
+    </plurals>
+    <plurals name="remove_people_dialog_message">
+        <item quantity="other">이 사용자를 서클에서 삭제하시겠습니까?</item>
+        <item quantity="one">이 사용자를 서클에서 삭제하시겠습니까?</item>
+    </plurals>
+    <plurals name="add_people_operation_pending">
+        <item quantity="other">사용자 추가 중...</item>
+        <item quantity="one">사용자 추가 중...</item>
+    </plurals>
+    <plurals name="remove_people_operation_pending">
+        <item quantity="other">사용자 삭제 중...</item>
+        <item quantity="one">사용자 삭제 중...</item>
+    </plurals>
+    <plurals name="dismiss_people_operation_pending">
+        <item quantity="other">사용자 삭제 중...</item>
+        <item quantity="one">사용자 삭제 중...</item>
+    </plurals>
+    <plurals name="circle_button_more_circles">
+        <item quantity="other">%d개 더보기</item>
+        <item quantity="one">%d개 더보기</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d분</item>
+        <item quantity="one">%d분</item>
+    </plurals>
+    <plurals name="num_hours_ago">
+        <item quantity="other">%d시간</item>
+        <item quantity="one">%d시간</item>
+    </plurals>
+    <plurals name="num_days_ago">
+        <item quantity="other">%d일</item>
+        <item quantity="one">%d일</item>
+    </plurals>
+    <plurals name="ads_plus_one_annotation_count_only">
+        <item quantity="other">%1$d명이 추가로 +1했습니다.</item>
+        <item quantity="one">%1$d명이 추가로 +1했습니다.</item>
+    </plurals>
+</resources>

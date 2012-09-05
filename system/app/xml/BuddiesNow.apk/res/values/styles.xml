@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="Text.BuddyNameOnPhoto" parent="@style/Text">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">#b2ffffff</item>
+    </style>
+    <style name="Text.TapOnPhoto" parent="@style/Text">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ff477cac</item>
+    </style>
+    <style name="Theme.NoBackground" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/agenda_appwidget_ag" android:paddingLeft="3.3299866dip" android:paddingTop="2.6599731dip" android:paddingRight="3.3299866dip" android:paddingBottom="2.6599731dip" android:focusable="true" android:clickable="true" android:layout_width="160.0dip" android:layout_height="300.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="top" android:orientation="vertical" android:id="@id/agenda_noevent_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:orientation="horizontal" android:id="@id/day_day_ag" android:layout_width="wrap_content" android:layout_height="wrap_content" android:baselineAligned="true"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <TextView android:textSize="13.329987sp" android:textStyle="bold" android:textColor="@color/appwidget_date" android:gravity="center_vertical" android:id="@id/day_of_month_ag" android:layout_width="wrap_content" android:layout_height="18.0dip" android:layout_marginLeft="6.659973dip" android:singleLine="true" android:layout_alignParentLeft="true" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/appwidget_date" android:gravity="center_vertical" android:id="@id/day_of_week_ag" android:layout_width="wrap_content" android:layout_height="18.0dip" android:layout_marginLeft="4.0dip" android:singleLine="true" android:layout_toRightOf="@id/day_of_month_ag" android:layout_alignBaseline="@id/day_of_month_ag" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/appwidget_conflict" android:gravity="center_vertical" android:id="@id/conflict_ag" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="18.0dip" android:layout_marginRight="8.0dip" android:singleLine="true" android:layout_alignBaseline="@id/day_of_month_ag" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <include android:id="@id/agenda_appwidget_noevent_item" android:layout_width="fill_parent" layout="@layout/agenda_appwidget_noevent_item" />
+        <include android:id="@id/agenda_item1" android:layout_width="fill_parent" layout="@layout/agenda_appwidget_item" />
+        <include android:id="@id/agenda_item2" android:layout_width="fill_parent" layout="@layout/agenda_appwidget_item2" />
+        <include android:id="@id/agenda_item3" android:layout_width="fill_parent" layout="@layout/agenda_appwidget_item3" />
+        <include android:id="@id/agenda_item4" android:layout_width="fill_parent" layout="@layout/agenda_appwidget_item4" />
+        <include android:id="@id/agenda_item5" android:layout_width="fill_parent" layout="@layout/agenda_appwidget_item5" />
+        <include android:id="@id/agenda_item6" android:layout_width="fill_parent" layout="@layout/agenda_appwidget_item6" />
+        <include android:id="@id/agenda_item7" android:layout_width="fill_parent" layout="@layout/agenda_appwidget_item7" />
+        <include android:id="@id/agenda_item8" android:layout_width="fill_parent" layout="@layout/agenda_appwidget_item8" />
+        <include android:id="@id/agenda_item9" android:layout_width="fill_parent" layout="@layout/agenda_appwidget_item9" />
+        <include android:id="@id/agenda_item10" android:layout_width="fill_parent" layout="@layout/agenda_appwidget_item10" />
+    </LinearLayout>
+</LinearLayout>

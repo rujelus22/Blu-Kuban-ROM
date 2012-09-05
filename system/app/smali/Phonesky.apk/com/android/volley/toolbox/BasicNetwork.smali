@@ -1,0 +1,883 @@
+.class public Lcom/android/volley/toolbox/BasicNetwork;
+.super Ljava/lang/Object;
+.source "BasicNetwork.java"
+
+# interfaces
+.implements Lcom/android/volley/Network;
+
+
+# static fields
+.field protected static final DEBUG:Z
+
+.field private static SLOW_REQUEST_THRESHOLD_MS:I
+
+
+# instance fields
+.field protected final mHttpStack:Lcom/android/volley/toolbox/HttpStack;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .prologue
+    .line 55
+    sget-boolean v0, Lcom/android/volley/VolleyLog;->DEBUG:Z
+
+    sput-boolean v0, Lcom/android/volley/toolbox/BasicNetwork;->DEBUG:Z
+
+    .line 57
+    const/16 v0, 0xbb8
+
+    sput v0, Lcom/android/volley/toolbox/BasicNetwork;->SLOW_REQUEST_THRESHOLD_MS:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/android/volley/toolbox/HttpStack;)V
+    .registers 2
+    .parameter "httpStack"
+
+    .prologue
+    .line 64
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 65
+    iput-object p1, p0, Lcom/android/volley/toolbox/BasicNetwork;->mHttpStack:Lcom/android/volley/toolbox/HttpStack;
+
+    .line 66
+    return-void
+.end method
+
+.method private addCacheHeaders(Ljava/util/Map;Lcom/android/volley/Cache$Entry;)V
+    .registers 8
+    .parameter
+    .parameter "entry"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;",
+            "Lcom/android/volley/Cache$Entry;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 167
+    .local p1, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    if-nez p2, :cond_3
+
+    .line 179
+    :cond_2
+    :goto_2
+    return-void
+
+    .line 171
+    :cond_3
+    iget-object v1, p2, Lcom/android/volley/Cache$Entry;->etag:Ljava/lang/String;
+
+    if-eqz v1, :cond_e
+
+    .line 172
+    const-string v1, "If-None-Match"
+
+    iget-object v2, p2, Lcom/android/volley/Cache$Entry;->etag:Ljava/lang/String;
+
+    invoke-interface {p1, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 175
+    :cond_e
+    iget-wide v1, p2, Lcom/android/volley/Cache$Entry;->serverDate:J
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v1, v1, v3
+
+    if-lez v1, :cond_2
+
+    .line 176
+    new-instance v0, Ljava/util/Date;
+
+    iget-wide v1, p2, Lcom/android/volley/Cache$Entry;->serverDate:J
+
+    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
+
+    .line 177
+    .local v0, refTime:Ljava/util/Date;
+    const-string v1, "If-Modified-Since"
+
+    invoke-static {v0}, Lorg/apache/http/impl/cookie/DateUtils;->formatDate(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {p1, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_2
+.end method
+
+.method private static attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
+    .registers 10
+    .parameter "logPrefix"
+    .parameter
+    .parameter "exception"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Lcom/android/volley/Request",
+            "<*>;",
+            "Lcom/android/volley/VolleyError;",
+            ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/VolleyError;
+        }
+    .end annotation
+
+    .prologue
+    .local p1, request:Lcom/android/volley/Request;,"Lcom/android/volley/Request<*>;"
+    const/4 v4, 0x2
+
+    const/4 v6, 0x1
+
+    const/4 v5, 0x0
+
+    .line 152
+    invoke-virtual {p1}, Lcom/android/volley/Request;->getRetryPolicy()Lcom/android/volley/RetryPolicy;
+
+    move-result-object v2
+
+    .line 153
+    .local v2, retryPolicy:Lcom/android/volley/RetryPolicy;
+    invoke-virtual {p1}, Lcom/android/volley/Request;->getTimeoutMs()I
+
+    move-result v1
+
+    .line 156
+    .local v1, oldTimeout:I
+    :try_start_b
+    invoke-interface {v2, p2}, Lcom/android/volley/RetryPolicy;->retry(Lcom/android/volley/VolleyError;)V
+    :try_end_e
+    .catch Lcom/android/volley/VolleyError; {:try_start_b .. :try_end_e} :catch_22
+
+    .line 162
+    const-string v3, "%s-retry [timeout=%s]"
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    aput-object p0, v4, v5
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v4, v6
+
+    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v3}, Lcom/android/volley/Request;->addMarker(Ljava/lang/String;)V
+
+    .line 163
+    return-void
+
+    .line 157
+    :catch_22
+    move-exception v0
+
+    .line 158
+    .local v0, e:Lcom/android/volley/VolleyError;
+    const-string v3, "%s-timeout-giveup [timeout=%s]"
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    aput-object p0, v4, v5
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v4, v6
+
+    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v3}, Lcom/android/volley/Request;->addMarker(Ljava/lang/String;)V
+
+    .line 160
+    throw v0
+.end method
+
+.method private static convertHeaders([Lorg/apache/http/Header;)Ljava/util/Map;
+    .registers 5
+    .parameter "headers"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([",
+            "Lorg/apache/http/Header;",
+            ")",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 217
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    .line 218
+    .local v1, result:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_6
+    array-length v2, p0
+
+    if-ge v0, v2, :cond_1b
+
+    .line 219
+    aget-object v2, p0, v0
+
+    invoke-interface {v2}, Lorg/apache/http/Header;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    aget-object v3, p0, v0
+
+    invoke-interface {v3}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 218
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_6
+
+    .line 221
+    :cond_1b
+    return-object v1
+.end method
+
+.method static entityToBytes(Lorg/apache/http/HttpEntity;)[B
+    .registers 9
+    .parameter "entity"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/android/volley/ServerError;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v7, 0x0
+
+    .line 189
+    :try_start_1
+    invoke-interface {p0}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
+
+    move-result-object v4
+
+    .line 190
+    .local v4, in:Ljava/io/InputStream;
+    if-nez v4, :cond_12
+
+    .line 191
+    new-instance v5, Lcom/android/volley/ServerError;
+
+    invoke-direct {v5}, Lcom/android/volley/ServerError;-><init>()V
+
+    throw v5
+    :try_end_d
+    .catchall {:try_start_1 .. :try_end_d} :catchall_d
+
+    .line 202
+    .end local v4           #in:Ljava/io/InputStream;
+    :catchall_d
+    move-exception v5
+
+    .line 204
+    :try_start_e
+    invoke-interface {p0}, Lorg/apache/http/HttpEntity;->consumeContent()V
+    :try_end_11
+    .catch Ljava/io/IOException; {:try_start_e .. :try_end_11} :catch_38
+
+    .line 209
+    :goto_11
+    throw v5
+
+    .line 194
+    .restart local v4       #in:Ljava/io/InputStream;
+    :cond_12
+    :try_start_12
+    new-instance v1, Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
+
+    .line 195
+    .local v1, bytes:Ljava/io/ByteArrayOutputStream;
+    const/16 v5, 0x400
+
+    new-array v0, v5, [B
+
+    .line 197
+    .local v0, buffer:[B
+    :goto_1b
+    invoke-virtual {v4, v0}, Ljava/io/InputStream;->read([B)I
+
+    move-result v2
+
+    .local v2, count:I
+    const/4 v5, -0x1
+
+    if-eq v2, v5, :cond_27
+
+    .line 198
+    const/4 v5, 0x0
+
+    invoke-virtual {v1, v0, v5, v2}, Ljava/io/ByteArrayOutputStream;->write([BII)V
+
+    goto :goto_1b
+
+    .line 200
+    :cond_27
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+    :try_end_2a
+    .catchall {:try_start_12 .. :try_end_2a} :catchall_d
+
+    move-result-object v5
+
+    .line 204
+    :try_start_2b
+    invoke-interface {p0}, Lorg/apache/http/HttpEntity;->consumeContent()V
+    :try_end_2e
+    .catch Ljava/io/IOException; {:try_start_2b .. :try_end_2e} :catch_2f
+
+    .line 209
+    :goto_2e
+    return-object v5
+
+    .line 205
+    :catch_2f
+    move-exception v3
+
+    .line 208
+    .local v3, e:Ljava/io/IOException;
+    const-string v6, "Error occured when calling consumingContent"
+
+    new-array v7, v7, [Ljava/lang/Object;
+
+    invoke-static {v6, v7}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_2e
+
+    .line 205
+    .end local v0           #buffer:[B
+    .end local v1           #bytes:Ljava/io/ByteArrayOutputStream;
+    .end local v2           #count:I
+    .end local v3           #e:Ljava/io/IOException;
+    .end local v4           #in:Ljava/io/InputStream;
+    :catch_38
+    move-exception v3
+
+    .line 208
+    .restart local v3       #e:Ljava/io/IOException;
+    const-string v6, "Error occured when calling consumingContent"
+
+    new-array v7, v7, [Ljava/lang/Object;
+
+    invoke-static {v6, v7}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_11
+.end method
+
+.method private logSlowRequests(JLcom/android/volley/Request;[BLorg/apache/http/StatusLine;)V
+    .registers 10
+    .parameter "requestLifetime"
+    .parameter
+    .parameter "responseContents"
+    .parameter "statusLine"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Lcom/android/volley/Request",
+            "<*>;[B",
+            "Lorg/apache/http/StatusLine;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 137
+    .local p3, request:Lcom/android/volley/Request;,"Lcom/android/volley/Request<*>;"
+    sget-boolean v0, Lcom/android/volley/toolbox/BasicNetwork;->DEBUG:Z
+
+    if-nez v0, :cond_b
+
+    sget v0, Lcom/android/volley/toolbox/BasicNetwork;->SLOW_REQUEST_THRESHOLD_MS:I
+
+    int-to-long v0, v0
+
+    cmp-long v0, p1, v0
+
+    if-lez v0, :cond_41
+
+    .line 138
+    :cond_b
+    const-string v1, "HTTP response for request=<%s> [lifetime=%d], [size=%s], [rc=%d], [retryCount=%s]"
+
+    const/4 v0, 0x5
+
+    new-array v2, v0, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    aput-object p3, v2, v0
+
+    const/4 v0, 0x1
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    aput-object v3, v2, v0
+
+    const/4 v3, 0x2
+
+    if-eqz p4, :cond_42
+
+    array-length v0, p4
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    :goto_22
+    aput-object v0, v2, v3
+
+    const/4 v0, 0x3
+
+    invoke-interface {p5}, Lorg/apache/http/StatusLine;->getStatusCode()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v2, v0
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p3}, Lcom/android/volley/Request;->getRetryPolicy()Lcom/android/volley/RetryPolicy;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Lcom/android/volley/RetryPolicy;->getCurrentRetryCount()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v2, v0
+
+    invoke-static {v1, v2}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 143
+    :cond_41
+    return-void
+
+    .line 138
+    :cond_42
+    const-string v0, "null"
+
+    goto :goto_22
+.end method
+
+
+# virtual methods
+.method public performRequest(Lcom/android/volley/Request;)Lcom/android/volley/NetworkResponse;
+    .registers 19
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/android/volley/Request",
+            "<*>;)",
+            "Lcom/android/volley/NetworkResponse;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/VolleyError;
+        }
+    .end annotation
+
+    .prologue
+    .line 70
+    .local p1, request:Lcom/android/volley/Request;,"Lcom/android/volley/Request<*>;"
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v11
+
+    .line 72
+    .local v11, requestStart:J
+    :goto_4
+    const/4 v9, 0x0
+
+    .line 73
+    .local v9, httpResponse:Lorg/apache/http/HttpResponse;
+    const/4 v5, 0x0
+
+    .line 74
+    .local v5, responseContents:[B
+    new-instance v13, Ljava/util/HashMap;
+
+    invoke-direct {v13}, Ljava/util/HashMap;-><init>()V
+
+    .line 77
+    .local v13, responseHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    :try_start_b
+    new-instance v8, Ljava/util/HashMap;
+
+    invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
+
+    .line 78
+    .local v8, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    invoke-virtual/range {p1 .. p1}, Lcom/android/volley/Request;->getCacheEntry()Lcom/android/volley/Cache$Entry;
+
+    move-result-object v1
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v8, v1}, Lcom/android/volley/toolbox/BasicNetwork;->addCacheHeaders(Ljava/util/Map;Lcom/android/volley/Cache$Entry;)V
+
+    .line 79
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/volley/toolbox/BasicNetwork;->mHttpStack:Lcom/android/volley/toolbox/HttpStack;
+
+    move-object/from16 v0, p1
+
+    invoke-interface {v1, v0, v8}, Lcom/android/volley/toolbox/HttpStack;->performRequest(Lcom/android/volley/Request;Ljava/util/Map;)Lorg/apache/http/HttpResponse;
+
+    move-result-object v9
+
+    .line 80
+    invoke-interface {v9}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+
+    move-result-object v6
+
+    .line 82
+    .local v6, statusLine:Lorg/apache/http/StatusLine;
+    invoke-interface {v9}, Lorg/apache/http/HttpResponse;->getAllHeaders()[Lorg/apache/http/Header;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/volley/toolbox/BasicNetwork;->convertHeaders([Lorg/apache/http/Header;)Ljava/util/Map;
+
+    move-result-object v13
+
+    .line 84
+    invoke-interface {v6}, Lorg/apache/http/StatusLine;->getStatusCode()I
+
+    move-result v1
+
+    const/16 v4, 0x130
+
+    if-ne v1, v4, :cond_49
+
+    .line 85
+    new-instance v1, Lcom/android/volley/NetworkResponse;
+
+    const/16 v4, 0x130
+
+    invoke-virtual/range {p1 .. p1}, Lcom/android/volley/Request;->getCacheEntry()Lcom/android/volley/Cache$Entry;
+
+    move-result-object v15
+
+    iget-object v15, v15, Lcom/android/volley/Cache$Entry;->data:[B
+
+    const/16 v16, 0x1
+
+    move/from16 v0, v16
+
+    invoke-direct {v1, v4, v15, v13, v0}, Lcom/android/volley/NetworkResponse;-><init>(I[BLjava/util/Map;Z)V
+
+    .line 97
+    :goto_48
+    return-object v1
+
+    .line 89
+    :cond_49
+    invoke-interface {v9}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/volley/toolbox/BasicNetwork;->entityToBytes(Lorg/apache/http/HttpEntity;)[B
+
+    move-result-object v5
+
+    .line 91
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v15
+
+    sub-long v2, v15, v11
+
+    .local v2, requestLifetime:J
+    move-object/from16 v1, p0
+
+    move-object/from16 v4, p1
+
+    .line 92
+    invoke-direct/range {v1 .. v6}, Lcom/android/volley/toolbox/BasicNetwork;->logSlowRequests(JLcom/android/volley/Request;[BLorg/apache/http/StatusLine;)V
+
+    .line 94
+    invoke-interface {v6}, Lorg/apache/http/StatusLine;->getStatusCode()I
+
+    move-result v1
+
+    const/16 v4, 0xc8
+
+    if-eq v1, v4, :cond_7a
+
+    .line 95
+    new-instance v1, Ljava/io/IOException;
+
+    invoke-direct {v1}, Ljava/io/IOException;-><init>()V
+
+    throw v1
+    :try_end_6c
+    .catch Ljava/net/SocketTimeoutException; {:try_start_b .. :try_end_6c} :catch_6c
+    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_b .. :try_end_6c} :catch_83
+    .catch Ljava/net/MalformedURLException; {:try_start_b .. :try_end_6c} :catch_92
+    .catch Ljava/io/IOException; {:try_start_b .. :try_end_6c} :catch_b0
+
+    .line 99
+    .end local v2           #requestLifetime:J
+    .end local v6           #statusLine:Lorg/apache/http/StatusLine;
+    .end local v8           #headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    :catch_6c
+    move-exception v7
+
+    .line 100
+    .local v7, e:Ljava/net/SocketTimeoutException;
+    const-string v1, "socket"
+
+    new-instance v4, Lcom/android/volley/TimeoutError;
+
+    invoke-direct {v4}, Lcom/android/volley/TimeoutError;-><init>()V
+
+    move-object/from16 v0, p1
+
+    invoke-static {v1, v0, v4}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
+
+    goto :goto_4
+
+    .line 97
+    .end local v7           #e:Ljava/net/SocketTimeoutException;
+    .restart local v2       #requestLifetime:J
+    .restart local v6       #statusLine:Lorg/apache/http/StatusLine;
+    .restart local v8       #headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    :cond_7a
+    :try_start_7a
+    new-instance v1, Lcom/android/volley/NetworkResponse;
+
+    const/16 v4, 0xc8
+
+    const/4 v15, 0x0
+
+    invoke-direct {v1, v4, v5, v13, v15}, Lcom/android/volley/NetworkResponse;-><init>(I[BLjava/util/Map;Z)V
+    :try_end_82
+    .catch Ljava/net/SocketTimeoutException; {:try_start_7a .. :try_end_82} :catch_6c
+    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_7a .. :try_end_82} :catch_83
+    .catch Ljava/net/MalformedURLException; {:try_start_7a .. :try_end_82} :catch_92
+    .catch Ljava/io/IOException; {:try_start_7a .. :try_end_82} :catch_b0
+
+    goto :goto_48
+
+    .line 101
+    .end local v2           #requestLifetime:J
+    .end local v6           #statusLine:Lorg/apache/http/StatusLine;
+    .end local v8           #headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    :catch_83
+    move-exception v7
+
+    .line 102
+    .local v7, e:Lorg/apache/http/conn/ConnectTimeoutException;
+    const-string v1, "connection"
+
+    new-instance v4, Lcom/android/volley/TimeoutError;
+
+    invoke-direct {v4}, Lcom/android/volley/TimeoutError;-><init>()V
+
+    move-object/from16 v0, p1
+
+    invoke-static {v1, v0, v4}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
+
+    goto/16 :goto_4
+
+    .line 103
+    .end local v7           #e:Lorg/apache/http/conn/ConnectTimeoutException;
+    :catch_92
+    move-exception v7
+
+    .line 104
+    .local v7, e:Ljava/net/MalformedURLException;
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v15, "Bad URL "
+
+    invoke-virtual {v4, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual/range {p1 .. p1}, Lcom/android/volley/Request;->getUrl()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v4, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v1, v4, v7}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+
+    .line 105
+    .end local v7           #e:Ljava/net/MalformedURLException;
+    :catch_b0
+    move-exception v7
+
+    .line 106
+    .local v7, e:Ljava/io/IOException;
+    const/4 v14, 0x0
+
+    .line 107
+    .local v14, statusCode:I
+    const/4 v10, 0x0
+
+    .line 108
+    .local v10, networkResponse:Lcom/android/volley/NetworkResponse;
+    if-eqz v9, :cond_f1
+
+    .line 109
+    invoke-interface {v9}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Lorg/apache/http/StatusLine;->getStatusCode()I
+
+    move-result v14
+
+    .line 113
+    const-string v1, "Unexpected response code %d for %s"
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    const/4 v15, 0x0
+
+    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v16
+
+    aput-object v16, v4, v15
+
+    const/4 v15, 0x1
+
+    invoke-virtual/range {p1 .. p1}, Lcom/android/volley/Request;->getUrl()Ljava/lang/String;
+
+    move-result-object v16
+
+    aput-object v16, v4, v15
+
+    invoke-static {v1, v4}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 114
+    if-eqz v5, :cond_fd
+
+    .line 115
+    new-instance v10, Lcom/android/volley/NetworkResponse;
+
+    .end local v10           #networkResponse:Lcom/android/volley/NetworkResponse;
+    const/4 v1, 0x0
+
+    invoke-direct {v10, v14, v5, v13, v1}, Lcom/android/volley/NetworkResponse;-><init>(I[BLjava/util/Map;Z)V
+
+    .line 117
+    .restart local v10       #networkResponse:Lcom/android/volley/NetworkResponse;
+    const/16 v1, 0x191
+
+    if-eq v14, v1, :cond_e3
+
+    const/16 v1, 0x193
+
+    if-ne v14, v1, :cond_f7
+
+    .line 119
+    :cond_e3
+    const-string v1, "auth"
+
+    new-instance v4, Lcom/android/volley/AuthFailureError;
+
+    invoke-direct {v4, v10}, Lcom/android/volley/AuthFailureError;-><init>(Lcom/android/volley/NetworkResponse;)V
+
+    move-object/from16 v0, p1
+
+    invoke-static {v1, v0, v4}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
+
+    goto/16 :goto_4
+
+    .line 111
+    :cond_f1
+    new-instance v1, Lcom/android/volley/NoConnectionError;
+
+    invoke-direct {v1, v7}, Lcom/android/volley/NoConnectionError;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+
+    .line 123
+    :cond_f7
+    new-instance v1, Lcom/android/volley/ServerError;
+
+    invoke-direct {v1, v10}, Lcom/android/volley/ServerError;-><init>(Lcom/android/volley/NetworkResponse;)V
+
+    throw v1
+
+    .line 126
+    :cond_fd
+    new-instance v1, Lcom/android/volley/NetworkError;
+
+    invoke-direct {v1, v10}, Lcom/android/volley/NetworkError;-><init>(Lcom/android/volley/NetworkResponse;)V
+
+    throw v1
+.end method

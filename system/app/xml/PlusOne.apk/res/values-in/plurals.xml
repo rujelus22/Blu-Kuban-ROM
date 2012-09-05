@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="album_photo_count">
+        <item quantity="other">%d foto</item>
+        <item quantity="zero">%d foto</item>
+        <item quantity="one">%d foto</item>
+    </plurals>
+    <plurals name="from_your_phone_selected_count">
+        <item quantity="other">%d dipilih.</item>
+        <item quantity="one">%d dipilih.</item>
+    </plurals>
+    <plurals name="delete_photo_dialog_title">
+        <item quantity="other">Hapus semua salinan foto berikut?</item>
+        <item quantity="one">Hapus semua salinan foto ini?</item>
+    </plurals>
+    <plurals name="delete_remote_photo_dialog_message">
+        <item quantity="other">Yakin ingin menghapus foto dari album Google+ ini? Tindakan ini tidak dapat diurungkan.</item>
+        <item quantity="one">Yakin ingin menghapus foto ini dari album Google+ ini? Tindakan ini tidak dapat diurungkan.</item>
+    </plurals>
+    <plurals name="delete_local_photo_dialog_message">
+        <item quantity="other">Yakin ingin menghapus foto berikut dari ponsel dan dari album Google+ ini? Tindakan ini tidak dapat diurungkan.</item>
+        <item quantity="one">Yakin ingin menghapus foto ini dari ponsel dan dari album Google+ ini? Tindakan ini tidak dapat diurungkan.</item>
+    </plurals>
+    <plurals name="delete_photo_pending">
+        <item quantity="other">Menghapus foto...</item>
+        <item quantity="one">Menghapus foto...</item>
+    </plurals>
+    <plurals name="plus_one_people_more_plus_ones">
+        <item quantity="other">+%d lainnya</item>
+        <item quantity="one">+1 lainnya</item>
+    </plurals>
+    <plurals name="plusoned_by_unknowns">
+        <item quantity="other">oleh %d orang</item>
+        <item quantity="one">oleh 1 orang</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_unknowns">
+        <item quantity="other">oleh Anda dan %d lainnya</item>
+        <item quantity="one">oleh Anda dan 1 lainnya</item>
+    </plurals>
+    <plurals name="plusoned_by_one_known_and_unknowns">
+        <item quantity="other">oleh %s dan %d lainnya</item>
+        <item quantity="one">oleh %s dan 1 lainnya</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_one_known_and_unknowns">
+        <item quantity="other">oleh Anda, %s, dan %d lainnya</item>
+        <item quantity="one">oleh Anda, %s, dan 1 lainnya</item>
+    </plurals>
+    <plurals name="plusoned_by_two_known_and_unknowns">
+        <item quantity="other">oleh %s, %s, dan %d lainnya</item>
+        <item quantity="one">oleh %s, %s, dan 1 lainnya</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_two_known_and_unknowns">
+        <item quantity="other">oleh Anda, %s, %s, dan %d lainnya</item>
+        <item quantity="one">oleh Anda, %s, %s, dan 1 lainnya</item>
+    </plurals>
+    <plurals name="comments">
+        <item quantity="other">%d komentar</item>
+        <item quantity="one">%d komentar</item>
+    </plurals>
+    <plurals name="delete_photo">
+        <item quantity="other">Hapus foto</item>
+        <item quantity="one">Hapus foto</item>
+    </plurals>
+    <plurals name="circle_entry_content_description">
+        <item quantity="other">%s; %d anggota</item>
+        <item quantity="one">%s; %d anggota</item>
+    </plurals>
+    <plurals name="notifications_ticker_text">
+        <item quantity="other">Notifikasi Google+ baru</item>
+        <item quantity="one">Notifikasi Google+ baru</item>
+    </plurals>
+    <plurals name="notifications_content_text">
+        <item quantity="other">%1$s (%2$d)</item>
+        <item quantity="one">%1$s (%2$d)</item>
+    </plurals>
+    <plurals name="audience_display_selection_count">
+        <item quantity="other">%d dipilih</item>
+        <item quantity="one">%d dipilih</item>
+    </plurals>
+    <plurals name="circle_count_and_matched_email">
+        <item quantity="other">%d lingkaran, %s</item>
+        <item quantity="one">%d lingkaran, %s</item>
+    </plurals>
+    <plurals name="circle_selection_count">
+        <item quantity="other">%d lingkaran</item>
+        <item quantity="one">%d lingkaran</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_title">
+        <item quantity="other">Hapus lingkaran</item>
+        <item quantity="one">Hapus lingkaran</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_message">
+        <item quantity="other">Apakah Anda ingin menghapus lingkaran tersebut secara permanen?</item>
+        <item quantity="one">Hapus lingkaran ini secara permanen?</item>
+    </plurals>
+    <plurals name="delete_circles_operation_pending">
+        <item quantity="other">Menghapus lingkaran...</item>
+        <item quantity="one">Menghapus lingkaran...</item>
+    </plurals>
+    <plurals name="circle_people_count">
+        <item quantity="other">%d orang</item>
+        <item quantity="one">%d orang</item>
+    </plurals>
+    <plurals name="remove_people_dialog_title">
+        <item quantity="other">Keluarkan orang</item>
+        <item quantity="one">Keluarkan orang</item>
+    </plurals>
+    <plurals name="remove_people_dialog_message">
+        <item quantity="other">Apakah Anda ingin menghapus orang ini dari lingkaran ini?</item>
+        <item quantity="one">Apakah Anda ingin menghapus orang ini dari lingkaran ini?</item>
+    </plurals>
+    <plurals name="add_people_operation_pending">
+        <item quantity="other">Menambahkan orang...</item>
+        <item quantity="one">Menambahkan orang...</item>
+    </plurals>
+    <plurals name="remove_people_operation_pending">
+        <item quantity="other">Menghapus orang...</item>
+        <item quantity="one">Menghapus orang...</item>
+    </plurals>
+    <plurals name="dismiss_people_operation_pending">
+        <item quantity="other">Menyingkirkan orang...</item>
+        <item quantity="one">Menyingkirkan orang...</item>
+    </plurals>
+    <plurals name="circle_button_more_circles">
+        <item quantity="other">%d lainnya</item>
+        <item quantity="one">%d lainnya</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d mnt</item>
+        <item quantity="one">%d menit</item>
+    </plurals>
+    <plurals name="num_hours_ago">
+        <item quantity="other">%d jam</item>
+        <item quantity="one">%d jam</item>
+    </plurals>
+    <plurals name="num_days_ago">
+        <item quantity="other">%d hari</item>
+        <item quantity="one">%d hari</item>
+    </plurals>
+    <plurals name="ads_plus_one_annotation_count_only">
+        <item quantity="other">juga %1$d orang lainnya</item>
+        <item quantity="one">%1$d orang lainnya juga</item>
+    </plurals>
+</resources>

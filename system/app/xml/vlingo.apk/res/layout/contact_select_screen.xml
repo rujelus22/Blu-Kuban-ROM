@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/top_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:id="@id/search_bar" android:background="@drawable/search_plate_global" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/ImageView01" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/ic_launcher_contacts" android:scaleType="fitXY" />
+        <EditText android:id="@id/edittext_contact_search" android:background="@drawable/textfield_search" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip" android:maxLines="1" android:layout_weight="1.0" android:inputType="textPersonName" android:imeOptions="actionDone" />
+        <ImageButton android:id="@id/btn_speak_again" android:background="@drawable/btn_search_dialog" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="2.0dip" android:src="@drawable/ic_btn_speak_now" android:scaleType="center" />
+    </LinearLayout>
+    <ListView android:id="@id/listview_contacts_other" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="-10.0dip" android:isScrollContainer="false" />
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:versionCode="15" android:versionName="4.0.4-FH13" package="com.android.providers.security"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <permission-group android:label="@string/permgrouplab_security" android:name="android.permission-group.SECURITY" android:description="@string/permgroupdesc_security" />
+    <permission android:label="@string/permlab_readPolicies" android:name="android.permission.READ_POLICIES" android:protectionLevel="normal" android:permissionGroup="android.permission-group.SECURITY" android:description="@string/permdesc_readPolicies" />
+    <permission android:label="@string/permlab_writePolicies" android:name="android.permission.WRITE_POLICIES" android:protectionLevel="signatureOrSystem" android:permissionGroup="android.permission-group.SECURITY" android:description="@string/permdesc_writePolicies" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <application android:label="@string/app_label" android:icon="@drawable/app_icon" android:process="system">
+        <provider android:label="@string/provider_label" android:name="SecurityPoliciesProvider" android:readPermission="android.permission.READ_POLICIES" android:writePermission="android.permission.WRITE_POLICIES" android:multiprocess="false" android:authorities="com.android.security" />
+        <service android:name="SecurityPoliciesService" android:readPermission="android.permission.READ_POLICIES" android:writePermission="android.permission.WRITE_POLICIES">
+            <intent-filter>
+                <action android:name="com.android.security.PASSWORD_EXPIRED" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

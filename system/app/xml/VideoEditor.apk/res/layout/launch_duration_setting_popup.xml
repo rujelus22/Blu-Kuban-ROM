@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="300.0px" android:layout_height="272.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/scroller" android:background="@drawable/popup" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="0.0dip">
+        <LinearLayout android:orientation="horizontal" android:background="@drawable/btn_subbtn" android:layout_width="296.0px" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="2.0dip" android:layout_marginBottom="2.0dip"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <TextView android:textSize="30.0px" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@id/title" android:paddingLeft="60.0px" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:shadowColor="#ff000000" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="3.0" />
+        </LinearLayout>
+        <ListView android:orientation="vertical" android:id="@id/items" android:paddingLeft="2.0dip" android:paddingTop="2.0dip" android:paddingRight="2.0dip" android:paddingBottom="5.0dip" android:layout_width="300.0px" android:layout_height="wrap_content" android:cacheColorHint="#00000000" android:divider="@drawable/album_list_line" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ImageView android:id="@id/arrow_down" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-3.0dip" android:src="@drawable/arrow_down" android:layout_below="@id/scroller" />
+    <ImageView android:id="@id/arrow_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-4.0dip" android:src="@drawable/arrow_rght" android:layout_toRightOf="@id/scroller" />
+</RelativeLayout>

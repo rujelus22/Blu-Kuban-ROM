@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/resultBaseRoot" android:background="@drawable/primary_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/panel" android:background="@drawable/leaderboard_border_around" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/checkin_awards_result_panel_margin" android:layout_marginTop="30.0dip" android:layout_marginRight="@dimen/checkin_awards_result_panel_margin">
+        <TextView android:textAppearance="@style/CheckinResultCheckinPlace" android:ellipsize="end" android:id="@id/checkinPlace" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/checkin_awards_result_panel_margin" android:layout_marginTop="11.0dip" android:layout_marginRight="@dimen/checkin_awards_result_panel_badge_margin" android:singleLine="true" />
+        <TextView android:textAppearance="@style/CheckinResultEarnedPointInfo" android:id="@id/earnedPointInfo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/checkin_awards_result_panel_margin" android:layout_marginRight="@dimen/checkin_awards_result_panel_badge_margin" />
+        <LinearLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/checkin_awards_result_panel_margin" android:layout_marginRight="@dimen/checkin_awards_result_panel_margin" android:layout_marginBottom="@dimen/checkin_awards_result_panel_margin">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="2.0dip" android:src="@drawable/checkin_awards_clock" />
+            <TextView android:textAppearance="@style/CheckinResultRemainingTime" android:id="@id/remainingTime" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/leaderboardLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <ImageView android:layout_width="fill_parent" android:layout_height="@dimen/checkin_awards_border_width" android:src="@color/ultralight_grey" />
+        <TextView android:textAppearance="@style/CheckinResultTextLink" android:gravity="center" android:id="@id/showMore" android:background="@drawable/leaderboard_item_default_background" android:layout_width="fill_parent" android:layout_height="@dimen/checkin_awards_text_link_height" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/footer" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Button android:ellipsize="end" android:layout_gravity="center_horizontal" android:id="@id/continueToPlace" android:paddingLeft="12.0dip" android:paddingTop="6.0dip" android:paddingRight="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="@dimen/checkin_awards_result_continue_button_margin" android:layout_marginRight="12.0dip" android:maxLines="2" style="@style/ActionButton" />
+        <TextView android:textAppearance="@style/CheckinResultTextLink" android:gravity="center" android:layout_gravity="center" android:id="@id/learnMore" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/checkin_awards_text_link_height" />
+    </LinearLayout>
+</LinearLayout>

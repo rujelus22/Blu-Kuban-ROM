@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/program_monitor_layout" android:background="@drawable/cpu_bg" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="@dimen/program_monitor_top_vertical_gap"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/program_monitor_numver_view_height"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <FrameLayout android:layout_width="@dimen/program_monitor_image_view_left_gap" android:layout_height="fill_parent"
+          xmlns:android="http://schemas.android.com/apk/res/android" />
+        <ImageView android:layout_gravity="center" android:id="@id/image_noti" android:layout_width="@dimen/program_monitor_image_noti_width" android:layout_height="fill_parent" android:src="@drawable/cpu_step_01" android:scaleType="center" />
+        <TextView android:textSize="@dimen/program_monitor_number_font_size" android:textColor="@color/program_monitor_number_text_color" android:gravity="center" android:id="@id/number_view" android:layout_width="@dimen/program_monitor_numver_view_width" android:layout_height="@dimen/program_monitor_numver_view_height" android:singleLine="true" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/program_monitor_text_font_size" android:textColor="@color/program_monitor_slide_text_color_normal" android:ellipsize="marquee" android:gravity="center" android:id="@id/slide_text_view" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="@dimen/program_monitor_slidetext_view_height" android:layout_marginLeft="@dimen/program_monitor_slidetext_view_left_gap" android:layout_marginRight="@dimen/program_monitor_slidetext_view_right_gap" android:text="@string/running_programs" android:singleLine="true" android:marqueeRepeatLimit="1" />
+</LinearLayout>

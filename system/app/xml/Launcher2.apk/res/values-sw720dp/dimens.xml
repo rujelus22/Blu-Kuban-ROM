@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_widget_preview_padding_left">0.0dip</dimen>
+    <dimen name="app_widget_preview_padding_top">10.0dip</dimen>
+</resources>

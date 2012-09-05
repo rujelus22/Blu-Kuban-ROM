@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Serial Number Read/Write</string>
+    <string name="model_name_label">1. Model : GT-S5670_EUR</string>
+    <string name="model_name_p">GT-S5670_EUR</string>
+    <string name="model_name">GT-S5670_EUR</string>
+    <string name="manufacturer">2. MANUFACTURER: SAMSUNG ELECTRONICS, KOREA</string>
+    <string name="serialnumber">※ IMEI:</string>
+    <string name="sn">※ S/N:</string>
+</resources>

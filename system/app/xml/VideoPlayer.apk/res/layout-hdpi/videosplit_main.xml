@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/defaultBackground" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/ListLayout" android:background="@color/defaultBackground" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:id="@id/ListFolderView" android:background="@color/split_left_background" android:fadingEdge="none" android:layout_width="300.0px" android:layout_height="fill_parent" android:divider="@drawable/folder_list_divider" android:dividerHeight="1.0px" />
+        <ImageView android:id="@id/myfilesLandSplit" android:background="#00000000" android:layout_width="10.0px" android:layout_height="fill_parent" android:src="@drawable/split" android:scaleType="fitXY" />
+        <LinearLayout android:id="@id/ListSplitView" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ResultEmpty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center" android:id="@id/No_Item_Icon" android:background="@drawable/noitems_video_based" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0px" android:layout_below="@id/ResultEmpty" />
+        <TextView android:textSize="48.0px" android:typeface="sans" android:textColor="@color/No_item" android:gravity="center" android:id="@id/EmptyText" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_videos" />
+    </LinearLayout>
+</LinearLayout>

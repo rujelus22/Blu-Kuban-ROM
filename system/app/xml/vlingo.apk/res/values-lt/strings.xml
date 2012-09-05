@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Vairavimo režimas</string>
+    <string name="app_name">Balso komandos</string>
+    <string name="incar">Voice Talk</string>
+    <string name="incar_icon">Voice Talk</string>
+    <string name="Vlingo">Balso įrašų komandos</string>
+    <string name="widget_name">Balsas</string>
+</resources>

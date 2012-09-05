@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_media_detail_view" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/rl_detail_info" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="17.5sp" android:textColor="@color/color29" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="10.0dip" android:maxLines="2" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="10.0dip">
+                <ImageView android:id="@id/iv_cover_art" android:layout_width="134.0dip" android:layout_height="193.5dip" android:scaleType="fitXY" />
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_weight="1.0">
+                    <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_hd_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1.5dip" android:layout_marginBottom="1.5dip" android:src="@drawable/hd_icon" />
+                    <TextView android:textSize="17.5sp" android:textColor="@color/color5" android:id="@id/tv_purchase_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.669983dip" />
+                    <TextView android:textSize="17.5sp" android:textColor="@color/color5" android:ellipsize="end" android:id="@id/tv_license" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <include layout="@layout/my_account_mypurchase_detail_row" />
+    </LinearLayout>
+    <include layout="@layout/common_progress_white" />
+</RelativeLayout>

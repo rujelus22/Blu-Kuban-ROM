@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/menu_icon_file_n" android:id="@id/edit_menu_file" android:title="@string/dm_save" />
+    <item android:icon="@drawable/menu_icon_readmode_n" android:id="@id/change_to_view_mode" android:title="@string/dm_default_view" />
+    <item android:icon="@drawable/menu_icon_view_n" android:id="@id/edit_menu_view" android:title="@string/dm_panel_view" />
+    <item android:icon="@drawable/menu_icon_insert_n" android:id="@id/edit_menu_sheet_insert" android:title="@string/dm_insert" />
+    <item android:icon="@drawable/menu_icon_format_n" android:id="@id/edit_menu_sheet_format" android:title="@string/dm_format" />
+    <item android:id="@id/sheet_view_list" android:title="@string/dm_view_sheet_list" />
+    <item android:id="@id/sheet_edit_protect_sheet" android:title="@string/dm_protect_sheet" />
+    <item android:id="@id/sheet_edit_recalculate" android:title="@string/dm_recalculate" />
+    <item android:id="@id/sheet_edit_sort" android:title="@string/dm_sort" />
+    <item android:id="@id/sheet_edit_freeze" android:title="@string/dm_freeze" />
+    <item android:id="@id/sheet_edit_customize_toolbar" android:title="@string/dm_customize_toolbar" />
+    <item android:icon="@drawable/menu_icon_print_n" android:id="@id/menu_print" android:title="@string/dm_print" />
+    <item android:icon="@drawable/menu_icon_setting_n" android:id="@id/setting_viewmenu" android:title="@string/dm_setting" />
+</menu>

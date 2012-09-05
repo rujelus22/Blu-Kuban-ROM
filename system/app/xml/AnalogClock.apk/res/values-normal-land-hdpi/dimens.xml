@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="width_modern">146.66dip</dimen>
+    <dimen name="height_modern">146.66dip</dimen>
+    <dimen name="width_classic">146.66dip</dimen>
+    <dimen name="height_classic">146.66dip</dimen>
+    <dimen name="width_simple">146.66dip</dimen>
+    <dimen name="height_simple">146.66dip</dimen>
+    <dimen name="width_unique">146.66dip</dimen>
+    <dimen name="height_unique">146.66dip</dimen>
+    <dimen name="width_digital">421.32812dip</dimen>
+    <dimen name="height_digital">73.32999dip</dimen>
+</resources>

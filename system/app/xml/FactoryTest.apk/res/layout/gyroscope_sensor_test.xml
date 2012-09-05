@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="25.0sp" android:id="@id/magnetic2" android:paddingLeft="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/GYROSCOPE_Sensor" />
+    <View android:background="@drawable/separator" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TableLayout android:id="@id/menu" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TableRow>
+            <TextView android:textSize="20.0sp" android:padding="3.0dip" android:text="@string/Initialized" />
+            <TextView android:textSize="20.0sp" android:id="@id/initialized_str" android:padding="3.0dip" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="20.0sp" android:padding="3.0dip" android:text="@string/Temperature" />
+            <TextView android:textSize="20.0sp" android:id="@id/temperature_str" android:padding="3.0dip" />
+        </TableRow>
+        <View android:background="@drawable/separator" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <TableRow>
+            <TextView android:textSize="20.0sp" android:id="@id/invisible" android:padding="3.0dip" android:visibility="invisible" />
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:padding="3.0dip" android:text="@string/X" />
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:padding="3.0dip" android:text="@string/Y" />
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:padding="3.0dip" android:text="@string/Z" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:padding="3.0dip" android:text="@string/XYZ" />
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:id="@id/xyz_x_str" android:padding="3.0dip" />
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:id="@id/xyz_y_str" android:padding="3.0dip" />
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:id="@id/xyz_z_str" android:padding="3.0dip" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:padding="3.0dip" android:text="@string/XYZ_PRIME" />
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:id="@id/prime_x_str" android:padding="3.0dip" />
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:id="@id/prime_y_str" android:padding="3.0dip" />
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:id="@id/prime_z_str" android:padding="3.0dip" />
+        </TableRow>
+    </TableLayout>
+    <View android:background="@drawable/separator" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="100.0sp" android:gravity="center" android:id="@id/result" android:paddingLeft="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/FAIL" />
+</LinearLayout>

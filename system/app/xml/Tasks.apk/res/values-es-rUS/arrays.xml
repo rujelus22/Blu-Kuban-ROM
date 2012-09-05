@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="priority_items">
+        <item>Baja</item>
+        <item>Media</item>
+        <item>Alta</item>
+    </string-array>
+    <string-array name="priority_dialog_items">
+        <item>Alta</item>
+        <item>Media</item>
+        <item>Baja</item>
+    </string-array>
+    <string-array name="reminder_type_labels">
+        <item>Desactiv.</item>
+        <item>En fecha inicial</item>
+        <item>En fecha final</item>
+        <item>Personalizar</item>
+    </string-array>
+    <string-array name="Reminder_tone">
+        <item>Sonidos</item>
+        <item>Ir a Mis archivos</item>
+    </string-array>
+    <string-array name="preferences_default_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="list_by_array">
+        <item>Fecha final</item>
+        <item>Estado</item>
+        <item>Prioridad</item>
+    </string-array>
+</resources>

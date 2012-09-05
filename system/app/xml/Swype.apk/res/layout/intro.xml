@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/swypelogo" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/buttons" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Button android:id="@id/video" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:minWidth="200.0dip" android:text="@string/play_video" android:maxLines="1" />
+        <Button android:id="@id/change_ime" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:minWidth="200.0dip" android:text="@string/change_ime" android:maxLines="1" />
+        <Button android:id="@id/help" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="20.0dip" android:minWidth="200.0dip" android:text="@string/learn_more" android:maxLines="1" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <header android:id="@id/print_device" android:title="@string/print_device" android:fragment="com.sec.android.app.mobileprint.MPrintSettingSplitActivity$PrintDeviceFragment" />
+    <header android:id="@id/print_settings" android:title="@string/print_settings" android:fragment="com.sec.android.app.mobileprint.MPrintSettingSplitActivity$PrintSettingsFragment" />
+</preference-headers>

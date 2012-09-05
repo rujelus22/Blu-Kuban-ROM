@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="vs_dialog_pos_left">64.0dip</dimen>
+    <dimen name="vs_dialog_pos_top">64.0dip</dimen>
+</resources>

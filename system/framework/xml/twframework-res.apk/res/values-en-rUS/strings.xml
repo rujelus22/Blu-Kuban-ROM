@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="status_bar_clear_all_button">Clear notifications</string>
+    <string name="status_bar_no_notifications_title">No notifications</string>
+    <string name="status_bar_ongoing_events_title">Ongoing</string>
+    <string name="status_bar_latest_events_title">Notifications</string>
+    <string name="indicator_wifi">Wi-Fi</string>
+    <string name="indicator_bt">Bluetooth</string>
+    <string name="indicator_vibration">Vibration</string>
+    <string name="indicator_sound">Silent</string>
+    <string name="quickpanel_mute">Mute</string>
+    <string name="quickpanel_speaker">Speaker</string>
+    <string name="quickpanel_end">End</string>
+    <string name="no_missed_event">You have no missed events</string>
+    <string name="schedule_format">You have missed a %s schedule</string>
+    <string name="quickpanel_save">Save</string>
+    <string name="quickpanel_rec">REC</string>
+    <string name="quickpanel_pause">Pause</string>
+    <string name="quickpanel_paused">Paused</string>
+    <string name="quickpanel_standby">Standby</string>
+    <string name="indicator_gps">GPS</string>
+    <string name="indicator_rotation_lock">Rotation</string>
+    <string name="indicator_orientation">"Auto
+rotation"</string>
+    <string name="quick_settings_error">Error</string>
+    <string name="status_bar_ongoing_text_call">Call</string>
+    <string name="phone_m_format">You have %d missed calls</string>
+    <string name="mms_m_format">You have %d new messages</string>
+    <string name="tw_clipboard_title_text">Clipboard</string>
+    <string name="tw_clipboard_edit">Edit</string>
+    <string name="tw_clipboard_done">Done</string>
+    <string name="tw_clipboard_save">Save</string>
+    <string name="tw_clipboard_no_item">No items</string>
+    <string name="tw_ids_com_header_clipboard_options">Clipboard options</string>
+    <string name="tw_ids_com_body_delete_from_clipboard">Delete from clipboard</string>
+</resources>

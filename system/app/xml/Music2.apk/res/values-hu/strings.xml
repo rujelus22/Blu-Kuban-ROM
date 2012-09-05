@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Nem csatlakozik</string>
+    <string name="authentication_failure_no_network">Csatlakozzon az internethez a Zenék-fiókja azonosításához.</string>
+    <string name="authentication_failure">Nem azonosított</string>
+    <string name="authentication_failure_error">Nem sikerült hitelesíteni a Zenék-fiókját.</string>
+    <string name="positive_button_text">OK</string>
+    <string name="negative_button_text">Mégse</string>
+    <string name="save_button_text">Mentés</string>
+    <string name="not_save_button_text">Ne mentse</string>
+    <string name="shuffle_all">Keverés</string>
+    <string name="play_all">Összes lejátszása</string>
+    <string name="songs_all">Minden dal</string>
+    <string name="shuffle">Véletlen sorrendű lejátszás</string>
+    <string name="search">Keresés</string>
+    <string name="settings">Beállítások</string>
+    <string name="library_options">Megjelenítési beállítások</string>
+    <string name="manage_music">Legyen elérhető offline is</string>
+    <string name="available_offline">Elérhető offline</string>
+    <string name="hide_labels">Címkék elrejtése</string>
+    <string name="show_labels">Címkék megjelenítése</string>
+    <string name="options">Opciók</string>
+    <string name="shop_artist">Vásárlás előadó alapján</string>
+    <string name="show_offline_music_only">Csak offline zene</string>
+    <string name="show_all_music">Összes zene megjelenítése</string>
+    <string name="new_playlist_title">Lejátszási lista neve</string>
+    <string name="add_to_playlist_title">Lejátszási lista neve</string>
+    <string name="rename_playlist_title">\"%s\" átnevezése a következőre:</string>
+    <string name="search_section_header_artists">ELŐADÓK</string>
+    <string name="search_section_header_albums">ALBUMOK</string>
+    <string name="search_section_header_songs">DALOK</string>
+    <string name="search_section_header_playlists">LEJÁTSZÁSI LISTÁK</string>
+    <string name="shuffle_all_songs">Keverés</string>
+    <string name="stream_settings">Zenebeállítások</string>
+    <string name="refresh_title">Frissítés</string>
+    <string name="refresh_summary">Zenék frissítése a Google Playen</string>
+    <string name="account_settings_title">Google Play-fiók</string>
+    <string name="no_account_selected_summary">Fiók választásához érintse meg</string>
+    <string name="account_selected_summary">Csatlakozás a Google Playhez a következő fiókkal: %s</string>
+    <string name="hide_when_not_connected_title">Nem elérhető zenék elrejtése</string>
+    <string name="hide_when_not_connected_summary">Offline állapotban csak a rendelkezésre álló zene megjelenítése</string>
+    <string name="stream_only_on_wifi_title">Csak Wi-Fivel</string>
+    <string name="stream_only_on_wifi_summary">Online zenehallgatás kizárólag Wi-Fi kapcsolat esetén</string>
+    <string name="stream_only_hq_title">Jó minőségben</string>
+    <string name="stream_only_hq_summary">Adatfolyam útján történő zeneelérés a legjobb minőségben</string>
+    <string name="lock_screen_controls_title">Vezérlő zárolása</string>
+    <string name="lock_screen_controls_summary">Zenevezérlők megjelenítése a zárolt képernyő tetején</string>
+    <string name="offlinedl_only_on_wifi_title">Letöltés csak Wi-Fivel</string>
+    <string name="offlinedl_only_on_wifi_summary">Zene letöltése offline használatra kizárólag Wi-Fin keresztül</string>
+    <string name="cache_streamed_title">Zene gyorsítótár</string>
+    <string name="cache_streamed_summary">Adatfolyamként használt zene ideiglenes tárolása</string>
+    <string name="download_queue_title">Letöltési sor</string>
+    <string name="download_queue_summary">Letöltés alatt álló számok megjelenítése</string>
+    <string name="help_title">Súgó</string>
+    <string name="show_no_downloads_title">Nincs letöltésre váró dal.</string>
+    <string name="music_version_title">Zenék verziója</string>
+    <string name="music_version_summary">Ismeretlen verzió</string>
+    <string name="nowplaying_title">Most hallható</string>
+    <string name="artists_title">Előadók</string>
+    <string name="albums_title">Albumok</string>
+    <string name="genres_title">Műfajok</string>
+    <string name="tracks_title">Dalok</string>
+    <string name="playlists_title">Lejátszási listák</string>
+    <string name="recent_title">Legutóbbi</string>
+    <string name="search_title">Keresés</string>
+    <string name="no_tracks_title">Nincsenek dalok</string>
+    <string name="delete_playlist_menu">Törlés</string>
+    <string name="edit_playlist_menu">Szerkesztés</string>
+    <string name="rename_playlist_menu">Átnevezés</string>
+    <string name="playlist_delete_confirmation">Szeretné törölni a(z) \"%s\" lejátszási listát?</string>
+    <string name="delete_playlist_button_confirm">Törlés</string>
+    <string name="playlist_deleted_message">A lejátszási lista törlésre került.</string>
+    <string name="playlist_created_message">\"%s\" lejátszási lista létrehozva.</string>
+    <string name="playlist_renamed_message">A lejátszási lista új neve: \"%s\".</string>
+    <string name="recentlyadded">Utoljára hozzáadott</string>
+    <string name="recentlyadded_title">Utoljára hozzáadott</string>
+    <string name="all_songs_list">Minden dal</string>
+    <string name="all_songs_list_title">Minden dal</string>
+    <string name="storemusic_list">Ingyenes és megvásárolt</string>
+    <string name="storemusic_list_title">Ingyenes és megvásárolt</string>
+    <string name="freemusic_list">Ingyenes dalok</string>
+    <string name="freemusic_list_title">Ingyenes dalok</string>
+    <string name="thumbsup_list">Tetszik</string>
+    <string name="thumbsup_list_title">Tetszik</string>
+    <string name="unknown_artist_name">Ismeretlen előadó</string>
+    <string name="unknown_album_name">Ismeretlen album</string>
+    <string name="unknown_playlist_name">Névtelen lejátszási lista</string>
+    <string name="shuffle_on_notif">A keverés be van kapcsolva.</string>
+    <string name="shuffle_off_notif">A keverés ki van kapcsolva..</string>
+    <string name="repeat_off_notif">Az ismétlés kikapcsolva.</string>
+    <string name="repeat_current_notif">A jelenlegi zene ismétlése.</string>
+    <string name="repeat_all_notif">Az összes dal ismétlése.</string>
+    <string name="ringtone_menu">Felhasználás csengőhangként</string>
+    <string name="ringtone_set">\"%s\" beállítva csengőhangként.</string>
+    <string name="ringtone_set_failed">Nem sikerült létrehozni a csengőhangot.</string>
+    <string name="ringtone_needs_download">A csengőhang lesz beállítva letöltés után.</string>
+    <string name="play_selection">Lejátszás</string>
+    <string name="add_to_playlist">Hozzáadás lejátszási listához</string>
+    <string name="rename_playlist_menu_item">Átnevezés</string>
+    <string name="add_to_playlist_selector_title">Lejátszási listához</string>
+    <string name="queue">Jelenlegi lejátszási lista</string>
+    <string name="new_playlist_for_content">Új lejátszási lista</string>
+    <string name="new_empty_playlist">Új lejátszási lista</string>
+    <string name="new_playlist_name_template">Lejátszási lista %d</string>
+    <string name="removed_from_playlist">\"%1$s\" eltávolítva a lejátszási listából.</string>
+    <string name="playlist_too_many_songs">Túl sok dal. Max. %d egy lejátszási listában.</string>
+    <string name="emptyplaylist">A kiválasztott lejátszási lista üres.</string>
+    <string name="playlist_edit_label">NÉV</string>
+    <string name="create_playlist_create_text">OK</string>
+    <string name="rename_playlist_rename_text">Átnevezés</string>
+    <string name="service_start_error_title">Probléma a lejátszással</string>
+    <string name="service_start_error_msg">Nem lehet lejátszani a dalt.</string>
+    <string name="service_start_error_button">OK</string>
+    <string name="weekpicker_set">Kész</string>
+    <string name="weekpicker_title">Idő beállítása</string>
+    <string name="musicbrowserlabel">Play Zene</string>
+    <string name="musicshortcutlabel">Zenei lejátszási lista</string>
+    <string name="mediaplaybacklabel">Zene</string>
+    <string name="app_name">Google Play Zenék</string>
+    <string name="playback_failed">Nem sikerült lejátszani a kért számot.</string>
+    <string name="cancel">Mégse</string>
+    <string name="remove_from_playlist">Eltávolítás a lejátszási listából</string>
+    <string name="streamloadingtext">Kapcsolódás a következőhöz: %s</string>
+    <string name="search_hint">Zene keresése</string>
+    <string name="working_artists">Előadók...</string>
+    <string name="working_albums">Albumok…</string>
+    <string name="loading">Betöltés...</string>
+    <string name="sort_by_track">Számcím</string>
+    <string name="music_picker_title">Zeneszám kiválasztása</string>
+    <string name="fail_to_start_stream">Nem sikerült lejátszani a kért adatfolyamot.</string>
+    <string name="search_settings_description">Előadók, albumok és számok</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">Zene</string>
+    <string name="music_library">Zenekönyvtár</string>
+    <string name="playlist_label">Lejátszási lista</string>
+    <string name="faux_art_all_songs_label">Minden dal</string>
+    <string name="faux_art_playlist_label">Lejátszási lista</string>
+    <string name="faux_art_playlist_instant_mix_label">Azonnali egyveleg</string>
+    <string name="faux_art_playlist_auto_playlist_label">Automatikus lejátszási lista</string>
+    <string name="buffering">Pufferelés...</string>
+    <string name="keep_on_phone">Elérhető offline</string>
+    <string name="no_music_add_music_header">ZENEHOZZÁADÁS MÓDJAI</string>
+    <string name="no_music_shop_body">Több millió dalt, köztük több száz ingyenes zeneszámot is vásárolhat.</string>
+    <string name="no_music_shop_button">ÜZLET</string>
+    <string name="no_music_upload_body">Ingyenesen feltölthet akár 20 000 dalt a Google Playre.</string>
+    <string name="no_music_upload_button">TOVÁBBI INFORMÁCIÓ</string>
+    <string name="no_music_usb_copy_body">Másoljon zenét telefonjára USB-kábel használatával.</string>
+    <string name="no_music_usb_copy_button">TOVÁBBI INFORMÁCIÓ</string>
+    <string name="no_music_heading">A Zenekönyvtár üres</string>
+    <string name="no_music_setup_uploader_heading">Sugározza zenéit vezeték nélkül.</string>
+    <string name="no_music_setup_uploader_body">A Google Play Zenék segítségével online elérheti személyes zenegyűjteményét.</string>
+    <string name="no_music_setup_usb_heading">Zene másolása eszközére</string>
+    <string name="no_music_setup_usb_body">Másoljon zenét telefonjára USB-kábel használatával.</string>
+    <string name="no_local_music_heading">Nincs offline zene</string>
+    <string name="no_local_music_body">"Ön \"kizárólag offline\" módban van, tehát csak az eszközén tárolt zenéi érhetők el. 
+
+Válassza a "<b>Legyen elérhető offline állapotban</b> lehetőséget a menüből, hogy kiválassza azokat a zenéket, amelyeket készülékén szeretne tárolni.</string>
+    <string name="no_music_learn_more">További információ</string>
+    <string name="no_playlists_heading">Nincsenek lejátszási listák a könyvtárában.</string>
+    <string name="no_playlists_body">Úgy hozhat létre lejátszási listát, hogy a dalok listájában megérinti a Hozzáadás lejátszási listához elemet egy adott dal helyi menüjében.</string>
+    <string name="no_music_syncing_heading">A rendszer most szinkronizálja a zenét.</string>
+    <string name="no_music_syncing_body">A rendszer most szinkronizálja a szerverről a zenét, amely pillanatokon belül meg fog jelenni.</string>
+    <string name="no_music_scanning_heading">Zene keresése az eszközön.</string>
+    <string name="no_music_scanning_body">A készüléken zene keresése folyik.</string>
+    <string name="sync_disabled">Mielőtt a zene megjelenne a Google Play Zenékben, be kell állítani a szinkronizálást. Elvégzi ezt most?</string>
+    <string name="tutorial_welcome_heading">A Google Play Zenék üdvözli Önt!</string>
+    <string name="tutorial_welcome_body">"Akár 20 000 dalt is feltölthet saját zenegyűjteményéből.
+
+A Google Playen vásárolt zenéket azonnal lejátszhatja.
+
+Teljes zenegyűjteményét meghallgathatja az interneten, telefonon vagy táblagépen. Egyszerűen letöltheti a zenéket, így internetkapcsolat nélkül is hallgathatja azokat.
+
+Mindezt ingyen."</string>
+    <string name="tutorial_select_account_heading">Fiók kiválasztása</string>
+    <string name="tutorial_select_account_body">"Kapcsolja össze fiókját a Google Play Zenével, így lejátszhatja zenekönyvtárát és az áruházban vásárolt zenéket.
+
+Melyik fiókot szeretné használni?"</string>
+    <string name="tutorial_sign_in">Kapcsolja össze fiókját a Google Play Zenével, így lejátszhatja zenekönyvtárát és az áruházban vásárolt zenéket.</string>
+    <string name="tutorial_free_music_heading">Ingyenes zeneletöltés</string>
+    <string name="tutorial_free_music_body">A Google Playen a rock, a hip-hop és egyéb műfajok legnagyobb előadói által jegyzett több száz ingyenes zeneszám közül választhat.</string>
+    <string name="tutorial_account_heading">Üdvözöljük</string>
+    <string name="tutorial_account_body">Meghívót kapott a Google Play Zenék szolgáltatásba. A lejátszóval hozzáférhet a Google Play Zenékhez hozzáadott számokhoz és az Android-eszközre másolt egyéb zenékhez.</string>
+    <string name="tutorial_account_list_header">Először válasszon egy Google Fiókot, amellyel összekötheti ezt a lejátszót a Google Play Zenék szolgáltatással:</string>
+    <string name="tutorial_done_heading">Jó szórakozást</string>
+    <string name="tutorial_done_body">"A Zenelejátszót összekapcsolta Google Fiókjával.
+
+Ha már hozzáadta a zenegyűjteményét a Google Play Zenékhez, akkor az meg fog jelenni ezen a lejátszón.
+
+Ha továbbra is hozzá szeretné adni zenéjét a Google Play Zenékhez, akkor kezdje azzal, hogy ellátogat webhelyünkre:"</string>
+    <string name="tutorial_skip">Kihagyás</string>
+    <string name="tutorial_next">Tovább</string>
+    <string name="tutorial_done">Kész</string>
+    <string name="tutorial_add_account">Fiók hozzáadása</string>
+    <string name="tutorial_free_music">Ingyenes dalok letöltése</string>
+    <string name="spinner_carousel">Legutóbbiak</string>
+    <string name="spinner_album">Albumok</string>
+    <string name="spinner_artist">Előadók</string>
+    <string name="spinner_songs">Dalok</string>
+    <string name="spinner_playlists">Lejátszási listák</string>
+    <string name="spinner_genres">Műfajok</string>
+    <string name="sort_by_title">Rendezés A-Z</string>
+    <string name="sort_by_artist">Rendezés előadó szerint</string>
+    <string name="sort_by_album">Rendezés album szerint</string>
+    <string name="sort_by_date">Rendezés hozzáadás dátuma szerint</string>
+    <string name="more_by_artist">Még több ettől az előadótól</string>
+    <string name="make_available_offline">Legyen elérhető offline</string>
+    <string name="search_web">Keresés az interneten</string>
+    <string name="manage_done">Kész</string>
+    <string name="too_many_items_title">Túl sok tétel</string>
+    <string name="too_many_items_body">Nincs elég hely az összes kiválasztott elem tárolására. Szabadítson fel helyet néhány elem törlésével.</string>
+    <string name="save_manage_music_change_title">Nem mentett módosítások</string>
+    <string name="save_manage_music_change_body">Szeretné, hogy a kiválasztott zene elérhető legyen offline?</string>
+    <string name="not_all_items_can_be_kept_body">Nincs elég hely az összes kiválasztott elem tárolására. Nem minden elem kerül letöltésre.</string>
+    <string name="free_space_overfull">Tárhely tele (%s felett)</string>
+    <string name="free_space">%s SZABAD</string>
+    <string name="stream_error_no_space_available">Nincs elérhető terület</string>
+    <string name="stream_error_only_on_wifi">A dal lejátszásához Wi-Fi hálózathoz kell csatlakoznia.</string>
+    <string name="stream_error_no_connection">A dal lejátszásához internetkapcsolat szükséges.</string>
+    <string name="stream_error_unauthorized">Helytelen felhasználónév vagy jelszó.</string>
+    <string name="stream_error_another_stream_being_played">Zenelejátszás szüneteltetve, mert gyűjteményét egy másik eszközön hallgatja.</string>
+    <string name="stream_error_rate_limit_reached">Jelenleg nem érhetők el zenék. Győződjön meg arról, hogy egyszerre csak egy eszközön játssza le a gyűjteményét.</string>
+    <string name="stream_error_device_not_authorized">Zenei könyvtárát legfeljebb 10 eszköz használhatja. Az egyik eszköz jogosultságát meg kell szüntetnie, mielőtt hozzáadna egy másikat.</string>
+    <string name="stream_error_learn_more">További információ</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">A zenelejátszás szünetel.</string>
+    <string name="stream_error_rate_limit_reached_short">A zene ideiglenesen nem érhető el.</string>
+    <string name="stream_error_device_not_authorized_short">Túl sok eszközt használ a zenei könyvtárral.</string>
+    <string name="hide_now_playing_bar">Most hallható sáv elrejtése</string>
+    <string name="show_now_playing_bar">Most hallható sáv megjel.</string>
+    <string name="show_options">Megjelenítés</string>
+    <string name="hide_options">Elrejtés</string>
+    <string name="all_songs_in_genre">"Minden dal a következő műfajból:
+%s"</string>
+    <string name="preview_header">MEGOSZTVA A GOOGLE+ SZOLGÁLTATÁSBAN</string>
+    <string name="shared_playback_full">INGYENES TELJES LEJÁTSZÁS</string>
+    <string name="shared_playback_partial">MINTA</string>
+    <string name="btn_buy">Vásárlás</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Zene elérhetővé tétele offline módban...</string>
+    <string name="notification_downloading_when_on_wifi">Az offline-ként megjelölt dalok betöltése akkor történik meg, ha csatlakozik egy Wi-Fi hálózathoz.</string>
+    <string name="notification_downloading_excessive_errors">Most nem lehet letölteni dalokat. Ellenőrizze az internetkapcsolatát.</string>
+    <string name="notification_downloading_done">A kiválasztott dalok most már offline is elérhetők.</string>
+    <string name="notification_ticker_ringtone_set">Új csengőhang: \"%s\"</string>
+    <string name="notification_title_ringtone_set">Csengőhang beállítva a következőre: \"%s\"</string>
+    <string name="notification_content_ringtone_set">Érintse meg a csengőhang szerkesztéséhez.</string>
+    <string name="notification_ticker_ringtone_set_failed">Nem sikerült létrehozni a csengőhangot.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s: %s</string>
+    <string name="notification_newsongs_songcount">%d új dal</string>
+    <string name="notification_newsongs_subtitle">Hozzáadva a Google Play Zenékhez</string>
+    <string name="carousel_label_shuffle_all">Keverés</string>
+    <string name="song_label">DAL</string>
+    <string name="artist_label">ELŐADÓ</string>
+    <string name="album_label">ALBUM</string>
+    <string name="effectspanel">Hangeffektek</string>
+    <string name="menu_make_instant_mix">Azonnali egyveleg készítése</string>
+    <string name="instant_mix_default_name">%s egyveleg</string>
+    <string name="creating_instant_mix">"Azonnali egyveleg hozzáadása a
+lejátszási listákhoz."</string>
+    <string name="creating_instant_mix_with_seed">"Azonnali egyveleg hozzáadása
+lejátszási listákhoz a következő alapján:
+%s."</string>
+    <string name="create_instant_mix_failed">Nem sikerült létrehozni az azonnali egyveleget. Próbálja újra.</string>
+    <string name="create_instant_mix_failed_insufficient_results">Nem volt elegendő hasonló dal a gyűjteményében, hogy azonnali egyveleget hozzon létre ebből: \"%s\". Kérjük, próbáljon egy másik dalból azonnali egyveleget készíteni.</string>
+    <string name="create_instant_mix_sync_timeout">"Az azonnali egyveleg
+létrejött, és hamarosan megjelenik
+a lejátszási listáiban."</string>
+    <string name="create_instant_mix_btn_ok">OK</string>
+    <string name="delete">Törlés</string>
+    <string name="confirm_delete_local_only">Biztosan törölni szeretné a következőt: \"%s\"?</string>
+    <string name="confirm_delete_has_remote">A rendszer betöltötte és feltöltötte a Google Play Zenék szolgáltatásba a következőt: \"%s\". Csak a betöltött elemek törlődnek. Biztosan törölni szeretné azokat?</string>
+    <string name="waiting_share">%s megosztása</string>
+    <string name="share">Megosztás</string>
+    <string name="share_failure">Hiba történt a zene megosztása közben.</string>
+    <string name="share_google_plus_footer">A megosztás ingyenes lejátszást tesz lehetővé a köreiben lévő személyek számára.</string>
+    <string name="accessibility_play">Lejátszás</string>
+    <string name="accessibility_pause">Szünet</string>
+    <string name="accessibility_stop">Leállítás</string>
+    <string name="accessibility_next">Tovább</string>
+    <string name="accessibility_prev">Előző</string>
+    <string name="accessibility_shuffle">Véletlen sorrendű lejátszás</string>
+    <string name="accessibility_repeat">Ismétlés</string>
+    <string name="accessibility_thumbsUp">Tetszik</string>
+    <string name="accessibility_thumbsDown">Leszavazás</string>
+    <string name="accessibility_star1">Egy csillag</string>
+    <string name="accessibility_star2">Két csillag</string>
+    <string name="accessibility_star3">Három csillag</string>
+    <string name="accessibility_star4">Négy csillag</string>
+    <string name="accessibility_star5">Öt csillag</string>
+    <string name="accessibility_contractor">Dalok adatainak kibontása</string>
+    <string name="accessibility_back">Vissza</string>
+    <string name="accessibility_contextMenu">Dal menü</string>
+    <string name="accessibility_home">Zene főoldal</string>
+    <string name="accessibility_search">Keresés</string>
+    <string name="accessibility_search_cancel">Aktuális keresés elvetése</string>
+    <string name="accessibility_current">Aktuális dal</string>
+    <string name="accessibility_createnewplaylist">Új lejátszási lista létrehozása</string>
+    <string name="accessibility_menu">Menü</string>
+    <string name="accessibility_shop">Zenevásárlás</string>
+    <string name="ringtone_replace_alert_button">Csere</string>
+    <string name="ringtone_replace_alert_title">Csengőhang lecserélése</string>
+    <string name="ringtone_replace_alert_message">Már van ilyen nevű csengőhang. Szeretné lecserélni?</string>
+    <string name="legal_information">Jogi információk</string>
+    <string name="license_title">Nyílt forráskódú licencek</string>
+    <string name="license_error">Nem sikerült betölteni a licenceket.</string>
+    <string name="market_wrong_account" formatted="false">"A lejátszani kívánt zenét a következő fiókkal vásárolta meg: %s
+
+Jelenleg a következő fiókkal jelentkezett be a Google Play Zenékbe: %s
+
+A megvásárolt zene meghallgatásához először váltson fiókot."</string>
+    <string name="gplus_wrong_account" formatted="false">"A lejátszani kívánt zene a(z) %s fiókkal van megosztva
+
+Ön jelenleg a(z) %s fiókkal jelentkezett be a Google Play Zenék szolgáltatásba
+
+A megosztott zenék meghallgatásához először váltson fiókot."</string>
+    <string name="switch_account_button">Fiókok módosítása</string>
+    <string name="retry_button">Újra</string>
+    <string name="wait_for_item">Várakozás a zene szinkronizálására</string>
+    <string name="wait_for_item_failure">Hiba történt a zene betöltése közben.</string>
+    <string name="ringtone_title">Csengőhangszerkesztő</string>
+    <string name="edit_ringtone">Szerkesztés</string>
+    <string name="ringtone_done">KÉSZ</string>
+    <string name="set_ringtone_title">Felhasználás csengőhangként</string>
+    <string name="set_ringtone_message">Beállítás csengőhangként.</string>
+    <string name="start_edit_ringtone">Csengőhang szerkesztése</string>
+    <string name="ringtone_file_edited_name">%1$s csengőhang</string>
+    <string name="progress_dialog_saving">Mentés...</string>
+    <string name="start_handle">Kezdőpont</string>
+    <string name="resize_handle">Időtartam módosítása</string>
+    <string name="menu_reset">Visszaállítás</string>
+    <string name="save_success_message">%1$s elmentve alapértelmezett csengőhangként.</string>
+    <string name="save_failure_message">Sajnáljuk, de a(z) %1$s csengőhangként való mentése nem sikerült.</string>
+    <string name="play_error">Nem lehet lejátszani ezt a médiafájlt.</string>
+    <string name="write_error">Nem sikerült írni a fájlba.</string>
+    <string name="read_error">Nem lehet olvasni a fájlt.</string>
+    <string name="no_space_error">Nincs elég hely az SD-kártyán a fájl mentéséhez.</string>
+    <string name="bad_extension_error">Nem lehet szerkeszteni az ilyen típusú fájlokat.</string>
+    <string name="no_extension_error">Csak az .mp3 és .wav kiterjesztésű fájlokat lehet szerkeszteni.</string>
+    <string name="alert_title_success">Sikerült</string>
+    <string name="alert_title_failure">Hiba</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="store_tutorial_title">Vásárlás és lejátszás azonnal</string>
+    <string name="store_tutorial_content">A Google Playen több millió MP3 közül válogathat, amelyek között több száz ingyenes dalt is talál.</string>
+    <string name="store_tutorial_instruction">Az üzlet felkereséséhez érintse meg a bevásárlótáska ikont</string>
+</resources>

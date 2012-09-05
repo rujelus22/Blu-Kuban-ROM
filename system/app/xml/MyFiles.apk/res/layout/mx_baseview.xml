@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.app.myfiles.fileselector.views.MXBaseView android:orientation="vertical" android:id="@id/mxview" android:layout_width="fill_parent" android:layout_height="@dimen/selector_mxview_height"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <com.sec.android.app.myfiles.fileselector.views.MXBaseToolBar android:id="@id/mx_toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <com.sec.android.app.myfiles.fileselector.views.MXBaseTitleBar android:id="@id/mx_titlebar" android:background="@drawable/ms_subtitle_bg" android:layout_width="fill_parent" android:layout_height="@dimen/selector_titlebar_height" />
+        <com.sec.android.app.myfiles.fileselector.views.MXBaseContentFrame android:id="@id/mx_contentframe" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.sec.android.app.myfiles.fileselector.views.SelectorContentListView android:tag="mx_content_list" android:nextFocusDown="@id/mx_button1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:contentDescription="@string/list" />
+            <com.sec.android.app.myfiles.fileselector.views.SelectorContentListView android:tag="mx_content_detail" android:visibility="gone" android:nextFocusDown="@id/mx_button1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:contentDescription="@string/list_and_details" />
+            <com.sec.android.app.myfiles.fileselector.views.SelectorContentGridView android:tag="mx_content_grid" android:visibility="gone" android:nextFocusDown="@id/mx_button1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:numColumns="4" android:contentDescription="@string/thumbnail" />
+        </com.sec.android.app.myfiles.fileselector.views.MXBaseContentFrame>
+    </com.sec.android.app.myfiles.fileselector.views.MXBaseView>
+    <com.sec.android.app.myfiles.fileselector.views.MXBaseSoftKey android:id="@id/mxsoftkey" android:layout_width="fill_parent" android:layout_height="@dimen/selector_softkey_height" />
+</LinearLayout>

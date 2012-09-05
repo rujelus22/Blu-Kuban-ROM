@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/hangout_tile_root_view" android:background="@color/hangout_video_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <view android:id="@id/main_video" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" class="com.google.android.apps.plus.hangout.IncomingVideoView$MainVideoView" />
+    <FrameLayout android:id="@id/self_video_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/hangout_participants_info" android:background="@color/hangout_common_menu_background" android:layout_width="fill_parent" android:layout_height="@dimen/participant_tray_avatar_height" android:layout_alignParentTop="true">
+        <com.google.android.apps.plus.views.ParticipantsGalleryView android:id="@id/green_room_participants_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" plus:backgroundColor="@color/participants_gallery_translucent"
+          xmlns:plus="http://schemas.android.com/apk/res/com.google.android.apps.plus" />
+        <com.google.android.apps.plus.hangout.HangoutParticipantsGalleryView android:id="@id/hangout_participants_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" plus:backgroundColor="@color/participants_gallery_translucent" plus:emptyMessage="@string/hangout_no_participants"
+          xmlns:plus="http://schemas.android.com/apk/res/com.google.android.apps.plus" />
+        <TextView android:textColor="@android:color/white" android:layout_gravity="center" android:id="@id/participants_list_unavailable" android:padding="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/tray_avatar_height" android:text="@string/participants_list_unavailable" />
+    </FrameLayout>
+    <TextView android:textAppearance="?android:textAppearanceMediumInverse" android:textColor="@android:color/white" android:gravity="center" android:id="@id/hangout_green_room_instructions" android:background="@color/hangout_common_menu_background" android:paddingLeft="12.0dip" android:paddingTop="8.0dip" android:paddingRight="12.0dip" android:paddingBottom="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/hangout_green_room_instructions" android:layout_below="@id/hangout_participants_info" />
+    <com.google.android.apps.plus.hangout.ToastsView android:id="@id/toasts_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/overlay_menu" android:background="@color/hangout_common_menu_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <FrameLayout android:layout_gravity="center" android:id="@id/hangout_launch_join_panel" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginBottom="15.0dip">
+            <Button android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="@android:color/white" android:layout_gravity="center" android:id="@id/hangout_launch_join_button" android:background="@drawable/green_button" android:layout_width="200.0dip" android:layout_height="42.0dip" android:text="@string/hangout_launch_join" />
+            <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ProgressBar android:id="@id/hangout_launch_progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" style="@android:style/Widget.ProgressBar.Small" />
+                <TextView android:textAppearance="?android:textAppearanceSmallInverse" android:id="@id/hangout_launch_progress_text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </FrameLayout>
+        <com.google.android.apps.plus.hangout.FilmStripView android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/film_strip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/micro_kind_max_dimension" />
+        <include layout="@layout/hangout_common_menu" />
+    </LinearLayout>
+</RelativeLayout>

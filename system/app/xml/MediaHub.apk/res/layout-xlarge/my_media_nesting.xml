@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mh_bg_684_glow" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/tab_compromise_media_list_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/common_noitem_view" />
+        <RelativeLayout android:id="@id/rl_mainlist" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/common_list_view" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <include layout="@layout/common_progress_black" />
+</RelativeLayout>

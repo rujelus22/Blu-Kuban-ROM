@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="use_tabbed_lists_for_top_level">false</bool>
+    <bool name="shop_tutorial_enabled">false</bool>
+</resources>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Not connected</string>
+    <string name="authentication_failure_no_network">"You'll be connected to the Internet to authenticate your Music account."</string>
+    <string name="authentication_failure">Not authenticated</string>
+    <string name="authentication_failure_error">"Couldn't authenticate your Music account."</string>
+    <string name="positive_button_text">OK</string>
+    <string name="negative_button_text">Cancel</string>
+    <string name="save_button_text">Save</string>
+    <string name="not_save_button_text">"Don't save"</string>
+    <string name="shuffle_all">Shuffle all</string>
+    <string name="play_all">Play all</string>
+    <string name="songs_all">All songs</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="library_options">Display options</string>
+    <string name="manage_music">Make available offline</string>
+    <string name="available_offline">Available offline</string>
+    <string name="hide_labels">Hide labels</string>
+    <string name="show_labels">Show labels</string>
+    <string name="options">Options</string>
+    <string name="shop_artist">Shop for artist</string>
+    <string name="show_offline_music_only">Offline music only</string>
+    <string name="show_all_music">Show all music</string>
+    <string name="new_playlist_title">Playlist name</string>
+    <string name="add_to_playlist_title">Playlist name</string>
+    <string name="rename_playlist_title">Rename \"%s\" to</string>
+    <string name="search_section_header_artists">ARTISTS</string>
+    <string name="search_section_header_albums">ALBUMS</string>
+    <string name="search_section_header_songs">SONGS</string>
+    <string name="search_section_header_playlists">PLAYLISTS</string>
+    <string name="shuffle_all_songs">Shuffle all</string>
+    <string name="stream_settings">Music settings</string>
+    <string name="refresh_title">Refresh</string>
+    <string name="refresh_summary">Refresh music from Google Play</string>
+    <string name="account_settings_title">Google Play account</string>
+    <string name="no_account_selected_summary">Touch to choose account</string>
+    <string name="account_selected_summary">Connect to Google Play using %s</string>
+    <string name="hide_when_not_connected_title">Hide unavailable music</string>
+    <string name="hide_when_not_connected_summary">Show only available music when offline</string>
+    <string name="stream_only_on_wifi_title">Stream via Wi-Fi only</string>
+    <string name="stream_only_on_wifi_summary">Stream music only when connected via Wi-Fi</string>
+    <string name="stream_only_hq_title">Stream high quality</string>
+    <string name="stream_only_hq_summary">Always stream music at the highest quality</string>
+    <string name="lock_screen_controls_title">Lock screen controls</string>
+    <string name="lock_screen_controls_summary">Show music controls on top of the lock screen</string>
+    <string name="offlinedl_only_on_wifi_title">Download via Wi-Fi only</string>
+    <string name="offlinedl_only_on_wifi_summary">Download music for availability offline via Wi-Fi only</string>
+    <string name="cache_streamed_title">Cache music</string>
+    <string name="cache_streamed_summary">Temporarily store streamed music</string>
+    <string name="download_queue_title">Download queue</string>
+    <string name="download_queue_summary">Show the songs currently being downloaded</string>
+    <string name="help_title">Help</string>
+    <string name="show_no_downloads_title">No songs queued for download</string>
+    <string name="music_version_title">Music version</string>
+    <string name="music_version_summary">Unknown version</string>
+    <string name="nowplaying_title">Now playing</string>
+    <string name="artists_title">Artists</string>
+    <string name="albums_title">Albums</string>
+    <string name="genres_title">Genres</string>
+    <string name="tracks_title">Songs</string>
+    <string name="playlists_title">Playlists</string>
+    <string name="recent_title">Recent</string>
+    <string name="search_title">Search</string>
+    <string name="no_tracks_title">No songs</string>
+    <string name="delete_playlist_menu">Delete</string>
+    <string name="edit_playlist_menu">Edit</string>
+    <string name="rename_playlist_menu">Rename</string>
+    <string name="playlist_delete_confirmation">Do you want to delete playlist \"%s\"?</string>
+    <string name="delete_playlist_button_confirm">Delete</string>
+    <string name="playlist_deleted_message">Playlist deleted.</string>
+    <string name="playlist_created_message">Playlist \"%s\" created.</string>
+    <string name="playlist_renamed_message">Playlist renamed \"%s\".</string>
+    <string name="recentlyadded">Last added</string>
+    <string name="recentlyadded_title">Last added</string>
+    <string name="all_songs_list">All songs</string>
+    <string name="all_songs_list_title">All songs</string>
+    <string name="storemusic_list">Free and purchased</string>
+    <string name="storemusic_list_title">Free and purchased</string>
+    <string name="freemusic_list">Free songs</string>
+    <string name="freemusic_list_title">Free songs</string>
+    <string name="thumbsup_list">Thumbs up</string>
+    <string name="thumbsup_list_title">Thumbs up</string>
+    <string name="unknown_artist_name">Unknown artist</string>
+    <string name="unknown_album_name">Unknown album</string>
+    <string name="unknown_playlist_name">Unknown playlist</string>
+    <string name="shuffle_on_notif">Shuffle is on.</string>
+    <string name="shuffle_off_notif">Shuffle is off.</string>
+    <string name="repeat_off_notif">Repeat is off.</string>
+    <string name="repeat_current_notif">Repeating current song.</string>
+    <string name="repeat_all_notif">Repeating all songs.</string>
+    <string name="ringtone_menu">Use as ringtone</string>
+    <string name="ringtone_set">\"%s\" set as ringtone.</string>
+    <string name="ringtone_set_failed">"Couldn't create ringtone."</string>
+    <string name="ringtone_needs_download">Ringtone will be set when downloaded.</string>
+    <string name="play_selection">Play</string>
+    <string name="add_to_playlist">Add to playlist</string>
+    <string name="rename_playlist_menu_item">Rename</string>
+    <string name="add_to_playlist_selector_title">Add to playlist</string>
+    <string name="queue">Current playlist</string>
+    <string name="new_playlist_for_content">New playlist</string>
+    <string name="new_empty_playlist">New playlist</string>
+    <string name="new_playlist_name_template">Playlist %d</string>
+    <string name="removed_from_playlist">\"%1$s\" removed from playlist.</string>
+    <string name="playlist_too_many_songs">Too many songs. Limit is %d per playlist.</string>
+    <string name="emptyplaylist">Selected playlist is empty.</string>
+    <string name="playlist_edit_label">NAME</string>
+    <string name="create_playlist_create_text">OK</string>
+    <string name="rename_playlist_rename_text">Rename</string>
+    <string name="service_start_error_title">Playback problem</string>
+    <string name="service_start_error_msg">"Couldn't play the song."</string>
+    <string name="service_start_error_button">OK</string>
+    <string name="weekpicker_set">Done</string>
+    <string name="weekpicker_title">Set time</string>
+    <string name="musicbrowserlabel">Play Music</string>
+    <string name="musicshortcutlabel">Music playlist</string>
+    <string name="mediaplaybacklabel">Music</string>
+    <string name="app_name">Google Play Music</string>
+    <string name="playback_failed">"Couldn't play the track that you requested."</string>
+    <string name="cancel">Cancel</string>
+    <string name="remove_from_playlist">Remove from playlist</string>
+    <string name="streamloadingtext">Connecting to %s…</string>
+    <string name="search_hint">Search music</string>
+    <string name="working_artists">Artists…</string>
+    <string name="working_albums">Albums…</string>
+    <string name="loading">Loading…</string>
+    <string name="sort_by_track">Tracks</string>
+    <string name="music_picker_title">Choose music track</string>
+    <string name="fail_to_start_stream">"Couldn't play the stream that you requested."</string>
+    <string name="search_settings_description">Artists, albums and tracks</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">Music</string>
+    <string name="music_library">Music library</string>
+    <string name="playlist_label">Playlist</string>
+    <string name="faux_art_all_songs_label">All songs</string>
+    <string name="faux_art_playlist_label">Playlist</string>
+    <string name="faux_art_playlist_instant_mix_label">Instant mix</string>
+    <string name="faux_art_playlist_auto_playlist_label">Auto playlist</string>
+    <string name="buffering">Buffering...</string>
+    <string name="keep_on_phone">Available offline</string>
+    <string name="no_music_add_music_header">WAYS TO ADD MUSIC</string>
+    <string name="no_music_shop_body">Browse millions of songs, including hundreds of free tracks.</string>
+    <string name="no_music_shop_button">SHOP</string>
+    <string name="no_music_upload_body">Upload 20,000 songs to Google Play free.</string>
+    <string name="no_music_upload_button">LEARN MORE</string>
+    <string name="no_music_usb_copy_body">Copy music to your phone with a USB cable.</string>
+    <string name="no_music_usb_copy_button">LEARN MORE</string>
+    <string name="no_music_heading">Music library is empty</string>
+    <string name="no_music_setup_uploader_heading">Stream your music wirelessly.</string>
+    <string name="no_music_setup_uploader_body">You can stream your personal music collection with Google Play Music.</string>
+    <string name="no_music_setup_usb_heading">Copy music to your device</string>
+    <string name="no_music_setup_usb_body">Copy music to your phone with a USB cable.</string>
+    <string name="no_local_music_heading">No offline music</string>
+    <string name="no_local_music_body">"You're in offline-only mode, so only music stored on your device is displayed.
+
+To select the music that you want to store on your device, choose "<b>Make available offline</b> from the menu.</string>
+    <string name="no_music_learn_more">Learn more</string>
+    <string name="no_playlists_heading">"You don't have any playlists in your library."</string>
+    <string name="no_playlists_body">"You can create a playlist by going to the Songs list view and touching Add to Playlist from a song's context menu."</string>
+    <string name="no_music_syncing_heading">Music is currently syncing.</string>
+    <string name="no_music_syncing_body">Music is currently being synced from the server and should appear momentarily.</string>
+    <string name="no_music_scanning_heading">Scanning for music on the device.</string>
+    <string name="no_music_scanning_body">The device is being scanned to find music.</string>
+    <string name="sync_disabled">You need to set up syncing before music will appear from Google Play Music. Do you want to do that now?</string>
+    <string name="tutorial_welcome_heading">Welcome to Google Play Music</string>
+    <string name="tutorial_welcome_body">"Upload up to 20,000 songs from your personal music collection.
+
+Instantly play music purchased from Google Play.
+
+Listen to all your music on the web or any phone or tablet. Easily download to play your music offline.
+
+All for free."</string>
+    <string name="tutorial_select_account_heading">Select an account</string>
+    <string name="tutorial_select_account_body">"Link your account to Google Play Music so that you can play your music library and store purchases.
+
+Which account do you want to use?"</string>
+    <string name="tutorial_sign_in">Link your account to Google Play Music so that you can play your music library and store purchases.</string>
+    <string name="tutorial_free_music_heading">Get free music</string>
+    <string name="tutorial_free_music_body">Browse hundreds of free tracks on Google Play by some of the biggest names in rock, hip-hop, and more.</string>
+    <string name="tutorial_account_heading">Welcome</string>
+    <string name="tutorial_account_body">"You're invited to Google Play Music. You can use this player to instantly access the songs you add to Google Play Music and other music you have copied to your Android device."</string>
+    <string name="tutorial_account_list_header">Start by choosing a Google Account to link this player to Google Play Music:</string>
+    <string name="tutorial_done_heading">Enjoy</string>
+    <string name="tutorial_done_body">"The Music player is now linked to your Google Account.
+
+If you've already added your music collection to Google Play Music, it will begin appearing on this player.
+
+If you still need to add your music to Google Play Music, get started by visiting our website from your computer:"</string>
+    <string name="tutorial_skip">Skip</string>
+    <string name="tutorial_next">Next</string>
+    <string name="tutorial_done">Done</string>
+    <string name="tutorial_add_account">Add account</string>
+    <string name="tutorial_free_music">Get free songs</string>
+    <string name="spinner_carousel">Recent</string>
+    <string name="spinner_album">Albums</string>
+    <string name="spinner_artist">Artists</string>
+    <string name="spinner_songs">Songs</string>
+    <string name="spinner_playlists">Playlists</string>
+    <string name="spinner_genres">Genres</string>
+    <string name="sort_by_title">Sort A-Z</string>
+    <string name="sort_by_artist">Sort by artist</string>
+    <string name="sort_by_album">Sort by album</string>
+    <string name="sort_by_date">Sort by date added</string>
+    <string name="more_by_artist">More by artist</string>
+    <string name="make_available_offline">Make available offline</string>
+    <string name="search_web">Search web</string>
+    <string name="manage_done">Finished</string>
+    <string name="too_many_items_title">Too many items</string>
+    <string name="too_many_items_body">"There isn't enough space to store all the items that you selected. Deselect some items to make space."</string>
+    <string name="save_manage_music_change_title">Unsaved changes</string>
+    <string name="save_manage_music_change_body">Do you want to make the selected music available offline?</string>
+    <string name="not_all_items_can_be_kept_body">"There isn't enough space to store all the items that you selected. Not all these items will be downloaded."</string>
+    <string name="free_space_overfull">Storage full (%s over)</string>
+    <string name="free_space">%s FREE</string>
+    <string name="stream_error_no_space_available">No space available</string>
+    <string name="stream_error_only_on_wifi">"You'll need to be on a Wi-Fi network to play this song."</string>
+    <string name="stream_error_no_connection">You need to be online to play this song.</string>
+    <string name="stream_error_unauthorized">Incorrect username or password.</string>
+    <string name="stream_error_another_stream_being_played">Music paused because you are listening to your collection on another device.</string>
+    <string name="stream_error_rate_limit_reached">"Music is temporarily unavailable. Make sure that you're playing your collection on only one device at a time."</string>
+    <string name="stream_error_device_not_authorized">"Your music library can be used with up to 10 devices. You'll need to deauthorise one of your devices before adding another."</string>
+    <string name="stream_error_learn_more">Learn more</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Music paused.</string>
+    <string name="stream_error_rate_limit_reached_short">Music temporarily unavailable.</string>
+    <string name="stream_error_device_not_authorized_short">Too many devices used with music library.</string>
+    <string name="hide_now_playing_bar">Hide now-playing bar</string>
+    <string name="show_now_playing_bar">Show now-playing bar</string>
+    <string name="show_options">Show options</string>
+    <string name="hide_options">Hide options</string>
+    <string name="all_songs_in_genre">"All songs from genre
+%s"</string>
+    <string name="preview_header">SHARED ON GOOGLE+</string>
+    <string name="shared_playback_full">FREE FULL PLAY</string>
+    <string name="shared_playback_partial">SAMPLE</string>
+    <string name="btn_buy">Buy</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Making music available offline…</string>
+    <string name="notification_downloading_when_on_wifi">Songs marked as offline will load once you are connected to a Wi-Fi network.</string>
+    <string name="notification_downloading_excessive_errors">"Can't download songs right now. Check your Internet connection."</string>
+    <string name="notification_downloading_done">Selected songs are now available offline.</string>
+    <string name="notification_ticker_ringtone_set">Ringtone set to \"%s\".</string>
+    <string name="notification_title_ringtone_set">Ringtone set to \"%s\"</string>
+    <string name="notification_content_ringtone_set">Touch to edit this ringtone.</string>
+    <string name="notification_ticker_ringtone_set_failed">"Couldn't create ringtone."</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_songcount">%d new songs</string>
+    <string name="notification_newsongs_subtitle">Added to Google Play Music</string>
+    <string name="carousel_label_shuffle_all">Shuffle all</string>
+    <string name="song_label">SONG</string>
+    <string name="artist_label">ARTIST</string>
+    <string name="album_label">ALBUM</string>
+    <string name="effectspanel">Sound effects</string>
+    <string name="menu_make_instant_mix">Make instant mix</string>
+    <string name="instant_mix_default_name">%s Mix</string>
+    <string name="creating_instant_mix">"Adding an instant mix
+to playlists."</string>
+    <string name="creating_instant_mix_with_seed">"Adding an instant mix
+to playlists, based on
+%s."</string>
+    <string name="create_instant_mix_failed">"Couldn't create instant mix. Try again."</string>
+    <string name="create_instant_mix_failed_insufficient_results">"There weren't enough similar songs in your collection to create an instant mix from \"%s\". Try making an instant mix from a different song."</string>
+    <string name="create_instant_mix_sync_timeout">"The instant mix was
+created and will appear in
+your playlists shortly."</string>
+    <string name="create_instant_mix_btn_ok">OK</string>
+    <string name="delete">Delete</string>
+    <string name="confirm_delete_local_only">Do you want to delete \"%s\"?</string>
+    <string name="confirm_delete_has_remote">\"%s\" has been sideloaded and uploaded to Google Play Music. Only the sideloaded items will be deleted. Do you want to delete them?</string>
+    <string name="waiting_share">Sharing %s</string>
+    <string name="share">Share</string>
+    <string name="share_failure">There was a problem sharing your music.</string>
+    <string name="share_google_plus_footer">Sharing enables a free full play for people in your circles</string>
+    <string name="accessibility_play">Play</string>
+    <string name="accessibility_pause">Pause</string>
+    <string name="accessibility_stop">Stop</string>
+    <string name="accessibility_next">Next</string>
+    <string name="accessibility_prev">Previous</string>
+    <string name="accessibility_shuffle">Shuffle</string>
+    <string name="accessibility_repeat">Repeat</string>
+    <string name="accessibility_thumbsUp">Thumbs up</string>
+    <string name="accessibility_thumbsDown">Thumbs down</string>
+    <string name="accessibility_star1">One star</string>
+    <string name="accessibility_star2">Two stars</string>
+    <string name="accessibility_star3">Three stars</string>
+    <string name="accessibility_star4">Four stars</string>
+    <string name="accessibility_star5">Five stars</string>
+    <string name="accessibility_contractor">Expand song information</string>
+    <string name="accessibility_back">Back</string>
+    <string name="accessibility_contextMenu">Song menu</string>
+    <string name="accessibility_home">Music home</string>
+    <string name="accessibility_search">Search</string>
+    <string name="accessibility_search_cancel">Cancel current search</string>
+    <string name="accessibility_current">Current song</string>
+    <string name="accessibility_createnewplaylist">Create new playlist</string>
+    <string name="accessibility_menu">Menu</string>
+    <string name="accessibility_shop">Shop for music</string>
+    <string name="ringtone_replace_alert_button">Replace</string>
+    <string name="ringtone_replace_alert_title">Replace ringtone</string>
+    <string name="ringtone_replace_alert_message">A ringtone with this name already exists. Do you want to replace it?</string>
+    <string name="legal_information">Legal information</string>
+    <string name="license_title">Open-source licences</string>
+    <string name="license_error">"Couldn't load licenses."</string>
+    <string name="market_wrong_account" formatted="false">"The music that you're trying to play was purchased with the account %s
+
+You're currently signed in to Google Music with the account %s
+
+To listen to your purchase, switch accounts first."</string>
+    <string name="gplus_wrong_account" formatted="false">"The music that you're trying to play was shared with the account %s
+
+You're currently signed in to Google Play Music with the account %s
+
+To listen to your shared music, switch accounts first."</string>
+    <string name="switch_account_button">Change accounts</string>
+    <string name="retry_button">Try again</string>
+    <string name="wait_for_item">Waiting for music to sync</string>
+    <string name="wait_for_item_failure">There was a problem loading your music.</string>
+    <string name="ringtone_title">Review ringtone</string>
+    <string name="edit_ringtone">Edit ringtone</string>
+    <string name="ringtone_done">DONE</string>
+    <string name="set_ringtone_title">Use as ringtone</string>
+    <string name="set_ringtone_message">Set as ringtone.</string>
+    <string name="start_edit_ringtone">Edit ringtone</string>
+    <string name="ringtone_file_edited_name">Clip of %1$s</string>
+    <string name="progress_dialog_saving">Saving…</string>
+    <string name="start_handle">Start handle</string>
+    <string name="resize_handle">Resize handle</string>
+    <string name="menu_reset">Reset</string>
+    <string name="save_success_message">%1$s saved as default ringtone.</string>
+    <string name="save_failure_message">Sorry, %1$s failed to save as ringtone.</string>
+    <string name="play_error">"Couldn't play this media file."</string>
+    <string name="write_error">"Couldn't write to the file."</string>
+    <string name="read_error">"Couldn't read the file."</string>
+    <string name="no_space_error">"There's not enough space on your SD card to save this file."</string>
+    <string name="bad_extension_error">"Can't edit files of this type."</string>
+    <string name="no_extension_error">"Can't edit a file that doesn't have an .mp3 or .wav extension."</string>
+    <string name="alert_title_success">Success</string>
+    <string name="alert_title_failure">Error</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="store_tutorial_title">Buy and play instantly</string>
+    <string name="store_tutorial_content">Shop for millions of MP3 tracks in Google Play, including hundreds of free songs.</string>
+    <string name="store_tutorial_instruction">To visit the store, tap the shopping bag icon</string>
+</resources>

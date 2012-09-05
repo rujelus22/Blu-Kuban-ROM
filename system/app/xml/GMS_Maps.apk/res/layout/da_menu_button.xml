@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/da_menuButtonLayout" android:background="@drawable/bottom_panel_gray" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentBottom="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="@dimen/da_status_bar_height" android:layout_marginLeft="-1.0px" android:layout_marginRight="-1.0px" android:src="@drawable/vertical_separator" android:scaleType="fitXY" />
+    <ImageView android:gravity="center" android:layout_gravity="bottom" android:id="@id/da_menuButton" android:background="@drawable/da_menu_button" android:paddingLeft="@dimen/da_status_bar_menu_btn_side_padding" android:paddingTop="@dimen/da_status_bar_top_padding" android:paddingRight="@dimen/da_status_bar_menu_btn_side_padding" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/da_onscreen_menu" android:onClick="onMenuButtonClick" />
+</LinearLayout>

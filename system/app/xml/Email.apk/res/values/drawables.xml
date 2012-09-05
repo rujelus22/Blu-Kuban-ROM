@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="text_color_black">#ff000000</item>
+    <item type="drawable" name="text_color_white">#ffffffff</item>
+    <item type="drawable" name="translucent_background">#80000000</item>
+    <item type="drawable" name="APKTOOL_DUMMY_000d">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_000e">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0015">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0075">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0087">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0088">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_009b">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00cf">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00d0">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00d4">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00d6">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_015d">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_015e">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0184">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_01e6">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_01f6">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0275">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0276">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0277">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_027c">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_027f">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0292">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0293">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0295">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0296">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_029a">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_03b9">false</item>
+</resources>

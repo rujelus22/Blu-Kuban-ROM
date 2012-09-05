@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="@dimen/selector_mxview_height" android:drawSelectorOnTop="false" android:divider="@color/twcolor101" android:dividerHeight="1.0px" android:layout_weight="1.0" />
+    <com.sec.android.app.myfiles.BtVisibilityEmptyView android:id="@id/emptyview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.sec.android.app.myfiles.SoftKeyLayout android:id="@id/softkey" android:layout_width="fill_parent" android:layout_height="54.669983dip" android:layout_alignParentBottom="true" />
+</LinearLayout>

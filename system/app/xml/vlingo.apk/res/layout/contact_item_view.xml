@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:paddingLeft="5.0dip" android:paddingTop="10.0dip" android:paddingRight="15.0dip" android:paddingBottom="10.0dip" android:descendantFocusability="beforeDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <QuickContactBadge android:id="@id/image_contact" android:background="@drawable/quickcontact_badge_small" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginRight="5.0dip" />
+        <TextView android:textSize="20.0dip" android:textColor="#ffffffff" android:id="@id/text_contact_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/auto_dial_dialog_contact_name" android:layout_toRightOf="@id/image_contact" />
+        <TextView android:textStyle="bold" android:id="@id/text_contact_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:text="@string/type" android:layout_toRightOf="@id/image_contact" android:layout_below="@id/text_contact_name" />
+        <TextView android:id="@id/text_contact_address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(xxx) xxx-xxxx" android:layout_toRightOf="@id/text_contact_type" android:layout_below="@id/text_contact_name" />
+        <ImageView android:id="@id/image_star" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:src="@drawable/btn_star_big_on" android:layout_toLeftOf="@id/image_action" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/image_action" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/call_contact" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

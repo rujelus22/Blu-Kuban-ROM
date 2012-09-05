@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voice_effects_entries">
+        <item>보통 음성</item>
+        <item>낮은 톤 음성</item>
+        <item>높은 톤 음성</item>
+        <item>가는 음성</item>
+        <item>굵은 음성</item>
+        <item>로봇 음성</item>
+        <item>헬륨가스 효과</item>
+    </string-array>
+</resources>

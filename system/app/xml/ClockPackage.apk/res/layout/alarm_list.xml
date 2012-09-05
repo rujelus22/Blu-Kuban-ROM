@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/world_clock_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.app.clockpackage.alarm.CustomListView android:id="@id/alarm_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:dividerHeight="-1.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <LinearLayout android:orientation="vertical" android:id="@id/txtTapToAdd_noItemAlarm" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="64.0dip">
+            <Button android:textSize="22.0dip" android:textColor="@drawable/style_txt_color" android:gravity="left|center" android:id="@id/create_alarm_noItemAlarm" android:background="@drawable/style_select_all" android:paddingLeft="55.329987dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="64.0dip" android:text="@string/tapcreat" />
+            <ImageView android:layout_gravity="left|center" android:background="@drawable/btn_create_ss" android:layout_width="38.0dip" android:layout_height="48.0dip" android:layout_marginLeft="7.3299866dip" />
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/txtTapToNoItem_noItemAlarm" android:paddingTop="154.6dip" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/NoItemImage_noItemAlarm" android:background="@drawable/noitems_noalarm" android:layout_width="116.0dip" android:layout_height="116.0dip" />
+        <TextView android:textSize="22.0dip" android:textColor="#4cffffff" android:id="@id/NoItemText_noItemAlarm" android:layout_width="wrap_content" android:layout_height="30.0dip" android:text="@string/noitem" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:id="@id/ll_search_box" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="6.669983dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:id="@id/et_search" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/enter_text_to_search" android:layout_weight="1.0" android:inputType="text" android:imeOptions="actionSearch" />
+    <ImageButton android:id="@id/iv_search" android:layout_width="42.669983dip" android:layout_height="40.669983dip" android:src="@drawable/ic_search_api_holo_light" />
+    <ImageButton android:id="@id/btn_search_category" android:layout_width="43.329987dip" android:layout_height="40.669983dip" android:src="@drawable/selector_btn_search_dialog" />
+</LinearLayout>

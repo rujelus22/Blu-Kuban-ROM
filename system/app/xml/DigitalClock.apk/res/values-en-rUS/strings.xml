@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"Digital
+clock"</string>
+    <string name="hour">Hour</string>
+    <string name="minute">Minute</string>
+    <string name="day_of_week_medium_sunday">Sun</string>
+    <string name="day_of_week_medium_monday">Mon</string>
+    <string name="day_of_week_medium_tuesday">Tue</string>
+    <string name="day_of_week_medium_wednesday">Wed</string>
+    <string name="day_of_week_medium_thursday">Thu</string>
+    <string name="day_of_week_medium_friday">Fri</string>
+    <string name="day_of_week_medium_saturday">Sat</string>
+</resources>

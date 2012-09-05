@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="#88ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center" android:id="@id/layout_progress" android:layout_width="fill_parent" android:layout_height="226.0px">
+                <ProgressBar android:id="@id/progressbar_more" android:layout_width="72.0px" android:layout_height="72.0px" android:indeterminateDrawable="@drawable/spinner_photo" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/layout_image_frame" android:background="@color/color_palette_01" android:padding="2.0px" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0px" android:layout_marginBottom="10.0px" android:layout_weight="1.0">
+                <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <LinearLayout android:id="@id/layout_video_frame" android:background="@drawable/hub_img_border" android:padding="1.0px" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <com.sec.android.socialhub.view.AutoResizeImageEx android:id="@id/img_attached" android:padding="1.0px" android:layout_width="wrap_content" android:layout_height="206.0px" android:src="@drawable/noitems_text_based" />
+                    </LinearLayout>
+                    <ImageView android:layout_gravity="bottom|left|center" android:id="@id/img_video_icon" android:background="@drawable/msg_icon_03" android:layout_width="35.0px" android:layout_height="35.0px" />
+                </FrameLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0">
+                <com.sec.android.socialhub.view.EditTextEx android:textSize="24.0px" android:gravity="center_vertical" android:id="@id/edit_contents" android:background="@drawable/textfield_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/enter_status_hint" android:minLines="1" android:inputType="textCapSentences|textAutoCorrect|textMultiLine" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

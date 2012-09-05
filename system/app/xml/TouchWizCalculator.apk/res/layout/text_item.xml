@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/text_size_item" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0dip" android:textColor="@drawable/dialog_text_selector" android:gravity="center_vertical" android:id="@id/text_item_text" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="64.0dip" android:layout_marginLeft="6.669983dip" android:text="@string/Text_size_small" android:layout_centerVertical="true" />
+    <RadioButton android:id="@id/text_size_item_radio" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.669983dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

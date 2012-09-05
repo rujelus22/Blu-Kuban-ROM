@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Recortar</string>
+    <string name="trim_label">Recortar</string>
+    <string name="title_trim">Recortar</string>
+    <string name="title_newFilename">Introducir nombre de archivo nuevo</string>
+    <string name="button_trim">Recortar</string>
+    <string name="button_play">Reproducir</string>
+    <string name="button_preview">Vista previa</string>
+    <string name="button_pause">Pausar</string>
+    <string name="button_cancel">Canc.</string>
+    <string name="button_undo">Deshacer</string>
+    <string name="menu_originalName">Recortar video original</string>
+    <string name="menu_newName">Recortar como video nuevo</string>
+    <string name="message_trimming">Recortando video...</string>
+    <string name="message_unexpectedError">Error inesperado</string>
+    <string name="message_unexpectedData">Formato de entrada inválido</string>
+    <string name="message_fileNotExist">El archivo no existe</string>
+    <string name="message_alreadyExistsFile">Ya existe</string>
+    <string name="message_unsupportedFile">Tipo de medio no compatible</string>
+    <string name="message_tooSmallFile">Archivo demasiado pequeño</string>
+    <string name="message_tooLargeFile">El archivo es demasiado grande</string>
+    <string name="message_shortDuration">La duración debe superar 1 segundo</string>
+    <string name="message_notEnoughSpace">No hay espacio suficiente</string>
+    <string name="message_notResponding">La aplicación no responde</string>
+    <string name="message_trimming_success">Recortado: %s</string>
+    <string name="message_warning_code">Advertencia</string>
+    <string name="message_error_code">Error</string>
+    <string name="message_trimmingCancel">Error al recortar</string>
+    <string name="message_trimmingFail">Error al recortar</string>
+    <string name="message_securityException">No se puede editar. Archivo protegido.</string>
+    <string name="message_invalidCharacter">Carácter no válido</string>
+    <string name="message_nameEmpty">Nombre vacío</string>
+</resources>

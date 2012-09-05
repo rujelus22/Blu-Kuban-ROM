@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="downloading_books">
+        <item quantity="other">%1$d z %2$d kníh</item>
+        <item quantity="one">Jedna kniha</item>
+    </plurals>
+    <plurals name="concurrent_access_denied_message">
+        <item quantity="other">Túto knihu je možné súčasne čítať maximálne na %1$d zariadeniach alebo počítačoch a tento limit ste dosiahli. Zatvorte túto knihu v iných čítačkách, počkajte niekoľko minút a skúste to znova.</item>
+        <item quantity="one">Túto knihu je možné súčasne čítať maximálne na jednom zariadení alebo počítači a tento limit ste dosiahli. Zatvorte túto knihu v inej čítačke, počkajte niekoľko minút a skúste to znova.</item>
+    </plurals>
+</resources>

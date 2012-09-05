@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s፣ %2$s</string>
+    <string name="no_network_connection">አልተገናኘም</string>
+    <string name="authentication_failure_no_network">መለያህን ለሙዚቃ ለማረጋገጥ ወደ በይነመረብ መገናኘት ያስፈልግሃል።</string>
+    <string name="authentication_failure">አልተረጋገጠም</string>
+    <string name="authentication_failure_error">የሙዚቃ መለያህን ማረጋገጥ አልተቻለም፡፡</string>
+    <string name="positive_button_text">እሺ</string>
+    <string name="negative_button_text">ይቅር</string>
+    <string name="save_button_text">አስቀምጥ</string>
+    <string name="not_save_button_text">አታስቀምጥ</string>
+    <string name="shuffle_all">ሁሉንም በውዝ</string>
+    <string name="play_all">ሁሉንም አጫውት</string>
+    <string name="songs_all">ሁሉም ዘፈኖች</string>
+    <string name="shuffle">በውዝ</string>
+    <string name="search">ፍለጋ</string>
+    <string name="settings">ቅንብሮች</string>
+    <string name="library_options">ማሳያ አማራጮች</string>
+    <string name="manage_music">ከመስመር ውጪ እንዲገኝአድርግ</string>
+    <string name="available_offline">ከመስመር ውጪ አለ</string>
+    <string name="hide_labels">መሰየሚያዎችን ደብቅ</string>
+    <string name="show_labels">መሰየሚያዎችን አሳይ</string>
+    <string name="options">አማራጮች</string>
+    <string name="shop_artist">ለአርቲስት ሸምት</string>
+    <string name="show_offline_music_only">ከመስመር ውጪ ዘፈኖች ብቻ</string>
+    <string name="show_all_music">ሁሉንም ሙዚቃ አሳይ</string>
+    <string name="new_playlist_title">ጨዋታዝርዝር ስም፡</string>
+    <string name="add_to_playlist_title">ጨዋታዝርዝር ስም፡</string>
+    <string name="rename_playlist_title">\"%s\" ወደ ድጋሚ ሰይም</string>
+    <string name="search_section_header_artists">አርቲስቶች</string>
+    <string name="search_section_header_albums">አልበሞች</string>
+    <string name="search_section_header_songs">ዘፈኖች</string>
+    <string name="search_section_header_playlists">የጨዋታዝርዝሮች</string>
+    <string name="shuffle_all_songs">ሁሉንም በውዝ</string>
+    <string name="stream_settings">የሙዚቃ ቅንጅቶች</string>
+    <string name="refresh_title">አድስ</string>
+    <string name="refresh_summary">ሙዚቃ ከGoogle Play አድስ</string>
+    <string name="account_settings_title">የGoogle Play መለያ</string>
+    <string name="no_account_selected_summary">መለያ ለመምረጥ ንካ</string>
+    <string name="account_selected_summary">%s ተጠቅመህ ከGoogle Play ጋር ተገናኝ</string>
+    <string name="hide_when_not_connected_title">የማይገኝ ሙዚቃ ደብቅ</string>
+    <string name="hide_when_not_connected_summary">ከመስመር ውጪ ሲሆን የሚገኝ ሙዚቃ ብቻ አሳይ</string>
+    <string name="stream_only_on_wifi_title">በWi-Fi በኩል ብቻ ልቀቅ</string>
+    <string name="stream_only_on_wifi_summary">በWi-Fi ሲያያዝ ብቻ ሙዚቃ ልቀቅ</string>
+    <string name="stream_only_hq_title">ከፍተኛ ጥራት ልቀቅ</string>
+    <string name="stream_only_hq_summary">ሁልጊዜ በከፍተኛ ጥራት ልቀቅ።</string>
+    <string name="lock_screen_controls_title">የማያመቆጣጠሪያዎች ቆልፍ</string>
+    <string name="lock_screen_controls_summary">በማያ ቆልፍ ላይ የሙዚቃ መቆጣጠሪያዎች አሳይ</string>
+    <string name="offlinedl_only_on_wifi_title">በWi-Fi በኩል ብቻ አውርድ</string>
+    <string name="offlinedl_only_on_wifi_summary">ከመስመር ውጪ ለማግኘት በWi-Fi በኩል ብቻ ሙዚቃ አውርድ</string>
+    <string name="cache_streamed_title">ሙዚቃ መሸጎጫ</string>
+    <string name="cache_streamed_summary">በጊዜያዊነት የተለቀቀ ሙዚቃ አከማች</string>
+    <string name="download_queue_title">የአውርድ ወረፋ</string>
+    <string name="download_queue_summary">በቅርቡ የወረዱትን ዘፈኖች አሳይ</string>
+    <string name="help_title">እገዛ</string>
+    <string name="show_no_downloads_title">ምንም ዘፈኖች ለመውረድ ወረፋ አልያዙም</string>
+    <string name="music_version_title">የሙዚቃ ሥሪት</string>
+    <string name="music_version_summary">ያልታወቀ ሥሪት</string>
+    <string name="nowplaying_title">አሁን እየተጫወተ ያለ</string>
+    <string name="artists_title">አርቲስቶች</string>
+    <string name="albums_title">አልበሞች</string>
+    <string name="genres_title">ዠነር</string>
+    <string name="tracks_title">ዘፈኖች</string>
+    <string name="playlists_title">የጨዋታዝርዝሮች</string>
+    <string name="recent_title">የቅርብ ጊዜ</string>
+    <string name="search_title">" ፈልግ"</string>
+    <string name="no_tracks_title">ምንም ዘፈኖች የሉም</string>
+    <string name="delete_playlist_menu">ሰርዝ</string>
+    <string name="edit_playlist_menu">አርትዕ</string>
+    <string name="rename_playlist_menu">እንደገና ሰይም</string>
+    <string name="playlist_delete_confirmation">የአጫዋች ዝርዝር \"%s\"መሰረዝ ትፈልጋለህ?</string>
+    <string name="delete_playlist_button_confirm">ሰርዝ</string>
+    <string name="playlist_deleted_message">የጨዋታዝርዝር ተሰርዟል።</string>
+    <string name="playlist_created_message">የአጫዋች ዝርዝር \"%s\" ፍጠር</string>
+    <string name="playlist_renamed_message">"የማጫወቻ ዝርዝር\"%s \"  ድጋሚ ተሰይሟል፡፡"</string>
+    <string name="recentlyadded">መጨረሻ የታከለ</string>
+    <string name="recentlyadded_title">መጨረሻ የታከለ</string>
+    <string name="all_songs_list">ሁሉም ዘፈኖች</string>
+    <string name="all_songs_list_title">ሁሉም ዘፈኖች</string>
+    <string name="storemusic_list">ነፃ እና የተገዛ</string>
+    <string name="storemusic_list_title">ነፃ እና የተገዛ</string>
+    <string name="freemusic_list">ነፃ ዘፈኖች</string>
+    <string name="freemusic_list_title">ነፃ ዘፈኖች</string>
+    <string name="thumbsup_list">አሪፍ</string>
+    <string name="thumbsup_list_title">አሪፍ</string>
+    <string name="unknown_artist_name">ያልታወቀ አርቲስት</string>
+    <string name="unknown_album_name">ያልታወቀ አልበም</string>
+    <string name="unknown_playlist_name">ያልታወቀ ጨዋታ ዝርዝር</string>
+    <string name="shuffle_on_notif">በውዝ በርቷል።</string>
+    <string name="shuffle_off_notif">በውዝ ጠፍቷል።</string>
+    <string name="repeat_off_notif">ድገም ጠፍቷል።</string>
+    <string name="repeat_current_notif">የአሁኑን ዘፈን በመድገም ላይ።</string>
+    <string name="repeat_all_notif">ሁሉንም ዘፈኖች በመድገም ላይ።</string>
+    <string name="ringtone_menu">እንደ ስልክ ጥሪ ድምፅ ተጠቀም</string>
+    <string name="ringtone_set">\"%s\" እንደ ስልክ ጥሪ ድምፅ አዘጋጅ።</string>
+    <string name="ringtone_set_failed">የስልክ ጥሪ ድምጽ መፍጠር አልተቻለም፡፡</string>
+    <string name="ringtone_needs_download">የስልክ ጥሪ ድምፅሲወርድ ይዘጋጃል።</string>
+    <string name="play_selection">ተጫወት</string>
+    <string name="add_to_playlist">ወደ ጨዋታዝርዝር አክል</string>
+    <string name="rename_playlist_menu_item">እንደገና ሰይም</string>
+    <string name="add_to_playlist_selector_title">ወደ ጨዋታዝርዝር አክል</string>
+    <string name="queue">የአሁኑ ጨዋታዝርዝር</string>
+    <string name="new_playlist_for_content">"አዲስ  ማጫወቻ ዝርዝር"</string>
+    <string name="new_empty_playlist">አዲስ ጨዋታዝርዝር</string>
+    <string name="new_playlist_name_template">የቪዲዮ ዝርዝር %d</string>
+    <string name="removed_from_playlist">\"%1$s\" ከማጫወቻ ዝርዝር ውስጥ ተወግዷል፡፡</string>
+    <string name="playlist_too_many_songs">በጣም ብዙ ዘፈኖች። በጨዋታዝርዝር %d የተወሰነ ነው።</string>
+    <string name="emptyplaylist">የተመረጠ የጨዋታ ዝርዝባዶ ነው።</string>
+    <string name="playlist_edit_label">ስም</string>
+    <string name="create_playlist_create_text">እሺ</string>
+    <string name="rename_playlist_rename_text">እንደገና ሰይም</string>
+    <string name="service_start_error_title">የመልሰህ አጫውትችግር</string>
+    <string name="service_start_error_msg">ዘፈኑን ማጫወት አልተቻለም፡፡</string>
+    <string name="service_start_error_button">እሺ</string>
+    <string name="weekpicker_set">ተከናውኗል</string>
+    <string name="weekpicker_title">ጊዜ አዘጋጅ</string>
+    <string name="musicbrowserlabel">Play ሙዚቃ</string>
+    <string name="musicshortcutlabel">የሙዚቃ ጨዋታዝርዝር</string>
+    <string name="mediaplaybacklabel">ሙዚቃ</string>
+    <string name="app_name">Google Play ሙዚቃ</string>
+    <string name="playback_failed">የጠየከውን ትራክ ማጫወት አልተቻለም፡፡</string>
+    <string name="cancel">ይቅር</string>
+    <string name="remove_from_playlist">ከጨዋታዝርዝር አስወግድ</string>
+    <string name="streamloadingtext">ወደ%s በማገናኘት ላይ</string>
+    <string name="search_hint">ሙዚቃ ፈልግ</string>
+    <string name="working_artists">አርቲስቶች....</string>
+    <string name="working_albums">አልበሞች...</string>
+    <string name="loading">በመጫን ላይ…</string>
+    <string name="sort_by_track">ዘፈኖች</string>
+    <string name="music_picker_title">የሙዚቃ ዱካ ምረጥ</string>
+    <string name="fail_to_start_stream">የጠየከውን ዥረት ማጫወት አልተቻለም፡፡</string>
+    <string name="search_settings_description">አርቲስቶች፣አልበሞች፣ እና ዘፈኖች</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">ሙዚቃ</string>
+    <string name="music_library">የሙዚቃ ቤተ ፍርግም</string>
+    <string name="playlist_label">የጨዋታዝርዝር</string>
+    <string name="faux_art_all_songs_label">ሁሉም ዘፈኖች</string>
+    <string name="faux_art_playlist_label">የጨዋታዝርዝር</string>
+    <string name="faux_art_playlist_instant_mix_label">ፈጣን ድብልቅ</string>
+    <string name="faux_art_playlist_auto_playlist_label">ራስ ሰር አጫዋች ዝርዝር</string>
+    <string name="buffering">በማቋት ላይ…</string>
+    <string name="keep_on_phone">ከመስመር ውጪ አለ</string>
+    <string name="no_music_add_music_header">ሙዚቃ የማከያ መንገዶች</string>
+    <string name="no_music_shop_body">"በሚሊዮን የሚቆጠሩ  ዘፈኖችን ግዛ፣ በመቶዎች የሚቆጠሩ ነፃ ትራኮችን ጨምሮ፡፡"</string>
+    <string name="no_music_shop_button">ሱቅ</string>
+    <string name="no_music_upload_body">20,000 ዘፈኖች በነፃ ወደ Google Play ሙዚቃ ስቀል።</string>
+    <string name="no_music_upload_button">የበለጠ እወቅ</string>
+    <string name="no_music_usb_copy_body">"በUSB ገመድ ወደ ስልክህ ሙዚቃ  ገልብጥ።"</string>
+    <string name="no_music_usb_copy_button">የበለጠ እወቅ</string>
+    <string name="no_music_heading">"የሙዚቃ ቤተፍርግም  ባዶ ነው"</string>
+    <string name="no_music_setup_uploader_heading">ሙዚቃህን በገመድ አልባ ልቀቅ።</string>
+    <string name="no_music_setup_uploader_body">የግል ሙዚቃ ስብስብህን በGoogle Play ሙዚቃ መልቀቅ ትችላለህ።</string>
+    <string name="no_music_setup_usb_heading">ሙዚቃ ወደ እርስዎ መሣሪያ ገልብጥ</string>
+    <string name="no_music_setup_usb_body">በUSB ገመድ ወደ ስልክዎ ሙዚቃ ይገልብጡ።</string>
+    <string name="no_local_music_heading">ምንም ከመስመር ውጭ ሙዚቃ</string>
+    <string name="no_local_music_body">"ከመስመር ውጪ ብቻ ሁናቴ ላይ ነህ፤ ስለዚህ በመሳሪያህ ላይ የተከማቸ ሙዚቃ ብቻ ይታያል፡፡ 
+
+በመሳሪያህ ላይ ለማከማቸት የምትፈልገውን ሙዚቃ ብቻ ለመምረጥ፤ ከምናሌው "<b>ከመስመር ውጪ እንዲገኝ አድርግ </b>ምረጥ፡፡</string>
+    <string name="no_music_learn_more">የበለጠ ለመረዳት</string>
+    <string name="no_playlists_heading">በቤተ ፍርግምዎ ውስጥ ምንም ሙዚቃ የልዎትም።</string>
+    <string name="no_playlists_body">ወደ ዘፈኖች ዝርዝር በመሄድ የጨዋታ ዝርዝር መፍጠር እና ከዘፈኖች አውድ የምናሌ አክል መንካት ትችላለህ።</string>
+    <string name="no_music_syncing_heading">ሙዚቃ አሁን ላይ በመመሳሰል ላይ ነው::</string>
+    <string name="no_music_syncing_body">ሙዚቃ አሁን ላይ ከአገልጋይ ላይ የተመሳሰለ ሲሆን ለጊዜው ብቅ ማለት አለበት::</string>
+    <string name="no_music_scanning_heading">በመሳሪያው ላይ ሙዚቃ በመቃኘት ላይ፡፡</string>
+    <string name="no_music_scanning_body">"ሙዚቃ ለማግኘት መሳሪያው  እየተቃኘ ነው፡፡"</string>
+    <string name="sync_disabled">ሙዚቃ ከGoogle Play ሙዚቃ ከመምጣቱ በፊት ማመሳሰልን ማዘጋጀት ያስፈልግሃል። አሁን ያንን ማድረግ ትፈልጋለህ?</string>
+    <string name="tutorial_welcome_heading">ወደ Google Play ሙዚቃ እንኳን ደህና መጡ</string>
+    <string name="tutorial_welcome_body">"ከግል የሙዚቃ ስብስብህ እስከ 20,000  ዘፈኖችን ጫን፡፡ ከGoogle Play የተገዙ ሙዚቃዎችን 
+ 
+ወዲያውኑ አጫውት፡፡ በድር ላይ ወይም በማንኛውም ስልክ ወይም ጡባዊ ተኮ  ያሉ ሁሉንም ሙዚቃዎች 
+
+ አዳምጥ፡፡ ከመስመር ውጪ ሙዚቃህን ለማጫወት በቀላሉ አውርድ፡፡ 
+
+ ሁሉንም በነፃ፡፡"</string>
+    <string name="tutorial_select_account_heading">መለያ ምረጥ</string>
+    <string name="tutorial_select_account_body">"የቤተ-ሙዚቃ እና የገበያ ግዢዎችህን ለማጫወት መለያህን ከGoogle Play ሙዚቃ ጋር አገናኝ፡፡ 
+
+ የትኛውን መለያ ነው መጠቀም የምትፈልገው?"</string>
+    <string name="tutorial_sign_in">የቤተ-ሙዚቃህን እና የገበያ ግዢዎችህን ለማጫወት መለያህን ከGoogle Play ሙዚቃ አገናኝ፡፡</string>
+    <string name="tutorial_free_music_heading">ነፃ ሙዚቃ አግኝ</string>
+    <string name="tutorial_free_music_body">በሮክ፣ ሂፕ ሃፕ እና በሌሎች ታለቅ ስሞች ያለቸው Google Play ላይ በመቶዎች የሚቆጠሩ ነፃ ትራኮችን አስስ፡፡</string>
+    <string name="tutorial_account_heading">እንኳን ደህና መጡ</string>
+    <string name="tutorial_account_body">ለGoogle Play ሙዚቃ ተጋብዘሃል። ወደ Google Play ሙዚቃ የምታክላቸው ዘፈኖችና ሌሎች ወደ Android መሳሪያህ የቀዳሃቸው ሙዚቃ በፍጥነት ለመድረስ ይህንን ማጫወቻ መጠቀም ትችላለህ።</string>
+    <string name="tutorial_account_list_header">ይህንን ማጫወቻ ወደ Google Play ሙዚቃ ለማገናኘት የGoogle መለያ በመምረጥ ጀምር፦</string>
+    <string name="tutorial_done_heading">ተደሰት</string>
+    <string name="tutorial_done_body">"የሙዚቃ ማጫወቻው አሁን ከGoogle መለያህ ጋር ተገናኝቷል።
+
+የሙዚቃ ስብስብህ አስቀድመህ ወደ Google Play ሙዚቃ አክለህ ከሆነ በዚህ ማጫወቻ ላይ መታየት ይጀምራል።
+
+ሙዚቃህን አሁንም ወደ Google Play ሙዚቃ ማከል ካስፈለገህ ከኮምፒውተርህ ሆነህ የድር ጣቢያችን በመጎብኘት ጀምር፦"</string>
+    <string name="tutorial_skip">ዝለል</string>
+    <string name="tutorial_next">ቀጥል</string>
+    <string name="tutorial_done">ተከናውኗል</string>
+    <string name="tutorial_add_account">መለያ አክል</string>
+    <string name="tutorial_free_music">ነፃ ዘፈኖችን አግኝ</string>
+    <string name="spinner_carousel">የቅርብ ጊዜ</string>
+    <string name="spinner_album">አልበሞች፡</string>
+    <string name="spinner_artist">አርቲስቶች</string>
+    <string name="spinner_songs">ዘፈኖች</string>
+    <string name="spinner_playlists">የጨዋታዝርዝሮች</string>
+    <string name="spinner_genres">ዠነር</string>
+    <string name="sort_by_title">A-Z ለይ</string>
+    <string name="sort_by_artist">በአርቲስት ለይ</string>
+    <string name="sort_by_album">በአልበም ለይ</string>
+    <string name="sort_by_date">በታከለበት ቀን ደርድር</string>
+    <string name="more_by_artist">ተጨማሪ በአርቲስት</string>
+    <string name="make_available_offline">ከመስመር ውጪ አድርግ</string>
+    <string name="search_web">ድረ ፈልግ</string>
+    <string name="manage_done">ተከናውኗል</string>
+    <string name="too_many_items_title">በጣም ብዙ የአይነት።</string>
+    <string name="too_many_items_body">የመረጥካቸውን ሁሉንም ንጥል ነገሮች ለማከማቸት ምንም በቂ ቦታ የለም፡፡ ቦታ ለመፍጠር አንዳንድ ንጥል ነገሮችን አትምረጥ፡፡</string>
+    <string name="save_manage_music_change_title">ያልተቀመጡ ለውጦች</string>
+    <string name="save_manage_music_change_body">የመረጥከውን ሙዚቃ ከመስመር ውጪ እንዲገኝ ለማድረግ ትፈልጋለህ ?</string>
+    <string name="not_all_items_can_be_kept_body">የመረጥካቸውን ሁሉንም ንጥል ነገሮች ለማከማቸት በቂ ቦታ የለም፡፡ እነዚህ ሁሉም ንጥል ነገሮች አይወርዱም፡፡</string>
+    <string name="free_space_overfull">ማከማቻ ሙሉ(%s በላይ)</string>
+    <string name="free_space">%sነፃ</string>
+    <string name="stream_error_no_space_available">ምንም ባዶ ቦታ የለም</string>
+    <string name="stream_error_only_on_wifi">ይህን ዘፈን ለማጫወት Wi-Fi አውታረ መረብ ላይ መሆን ያስፈልግሃል።</string>
+    <string name="stream_error_no_connection">ይህን ዘፈን ለማጫወት መስመር ላይ መሆን ያስፈልግሃል።</string>
+    <string name="stream_error_unauthorized">"የተሳሳተ ተጠቃሚ ስም  እና ይለፍ ቃል"</string>
+    <string name="stream_error_another_stream_being_played">ሙዚቃው ለአፍታ ቆሟል ምክንያቱም በሌላ መሣሪያ ላይ ስብስብህን እያዳመጥክ ነው።</string>
+    <string name="stream_error_rate_limit_reached">"ሙዚቃው ለጊዜው አይገኝም።  ስብስብህን በአንድ ጊዜ አንድ መሣሪያ ላይ ብቻ እያጫወትክ መሆንህን አረጋግጥ።"</string>
+    <string name="stream_error_device_not_authorized">እስከ ስምንት መሳሪያዎች ድረስ የሙዚቃ ቤተ መፃሕፍትህ መጠቀም ይቻላል፡፡ ሌላ ከማከልህ በፊት ከመሳሪያዎችህ አንዱን ማስወገድ ይኖርብሃል፡፡</string>
+    <string name="stream_error_learn_more">የበለጠ እወቅ</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/youtube/bin/answer.py?answer=95669</string>
+    <string name="stream_error_another_stream_being_played_short">ሙዚቃ ላፍታ ቆሟል</string>
+    <string name="stream_error_rate_limit_reached_short">ሙዚቃው በጊዜያዊነት የለም</string>
+    <string name="stream_error_device_not_authorized_short">ከዚህ የሙዚቃ ቤተመፃሃፍት ጋር በጣም ብዙ መገልገያ መሳሪያዎች ተጠቅሟል</string>
+    <string name="hide_now_playing_bar">በመጫወት ላይ ያለውን አሞሌ ደብቅ</string>
+    <string name="show_now_playing_bar">የጨዋታ አሞሌ አሁን አሳይ</string>
+    <string name="show_options">አማራጮችን አሳይ</string>
+    <string name="hide_options">አማራጮችን ደብቅ</string>
+    <string name="all_songs_in_genre">"ሁሉም ዘፈኖች ከዠነር
+%s"</string>
+    <string name="preview_header">GOOGLE+ ላይ የተጋራ</string>
+    <string name="shared_playback_full">ነፃ ሙሉ ማጫወት</string>
+    <string name="shared_playback_partial">ናሙና</string>
+    <string name="btn_buy">ግዛ</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">ሙዚቃ ከመስመር ውጪ እንዲኖር በማድረግ ላይ</string>
+    <string name="notification_downloading_when_on_wifi">ከመስመር ውጪ ምልክት የተደረገባቸው ዘፈኖች አንዴ የWi-Fi አውታረመረብ ሲያያዙ ይጫናሉ።</string>
+    <string name="notification_downloading_excessive_errors">አሁኑኑ ዘፈኖችን ማውረድ አልተቻለም፡፡ የበየነመረብ ግንኙነትህን ፈትሽ፡፡</string>
+    <string name="notification_downloading_done">የተመረጡ ዘፈኖች አሁን ከመስመር ውጪ አሉ</string>
+    <string name="notification_ticker_ringtone_set">ለ\"%s\" የስልክ ጥሪ ድምፅ ተዘጋጅቷል</string>
+    <string name="notification_title_ringtone_set">ለ\"%s\" የስልክ ጥሪ ድምፅ ተዘጋጅቷል</string>
+    <string name="notification_content_ringtone_set">ይሄንን የስልክ ጥሪ ድምጽ አርትዕ ለማድረግ ንካ፡፡</string>
+    <string name="notification_ticker_ringtone_set_failed">የስልክ ጥሪ ድምጽ መፍጠር አልተቻለም፡፡</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_songcount">%d አዲስ ዘፈኖች</string>
+    <string name="notification_newsongs_subtitle">ወደ Google Play ሙዚቃ ታክሏል</string>
+    <string name="carousel_label_shuffle_all">ሁሉንም በውዝ</string>
+    <string name="song_label">ዘፈን</string>
+    <string name="artist_label">አርቲስት</string>
+    <string name="album_label">አልበም</string>
+    <string name="effectspanel">የድምፅ ተፅዕኖ</string>
+    <string name="menu_make_instant_mix">ፈጣን ሚክስ አድርግ</string>
+    <string name="instant_mix_default_name">%s ሚክስ</string>
+    <string name="creating_instant_mix">"ተወዳጅ የሙዚቃ ስብስቦችን
+ወደ አጫዋች ዝርዝር በማከል ላይ፡፡"</string>
+    <string name="creating_instant_mix_with_seed">"ተወዳጅ የሙዚቃ ስብስብ 
+ወደ አጫዎች ዝርዝር፤ በ
+%s መሰረት በማከል ላይ፡፡"</string>
+    <string name="create_instant_mix_failed">"ተወዳጅ የሙዚቃ ስብስብ  መፍጠር አልተቻለም። እባክህ እንደገና ሞክር።"</string>
+    <string name="create_instant_mix_failed_insufficient_results">"በስብስብህ ውስጥ ከ\"%s\" ላይ የወዲያው ማደባለቅ ለመፍጠር በቂ ተመሳሳይ ዘፈኖች የሉም።እባክህ  ከተለየ ዘፈን የወዲያው ማደባለቅ ለመስራት ሞክር።"</string>
+    <string name="create_instant_mix_sync_timeout">"ፈጣኑሚክስበ
+ ላይ ተፈጥሮ ነበር እና በ
+ ላይ ጨዋታዝርዝሮች ውስጥ ከአፍታቆይታ በኋላብቅ ይላል።"</string>
+    <string name="create_instant_mix_btn_ok">እሺ</string>
+    <string name="delete">ሰርዝ</string>
+    <string name="confirm_delete_local_only">\"%s\" መሰረዝ ትፈልጋለህ?</string>
+    <string name="confirm_delete_has_remote">«%s» ወደ Google Play ሙዚቃ ተላልፎም ተሰቅሎም ነበር። የተስተላለፉት ንጥሎች ብቻ ናቸው የሚሰረዙት። እነሱን መሰረዝ ትፈልጋለህ?</string>
+    <string name="waiting_share">በማጋራት ላይ %s</string>
+    <string name="share">አጋራ</string>
+    <string name="share_failure">ሙዚቃህን በመጫን ላይ ችግር ነበር፡፡</string>
+    <string name="share_google_plus_footer">"በክበቦችህ ውስጥ ላሉ ሰዎች ማጋራት  ነፃ ሙሉ ጨዋታ ያስችላል"</string>
+    <string name="accessibility_play">ተጫወት</string>
+    <string name="accessibility_pause">ላፍታ አቁም</string>
+    <string name="accessibility_stop">ቁም</string>
+    <string name="accessibility_next">ቀጥል</string>
+    <string name="accessibility_prev">ቀዳሚ</string>
+    <string name="accessibility_shuffle">በውዝ</string>
+    <string name="accessibility_repeat">ድገም</string>
+    <string name="accessibility_thumbsUp">አሪፍ</string>
+    <string name="accessibility_thumbsDown">ደባሪ</string>
+    <string name="accessibility_star1">1 ኮከብ</string>
+    <string name="accessibility_star2">ሁለት ኮከቦች</string>
+    <string name="accessibility_star3">ሦስት ኮከቦች</string>
+    <string name="accessibility_star4">አራት ኮከቦች</string>
+    <string name="accessibility_star5">አምስት ኮከቦች</string>
+    <string name="accessibility_contractor">የዘፈን መረጃ ዘርጋ</string>
+    <string name="accessibility_back">ተመለስ</string>
+    <string name="accessibility_contextMenu">የዘፈን ምናሌ</string>
+    <string name="accessibility_home">የሙዚቃ መነሻ</string>
+    <string name="accessibility_search">" ፈልግ"</string>
+    <string name="accessibility_search_cancel">የአሁን ፍለጋ ይቅር</string>
+    <string name="accessibility_current">የአሁኑ ዘፈን</string>
+    <string name="accessibility_createnewplaylist">አዲስ ጨዋታዝርዝር ፍጠር</string>
+    <string name="accessibility_menu">ምናሌ</string>
+    <string name="accessibility_shop">ሙዚቃ ግዢ</string>
+    <string name="ringtone_replace_alert_button">ተካ</string>
+    <string name="ringtone_replace_alert_title">የስልክ ጥሪ ድምፅ ይተካ</string>
+    <string name="ringtone_replace_alert_message">የስልክ ጥሪ ድምጽ በዚህ ስም አስቀድሞ አለ፡፡ እንዲተካ ትፈልጋለህ?</string>
+    <string name="legal_information">የህግ መረጃ</string>
+    <string name="license_title">የነፃ ምንጭ ፈቃዶች</string>
+    <string name="license_error">ፈቃዶችን መጫን አልተቻለም፡፡</string>
+    <string name="market_wrong_account" formatted="false">"ለማጫወት እየሞከርክ ያለኸው ሙዚቃ በዚህ መለያ %s
+
+ ተገዝቷል Google Play ሙዚቃ ውስጥ አሁን የገባኸው በ%s
+
+ መለያ ነው ግዢህን ለማዳመጥ መጀመሪያ መለያዎችን ቀይር።"</string>
+    <string name="gplus_wrong_account" formatted="false">"ልታጫውት እየሞከርከ ያለኸው ሙዚቃ ከ%s
+ 
+ መለያ ጋር የተጋራ ነበር በአሁኑ ሰዓት Google Play ሙዚቃ ውስጥ በ%s
+
+ መለያ ገብተሃል ያጋራኸውን ሙዚቃ ለማዳመጥ መጀመሪያ መለያዎችን ቀይር።"</string>
+    <string name="switch_account_button">መለያ ለውጥ</string>
+    <string name="retry_button">እንደገና ሞክር</string>
+    <string name="wait_for_item">ሙዚቃ እንዲመሳሰል በመጠባበቅ ላይ</string>
+    <string name="wait_for_item_failure">ሙዚቃህን በመጫን ላይ ችግር ነበር፡፡</string>
+    <string name="ringtone_title">የስልክ ጥሪ ቅላጼ ከልስ</string>
+    <string name="edit_ringtone">የስልክ ጥሪ ድምፅ አርትዕ</string>
+    <string name="ringtone_done">ተከናውኗል+</string>
+    <string name="set_ringtone_title">እንደ ስልክ ጥሪ ድምፅ ተጠቀም</string>
+    <string name="set_ringtone_message">እንደ ስልክ ጥሪ ድምፅ አዘጋጅ።</string>
+    <string name="start_edit_ringtone">የስልክ ጥሪ ድምፅ አርትዕ</string>
+    <string name="ringtone_file_edited_name">ቅንጥብ የ%1$s</string>
+    <string name="progress_dialog_saving">በማስቀመጥ ላይ&amp;hellip;</string>
+    <string name="start_handle">እጀታ አስጀምር</string>
+    <string name="resize_handle">የእጀታ መጠን ለውጥ</string>
+    <string name="menu_reset">ዳግም አስጀምር</string>
+    <string name="save_success_message">%1$sእንደ ነባሪ የደውል ቅላጼ ተቀምጧል፡፡</string>
+    <string name="save_failure_message">ይቅርታ፣ %1$sእንደ ደውል ቅላጼ ማስቀመጥ አልተሳካም፡፡</string>
+    <string name="play_error">ይሄንን የሚዲያ ፋይል ማጫወት አልተቻለም፡፡</string>
+    <string name="write_error">ወደ ፋይሉ መፃፍ አልተቻለም፡፡</string>
+    <string name="read_error">ፋይሉን ማንበብ አልተቻለም፡፡</string>
+    <string name="no_space_error">"በSD ካርድህ ላይ ይሄን ፋይል ለማስቀመጥ  በቂ ቦታ የለም፡፡"</string>
+    <string name="bad_extension_error">Ringdroid ይሄን አይነት ፋይል አርትዕ ማድረግ አልቻለም፡፡</string>
+    <string name="no_extension_error">የ.mp3 or .wav ቅጥያ የሌላውን ፋይል Ringdroid አርትዕ ማድረግ አልቻለም፡፡</string>
+    <string name="alert_title_success">ስኬት</string>
+    <string name="alert_title_failure">ስህተት</string>
+    <string name="alert_ok_button">እሺ</string>
+    <string name="store_tutorial_title">ግዛ እና ወዲያውኑ አጫውት</string>
+    <string name="store_tutorial_content">በመቶዎች የሚቆጠሩ ነጻ ሙዚቃዎችን ጨምሮ በሚሊዮን የሚቆጠሩ የMP3 ትራኮችን ከGoogle Play ግዛ፡፡</string>
+    <string name="store_tutorial_instruction">መደብሩን ለመጎብኘት፤ እባክህ የመገበያያ ቦርሳ አዶን መታ አድርግ</string>
+</resources>

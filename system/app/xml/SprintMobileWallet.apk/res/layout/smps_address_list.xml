@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ListView android:id="@android:id/list" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <LinearLayout android:orientation="vertical" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:id="@id/empty1" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No addresses have been setup." />
+                <TextView android:textSize="14.0sp" android:textColor="#ffffffff" android:id="@id/empty2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="To add an address, press the 'Add New Address' button below." />
+            </LinearLayout>
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <View android:background="#ff636363" android:layout_width="wrap_content" android:layout_height="1.0dip" />
+            <Button android:textSize="14.0sp" android:textColor="#ffffffff" android:id="@id/addAddress" android:background="@drawable/btn_custom_black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Add New Address" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

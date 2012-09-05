@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="eq_threshold">
+        <item>297</item>
+        <item>598</item>
+        <item>905</item>
+        <item>1216</item>
+        <item>1534</item>
+        <item>1857</item>
+        <item>2186</item>
+        <item>2522</item>
+        <item>2866</item>
+        <item>3216</item>
+        <item>3575</item>
+        <item>3943</item>
+        <item>4319</item>
+        <item>4706</item>
+        <item>5104</item>
+    </integer-array>
+    <integer-array name="yDelta">
+        <item>0</item>
+        <item>-4</item>
+        <item>-8</item>
+        <item>-12</item>
+        <item>-16</item>
+        <item>-20</item>
+        <item>-24</item>
+        <item>-28</item>
+        <item>-32</item>
+        <item>-40</item>
+        <item>-44</item>
+        <item>-48</item>
+        <item>-52</item>
+        <item>-56</item>
+        <item>-60</item>
+    </integer-array>
+</resources>

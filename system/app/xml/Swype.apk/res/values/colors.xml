@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="chinese_spelling_text_normal">#ff000000</color>
+    <color name="chinese_spelling_text_swypechoice">#ff000000</color>
+    <color name="chinese_spelling_text_swypechoice_inverted">#ffffffff</color>
+    <color name="hwcl_dark_plain_text">#ffffffff</color>
+    <color name="hwcl_dark_default_text">#ffffa200</color>
+    <color name="hwcl_dark_nwp_word">#ffffff77</color>
+    <color name="hwcl_light_plain_text">#ff000000</color>
+    <color name="hwcl_light_default_text">#ffffa200</color>
+    <color name="hwcl_light_pressed_text">#ffffffff</color>
+    <color name="hwcl_light_nwp_word">#ffffff77</color>
+    <color name="hwcl_green_highlight_plain_text">#ff787878</color>
+    <color name="hwcl_green_highlight_default_text">#ff78cc1f</color>
+    <color name="hwcl_green_highlight_pressed_text">#ffffffff</color>
+    <color name="hwcl_green_highlight_nwp_word">#ffffff77</color>
+    <color name="helpBgColor">#ffffffff</color>
+    <color name="tipsBgColor">#ff000000</color>
+    <color name="moveableKbOutlineColor">#ffc0c0c0</color>
+    <color name="japanese_spelling_text_normal">#ffffa200</color>
+    <color name="SwypeThemeWhiteSyleSeekbarTextColor">#ffffffff</color>
+    <color name="SwypeThemeBlackTextOnSeekbarControlSeekbarTextColor">#ff000000</color>
+</resources>

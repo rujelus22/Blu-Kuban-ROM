@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Režim Vozidlo</string>
+    <string name="app_name">Hlasové příkazy</string>
+    <string name="incar">Hlasitý hovor</string>
+    <string name="incar_icon">Hlasitý hovor</string>
+    <string name="Vlingo">Hlasové příkazy</string>
+    <string name="widget_name">Hlas</string>
+</resources>

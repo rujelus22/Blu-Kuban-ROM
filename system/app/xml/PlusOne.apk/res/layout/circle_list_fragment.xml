@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:divider="@drawable/padded_list_divider" android:layout_weight="1.0" />
+        <RelativeLayout style="@style/BottomActionBar">
+            <com.google.android.apps.plus.views.ActionButton android:id="@id/create_new_circle_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/create_new_circle" android:layout_centerInParent="true" style="@style/BottomActionBar.ActionButton" />
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView android:textSize="18.0sp" android:gravity="center" android:id="@id/server_error" android:padding="24.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/circle_list_error" />
+    <include layout="@layout/empty_layout" />
+</FrameLayout>

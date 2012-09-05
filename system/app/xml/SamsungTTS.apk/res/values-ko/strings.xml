@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="general_settings">일반 설정</string>
+    <string name="samsungtts_settings">삼성 TTS 설정</string>
+    <string name="open_source_licenses">오픈소스 라이센스</string>
+    <string name="advanced_settings">고급 설정</string>
+    <string name="change_voice_effects">발성 효과 설정</string>
+    <string name="change_voice_effects_summary">텍스트 발성 음성의 부가효과 설정</string>
+    <string name="installed_languages">설치된 언어</string>
+    <string name="female">여성</string>
+    <string name="male">남성</string>
+</resources>

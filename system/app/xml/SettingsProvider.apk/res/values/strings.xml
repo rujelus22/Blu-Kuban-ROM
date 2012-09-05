@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="def_airplane_mode_radios">cell,bluetooth,wifi,wimax,nfc</string>
+    <string name="airplane_mode_toggleable_radios">bluetooth,wifi,nfc</string>
+    <string name="def_location_providers_allowed" />
+    <string name="def_backup_transport">com.google.android.backup/.BackupTransportService</string>
+    <string name="def_low_battery_sound">/system/media/audio/ui/LowBattery.ogg</string>
+    <string name="def_desk_dock_sound">/system/media/audio/ui/Dock.ogg</string>
+    <string name="def_desk_undock_sound">/system/media/audio/ui/Undock.ogg</string>
+    <string name="def_car_dock_sound">/system/media/audio/ui/Dock.ogg</string>
+    <string name="def_car_undock_sound">/system/media/audio/ui/Undock.ogg</string>
+    <string name="def_lock_sound">/system/media/audio/ui/Lock.ogg</string>
+    <string name="def_unlock_sound">/system/media/audio/ui/Unlock.ogg</string>
+    <string name="def_unlock_sound_kor">/system/media/audio/ui/TW_Unlock_Glass.ogg</string>
+    <string name="def_date_format">MM-dd-yyyy</string>
+    <string name="def_date_format_kor">yyyy-MM-dd</string>
+    <string name="def_accessibility_web_content_key_bindings">0x13=0x01000100; 0x14=0x01010100; 0x15=0x02000001; 0x16=0x02010001; 0x200000013=0x02000601; 0x200000014=0x02010601; 0x200000015=0x03020101; 0x200000016=0x03010201; 0x200000023=0x02000301; 0x200000024=0x02010301; 0x200000037=0x03070201; 0x200000038=0x03000701:0x03010701:0x03020701;</string>
+    <string name="def_enable_face_lock">enable_facelock</string>
+    <string name="def_tts_default_synth">com.samsung.SMT</string>
+    <string name="def_tts_default_lang">kor</string>
+    <string name="def_tts_default_country">KOR</string>
+    <string name="def_tts_default_variant">f01</string>
+    <string name="def_lgt_oz_startpage">http://wap20.ez-i.co.kr</string>
+    <string name="lgt_rad_countrycode">82</string>
+    <string name="lgt_rad_countryname_kor">한국</string>
+    <string name="lgt_rad_countryname_eng">Korea</string>
+    <string name="app_label">Settings Storage</string>
+    <string name="zz_def_country_code">011</string>
+</resources>

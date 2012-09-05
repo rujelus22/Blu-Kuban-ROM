@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/backview" android:background="@color/background" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/proximity_test" android:lines="2" />
+    <Button android:id="@id/proximity" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/PROXIMITY_Sensor" />
+    <TextView android:id="@id/proximity_str" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="2" />
+</LinearLayout>

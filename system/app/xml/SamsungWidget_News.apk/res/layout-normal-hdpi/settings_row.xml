@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/setting_row_layout" android:background="@android:drawable/list_selector_background" android:paddingLeft="8.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textAppearance="@style/WinsetTextColorNormal" android:id="@id/title_text_line" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textAppearance="@style/WinsetTextColorSecondary" android:id="@id/status_text_line" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+    <TextView android:textAppearance="@style/WinsetTextColorNormal" android:id="@id/menu_settings_unit_row" android:paddingBottom="4.0dip" android:visibility="gone" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="25.332977dip" />
+    <RadioButton android:id="@id/radio_check" android:focusable="false" android:visibility="gone" android:clickable="true" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <CheckBox android:id="@id/weather_row_check" android:focusable="false" android:clickable="true" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:id="@id/row_image" android:background="@drawable/btn_circle" android:visibility="gone" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_btn_round_more_normal" />
+    <View android:layout_width="12.659973dip" android:layout_height="64.0dip" />
+</LinearLayout>

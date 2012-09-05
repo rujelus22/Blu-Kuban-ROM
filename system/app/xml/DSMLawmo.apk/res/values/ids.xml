@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="pcw_second_layout">false</item>
+    <item type="id" name="pcwdonetext">false</item>
+    <item type="id" name="playpcwani">false</item>
+    <item type="id" name="btndone">false</item>
+    <item type="id" name="pcs_bg">false</item>
+    <item type="id" name="pcw_bg">false</item>
+    <item type="id" name="pcwanimation">false</item>
+</resources>

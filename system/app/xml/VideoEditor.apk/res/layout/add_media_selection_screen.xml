@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="800.0px" android:layout_height="340.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.app.ve.view.OperationViewGroup android:id="@id/OperationView" android:layout_width="wrap_content" android:layout_height="340.0px" />
+    <com.sec.android.app.ve.view.PreviewViewGroup android:id="@id/PreviewTab" android:layout_width="wrap_content" android:layout_height="340.0px" />
+</LinearLayout>

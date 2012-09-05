@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/summary_byline_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_summary_byline" />
+    <include android:id="@id/description_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_text_flat" />
+    <include android:id="@id/summary_plusone_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_summary_plusone" />
+    <include android:id="@id/share_panel" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/details_share" />
+    <include android:id="@id/song_list" layout="@layout/music_song_list" />
+    <LinearLayout android:id="@id/rate_review_autoremove" android:background="@drawable/details_section_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/rate_review_section" />
+    </LinearLayout>
+    <include android:id="@id/sample_reviews_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_reviews" />
+    <include android:id="@id/creator_related_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_pack_layout" />
+    <include android:id="@id/links_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_listing_layout" />
+    <include android:id="@id/related_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_pack_layout" />
+    <include android:id="@id/flag_content_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_listing_layout" />
+    <include android:id="@id/loading_footer" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_loading_footer" />
+</merge>

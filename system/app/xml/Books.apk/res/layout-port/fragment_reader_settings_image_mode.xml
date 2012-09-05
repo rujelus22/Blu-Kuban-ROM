@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/settings_panel" android:paddingTop="@dimen/settings_padding_PreTop" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/settings_padding_Left" android:paddingTop="@dimen/settings_padding_Top" android:paddingRight="@dimen/settings_padding_Right" android:paddingBottom="@dimen/settings_padding_Bottom" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" style="@style/Preference.Column">
+            <TextView android:id="@id/subtitle_theme" android:text="@string/pref_themes" style="@style/Preference.Subtitle" />
+            <FrameLayout android:id="@id/item_theme" style="@style/Preference.Item.SpinnerFrame">
+                <include layout="@layout/pref_theme" />
+            </FrameLayout>
+            <TextView android:text="@string/space" style="@style/Preference.Space" />
+            <TextView android:id="@id/title_brightness" android:text="@string/pref_brightness" style="@style/Preference.Subtitle" />
+            <FrameLayout android:id="@id/item_brightness" style="@style/Preference.Item">
+                <include layout="@layout/pref_brightness" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

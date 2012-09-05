@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="colour_background">#ff1e2326</color>
+    <color name="colour_underline">#ff7e7e7e</color>
+    <color name="colour_imagebutton">#ff0c1216</color>
+    <color name="bookmarkWidgetHeader">#ff383847</color>
+    <color name="bookmarkWidgetDivider">#ff383847</color>
+    <color name="bookmarkWidgetItemBackground">#ff2b2b3c</color>
+    <color name="bookmarkWidgetFolderBackground">#a0383847</color>
+    <color name="bookmarkWidgetFaviconBackground">#23ffffff</color>
+    <color name="bookmarkListFaviconBackground">#23ffffff</color>
+    <color name="bookmarkListBackground">#35ffffff</color>
+    <color name="bookmarkTextColor">#ff9fc6db</color>
+    <color name="tabFaviconBackground">#ff555555</color>
+    <color name="tabFocusHighlight">#ff0099cc</color>
+    <color name="qcMenuBackground">#c0000000</color>
+    <color name="qc_normal">#e02a96bc</color>
+    <color name="qc_selected">#f01a5b73</color>
+    <color name="qc_tab_nr">#f033b5e5</color>
+    <color name="tabViewTitleBackground">#d0000000</color>
+    <color name="navtab_bg">#80606060</color>
+    <color name="colour_title">#ff0fbdef</color>
+    <color name="colour_subtitle">#ff6386a4</color>
+    <color name="brightness_title">#ffdcdcdc</color>
+    <color name="colour_item1">#ffd7d7d7</color>
+    <color name="colour_item2">#ff7e7e7e</color>
+    <color name="color_history_text_tablet">#ff3eb9ff</color>
+    <color name="sbookmarkwidgetbardivider">#ffc6c6c6</color>
+</resources>

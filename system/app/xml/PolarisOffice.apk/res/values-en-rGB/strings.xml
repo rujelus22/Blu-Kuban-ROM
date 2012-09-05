@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fm_err_canceled_by_user">Request cancelled</string>
+    <string name="dm_fail_to_make_folder">Fail to make folder.</string>
+    <string name="dm_untitled">Untitled</string>
+    <string name="dm_font_background_color">Background colour</string>
+    <string name="dm_color">Colour</string>
+    <string name="dm_toolbar_reset">Initialise</string>
+    <string name="dm_font_color">Font colour</string>
+    <string name="dm_backcolor">Background colour</string>
+    <string name="dm_bordercolor">Border colour</string>
+    <string name="dm_fillcolor">Fill colour</string>
+    <string name="ppt_line_color">Line colour</string>
+    <string name="dm_fmerr_canceled_by_user">Request cancelled.</string>
+    <string name="dm_msg_unzip_cancel">Zip file extraction is cancelled.</string>
+    <string name="dm_msg_canceled_login">Cancelled to login web server.</string>
+    <string name="dm_fmerr_unknown">Error occurred.</string>
+    <string name="dm_fmerr_network_fail">Network error occurred.</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:id="@id/camera" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.app.selftestmode.camera.VideoPreview android:id="@id/camera_preview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" />
+    <com.sec.android.app.selftestmode.camera.ShutterButton android:id="@id/shutter_button" android:background="@drawable/ic_btn_camera_background" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/ic_camera_indicator_photo" android:scaleType="center" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <com.sec.android.app.selftestmode.camera.FocusRectangle android:id="@id/focus_rectangle" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ImageView android:id="@id/focus_success_indicator" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="39.0dip" android:layout_marginTop="16.0dip" android:src="@drawable/ic_camera_indicator_auto_focus_green" android:scaleType="center" android:layout_alignLeft="@id/shutter_button" android:layout_alignTop="@id/shutter_button" />
+    <ImageView android:id="@id/focus_fail_indicator" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="39.0dip" android:layout_marginTop="16.0dip" android:src="@drawable/ic_camera_indicator_auto_focus_red" android:scaleType="center" android:layout_alignLeft="@id/shutter_button" android:layout_alignTop="@id/shutter_button" />
+</RelativeLayout>

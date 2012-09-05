@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_manage_offline">Manage offline rentals</string>
+    <string name="local_carousel_camera_z">3.4</string>
+</resources>

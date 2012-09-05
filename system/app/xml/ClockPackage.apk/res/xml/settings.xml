@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/alarm_setting_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference android:entries="@array/volume_button_setting_entries" android:title="@string/volume_button_setting_title" android:key="volume_button_setting" android:summary="@string/volume_button_setting_summary" android:defaultValue="3" android:dialogTitle="@string/volume_button_dialog_title" android:entryValues="@array/volume_button_setting_values" />
+</PreferenceScreen>

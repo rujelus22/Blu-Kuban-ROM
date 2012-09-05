@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/act_success_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/act_fail_title_background" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_weight="0.0">
+        <TextView android:textSize="20.0dip" android:textStyle="bold" android:textColor="#ffffa500" android:id="@id/act_fail_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="@string/welcome" android:layout_centerHorizontal="true" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/act_fail_description" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_centerVertical="true">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="#ff000000" android:id="@id/act_fail_text1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/retry_1" />
+                <TextView android:textColor="#ff000000" android:id="@id/act_fail_text2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="5.0dip" android:text="@string/retry_2" />
+                <ProgressBar android:orientation="horizontal" android:id="@id/act_fail_progressBar" android:background="@android:drawable/progress_horizontal" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_margin="10.0dip" android:max="100" android:progress="50" style="?android:attr/progressBarStyleHorizontal" />
+                <TextView android:textColor="#ff000000" android:gravity="center_horizontal" android:id="@id/act_fail_text3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/secs" />
+                <TextView android:textColor="#ff000000" android:gravity="center_horizontal" android:id="@id/act_fail_retry_number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/retry_number" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/act_fail_buttons" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_weight="0.0">
+        <Button android:id="@id/act_fail_manual" android:fadingEdge="horizontal" android:layout_width="110.0px" android:layout_height="50.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="7.0dip" android:text="@string/ret_activate" android:layout_weight="1.0" android:layout_centerHorizontal="true" />
+        <Button android:id="@id/act_fail_cancel" android:fadingEdge="horizontal" android:layout_width="110.0px" android:layout_height="50.0dip" android:layout_marginLeft="7.0dip" android:layout_marginRight="7.0dip" android:text="@string/cancel" android:layout_weight="1.0" android:layout_centerHorizontal="true" />
+    </LinearLayout>
+</LinearLayout>

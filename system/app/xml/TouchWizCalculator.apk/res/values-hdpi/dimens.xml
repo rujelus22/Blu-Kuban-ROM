@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_small_port">50.0px</dimen>
+    <dimen name="text_size_medium_port">73.0px</dimen>
+    <dimen name="text_size_large_port">118.0px</dimen>
+    <dimen name="text_size_small_land">29.0px</dimen>
+    <dimen name="text_size_medium_land">46.0px</dimen>
+    <dimen name="text_size_large_land">97.0px</dimen>
+    <dimen name="popup_text_size_small">16.0px</dimen>
+    <dimen name="popup_text_size_medium">18.669983px</dimen>
+    <dimen name="popup_text_size_large">22.0px</dimen>
+</resources>

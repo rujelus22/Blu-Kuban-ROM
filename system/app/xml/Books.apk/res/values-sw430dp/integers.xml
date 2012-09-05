@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="carousel_rows">1</integer>
+    <integer name="carousel_slots_visible">3</integer>
+    <integer name="carousel_card_slots">15</integer>
+</resources>

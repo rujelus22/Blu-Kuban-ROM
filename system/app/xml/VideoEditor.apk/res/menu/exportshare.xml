@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu android:id="@id/base_menu"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_add_media" android:id="@id/newproject" android:title="@string/menu_newproject" />
+    <item android:icon="@drawable/ic_menu_save_to" android:id="@id/saveitem" android:title="@string/menu_save" />
+    <item android:icon="@drawable/ic_menu_save_as" android:id="@id/saveasitem" android:title="@string/menu_saveas" />
+    <item android:icon="@drawable/ic_menu_project" android:id="@id/gotopla" android:title="@string/menu_gotopla" />
+    <item android:icon="@drawable/ic_menu_export_movie" android:id="@id/exportitem" android:title="@string/menu_export_movie" />
+    <item android:icon="@drawable/ic_menu_share_movie" android:id="@id/shareitem" android:title="@string/menu_share_movie" />
+</menu>

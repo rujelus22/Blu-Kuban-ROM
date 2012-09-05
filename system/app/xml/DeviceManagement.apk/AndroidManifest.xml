@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:versionCode="1" android:versionName="1.0.0" package="com.samsung"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.HARDWARE_TEST" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.MASTER_CLEAR" />
+    <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="com.sprint.internal.permission.CONNECTIONMANAGER" />
+    <uses-permission android:name="com.sprint.internal.permission.SYSTEMPROPERTIES" />
+    <uses-permission android:name="com.sprint.internal.permission.SYSTEMPROPERTIES_WRITE" />
+    <uses-permission android:name="android.permission.ACCESS_WIMAX_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIMAX_STATE" />
+    <application android:label="@string/app_name" android:icon="@drawable/nerva_popup_50x50_02" android:name=".client.DMApp">
+        <activity android:label="@string/app_name" android:name=".client.DeviceManagement" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.settings.SYSTEM_UPDATE_DM" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/hfa" android:name=".handsfreeactivation.StartUp" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.samsung.intent.START_HFA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/hfa" android:name=".handsfreeactivation.ActSuccess" android:configChanges="keyboard|keyboardHidden|orientation" />
+        <activity android:label="@string/hfa" android:name=".handsfreeactivation.ActFail" android:configChanges="keyboard|keyboardHidden|orientation" />
+        <activity android:theme="@style/Theme.Translucent" android:label="@string/reboot" android:name=".handsfreeactivation.RebootDlgActivity" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.samsung.intent.REBOOTDLG" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent" android:label="@string/reboot" android:name=".client.EmergencyCallDlgActivity" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.samsung.intent.EMERGENCY_CALL_DLG" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent" android:label="@string/nothing" android:name=".client.UserTouch" android:configChanges="keyboard|keyboardHidden|orientation" />
+        <activity android:theme="@style/Theme.Translucent" android:label="@string/dp" android:name=".deviceconfiguration.DeviceConfiguration" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.samsung.intent.START_CIDC" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent" android:label="@string/fumo" android:name=".fumo.FirmwareUpdate" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.samsung.intent.START_CIFUMO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/fumo" android:name=".fumo.UpdateSoftware" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.samsung.intent.UPDATE_FIRMWARE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent" android:label="@string/fumo" android:name=".fumo.SendStatus" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.samsung.intent.SEND_STATUS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent" android:label="@string/prl" android:name=".fumo.FWUpdateComplete" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.samsung.intent.UPDATE_COMPLETE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent" android:label="@string/prl" android:name=".prlupdate.PRLUpdate" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.samsung.intent.START_CIPRL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <service android:name=".client.SyncmlService" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.samsung.client.ISyncmlService" />
+                <action android:name="com.samsung.client.SYNCML_SERVICE" />
+                <action android:name="com.sprint.samsung.OMADMExtension.HFA" />
+                <action android:name="com.sprint.samsung.OMADMExtension.FUMO" />
+                <action android:name="com.sprint.samsung.OMADMExtension.PRL" />
+                <action android:name="com.sprint.samsung.OMADMExtension.DP" />
+                <action android:name="com.sprint.samsung.OMADMExtension.REG_HFA" />
+            </intent-filter>
+        </service>
+        <receiver android:name=".client.SyncmlBootReceiver">
+            <intent-filter>
+                <action android:name="com.sprint.android.SPRINTEXTENSION_STARTED" />
+                <action android:name="com.samsung.sprint.START_PRL" />
+                <action android:name="com.samsung.sprint.START_DP" />
+                <action android:name="com.samsung.sprint.START_FUMO" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".client.SyncmlWapReceiver">
+            <intent-filter>
+                <action android:name="DEBUG_WAP_PUSH_RECEIVED" />
+                <data android:mimeType="application/vnd.syncml.dm.notification" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_DM_NOTI_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".client.SanService">
+            <intent-filter>
+                <action android:name="com.samsung.client.SAN_SERVICE" />
+                <action android:name="com.samsung.client.INIT_SERVICE" />
+            </intent-filter>
+        </service>
+        <receiver android:name=".client.SyncmlAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.samsung.client.PRL_ALARM" />
+                <action android:name="com.samsung.client.FUMO_ALARM" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".dmhiddenmenu.HiddenMenuBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="OMADM" />
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/omadm_Activity_Name" android:name=".dmhiddenmenu.OMADM_MSL_Check" android:process="com.android.phone" android:clearTaskOnLaunch="true" />
+        <activity android:label="@string/omadm_Activity_Name" android:name=".dmhiddenmenu.OMADM_Settings" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.samsung.intent.OMADM_Settings" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/omadm_Activity_Name" android:name=".dmhiddenmenu.OMADM_Settings_2" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.samsung.intent.OMADM_Settings_2" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/omadm_Activity_Name" android:name=".dmhiddenmenu.PasswordNonceSettings" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.samsung.intent.PasswordNonceSettings" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/omadm_Activity_Name" android:name=".dmhiddenmenu.WapPushSimulation" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.samsung.intent.WapPushSimulation" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

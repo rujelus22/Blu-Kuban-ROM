@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calendar</string>
+    <string name="plug_in_name">Calendar</string>
+    <string name="min_height">400</string>
+    <string name="month_weeknum">W</string>
+    <string name="month_no_event">Tap to create</string>
+    <string name="no_title_label">(No subject)</string>
+    <string name="goto_today">Today</string>
+    <string name="more_events">%d more</string>
+    <string name="no_event">No events</string>
+    <string name="agenda">Agenda</string>
+    <string name="month_theme">Month</string>
+    <string name="agenda_theme">Agenda</string>
+    <string name="mini_theme">Today</string>
+    <string name="eventBirthday">Birthday</string>
+    <string name="eventAnniversary">Anniversary</string>
+    <string name="Festival_NewYear">New Year’s Day</string>
+    <string name="Festival_SaintValentineDay">"Saint Valentine's Day"</string>
+    <string name="Festival_WomensDay">Women’s Day</string>
+    <string name="Festival_ChingMing">Ching Ming Festival</string>
+    <string name="Festival_LabourDay">International Labour Day</string>
+    <string name="Festival_MothersDay">"Mother's day"</string>
+    <string name="Festival_ChildrensDay">"Children's day"</string>
+    <string name="Festival_FathersDay">"Father's day"</string>
+    <string name="Festival_TeachersDay">教師節</string>
+    <string name="Festival_NationalDay">National Day</string>
+    <string name="Festival_ChristmasDay">Christmas Day</string>
+</resources>

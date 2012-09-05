@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <ScrollView android:id="@id/ScrollView01" android:layout_width="fill_parent" android:layout_height="wrap_content"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="vertical" android:paddingLeft="13.0dip" android:paddingTop="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="14.0sp" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="Payment Card Number:" />
+                        <EditText android:textSize="18.0sp" android:id="@id/paymentCardNumber" android:paddingBottom="5.0dip" android:layout_width="225.0sp" android:layout_height="wrap_content" android:text="" android:singleLine="true" android:selectAllOnFocus="true" android:inputType="number" />
+                        <TextView android:textSize="14.0sp" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="CVV Number:" />
+                        <EditText android:textSize="18.0sp" android:id="@id/cvvNumber" android:paddingBottom="5.0dip" android:layout_width="100.0sp" android:layout_height="wrap_content" android:text="" android:singleLine="true" android:selectAllOnFocus="true" android:maxLength="5" android:inputType="number" />
+                        <TextView android:textSize="14.0sp" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="Expiration:" />
+                        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <Spinner android:scrollbarAlwaysDrawHorizontalTrack="false" android:scrollbarAlwaysDrawVerticalTrack="true" android:id="@id/month" android:layout_width="150.0sp" android:layout_height="wrap_content" android:isScrollContainer="true" />
+                            <Spinner android:scrollbarAlwaysDrawHorizontalTrack="false" android:scrollbarAlwaysDrawVerticalTrack="true" android:id="@id/year" android:layout_width="150.0sp" android:layout_height="wrap_content" android:isScrollContainer="true" />
+                        </LinearLayout>
+                        <TextView android:textSize="14.0sp" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="Account Nickname:" />
+                        <EditText android:textSize="18.0sp" android:id="@id/acctNickName" android:layout_width="225.0sp" android:layout_height="wrap_content" android:text="" android:singleLine="true" android:selectAllOnFocus="true" android:maxLength="25" android:inputType="textCapSentences" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <View android:background="#ff636363" android:layout_width="wrap_content" android:layout_height="1.0dip" />
+            <Button android:textSize="14.0sp" android:textColor="#ffffffff" android:id="@id/gotoPage3" android:background="@drawable/btn_custom_black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Next" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

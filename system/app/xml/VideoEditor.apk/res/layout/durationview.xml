@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.app.ve.view.timeline.paint.DurationView android:gravity="left" android:id="@id/painttrimbar" android:layout_width="fill_parent" android:layout_height="200.0px" android:layout_marginTop="10.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/yellowimage" android:background="@drawable/videoframe_pendrawing" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="62.0px" android:layout_marginTop="73.0px" android:layout_marginRight="62.0px" android:scaleType="fitXY" />
+    <RelativeLayout android:id="@id/leftbarparent" android:visibility="visible" android:layout_width="173.0px" android:layout_height="fill_parent" android:layout_alignParentLeft="true">
+        <LinearLayout android:gravity="center" android:id="@id/timebox" android:background="@drawable/timebox" android:layout_width="132.0px" android:layout_height="66.0px" android:layout_alignParentLeft="true">
+            <TextView android:textSize="36.0px" android:textColor="@color/white" android:id="@id/timeboxtext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0px" android:text="00:00" />
+        </LinearLayout>
+        <ImageView android:id="@id/leftbarimg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0px" android:src="@drawable/timeline_trimline_left_n" android:layout_below="@id/timebox" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rightbarparent" android:visibility="visible" android:layout_width="173.0px" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+        <LinearLayout android:gravity="center" android:id="@id/timebox" android:background="@drawable/timebox" android:layout_width="132.0px" android:layout_height="66.0px" android:layout_alignParentRight="true">
+            <TextView android:textSize="36.0px" android:textColor="@color/white" android:id="@id/timeboxtext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0px" android:text="00:00" />
+        </LinearLayout>
+        <ImageView android:id="@id/rightbarimg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0px" android:src="@drawable/timeline_trimline_right_n" android:layout_below="@id/timebox" android:layout_alignParentLeft="true" />
+    </RelativeLayout>
+</com.sec.android.app.ve.view.timeline.paint.DurationView>

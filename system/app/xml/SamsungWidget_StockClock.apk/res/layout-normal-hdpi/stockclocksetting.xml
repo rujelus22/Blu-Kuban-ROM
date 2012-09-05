@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/top_layout" android:background="@drawable/title_bar_normal" android:layout_width="fill_parent" android:layout_height="36.599976dip" android:layout_marginTop="1.0dip">
+        <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/top_logo" android:background="@drawable/title_bar_selector" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/finance_logo_title_normal" />
+        </LinearLayout>
+    </RelativeLayout>
+    <com.sec.android.touchwiz.widget.TwTabHost android:orientation="horizontal" android:id="@id/detailtabhost" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_below="@id/top_layout" touchwiz:twTabIndicatorType="text"
+      xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.sec.android.touchwiz.widget.TwTabWidget android:id="@android:id/tabs" android:layout_width="fill_parent" android:layout_height="53.299988dip" />
+            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:id="@id/market" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <RelativeLayout android:orientation="horizontal" android:id="@id/add_layout" android:background="@drawable/listlayout_selectall_xml_item_bg" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="64.599976dip">
+                            <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLinePrimary" android:textSize="22.0dip" android:ellipsize="marquee" android:gravity="left" android:id="@id/add_market_text" android:paddingLeft="52.0dip" android:duplicateParentState="true" android:layout_width="266.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
+                            <ImageView android:id="@id/btn_create" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:src="@drawable/btn_create_ss" android:scaleType="centerInside" android:layout_centerVertical="true" />
+                            <TextView android:textSize="17.0dip" android:textColor="@drawable/stock_list_state_num_selector" android:id="@id/market_num" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="16.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <com.sec.android.widgetapp.stockclock.stockview.TouchListView android:id="@id/stocklistview" android:layout_width="fill_parent" android:layout_height="320.0dip" android:cacheColorHint="#00000000" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/major_indics" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <RelativeLayout android:orientation="horizontal" android:id="@id/add_layout1" android:background="@drawable/listlayout_selectall_xml_item_bg" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="64.599976dip">
+                            <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLinePrimary" android:textSize="22.0dip" android:ellipsize="marquee" android:gravity="left" android:id="@id/add_major_indics_text" android:paddingLeft="52.0dip" android:duplicateParentState="true" android:layout_width="256.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
+                            <ImageView android:id="@id/btn_create2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:src="@drawable/btn_create_ss" android:scaleType="centerInside" android:layout_centerVertical="true" />
+                            <TextView android:textSize="17.0dip" android:textColor="@drawable/stock_list_state_num_selector" android:id="@id/indice_num" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="16.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <com.sec.android.widgetapp.stockclock.stockview.TouchListView android:id="@id/indiceslistview" android:layout_width="fill_parent" android:layout_height="320.0dip" android:cacheColorHint="#00000000" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/currencies" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <RelativeLayout android:orientation="horizontal" android:id="@id/add_layout2" android:layout_width="fill_parent" android:layout_height="64.599976dip">
+                            <RelativeLayout android:id="@id/currencylayout" android:layout_width="304.0dip" android:layout_height="51.299988dip" android:layout_marginLeft="6.5999756dip" android:layout_marginTop="6.5999756dip">
+                                <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLinePrimary" android:textSize="22.0dip" android:typeface="sans" android:gravity="center" android:id="@id/add_currency_text" android:background="@drawable/btn_exchange_bg_selector" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+                                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.5dip" android:layout_marginRight="7.299988dip" android:src="@drawable/btn_exchange" android:layout_alignParentRight="true" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <com.sec.android.widgetapp.stockclock.stockview.TouchListView android:id="@id/stocklistview_curr" android:layout_width="fill_parent" android:layout_height="320.0dip" android:cacheColorHint="#00000000" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </com.sec.android.touchwiz.widget.TwTabHost>
+    <ImageView android:id="@id/bottom_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/bottom_line" />
+    <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="36.599976dip" android:layout_alignParentBottom="true" android:layout_centerVertical="true">
+        <LinearLayout android:orientation="horizontal" android:background="@drawable/bottom_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="right|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="6.5999756dip" android:layout_weight="1.0">
+                <Button android:textSize="10.599976dip" android:textColor="#80ffffff" android:gravity="center" android:id="@id/detailquotesdelayedbg" android:background="@drawable/quotes_delayed_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/detail_quotesdelayed" />
+                <TextView android:textSize="10.599976dip" android:textColor="#80ffffff" android:id="@id/settinglastupdate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <RelativeLayout android:id="@id/detailfreshbtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.2999878dip">
+                    <ImageView android:id="@id/changerefresh" android:background="@drawable/refresh_selector" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/refresh_anim" android:scaleType="center" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

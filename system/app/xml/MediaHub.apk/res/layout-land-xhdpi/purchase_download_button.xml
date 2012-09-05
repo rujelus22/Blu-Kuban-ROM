@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/rl_download_play_now" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="18.0sp" android:textColor="@color/color2" android:gravity="center" android:id="@id/btn_download" android:background="@drawable/selector_store_btn_01" android:layout_width="fill_parent" android:layout_height="54.0dip" android:layout_marginTop="10.0dip" />
+    <ImageView android:id="@id/iv_wifi_lock" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/wifi_lock" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

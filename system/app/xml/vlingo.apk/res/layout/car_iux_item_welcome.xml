@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vlingo.client.scroller.ScrollableItemRelativeLayout android:id="@id/parent_layout_buffer" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:id="@id/parent_layout" android:background="@drawable/car_popup_back" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:keepScreenOn="true"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="vertical" android:id="@id/top_frame" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="10.0dip" android:layout_above="@id/right_btn" android:layout_alignParentTop="true">
+                    <RelativeLayout android:id="@id/top_frame" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+                        <TextView android:textSize="24.0sp" android:textColor="#ffffffff" android:id="@id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/car_iux_item_welcome_welcome" />
+                        <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:id="@id/count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/car_iux_item_welcome_oneofthree" android:layout_alignBaseline="@id/text" android:layout_alignParentRight="true" />
+                    </RelativeLayout>
+                    <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:id="@id/welcome_body" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/car_iux_item_welcome_vlingo_is" />
+                    <ImageButton android:layout_gravity="right" android:id="@id/right_btn" android:background="@null" android:layout_width="wrap_content" android:layout_height="60.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip" android:src="@drawable/car_arrow_right" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</com.vlingo.client.scroller.ScrollableItemRelativeLayout>

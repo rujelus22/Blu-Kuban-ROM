@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="@drawable/popup_top_dark" android:layout_width="634.0px" android:layout_height="80.0px" android:layout_marginLeft="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="2.0dip" android:layout_marginBottom="2.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textSize="30.0px" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@id/title" android:paddingLeft="60.0px" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:shadowColor="#ff000000" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="3.0" />
+    </LinearLayout>
+    <ListView android:orientation="vertical" android:id="@id/items" android:background="@drawable/popup_bottom_bright" android:paddingLeft="2.0dip" android:paddingTop="2.0dip" android:paddingRight="2.0dip" android:paddingBottom="5.0dip" android:layout_width="634.0px" android:layout_height="wrap_content" android:cacheColorHint="#00000000" android:divider="@drawable/album_list_line" android:layout_weight="1.0" />
+</LinearLayout>

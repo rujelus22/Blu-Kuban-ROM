@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.app.ve.view.trim.TrimBarView android:orientation="horizontal" android:id="@id/trim_bar" android:paddingLeft="374.0px" android:paddingBottom="4.0px" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="200.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/trim_bar_left_parent" android:layout_width="92.0px" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:background="@drawable/timebox" android:layout_width="82.0px" android:layout_height="42.0px">
+            <TextView android:textSize="22.0px" android:textColor="@color/white" android:id="@id/trim_bar_left_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0px" android:text="@string/zero" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/trim_bar_img_left" android:focusable="true" android:layout_width="fill_parent" android:layout_height="85.0px" android:layout_marginLeft="22.0px" android:src="@drawable/timeline_trimline_left_n" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/trim_bar_right_parent" android:layout_width="104.0px" android:layout_height="wrap_content" android:layout_marginLeft="427.0px">
+        <LinearLayout android:gravity="center" android:background="@drawable/timebox" android:layout_width="85.0px" android:layout_height="42.0px">
+            <TextView android:textSize="22.0px" android:textColor="@color/white" android:id="@id/trim_bar_right_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0px" android:text="@string/zero" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/trim_bar_img_right" android:layout_width="fill_parent" android:layout_height="85.0px" android:layout_marginRight="34.0px" android:src="@drawable/timeline_trimline_right_n" />
+    </LinearLayout>
+</com.sec.android.app.ve.view.trim.TrimBarView>

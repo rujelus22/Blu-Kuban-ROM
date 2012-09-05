@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="@dimen/wcis_para_marginBottom" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+            <TextView android:textSize="22.0dip" android:textColor="#ffb0b0b0" android:id="@id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip" android:text="@string/wcis_info_row_more_info" />
+            <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="#ff76acdf" android:id="@id/text2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wcis_info_row_more_info" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:id="@id/divider" android:background="#ff6b6b6b" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+</LinearLayout>

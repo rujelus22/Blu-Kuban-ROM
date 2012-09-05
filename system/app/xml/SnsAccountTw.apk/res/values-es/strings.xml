@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account_label_twitter">Twitter</string>
+    <string name="username">Nombre de usuario o correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="show_password">Mostrar contraseña</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="done">Finalizado</string>
+    <string name="next">Siguiente</string>
+    <string name="okay_action">Aceptar</string>
+    <string name="login_failed_message">Error de inicio de sesión. Inténtelo más tarde</string>
+    <string name="login_failed">Error al iniciar sesión</string>
+    <string name="wrong_email_address">Dirección de correo electrónico incorrecta</string>
+    <string name="wrong_password">Contraseña incorrecta</string>
+    <string name="wrong_email_or_pwd">Dirección de correo electrónico o contraseña incorrectas</string>
+    <string name="network_unavailable">Red no disponible</string>
+    <string name="progress_logging_in">Iniciando sesión...</string>
+    <string name="activity_label_twitter">Configurar su cuenta de Twitter</string>
+    <string name="already_added">La cuenta %s ya está añadida</string>
+    <string name="information_01_twitter">Bienvenido a la sincronización de Twitter</string>
+    <string name="information_02_twitter">Sincronice datos con Twitter para acceder a su estado y mucho más desde dondequiera que esté</string>
+    <string name="information_03">Y, a continuación, puede ver las nuevas fuentes en el modo inactivo por widget</string>
+    <string name="information_04">Configuración rápida</string>
+    <string name="information_05_twitter">Ha abierto una aplicación en la que es necesario que vincule una cuenta de Twitter a su teléfono. Es fácil y se hace en sólo unos pocos pasos</string>
+    <string name="information_06">Seleccione Siguiente para continuar o pulse la tecla Atrás para salir</string>
+    <string name="sns_settings_title">Ajustes generales</string>
+    <string name="sns_sync_interval_settings">Intervalo de sincronización de SNS</string>
+    <string name="message_sync_interval">Intervalo de sincronización de mensajes</string>
+    <string name="sns_settings">Ajustes SNS</string>
+    <string name="sns_settings_summary">Intervalo de sincronización y otros ajustes de SNS</string>
+    <string name="interval_value_none">Ninguno</string>
+    <string name="interval_value_3hours">3 horas</string>
+    <string name="interval_value_6hours">6 horas</string>
+    <string name="interval_value_12hours">12 horas</string>
+    <string name="interval_value_onceaday">Una vez al día</string>
+    <string name="sync_message">Sincronizar mensaje</string>
+    <string name="sync_message_subtitle_twitter">Sincronizar mensajes de Twitter con Social Hub</string>
+    <string name="retry_login_noti_title_twitter">La sesión de Twitter ha caducado</string>
+    <string name="retry_login_noti_body">Volver a iniciar sesión</string>
+</resources>

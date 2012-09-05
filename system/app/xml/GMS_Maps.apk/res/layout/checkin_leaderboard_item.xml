@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/leaderboardItemContainer" android:layout_width="fill_parent" android:layout_height="@dimen/checkin_awards_board_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/leaderboardItemBack" android:background="@color/ultralight_grey" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <TableLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/leaderboardItem" android:background="@drawable/leaderboard_item_default_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchColumns="2" android:shrinkColumns="2">
+        <TableRow android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="@dimen/checkin_awards_board_item_rank_width" android:layout_height="fill_parent">
+                <ImageView android:id="@id/firstPlaceCrown" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="-2.0dip" android:src="@drawable/checkin_awards_crown_small" />
+                <TextView android:textAppearance="@style/CheckinLeaderboardItemRank" android:gravity="center" android:id="@id/rank" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <ImageView android:id="@id/image" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/checkin_awards_board_item_margin">
+                <TextView android:textAppearance="@style/CheckinLeaderboardItemName" android:ellipsize="end" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                <TextView android:textAppearance="@style/CheckinLeaderboardItemStatusInactive" android:ellipsize="end" android:id="@id/status" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" />
+            </LinearLayout>
+            <TextView android:textAppearance="@style/CheckinLeaderboardItemScore" android:gravity="right|center" android:id="@id/score" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_margin="@dimen/checkin_awards_board_item_margin" />
+        </TableRow>
+    </TableLayout>
+</FrameLayout>

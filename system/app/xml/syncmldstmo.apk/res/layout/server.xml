@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:padding="3.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchColumns="1"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TableRow>
+            <TextView android:textSize="15.0sp" android:textStyle="bold" android:text="@string/SML_STR_PROFILE_NAME" />
+            <EditText android:id="@id/e_ProfileName" android:padding="3.0dip" android:layout_width="150.0px" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="15.0sp" android:textStyle="bold" android:text="@string/SML_STR_ADDRESS" />
+            <EditText android:id="@id/e_Address" android:padding="3.0dip" android:layout_width="150.0px" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="15.0sp" android:textStyle="bold" android:text="@string/SML_STR_SERVER_ID" />
+            <EditText android:id="@id/e_ServerID" android:padding="3.0dip" android:layout_width="150.0px" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="15.0sp" android:textStyle="bold" android:text="@string/SML_STR_SERVER_PW" />
+            <EditText android:id="@id/e_ServerPW" android:padding="3.0dip" android:layout_width="150.0px" android:password="true" />
+        </TableRow>
+    </TableLayout>
+</ScrollView>

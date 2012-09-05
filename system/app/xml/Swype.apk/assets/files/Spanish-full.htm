@@ -1,0 +1,518 @@
+﻿
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta content="True" name="HandheldFriendly" />
+<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" />
+<meta name="viewport" content="width=device-width" />
+<script type="text/javascript">
+function toggle(id){
+ul = "ul_" + id;
+img = "img_" + id;
+ulElement = document.getElementById(ul);
+imgElement = document.getElementById(img);
+if (ulElement){
+if (ulElement.className == "closed"){
+ulElement.className = "open";
+imgElement.src = "icon_up.png";
+}
+else{
+ulElement.className = "closed";
+imgElement.src = "icon_down.png";
+}
+}
+}
+function collapse(id) {
+var e = document.getElementById(id);
+if(e.style.display == 'block')
+e.style.display = 'none';
+else
+e.style.display = 'block';
+}
+</script>
+<style type="text/css">
+* {
+margin: 0;
+padding: 0;
+}
+a:link {
+text-decoration: none;
+color: #f46f1b;
+}
+a:visited {
+text-decoration: none;
+color: #cc5500;
+}
+body {
+background: #ddd;
+font-family: Arial, Droid Sans, sans-serif;
+width: auto;
+margin: 5px 10px;
+}
+.open {
+display: block;
+}
+.closed, .more, .sub {
+display: none;
+}
+p.tips {
+display: block;
+padding: 0;
+margin: 5px 0;
+}
+.screenshot {
+width: 50%;
+max-width: 500px;
+text-align: center;
+}
+.explcontainer {
+text-align: center;
+}
+.logo {
+width: 21px;
+position: relative;
+top: 0px;
+}
+.keylabel {
+height: 35px;
+position: relative;
+top: 0px;
+}
+.arrow {
+width: 15px;
+padding: 10px 15px 10px 15px;
+}
+.fliparrow {
+-moz-transform: scaleX(-1);
+-o-transform: scaleX(-1);
+-webkit-transform: scaleX(-1);
+transform: scaleX(-1);
+filter: FlipH;
+-ms-filter: "FlipH";
+width: 15px;
+padding: 10px 15px 10px 15px;
+}
+.closed, .open {
+text-align: center;
+width: 100%;
+padding-bottom: 10px;
+}
+.closed p, .open p {
+text-align: left;
+padding: 10px;
+font-size: 0.95em;
+}
+#container {
+min-width: 100px;
+max-width: 100%;
+margin: 5px auto;
+}
+#container #inside {
+margin: 10 px auto; max-width: 550px;
+}
+.swypehelp { 
+-moz-box-shadow: inset 0px 1px 0px 0px #858585;
+-webkit-box-shadow: inset 0px 1px 0px 0px #858585;
+box-shadow: inset 0px 1px 0px 0px #858585;
+background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #595959), color-stop(1, #1f1f1f) );
+background: -moz-linear-gradient( center top, #595959 5%, #1f1f1f 100% );
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#595959', endColorstr='#1f1f1f');
+background-color: #595959; 
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+border: 1px solid #3b3b3b;
+margin: 5px 0;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+-webkit-transition: all .4s ease-in-out;
+-moz-transition: all .4s ease-in-out;
+-o-transition: all .4s ease-in-out;
+transition: all .4s ease-in-out;
+}
+.swypehelp a {
+display: inline-block;
+color: #ffffff;
+padding: 10px 20px; width: auto;
+min-width: 90%;
+text-decoration: none; text-shadow: 0px -1px 1px #000000;
+}
+.swypehelp:active {
+background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1f1f1f), color-stop(1, #595959) );
+background: -moz-linear-gradient( center top, #1f1f1f 5%, #595959 100% );
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1f1f1f', endColorstr='#595959');
+background-color: #1f1f1f;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.swypehelp h1, .moreclose h1 {
+float: left;
+margin: 0; padding: 0; 
+font-size: 0.95em; font-weight: bold;
+}
+.swypehelp img {
+float: right;
+border: 0;
+}
+.moreclose {
+-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+-webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+box-shadow: inset 0px 1px 0px 0px #ffffff;
+background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6) );
+background: -moz-linear-gradient( center top, #ffffff 5%, #f6f6f6 100% );
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6');
+background-color: #ffffff;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+border: 1px solid #ccc;
+margin: 5px;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.moreclose a {
+display: inline-block;
+color: #000000;
+padding: 7px 10px; width: auto;
+text-decoration: none; text-shadow: 0px 1px 1px #ffffff;
+}
+.moreclose:active {
+background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #999999), color-stop(1, #dddddd) );
+background: -moz-linear-gradient( center top, #999999 5%, #dddddd 100% );
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#999999, endColorstr='#dddddd);
+background-color: #dddddd;
+position: relative;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+</style>
+</head>
+<body>
+<div id="container">
+<div id="inside">
+<div class="swypehelp" onclick="toggle('1')" id="1">
+<a href="#1">
+<h1>
+Introducción a Swype
+</h1>
+<img src="icon_down.png" id="img_1" />
+</a>
+</div>
+<div id="ul_1" class="closed">
+<p>
+Swype es una manera rápida de introducir texto. Le permite escribir una palabra dibujando un trayecto por las letras. Swypee una palabra y levante el dedo.
+</p>
+<img class="screenshot" src="Spanish_WhatIsSwype.png" alt="" />
+<p>
+Ponga el dedo en la primera letra de la palabra y describa un trayecto de una letra a la otra. Levante el dedo al llegar a la última letra. Swype insertará espacios cuando sea necesario.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('2x')" id="2x">
+<a href="#2x">
+<h1>
+La tecla Swype
+</h1>
+<img src="icon_down.png" id="img_2x" />
+</a>
+</div>
+<div id="ul_2x" class="closed">
+<p>
+La tecla Swype es la tecla con el logo de Swype. Mantenga presionada la tecla Swype para acceder a las Opciones de Swype.
+</p>
+<div class="explcontainer">
+<img src="Swype_key_orange.png" class="keylabel">
+</div>
+</div>
+<div class="swypehelp" onclick="toggle('2')" id="2">
+<a href="#2">
+<h1>
+Repetir letras
+</h1>
+<img src="icon_down.png" id="img_2" />
+</a>
+</div>
+<div id="ul_2" class="closed">
+<p>
+Para escribir una letra dos veces, haga un ligero garabateo o describa un círculo sobre ella. Por ejemplo, para escribir la "rr" de "carro", garabatee sobre la tecla "r".
+</p>
+<p>
+</p>
+<img class="screenshot" src="Spanish_DoubleLetters.png" alt="" />
+<p>
+Si lo prefiere, también puede ingresar la misma letra dos veces seguidas describiendo un círculo en la tecla. ¡Use el gesto que le parezca más fácil!
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('3')" id="3">
+<a href="#3">
+<h1>
+Lista de selección de palabras
+</h1>
+<img src="icon_down.png" id="img_3" />
+</a>
+</div>
+<div id="ul_3" class="closed">
+<p>
+Para aceptar la palabra sugerida de la lista de selección de palabras, solo tiene que seguir Swypeando. De lo contrario, desplácese por la lista arrastrando su dedo y seleccione la palabra que desea.
+</p>
+<p>
+Puede personalizar la forma en la que se comporta la Lista de selección de palabras mientras toca, solo tiene que dirigirse a Opciones y seleccionar Sugerencia de palabra.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('4')" id="4">
+<a href="#4">
+<h1>
+Uso de mayúsculas
+</h1>
+<img src="icon_down.png" id="img_4" />
+</a>
+</div>
+<div id="ul_4" class="closed">
+<p>
+Ponga mayúscula inicial en una palabra al Swypear deslizando el dedo desde la primera letra hasta más arriba del teclado y, sin levantarlo, deslícelo hasta la siguiente letra de la palabra.
+</p>
+<img class="screenshot" src="Spanish_Capitalization.png" alt="" />
+<p>
+Cambie las mayúsculas y minúsculas de una palabra después de ingresarla o al editar su texto tocando la palabra en el texto y deslizando el dedo desde la tecla Swype hasta la tecla Mayús antes de levantarlo. Aparecerá una lista de selección de palabras con opciones de uso de mayúsculas que le permitirá poner todo en minúsculas, usar mayúscula inicial o TODO EN MAYÚSCULAS.
+</p>
+<p>
+Para ingresar el modo Bloq Mayús tan solo tiene que tocar dos veces la tecla Mayús.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('5')" id="5">
+<a href="#5">
+<h1>
+Espaciado automático
+</h1>
+<img src="icon_down.png" id="img_5" />
+</a>
+</div>
+<div id="ul_5" class="closed">
+<p>
+Swype ingresa automáticamente un espacio entre las palabras al Swypear la siguiente palabra en la oración. Puede activar o desactivar la función de espaciado automático en Opciones de Swype.
+</p>
+<p>
+El espaciado automático se puede desactivar para una palabra Swypeando desde la barra espaciadora hasta la tecla Retroceso. Aparecerá un icono en la barra espaciadora para mostrar que el espaciado automático está desactivado para la palabra siguiente. Ejemplo: Para ingresar "rompeventanas", Swypee "rompe", Swypeando desde la barra espaciadora hasta la tecla Retroceso, y luego Swypee la palabra "ventanas".
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('6')" id="6">
+<a href="#6">
+<h1>
+Cambiar una palabra
+</h1>
+<img src="icon_down.png" id="img_6" />
+</a>
+</div>
+<div id="ul_6" class="closed">
+<p>
+Cambie una palabra tocándola, a continuación seleccione la palabra que desee de la Lista de selección de palabras.
+</p>
+<p>
+O bien, si encuentra una palabra incorrecta, puede sombrearla y oprimir la tecla Swype para editarla. Se mostrará la Lista de selección de palabras, y usted podrá seleccionar la palabra que quiere ingresar. Esta última reemplazará automáticamente la palabra sombreada.
+</p>
+<p>
+Si no encuentra la palabra que quiere en la Lista de selección de palabras, solo tendrá que Swypear la palabra de nuevo y la nueva palabra que ingresó reemplazará la incorrecta.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('7')" id="7">
+<a href="#7">
+<h1>
+Rebote entre letras
+</h1>
+<img src="icon_down.png" id="img_7" />
+</a>
+</div>
+<div id="ul_7" class="closed">
+<img class="screenshot" src="Spanish_SelectWord.png" alt="" />
+<p>
+A veces, evitar letras al Swypear le asegura obtener la palabra que desea la primera vez. Por ejemplo, "por" y "pie" podrían describirse con el mismo trayecto, pero tenga presente que no necesita moverse de una letra a otra usando líneas rectas. Evitar la "o" al deslizar el dedo hasta la "e" asegura que la palabra "pie" sea la primera en la lista de selección de palabras.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('8')" id="8">
+<a href="#8">
+<h1>
+Caracteres alternativos
+</h1>
+<img src="icon_down.png" id="img_8" />
+</a>
+</div>
+<div id="ul_8" class="closed">
+<p>
+Al tocar una tecla y mantener su dedo en ella, aparece una lista de todos los caracteres disponibles en esa tecla, incluidas las teclas alternativas como "ç" y "ё", los símbolos como @ y % y los números.
+</p>
+<p>
+Para ingresar un carácter alternativo explícitamente, toque la Tecla de símbolos (+!=) que se llevará a la capa de símbolos. Como puede notar, hay dos páginas de caracteres alternativos. Si no ve el carácter que está buscando, oprima la tecla Mayús y ésta le mostrará otro conjunto de caracteres.
+</p>
+<p>
+Recuerde que TODOS los caracteres pueden Swypearse a partir del teclado principal (aunque usted no los pueda ver). Puede Swypear con esta vista del teclado, pero solo obtendrá palabras con por lo menos un número o un símbolo.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('9')" id="9">
+<a href="#9">
+<h1>
+Agregar palabras a Swype
+</h1>
+<img src="icon_down.png" id="img_9" />
+</a>
+</div>
+<div id="ul_9" class="closed">
+<p>
+Agregar palabras al diccionario de Swype es fácil. Toque las letras de la palabra y luego selecciónelas de la lista de selección de palabras. Toque el indicador que aparece para agregar la palabra.
+</p>
+<img class="screenshot" src="Spanish_TeachWord.png" alt="" />
+<p>
+Para eliminar una palabra del diccionario, sombree SOLO la palabra que quiere eliminar y luego toque la tecla Swype.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('10')" id="10">
+<a href="#10">
+<h1>
+Gestos Swype
+</h1>
+<img src="icon_down.png" id="img_10" />
+</a>
+</div>
+<div id="ul_10" class="closed">
+<p>
+Los gestos Swype son métodos abreviados del teclado para realizar tareas comunes rápidamente.
+</p>
+<div class="moreclose" onclick="toggle('10a')" id="10a">
+<a href="#10a">
+<h1>
+Acceder al teclado de edición
+</h1>
+</a>
+</div>
+<div id="ul_10a" class="closed">
+<p class="tips">
+El teclado de edición permite al usuario mover el cursor en el texto, como también realizar otras tareas de edición.  Para acceder al teclado de edición, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la tecla símbolos (+!=) del teclado.
+</p>
+</div>
+<div class="moreclose" onclick="toggle('10b')" id="10b">
+<a href="#10b">
+<h1>
+Acceder al teclado numérico
+</h1>
+</a>
+</div>
+<div id="ul_10b" class="closed">
+<p class="tips">
+Para acceder al teclado numérico rápidamente, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta el número 5.
+</p>
+</div>
+<div class="moreclose" onclick="toggle('10c')" id="10c">
+<a href="#10c">
+<h1>
+Ocultar el teclado
+</h1>
+</a>
+</div>
+<div id="ul_10c" class="closed">
+<p class="tips">
+Para ocultar el teclado fácilmente, solo debe Swypear desde la tecla Swype hasta la tecla retroceder.
+</p>
+<div class="explcontainer">
+<img src="Swype_key_orange.png" class="keylabel">
+<img src="right_arrow_orange.png" class="arrow">
+<img src="backspace_key.png" class="keylabel" />
+</div>
+</div>
+<div class="moreclose" onclick="toggle('10d')" id="10d">
+<a href="#10d">
+<h1>
+Desactivar el espaciado automático
+</h1>
+</a>
+</div>
+<div id="ul_10d" class="closed">
+<p class="tips">
+Puede eliminar el espaciado automático antes de la próxima palabra al deslizarse desde la barra espaciadora hasta la tecla retroceder.
+</p>
+<div class="explcontainer">
+<img src="spacebar.png" class="keylabel" />
+<img src="right_arrow_orange.png" class="arrow">
+<img src="backspace_key.png" class="keylabel">
+</div>
+</div>
+<div class="moreclose" onclick="toggle('10e')" id="10e">
+<a href="#10e">
+<h1>
+Editar mayúsculas y minúsculas de una palabra
+</h1>
+</a>
+</div>
+<div id="ul_10e" class="closed">
+<p class="tips">
+Cambie las mayúsculas y minúsculas de una palabra después de ingresarla o al editar su texto tocando la palabra en el texto y deslizando el dedo desde la tecla Swype hasta la tecla Mayús antes de levantarlo. Aparecerá una lista de selección de palabras con opciones de uso de mayúsculas que le permitirá poner todo en minúsculas, usar mayúscula inicial o TODO EN MAYÚSCULAS.
+</p>
+<div class="explcontainer">
+<img src="Swype_key_orange.png" class="keylabel">
+<img src="right_arrow_orange.png" class="arrow">
+<img src="shift.png" class="keylabel" />
+</div>
+</div>
+<div class="moreclose" onclick="toggle('10g')" id="10g">
+<a href="#10g">
+<h1>
+Selec. todo
+</h1>
+</a>
+</div>
+<div id="ul_10g" class="closed">
+<p class="tips">
+Para seleccionar todo el texto que introdujo, debe Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> a la ‘a’.
+</p>
+</div>
+<div class="moreclose" onclick="toggle('10h')" id="10h">
+<a href="#10h">
+<h1>
+Cortar
+</h1>
+</a>
+</div>
+<div id="ul_10h" class="closed">
+<p class="tips">
+Para eliminar una palabra o un bloque de texto y guardarlo para pegarlo en otro lado, solo seleccione el texto dándole dos toques seguidos a la palabra o use el gesto Seleccionar todo y luego puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la ‘x’.
+</p>
+</div>
+<div class="moreclose" onclick="toggle('10i')" id="10i">
+<a href="#10i">
+<h1>
+Copiar
+</h1>
+</a>
+</div>
+<div id="ul_10i" class="closed">
+<p class="tips">
+Para copiar una palabra o un bloque de texto y guardarlo para pegarlo en otro lado, solo seleccione el texto dándole dos toques seguidos a la palabra o use al gesto Seleccionar todo y luego puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la ‘c’.
+</p>
+</div>
+<div class="moreclose" onclick="toggle('10j')" id="10j">
+<a href="#10j">
+<h1>
+Pegar
+</h1>
+</a>
+</div>
+<div id="ul_10j" class="closed">
+<p class="tips">
+Después de copiar o cortar el texto, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la ‘v’ para pegarlo en otro lado.
+</p>
+</div>
+</div>
+<div class="swypehelp" onclick="toggle('11x')" id="11x">
+<a href="#11x">
+<h1>
+Más ayuda sobre el uso de Swype
+</h1>
+<img src="icon_down.png" id="img_11x" />
+</a>
+</div>
+<div id="ul_11x" class="closed">
+<p>
+Para obtener más ayuda sobre el uso de Swype, vea un manual de usuario de Swype y los consejos y videos de Swype en <a href="http://www.swype.com">www.swype.com</a>, o visite el foro de Swype en línea en <a href="http://forum.swype.com">forum.swype.com</a>.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

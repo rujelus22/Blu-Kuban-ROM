@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Alert" parent="@android:style/Theme.Dialog.Alert" />
+    <style name="MinusButton">
+        <item name="android:background">@drawable/btn_circle</item>
+        <item name="android:src">@drawable/btn_minus_selector</item>
+    </style>
+    <style name="PlusButton">
+        <item name="android:background">@drawable/btn_circle</item>
+        <item name="android:src">@drawable/btn_plus_selector</item>
+    </style>
+    <style name="MonthView_DayLabel">
+        <item name="android:textAppearance">@style/TextAppearance.MonthView_DayLabel</item>
+        <item name="android:textSize">@dimen/month_week_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="MonthView_WeekLable" parent="@style/MonthView_DayLabel">
+        <item name="android:textAppearance">@style/TextAppearance.MonthView_WeekLabel</item>
+    </style>
+    <style name="MonthView_SunDayLabel" parent="@style/MonthView_DayLabel">
+        <item name="android:textAppearance">@style/TextAppearance.MonthView_SunDayLabel</item>
+    </style>
+    <style name="MonthView_SaturDayLabel" parent="@style/MonthView_DayLabel">
+        <item name="android:textAppearance">@style/TextAppearance.MonthView_SaturDayLabel</item>
+    </style>
+    <style name="TextAppearance" parent="@android:style/TextAppearance" />
+    <style name="TextAppearance.MonthView_WeekLabel" parent="@style/TextAppearance">
+        <item name="android:textColor">@color/month_week_label</item>
+    </style>
+    <style name="TextAppearance.MonthView_DayLabel" parent="@style/TextAppearance">
+        <item name="android:textColor">@touchwiz:color/tw_color042</item>
+    </style>
+    <style name="TextAppearance.MonthView_SunDayLabel" parent="@style/TextAppearance">
+        <item name="android:textColor">@color/daynames_sun_text_color</item>
+    </style>
+    <style name="TextAppearance.MonthView_SaturDayLabel" parent="@style/TextAppearance">
+        <item name="android:textColor">@color/daynames_sat_text_color</item>
+    </style>
+    <style name="TextAppearance.AgendaView_ValueLabel" parent="@style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="TextAppearance.InfoLocation_Label" parent="@style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@touchwiz:color/tw_color001</item>
+        <item name="android:paddingLeft">13.329987dip</item>
+    </style>
+    <style name="TextAppearance.EditEvent_Label" parent="@style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/tw_color029</item>
+        <item name="android:paddingLeft">18.669983dip</item>
+    </style>
+    <style name="TextAppearance.EventInfo_Label" parent="@style/TextAppearance">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="android:paddingLeft">2.0dip</item>
+    </style>
+    <style name="EditEvent_Layout">
+        <item name="android:paddingLeft">6.0dip</item>
+        <item name="android:paddingTop">8.0dip</item>
+        <item name="android:paddingRight">7.0dip</item>
+    </style>
+    <style name="TextAppearance.Alert_Title" parent="@style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="TextAppearance.Alert_Label" parent="@style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="TextAppearance.Alert_Value" parent="@style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="CalendarTheme" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="CalendarThemeTitle" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="CustAlarm" parent="@android:style/Theme.Panel" />
+    <style name="TextStyle_1">
+        <item name="android:textSize">@dimen/info_text_size_1</item>
+        <item name="android:textColor">@drawable/calendar_text_first</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="TextStyle_2">
+        <item name="android:textSize">@dimen/info_text_size_2</item>
+        <item name="android:textColor">@drawable/calendar_text_secondary</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="EventInfo_TextStyle_1" parent="@style/TextStyle_1">
+        <item name="android:layout_marginLeft">13.329987dip</item>
+        <item name="android:layout_marginRight">13.329987dip</item>
+    </style>
+    <style name="EventInfo_TextStyle_Title" parent="@style/TextStyle_1">
+        <item name="android:layout_marginLeft">8.329987dip</item>
+        <item name="android:layout_marginRight">13.329987dip</item>
+    </style>
+    <style name="EventInfo_TextStyle_2" parent="@style/TextStyle_2">
+        <item name="android:layout_marginLeft">13.329987dip</item>
+        <item name="android:layout_marginRight">13.329987dip</item>
+    </style>
+    <style name="Event_Title" parent="@style/TextStyle_1">
+        <item name="android:layout_marginLeft">5.0dip</item>
+    </style>
+    <style name="Event_When" parent="@style/TextStyle_2">
+        <item name="android:layout_marginLeft">5.0dip</item>
+    </style>
+    <style name="EventInfo_TextStyle_3">
+        <item name="android:textSize">@dimen/info_text_size_3</item>
+        <item name="android:textColor">@touchwiz:color/tw_color001</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">8.0dip</item>
+    </style>
+    <style name="EventInfo_TextStyle_4">
+        <item name="android:textSize">@dimen/info_text_size_4</item>
+        <item name="android:textColor">@touchwiz:color/tw_color005</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">13.329987dip</item>
+        <item name="android:layout_marginRight">13.329987dip</item>
+    </style>
+    <style name="EventInfo_Seperator">
+        <item name="android:background">@color/seperator</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.6700001dip</item>
+    </style>
+    <style name="EditEvent_Seperator" parent="@style/EventInfo_Seperator" />
+    <style name="TabStyle">
+        <item name="android:textSize">@dimen/title_switch_button_text_size</item>
+        <item name="android:textColor">@drawable/calendar_tab_text_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/calendar_tab</item>
+        <item name="android:paddingTop">@dimen/tab_padding</item>
+        <item name="android:paddingBottom">@dimen/tab_padding</item>
+        <item name="android:layout_width">@dimen/tab_width</item>
+        <item name="android:layout_height">@dimen/tab_height</item>
+        <item name="android:lines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+    <style name="TabStyle_List" parent="@style/TabStyle">
+        <item name="android:text">@string/agenda_list_view</item>
+        <item name="android:drawableTop">@drawable/calendar_tab_icon_list</item>
+    </style>
+    <style name="TabStyle_List_S" parent="@style/TabStyle_List">
+        <item name="android:background">@drawable/calendar_tab_s</item>
+    </style>
+    <style name="TabStyle_Day" parent="@style/TabStyle">
+        <item name="android:text">@string/day_view</item>
+        <item name="android:drawableTop">@drawable/calendar_tab_icon_day</item>
+    </style>
+    <style name="TabStyle_Day_S" parent="@style/TabStyle_Day">
+        <item name="android:background">@drawable/calendar_tab_s</item>
+    </style>
+    <style name="TabStyle_Week" parent="@style/TabStyle">
+        <item name="android:text">@string/week_view</item>
+        <item name="android:drawableTop">@drawable/calendar_tab_icon_week</item>
+    </style>
+    <style name="TabStyle_Week_S" parent="@style/TabStyle_Week">
+        <item name="android:background">@drawable/calendar_tab_s</item>
+    </style>
+    <style name="TabStyle_Month" parent="@style/TabStyle">
+        <item name="android:text">@string/month_view</item>
+        <item name="android:drawableTop">@drawable/calendar_tab_icon_month</item>
+    </style>
+    <style name="TabStyle_Month_S" parent="@style/TabStyle_Month">
+        <item name="android:background">@drawable/calendar_tab_s</item>
+    </style>
+    <style name="TabStyle_Land">
+        <item name="android:textSize">@dimen/title_switch_button_text_size</item>
+        <item name="android:textColor">@drawable/calendar_tab_text_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingTop">@dimen/tab_padding</item>
+        <item name="android:paddingBottom">@dimen/tab_padding</item>
+        <item name="android:layout_width">@dimen/tab_width</item>
+        <item name="android:lines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+    <style name="TabStyle_Land_List" parent="@style/TabStyle_Land">
+        <item name="android:background">@drawable/calendar_tab</item>
+        <item name="android:layout_height">@dimen/tab_height_2</item>
+        <item name="android:text">@string/agenda_list_view</item>
+        <item name="android:drawableTop">@drawable/calendar_tab_icon_list</item>
+    </style>
+    <style name="TabStyle_Land_List_Unsel" parent="@style/TabStyle_Land_List">
+        <item name="android:background">@drawable/calendar_tab_s</item>
+    </style>
+    <style name="TabStyle_Land_Day" parent="@style/TabStyle_Land">
+        <item name="android:background">@drawable/calendar_tab</item>
+        <item name="android:layout_height">@dimen/tab_height_2</item>
+        <item name="android:text">@string/day_view</item>
+        <item name="android:drawableTop">@drawable/calendar_tab_icon_day</item>
+    </style>
+    <style name="TabStyle_Land_Day_Unsel" parent="@style/TabStyle_Land_Day">
+        <item name="android:background">@drawable/calendar_tab_s</item>
+    </style>
+    <style name="TabStyle_Land_Week" parent="@style/TabStyle_Land">
+        <item name="android:background">@drawable/calendar_tab</item>
+        <item name="android:layout_height">@dimen/tab_height_1</item>
+        <item name="android:text">@string/week_view</item>
+        <item name="android:drawableTop">@drawable/calendar_tab_icon_week</item>
+    </style>
+    <style name="TabStyle_Land_Week_Unsel" parent="@style/TabStyle_Land_Week">
+        <item name="android:background">@drawable/calendar_tab_s</item>
+    </style>
+    <style name="TabStyle_Land_Month" parent="@style/TabStyle_Land">
+        <item name="android:background">@drawable/calendar_tab</item>
+        <item name="android:layout_height">@dimen/tab_height_1</item>
+        <item name="android:text">@string/month_view</item>
+        <item name="android:drawableTop">@drawable/calendar_tab_icon_month</item>
+    </style>
+    <style name="TabStyle_Land_Month_Unsel" parent="@style/TabStyle_Land_Month">
+        <item name="android:background">@drawable/calendar_tab_s</item>
+    </style>
+    <style name="EditLinearGuide">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="TwTextAppearanceTitle">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/tw_textappearance_title</item>
+    </style>
+    <style name="TwTextAppearanceTab">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_tab</item>
+    </style>
+    <style name="TwTextAppearanceMenuSmall">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_menusmall</item>
+    </style>
+    <style name="TwTextAppearanceSoftkey">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_softkey</item>
+    </style>
+    <style name="TwTextAppearanceListOneLine">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listoneline</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLinePrimary">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listtwolineprimary</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLineSecondary">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listtwolinesecondary</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLineSecondaryOrange">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listtwolinesecondaryorange</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLineSecondaryGrey">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listtwolinesecondarygrey</item>
+    </style>
+    <style name="TwTextAppearanceGroupTitle">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/tw_textappearance_grouptitle</item>
+    </style>
+    <style name="LeftArrow">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:drawableLeft">@drawable/calendar_month_view_title_left_arrow</item>
+    </style>
+    <style name="RightArrow">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:drawableRight">@drawable/calendar_month_view_title_right_arrow</item>
+    </style>
+    <style name="UpArrow">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:drawableLeft">@drawable/calendar_month_view_title_up_arrow</item>
+    </style>
+    <style name="DownArrow">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:drawableRight">@drawable/calendar_month_view_title_down_arrow</item>
+    </style>
+    <style name="dialog_time">
+        <item name="android:textSize">18.0px</item>
+        <item name="android:layout_width">41.0px</item>
+        <item name="android:layout_height">25.0px</item>
+    </style>
+</resources>

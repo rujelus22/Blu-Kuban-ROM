@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="years_ago">
+        <item quantity="other">Miaka %1$d iliyopita</item>
+        <item quantity="one">Mwaka 1 uliopita</item>
+    </plurals>
+    <plurals name="months_ago">
+        <item quantity="other">Miezi %1$d iliyopita</item>
+        <item quantity="one">Mwezi 1 uliopita</item>
+    </plurals>
+    <plurals name="weeks_ago">
+        <item quantity="other">Wiki %1$d zilizopita</item>
+        <item quantity="one">Wiki 1 iliyopita</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">Siku %1$d zilizopita</item>
+        <item quantity="one">siku 1 iliyopita</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="other">Saa %1$d zilizopita</item>
+        <item quantity="one">Saa 1 iliyopita</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="other">Dakika %1$d zilizopita</item>
+        <item quantity="one">Dakika 1 iliyopita</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="other">Sekunde %1$d zilizopita</item>
+        <item quantity="one">Sekunde 1 iliopita</item>
+    </plurals>
+    <plurals name="recent_uploads">
+        <item quantity="other">Vipakiaji vipya</item>
+        <item quantity="one">upakiaji upya</item>
+    </plurals>
+    <plurals name="recent_activity">
+        <item quantity="other">matukio mapya</item>
+        <item quantity="one">tukio jipya</item>
+    </plurals>
+    <plurals name="playlist_size">
+        <item quantity="other">Video %1$,d</item>
+        <item quantity="one">Video 1</item>
+    </plurals>
+</resources>

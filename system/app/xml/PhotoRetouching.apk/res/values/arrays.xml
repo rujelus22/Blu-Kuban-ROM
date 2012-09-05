@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="open_choice">
+        <item>@string/gallery</item>
+        <item>@string/camera</item>
+    </array>
+    <array name="dont_ask_again">
+        <item>@string/alert_dialog_dont_ask_again</item>
+    </array>
+    <array name="submenu_color">
+        <item>@string/saturation</item>
+        <item>@string/contrast</item>
+        <item>@string/brightness</item>
+        <item>@string/gray</item>
+    </array>
+    <array name="submenu_filter">
+        <item>@string/normal_blur</item>
+        <item>@string/lens_blur</item>
+        <item>@string/linear_blur</item>
+        <item>@string/radial_blur</item>
+        <item>@string/ghost_effect</item>
+        <item>@string/speedline_effect</item>
+    </array>
+    <array name="submenu_tool">
+        <item>@string/copy_to_another</item>
+        <item>@string/copy</item>
+        <item>@string/warping</item>
+        <item>@string/eraser</item>
+    </array>
+    <array name="submenu_selection">
+        <item>@string/new_selection</item>
+        <item>@string/add_selection</item>
+        <item>@string/subtract_selection</item>
+        <item>@string/inverse_selection</item>
+        <item>@string/deselection</item>
+        <item>@string/smart_selection</item>
+    </array>
+    <array name="submenu_brushsize">
+        <item>@string/small</item>
+        <item>@string/medium</item>
+        <item>@string/large</item>
+    </array>
+    <integer-array name="brush_size">
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+    </integer-array>
+</resources>

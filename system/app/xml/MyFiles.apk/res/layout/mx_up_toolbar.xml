@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/toolbar_up" android:background="@drawable/select_all_bg" android:focusable="true" android:layout_width="fill_parent" android:layout_height="64.66998dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/ImageView01" android:background="@drawable/toolbar_selector_up_image" android:focusable="false" android:focusableInTouchMode="false" android:clickable="false" android:duplicateParentState="true" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_margin="14.669983dip" android:layout_below="@id/toolbar" />
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:id="@id/TextView01" android:background="#00000000" android:focusable="false" android:focusableInTouchMode="false" android:clickable="false" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/up" android:layout_toRightOf="@id/ImageView01" android:layout_below="@id/toolbar" android:layout_centerVertical="true" />
+</RelativeLayout>

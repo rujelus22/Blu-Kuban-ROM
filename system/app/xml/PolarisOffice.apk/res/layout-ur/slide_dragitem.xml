@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/slide_DDItem_Frame" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView android:id="@id/slide_DDItem_ImgBitmap" android:layout_width="78.66998dip" android:layout_height="56.669983dip" android:src="@drawable/icon" />
+        <TextView android:textSize="10.0dip" android:layout_gravity="bottom|left|center" android:id="@id/slide_DDItem_pagenum" android:layout_width="20.0dip" android:layout_height="15.0dip" />
+    </FrameLayout>
+    <ImageView android:id="@id/slide_DDItem_move_icon" android:background="@drawable/dragdrop_moveicon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:id="@id/slide_DDItem_slide_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="45.0dip" android:text="@id/slide_DDItem_slide_title" android:singleLine="true" android:layout_toLeftOf="@id/slide_DDItem_Frame" android:layout_centerVertical="true" />
+</RelativeLayout>

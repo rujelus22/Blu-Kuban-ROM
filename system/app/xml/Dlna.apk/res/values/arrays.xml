@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="upload_option_entries">
+        <item>@string/uploading_from_other_device_always_accept</item>
+        <item>@string/uploading_from_other_device_options</item>
+        <item>@string/uploading_from_other_device_always_reject</item>
+    </array>
+    <string-array name="upload_option_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <array name="default_storage_entries">
+        <item>@string/default_storage_value</item>
+        <item>@string/mem_card_storage</item>
+    </array>
+    <string-array name="default_storage_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+</resources>

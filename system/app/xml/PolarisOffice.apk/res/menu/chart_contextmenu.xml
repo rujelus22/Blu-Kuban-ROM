@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/editchart_contextmenu" android:title="@string/dm_edit_chart" />
+    <item android:id="@id/resize_contextmenu" android:title="@string/dm_resize" />
+    <item android:id="@id/deletechart_contextmenu" android:title="@string/dm_delete" />
+</menu>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="music_player_title_main">18.0dip</dimen>
+    <dimen name="music_player_title_sub">13.0dip</dimen>
+</resources>

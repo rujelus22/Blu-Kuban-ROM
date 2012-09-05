@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Social Hub</string>
+    <string name="str_no_hitory">Sin historial</string>
+    <string name="widget_input_text">¿En qué piensas?</string>
+    <string name="empty">Vacío</string>
+    <string name="comment">Comentar</string>
+    <string name="str_no_feeds">Ninguna fuente</string>
+    <string name="str_register_sns">Puede registrar SNS para combinar actualizaciones y fuentes SNS</string>
+    <string name="add_account">Añadir cuenta</string>
+    <string name="str_txt_dot">...</string>
+    <string name="widget_update_feeds">Actualizar material</string>
+    <string name="retweeted_by">Reenviado por %s</string>
+    <string name="retweet">Retweet</string>
+</resources>

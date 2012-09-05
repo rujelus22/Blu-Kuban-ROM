@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/tasks" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/allitem" android:background="@drawable/tasks_selector_background" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="65.29999dip"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:gravity="center_vertical" android:id="@id/allitemtext" android:paddingLeft="5.3299866dip" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/All_Tasks" android:layout_weight="1.0" style="@style/TextStyle_1" />
+        <CheckBox android:id="@id/allitemcheck" android:paddingRight="7.659973dip" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

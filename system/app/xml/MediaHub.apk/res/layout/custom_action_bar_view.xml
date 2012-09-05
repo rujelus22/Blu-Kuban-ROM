@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_tab_container" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toLeftOf="@id/rl_custom_container" android:layout_alignParentLeft="true">
+        <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/tw_title_bar_handle" />
+        <HorizontalScrollView android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <TextView android:textSize="18.0sp" android:textColor="@color/color1" android:gravity="center" android:id="@id/tab_movie_store" android:background="@drawable/minitab_lt" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/movie_store" android:shadowColor="@color/black" android:shadowDx="0.0" android:shadowDy="1.0" android:shadowRadius="0.2" android:layout_weight="1.0" />
+                <TextView android:textSize="18.0sp" android:textColor="@color/color1" android:gravity="center" android:id="@id/tab_tv_store" android:background="@drawable/minitab_lt" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/tv_store" android:shadowColor="@color/black" android:shadowDx="0.0" android:shadowDy="1.0" android:shadowRadius="0.2" android:layout_weight="1.0" />
+                <TextView android:textSize="18.0sp" android:textColor="@color/color1" android:gravity="center" android:id="@id/tab_my_media" android:background="@drawable/minitab_lt" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/my_media" android:shadowColor="@color/black" android:shadowDx="0.0" android:shadowDy="1.0" android:shadowRadius="0.2" android:layout_weight="1.0" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/rl_custom_container" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toLeftOf="@id/iv_right_handle">
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_search_container" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <Spinner android:gravity="center_vertical" android:id="@id/sp_search_by" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="1.0dip" android:layout_marginBottom="1.0dip" android:minWidth="135.0dip" android:singleLine="true" />
+            <SearchView android:layout_gravity="center_vertical" android:id="@id/action_search" android:layout_width="fill_parent" android:layout_height="wrap_content" android:queryHint="@string/search" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_my_paymeny_methods" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <Button android:textSize="18.0sp" android:textColor="@color/white" android:ellipsize="marquee" android:layout_gravity="center_vertical" android:id="@id/btn_new" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/new_card" android:singleLine="true" />
+            <Button android:textSize="18.0sp" android:textColor="@color/white" android:ellipsize="marquee" android:layout_gravity="center_vertical" android:id="@id/btn_delete" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delete_card" android:singleLine="true" />
+        </LinearLayout>
+    </RelativeLayout>
+    <ImageView android:id="@id/iv_right_handle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/tw_title_bar_handle" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

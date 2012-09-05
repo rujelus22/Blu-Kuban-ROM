@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="ws_maxScreens">7</integer>
+    <integer name="ws_defaultScreens">7</integer>
+    <integer name="ws_gridColumns">4</integer>
+    <integer name="ws_gridRows">4</integer>
+    <integer name="mm_gridColumns">4</integer>
+    <integer name="mm_gridRows">4</integer>
+    <integer name="asz_iconCount">4</integer>
+    <integer name="NumPreviewIcons">3</integer>
+</resources>

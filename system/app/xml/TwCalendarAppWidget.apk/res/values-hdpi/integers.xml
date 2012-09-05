@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="month_cell_height">57</integer>
+    <integer name="month_cell_width">58</integer>
+    <integer name="month_first_column_width">49</integer>
+    <integer name="month_week_banner_height">46</integer>
+    <integer name="month_event_width">6</integer>
+    <integer name="month_event_height">7</integer>
+    <integer name="month_day_text_size">24</integer>
+    <integer name="month_prevnextday_text_size">24</integer>
+    <integer name="month_week_text_size">20</integer>
+    <integer name="month_focus_day_text_size">24</integer>
+    <integer name="month_focus_day_lunar_text_size">19</integer>
+</resources>

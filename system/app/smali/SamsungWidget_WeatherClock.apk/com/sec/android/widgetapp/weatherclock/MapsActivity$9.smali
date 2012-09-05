@@ -1,0 +1,52 @@
+.class Lcom/sec/android/widgetapp/weatherclock/MapsActivity$9;
+.super Ljava/lang/Object;
+.source "MapsActivity.java"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/sec/android/widgetapp/weatherclock/MapsActivity;->registerListener()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/sec/android/widgetapp/weatherclock/MapsActivity;
+
+
+# direct methods
+.method constructor <init>(Lcom/sec/android/widgetapp/weatherclock/MapsActivity;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 678
+    iput-object p1, p0, Lcom/sec/android/widgetapp/weatherclock/MapsActivity$9;->this$0:Lcom/sec/android/widgetapp/weatherclock/MapsActivity;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onClick(Landroid/view/View;)V
+    .registers 3
+    .parameter "v"
+
+    .prologue
+    .line 681
+    iget-object v0, p0, Lcom/sec/android/widgetapp/weatherclock/MapsActivity$9;->this$0:Lcom/sec/android/widgetapp/weatherclock/MapsActivity;
+
+    invoke-virtual {v0}, Lcom/sec/android/widgetapp/weatherclock/MapsActivity;->finish()V
+
+    .line 682
+    return-void
+.end method

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Ei yhdistetty</string>
+    <string name="authentication_failure_no_network">Sinut yhdistetään internetiin, jotta Music-tilisi voidaan todentaa.</string>
+    <string name="authentication_failure">Ei todennettu</string>
+    <string name="authentication_failure_error">Music-tiliäsi ei voitu todentaa.</string>
+    <string name="positive_button_text">Ok</string>
+    <string name="negative_button_text">Peruuta</string>
+    <string name="save_button_text">Tallenna</string>
+    <string name="not_save_button_text">Älä tallenna</string>
+    <string name="shuffle_all">Sekoita kaikki</string>
+    <string name="play_all">Toista kaikki</string>
+    <string name="songs_all">Kaikki kappaleet</string>
+    <string name="shuffle">Satunnaistoisto</string>
+    <string name="search">Haku</string>
+    <string name="settings">Asetukset</string>
+    <string name="library_options">Näyttövalinnat</string>
+    <string name="manage_music">Aseta offline-käytettäväksi</string>
+    <string name="available_offline">Käytettävissä offline-tilassa</string>
+    <string name="hide_labels">Piilota tunnisteet</string>
+    <string name="show_labels">Näytä tunnisteet</string>
+    <string name="options">Asetukset</string>
+    <string name="shop_artist">Osta esittäjän mukaan</string>
+    <string name="show_offline_music_only">Vain offline-musiikki</string>
+    <string name="show_all_music">Näytä kaikki musiikki</string>
+    <string name="new_playlist_title">Soittolistan nimi</string>
+    <string name="add_to_playlist_title">Soittolistan nimi</string>
+    <string name="rename_playlist_title">Nimeä uudelleen %s nimellä</string>
+    <string name="search_section_header_artists">ESITTÄJÄT</string>
+    <string name="search_section_header_albums">ALBUMIT</string>
+    <string name="search_section_header_songs">KAPPALEET</string>
+    <string name="search_section_header_playlists">Soittolistat</string>
+    <string name="shuffle_all_songs">Sekoita kaikki</string>
+    <string name="stream_settings">Musicin asetukset</string>
+    <string name="refresh_title">Päivitä</string>
+    <string name="refresh_summary">Päivitä musiikkia Google Playsta</string>
+    <string name="account_settings_title">Google Play -tili</string>
+    <string name="no_account_selected_summary">Valitse tili koskettamalla</string>
+    <string name="account_selected_summary">Yhdistä %s-tili Google Play-palveluun</string>
+    <string name="hide_when_not_connected_title">Piilota musiikki, joka ei ole käytettävissä</string>
+    <string name="hide_when_not_connected_summary">Näytä offline-tilassa vain käytettävissä oleva musiikki</string>
+    <string name="stream_only_on_wifi_title">Suoratoisto: vain wifi</string>
+    <string name="stream_only_on_wifi_summary">Suoratoista musiikkia vain wifi-yhteyden kautta</string>
+    <string name="stream_only_hq_title">Laadukas suoratoisto</string>
+    <string name="stream_only_hq_summary">Suoratoista musiikkia aina parhaalla laadulla</string>
+    <string name="lock_screen_controls_title">Luk. näytön säätimet</string>
+    <string name="lock_screen_controls_summary">Näytä musiikkisäätimet lukitusruudun yläosassa</string>
+    <string name="offlinedl_only_on_wifi_title">Lataus: vain wifi</string>
+    <string name="offlinedl_only_on_wifi_summary">Lataa musiikkia käytettäväksi offline-tilassa vain wifi-yhteyden kautta</string>
+    <string name="cache_streamed_title">Musiikki välimuist.</string>
+    <string name="cache_streamed_summary">Tallenna suoratoistettu musiikki väliaikaisesti</string>
+    <string name="download_queue_title">Latausjono</string>
+    <string name="download_queue_summary">Näyttää tällä hetkellä latautuvat kappaleet</string>
+    <string name="help_title">Ohje</string>
+    <string name="show_no_downloads_title">Latausjonossa ei ole kappaleita</string>
+    <string name="music_version_title">Musicin versio</string>
+    <string name="music_version_summary">Tuntematon versio</string>
+    <string name="nowplaying_title">Nyt toistetaan</string>
+    <string name="artists_title">Esittäjät</string>
+    <string name="albums_title">Albumit</string>
+    <string name="genres_title">Lajityypit</string>
+    <string name="tracks_title">Kappaleet</string>
+    <string name="playlists_title">Soittolistat</string>
+    <string name="recent_title">Viimeisimmät</string>
+    <string name="search_title">Haku</string>
+    <string name="no_tracks_title">Ei kappaleita</string>
+    <string name="delete_playlist_menu">Poista</string>
+    <string name="edit_playlist_menu">Muokkaa</string>
+    <string name="rename_playlist_menu">Nimeä uudelleen</string>
+    <string name="playlist_delete_confirmation">Haluatko poistaa soittolistan \"%s\"?</string>
+    <string name="delete_playlist_button_confirm">Poista</string>
+    <string name="playlist_deleted_message">Soittolista poistettu.</string>
+    <string name="playlist_created_message">Soittolista %s luotu.</string>
+    <string name="playlist_renamed_message">Soittolista nimetty uudelleen: \"%s\".</string>
+    <string name="recentlyadded">Viimeksi lisätty</string>
+    <string name="recentlyadded_title">Viimeksi lisätty</string>
+    <string name="all_songs_list">Kaikki kappaleet</string>
+    <string name="all_songs_list_title">Kaikki kappaleet</string>
+    <string name="storemusic_list">Ilmaiset ja ostetut</string>
+    <string name="storemusic_list_title">Ilmaiset ja ostetut</string>
+    <string name="freemusic_list">Ilmaiset kappaleet</string>
+    <string name="freemusic_list_title">Ilmaiset kappaleet</string>
+    <string name="thumbsup_list">Tykkään</string>
+    <string name="thumbsup_list_title">Tykkään</string>
+    <string name="unknown_artist_name">Tuntematon esittäjä</string>
+    <string name="unknown_album_name">Tuntematon albumi</string>
+    <string name="unknown_playlist_name">Tuntematon soittolista</string>
+    <string name="shuffle_on_notif">Sekoitus on käytössä.</string>
+    <string name="shuffle_off_notif">Sekoitus ei ole käytössä.</string>
+    <string name="repeat_off_notif">Uudelleentoisto on pois käytöstä.</string>
+    <string name="repeat_current_notif">Toistetaan nykyinen kappale uudelleen.</string>
+    <string name="repeat_all_notif">Toistetaan kaikki kappaleet uudelleen.</string>
+    <string name="ringtone_menu">Käytä soittoäänenä</string>
+    <string name="ringtone_set">%s asetettu soittoääneksi.</string>
+    <string name="ringtone_set_failed">Soittoäänen luonti epäonnistui.</string>
+    <string name="ringtone_needs_download">Soittoääni asetetaan, kun se on ladattu.</string>
+    <string name="play_selection">Toista</string>
+    <string name="add_to_playlist">Lisää soittolistaan</string>
+    <string name="rename_playlist_menu_item">Nimeä uudelleen</string>
+    <string name="add_to_playlist_selector_title">Lisää soittolistaan</string>
+    <string name="queue">Nykyinen soittolista</string>
+    <string name="new_playlist_for_content">Uusi soittolista</string>
+    <string name="new_empty_playlist">Uusi soittolista</string>
+    <string name="new_playlist_name_template">Soittolista %d</string>
+    <string name="removed_from_playlist">\"%1$s\" poistettiin soittolistasta.</string>
+    <string name="playlist_too_many_songs">Liian monta kappaletta. Raja on %d soittolistaa kohti.</string>
+    <string name="emptyplaylist">Valittu soittolista on tyhjä.</string>
+    <string name="playlist_edit_label">NIMI</string>
+    <string name="create_playlist_create_text">OK</string>
+    <string name="rename_playlist_rename_text">Nimeä uudelleen</string>
+    <string name="service_start_error_title">Toisto-ongelma</string>
+    <string name="service_start_error_msg">Kappaleen toisto epäonnistui.</string>
+    <string name="service_start_error_button">OK</string>
+    <string name="weekpicker_set">Valmis</string>
+    <string name="weekpicker_title">Aseta aika</string>
+    <string name="musicbrowserlabel">Play-musiikki</string>
+    <string name="musicshortcutlabel">Musiikkisoittolista</string>
+    <string name="mediaplaybacklabel">Musiikki</string>
+    <string name="app_name">Google Play Music</string>
+    <string name="playback_failed">Valitsemaasi raitaa ei voitu toistaa.</string>
+    <string name="cancel">Peruuta</string>
+    <string name="remove_from_playlist">Poista soittolistasta</string>
+    <string name="streamloadingtext">Yhdistetään kohteeseen %s…</string>
+    <string name="search_hint">Musiikkihaku</string>
+    <string name="working_artists">Esittäjät...</string>
+    <string name="working_albums">Albumit…</string>
+    <string name="loading">Ladataan…</string>
+    <string name="sort_by_track">Raidat</string>
+    <string name="music_picker_title">Valitse musiikkiraita</string>
+    <string name="fail_to_start_stream">Pyytämääsi streamia ei voitu toistaa.</string>
+    <string name="search_settings_description">Esittäjät, albumit ja raidat</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ"</string>
+    <string name="title_tv">Musiikki</string>
+    <string name="music_library">Musiikkikirjasto</string>
+    <string name="playlist_label">Soittolista</string>
+    <string name="faux_art_all_songs_label">Kaikki kappaleet</string>
+    <string name="faux_art_playlist_label">Soittolista</string>
+    <string name="faux_art_playlist_instant_mix_label">Pikasekoitus</string>
+    <string name="faux_art_playlist_auto_playlist_label">Automaattinen soittolista</string>
+    <string name="buffering">Puskuroidaan…</string>
+    <string name="keep_on_phone">Käytettävissä offline-tilassa</string>
+    <string name="no_music_add_music_header">TAPOJA LISÄTÄ MUSIIKKIA</string>
+    <string name="no_music_shop_body">Osta miljoonia kappaleita ja lataa satoja ilmaisia kappaleita.</string>
+    <string name="no_music_shop_button">OSTA</string>
+    <string name="no_music_upload_body">Lataa Google Play -palveluun maksutta 20 000 kappaletta.</string>
+    <string name="no_music_upload_button">LISÄTIETOJA</string>
+    <string name="no_music_usb_copy_body">Kopioi musiikkia puhelimeesi USB-kaapelilla.</string>
+    <string name="no_music_usb_copy_button">LISÄTIETOJA</string>
+    <string name="no_music_heading">Musiikkikirjasto on tyhjä</string>
+    <string name="no_music_setup_uploader_heading">Suoratoista musiikkia langattomasti.</string>
+    <string name="no_music_setup_uploader_body">Voit suoratoistaa henkilökohtaisen musiikkikokoelmasi käyttäen Google Play Music -palvelua.</string>
+    <string name="no_music_setup_usb_heading">Kopioi musiikkia laitteellesi</string>
+    <string name="no_music_setup_usb_body">Kopioi musiikkia puhelimeesi USB-kaapelilla.</string>
+    <string name="no_local_music_heading">Ei offline-musiikkia</string>
+    <string name="no_local_music_body">"Olet vain offline -tilassa. Vain laitteellesi tallennettu musiikki näytetään.
+
+Voit valita laitteellesi tallennettavan musiikin valitsemalla valikosta "<b>Aseta käytettäväksi offline-tilassa</b>.</string>
+    <string name="no_music_learn_more">Lisätietoja</string>
+    <string name="no_playlists_heading">Ei soittolistoja kirjastossa.</string>
+    <string name="no_playlists_body">Voit luoda soittolistan siirtymällä Kappaleet-luettelonäkymään ja valitsemalla kappaleen kontekstivalikosta Lisää soittolistaan.</string>
+    <string name="no_music_syncing_heading">Musiikkia synkronoidaan.</string>
+    <string name="no_music_syncing_body">Musiikkia synkronoidaan palvelimelta. Kappaleiden pitäisi tulla näkyviin hetken kuluttua.</string>
+    <string name="no_music_scanning_heading">Etsitään laitteen musiikkia.</string>
+    <string name="no_music_scanning_body">Laitteen musiikkia etsitään.</string>
+    <string name="sync_disabled">Synkronoinnin on oltava käytössä, jotta Google Play Musicin musiikki tulee näkyviin. Haluatko ottaa synkronoinnin käyttöön?</string>
+    <string name="tutorial_welcome_heading">Tervetuloa käyttämään Google Play Musicia</string>
+    <string name="tutorial_welcome_body">"Lähetä jopa 20 000 kappaletta henkilökohtaisesta musiikkikokoelmastasi.
+
+Voit toistaa Google Playsta ostettua musiikkia heti.
+
+Kuuntele musiikkiasi verkossa tai millä tahansa puhelimella tai tablet-laitteella. Lataa helposti musiikkia toistettavaksi offline-tilassa.
+
+Kaikki tämä maksutta."</string>
+    <string name="tutorial_select_account_heading">Valitse tili</string>
+    <string name="tutorial_select_account_body">"Yhdistämällä tilisi Google Play -musiikkiin voit kuunnella musiikkikirjastosi kappaleita ja Play-ostoksiasi.
+
+Mitä tiliä haluat käyttää?"</string>
+    <string name="tutorial_sign_in">Yhdistämällä tilisi Google Play -musiikkiin voit kuunnella musiikkikirjastosi kappaleita ja Play-ostoksiasi.</string>
+    <string name="tutorial_free_music_heading">Hanki ilmaista musiikkia</string>
+    <string name="tutorial_free_music_body">Selaa muun muassa satoja suurimpien rock- ja hiphop-nimien ilmaisia raitoja Google Playssa.</string>
+    <string name="tutorial_account_heading">Tervetuloa</string>
+    <string name="tutorial_account_body">Sinut on kutsuttu käyttämään Google Play Musicia. Voit käyttää Google Play Musiciin lisäämiäsi sekä muita Android-laitteelle kopioimiasi kappaleita tämän soittimen kautta.</string>
+    <string name="tutorial_account_list_header">Aloita valitsemalla Google-tili, jolla tämä soitin yhdistetään Google Play Music -palveluun:</string>
+    <string name="tutorial_done_heading">Nauti</string>
+    <string name="tutorial_done_body">"Music-soitin on nyt yhdistetty Google-tiliisi.
+
+Jos olet jo lisännyt musiikkikokoelmasi Google Play Musiciin, kappaleet tulevat näkyviin soittimessa.
+
+Jos et ole vielä lisännyt kappaleita Google Play Musiciin, aloita käymällä sivustossamme tietokoneellasi:"</string>
+    <string name="tutorial_skip">Ohita</string>
+    <string name="tutorial_next">Seuraava</string>
+    <string name="tutorial_done">Valmis</string>
+    <string name="tutorial_add_account">Lisää tili</string>
+    <string name="tutorial_free_music">Hanki ilmaisia kappaleita</string>
+    <string name="spinner_carousel">Viimeaikaiset</string>
+    <string name="spinner_album">Albumit</string>
+    <string name="spinner_artist">Esittäjät</string>
+    <string name="spinner_songs">Kappaleet</string>
+    <string name="spinner_playlists">Soittolistat</string>
+    <string name="spinner_genres">Lajityypit</string>
+    <string name="sort_by_title">Lajittelu: A-Z</string>
+    <string name="sort_by_artist">Lajittelu: esittäjän mukaan</string>
+    <string name="sort_by_album">Lajittelu: albumin mukaan</string>
+    <string name="sort_by_date">Lajittele lisäyspäivän mukaan</string>
+    <string name="more_by_artist">Lisää esittäjältä</string>
+    <string name="make_available_offline">Aseta offline-käytettäväksi</string>
+    <string name="search_web">Hae verkosta</string>
+    <string name="manage_done">Valmis</string>
+    <string name="too_many_items_title">Liian monta tuotetta</string>
+    <string name="too_many_items_body">Tilaa ei ole riittävästi kaikkien valitsemiesi kohteiden säilyttämiseksi. Vapauta tilaa poistamalla valintoja.</string>
+    <string name="save_manage_music_change_title">Tallentamattomia muutoksia</string>
+    <string name="save_manage_music_change_body">Haluatko asettaa valitun musiikin käytettäväksi offline-tilassa?</string>
+    <string name="not_all_items_can_be_kept_body">Tilaa ei ole riittävästi kaikkien valitsemiesi kohteiden tallentamiseen. Kaikkia kohteita ei ladata.</string>
+    <string name="free_space_overfull">Tallennustila täynnä (ylitys: %s)</string>
+    <string name="free_space">%s vapaana</string>
+    <string name="stream_error_no_space_available">Ei tarpeeksi tilaa</string>
+    <string name="stream_error_only_on_wifi">Sinun täytyy muodostaa wifi-verkkoyhteys, jotta voit toistaa tämän kappaleen.</string>
+    <string name="stream_error_no_connection">Sinun täytyy olla online-tilassa, jotta voit toistaa tämän kappaleen.</string>
+    <string name="stream_error_unauthorized">Virheellinen käyttäjänimi tai salasana.</string>
+    <string name="stream_error_another_stream_being_played">Toisto keskeytetty, koska kuuntelet kokoelmaasi toisella laitteella.</string>
+    <string name="stream_error_rate_limit_reached">Musiikkia ei ole tällä hetkellä käytettävissä. Varmista, että soitat kokoelmaasi vain yhdellä laitteella kerrallaan.</string>
+    <string name="stream_error_device_not_authorized">Musiikkikirjastoa voidaan käyttää enintään kymmenellä laitteella. Sinun täytyy poistaa käyttöoikeus yhdeltä laitteelta ennen kuin lisäät uuden.</string>
+    <string name="stream_error_learn_more">Lisätietoja</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Musiikki keskeytetty.</string>
+    <string name="stream_error_rate_limit_reached_short">Musiikki ei ole tällä hetkellä käytettävissä.</string>
+    <string name="stream_error_device_not_authorized_short">Musiikkikirjastoa käytetään liian monella laitteella.</string>
+    <string name="hide_now_playing_bar">Piilota nyt toistetaan -palkki</string>
+    <string name="show_now_playing_bar">Näytä nyt toistetaan -palkki</string>
+    <string name="show_options">Näytä asetukset</string>
+    <string name="hide_options">Piilota asetukset</string>
+    <string name="all_songs_in_genre">"Kaikki lajityypin
+%s kappaleet"</string>
+    <string name="preview_header">JAETTU GOOGLE+ -PALVELUSSA</string>
+    <string name="shared_playback_full">ILMAINEN TOISTOKERTA</string>
+    <string name="shared_playback_partial">NÄYTE</string>
+    <string name="btn_buy">Osta</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Musiikkia ladataan offline-tilaa varten...</string>
+    <string name="notification_downloading_when_on_wifi">Offline-tilaan merkityt kappaleet ladataan, kun muodostat yhteyden wifi-verkkoon.</string>
+    <string name="notification_downloading_excessive_errors">Kappaleiden lataaminen epäonnistui. Tarkista internetyhteytesi.</string>
+    <string name="notification_downloading_done">Valitut kappaleet ovat nyt käytettävissä offline-tilassa.</string>
+    <string name="notification_ticker_ringtone_set">Soittoääneksi asetettu kappale \"%s\"</string>
+    <string name="notification_title_ringtone_set">Soittoääneksi asetettu kappale \"%s\"</string>
+    <string name="notification_content_ringtone_set">Muokkaa tätä soittoääntä koskettamalla.</string>
+    <string name="notification_ticker_ringtone_set_failed">Soittoäänen luonti epäonnistui.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_songcount">%d uutta kappaletta</string>
+    <string name="notification_newsongs_subtitle">Lisätty Google Play Musiciin</string>
+    <string name="carousel_label_shuffle_all">Sekoita kaikki</string>
+    <string name="song_label">Kappale</string>
+    <string name="artist_label">Esittäjä</string>
+    <string name="album_label">Albumi</string>
+    <string name="effectspanel">Äänitehosteet</string>
+    <string name="menu_make_instant_mix">Tee pikasekoitus</string>
+    <string name="instant_mix_default_name">%s Sekoitus</string>
+    <string name="creating_instant_mix">"Pikasekoitus lisätään
+soittolistoihin."</string>
+    <string name="creating_instant_mix_with_seed">"Soittolistoihin lisätään
+pikasekoitus kohteen
+%s perusteella."</string>
+    <string name="create_instant_mix_failed">Pikasekoitusta ei voitu luoda. Yritä uudelleen.</string>
+    <string name="create_instant_mix_failed_insufficient_results">Kokoelmassa ei ole riittävästi samankaltaisia kappaleita sekoituksen tekemiseen kohteesta \"%s\". Yritä luoda pikasekoitus eri kappaleesta.</string>
+    <string name="create_instant_mix_sync_timeout">"Pikasekoitus
+luotiin ja se näkyy
+soittolistoissasi pian."</string>
+    <string name="create_instant_mix_btn_ok">OK</string>
+    <string name="delete">Poista</string>
+    <string name="confirm_delete_local_only">Haluatko poistaa kohteen \"%s\"?</string>
+    <string name="confirm_delete_has_remote">%s on ladattu laitteelle sekä Google Play Musiciin. Vain laitteelle ladatut kohteet poistetaan. Haluatko varmasti poistaa kohteet?</string>
+    <string name="waiting_share">Kohde %s jaetaan</string>
+    <string name="share">Jaa</string>
+    <string name="share_failure">Ongelma musiikkisi jakamisessa.</string>
+    <string name="share_google_plus_footer">Jos jaat musiikkiasi, piiriesi jäsenet voivat toistaa kappaleitasi ilmaiseksi.</string>
+    <string name="accessibility_play">Toista</string>
+    <string name="accessibility_pause">Tauko</string>
+    <string name="accessibility_stop">Pysäytä</string>
+    <string name="accessibility_next">Seuraava</string>
+    <string name="accessibility_prev">Edellinen</string>
+    <string name="accessibility_shuffle">Satunnaistoisto</string>
+    <string name="accessibility_repeat">Jatkuva toisto</string>
+    <string name="accessibility_thumbsUp">Tykkään</string>
+    <string name="accessibility_thumbsDown">En tykkää</string>
+    <string name="accessibility_star1">Yksi tähti</string>
+    <string name="accessibility_star2">Kaksi tähteä</string>
+    <string name="accessibility_star3">Kolme tähteä</string>
+    <string name="accessibility_star4">Neljä tähteä</string>
+    <string name="accessibility_star5">Viisi tähteä</string>
+    <string name="accessibility_contractor">Laajenna kappaleen tiedot</string>
+    <string name="accessibility_back">Takaisin</string>
+    <string name="accessibility_contextMenu">Kappalevalikko</string>
+    <string name="accessibility_home">Music-etusivu</string>
+    <string name="accessibility_search">Haku</string>
+    <string name="accessibility_search_cancel">Peruuta nykyinen haku</string>
+    <string name="accessibility_current">Nykyinen kappale</string>
+    <string name="accessibility_createnewplaylist">Luo uusi soittolista</string>
+    <string name="accessibility_menu">Valikko</string>
+    <string name="accessibility_shop">Osta musiikkia</string>
+    <string name="ringtone_replace_alert_button">Korvaa</string>
+    <string name="ringtone_replace_alert_title">Vaihda soittoääni</string>
+    <string name="ringtone_replace_alert_message">Tämänniminen soittoääni on jo olemassa. Haluatko korvata sen?</string>
+    <string name="legal_information">Oikeudelliset tiedot</string>
+    <string name="license_title">Avoimen lähdekoodin käyttöluvat</string>
+    <string name="license_error">Virhe ladattaessa käyttölupia.</string>
+    <string name="market_wrong_account" formatted="false">"Musiikki, jota yrität toistaa, ostettiin tilillä %s
+
+Olet tällä hetkellä kirjautunut Google Play Music -palveluun tilillä %s
+
+Sinun täytyy ensin vaihtaa tilejä, jotta voit kuunnella ostamaasi musiikkia."</string>
+    <string name="gplus_wrong_account" formatted="false">"Toistettava musiikki on jaettu tilin %s kanssa
+
+Olet kirjautunut Google Play Musiciin tilillä %s
+
+Voit kuunnella jaettua musiikkiasi, kun vaihdat tiliä."</string>
+    <string name="switch_account_button">Vaihda tilejä</string>
+    <string name="retry_button">Yritä uudelleen</string>
+    <string name="wait_for_item">Odotetaan musiikin synkronointia.</string>
+    <string name="wait_for_item_failure">Ongelma musiikkisi lataamisessa.</string>
+    <string name="ringtone_title">Muokkaa soittoääntä</string>
+    <string name="edit_ringtone">Muokkaa soittoääntä</string>
+    <string name="ringtone_done">VALMIS</string>
+    <string name="set_ringtone_title">Käytä soittoäänenä</string>
+    <string name="set_ringtone_message">Aseta soittoääneksi.</string>
+    <string name="start_edit_ringtone">Muokkaa soittoääntä</string>
+    <string name="ringtone_file_edited_name">Kappaleen %1$s katkelma</string>
+    <string name="progress_dialog_saving">Tallennetaan...</string>
+    <string name="start_handle">Käynnistysvalitsin</string>
+    <string name="resize_handle">Koon muuttamisen valitsin</string>
+    <string name="menu_reset">Palauta</string>
+    <string name="save_success_message">Oletussoittoääni tallennettu (%1$s).</string>
+    <string name="save_failure_message">Soittoäänen tallentaminen epäonnistui (%1$s).</string>
+    <string name="play_error">Tämän mediatiedoston toisto epäonnistui.</string>
+    <string name="write_error">Tiedostoon kirjoittaminen epäonnistui.</string>
+    <string name="read_error">Tiedoston luku epäonnistui.</string>
+    <string name="no_space_error">SD-kortilla ei ole riittävästi tilaa tämän tiedoston tallentamiseksi.</string>
+    <string name="bad_extension_error">Tämäntyyppisiä tiedostoja ei voi muokata.</string>
+    <string name="no_extension_error">Ei voida muokata tiedostoa, jonka tiedostopääte ei ole .mp3 tai .wav.</string>
+    <string name="alert_title_success">Onnistui</string>
+    <string name="alert_title_failure">Virhe</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="store_tutorial_title">Osta ja pelaa heti</string>
+    <string name="store_tutorial_content">Google Play -myymälästä löydät miljoonia MP3-raitoja, joiden joukossa on myös satoja ilmaisia kappaleita.</string>
+    <string name="store_tutorial_instruction">Siirry myymälään napauttamalla ostoskassikuvaketta</string>
+</resources>

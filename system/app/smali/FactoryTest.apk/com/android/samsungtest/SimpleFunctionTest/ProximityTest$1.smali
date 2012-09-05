@@ -1,0 +1,14 @@
+.class synthetic Lcom/android/samsungtest/SimpleFunctionTest/ProximityTest$1;
+.super Ljava/lang/Object;
+.source "ProximityTest.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/samsungtest/SimpleFunctionTest/ProximityTest;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1008
+    name = null
+.end annotation

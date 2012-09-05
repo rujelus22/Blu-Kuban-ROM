@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Sec Download Provider</string>
+    <string name="permlab_downloadManager">Access download manager.</string>
+    <string name="permdesc_downloadManager">Allows the application to access the download manager and to use it to download files. Malicious applications can use this to disrupt downloads and access private information.</string>
+    <string name="permlab_accessAllDownloads">Access all system downloads</string>
+    <string name="permdesc_accessAllDownloads">Allows the application to view and modify all initiated by any application on the system.</string>
+    <string name="permlab_downloadManagerAdvanced">Advanced download manager functions.</string>
+    <string name="permdesc_downloadManagerAdvanced">"Allows the application to access the download manager's advanced functions. Malicious applications can use this to disrupt downloads and access private information."</string>
+    <string name="permlab_cacheFilesystem">Use system cache.</string>
+    <string name="permdesc_cacheFilesystem">Allows the application to directly access, modify and delete the system cache. Malicious applications can use this to severely disrupt downloads and other applications, and to access private data.</string>
+    <string name="permlab_downloadCompletedIntent">Send download notifications.</string>
+    <string name="permdesc_downloadCompletedIntent">Allows the application to send notifications about completed downloads. Malicious applications can use this to confuse other applications that download files.</string>
+    <string name="permlab_seeAllExternal">See all downloads to SD card</string>
+    <string name="permdesc_seeAllExternal">Allows the application to see all downloads to the SD card, regardless of which application downloaded them.</string>
+    <string name="download_unknown_title">&lt;Untitled></string>
+    <string name="notification_filename_separator">", "</string>
+    <string name="notification_filename_extras">" and %d more"</string>
+    <string name="notification_download_complete">Download complete</string>
+    <string name="notification_download_failed">Download unsuccessful</string>
+    <string name="notification_downloaded_folder">Downloaded in %s</string>
+</resources>

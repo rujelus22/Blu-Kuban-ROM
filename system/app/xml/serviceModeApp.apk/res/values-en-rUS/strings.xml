@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Dialog_title">Input value</string>
+    <string name="Dialog_subscript">Please enter value</string>
+    <string name="Dialog_ok">OK</string>
+    <string name="Dialog_cancel">Cancel</string>
+    <string name="select_title">Select Row</string>
+    <string name="select_subscript">Enter the row</string>
+    <string name="select_ok">OK</string>
+    <string name="select_cancel">Cancel</string>
+    <string name="help_title">Help</string>
+    <string name="help_subscript">Help</string>
+    <string name="help_ok">OK</string>
+    <string name="rtc_get">PDA RTC Get</string>
+    <string name="rtc_back">Back</string>
+    <string name="bat_get">Battery Display</string>
+    <string name="bat_back">Back</string>
+    <string name="them">Them ADC :</string>
+    <string name="vbatt">Vbatt ADC :</string>
+    <string name="bat_level">Battery level:</string>
+    <string name="not_set">Not Set</string>
+    <string name="light_get">Light sensor display</string>
+    <string name="lux_value">Lux value</string>
+    <string name="nand_flash">NAND Flash unique number</string>
+    <string name="ril_dump_label">Ril Log Complete!!</string>
+    <string name="logcat_radio">Run Ril Log</string>
+    <string name="view_log">View Ril Log</string>
+    <string name="clear_log">Clear Ril Log</string>
+    <string name="next_page">Next page</string>
+    <string name="first_page">First page</string>
+    <string name="last_page">Last page</string>
+    <string name="mms_ua_string">UA string</string>
+    <string name="all">All</string>
+    <string name="msg">Msg.</string>
+    <string name="sys_dump_label">Press below button. Three types log will be saved in the phone memory</string>
+    <string name="run_dump">run dumpstate/logcat</string>
+    <string name="kernel_log">Copy Kernel log to SD card</string>
+    <string name="exit">Exit</string>
+    <string name="ril_log">Wait...on Loading Ril Log</string>
+    <string name="back">Back</string>
+    <string name="move_to_end">Move to End</string>
+    <string name="find_text">Find</string>
+    <string name="file_open">File Open</string>
+    <string name="proxy">Proxy</string>
+</resources>

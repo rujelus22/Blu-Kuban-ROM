@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:shrinkColumns="*"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.google.android.apps.maps">
+    <TableRow>
+        <com.google.android.maps.driveabout.widgets.DestinationActivityTileButton android:onClick="handleSpeakDestinationClick" app:title="@string/da_picker_speak_destination" app:icon="@drawable/da_btn_speak_destination_tablet" />
+        <com.google.android.maps.driveabout.widgets.DestinationActivityTileButton android:onClick="handleTypeDestinationClick" app:title="@string/da_picker_type_destination" app:icon="@drawable/da_btn_type_destination_tablet" />
+    </TableRow>
+    <TableRow>
+        <com.google.android.maps.driveabout.widgets.DestinationActivityTileButton android:onClick="handleContactsClick" app:title="@string/da_picker_contacts" app:icon="@drawable/da_btn_contacts_tablet" />
+        <com.google.android.maps.driveabout.widgets.DestinationActivityTileButton android:onClick="handleStarredItemsClick" app:title="@string/da_picker_starred_items" app:icon="@drawable/da_btn_starred_items_tablet" />
+    </TableRow>
+</TableLayout>

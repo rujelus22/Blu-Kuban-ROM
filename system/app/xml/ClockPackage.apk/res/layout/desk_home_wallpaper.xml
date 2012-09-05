@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/ScrollView01" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                <com.sec.android.app.clockpackage.deskclock.setting.RoundRect android:id="@id/home_wallpaper_defaultcolor1" android:layout_width="100.0dip" android:layout_height="30.0dip" />
+                <com.sec.android.app.clockpackage.deskclock.setting.RoundRect android:id="@id/home_wallpaper_defaultcolor2" android:layout_width="100.0dip" android:layout_height="30.0dip" android:layout_marginTop="20.0dip" />
+                <com.sec.android.app.clockpackage.deskclock.setting.RoundRect android:id="@id/home_wallpaper_defaultcolor3" android:layout_width="100.0dip" android:layout_height="30.0dip" android:layout_marginTop="20.0dip" />
+                <com.sec.android.app.clockpackage.deskclock.setting.RoundRect android:id="@id/home_wallpaper_defaultcolor4" android:layout_width="100.0dip" android:layout_height="30.0dip" android:layout_marginTop="20.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="10.0dip">
+                <com.sec.android.app.clockpackage.deskclock.setting.RoundRect android:id="@id/home_wallpaper_defaultcolor5" android:layout_width="100.0dip" android:layout_height="30.0dip" />
+                <com.sec.android.app.clockpackage.deskclock.setting.RoundRect android:id="@id/home_wallpaper_defaultcolor6" android:layout_width="100.0dip" android:layout_height="30.0dip" android:layout_marginTop="20.0dip" />
+                <com.sec.android.app.clockpackage.deskclock.setting.RoundRect android:id="@id/home_wallpaper_defaultcolor7" android:layout_width="100.0dip" android:layout_height="30.0dip" android:layout_marginTop="20.0dip" />
+                <com.sec.android.app.clockpackage.deskclock.setting.RoundRect android:id="@id/home_wallpaper_defaultcolor8" android:layout_width="100.0dip" android:layout_height="30.0dip" android:layout_marginTop="20.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dip">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pick_a_color_title" />
+            <com.sec.android.app.clockpackage.deskclock.setting.RoundRect android:id="@id/home_wallpaper_customcolor" android:layout_width="50.0dip" android:layout_height="30.0dip" android:layout_marginLeft="20.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

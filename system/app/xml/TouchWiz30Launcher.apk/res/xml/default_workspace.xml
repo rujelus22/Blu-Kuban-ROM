@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites
+  xmlns:launcher="http://schemas.android.com/apk/res/com.sec.android.app.twlauncher">
+    <appwidget launcher:className="com.sec.android.widgetapp.apnews.widget.APNewsWidgetNews" launcher:packageName="com.sec.android.widgetapp.apnews" launcher:screen="1" launcher:x="0" launcher:y="0" launcher:spanX="4" launcher:spanY="2" />
+    <appwidget launcher:className="com.vlingo.client.widget.InCarWidget" launcher:packageName="com.vlingo.client.samsung" launcher:screen="2" launcher:x="0" launcher:y="0" launcher:spanX="3" launcher:spanY="1" />
+    <favorite launcher:className="com.sprint.dsa.PageMain" launcher:packageName="com.sprint.dsa" launcher:screen="2" launcher:x="0" launcher:y="3" />
+    <favorite launcher:className="com.mobitv.client.sprinttvng.MobiTVPlayer" launcher:packageName="com.mobitv.client.sprinttvng" launcher:screen="2" launcher:x="1" launcher:y="3" />
+    <favorite launcher:className="com.handson.h2o.H2O" launcher:packageName="com.handson.h2o.nascar09" launcher:screen="2" launcher:x="2" launcher:y="3" />
+    <favorite launcher:className="com.sprint.w.installer.SprintIdHome" launcher:packageName="com.sprint.w.installer" launcher:screen="2" launcher:x="3" launcher:y="3" />
+    <appwidget launcher:className="com.sec.android.widgetapp.digitalclock.DigitalClockWidgetProvider" launcher:packageName="com.sec.android.widgetapp.digitalclock" launcher:screen="3" launcher:x="0" launcher:y="0" launcher:spanX="4" launcher:spanY="1" />
+    <appwidget launcher:className="com.sec.android.widgetapp.weatherclock.WeatherWidgetProvider" launcher:packageName="com.sec.android.widgetapp.weatherclock" launcher:screen="3" launcher:x="0" launcher:y="1" launcher:spanX="4" launcher:spanY="1" />
+    <favorite launcher:className="com.android.email.activity.Welcome" launcher:packageName="com.android.email" launcher:screen="3" launcher:x="0" launcher:y="3" />
+    <appwidget launcher:className="com.coremobility.app.vnotes.CM_VnoteHomeScreenWidget" launcher:packageName="com.coremobility.app.vnotes" launcher:screen="3" launcher:x="1" launcher:y="3" launcher:spanX="1" launcher:spanY="1" />
+    <favorite launcher:className="com.android.calendar.LaunchActivity" launcher:packageName="com.android.calendar" launcher:screen="3" launcher:x="2" launcher:y="3" />
+    <favorite launcher:className="com.android.vending.AssetBrowserActivity" launcher:packageName="com.android.vending" launcher:screen="3" launcher:x="3" launcher:y="3" />
+    <search launcher:screen="4" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.telenav.app.android.sprint.TeleNav" launcher:packageName="com.telenav.app.android.sprint" launcher:screen="4" launcher:x="0" launcher:y="3" />
+    <favorite launcher:className="com.google.android.gm.ConversationListActivityGmail" launcher:packageName="com.google.android.gm" launcher:screen="4" launcher:x="1" launcher:y="3" />
+    <favorite launcher:className="com.google.android.talk.SigningInActivity" launcher:packageName="com.google.android.talk" launcher:screen="4" launcher:x="2" launcher:y="3" />
+    <favorite launcher:className="com.google.android.youtube.HomeActivity" launcher:packageName="com.google.android.youtube" launcher:screen="4" launcher:x="3" launcher:y="3" />
+    <samsungappwidget launcher:className="com.sec.android.widgetapp.TwCalendarAppWidget.TWCalendarAppWidgetActivity" launcher:packageName="com.sec.android.widgetapp.TwCalendarAppWidget" launcher:screen="5" launcher:x="0" launcher:y="0" />
+</favorites>

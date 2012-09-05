@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="type_text_length">false</item>
+    <item type="id" name="autoanswer">false</item>
+    <item type="id" name="auto_enable">false</item>
+    <item type="id" name="auto_disable">false</item>
+    <item type="id" name="uart">false</item>
+    <item type="id" name="uart_modem">false</item>
+    <item type="id" name="uart_pda">false</item>
+    <item type="id" name="usb">false</item>
+    <item type="id" name="usb_modem">false</item>
+    <item type="id" name="usb_pda">false</item>
+    <item type="id" name="func">false</item>
+    <item type="id" name="func_enable">false</item>
+    <item type="id" name="func_disable">false</item>
+    <item type="id" name="type">false</item>
+    <item type="id" name="type_cp">false</item>
+    <item type="id" name="type_ap">false</item>
+    <item type="id" name="type_apcp">false</item>
+</resources>

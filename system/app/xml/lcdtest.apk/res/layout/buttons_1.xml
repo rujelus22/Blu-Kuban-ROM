@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="30.0sp" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0px" android:text="@string/main_title" />
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:weightSum="3.0" android:layout_weight="1.0">
+        <Button android:id="@id/red" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/buttons_red" android:layout_weight="1.0" />
+        <Button android:id="@id/green" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/buttons_green" android:layout_weight="1.0" />
+        <Button android:id="@id/blue" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/buttons_blue" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:weightSum="3.0" android:layout_weight="1.0">
+        <Button android:id="@id/receiver" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/buttons_receiver" android:layout_weight="1.0" />
+        <Button android:id="@id/vibration" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/buttons_vibration" android:layout_weight="1.0" />
+        <Button android:id="@id/dimming" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/buttons_dimming" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:weightSum="3.0" android:layout_weight="1.0">
+        <Button android:id="@id/megacam" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/buttons_megacam" android:layout_weight="1.0" />
+        <Button android:id="@id/sensor" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/buttons_sensor" android:layout_weight="1.0" />
+        <Button android:id="@id/touch" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/buttons_touch" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:weightSum="3.0" android:layout_weight="1.0">
+        <Button android:id="@id/sleepmode" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/buttons_sleepmode" android:layout_weight="1.0" />
+        <Button android:id="@id/speaker" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/speaker_test" android:layout_weight="1.0" />
+        <Button android:id="@id/sub_key" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/sub_key_test" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:weightSum="3.0" android:layout_weight="1.0">
+        <Button android:id="@id/frontcam" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/buttons_frontcam" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

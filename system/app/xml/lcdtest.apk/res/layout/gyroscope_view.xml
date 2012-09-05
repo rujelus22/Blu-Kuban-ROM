@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="19.0sp" android:textColor="@color/black" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/gyroscope_value" />
+    <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.0">
+        <TableRow>
+            <TextView android:textSize="16.0sp" android:textColor="@color/black" android:layout_height="wrap_content" android:layout_column="1" android:text="@string/try_count" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/red" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_column="1" android:text="@string/x_value" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/green" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_column="2" android:text="@string/y_value" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/blue" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_column="3" android:text="@string/z_value" />
+        </TableRow>
+    </TableLayout>
+    <View android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+    <View android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="3.0dip" />
+    <ListView android:gravity="center" android:id="@id/hist_nv_list" android:layout_width="wrap_content" android:layout_height="wrap_content" android:cacheColorHint="#00000000" />
+</LinearLayout>

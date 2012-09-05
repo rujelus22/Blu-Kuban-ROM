@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@id/list_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <LinearLayout android:background="@drawable/winset_softkey_bg" android:layout_width="fill_parent" android:layout_height="59.329987dip" android:baselineAligned="true"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <Button android:textSize="16.0dip" android:textColor="@color/button_text_color" android:ellipsize="marquee" android:id="@id/common_softkey_left_button" android:focusable="true" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="6.669983dip" android:text="@string/fl_setup_now" android:singleLine="true" android:layout_weight="1.0" />
+        <Button android:textSize="16.0dip" android:textColor="@color/button_text_color" android:ellipsize="marquee" android:id="@id/common_softkey_right_button" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="6.669983dip" android:text="@string/fl_setup_later" android:singleLine="true" android:layout_weight="1.0" />
+        <Button android:textSize="16.0dip" android:ellipsize="marquee" android:id="@id/common_softkey_ok" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="74.0px" android:layout_marginTop="6.669983dip" android:layout_marginRight="74.0px" android:text="@string/fl_setup_later" android:singleLine="true" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

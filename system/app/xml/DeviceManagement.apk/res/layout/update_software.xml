@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/update_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/update_title_background" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true">
+        <TextView android:textSize="20.0dip" android:textStyle="bold" android:textColor="#ffffa500" android:id="@id/update_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/upd_sw" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/update_description_layout" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="55.0dip" android:layout_below="@id/update_title_background">
+        <ScrollView android:id="@id/update_scrollvw" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="#ff000000" android:id="@id/update_description" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/upd_text1" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+    <RelativeLayout android:orientation="horizontal" android:id="@id/update_buttons" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <Button android:id="@id/update_yes" android:fadingEdge="horizontal" android:layout_width="110.0dip" android:layout_height="40.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:text="@string/yes" android:layout_alignParentLeft="true" />
+        <Button android:id="@id/update_no" android:fadingEdge="horizontal" android:layout_width="110.0dip" android:layout_height="40.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/no" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trim</string>
+    <string name="trim_label">Trim</string>
+    <string name="title_trim">Trim</string>
+    <string name="title_newFilename">Enter new file name</string>
+    <string name="button_trim">Trim</string>
+    <string name="button_play">Play</string>
+    <string name="button_preview">Preview</string>
+    <string name="button_pause">Pause</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_undo">Undo</string>
+    <string name="menu_originalName">Trim original video</string>
+    <string name="menu_newName">Trim as new video</string>
+    <string name="message_trimming">Trimming video...</string>
+    <string name="message_unexpectedError">Unexpected error</string>
+    <string name="message_unexpectedData">Invalid input format</string>
+    <string name="message_fileNotExist">File does not exist</string>
+    <string name="message_alreadyExistsFile">Already exists</string>
+    <string name="message_unsupportedFile">Unsupported media type</string>
+    <string name="message_tooSmallFile">File too small</string>
+    <string name="message_tooLargeFile">File too large</string>
+    <string name="message_shortDuration">Duration must be longer than 1 second</string>
+    <string name="message_notEnoughSpace">Not enough space</string>
+    <string name="message_notResponding">Application not responding</string>
+    <string name="message_trimming_success">Trimmed: %s</string>
+    <string name="message_warning_code">Warning</string>
+    <string name="message_error_code">Error</string>
+    <string name="message_trimmingCancel">Trimming failed</string>
+    <string name="message_trimmingFail">Trimming failed</string>
+    <string name="message_securityException">Unable to edit. File security protected</string>
+    <string name="message_invalidCharacter">Invalid character</string>
+    <string name="message_nameEmpty">Name is empty</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="7.6999817dip" android:layout_marginTop="7.0dip" android:layout_marginRight="7.6999817dip" android:layout_marginBottom="7.0dip">
+        <ImageView android:layout_gravity="center" android:id="@id/photo" android:paddingLeft="2.0dip" android:paddingTop="2.0dip" android:paddingRight="2.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" android:cropToPadding="true" />
+        <ImageView android:layout_gravity="center" android:id="@id/photo_add_masking" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@xml/shape_corners" android:scaleType="fitXY" />
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center" android:id="@id/photo_add_outline_f" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/bookmark_outline" android:scaleType="fitXY" />
+    </FrameLayout>
+</FrameLayout>

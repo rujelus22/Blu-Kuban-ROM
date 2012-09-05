@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.media" android:versionCode="15" android:versionName="4.0.4-FH13" package="com.android.providers.downloads.ui"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS" />
+    <uses-permission android:name="android.permission.ACCESS_ALL_DOWNLOADS" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <application android:label="@string/app_label" android:icon="@mipmap/ic_launcher_download" android:process="android.process.media" android:hardwareAccelerated="true">
+        <activity android:theme="@style/ThemeDownloadTap" android:name=".DownloadsListTab" android:launchMode="singleTop" android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW_DOWNLOADS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/ThemeDownloadTap" android:name=".DownloadList" android:launchMode="singleTop">
+            <intent-filter android:priority="-101">
+                <action android:name="android.intent.action.VIEW_DOWNLOADS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/ThemeDownloadTap" android:name=".SecDownloadList" android:launchMode="singleTop">
+            <intent-filter android:priority="-101">
+                <action android:name="android.intent.action.VIEW_SEC_DOWNLOADS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <provider android:name=".saveas.SecDownloadSaveasProvider" android:permission="android.permission.ACCESS_ALL_DOWNLOADS" android:authorities="downloadsaveas">
+            <path-permission android:permission="android.permission.INTERNET" android:pathPrefix="/downloadsaveas" />
+        </provider>
+        <activity android:label="@string/download_settings" android:name=".saveas.SecDownloadSaveasPreferences" android:configChanges="keyboardHidden|orientation" />
+        <uses-library android:name="sec_feature" />
+    </application>
+</manifest>

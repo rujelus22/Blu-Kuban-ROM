@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/pcw_second_layout" android:background="@drawable/pcs_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="3.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="35.0dip" android:textColor="#ffebebeb" android:gravity="center" android:id="@id/pcwdonetext" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="@string/pcwdone_text" android:shadowColor="#ff000000" android:layout_below="@id/pcw_second_layout" />
+    <ImageView android:id="@id/playpcwani" android:background="@anim/animatepcw" android:layout_width="wrap_content" android:layout_height="260.0dip" android:adjustViewBounds="false" />
+    <Button android:textColor="#ffffffff" android:gravity="center" android:id="@id/btndone" android:background="@drawable/pcwbutton" android:layout_width="233.0dip" android:layout_height="48.0dip" android:layout_marginTop="25.0dip" android:text="@string/btn_stop" android:layout_below="@id/pcs_bg" android:layout_centerHorizontal="true" />
+</LinearLayout>

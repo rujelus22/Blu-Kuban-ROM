@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vlingo.client.superdialer.items.SDItemTextWithAccessoryView android:paddingLeft="6.0dip" android:paddingRight="22.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="67.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/item_accessory_container" android:paddingLeft="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <ImageView android:layout_gravity="center" android:id="@id/item_accessory_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_accessory_arrow_right" />
+        <ProgressBar android:id="@id/item_accessory_progressBar" android:layout_width="24.0dip" android:layout_height="24.0dip" />
+    </FrameLayout>
+    <TextView android:textAppearance="@style/ListCellTextDefault" android:ellipsize="end" android:id="@id/item_heading" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="header" android:scrollHorizontally="false" android:layout_toLeftOf="@id/item_accessory_container" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+</com.vlingo.client.superdialer.items.SDItemTextWithAccessoryView>

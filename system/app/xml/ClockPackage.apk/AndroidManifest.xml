@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1" android:versionName="1.0" package="com.sec.android.app.clockpackage"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+    <application android:theme="@android:style/Theme.DeviceDefault" android:label="@string/app_name" android:icon="@drawable/icon">
+        <activity android:theme="@style/ClockPackageDefault.NoActionBar" android:label="@string/app_name" android:name=".ClockPackage" android:launchMode="singleTask" android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="WORLD_ACTION" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/alarm" android:name=".alarm.Alarm" android:launchMode="singleInstance" android:configChanges="orientation|screenSize" android:windowNoTitle="true">
+            <intent-filter android:label="alternativelistCreate">
+                <category android:name="android.intent.category.ALTERNATIVE" />
+                <category android:name="android.intent.category.SELECTED_ALTERNATIVE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" android:host="com.sec.android.app.clockpackage" android:path="/alarmlist/" />
+                <data android:scheme="content" android:host="com.sec.android.app.clockpackage" android:path="/alarmcreate/" />
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@touchwiz:style/TwTheme" android:name=".alarm.AlarmDetail" android:taskAffinity="" android:excludeFromRecents="true" android:configChanges="orientation|screenSize" android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:name=".alarm.AlarmAlert" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:name=".alarm.AlarmSmartAlert" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@touchwiz:style/TwTheme" android:label="@string/alarmrepeat" android:name=".alarm.AlarmRepeat" />
+        <activity android:theme="@touchwiz:style/TwTheme" android:label="@string/snooze" android:name=".alarm.AlarmSnooze" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@touchwiz:style/TwTheme" android:label="@string/alarm_smartalarm" android:name=".alarm.AlarmSmartAlarm" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@touchwiz:style/TwTheme" android:label="@string/delete" android:name=".alarm.AlarmDelete" android:excludeFromRecents="true" />
+        <activity android:theme="@touchwiz:style/TwTheme" android:label="@string/alarm_setting_title" android:name=".alarm.AlarmSetting" />
+        <activity android:theme="@touchwiz:style/TwTheme" android:label="@string/alarm_setting_title" android:name=".alarm.SettingsActivity" android:taskAffinity="" android:excludeFromRecents="true" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:name=".alarm.HandleSetAlarm" android:permission="com.android.alarm.permission.SET_ALARM" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.SET_ALARM" />
+                <action android:name="com.samsung.sec.android.clockpackage.alarm.NOTIFY_ALARM_DIRECTSAVED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/auto_power_up_setting" android:name=".alarm.AutoPowerupSetting" />
+        <receiver android:name=".alarm.AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="com.samsung.sec.android.clockpackage.alarm.ALARM_ALERT" />
+                <action android:name="android.intent.action.SET_ALARM" />
+                <action android:name="com.samsung.sec.android.clockpackage.alarm.NOTIFY_ALARM_DIRECTSAVED" />
+                <action android:name="com.samsung.sec.android.clockpackage.alarm.START_INFO_ALARM" />
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <provider android:name=".alarm.AlarmProvider" android:authorities="com.samsung.sec.android.clockpackage" />
+        <service android:name=".alarm.AlarmAlertInCallService" />
+        <service android:name=".alarm.AlarmSmartAlertInCallService" />
+        <activity android:theme="@style/ClockPackageDefault.NoActionBar" android:name=".worldclock.WCMain">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+            <meta-data android:name="com.samsung.3dlist.disable" android:value="true" />
+        </activity>
+        <activity android:theme="@style/ClockPackageDefault.NoActionBar" android:name="com.samsung.stri.s1worldclock.Ui3dMainActivity" android:screenOrientation="portrait" android:configChanges="locale" />
+        <activity android:theme="@style/ClockPackageDefault.NoActionBar" android:name=".worldclock.WCCities" android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <category android:name="android.intent.category.ALTERNATIVE" />
+                <category android:name="android.intent.category.SELECTED_ALTERNATIVE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" android:host="com.sec.android.app.clockpackage.worldclock" android:path="/worldclock/" />
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@touchwiz:style/TwTheme" android:label="@string/wc_delete" android:name=".worldclock.WCDelete" android:configChanges="orientation|screenSize">
+            <meta-data android:name="com.samsung.3dlist.disable" android:value="true" />
+        </activity>
+        <activity android:label="@string/wc_dst_settings" android:name=".worldclock.WCDST" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@touchwiz:style/TwTheme" android:label="@string/wc_reorder" android:name=".worldclock.WCReOrder" android:configChanges="orientation|screenSize">
+            <meta-data android:name="com.samsung.3dlist.disable" android:value="true" />
+        </activity>
+        <receiver android:name=".worldclock.ToWorldClockReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SHOW_WORLDCLOCK_DIALOG" />
+            </intent-filter>
+        </receiver>
+        <provider android:name=".worldclock.common.DataContentProvider" android:authorities="com.sec.android.provider.stri_s1_worldclock" />
+        <activity android:theme="@style/ClockPackageDefault.NoActionBar" android:name=".stopwatch.Stopwatch" />
+        <activity android:theme="@style/ClockPackageDefault.NoActionBar" android:name=".timer.Timer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@touchwiz:style/TwTheme" android:label="@string/setting" android:name=".timer.TimerDetail" android:configChanges="orientation|screenSize" android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity android:theme="@style/ClockPackageDefault.NoActionBar" android:name=".timer.TimerAlarm" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <service android:name=".timer.TimerService">
+            <intent-filter>
+                <action android:name=".timer.popup" />
+                <action android:name=".timer.playsound" />
+            </intent-filter>
+        </service>
+        <receiver android:name=".timer.TimerReceiver">
+            <intent-filter>
+                <action android:name=".timer.popup" />
+                <action android:name=".timer.playsound" />
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@android:style/Theme.Holo.NoActionBar" android:label="@string/app_name" android:name=".deskclock.CradleMain" android:launchMode="singleTask" android:configChanges="orientation|screenSize">
+            <meta-data android:name="android.dock_home" android:value="true" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DESK_DOCK" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.Wallpaper" android:label="@string/app_name" android:name=".deskclock.CradleMainTab" android:launchMode="singleTask" android:configChanges="orientation|screenSize">
+            <meta-data android:name="android.dock_home" android:value="true" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/cradle_home_settings" android:name=".deskclock.CradleHomeSettingsTab" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DESK_DOCK" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/cradle_home_settings" android:name=".deskclock.CradleHomeSettings" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DESK_DOCK" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/setting_weather" android:name=".deskclock.CradleWeatherSettings" android:launchMode="singleTask" android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DESK_DOCK" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/pick_wallpaper" android:name=".deskclock.CradleWallpaperChooser" android:screenOrientation="nosensor" android:configChanges="locale" android:finishOnCloseSystemDialogs="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DESK_DOCK" />
+            </intent-filter>
+        </activity>
+        <uses-library android:name="touchwiz" />
+    </application>
+    <permission android:label="READ_CLOCK" android:name="com.sec.android.permission.READ_CLOCK" android:protectionLevel="normal" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.HARDWARE_TEST" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_INPUT_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECEIVE_SHUTDOWN" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.STATUS_BAR" />
+    <uses-permission android:name="android.permission.SCREEN" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SET_TIME_ZONE" />
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="15" />
+</manifest>

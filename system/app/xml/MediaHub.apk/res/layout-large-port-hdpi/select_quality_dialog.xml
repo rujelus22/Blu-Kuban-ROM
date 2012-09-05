@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_view" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <include layout="@layout/common_list_view" />
+        </LinearLayout>
+        <CheckBox android:textSize="16.0sp" android:textColor="@color/color2" android:id="@id/cb_agree" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/remember_download_option" />
+        <Button android:textSize="14.669983sp" android:layout_gravity="center_horizontal" android:id="@id/btn_play_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="72.66998dip" android:layout_marginTop="8.0dip" android:layout_marginRight="72.66998dip" android:layout_marginBottom="3.3299866dip" android:text="@string/play_back" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Režim vožnje</string>
+    <string name="app_name">Upravljanje Govorom</string>
+    <string name="Vlingo">Govorne komande</string>
+    <string name="widget_name">Govor</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/album_background_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.apps.plus.phone.AlbumGridView android:id="@android:id/list" android:focusable="true" android:listSelector="@drawable/album_view_selector" android:drawSelectorOnTop="true" style="@style/AlbumView.GridView" />
+    <include layout="@layout/empty_layout" />
+    <LinearLayout android:gravity="center" android:id="@id/loading_empty_progress" android:background="@color/album_info_background_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <ProgressBar android:layout_gravity="center_vertical" android:id="@id/loading_empty_progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" style="?android:attr/progressBarStyleSmall" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/album_photo_count_color" android:layout_gravity="center_vertical" android:id="@id/loading_empty_progress_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/loading" />
+    </LinearLayout>
+</RelativeLayout>

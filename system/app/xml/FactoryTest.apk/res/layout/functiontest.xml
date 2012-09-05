@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffffffcc" android:paddingLeft="1.0dip" android:paddingTop="5.0dip" android:paddingRight="1.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <Button android:textSize="12.0dip" android:id="@id/simple_test_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/simple_test_text" android:layout_weight="1.0" />
+        <Button android:textSize="12.0dip" android:id="@id/call" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/packet_loopback" android:layout_weight="1.0" android:hapticFeedbackEnabled="true" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <Button android:textSize="12.0dip" android:id="@id/bt_rf_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/bt_rf_text" android:layout_weight="1.0" />
+        <Button android:textSize="12.0dip" android:id="@id/sd_card" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/sd_card" android:layout_weight="1.0" android:hapticFeedbackEnabled="true" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <Button android:textSize="12.0dip" android:id="@id/skptest" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/skp" android:layout_weight="1.0" />
+        <Button android:textSize="12.0dip" android:id="@id/mp3test" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/mp3" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <Button android:id="@id/tsp" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/tsp" android:layout_weight="1.0" />
+        <Button android:textSize="12.0dip" android:id="@id/magnetic" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/magnetic" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <Button android:textSize="12.0dip" android:id="@id/usb" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/usb" android:layout_weight="1.0" />
+        <Button android:textSize="12.0dip" android:id="@id/secondary_test_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/secondary_test_text" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <Button android:textSize="12.0dip" android:id="@id/auth_battery" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/auth_battery" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <Button android:textSize="12.0dip" android:id="@id/ear" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/ear" android:layout_weight="1.0" />
+        <Button android:textSize="12.0dip" android:id="@id/ear_key" android:visibility="gone" android:layout_width="160.0dip" android:layout_height="fill_parent" android:text="@string/ear_key" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <Button android:id="@id/camera" android:layout_width="wrap_content" android:layout_height="fill_parent" android:minWidth="110.0dip" android:text="@string/camera" android:width="110.0dip" android:layout_weight="1.0" />
+        <Button android:id="@id/camera" android:layout_width="wrap_content" android:layout_height="fill_parent" android:minWidth="110.0dip" android:text="@string/vgacam" android:width="110.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

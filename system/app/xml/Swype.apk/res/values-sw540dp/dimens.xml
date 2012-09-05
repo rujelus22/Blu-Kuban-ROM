@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="inputwindow_font_default">12.0sp</dimen>
+    <dimen name="choicewindow_font_default">16.0sp</dimen>
+    <dimen name="help_dialog_font_size">9.0dip</dimen>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/actionbar" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/top_button_bar" android:layout_below="@id/action_bar" style="@style/ButtonBar">
+        <Button android:id="@id/button_check_all" android:layout_width="0.0px" android:layout_height="wrap_content" android:text="@string/check_all" android:layout_weight="50.0" android:layout_above="@id/button_switch" style="@style/Button" />
+        <Button android:id="@id/button_uncheck_all" android:layout_width="0.0px" android:layout_height="wrap_content" android:text="@string/uncheck_all" android:layout_weight="50.0" style="@style/Button" />
+    </LinearLayout>
+    <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/button_bar" android:layout_below="@id/top_button_bar" style="@style/ListNormal" />
+    <TextView android:gravity="center" android:id="@android:id/empty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignTop="@id/list" style="@style/TextBody" />
+    <RelativeLayout android:id="@id/button_bar" android:layout_alignParentBottom="true" style="@style/ButtonBar">
+        <Button android:id="@id/button_next" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/remove_selected_items" style="@style/Button" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_texture_width">120.0dip</dimen>
+    <dimen name="settings_padding_Top">10.0dip</dimen>
+</resources>

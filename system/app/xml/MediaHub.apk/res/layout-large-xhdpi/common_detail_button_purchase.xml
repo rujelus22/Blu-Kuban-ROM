@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_btn_purchase" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="12.0dip">
+        <LinearLayout android:id="@id/btn_preview_play" android:background="@drawable/selector_store_btn_03" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="54.0dip" android:layout_weight="1.0">
+            <TextView android:textSize="18.0sp" android:textColor="@color/color2" android:gravity="center" android:id="@id/tv_preview_play" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/view_trailer" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/btn_buy" android:background="@drawable/selector_store_btn_01" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="54.0dip" android:layout_weight="1.0">
+            <TextView android:textSize="18.0sp" android:textColor="@color/color2" android:gravity="center" android:id="@id/tv_buy" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/buy" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/btn_rent" android:background="@drawable/selector_store_btn_02" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="54.0dip" android:layout_weight="1.0">
+            <TextView android:textSize="18.0sp" android:textColor="@color/color2" android:gravity="center" android:id="@id/tv_rent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/rent" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:background="@color/divider" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+</LinearLayout>

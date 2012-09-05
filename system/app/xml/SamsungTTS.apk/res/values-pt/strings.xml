@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="general_settings">Defin. gerais</string>
+    <string name="samsungtts_settings">Definições Samsung TTS</string>
+    <string name="open_source_licenses">Abrir licenças de origem</string>
+    <string name="advanced_settings">Definições avançadas</string>
+    <string name="change_voice_effects">Efeitos de voz</string>
+    <string name="change_voice_effects_summary">Aplica vários efeitos de voz ao texto falado</string>
+    <string name="installed_languages">Idiomas instalados</string>
+    <string name="female">Feminino</string>
+    <string name="male">Masculino</string>
+</resources>

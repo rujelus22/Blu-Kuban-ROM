@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="cts_use_fahrenheit">false</bool>
+    <bool name="cts_use_three_hours_auto_refresh">false</bool>
+    <bool name="cts_use_six_hours_auto_refresh">false</bool>
+    <bool name="cts_enable_japan_protocol">false</bool>
+    <bool name="cts_show_weather_text">true</bool>
+</resources>

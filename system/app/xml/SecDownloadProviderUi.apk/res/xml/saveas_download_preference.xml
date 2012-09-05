@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/download_settings">
+        <CheckBoxPreference android:title="@string/use_default_filename_title" android:key="use_default_file" android:summary="@string/use_default_filename" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/use_default_directory_title" android:key="use_default_directory" android:summary="@string/use_default_directory" android:defaultValue="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

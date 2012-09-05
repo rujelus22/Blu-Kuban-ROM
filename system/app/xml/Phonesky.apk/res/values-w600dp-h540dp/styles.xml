@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DetailsPage_Button">
+        <item name="android:textSize">@dimen/content_secondary_size</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:background">@drawable/details_page_regular_button</item>
+        <item name="android:paddingTop">0.0dip</item>
+        <item name="android:paddingBottom">0.0dip</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/details_button_margin_top_bottom</item>
+        <item name="android:layout_marginBottom">@dimen/details_button_margin_top_bottom</item>
+        <item name="android:minWidth">@dimen/details_button_minwidth</item>
+        <item name="android:minHeight">@dimen/details_button_minheight</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="DetailsPage_BuyButton" parent="@style/DetailsPage_Button">
+        <item name="android:textColor">@color/buy_button</item>
+        <item name="android:background">@drawable/details_page_buy_button</item>
+    </style>
+</resources>

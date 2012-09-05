@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_text_yes">OK</string>
+    <string name="btn_text_no">Cancel</string>
+    <string name="text_discription">Network does not provide date and time information. Go to Date and time settings to set manually</string>
+    <string name="timezone_toast">Select time zone before setting time</string>
+    <string name="popup_name">Notifications</string>
+</resources>

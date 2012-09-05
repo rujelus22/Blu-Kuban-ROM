@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/theme_bg" android:layout_width="800.0px" android:layout_height="480.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="21.0px" android:textStyle="bold" android:id="@id/SelectedThemePreview" android:background="@drawable/sub_titlebar" android:paddingLeft="20.0px" android:layout_width="fill_parent" android:layout_height="38.0px" android:text="@string/theme_preview" android:singleLine="true" android:shadowDx="-1.0" android:shadowDy="-1.0" android:shadowRadius="0.3" style="@style/SelectedViewText" />
+    <Gallery android:id="@id/themeGallery" android:layout_width="fill_parent" android:layout_height="318.0px" android:layout_marginTop="42.0px" android:spacing="14.0px" />
+    <LinearLayout android:orientation="horizontal" android:background="@color/winsetback" android:layout_width="fill_parent" android:layout_height="82.0px">
+        <Button android:textSize="26.0px" android:textColor="@drawable/projectnewcolorselector" android:layout_gravity="center_vertical" android:id="@id/ApplyBtn" android:background="@drawable/projectbuttonselector" android:focusable="true" android:layout_width="385.0px" android:layout_height="72.0px" android:layout_marginLeft="10.0px" android:layout_marginTop="2.0px" android:text="@string/apply" android:contentDescription="@string/accessibility_apply" />
+        <Button android:textSize="26.0px" android:textColor="@drawable/projectnewcolorselector" android:layout_gravity="center_vertical" android:id="@id/CancelBtn" android:background="@drawable/projectbuttonselector" android:focusable="true" android:layout_width="385.0px" android:layout_height="72.0px" android:layout_marginLeft="10.0px" android:layout_marginTop="2.0px" android:text="@string/cancel" android:contentDescription="@string/accessibility_cancel" />
+    </LinearLayout>
+</LinearLayout>

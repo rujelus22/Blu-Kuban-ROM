@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RadioGroup android:orientation="vertical" android:id="@id/modem_cable" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RadioButton android:textSize="20.0sp" android:id="@id/ap_sel" android:layout_height="60.0dip" android:text="@string/ap_name" />
+            <RadioButton android:textSize="20.0sp" android:id="@id/cp_sel" android:layout_height="60.0dip" android:text="@string/cp_name" />
+            <RadioButton android:textSize="20.0sp" android:id="@id/all_sel" android:layout_height="60.0dip" android:text="@string/all_name" />
+        </RadioGroup>
+    </LinearLayout>
+</ScrollView>

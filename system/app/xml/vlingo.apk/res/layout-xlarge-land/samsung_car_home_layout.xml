@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/parent_container_portrait" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/parent_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <include android:id="@id/top_container" android:layout_marginTop="2.0dip" layout="@layout/samsung_car_home_header_view" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <RelativeLayout android:id="@id/dot_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_marginBottom="3.0dip" android:layout_alignParentBottom="true">
+                <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/dot_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                    <ImageView android:id="@id/dot_0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/samsung_car_dot_0" android:scaleType="fitCenter" />
+                    <ImageView android:id="@id/dot_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:src="@drawable/samsung_car_dot_0" android:scaleType="fitCenter" />
+                    <ImageView android:id="@id/dot_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:src="@drawable/samsung_car_dot_0" android:scaleType="fitCenter" />
+                    <ImageView android:id="@id/dot_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:src="@drawable/samsung_car_dot_0" android:scaleType="fitCenter" />
+                    <ImageView android:id="@id/dot_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:src="@drawable/samsung_car_dot_0" android:scaleType="fitCenter" />
+                </LinearLayout>
+                <ImageView android:id="@id/powered_by_vlingo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/samsung_powered_by_vlingo" android:scaleType="fitCenter" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+            <com.vlingo.client.scroller.ScrollableContainer android:id="@id/scroll_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/dot_container" android:layout_alignParentTop="true">
+                <include android:id="@id/pane_app_buttons" layout="@layout/samsung_car_item_app_buttons" />
+            </com.vlingo.client.scroller.ScrollableContainer>
+            <com.vlingo.client.car.CarPopup android:id="@id/popup_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </RelativeLayout>
+        <FrameLayout android:id="@id/bottom_container" android:background="@drawable/samsung_car_panel" android:paddingLeft="53.0dip" android:paddingTop="7.0dip" android:paddingRight="53.0dip" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="2.0">
+            <include android:id="@id/car_reco_button" layout="@layout/samsung_car_home_reco_button" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

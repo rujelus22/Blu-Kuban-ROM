@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_add_to_playlist" android:id="@id/menu_add_to" android:title="@string/menu_add_to" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_share" android:id="@id/menu_share" android:title="@string/menu_share" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_add_to_playlist" android:id="@id/menu_add_to_overflow" android:visible="false" android:title="@string/menu_add_to" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_share" android:id="@id/menu_share_overflow" android:visible="false" android:title="@string/menu_share" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_like" android:id="@id/menu_like" android:title="@string/menu_like" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_dislike" android:id="@id/menu_dislike" android:title="@string/menu_dislike" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_screen" android:id="@id/menu_play_on" android:title="@string/play_on" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_copy_url" android:id="@id/menu_copy_url" android:title="@string/menu_copy_url" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_flag" android:id="@id/menu_flag" android:title="@string/menu_flag" android:showAsAction="never" />
+</menu>

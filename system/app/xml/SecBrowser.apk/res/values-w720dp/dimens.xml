@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tab_width">240.0dip</dimen>
+    <dimen name="bookmark_reorder_grid_columnWidth">180.0dip</dimen>
+    <dimen name="bookmark_reorder_grid_thumbHeight">120.0dip</dimen>
+    <dimen name="bookmark_reorder_grid_spacing">8.0dip</dimen>
+</resources>

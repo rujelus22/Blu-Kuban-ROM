@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/selectable_background" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="left|center" android:orientation="vertical" android:id="@id/listItem" android:paddingLeft="10.0dip" android:paddingTop="3.0dip" android:paddingRight="10.0dip" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight">
+        <include layout="@layout/placemark_details_v2" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:id="@id/rate_bar" android:background="@drawable/single_rating_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/default_gratisfaction_padding" android:scaleType="fitXY">
+        <include android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/template_rating_bar" />
+    </LinearLayout>
+</LinearLayout>

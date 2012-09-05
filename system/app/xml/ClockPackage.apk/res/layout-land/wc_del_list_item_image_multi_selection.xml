@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/delete_child_item" android:background="@drawable/list_wc_bg_del" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TableRow android:layout_width="fill_parent" android:layout_height="76.0dip" android:layout_marginLeft="13.329987dip">
+            <LinearLayout android:orientation="vertical" android:layout_width="444.66406dip" android:layout_height="wrap_content" android:layout_marginTop="4.669983dip" android:layout_marginBottom="7.3299866dip">
+                <TextView android:textSize="16.0dip" android:textColor="@drawable/style_txt_color" android:gravity="left|center" android:id="@id/topLabel" android:layout_width="wrap_content" android:layout_height="21.339996dip" android:singleLine="true" android:shadowColor="@touchwiz:color/tw_color002" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="0.5" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <com.sec.android.app.clockpackage.worldclock.common.DigitalClock android:textSize="42.669983dip" android:textColor="@drawable/style_txt_color" android:gravity="center_vertical" android:id="@id/digitalClock" android:layout_width="wrap_content" android:layout_height="42.0dip" android:includeFontPadding="false" android:shadowColor="@touchwiz:color/tw_color002" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="0.5" />
+                    <TextView android:textSize="18.669983dip" android:textColor="@drawable/style_txt_color" android:id="@id/bottomRightLabel" android:layout_width="wrap_content" android:layout_height="45.329987dip" android:layout_marginLeft="4.0dip" android:shadowColor="@touchwiz:color/tw_color002" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="0.5" />
+                    <LinearLayout android:layout_width="20.0dip" android:layout_height="45.329987dip" />
+                    <TextView android:textSize="16.0dip" android:textColor="@drawable/style_txt_color" android:gravity="left|center" android:id="@id/bottomLabel" android:layout_width="wrap_content" android:layout_height="45.329987dip" android:includeFontPadding="false" android:shadowColor="@touchwiz:color/tw_color002" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="0.5" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="75.32999dip" android:layout_height="fill_parent">
+                <CheckBox android:id="@id/checkimage" android:focusable="false" android:clickable="false" android:layout_width="38.0dip" android:layout_height="48.0dip" android:layout_marginLeft="22.0dip" android:layout_marginTop="14.0dip" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

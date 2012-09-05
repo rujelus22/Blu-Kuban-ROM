@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="album_photo_count">
+        <item quantity="other">%d φωτογρ.</item>
+        <item quantity="zero">%d φωτογραφίες</item>
+        <item quantity="one">%d φωτογρ.</item>
+    </plurals>
+    <plurals name="from_your_phone_selected_count">
+        <item quantity="other">Επιλέχθηκαν %d.</item>
+        <item quantity="one">Επιλέχθηκαν %d</item>
+    </plurals>
+    <plurals name="delete_photo_dialog_title">
+        <item quantity="other">Να γίνει διαγραφή όλων των αντιγράφων αυτών των φωτογραφιών;</item>
+        <item quantity="one">Να γίνει διαγραφή όλων των αντιγράφων αυτής της φωτογραφίας;</item>
+    </plurals>
+    <plurals name="delete_remote_photo_dialog_message">
+        <item quantity="other">Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτές τις φωτογραφίες από αυτό το λεύκωμα του Google+; Δεν είναι δυνατή η αναίρεση αυτής της ενέργειας.</item>
+        <item quantity="one">Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν τη φωτογραφία από αυτό το λεύκωμα του Google+; Δεν είναι δυνατή η αναίρεση αυτής της ενέργειας.</item>
+    </plurals>
+    <plurals name="delete_local_photo_dialog_message">
+        <item quantity="other">Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτές τις φωτογραφίες τόσο από το τηλέφωνό σας όσο και από αυτό το λεύκωμα του Google+; Δεν είναι δυνατή η αναίρεση αυτής της ενέργειας.</item>
+        <item quantity="one">Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν τη φωτογραφία τόσο από το τηλέφωνό σας όσο και από αυτό το λεύκωμα του Google+; Δεν είναι δυνατή η αναίρεση αυτής της ενέργειας.</item>
+    </plurals>
+    <plurals name="delete_photo_pending">
+        <item quantity="other">Διαγραφή φωτογραφιών...</item>
+        <item quantity="one">Διαγραφή φωτογραφίας...</item>
+    </plurals>
+    <plurals name="plus_one_people_more_plus_ones">
+        <item quantity="other">+%d άλλοι</item>
+        <item quantity="one">ακόμη το επισήμαναν με +1</item>
+    </plurals>
+    <plurals name="plusoned_by_unknowns">
+        <item quantity="other">από %d άτομα</item>
+        <item quantity="one">από 1 χρήστη</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_unknowns">
+        <item quantity="other">από εσάς και %d ακόμα χρήστες</item>
+        <item quantity="one">από εσάς και 1 ακόμα χρήστη</item>
+    </plurals>
+    <plurals name="plusoned_by_one_known_and_unknowns">
+        <item quantity="other">από τον χρήστη %s και %d ακόμα χρήστες</item>
+        <item quantity="one">από τον χρήστη %s και 1 ακόμα χρήστη</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_one_known_and_unknowns">
+        <item quantity="other">από εσάς, τον χρήστη %s και %d ακόμα χρήστες</item>
+        <item quantity="one">από εσάς, τον χρήστη %s και 1 ακόμα χρήστη</item>
+    </plurals>
+    <plurals name="plusoned_by_two_known_and_unknowns">
+        <item quantity="other">από τους χρήστες %s, %s και %d ακόμα χρήστες</item>
+        <item quantity="one">από τους χρήστες %s, %s και 1 ακόμα χρήστη</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_two_known_and_unknowns">
+        <item quantity="other">από εσάς, τους χρήστες %s, %s και %d ακόμα χρήστες</item>
+        <item quantity="one">από εσάς, τους χρήστες %s, %s, και 1 ακόμα χρήστη</item>
+    </plurals>
+    <plurals name="comments">
+        <item quantity="other">%d σχόλια</item>
+        <item quantity="one">%d σχόλιο</item>
+    </plurals>
+    <plurals name="delete_photo">
+        <item quantity="other">Διαγραφή φωτογραφιών</item>
+        <item quantity="one">Διαγραφή φωτογραφίας</item>
+    </plurals>
+    <plurals name="circle_entry_content_description">
+        <item quantity="other">%s; %d μέλη</item>
+        <item quantity="one">%s; %d μέλη</item>
+    </plurals>
+    <plurals name="notifications_ticker_text">
+        <item quantity="other">Νέες ειδοποιήσεις Google+</item>
+        <item quantity="one">Νέα ειδοποίηση Google+</item>
+    </plurals>
+    <plurals name="notifications_content_text">
+        <item quantity="other">%1$s (%2$d)</item>
+        <item quantity="one">%1$s (%2$d)</item>
+    </plurals>
+    <plurals name="audience_display_selection_count">
+        <item quantity="other">Επιλέχθηκαν %d</item>
+        <item quantity="one">Επιλέχθηκαν %d</item>
+    </plurals>
+    <plurals name="circle_count_and_matched_email">
+        <item quantity="other">%d κύκλοι, %s</item>
+        <item quantity="one">%d κύκλος, %s</item>
+    </plurals>
+    <plurals name="circle_selection_count">
+        <item quantity="other">%d κύκλοι</item>
+        <item quantity="one">%d κύκλος</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_title">
+        <item quantity="other">Διαγραφή κύκλων</item>
+        <item quantity="one">Διαγραφή κύκλου</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_message">
+        <item quantity="other">Θέλετε να διαγράψετε οριστικά αυτούς τους κύκλους;</item>
+        <item quantity="one">Θέλετε να διαγράψετε οριστικά αυτόν τον κύκλο;</item>
+    </plurals>
+    <plurals name="delete_circles_operation_pending">
+        <item quantity="other">Διαγραφή κύκλων...</item>
+        <item quantity="one">Διαγραφή κύκλου...</item>
+    </plurals>
+    <plurals name="circle_people_count">
+        <item quantity="other">%d άτομα</item>
+        <item quantity="one">%d άτομο</item>
+    </plurals>
+    <plurals name="remove_people_dialog_title">
+        <item quantity="other">Κατάργηση ατόμων</item>
+        <item quantity="one">Κατάργηση ατόμου</item>
+    </plurals>
+    <plurals name="remove_people_dialog_message">
+        <item quantity="other">Θέλετε να καταργήσετε αυτά τα άτομα από αυτόν τον κύκλο;</item>
+        <item quantity="one">Θέλετε να καταργήσετε αυτόν το χρήστη από αυτόν τον κύκλο;</item>
+    </plurals>
+    <plurals name="add_people_operation_pending">
+        <item quantity="other">Προσθήκη ατόμων...</item>
+        <item quantity="one">Προσθήκη ατόμου...</item>
+    </plurals>
+    <plurals name="remove_people_operation_pending">
+        <item quantity="other">Κατάργηση ατόμων...</item>
+        <item quantity="one">Κατάργηση ατόμου...</item>
+    </plurals>
+    <plurals name="dismiss_people_operation_pending">
+        <item quantity="other">Παράβλεψη ατόμων...</item>
+        <item quantity="one">Παράβλεψη ατόμου...</item>
+    </plurals>
+    <plurals name="circle_button_more_circles">
+        <item quantity="other">%d ακόμη</item>
+        <item quantity="one">%d ακόμη</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d λεπτά</item>
+        <item quantity="one">%d λεπτά</item>
+    </plurals>
+    <plurals name="num_hours_ago">
+        <item quantity="other">%d ώρες</item>
+        <item quantity="one">%d ώρες</item>
+    </plurals>
+    <plurals name="num_days_ago">
+        <item quantity="other">%d ημέρες</item>
+        <item quantity="one">%d ημέρα</item>
+    </plurals>
+    <plurals name="ads_plus_one_annotation_count_only">
+        <item quantity="other">Και άλλα %1$d άτομα</item>
+        <item quantity="one">Και άλλος %1$d χρήστης</item>
+    </plurals>
+</resources>

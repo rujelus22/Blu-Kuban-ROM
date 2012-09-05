@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/RelativeLayout02" android:layout_width="fill_parent" android:layout_height="329.29688dip">
+            <SurfaceView android:id="@id/SurfaceView" android:layout_width="fill_parent" android:layout_height="212.6dip" android:layout_marginTop="47.299988dip" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout03" android:layout_width="fill_parent" android:layout_height="34.599976dip" android:layout_below="@id/RelativeLayout02">
+            <TextView android:id="@id/TextView05" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout04" android:layout_width="fill_parent" android:layout_height="144.0dip" android:layout_below="@id/RelativeLayout03" />
+    </RelativeLayout>
+</LinearLayout>

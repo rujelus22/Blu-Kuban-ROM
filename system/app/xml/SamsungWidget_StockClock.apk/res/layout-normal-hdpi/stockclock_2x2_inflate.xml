@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/existstock" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/main_bg" android:layout_width="fill_parent" android:layout_height="51.299988dip">
+        <RelativeLayout android:id="@id/notemptyflipperlayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="13.299988dip" android:textStyle="bold" android:textColor="#ff323232" android:ellipsize="marquee" android:id="@id/notemptyflipper" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:singleLine="true" android:includeFontPadding="false" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:marqueeRepeatLimit="marquee_forever" />
+        </RelativeLayout>
+        <TextView android:textSize="20.599976dip" android:textColor="#ff323232" android:ellipsize="marquee" android:id="@id/clockprice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="-2.5dip" android:layout_marginRight="6.0dip" android:singleLine="true" android:includeFontPadding="false" android:layout_below="@id/notemptyflipperlayout" android:layout_alignParentRight="true" android:marqueeRepeatLimit="marquee_forever" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="-2.0dip" android:layout_marginRight="6.0dip" android:layout_below="@id/clockprice">
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/percent_id" android:layout_alignParentLeft="true">
+                <TextView android:textSize="12.0dip" android:textStyle="bold" android:ellipsize="marquee" android:id="@id/clockchange" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
+                <ImageView android:id="@id/clockiconupdown" android:layout_width="11.299988dip" android:layout_height="15.299988dip" android:layout_marginTop="1.3299866dip" android:layout_toLeftOf="@id/clockchange" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/percent_id" android:layout_width="54.0dip" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+                <TextView android:textSize="12.0dip" android:textStyle="bold" android:ellipsize="marquee" android:id="@id/clockchangepercent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
+                <ImageView android:id="@id/clockiconplusminus" android:layout_width="11.299988dip" android:layout_height="15.299988dip" android:layout_marginTop="1.3299866dip" android:layout_toLeftOf="@id/clockchangepercent" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <ImageView android:id="@id/widget_list_line_1" android:background="@drawable/widget_list_line" android:layout_width="fill_parent" android:layout_height="1.3299866dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/main_bg_two" android:layout_width="fill_parent" android:layout_height="51.299988dip">
+        <RelativeLayout android:id="@id/notemptyflipperlayout_two" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip">
+            <TextView android:textSize="13.299988dip" android:textStyle="bold" android:textColor="#ff323232" android:ellipsize="marquee" android:id="@id/notemptyflipper_two" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:marqueeRepeatLimit="marquee_forever" />
+        </RelativeLayout>
+        <TextView android:textSize="20.599976dip" android:textColor="#ff323232" android:ellipsize="marquee" android:id="@id/clockprice_two" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="-2.5dip" android:layout_marginRight="6.0dip" android:singleLine="true" android:includeFontPadding="false" android:layout_below="@id/notemptyflipperlayout_two" android:layout_alignParentRight="true" android:marqueeRepeatLimit="marquee_forever" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="-2.0dip" android:layout_marginRight="6.0dip" android:layout_below="@id/clockprice_two">
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/percent_id_tow" android:layout_alignParentLeft="true">
+                <TextView android:textSize="12.0dip" android:textStyle="bold" android:ellipsize="marquee" android:id="@id/clockchange_two" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
+                <ImageView android:id="@id/clockiconupdown_two" android:layout_width="11.299988dip" android:layout_height="15.299988dip" android:layout_marginTop="1.3299866dip" android:layout_toLeftOf="@id/clockchange_two" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/percent_id_tow" android:layout_width="54.0dip" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+                <TextView android:textSize="12.0dip" android:textStyle="bold" android:ellipsize="marquee" android:id="@id/clockchangepercent_two" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
+                <ImageView android:id="@id/clockiconplusminus_two" android:layout_width="11.299988dip" android:layout_height="15.299988dip" android:layout_marginTop="1.3299866dip" android:layout_toLeftOf="@id/clockchangepercent_two" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <ImageView android:id="@id/widget_list_line_2" android:background="@drawable/widget_list_line" android:layout_width="fill_parent" android:layout_height="1.3299866dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/main_bg_three" android:layout_width="fill_parent" android:layout_height="51.299988dip">
+        <RelativeLayout android:id="@id/notemptyflipperlayout_three" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip">
+            <TextView android:textSize="13.299988dip" android:textStyle="bold" android:textColor="#ff323232" android:ellipsize="marquee" android:id="@id/notemptyflipper_three" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:marqueeRepeatLimit="marquee_forever" />
+        </RelativeLayout>
+        <TextView android:textSize="20.599976dip" android:textColor="#ff323232" android:ellipsize="marquee" android:id="@id/clockprice_three" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="-2.5dip" android:layout_marginRight="6.0dip" android:singleLine="true" android:includeFontPadding="false" android:layout_below="@id/notemptyflipperlayout_three" android:layout_alignParentRight="true" android:marqueeRepeatLimit="marquee_forever" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="-2.0dip" android:layout_marginRight="6.0dip" android:layout_below="@id/clockprice_three">
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/percent_id_three" android:layout_alignParentLeft="true">
+                <TextView android:textSize="12.0dip" android:textStyle="bold" android:ellipsize="marquee" android:id="@id/clockchange_three" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
+                <ImageView android:id="@id/clockiconupdown_three" android:layout_width="11.299988dip" android:layout_height="15.299988dip" android:layout_marginTop="1.3299866dip" android:layout_toLeftOf="@id/clockchange_three" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/percent_id_three" android:layout_width="54.0dip" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+                <TextView android:textSize="12.0dip" android:textStyle="bold" android:ellipsize="marquee" android:id="@id/clockchangepercent_three" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
+                <ImageView android:id="@id/clockiconplusminus_three" android:layout_width="11.299988dip" android:layout_height="15.299988dip" android:layout_marginTop="1.3299866dip" android:layout_toLeftOf="@id/clockchangepercent_three" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <ImageView android:id="@id/widget_list_line_3" android:background="@drawable/widget_list_line" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.3299866dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/nostock_inflate" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:background="@drawable/add_selector" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</LinearLayout>

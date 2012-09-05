@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/call_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:phone="http://schemas.android.com/apk/res/com.android.phone">
+    <PreferenceScreen android:title="@string/menu_rejectMessages" android:key="reject_message_preference" android:summary="@string/summary_editRejectMessages">
+        <intent android:targetPackage="com.sec.android.app.callsetting" android:action="android.intent.action.MAIN" android:targetClass="com.sec.android.app.callsetting.allcalls.RejectCallWithMsg" />
+    </PreferenceScreen>
+    <PreferenceScreen android:persistent="false" android:title="@string/lgt_service_global_auto_roaming" android:key="button_global_auto_roaming_key" android:summary="@string/lgt_service_global_auto_roaming_summary">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.GlobalAutoRoaming" />
+    </PreferenceScreen>
+    <PreferenceScreen android:persistent="false" android:title="@string/bluetooth_call" android:key="button_bluetooth_call_settings_key">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.BluetoothCallSettings" />
+    </PreferenceScreen>
+    <CheckBoxPreference android:title="@string/toggle_internationalcall_title" android:key="toggle_internationalcall" android:summaryOn="@string/internationalcall_on" android:summaryOff="@string/internationalcall_off" />
+    <CheckBoxPreference android:title="@string/menu_activateProximitySensor" android:key="proximity_sensor_preference" android:summary="@string/summary_activateProximitySensor" />
+    <PreferenceScreen android:persistent="false" android:title="@string/kt_additional_service" android:key="button_kt_additional_service">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.KTAddedServiceActivity" />
+    </PreferenceScreen>
+    <PreferenceCategory android:persistent="false" android:title="@string/category_voiceCallEqSettings" android:key="button_voicecall_eq_category_key">
+        <ListPreference android:persistent="false" android:entries="@array/voicecall_eq_list_entries" android:title="@string/menu_voiceCallEqListSetting" android:key="voicecall_eq_list_setting" android:summary="@string/summary_voiceCallEqListSetting" android:entryValues="@array/voicecall_eq_list_values" />
+        <PreferenceScreen android:enabled="false" android:title="@string/menu_voiceCallEqAnalysisSetting" android:key="voicecall_eq_analysis_setting" android:summary="@string/summary_voiceCallEqAnalysisSetting">
+            <intent android:action="com.sec.hearingadjust.launch" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>

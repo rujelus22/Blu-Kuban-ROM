@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/drg_parent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:src="@drawable/call_dtr" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="30.0dip" android:textColor="@color/twcolor001" android:gravity="center" android:id="@id/text_title" android:layout_width="wrap_content" android:layout_height="64.0dip" android:layout_marginTop="158.0dip" android:text="@string/roaming_data_guard_title" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="18.0dip" android:textColor="@color/twcolor001" android:gravity="center" android:id="@id/text_warning" android:layout_width="wrap_content" android:layout_height="144.0dip" android:layout_marginTop="181.0dip" android:text="@string/roaming_data_guard_warning" android:layout_centerHorizontal="true" android:lineSpacingExtra="3.0dip" />
+    <CheckBox android:textSize="18.0dip" android:textColor="@color/twcolor001" android:id="@id/checkbox_never_ask" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="305.0dip" android:text="@string/roaming_data_guard_never_ask_text" android:layout_centerHorizontal="true" />
+    <RelativeLayout android:gravity="center_horizontal" android:id="@id/drg_buttons" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="380.0dip">
+        <Button android:id="@id/button_roam" android:layout_width="130.0dip" android:layout_height="90.0dip" android:layout_marginLeft="8.0dip" android:text="@string/roaming_data_guard_screen_roam_button" android:drawableTop="@drawable/drg_button_on_icon" android:layout_alignParentLeft="true" style="@style/DataRoamingGuardTouchButton" />
+        <Button android:id="@id/button_cancel" android:layout_width="130.0dip" android:layout_height="90.0dip" android:layout_marginRight="8.0dip" android:text="@string/roaming_data_guard_screen_cancel_button" android:drawableTop="@drawable/drg_button_off_icon" android:layout_alignParentRight="true" style="@style/DataRoamingGuardTouchButton" />
+    </RelativeLayout>
+</RelativeLayout>

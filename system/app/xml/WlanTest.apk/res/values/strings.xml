@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">WlanTest Engineering Mode</string>
+    <string name="app_name">WlanTest</string>
+    <string name="app_name_mac">WlanMacAddress</string>
+    <string name="helloMac">MAC ADDRESS</string>
+    <string name="WlanStatus">Status...</string>
+    <string name="Channel">Channel</string>
+    <string name="TxRate">TxRate</string>
+    <string name="Power">Power</string>
+    <string name="Preamble">Preamble</string>
+    <string name="Burst">Burst Interval</string>
+    <string name="Payload">Payload Length</string>
+    <string name="Start">Start</string>
+    <string name="Stop">Stop</string>
+    <string name="Clear">Clear</string>
+    <string name="Error">Error</string>
+    <string name="Received">Received</string>
+    <string name="PER">PER (%)</string>
+    <string name="Void" />
+    <string name="Band">Band</string>
+    <string name="Bandwidth">Bandwidth</string>
+    <string name="Powersave">Power save mode Setting</string>
+    <string name="SaveOn">Enable PS mode</string>
+    <string name="SaveOff">Disable PS mode</string>
+</resources>

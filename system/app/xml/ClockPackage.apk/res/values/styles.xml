@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ClockPackageDefault.NoActionBar" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+    <style name="clock">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="Custom_Theme1" parent="@touchwiz:style/TwTheme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="TW_Font_White">
+        <item name="android:textColor">@touchwiz:color/tw_color001</item>
+    </style>
+    <style name="TW_Font_Black">
+        <item name="android:textColor">@touchwiz:color/tw_color002</item>
+    </style>
+    <style name="TW_Font_Black.Shadow_White" parent="@style/TW_Font_Black">
+        <item name="android:shadowColor">@touchwiz:color/tw_color001</item>
+        <item name="android:shadowDx">-1.0</item>
+        <item name="android:shadowDy">-1.0</item>
+        <item name="android:shadowRadius">0.5</item>
+    </style>
+    <style name="TW_Font_White.Shadow_Black" parent="@style/TW_Font_White">
+        <item name="android:shadowColor">@touchwiz:color/tw_color002</item>
+        <item name="android:shadowDx">-1.0</item>
+        <item name="android:shadowDy">-1.0</item>
+        <item name="android:shadowRadius">0.5</item>
+    </style>
+    <style name="TW_Font_White.Shadow_Black.Timer_Keypad_Button" parent="@style/TW_Font_White.Shadow_Black">
+        <item name="android:textSize">38.669983dip</item>
+        <item name="android:textColor">@drawable/timer_keypad_pressed</item>
+        <item name="android:background">@drawable/timer_keypad_btn</item>
+        <item name="android:padding">0.0dip</item>
+        <item name="android:layout_width">100.0dip</item>
+        <item name="android:layout_height">46.669983dip</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="TW_Font_White.Shadow_Black.Timer_Keypad_Button_Land" parent="@style/TW_Font_White.Shadow_Black">
+        <item name="android:textSize">38.669983dip</item>
+        <item name="android:textColor">@drawable/timer_keypad_pressed</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/timer_keypad_btn</item>
+        <item name="android:padding">0.0dip</item>
+        <item name="android:layout_width">82.66998dip</item>
+        <item name="android:layout_height">42.0dip</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="TW_Font_White.Shadow_Black.Timer_Keypad_Button_Ex" parent="@style/TW_Font_White.Shadow_Black">
+        <item name="android:textSize">38.0dip</item>
+        <item name="android:background">@drawable/timer_keypad_right_btn</item>
+        <item name="android:padding">0.0dip</item>
+        <item name="android:layout_width">100.0dip</item>
+        <item name="android:layout_height">46.669983dip</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="TW_Font_White.Shadow_Black.Timer_Keypad_Button_Land_Ex" parent="@style/TW_Font_White.Shadow_Black">
+        <item name="android:textSize">38.0dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/timer_keypad_right_btn</item>
+        <item name="android:padding">0.0dip</item>
+        <item name="android:layout_width">82.66998dip</item>
+        <item name="android:layout_height">42.0dip</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="LineSeperator">
+        <item name="android:background">@color/seperator</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.6700001dip</item>
+    </style>
+    <style name="TextStyle_1">
+        <item name="android:textSize">22.0dip</item>
+        <item name="android:textColor">@drawable/style_txt_color2</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">13.329987dip</item>
+    </style>
+    <style name="TextStyle_2">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">@drawable/style_txt_color3</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">13.329987dip</item>
+    </style>
+    <style name="TextStyle_3">
+        <item name="android:textSize">18.0dip</item>
+        <item name="android:textColor">@color/tw_color087</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">13.329987dip</item>
+    </style>
+    <style name="TextStyle_Weekday">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="Weekday_spacer">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">0.0dip</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="OneLineItem">
+        <item name="android:textSize">22.0dip</item>
+        <item name="android:textColor">@color/alarm_text_first</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">13.329987dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="ToggleButton">
+        <item name="android:background">@null</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:textOn">@null</item>
+        <item name="android:textOff">@null</item>
+    </style>
+    <style name="ToggleButton.Check" parent="@style/ToggleButton">
+        <item name="android:layout_width">68.0dip</item>
+        <item name="android:button">@drawable/button_check</item>
+    </style>
+    <style name="ToggleButton.ListCheck" parent="@style/ToggleButton">
+        <item name="android:focusable">false</item>
+        <item name="android:layout_width">80.0dip</item>
+        <item name="android:button">@drawable/button_check</item>
+    </style>
+    <style name="ToggleButton.Alarm" parent="@style/ToggleButton">
+        <item name="android:focusable">false</item>
+        <item name="android:layout_width">80.0dip</item>
+        <item name="android:button">@drawable/list_button_alarm</item>
+    </style>
+    <style name="ToggleButton.RepeatDay" parent="@style/ToggleButton">
+        <item name="android:textSize">21.329987dip</item>
+        <item name="android:textColor">@color/text_color_repeat_day</item>
+        <item name="android:background">@drawable/button_repeat</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">3.0dip</item>
+    </style>
+    <style name="ToggleButton.RepeatSunday" parent="@style/ToggleButton">
+        <item name="android:textSize">21.329987dip</item>
+        <item name="android:textColor">@color/text_color_repeat_sunday</item>
+        <item name="android:background">@drawable/button_repeat</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">3.0dip</item>
+    </style>
+    <style name="GroupTitle">
+        <item name="android:textSize">16.0dip</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@touchwiz:color/tw_color001</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/dark_header</item>
+        <item name="android:paddingLeft">4.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">25.329987dip</item>
+    </style>
+    <style name="AlarmListText">
+        <item name="android:textColor">@touchwiz:color/tw_color001</item>
+        <item name="android:shadowColor">@touchwiz:color/tw_color002</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">0.5</item>
+    </style>
+    <style name="AlarmListText.Days" parent="@style/AlarmListText">
+        <item name="android:textSize">16.0dip</item>
+        <item name="android:textColor">@color/alarm_list_days</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">23.0dip</item>
+        <item name="android:shadowDy">-1.0</item>
+    </style>
+    <style name="TwTextAppearanceGroupTitle">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">@color/tw_color087</item>
+    </style>
+    <style name="RadioButtonGroupTitle">
+        <item name="android:textSize">16.0dip</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@touchwiz:color/tw_color001</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/dark_header</item>
+        <item name="android:paddingLeft">4.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">25.329987dip</item>
+    </style>
+    <style name="AlarmRadioButtonText">
+        <item name="android:textSize">22.0dip</item>
+        <item name="android:textColor">@drawable/style_txt_color2</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/list_selector_background</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="AlarmButtonControlLeft">
+        <item name="android:background">@drawable/list_selector_background</item>
+        <item name="android:layout_marginLeft">3.3299866dip</item>
+        <item name="android:layout_marginTop">6.669983dip</item>
+        <item name="android:layout_marginBottom">2.669983dip</item>
+    </style>
+    <style name="AlarmButtonControlRight">
+        <item name="android:background">@drawable/list_selector_background</item>
+        <item name="android:layout_marginTop">6.669983dip</item>
+        <item name="android:layout_marginRight">3.3299866dip</item>
+        <item name="android:layout_marginBottom">2.669983dip</item>
+    </style>
+    <style name="Alert" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@null</item>
+    </style>
+    <style name="MonthView_DayLabel">
+        <item name="android:textAppearance">@style/TextAppearance.MonthView_DayLabel</item>
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="MonthView_WeekLable" parent="@style/MonthView_DayLabel">
+        <item name="android:textAppearance">@style/TextAppearance.MonthView_WeekLabel</item>
+    </style>
+    <style name="MonthView_SunDayLable" parent="@style/MonthView_DayLabel">
+        <item name="android:textAppearance">@style/TextAppearance.MonthView_SunDayLabel</item>
+    </style>
+    <style name="MonthView_SaturDayLable" parent="@style/MonthView_DayLabel">
+        <item name="android:textAppearance">@style/TextAppearance.MonthView_SaturDayLabel</item>
+    </style>
+    <style name="TextAppearance" parent="@android:style/TextAppearance" />
+    <style name="TextAppearance.MonthView_WeekLabel" parent="@style/TextAppearance">
+        <item name="android:textColor">@color/month_week_label</item>
+    </style>
+    <style name="TextAppearance.MonthView_DayLabel" parent="@style/TextAppearance">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="TextAppearance.MonthView_SunDayLabel" parent="@style/TextAppearance">
+        <item name="android:textColor">@color/daynames_sun_text_color</item>
+    </style>
+    <style name="TextAppearance.MonthView_SaturDayLabel" parent="@style/TextAppearance">
+        <item name="android:textColor">@color/daynames_sat_text_color</item>
+    </style>
+    <style name="TextAppearance.AgendaView_ValueLabel" parent="@style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="TextAppearance.InfoLocation_Label" parent="@style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:paddingLeft">13.329987dip</item>
+    </style>
+    <style name="TextAppearance.EditEvent_Label" parent="@style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:paddingLeft">18.669983dip</item>
+    </style>
+    <style name="TextAppearance.EventInfo_Label" parent="@style/TextAppearance">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="android:paddingLeft">2.0dip</item>
+    </style>
+    <style name="EditEvent_Layout">
+        <item name="android:paddingLeft">6.0dip</item>
+        <item name="android:paddingTop">8.0dip</item>
+        <item name="android:paddingRight">7.0dip</item>
+    </style>
+    <style name="TextAppearance.Alert_Title" parent="@style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="TextAppearance.Alert_Label" parent="@style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="TextAppearance.Alert_Value" parent="@style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="CalendarTheme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="CalendarThemeTitle" parent="@android:style/Theme">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="EventInfo_TextStyle_3">
+        <item name="android:textSize">@dimen/info_text_size_3</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">8.0dip</item>
+    </style>
+    <style name="EventInfo_Seperator">
+        <item name="android:background">@color/seperator</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.6700001dip</item>
+    </style>
+    <style name="EditEvent_Seperator" parent="@style/EventInfo_Seperator" />
+    <style name="TabStyle">
+        <item name="android:textSize">@dimen/title_switch_button_text_size</item>
+        <item name="android:textColor">@color/calendar_event_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_width">@dimen/tab_width</item>
+        <item name="android:layout_height">@dimen/tab_height</item>
+    </style>
+    <style name="QuickAddStyle">
+        <item name="android:windowBackground">@color/transparent_white</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="EditLinearGuide">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

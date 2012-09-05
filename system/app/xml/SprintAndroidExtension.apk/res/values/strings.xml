@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permgrouplab_messages">SprintAndroidExtention</string>
+    <string name="permgroupdesc_messages">the permission group for SprintAndroidExtention</string>
+    <string name="permlab_systemproperties">SystemProperties</string>
+    <string name="permdesc_systemproperties">the permission for SystemProperties</string>
+    <string name="permlab_connectionmanager">ConnectionManager</string>
+    <string name="permdesc_connectionmanager">the permission for ConnectionManager</string>
+    <string name="permlab_omadm">OMADM</string>
+    <string name="permdesc_omadm">the permission for OMADM</string>
+    <string name="permlab_diagnastics">Diagnastics</string>
+    <string name="permdesc_diagnastics">the permission for Diagnastics</string>
+</resources>

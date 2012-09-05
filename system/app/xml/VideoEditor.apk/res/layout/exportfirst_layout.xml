@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <CheckBox android:id="@id/cb1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/never_show" />
+    </LinearLayout>
+</LinearLayout>

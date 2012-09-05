@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:versionCode="15" android:versionName="4.0.4-FH13" package="com.android.Preconfig"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <permission android:name="com.sec.permission.preconfig" android:protectionLevel="signatureOrSystem" />
+    <application android:label="@string/app_name" android:icon="@drawable/icon">
+        <activity android:label="Preconfig" android:name=".Preconfig" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="PreconfigBroadcastReceiver" android:permission="com.sec.permission.preconfig">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="83052020100812173552301071192687" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-permission android:name="android.permission.MASTER_CLEAR" />
+    <uses-permission android:name="android.permission.REBOOT" />
+</manifest>

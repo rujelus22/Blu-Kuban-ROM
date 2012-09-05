@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="size2_2">202</integer>
+    <integer name="size3_2">302</integer>
+    <integer name="size4_2">402</integer>
+    <integer name="size4_3">403</integer>
+    <integer name="size4_4">404</integer>
+    <integer name="size5_2">502</integer>
+    <integer name="size5_3">503</integer>
+</resources>

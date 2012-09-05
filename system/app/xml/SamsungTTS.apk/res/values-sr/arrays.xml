@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voice_effects_entries">
+        <item>Normalno</item>
+        <item>Dubok glas</item>
+        <item>Visok glas</item>
+        <item>Tanak glas</item>
+        <item>Pun glas</item>
+        <item>Glas robota</item>
+        <item>Efekat helijuma</item>
+    </string-array>
+</resources>

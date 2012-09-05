@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_url_install" android:id="@id/install_from_url" android:title="@string/install_from_url" />
+    <item android:icon="@android:drawable/ic_menu_save" android:id="@id/install_from_sd" android:title="@string/install_from_sd" />
+</menu>

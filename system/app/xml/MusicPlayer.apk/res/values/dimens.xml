@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="normal_height">64.0dip</dimen>
+    <dimen name="expanded_height">128.0dip</dimen>
+    <dimen name="grid_height">76.0dip</dimen>
+    <dimen name="notification_album_art_size">44.0dip</dimen>
+    <dimen name="normal_list_height">64.0dip</dimen>
+    <dimen name="folder_height">45.0dip</dimen>
+    <dimen name="music_player_head_width">210.0dip</dimen>
+    <dimen name="music_player_view_head_height">65.0dip</dimen>
+    <dimen name="music_player_view_volume_pannel_height">160.0dip</dimen>
+    <dimen name="music_player_view_control_margin_bottom">0.0dip</dimen>
+    <dimen name="music_player_view_land_control_height">100.0dip</dimen>
+    <dimen name="music_player_view_progress_panel_height">100.0dip</dimen>
+    <dimen name="music_player_view_port_control_height">120.0dip</dimen>
+</resources>

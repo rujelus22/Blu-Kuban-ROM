@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="24.0sp" android:id="@id/type_text_length" android:background="#77ffffff" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/auto_answeringmode" />
+    <RadioGroup android:orientation="vertical" android:id="@id/autoanswer" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RadioButton android:textSize="26.0sp" android:id="@id/auto_enable" android:layout_height="60.0dip" android:text="@string/enable_name" />
+        <RadioButton android:textSize="26.0sp" android:id="@id/auto_disable" android:layout_height="60.0dip" android:text="@string/disable_name" />
+    </RadioGroup>
+</LinearLayout>

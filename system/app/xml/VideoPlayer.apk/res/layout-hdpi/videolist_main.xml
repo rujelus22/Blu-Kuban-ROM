@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/RootLayout" android:background="@color/defaultBackground" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <GridView android:id="@id/ListView" android:visibility="visible" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:horizontalSpacing="14.0px" android:layout_weight="1.0" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ResultEmpty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center" android:id="@id/No_Item_Icon" android:background="@drawable/noitems_video_based" android:layout_width="174.0px" android:layout_height="174.0px" android:layout_marginBottom="-25.0px" android:layout_below="@id/ResultEmpty" />
+        <TextView android:textSize="36.0px" android:typeface="sans" android:textColor="@color/No_item" android:gravity="center" android:id="@id/EmptyText" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_videos" />
+    </LinearLayout>
+</LinearLayout>

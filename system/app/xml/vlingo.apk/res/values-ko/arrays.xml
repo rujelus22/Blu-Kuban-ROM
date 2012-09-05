@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="web_search_engine_preference">
+        <item>Google</item>
+        <item>Bing</item>
+        <item>Yahoo</item>
+    </string-array>
+    <string-array name="prediction_modes">
+        <item>고급</item>
+        <item>기본</item>
+        <item>없음</item>
+    </string-array>
+</resources>

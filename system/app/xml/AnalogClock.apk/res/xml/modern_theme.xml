@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata widgetId="com.sec.android.widgetapp.analogclock" description="@string/modern" icon="@drawable/icon" themeName="modern" preview="@drawable/modern_bg_preview" width="@dimen/width_modern" height="@dimen/height_modern" class="com.sec.android.widgetapp.analogclock.AnalogClockActivity" />

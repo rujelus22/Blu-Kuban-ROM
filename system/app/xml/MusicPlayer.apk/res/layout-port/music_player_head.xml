@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/music_player_head" android:background="@drawable/music_play_title_bg" android:layout_width="fill_parent" android:layout_height="@dimen/music_player_view_head_height">
+        <ImageView android:layout_gravity="center" android:id="@id/ImageButtonTopSrs" android:focusable="true" android:visibility="invisible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/music_play_control_srs_off" android:layout_alignParentLeft="true" android:contentDescription="@string/tts_srs_button" />
+        <ImageView android:layout_gravity="center" android:id="@id/ImageButtonTopVolume" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/music_play_volume_button" android:layout_alignParentRight="true" android:contentDescription="@string/tts_volume_button" />
+        <RelativeLayout android:id="@id/music_player_title_button" android:background="@drawable/music_play_title_bg_center" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:focusable="true" android:layout_width="200.0dip" android:layout_height="fill_parent" android:layout_toLeftOf="@id/ImageButtonTopVolume" android:layout_toRightOf="@id/ImageButtonTopSrs">
+            <include layout="@layout/music_player_title" />
+        </RelativeLayout>
+    </RelativeLayout>
+</merge>

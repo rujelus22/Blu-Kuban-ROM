@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/feed_view_main_screen_layout_potrait" android:paddingRight="-10.0px" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/name_layout" android:paddingRight="125.0px" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="0.0px" android:layout_marginBottom="0.0px">
+        <RelativeLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="24.0px" android:typeface="sans" android:textStyle="bold" android:textColor="@color/color_palette_03" android:id="@id/txt_actor_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0px" android:layout_marginBottom="-3.0px" />
+            <ImageView android:id="@id/img_wall_post" android:layout_width="10.0px" android:layout_height="17.0px" android:layout_marginLeft="8.0px" android:layout_marginTop="13.0px" android:layout_marginRight="8.0px" android:src="@drawable/hub_list_icon_to" android:scaleType="fitXY" android:layout_toRightOf="@id/txt_actor_name" />
+            <TextView android:textSize="24.0px" android:typeface="sans" android:textStyle="bold" android:textColor="@color/color_palette_03" android:id="@id/txt_target_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0px" android:layout_toRightOf="@id/img_wall_post" />
+            <TextView android:textSize="24.0px" android:typeface="sans" android:textStyle="bold" android:textColor="@color/color_palette_03" android:id="@id/txt_target_name_down" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/txt_actor_name" />
+            <ImageView android:id="@id/img_wall_post_down" android:visibility="gone" android:layout_width="10.0px" android:layout_height="17.0px" android:layout_marginTop="10.0px" android:layout_marginRight="8.0px" android:src="@drawable/hub_list_icon_to" android:scaleType="fitXY" android:layout_below="@id/txt_actor_name" />
+            <TextView android:textSize="24.0px" android:typeface="sans" android:textStyle="bold" android:textColor="@color/color_palette_03" android:id="@id/txt_target_name_down_two" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/img_wall_post_down" android:layout_below="@id/txt_actor_name" />
+            <TextView android:textSize="24.0px" android:typeface="sans" android:textStyle="bold" android:textColor="@color/color_palette_03" android:id="@id/txt_target_name_down_down" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/img_wall_post_down" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/layout_date" android:layout_width="wrap_content" android:layout_height="27.0px" android:layout_marginBottom="0.0px">
+            <LinearLayout android:gravity="center" android:id="@id/layout_feed_type" android:paddingTop="2.0px" android:layout_width="25.0px" android:layout_height="25.0px" android:layout_marginLeft="1.0px" android:layout_marginRight="7.0px">
+                <com.sec.android.socialhub.view.TypeImageView android:id="@id/img_media_type" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <TextView android:textSize="21.0px" android:typeface="sans" android:textColor="@color/color_palette_06" android:id="@id/txt_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="0.0px" android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

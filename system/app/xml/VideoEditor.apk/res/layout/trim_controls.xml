@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.app.ve.view.trim.TrimMediaControlView android:orientation="vertical" android:id="@id/AddMediaControlView" android:background="@drawable/btn_bg" android:layout_width="200.0px" android:layout_height="340.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="68.0px">
+        <ImageView android:id="@id/trimConrolButton" android:background="@drawable/addmedicontrolselector" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/trimselector" android:contentDescription="@string/accessibility_trimbutton" />
+        <ImageView android:layout_gravity="bottom" android:id="@id/line1" android:layout_width="fill_parent" android:layout_height="2.0px" android:src="@drawable/lett_menu_line" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="68.0px">
+        <ImageView android:id="@id/splitControlButton" android:background="@drawable/addmedicontrolselector" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/splitselector" android:contentDescription="@string/accessibility_splitbutton" />
+        <ImageView android:layout_gravity="bottom" android:id="@id/line2" android:layout_width="fill_parent" android:layout_height="2.0px" android:src="@drawable/lett_menu_line" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="68.0px">
+        <ImageView android:id="@id/transControlButton" android:background="@drawable/addmedicontrolselector" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/transitionselector" android:contentDescription="@string/accessibility_transbutton" />
+        <ImageView android:layout_gravity="right|center" android:id="@id/transition_arrow_down" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0px" android:src="@drawable/arrow_down_selector" />
+        <ImageView android:layout_gravity="bottom" android:id="@id/line3" android:layout_width="fill_parent" android:layout_height="2.0px" android:src="@drawable/lett_menu_line" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="68.0px">
+        <ImageView android:id="@id/effectControlButton" android:background="@drawable/addmedicontrolselector" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/effectselector" android:contentDescription="@string/accessibility_effectbutton" />
+        <ImageView android:layout_gravity="right|center" android:id="@id/effect_arrow_down" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0px" android:src="@drawable/arrow_down_selector" />
+        <ImageView android:layout_gravity="bottom" android:id="@id/line4" android:layout_width="fill_parent" android:layout_height="2.0px" android:src="@drawable/lett_menu_line" />
+    </FrameLayout>
+    <FrameLayout android:background="@drawable/addmedicontrolselector" android:layout_width="fill_parent" android:layout_height="68.0px">
+        <Button android:textSize="29.0px" android:textColor="@drawable/donecolorselector" android:gravity="center" android:id="@id/undoControlButton" android:background="@drawable/undobuttonselector" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/undo" android:contentDescription="@string/accessibility_undoredobutton" />
+    </FrameLayout>
+</com.sec.android.app.ve.view.trim.TrimMediaControlView>

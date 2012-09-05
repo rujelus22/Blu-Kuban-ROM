@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/screenshot1" style="@style/screenshot" />
+    <ImageView android:id="@id/screenshot2" style="@style/screenshot" />
+</LinearLayout>

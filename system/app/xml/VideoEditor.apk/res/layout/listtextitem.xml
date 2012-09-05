@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.app.ve.ui.HelveticaTextView android:textSize="24.0px" android:textColor="@drawable/projectnewcolorselector" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/listtextitem" android:paddingLeft="15.0px" android:paddingRight="15.0px" android:layout_width="472.0px" android:layout_height="96.0px" customtypeface="bold"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

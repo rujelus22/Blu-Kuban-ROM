@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Bil-läge</string>
+    <string name="app_name">Röstkommandon</string>
+    <string name="incar">Talande röst</string>
+    <string name="incar_icon">Talande röst</string>
+    <string name="Vlingo">Röstkommandon</string>
+    <string name="widget_name">Röst</string>
+</resources>

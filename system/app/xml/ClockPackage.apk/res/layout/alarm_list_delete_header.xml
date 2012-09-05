@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/alarm_delete_header" android:background="@drawable/style_select_all" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="21.329987dip" android:textColor="@drawable/style_txt_color" android:gravity="left|center" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/select_all" android:layout_weight="1.0" />
+    <CheckBox android:gravity="center_vertical" android:id="@id/toggle_list_check" android:focusable="false" android:clickable="false" android:layout_width="40.0dip" android:layout_height="64.0dip" android:layout_marginTop="-4.0dip" android:layout_marginRight="15.0dip" />
+</LinearLayout>

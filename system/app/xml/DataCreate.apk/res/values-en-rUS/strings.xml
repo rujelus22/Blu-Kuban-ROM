@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DataCreate</string>
+    <string name="current_data_state_call_log">Call log</string>
+    <string name="current_data_state_incoming_call">Incoming call</string>
+    <string name="current_data_state_outgoing_call">Outgoing call</string>
+    <string name="current_data_state_missed_call">Missed call</string>
+    <string name="current_data_state_photo">Photo</string>
+    <string name="current_data_state_video">Video</string>
+    <string name="current_data_state_mp3">MP3</string>
+    <string name="current_data_state_voice_memo">Voice memo</string>
+    <string name="current_data_state_phone_book">Phone Book</string>
+    <string name="current_data_state_schedule">Schedule</string>
+    <string name="current_data_state_tasks">Tasks</string>
+    <string name="current_data_state_memo">Memo</string>
+    <string name="current_data_state_message">Message</string>
+    <string name="current_data_state_mmsinbox">MMS inbox</string>
+    <string name="current_data_state_mmsoutbox">MMS outbox</string>
+    <string name="current_data_state_ring_tone">Ringtone</string>
+    <string name="current_data_state_screen">Screen</string>
+    <string name="current_data_state_not_available">N/A</string>
+    <string name="current_data_state_calculating">Calculating...</string>
+    <string name="data_copy_inbox">Inbox</string>
+    <string name="data_copy_outbox">Outbox</string>
+    <string name="data_copy_sentbox">Sent box</string>
+    <string name="data_copy_draftbox">Draftbox</string>
+    <string name="data_copy_phonebook">Phonebook</string>
+    <string name="data_copy_calllog">Call log</string>
+    <string name="data_copy_incoming_call">Incoming call</string>
+    <string name="data_copy_outgoing_call">Outgoing call</string>
+    <string name="data_copy_missed_call">Missed call</string>
+    <string name="data_copy_etc">ETC</string>
+    <string name="data_copy_schedule">Schedule</string>
+    <string name="data_copy_memo">Memo</string>
+    <string name="file_copy_photo">Image</string>
+    <string name="file_copy_mp3">MP3</string>
+    <string name="file_copy_video">Video</string>
+    <string name="file_copy_voice_memo">Voice memo</string>
+    <string name="file_copy_reset">Reset</string>
+    <string name="ver_version_name">Version</string>
+    <string name="ver_label_FTA">Test mode</string>
+    <string name="ver_version">Version</string>
+</resources>

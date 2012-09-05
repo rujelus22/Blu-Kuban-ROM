@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="im_is_default">true</bool>
+    <bool name="set_help_dialog_font">false</bool>
+    <bool name="force_bold_font">false</bool>
+</resources>

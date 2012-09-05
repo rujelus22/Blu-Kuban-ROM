@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:layout_width="fill_parent" android:layout_height="10.0dip" />
+        <View android:layout_width="fill_parent" android:layout_height="50.0dip" />
+    </LinearLayout>
+    <View android:layout_width="fill_parent" android:layout_height="210.0dip" />
+    <View android:layout_width="fill_parent" android:layout_height="10.0dip" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <View android:layout_width="fill_parent" android:layout_height="60.0dip" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <View android:layout_width="fill_parent" android:layout_height="60.0dip" />
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="20.0sp" android:textColor="@color/black" android:id="@id/leftGripSensor" android:layout_width="170.0dip" android:layout_height="wrap_content" android:text="@string/leftgripsensor" android:layout_weight="0.0" />
+            <TextView android:textSize="20.0sp" android:textColor="@color/black" android:id="@id/rightGripSensor" android:layout_width="160.0dip" android:layout_height="wrap_content" android:text="@string/rightgripsensor" android:layout_weight="0.0" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="238.5dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/eraser_top_bg" android:background="@drawable/drawingpad_bg_top" android:layout_width="fill_parent" android:layout_height="27.0dip" android:layout_marginTop="8.0dip" android:text="@string/eraser" />
+    <ImageView android:background="@drawable/drawingpad_bg_point" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="174.0px" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <ImageView android:id="@id/xbox_eraser" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="390.0px" android:layout_marginTop="26.0px" android:src="@drawable/drawable_popup_exit" />
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="118.0dip" android:layout_below="@id/eraser_top_bg">
+        <ImageView android:layout_width="158.0dip" android:layout_height="wrap_content" android:layout_marginLeft="14.5dip" android:layout_marginTop="28.0dip" android:src="@drawable/eraser_bar" android:scaleType="fitXY" />
+        <SeekBar android:id="@id/PenThickness" android:paddingLeft="20.0px" android:paddingRight="20.0px" android:layout_width="158.0dip" android:layout_height="wrap_content" android:layout_marginLeft="14.5dip" android:layout_marginTop="20.5dip" android:layout_marginRight="4.5dip" android:max="88" android:progress="60" android:progressDrawable="@drawable/trasparent" android:thumb="@drawable/drawable_slider_handle" />
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_toRightOf="@id/PenThickness">
+            <ImageView android:id="@id/erase_circle" android:background="@drawable/pen_size_bg" android:layout_width="44.5dip" android:layout_height="45.5dip" />
+            <com.sec.android.app.ve.view.paint.DrawSizeCircle android:id="@id/eraserSizeCircle" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </FrameLayout>
+        <Button android:textSize="19.0dip" android:id="@id/clear_all" android:background="@drawable/drawable_winset_btn" android:layout_width="221.0dip" android:layout_height="43.0dip" android:layout_marginLeft="6.0dip" android:layout_marginTop="65.5dip" android:text="@string/clearall" />
+    </RelativeLayout>
+</RelativeLayout>

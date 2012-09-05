@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:background="@color/album_background_color" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <com.google.android.apps.plus.phone.PhotosFromPhoneListView android:id="@android:id/list" android:layout_height="wrap_content" android:listSelector="@drawable/album_view_selector" android:drawSelectorOnTop="true" android:divider="@null" android:layout_alignParentTop="true" style="@style/AlbumView.GridView" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/start_sharing_bar" style="@style/AlbumView.BottomActionBar">
+            <ImageView android:gravity="center" android:id="@id/start_sharing_button" android:background="@drawable/album_view_selector" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_menu_reshare" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/initiate_sharing_bar" style="@style/AlbumView.BottomActionBar">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <com.google.android.apps.plus.views.ActionButton android:textAppearance="?android:textAppearanceMedium" android:id="@id/cancel_sharing_button" android:text="@string/from_your_phone_cancel_share" style="@style/AlbumView.BottomActionBar.ActionButton" />
+            </RelativeLayout>
+            <View android:layout_gravity="center" android:background="@color/album_bottom_action_bar_divider_color" android:layout_width="@dimen/album_bottom_action_bar_divider_width" android:layout_height="@dimen/album_bottom_action_bar_divider_height" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <com.google.android.apps.plus.views.ActionButton android:textAppearance="?android:textAppearanceMedium" android:id="@id/initiate_sharing_button" android:text="@string/from_your_phone_initiate_share" style="@style/AlbumView.BottomActionBar.ActionButton" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <include layout="@layout/empty_layout" />
+</FrameLayout>

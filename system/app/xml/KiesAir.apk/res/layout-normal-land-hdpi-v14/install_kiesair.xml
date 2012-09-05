@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/kiesairlogo" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="23.0dip" android:src="@drawable/kiesair_logo" android:layout_centerHorizontal="true" android:contentDescription="@string/appName" />
+    <RelativeLayout android:id="@id/layoutHelpText" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="92.0dip">
+        <TextView android:textSize="15.0dip" android:textColor="#ffd7d7d7" android:gravity="top|center" android:layout_gravity="top|center" android:id="@id/installHelpText" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/help_in_stop" android:lineSpacingMultiplier="1.0" />
+        <TextView android:textSize="14.0dip" android:textColor="#ffd7d7d7" android:ellipsize="end" android:gravity="top|center" android:id="@id/copyright" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/copyright" android:layout_below="@id/installHelpText" />
+    </RelativeLayout>
+    <TextView android:textSize="14.0dip" android:textColor="#ffd7d7d7" android:gravity="left" android:id="@id/installStatus" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="69.0dip" android:layout_marginTop="210.0dip" android:layout_marginRight="69.0dip" android:text="Unzipping..." />
+    <ProgressBar android:id="@id/installProgressBar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="69.0dip" android:layout_marginTop="230.0dip" android:layout_marginRight="69.0dip" android:max="100" android:progress="0" android:progressDrawable="@drawable/kiesair_progressbar" style="@android:style/Widget.ProgressBar.Horizontal" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/layoutSoftkeyInstall" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="54.669983dip" android:layout_alignParentBottom="true" style="@android:style/ButtonBar">
+        <Button android:textColor="#ffff0000" android:id="@id/installButton" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="70.0dip" android:layout_marginRight="70.0dip" android:text="@string/start" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

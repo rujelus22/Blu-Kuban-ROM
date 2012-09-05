@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Error</string>
+    <string name="app_name">Error</string>
+    <string name="ok">OK</string>
+    <string name="sms_fdn_title">Error</string>
+    <string name="sms_fdn_body">Number FDN restricted</string>
+    <string name="sms_fdn_restricted">Number FDN restricted</string>
+    <string name="sim_not_inserted">Insert SIM card</string>
+    <string name="sdcard_copy_err">SD card copying error</string>
+    <string name="data_copy_err">Data copy error</string>
+    <string name="sim_crash_title">SIM card crash</string>
+    <string name="sim_crash_text">Check your SIM card or contact customer care</string>
+    <string name="unknown_err">Unknown error</string>
+    <string name="sim_removed_text">SIM card removed. Reboot phone</string>
+    <string name="sim_removed_title">SIM card removed</string>
+    <string name="sim_permernent_title">SIM card failed</string>
+    <string name="sim_permernent_blocked">PUK blocked</string>
+    <string name="dialog_ok">OK</string>
+</resources>

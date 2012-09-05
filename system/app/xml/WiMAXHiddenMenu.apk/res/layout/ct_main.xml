@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout android:id="@id/RelativeLayout18" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <Button android:enabled="false" android:id="@id/BT_OPEN_DEVICE" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="315.0sp" android:minHeight="60.0sp" android:text="@string/OPEN_DEVICE" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_MAC_ADDRESS" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="120.0sp" android:text="@string/MAC_ADDRESS" style="@style/TextViewSize" />
+            <EditText android:enabled="true" android:textSize="15.0sp" android:id="@id/ET_MAC_ADDRESS" android:paddingLeft="3.0sp" android:paddingRight="3.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="150.0sp" android:singleLine="true" android:layout_toRightOf="@id/TV_MAC_ADDRESS" />
+            <Button android:enabled="false" android:id="@id/BT_SET_MAC_ADDRESS" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/ET_MAC_ADDRESS" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_MAX_NUM_OF_USED_FA" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/MAX_NUM_OF_USED_FA" style="@style/TextViewSize" />
+            <Spinner android:textSize="15.0sp" android:id="@id/SP_MAX_NUM_OF_USED_FA" android:paddingLeft="3.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="90.0sp" android:numeric="integer" android:layout_toRightOf="@id/TV_MAX_NUM_OF_USED_FA" />
+            <Button android:enabled="false" android:id="@id/BT_SET_MAX_NUM_OF_USED_FA" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/SP_MAX_NUM_OF_USED_FA" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout03" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_FA_INDEX_0" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="120.0sp" android:text="@string/FA_INDEX_0" style="@style/TextViewSize" />
+            <EditText android:enabled="true" android:textSize="15.0sp" android:id="@id/ET_FA_INDEX_0" android:paddingLeft="3.0sp" android:paddingRight="3.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="150.0sp" android:singleLine="true" android:layout_toRightOf="@id/TV_FA_INDEX_0" />
+            <Button android:enabled="false" android:id="@id/BT_SET_FA_0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/ET_FA_INDEX_0" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout04" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_FA_BW_0" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/FA_BW_0" android:layout_toRightOf="@id/BT_SET_FA_0" style="@style/TextViewSize" />
+            <Spinner android:textSize="50.0sp" android:id="@id/SP_FA_BW_0" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="5.0sp" android:minWidth="90.0sp" android:layout_toRightOf="@id/TV_FA_BW_0" />
+            <Button android:enabled="false" android:id="@id/BT_SET_FA_BW_0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/SP_FA_BW_0" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout05" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_FA_INDEX_1" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="120.0sp" android:text="@string/FA_INDEX_1" style="@style/TextViewSize" />
+            <EditText android:enabled="true" android:textSize="15.0sp" android:id="@id/ET_FA_INDEX_1" android:paddingLeft="3.0sp" android:paddingRight="3.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="150.0sp" android:singleLine="true" android:layout_toRightOf="@id/TV_FA_INDEX_1" />
+            <Button android:enabled="false" android:id="@id/BT_SET_FA_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/ET_FA_INDEX_1" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout06" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_FA_BW_1" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/FA_BW_1" android:layout_toRightOf="@id/BT_SET_FA_1" style="@style/TextViewSize" />
+            <Spinner android:textSize="50.0sp" android:id="@id/SP_FA_BW_1" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="5.0sp" android:minWidth="90.0sp" android:layout_toRightOf="@id/TV_FA_BW_1" />
+            <Button android:enabled="false" android:id="@id/BT_SET_FA_BW_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/SP_FA_BW_1" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout07" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_FA_INDEX_2" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="120.0sp" android:text="@string/FA_INDEX_2" style="@style/TextViewSize" />
+            <EditText android:enabled="true" android:textSize="15.0sp" android:id="@id/ET_FA_INDEX_2" android:paddingLeft="3.0sp" android:paddingRight="3.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="150.0sp" android:singleLine="true" android:layout_toRightOf="@id/TV_FA_INDEX_2" />
+            <Button android:enabled="false" android:id="@id/BT_SET_FA_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/ET_FA_INDEX_2" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout08" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_FA_BW_2" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/FA_BW_2" android:layout_toRightOf="@id/BT_SET_FA_2" style="@style/TextViewSize" />
+            <Spinner android:textSize="50.0sp" android:id="@id/SP_FA_BW_2" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="5.0sp" android:minWidth="90.0sp" android:layout_toRightOf="@id/TV_FA_BW_2" />
+            <Button android:enabled="false" android:id="@id/BT_SET_FA_BW_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/SP_FA_BW_2" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout09" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_Best_FA_Option" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/Best_FA_Option" style="@style/TextViewSize" />
+            <Spinner android:textSize="15.0sp" android:id="@id/SP_Best_FA_Option" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="85.0sp" android:numeric="integer" android:layout_toRightOf="@id/TV_Best_FA_Option" />
+            <Button android:enabled="false" android:id="@id/BT_SET_Best_FA_Option" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/SP_Best_FA_Option" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout10" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_MIMO_ON_OFF" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/MIMO_ON_OFF" style="@style/TextViewSize" />
+            <Spinner android:textSize="15.0sp" android:id="@id/SP_MIMO_ON_OFF" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="90.0sp" android:numeric="integer" android:layout_toRightOf="@id/TV_MIMO_ON_OFF" />
+            <Button android:enabled="false" android:id="@id/BT_SET_MIMO_ON_OFF" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/SP_MIMO_ON_OFF" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout11" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_Diversity_Antenna_ON_OFF" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/Diversity_Antenna_ON_OFF" style="@style/TextViewSize" />
+            <Spinner android:textSize="15.0sp" android:id="@id/SP_Diversity_Antenna_ON_OFF" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="90.0sp" android:numeric="integer" android:layout_toRightOf="@id/TV_Diversity_Antenna_ON_OFF" />
+            <Button android:enabled="false" android:id="@id/BT_Diversity_Antenna_ON_OFF" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/SP_Diversity_Antenna_ON_OFF" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout12" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_AUTH_POLICY_SUPPORT" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/AUTH_POLICY_SUPPORT" style="@style/TextViewSize" />
+            <Spinner android:textSize="15.0sp" android:id="@id/SP_AUTH_POLICY_SUPPORT" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="90.0sp" android:numeric="integer" android:layout_toRightOf="@id/TV_AUTH_POLICY_SUPPORT" />
+            <Button android:enabled="false" android:id="@id/BT_SET_AUTH_POLICY_SUPPORT" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/SP_AUTH_POLICY_SUPPORT" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout13" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_ARQ_SUPPORT" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/ARQ_SUPPORT" style="@style/TextViewSize" />
+            <Spinner android:textSize="15.0sp" android:id="@id/SP_ARQ_SUPPORT" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="90.0sp" android:numeric="integer" android:layout_toRightOf="@id/TV_ARQ_SUPPORT" />
+            <Button android:enabled="false" android:id="@id/BT_SET_ARQ_SUPPORT" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/SP_ARQ_SUPPORT" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout14" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_Idle_Mode" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/Idle_Mode" style="@style/TextViewSize" />
+            <Spinner android:textSize="15.0sp" android:id="@id/SP_Idle_Mode" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="80.0sp" android:numeric="integer" android:layout_toRightOf="@id/TV_Idle_Mode" />
+            <Button android:enabled="false" android:id="@id/BT_SET_Idle_Mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/SP_Idle_Mode" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout15" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_IDLE_TIMER" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/IDLE_TIMER" style="@style/TextViewSize" />
+            <EditText android:textSize="15.0sp" android:id="@id/ET_IDLE_TIMER" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="90.0sp" android:numeric="integer" android:layout_toRightOf="@id/TV_IDLE_TIMER" />
+            <Button android:enabled="false" android:id="@id/BT_SET_IDLE_TIMER" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/ET_IDLE_TIMER" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout16" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_POWER_CONTROL_ON_OFF" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/POWER_CONTROL_ON_OFF" style="@style/TextViewSize" />
+            <Spinner android:textSize="15.0sp" android:id="@id/SP_POWER_CONTROL_ON_OFF" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="80.0sp" android:numeric="integer" android:layout_toRightOf="@id/TV_POWER_CONTROL_ON_OFF" />
+            <Button android:enabled="false" android:id="@id/BT_SET_POWER_CONTROL" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/SP_POWER_CONTROL_ON_OFF" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout17" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/TV_TX_POWER" android:paddingLeft="5.0sp" android:paddingTop="8.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="180.0sp" android:text="@string/TX_POWER" style="@style/TextViewSize" />
+            <EditText android:textSize="15.0sp" android:id="@id/ET_TX_POWER" android:paddingLeft="3.0sp" android:paddingRight="35.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:minWidth="90.0sp" android:numeric="signed|decimal" android:layout_toRightOf="@id/TV_TX_POWER" />
+            <Button android:enabled="false" android:id="@id/BT_SET_TX_POWER" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/BT_SET" android:layout_toRightOf="@id/ET_TX_POWER" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/RelativeLayout19" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <Button android:enabled="false" android:id="@id/BT_LOAD_DEFAULT" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="130.0sp" android:minHeight="60.0sp" android:text="@string/LOAD_DEFAULT" />
+            <Button android:enabled="false" android:id="@id/BT_ODB_LOAD_DEFAULT" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="145.0sp" android:minHeight="60.0sp" android:text="@string/ODB_DEFAULT" android:layout_toRightOf="@id/BT_LOAD_DEFAULT" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

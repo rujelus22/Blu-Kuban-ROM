@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:padding="5.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textStyle="bold" android:textColor="@color/solid_white" android:id="@id/txtTitleEmergencyCall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reset_timer_notice" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="30.0sp" android:textStyle="bold" android:textColor="@color/solid_white" android:id="@id/txtEmergencyCall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/txtTitleEmergencyCall" android:layout_centerHorizontal="true" />
+    <TextView android:textStyle="bold" android:textColor="@color/solid_white" android:id="@id/txtUnitEmergencyCall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reset_timer_unit" android:layout_below="@id/txtEmergencyCall" android:layout_centerHorizontal="true" />
+    <Button android:textStyle="bold" android:textColor="@color/solid_white" android:id="@id/btnEmergencyCall" android:background="@drawable/red1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/emergency_call" android:layout_below="@id/txtUnitEmergencyCall" android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/surface_framelayout" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.sec.android.app.clockpackage.worldclock.common.Switcher android:id="@id/switcher_timezone" android:layout_width="fill_parent" android:layout_height="20.0dip" />
+    <LinearLayout android:gravity="center_horizontal" android:layout_gravity="right|center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="450.0px" android:layout_marginTop="180.0px">
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="350.0px">
+            <Button android:background="#00000000" android:focusable="false" android:layout_width="25.0px" android:layout_height="fill_parent" />
+            <LinearLayout android:orientation="vertical" android:id="@id/worldclock_zoom_bar" android:background="@drawable/worldclock_zoom_bar" android:layout_width="25.0px" android:layout_height="350.0px" />
+            <ImageView android:id="@id/bt_worldclock_fill_zoom" android:layout_width="25.0px" android:layout_height="24.0px" android:src="@drawable/worldclock_zoom_btn01" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ImageButton android:id="@id/gotolistbutton" android:background="@drawable/worldclock_list_button_bg" android:visibility="gone" android:layout_width="42.669983dip" android:layout_height="42.669983dip" android:layout_marginLeft="267.32812dip" android:layout_marginTop="34.669983dip" android:contentDescription="@string/wc_listview" />
+</RelativeLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <RelativeLayout android:gravity="center_vertical" android:id="@id/RelativeLayout01" android:background="@drawable/help_wcis_background" android:paddingLeft="5.0dip" android:paddingTop="10.0dip" android:paddingRight="5.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/wycs_detail_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/non_touch_task_icon_call" />
+            <TextView android:textSize="@dimen/wcis_heading_size" android:textColor="#fff0f0f0" android:id="@id/wycs_detail_title_text" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="!subtitle for wcis screen" android:layout_toRightOf="@id/wycs_detail_image" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <LinearLayout android:orientation="vertical" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+                <TextView android:textSize="@dimen/wcis_subheading_size" android:textStyle="bold" android:textColor="#fff0f0f0" android:id="@id/header_examples" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/examples" />
+                <TextView android:textSize="@dimen/wcis_subheading_size" android:id="@id/text_examples" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/wcis_para_marginTop" android:layout_marginBottom="@dimen/wcis_para_marginBottom" android:text="!put examples here" />
+                <TextView android:textSize="@dimen/wcis_subheading_size" android:textStyle="bold" android:textColor="#fff0f0f0" android:id="@id/header_did_you_know" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/did_you_know" />
+                <TextView android:textSize="@dimen/wcis_subheading_size" android:id="@id/text_did_you_know" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/wcis_para_marginTop" android:layout_marginBottom="@dimen/wcis_para_marginBottom" android:text="!put did you know text here" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

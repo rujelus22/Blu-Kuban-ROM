@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:ellipsize="none" android:gravity="center" android:background="@drawable/action_bar_tab_drawable" android:padding="16.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@android:style/Widget.Holo.ActionBar.TabText"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

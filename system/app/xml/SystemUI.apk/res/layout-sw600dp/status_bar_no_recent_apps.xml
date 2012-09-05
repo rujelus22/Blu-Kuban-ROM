@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0dip" android:textColor="@android:color/holo_blue_light" android:gravity="left" android:layout_gravity="bottom|left|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="70.0dip" android:text="@string/status_bar_no_recent_apps" />
+    <Button android:textSize="@dimen/status_bar_recents_app_label_text_size" android:gravity="left" android:layout_gravity="bottom|left|center" android:id="@id/no_recent_apps_launch_button" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/status_bar_recent_launch_task_manager_title" />
+</FrameLayout>

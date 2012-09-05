@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="drawable" name="icon" id="0x7f020000" />
+    <public type="layout" name="main" id="0x7f030000" />
+    <public type="string" name="app_name" id="0x7f040000" />
+    <public type="string" name="install_button" id="0x7f040001" />
+    <public type="string" name="cancel_button" id="0x7f040002" />
+    <public type="string" name="empty" id="0x7f040003" />
+    <public type="string" name="sales_code" id="0x7f040004" />
+    <public type="id" name="input_code" id="0x7f050000" />
+    <public type="id" name="empty" id="0x7f050001" />
+    <public type="id" name="install_button" id="0x7f050002" />
+    <public type="id" name="cancel_button" id="0x7f050003" />
+</resources>

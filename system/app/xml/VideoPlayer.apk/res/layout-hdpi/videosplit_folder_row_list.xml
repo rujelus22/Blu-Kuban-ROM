@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="left" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/folderRow" android:background="@drawable/list_selector_item" android:layout_width="fill_parent" android:layout_height="96.0px">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/folderThumbnail" android:layout_width="96.0px" android:layout_height="96.0px">
+                <ImageView android:id="@id/imageBackground" android:background="@drawable/folder_thumb" android:layout_width="96.0px" android:layout_height="96.0px" android:layout_centerVertical="true" />
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerVertical="true">
+                    <ImageView android:id="@id/thumbnail" android:background="@drawable/videoplayer_list_thumb_default_media" android:duplicateParentState="true" android:layout_width="58.0px" android:layout_height="41.0px" android:layout_marginLeft="21.0px" android:layout_marginTop="32.0px" android:scaleType="centerCrop" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <TextView android:textSize="33.0px" android:typeface="sans" android:textColor="@drawable/select_text" android:ellipsize="marquee" android:gravity="center_vertical" android:layout_gravity="right" android:id="@id/folderText" android:paddingLeft="15.0px" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" android:layout_toRightOf="@id/folderThumbnail" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="13.0px">
+                    <ImageView android:layout_gravity="center_vertical" android:id="@id/split_que" android:background="@drawable/split_point" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

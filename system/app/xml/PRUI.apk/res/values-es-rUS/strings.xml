@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">Aceptar</string>
+    <string name="unknown_error">Error desconocido</string>
+    <string name="processing">Procesando...</string>
+    <string name="license_not_found">Licencia no encontrada</string>
+    <string name="domain_not_found">No se encontró el dominio</string>
+    <string name="dev_cert_revoked">Certificado de dispositivo cancelado. Póngase en contacto con el proveedor de servicios</string>
+    <string name="server_invalid_message">El servidor recibió un mensaje no válido</string>
+    <string name="server_internal_error">Servidor con problemas. Inténtelo más tarde</string>
+    <string name="server_service_specific">Ocurrió un error en el servidor</string>
+    <string name="server_domain_required">Unirse a dominio para reproducir contenido</string>
+    <string name="server_not_a_member">El dominio ya no es válido. Pulse Aceptar para salir</string>
+    <string name="server_unknown_account_id">ID de cuenta para la adquisición de licencias no autorizado. Póngase en contacto con el servicio de atención al cliente</string>
+    <string name="server_device_limit_reached">Se ha alcanzado el número máximo de dispositivos unidos. Elimine un dispositivo para añadir otro</string>
+    <string name="server_protocol_version_mismatch">Versión de protocolo anterior en uso. Póngase en contacto con el proveedor de servicios para actualizarla</string>
+    <string name="server_protocol_redirect">Se redireccionó el protocolo del servidor</string>
+    <string name="license_acquisition_fail">Lo sentimos, error en adquisición de licencia</string>
+    <string name="join_domain_success">Se unió el dominio. Ahora intenta reproducir el archivo multimedia</string>
+    <string name="join_domain_fail">No se pudo unir el dispositivo con el dominio</string>
+    <string name="leave_domain_success">Se quitó el dispositivo del dominio</string>
+    <string name="leave_domain_fail">No se pudo quitar el dispositivo del dominio</string>
+    <string name="metering_success">Datos enviados</string>
+    <string name="metering_fail">No se pudieron enviar los datos</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:paddingRight="@dimen/padding_right_size_1" android:layout_width="fill_parent" android:layout_height="@dimen/view_layout_height_size_2"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/color" android:layout_width="@dimen/account_color_bar_width_size" android:layout_height="fill_parent" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_weight="1.0">
+        <TextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tasks" android:singleLine="true" style="@style/TextStyle_1" />
+        <LinearLayout android:id="@id/account_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/tasks_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.669983dip" />
+            <TextView android:ellipsize="end" android:id="@id/tasks_account" android:singleLine="true" style="@style/TextStyle_2" />
+        </LinearLayout>
+    </LinearLayout>
+    <CheckBox android:layout_gravity="center" android:id="@id/checkbox" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="5.3299866dip" />
+</LinearLayout>

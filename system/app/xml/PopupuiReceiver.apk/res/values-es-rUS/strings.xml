@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_text_yes">Aceptar</string>
+    <string name="btn_text_no">Canc.</string>
+    <string name="text_discription">La red no proporciona información de fecha y hora. Vaya a la configuración de fecha y hora para definirlos manualmente</string>
+    <string name="timezone_toast">Seleccionar zona horaria antes de configurar la hora</string>
+    <string name="popup_name">Notificación</string>
+</resources>

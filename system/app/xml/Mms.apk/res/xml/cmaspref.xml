@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Enable/Disable Emergency Alerts">
+        <CheckBoxPreference android:enabled="true" android:title="@string/cmas_alerts" android:key="pref_emergency_alert" android:summary="@string/cmas_receive_stop_cmad_alerts" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/cmas_receive_alests">
+        <CheckBoxPreference android:enabled="false" android:title="@string/cmas_presidential_alerts" android:key="\#cmas#type##presidential#enabled" android:summary="@string/cmas_receive_presidental_alerts" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/cmas_extreme_alerts" android:key="\#cmas#type##extreme#enabled" android:summary="@string/cmas_receive_extreme_alerts" android:dependency="pref_emergency_alert" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/cmas_severe_alerts" android:key="\#cmas#type##severe#enabled" android:summary="@string/cmas_receive_severs_alerts" android:dependency="pref_emergency_alert" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/cmas_amber_alerts" android:key="\#cmas#type##amber#enabled" android:summary="@string/cmas_receive_child_abduction_emergency_alerts" android:dependency="pref_emergency_alert" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/cmas_cmas_test_message" android:key="\#cmas#type##test#enabled" android:summary="@string/cmas_receive_test_alerts" android:dependency="pref_emergency_alert" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Receiving Settings">
+        <Preference android:title="@string/pref_title_notification_preview_cmas" android:key="pref_key_emergency_alert_preview" android:summary="@string/cmas_notification_preview_summary" />
+        <ListPreference android:entries="@array/cmas_alert_reminder_array" android:title="@string/cmas_alert_remainder" android:key="pref_key_emergency_alert_reminder" android:defaultValue="0" android:entryValues="@array/cmas_alert_reminder_array_values" />
+        <ListPreference android:entries="@array/prefEntries_vibrateWhen" android:title="@string/pref_title_notification_vibrateWhen" android:key="pref_key_cmas_vibrateWhen" android:summary="@string/pref_summary_cmas_vibrateWhen" android:defaultValue="@string/prefDefault_vibrateWhen" android:dialogTitle="@string/prefDialogTitle_vibrateWhen" android:entryValues="@array/prefValues_vibrateWhen" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/cmas_cmas_ui">
+        <ListPreference android:entries="@array/cmas_font_size_Array" android:title="@string/cmas_font_size" android:key="\#cmas#pref##font#size" android:summary="@string/cmas_font_explanation" android:defaultValue="14" android:entryValues="@array/cmas_font_size_Array_values" />
+    </PreferenceCategory>
+</PreferenceScreen>

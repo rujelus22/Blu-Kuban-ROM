@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#80000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="top" android:id="@id/layout_search_bar" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:background="#ff373737" android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <ImageView android:id="@id/file_search_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="9.0dip" android:src="@drawable/ico_header_polaris" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="60.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="60.0dip">
+                <com.infraware.polarisoffice.common.ExEditText android:id="@id/file_search_key" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/fm_msg_progress_search" android:singleLine="true" android:imeOptions="actionSearch" />
+            </FrameLayout>
+            <ImageButton android:id="@id/btn_search" android:background="@drawable/fm_btn_search" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="9.0dip" android:layout_marginRight="9.0dip" android:layout_alignParentRight="true" android:contentDescription="@string/btn_search" />
+        </RelativeLayout>
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/search_ll_list" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:drawSelectorOnTop="false" android:cacheColorHint="#00000000" android:layout_weight="3.0" />
+    </LinearLayout>
+</LinearLayout>

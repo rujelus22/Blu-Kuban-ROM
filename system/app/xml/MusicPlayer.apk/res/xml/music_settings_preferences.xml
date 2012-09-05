@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen android:title="@string/equalizer" android:key="equalizer" android:summary="@string/normal" />
+    <PreferenceScreen android:title="@string/effect" android:key="effect" android:summary="@string/normal" />
+    <PreferenceScreen android:title="@string/music_menu" android:key="music_menu" />
+    <CheckBoxPreference android:title="@string/visualization" android:key="visualization" />
+    <CheckBoxPreference android:title="@string/lyric" android:key="lyric" />
+    <ListPreference android:entries="@array/auto_off_entries" android:title="@string/auto_off" android:key="music_auto_off" android:defaultValue="0" android:dialogTitle="@string/auto_off" android:entryValues="@array/auto_off_values" />
+</PreferenceScreen>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kies mediante Wi-Fi</string>
+    <string name="kieswifi_restart">Wi-Fi desconectado. ¿Reiniciar Kies mediante Wi-Fi?</string>
+    <string name="invalid_action">Se produjo un error</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="network_fail">Error de red</string>
+    <string name="connect_wifi">Conecte a una red Wi-Fi para usar Kies</string>
+    <string name="setting">Ajustes</string>
+    <string name="no_device">No hay dispositivos</string>
+    <string name="refresh">Actualizar</string>
+    <string name="waiting">Esperando...</string>
+    <string name="waiting_confirmation">Esperando confirmación de %s...</string>
+    <string name="connected_with">Conectado con %s</string>
+    <string name="sync_with">Puede sincronizarse con %s</string>
+    <string name="usb_connected">Si se conecta a Kies a través del USB, se desconectará la conexión Wi-Fi a Kies. ¿Continuar?</string>
+    <string name="select_player_header">Dispositivos Wi-Fi en %s</string>
+    <string name="wpa">Introduzca %s en el campo WPA</string>
+    <string name="disconn">Desconectar</string>
+    <string name="kies_launcher_title">Conexiones de red</string>
+    <string name="attention">Atención</string>
+    <string name="already_using_usb">No se puede conectar a Kies mediante Wi-Fi. Ya se ha conectado a través de USB</string>
+    <string name="noti_text">Pulse para desconectar</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="hotspot">Zona Wi-Fi</string>
+</resources>

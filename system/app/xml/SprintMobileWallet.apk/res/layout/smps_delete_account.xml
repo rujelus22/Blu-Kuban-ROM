@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <ScrollView android:id="@id/ScrollView01" android:layout_width="fill_parent" android:layout_height="wrap_content"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+                <LinearLayout android:orientation="vertical" android:paddingLeft="13.0dip" android:paddingTop="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="14.0sp" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="• This action will remove all accounts/credit cards that you have entered as part of this application." />
+                    <TextView android:textSize="14.0sp" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="• You will be unregistered from our systems, including removing all information that you might have entered or created as a result of using this application." />
+                    <TextView android:textSize="14.0sp" android:id="@id/line2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="• If you want to use this application in the future, you will have to go through registration process again." />
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <View android:background="#ff636363" android:layout_width="wrap_content" android:layout_height="1.0dip" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <Button android:textSize="14.0sp" android:textColor="#ffffffff" android:id="@id/deleteAccount" android:background="@drawable/btn_custom_black" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Delete Sprint Mobile Wallet Account" android:layout_weight="1.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

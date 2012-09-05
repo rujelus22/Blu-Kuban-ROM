@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="phrasespotter_SEARCH_GRAMMAR_RES_NAME">ja_haroo_galaxy_cg_2_5</string>
+    <string name="phrasespotter_ACOUSTIC_MODEL_RES_NAME">nn_ja_mfcc_16k_15_big_250_v4_2_raw</string>
+    <string name="phrasespotter_PHRASESPOT_BEAM">20</string>
+    <string name="phrasespotter_PHRASESPOT_ABSBEAM">40</string>
+    <string name="phrasespotter_PHRASESPOT_AOFFSET">0</string>
+    <string name="phrasespotter_PHRASESPOT_DELAY">100</string>
+    <string name="util_WEB_SEARCH_URL_BAIDU_DEFAULT">http://www.baidu.jp/s?tn=baidujp&amp;ie=utf-8&amp;cl=3&amp;ct=262144&amp;wd={query}</string>
+    <string name="util_WEB_SEARCH_URL_BAIDU_HOME_DEFAULT">http://www.baidu.jp/</string>
+    <string name="util_WEB_SEARCH_URL_BING_DEFAULT">"Doesn't exist in Japan"</string>
+    <string name="util_WEB_SEARCH_URL_BING_HOME_DEFAULT">http://www.bing.com/?cc=jp</string>
+    <string name="util_WEB_SEARCH_URL_DEFAULT">http://www.google.com/m?cx=partner-pub-5324388728707269:o6qccq-17aj&amp;q={query}</string>
+    <string name="util_WEB_SEARCH_URL_DEFAULT_CN">http://www.baidu.jp/s?tn=baidujp&amp;ie=utf-8&amp;cl=3&amp;ct=262144&amp;wd={query}</string>
+    <string name="util_WEB_SEARCH_URL_GOOGLE_DEFAULT">http://www.google.com/m?cx=partner-pub-5324388728707269:o6qccq-17aj&amp;q={query}</string>
+    <string name="util_WEB_SEARCH_URL_GOOGLE_HOME_DEFAULT">http://www.google.com/m?cx=partner-pub-5324388728707269:o6qccq-17aj</string>
+    <string name="util_WEB_SEARCH_URL_HOME_DEFAULT">http://www.google.com/m?cx=partner-pub-5324388728707269:o6qccq-17aj</string>
+    <string name="util_WEB_SEARCH_URL_HOME_DEFAULT_CN">http://www.baidu.jp/</string>
+    <string name="util_WEB_SEARCH_URL_YAHOO_DEFAULT">http://search.yahoo.co.jp/search?p={query}&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=</string>
+    <string name="util_WEB_SEARCH_URL_YAHOO_HOME_DEFAULT">http://www.yahoo.co.jp/</string>
+    <string name="back">戻る</string>
+    <string name="call">通話</string>
+    <string name="call_and_string">通話%1$s</string>
+    <string name="call_joe">佐藤に電話</string>
+    <string name="cancel">キャンセル</string>
+    <string name="cancel_uc">キャンセル</string>
+    <string name="car_dial">電話をかける</string>
+    <string name="car_exit">終了</string>
+    <string name="car_home_reco_button_text_ex">如月にメッセージ。調子どう？</string>
+    <string name="car_item_sms_message_send">送る</string>
+    <string name="car_item_tts_tester_cancel">キャンセル</string>
+    <string name="car_iux_ex1">斉藤君&lt;font color=#9fd5f7>の携帯へ&lt;/font></string>
+    <string name="car_iux_ex2">美雪ちゃん&lt;font color=#d0d0d0>にテキストする。&lt;/font>やっほー</string>
+    <string name="car_iux_ex3">東京、五反田&lt;font color=#d0d0d0>へ行く&lt;/font></string>
+    <string name="car_iux_ex4">佐々木さん&lt;font color=#d0d0d0>に返答&lt;/font></string>
+    <string name="car_iux_ex5">&lt;font color=#9fd5f7>スケジュールを確認&lt;/font></string>
+    <string name="car_iux_ex6">&lt;font color=#9fd5f7>音楽を再生&lt;/font></string>
+    <string name="car_iux_ex7">&lt;font color=#d0d0d0>新しいメモ&lt;/font>&lt;font color=#d0d0d0>牛乳を買う&lt;/font></string>
+    <string name="car_iux_item_spotter_you_can_say">&lt;font color=#8fc6ff>ハロー、ギャラクシー&lt;/font>と話しかけることで自動的に起動することが出来ます</string>
+    <string name="car_memo_empty">メモが空です</string>
+    <string name="car_memo_is_empty">メモが空です</string>
+    <string name="car_memo_memo_colon">メモ:</string>
+    <string name="car_memo_save_confirm">.「メモを保存」、「キャンセル」、もしくは内容をもう一度言って下さい</string>
+    <string name="car_memo_speak_memo">メモの内容を話して下さい</string>
+    <string name="car_memo_update_confirm">.「メモを保存」、「キャンセル」、もしくは別の内容を言って下さい。</string>
+    <string name="car_msg_social_update">SNS更新……</string>
+    <string name="car_nav_open_maps">地図を開く</string>
+    <string name="car_nav_open_nav">ナビを開く</string>
+    <string name="car_safereader_shownprompt">セーフ・リーダー:テキストか返信</string>
+    <string name="car_sms_error_help_tts">おっとっと、テキストを送るには名前かコンタクトのあとでメッセージをおっしゃって下さい。</string>
+    <string name="car_sms_error_sending">テキストを送る際、何かが起きたようです。</string>
+    <string name="car_sms_send_cancel_repeat_tts">。送信かキャンセルと言って下さい。メッセージを言い直すことも出来ます</string>
+    <string name="car_sms_send_cancel_speak_tts">。送信かキャンセルと言ってください。或いはメッセージを言うことも出来ます。</string>
+    <string name="car_sms_text_command">テキスト</string>
+    <string name="car_sms_text_who">なんと送りますか？</string>
+    <string name="car_sr_shown_prompt">「返信」、「通話」、「キャンセル」、もしくは「読み上げる」よりお選びください。</string>
+    <string name="car_tts_HOME_PROMPT_DEMAND_FIRST_TIME">何がしたいか仰ってください。「キャンセル」と言うことでいつでもやり直すことができます。</string>
+    <string name="car_tts_KEYWORD_SPOT_ON_DEMAND">自動起動単語「オン」が検出されました。「ハロー、ギャラクシー」と呼びかけることで起動することが出来ます</string>
+    <string name="car_tts_MEMO_NEW_MEMO">新しいメモ</string>
+    <string name="car_tts_MEMO_SAVED">メモが保存されました</string>
+    <string name="car_tts_MESSAGE_NEXT_REPLY">「次へ」、「返信」、「通話」、もしくは「キャンセル」よりお選びください。</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_CMD_READ">「読み上げる」、「通話」、もしくは「キャンセル」よりお選びください。</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_CMD_REPLY">読む、返信、或いはキャンセルと言って下さい。</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_CMD_REPLY_OR_READ">「返信」、「通話」、「キャンセル」、もしくは「読み上げる」よりお選びください。</string>
+    <string name="car_tts_SAFEREADER_OFF">ドライブモードがオフになりました</string>
+    <string name="car_tts_SAFEREADER_ON">ドライブモードです。新着情報は復唱されます。</string>
+    <string name="car_tts_SMS_SEND_CONFIRM_DEMAND">テキストを送る。</string>
+    <string name="car_tts_SMS_SEND_TO_CONFIRM_DEMAND">%1$sテキストを送る。</string>
+    <string name="car_tts_VD_SMS_SEND_TYPE_CONFIRM_DEMAND">%1$s%2$sテキストを送る。</string>
+    <string name="car_tts_SMS_SEND_ERROR_DEMAND">テキストを送るのにエラーが発生しました。</string>
+    <string name="car_tts_SMS_SENDING_CONFIRM_DEMAND">メッセージを送っています…</string>
+    <string name="car_tts_SMS_SENT_CONFIRM_DEMAND">メッセージが送信されました。</string>
+    <string name="car_tts_social_update">SNS更新</string>
+    <string name="car_tts_VD_CALL">通話</string>
+    <string name="car_tts_who_would_you_like_to_call">誰に電話しますか?</string>
+    <string name="car_vvs_handlers_no_contact_tts">返信先が見つかりませんでした。もう一度返信先をおっしゃってください。</string>
+    <string name="contact_top_choice_detail_item_call_mobile">携帯にかける</string>
+    <string name="dial_hint1">キタムラ&lt;font color=#85bee0>の携帯にかける&lt;/font></string>
+    <string name="dial_hint2">みゆきさん&lt;font color=#85bee0>の携帯に電話をかける&lt;/font></string>
+    <string name="dial_hint3">宮嶋&lt;font color=#85bee0>の職場に電話&lt;/font></string>
+    <string name="dial_hint4">理沙&lt;font color=#85bee0>に電話&lt;/font></string>
+    <string name="dial_hint5">三上龍一さん&lt;font color=#85bee0>の職場に電話する&lt;/font></string>
+    <string name="dial_hint6">伊藤翔太&lt;font color=#85bee0>の携帯に電話をかける&lt;/font></string>
+    <string name="driving_mode">ドライブモード</string>
+    <string name="driving_mode_newline">"ドライブ
+モード"</string>
+    <string name="email_hint1">&lt;font color=#85bee0>Ｅメール。&lt;/font>田中&lt;font color=#85bee0>件名&lt;/font>道に迷った&lt;font color=#85bee0>内容&lt;/font>ミーティングには遅れます。</string>
+    <string name="email_hint2">&lt;font color=#85bee0>メール。&lt;/font>岸部くん&lt;font color=#85bee0>件名&lt;/font>今週末東京で会える？</string>
+    <string name="email_hint3">村山さんに&lt;font color=#85bee0>メールする。&lt;/font>&lt;font color=#85bee0>件名&lt;/font>もっとおすすめの音楽教えて！</string>
+    <string name="email_hint4">&lt;font color=#85bee0>メール。&lt;/font>昭隆くん。&lt;font color=#85bee0>サブジェクト&lt;/font>今日の予定に変更は？</string>
+    <string name="email_hint5">&lt;font color=#85bee0>Ｅメール。&lt;/font>さつきさん。&lt;font color=#85bee0>件名&lt;/font>それが冴えたやり方さ</string>
+    <string name="email_hint6">&lt;font color=#85bee0>メールを送る。&lt;/font>ユウキ&lt;font color=#85bee0>件名&lt;/font>ビール&lt;font color=#85bee0>内容&lt;/font>ミーティングが終わったら一緒に飲もう！</string>
+    <string name="help_using_vlingo_secrets_auto_or_manual">句読点は自動的に挿入されますが、あなたが手動で挿入することも出来ます。例えばVlingoに「ごきげんいかがですかはてなまーく」と、言うと「ご機嫌いかがですか？」と返してきます。</string>
+    <string name="help_using_vlingo_with_safereader">ドライブモードで</string>
+    <string name="help_wcis_alarm">アラーム</string>
+    <string name="help_wcis_alarm_sub1">\"&lt;font color=#85bee0>アラームの設定&lt;/font>午前6:30\"&lt;br/>\"&lt;font color=#85bee0>アラームの設定&lt;/font>今から30分後\"</string>
+    <string name="help_wcis_contact_sub1">\"&lt;font color=#85bee0>連絡する&lt;/font> 井上\"</string>
+    <string name="help_wcis_dial_sub1">\"渡辺&lt;font color=#76acdf>の携帯電話に電話をする&lt;/font>\"</string>
+    <string name="help_wcis_driving_mode">ドライブモード</string>
+    <string name="help_wcis_driving_mode_sub1">\"&lt;font color=#85bee0>ドライブモード&lt;/font> オン/オフ\"</string>
+    <string name="help_wcis_email_sub1">\"&lt;font color=#76acdf>Ｅメール&lt;/font> 達也 &lt;font color=#76acdf>件名&lt;/font>今夜&lt;font color=#76acdf>メッセージ&lt;/font> ちょっと遅れるよ。\"</string>
+    <string name="help_wcis_go_website">ウェブサイトに移動</string>
+    <string name="help_wcis_go_website_sub1">\"Google&lt;font color=#85bee0>に移動&lt;/font>\"</string>
+    <string name="help_wcis_go_website_sub1_china">\"バイドゥ&lt;font color=#85bee0>に移動&lt;/font>\"</string>
+    <string name="help_wcis_local_search_sub1">\"&lt;font color=#76acdf>検索&lt;/font>原宿のコーヒーショップ\"</string>
+    <string name="help_wcis_maps_sub1">\"ボストン&lt;font color=#76acdf>の地図&lt;/font>\"&lt;br/>\"東京都千代田区千代田&lt;font color=#76acdf>への道順&lt;/font>\"&lt;br/>\"京都竜安寺&lt;font color=#76acdf>へナビゲート&lt;/font>\"</string>
+    <string name="help_wcis_social_sub1">\"&lt;font color=#76acdf>ツイッター&lt;/font>を更新する。人間はなんで北を目指しちまったんだろうなあ……。\"</string>
+    <string name="help_wcis_memo">メモ</string>
+    <string name="help_wcis_memo_sub1">\"&lt;font color=#76acdf>メモ&lt;/font>母さんに手紙を書く\"</string>
+    <string name="help_wcis_music">音楽を再生</string>
+    <string name="help_wcis_music_sub1">\"&lt;font color=#86bcef>音楽を再生&lt;/font>\"</string>
+    <string name="help_wcis_nav">ナビゲート</string>
+    <string name="help_wcis_nav_sub1">\"ケンブリッジ、マサチューセッツ&lt;font color=#85bee0>へナビゲート&lt;/font>\"</string>
+    <string name="help_wcis_open_apps_sub1">\"音楽&lt;font color=#85bee0>を開く&lt;/font>\"</string>
+    <string name="help_wcis_recordvoice">音声の録音</string>
+    <string name="help_wcis_recordvoice_sub1">\"&lt;font color=#85bee0>音声の録音&lt;/font>\"</string>
+    <string name="help_wcis_schedule_sub1">\"&lt;font color=#85bee0>スケジュールを確認&lt;/font>\"</string>
+    <string name="help_wcis_search_sub1">\"&lt;font color=#76acdf>検索&lt;/font>ボノボの生態\"</string>
+    <string name="help_wcis_superdialer_sub1">\"渡辺&lt;font color=#76acdf>の携帯電話に電話をする&lt;/font>\"&lt;br/>\"タクシー&lt;font color=#76acdf>を呼ぶ&lt;/font>&lt;/font>\"</string>
+    <string name="help_wcis_text_message_sub1">\"&lt;font color=#76acdf>テキスト&lt;/font> 井上さん &lt;font color=#76acdf>メッセージ&lt;/font>今晩一緒にお食事しませんか？\"</string>
+    <string name="help_wcis_text_message_sub2">\"最後のメッセージに&lt;font color=#76acdf>返信する&lt;/font>\"</string>
+    <string name="hint_call1">通話鈴木</string>
+    <string name="hint_call2">通話高橋さん</string>
+    <string name="hint_call3">通話田中陽一の携帯電話</string>
+    <string name="hint_call4">通話山田の自宅に通話する</string>
+    <string name="hint_call5">木下正一に$電話;する</string>
+    <string name="hint_nav1">家へ帰る</string>
+    <string name="hint_nav2">甲州街道三丁目への道</string>
+    <string name="hint_nav3">中村屋へ案内</string>
+    <string name="hint_nav4">上野公園までナビゲート</string>
+    <string name="hint_nav5">亀戸までのルート検索</string>
+    <string name="hint_reply1">佐々木さんに返答</string>
+    <string name="hint_reply2">三島さんに返信</string>
+    <string name="hint_reply3">小川に返信本文いいと思うよ</string>
+    <string name="hint_text1">テキスト、亮太。本文、5時に飲みに行かない？</string>
+    <string name="hint_text2">メッセージ、阿部さん。その点トッポってすげえよな！</string>
+    <string name="hint_text3">如月にメッセージ。調子どう？</string>
+    <string name="hint_text4">真奈美へテキスト。本文、そいつぁすげえや！</string>
+    <string name="hint_text5">ルーツさんにメッセージ送信。そいつぁすげえや！</string>
+    <string name="hint_xml_call1">田中&lt;font color=#9fd5f7>に電話&lt;/font></string>
+    <string name="hint_xml_call2">三浦&lt;font color=#9fd5f7>に通話&lt;/font></string>
+    <string name="hint_xml_call3">&lt;font color=#9fd5f7>通話&lt;/font>田中陽一&lt;font color=#9fd5f7>の携帯電話&lt;/font></string>
+    <string name="hint_xml_call4">&lt;font color=#9fd5f7>通話&lt;/font>山田&lt;font color=#9fd5f7>の自宅に通話する&lt;/font></string>
+    <string name="hint_xml_call5">木下正一&lt;font color=#9fd5f7>に電話する&lt;/font></string>
+    <string name="hint_xml_nav1">家&lt;font color=#9fd5f7>へ帰る&lt;/font></string>
+    <string name="hint_xml_nav2">甲州街道三丁目&lt;font color=#9fd5f7>への道&lt;/font></string>
+    <string name="hint_xml_nav3">中村屋&lt;font color=#9fd5f7>へ案内&lt;/font></string>
+    <string name="hint_xml_nav4">上野公園&lt;font color=#9fd5f7>までナビゲート&lt;/font></string>
+    <string name="hint_xml_nav5">亀戸&lt;font color=#9fd5f7>までのルート検索&lt;/font></string>
+    <string name="hint_xml_reply1">佐々木さん&lt;font color=#9fd5f7>に返答&lt;/font></string>
+    <string name="hint_xml_reply2">三島さん&lt;font color=#9fd5f7>に返信&lt;/font></string>
+    <string name="hint_xml_reply3">小川&lt;font color=#9fd5f7>に返信&lt;/font>&lt;font color=#9fd5f7>本文&lt;/font>いいと思うよ</string>
+    <string name="hint_xml_text1">&lt;font color=#9fd5f7>テキスト&lt;/font>亮太&lt;font color=#9fd5f7>本文&lt;/font>5時に飲みに行かない？</string>
+    <string name="hint_xml_text2">&lt;font color=#9fd5f7>メッセージ、&lt;/font>阿部さん&lt;font color=#9fd5f7>。内容、&lt;/font>その点トッポってすげえよな！</string>
+    <string name="hint_xml_text3">&lt;font color=#9fd5f7>テキスト&lt;/font>亮太&lt;font color=#9fd5f7>本文&lt;/font>調子どう？</string>
+    <string name="hint_xml_text4">真奈美&lt;font color=#9fd5f7>へテキスト&lt;/font>&lt;font color=#9fd5f7>本文&lt;/font>そいつぁすげえや！</string>
+    <string name="hint_xml_text5">ルーツさん&lt;font color=#9fd5f7>にメッセージ送信。&lt;/font>そいつぁすげえや！</string>
+    <string name="home">自宅</string>
+    <string name="home_safereader_info">ドライブモードは新着メッセージやＥメールを読み上げます。</string>
+    <string name="iux_welcome_exit">終了</string>
+    <string name="label_next_key">次へ</string>
+    <string name="label_send_key">送る</string>
+    <string name="map_hint1">&lt;font color=#85bee0>検索&lt;/font>九十九里浜の海の家</string>
+    <string name="map_hint10">&lt;font color=#85bee0>検索&lt;/font>東京都練馬区月見台すすきヶ原3-10-5</string>
+    <string name="map_hint11">&lt;font color=#85bee0>検索&lt;/font>東京都東久留米市金山町1-1-1</string>
+    <string name="map_hint2">&lt;font color=#85bee0>検索&lt;/font>渋谷区の喫茶店</string>
+    <string name="map_hint3">&lt;font color=#85bee0>検索&lt;/font>イタリアンパスタ</string>
+    <string name="map_hint4">&lt;font color=#85bee0>検索&lt;/font>鹿児島の洗車サービス</string>
+    <string name="map_hint5">&lt;font color=#85bee0>検索&lt;/font>東京都新宿区四丁目</string>
+    <string name="map_hint6">&lt;font color=#85bee0>検索&lt;/font>神田近郊のコーヒーショップ</string>
+    <string name="map_hint7">&lt;font color=#85bee0>検索&lt;/font>盛岡のスポーツショップ</string>
+    <string name="map_hint8">&lt;font color=#85bee0>検索&lt;/font>沖縄のシュノーケルショップ</string>
+    <string name="map_hint9">&lt;font color=#85bee0>検索&lt;/font>江ノ島近くのジェットスキー</string>
+    <string name="memo">メモ</string>
+    <string name="memo_layout_save_button">メモを保存</string>
+    <string name="message">メッセージ</string>
+    <string name="message_btn">テキスト</string>
+    <string name="mobile">携帯</string>
+    <string name="music">音楽を再生</string>
+    <string name="navigate">ナビゲート</string>
+    <string name="next">次へ</string>
+    <string name="no_number_found_to_redial">リダイアルする番号が見つかりませんでした。</string>
+    <string name="notify_safereader_on">ドライブモードが有効になりました</string>
+    <string name="play_music">音楽を再生</string>
+    <string name="progress_screen_button_cancel">キャンセル</string>
+    <string name="prompt_dial_ex1">吉田に電話</string>
+    <string name="prompt_dial_ex2">&lt;font color=#85bee0>通話&lt;/font>恭子&lt;font color=#85bee0>の携帯&lt;/font></string>
+    <string name="prompt_dial_ex3">&lt;font color=#85bee0>電話をかける&lt;/font>中島&lt;font color=#85bee0>の職場&lt;/font></string>
+    <string name="prompt_generic_hintset_first_1">リカ&lt;font color=#85bee0>の携帯に電話&lt;/font></string>
+    <string name="prompt_generic_hintset_first_2">大輔&lt;font color=#85bee0>の職場に電話&lt;/font></string>
+    <string name="prompt_generic_hintset_first_3">拓哉&lt;font color=#85bee0>に電話する&lt;/font></string>
+    <string name="prompt_generic_hintset_second_1">&lt;font color=#85bee0>テキスト&lt;/font>あかね&lt;font color=#85bee0>メッセージ&lt;/font>やあ！</string>
+    <string name="prompt_generic_hintset_second_2">&lt;font color=#85bee0>メッセージの送信&lt;/font>伊藤さん&lt;font color=#85bee0>メッセージ&lt;/font>調子はどう？</string>
+    <string name="prompt_generic_hintset_second_3">ピサ&lt;font color=#85bee0>の地図&lt;/font></string>
+    <string name="prompt_generic_hintset_second_4">日光江戸村&lt;font color=#85bee0>への道順&lt;/font></string>
+    <string name="prompt_generic_hintset_second_5">ケンブリッジ、マサチューセッツ&lt;font color=#85bee0>へナビゲート&lt;/font></string>
+    <string name="prompt_generic_hintset_third_1">&lt;font color=#85bee0>音楽を再生&lt;/font></string>
+    <string name="prompt_generic_hintset_third_2">&lt;font color=#85bee0>スケジュールを確認&lt;/font></string>
+    <string name="prompt_generic_hintset_third_3">&lt;font color=#85bee0>ドライブモード オン/オフ&lt;/font></string>
+    <string name="prompt_generic_hintset_third_4">&lt;font color=#85bee0>メモ&lt;/font>母さんに手紙を書く</string>
+    <string name="prompt_generic_hintset_third_5">&lt;font color=#85bee0>メモ&lt;/font>牛乳を買う</string>
+    <string name="prompt_memo_ex2">&lt;font color=#85bee0>メモ&lt;/font>母さんに手紙を書く</string>
+    <string name="prompt_memo_ex3">&lt;font color=#85bee0>メモ&lt;/font>牛乳を買う</string>
+    <string name="prompt_nav_ex1">ピサ&lt;font color=#85bee0>の地図&lt;/font></string>
+    <string name="prompt_nav_ex2">日光江戸村&lt;font color=#85bee0>への道順&lt;/font></string>
+    <string name="prompt_nav_ex3">ケンブリッジ、マサチューセッツ&lt;font color=#85bee0>へナビゲート&lt;/font></string>
+    <string name="prompt_sms_ex2">&lt;font color=#85bee0>テキスト&lt;/font>あかね&lt;font color=#85bee0>メッセージ&lt;/font>やあ！</string>
+    <string name="prompt_sms_ex3">&lt;font color=#85bee0>メッセージの送信&lt;/font>伊藤さん&lt;font color=#85bee0>メッセージ&lt;/font>調子はどう？</string>
+    <string name="read_out_btn">読み上げる</string>
+    <string name="reply">返信</string>
+    <string name="safe_reader_default_error">お使いの言語ではドライブモードがお使いいただけません。</string>
+    <string name="safereader">ドライブモード</string>
+    <string name="safereader_enabled">ドライブモードが有効になりました</string>
+    <string name="safereader_notif_reading_ticker">ドライブモードで読み上げます。クリックしてスキップします</string>
+    <string name="safereader_options">ドライブモードの設定</string>
+    <string name="safereader_paused">ドライブモードが一時停止されました</string>
+    <string name="safereader_reading_email_from">\"\"からのＥメールです</string>
+    <string name="safereader_reading_text_from">\"\"からのテキストメッセージです</string>
+    <string name="say_command">「次へ」、もしくは「キャンセル」のどちらかをお選びください</string>
+    <string name="search_hint10">&lt;font color=#85bee0>検索&lt;/font>187-0003付近の映画情報</string>
+    <string name="search_hint11">&lt;font color=#85bee0>検索&lt;/font>岡山市の式場</string>
+    <string name="search_hint12">デートスポット&lt;font color=#85bee0>を探す&lt;/font></string>
+    <string name="search_hint13">バナナの絵&lt;font color=#85bee0>を探す&lt;/font></string>
+    <string name="search_hint5">&lt;font color=#85bee0>グーグル検索:&lt;/font>ボノボの習性</string>
+    <string name="search_hint6">&lt;font color=#85bee0>検索&lt;/font>横浜で一番美味しい中華</string>
+    <string name="search_hint7">秋の感謝祭セールの日程&lt;font color=#85bee0>をググる。&lt;/font></string>
+    <string name="search_hint8">&lt;font color=#85bee0>検索&lt;/font>京都、筋肉少女帯のコンサートの日取り</string>
+    <string name="search_hint9">&lt;font color=#85bee0>検索&lt;/font>東京都東久留米市の不動産</string>
+    <string name="send">送る</string>
+    <string name="settings_incar_prompt_after_summary">受信メッセージの読み上げ後に「読む」、「返信」、「電話」などのコマンドのプロンプトを出します</string>
+    <string name="settings_incar_speakshow_msgbodies_summary">ドライブモード中に届いたメッセージの本文を表示する</string>
+    <string name="settings_incar_SRstart_summary">ボイストークと一緒にドライブモードも起動する</string>
+    <string name="settings_incar_SRstart_title">ドライブモードを自動起動</string>
+    <string name="settings_incar_wakeup_summary">「ハロー、ギャラクシー」と発言すれば自動的に起動することが可能です。注意:この機能はバッテリーを消費します</string>
+    <string name="settings_need_email_account">ドライブモードでメールを読み上げるにはＥメールアカウントを追加してください。</string>
+    <string name="sms_hint1">&lt;font color=#85bee0>テキスト&lt;/font>三木さん&lt;font color=#85bee0>&lt;/font>早く成果が見たいね！</string>
+    <string name="sms_hint10">&lt;font color=#85bee0>テキストメッセージ&lt;/font>平田さん&lt;font color=#85bee0>&lt;/font>今晩サッカーの試合あったっけ？</string>
+    <string name="sms_hint11">猿渡に&lt;font color=#85bee0>テキスト。&lt;/font>今晩行く？</string>
+    <string name="sms_hint12">&lt;font color=#85bee0>テキスト、&lt;/font>斉藤&lt;font color=#85bee0>。&lt;/font>やろうよ！</string>
+    <string name="sms_hint13">牧野さん&lt;font color=#85bee0>にテキストをお送りする。&lt;/font>ご入居おめでとう！</string>
+    <string name="sms_hint14">ことらさん&lt;font color=#85bee0>にテキスト。&lt;/font>そうしてよ！</string>
+    <string name="sms_hint15">渡辺&lt;font color=#85bee0>にテキストを送る。&lt;/font>バルセロナはどうだい？</string>
+    <string name="sms_hint2">&lt;font color=#85bee0>テキスト、&lt;/font>田中さん&lt;font color=#85bee0>。&lt;/font>今晩はジム行くの？</string>
+    <string name="sms_hint3">鈴木&lt;font color=#85bee0>にメッセージ。&lt;/font>ドコ行ってたの？</string>
+    <string name="sms_hint4">佐藤&lt;font color=#85bee0>にテキストを送る。&lt;/font>調子はどう？</string>
+    <string name="sms_hint5">三村&lt;font color=#85bee0>へテキスト。&lt;/font>ちょっと遅れる。後で会おう！</string>
+    <string name="sms_hint6">&lt;font color=#85bee0>テキスト&lt;/font>瞳&lt;font color=#85bee0>本文&lt;/font>今日おいしい野菜をとってくるよ。</string>
+    <string name="sms_hint7">綾子さん&lt;font color=#85bee0>にテキストする。&lt;/font>なんでそんなに可愛いの？</string>
+    <string name="sms_hint8">良一&lt;font color=#85bee0>にメッセージ。&lt;/font>お誕生日おめでとう！</string>
+    <string name="sms_hint9">中村&lt;font color=#85bee0>へテキスト。&lt;/font>なにやってるの？待ってるんだけど！</string>
+    <string name="sms_reply1">最後のメッセージに&lt;font color=#85bee0>返信&lt;/font></string>
+    <string name="sms_reply2">最後のテキストメッセージに&lt;font color=#85bee0>返信&lt;/font></string>
+    <string name="sms_reply3">&lt;font color=#85bee0>返信&lt;/font>、早く会いたいよ</string>
+    <string name="sms_reply4">&lt;font color=#85bee0>返答&lt;/font>、いいね、五時には着くよ</string>
+    <string name="sms_reply5">冗談でしょ！と&lt;font color=#85bee0>返信する&lt;/font></string>
+    <string name="social_hint1">&lt;font color=#85bee0>ツイッター&lt;/font>を更新する。人間はなんで北を目指しちまったんだろうなあ……。</string>
+    <string name="social_hint10">スターバックス&lt;font color=#85bee0>にて。&lt;/font></string>
+    <string name="social_hint11">会社&lt;font color=#85bee0>にチェックイン&lt;/font></string>
+    <string name="social_hint12">チェックイン&lt;font color=#85bee0>。鳥どり&lt;/font></string>
+    <string name="social_hint13">咲くら&lt;font color=#85bee0>にチェックインする。&lt;/font></string>
+    <string name="social_hint14">金町通りの喫茶店&lt;font color=#85bee0>にチェックイン。&lt;/font></string>
+    <string name="social_hint15">後楽園ホール&lt;font color=#85bee0>にチェックイン。&lt;/font></string>
+    <string name="social_hint16">&lt;font color=#85bee0>友達はどこ？&lt;/font></string>
+    <string name="social_hint17">&lt;font color=#85bee0>友達はどこ？&lt;/font></string>
+    <string name="social_hint18">&lt;font color=#85bee0>彼女はどこ？&lt;/font></string>
+    <string name="social_hint19">&lt;font color=#85bee0>彼はどこ？&lt;/font></string>
+    <string name="social_hint2">&lt;font color=#85bee0>Twitter更新、&lt;/font>メスのハスキー犬に良い名前候補無い？</string>
+    <string name="social_hint3">&lt;font color=#85bee0>ツイッター更新。&lt;/font>国道4号線の渋滞情報モトム。</string>
+    <string name="social_hint4">&lt;font color=#85bee0>フェイスブック。&lt;/font>ドラムンベースのリピートっぷりが止まらない。</string>
+    <string name="social_hint5">&lt;font color=#85bee0>フェイスブック更新。&lt;/font>今度南原さんを紹介するよ。きっといい友達になると思う。</string>
+    <string name="social_hint6">&lt;font color=#85bee0>フェイスブックの更新。&lt;/font>大丈夫だ、問題ない。</string>
+    <string name="social_hint7">&lt;font color=#85bee0>フェイスブック。&lt;/font>今日は……サングラスが欲しいな……。</string>
+    <string name="social_hint8">&lt;font color=#85bee0>フォースクエアでシャウト。&lt;/font>下町で今晩会いましょう。</string>
+    <string name="social_hint9">&lt;font color=#85bee0>シャウト。&lt;/font>あなたの好きなバンドが無料コンサートするみたいだよ。</string>
+    <string name="social_update">SNS更新</string>
+    <string name="super_dial_hint1">タクシー&lt;font color=#85bee0>を呼ぶ&lt;/font></string>
+    <string name="super_dial_hint10">中華料理店&lt;font color=#85bee0>にかける&lt;/font></string>
+    <string name="super_dial_hint11">ニトリ&lt;font color=#85bee0>に電話&lt;/font></string>
+    <string name="super_dial_hint12">金沢の工具屋&lt;font color=#85bee0>を探す&lt;/font></string>
+    <string name="super_dial_hint13">銀座のヴィトン&lt;font color=#85bee0>に電話&lt;/font></string>
+    <string name="super_dial_hint14">アップルストア&lt;font color=#85bee0>に電話&lt;/font></string>
+    <string name="super_dial_hint15">名古屋市のドムドムバーガー&lt;font color=#85bee0>に通話&lt;/font></string>
+    <string name="super_dial_hint16">横浜の総合医療外科&lt;font color=#85bee0>へ通話&lt;/font></string>
+    <string name="super_dial_hint17">ダイエー&lt;font color=#85bee0>に電話&lt;/font></string>
+    <string name="super_dial_hint18">秋田市近くのイトーヨーカドー&lt;font color=#85bee0>へ電話を掛ける&lt;/font></string>
+    <string name="super_dial_hint19">三越&lt;font color=#85bee0>に電話&lt;/font></string>
+    <string name="super_dial_hint2">&lt;font color=#85bee0>電話&lt;/font>ピザ屋</string>
+    <string name="super_dial_hint3">クラシアン&lt;font color=#85bee0>を手配&lt;/font></string>
+    <string name="super_dial_hint4">契約者&lt;font color=#85bee0>に連絡&lt;/font></string>
+    <string name="super_dial_hint5">ピザーラ&lt;font color=#85bee0>に電話&lt;/font></string>
+    <string name="super_dial_hint6">ドミノ・ピザ&lt;font color=#85bee0>に電話&lt;/font></string>
+    <string name="super_dial_hint7">カプリチョーザ&lt;font color=#85bee0>に電話&lt;/font></string>
+    <string name="super_dial_hint8">東京の三越デパート&lt;font color=#85bee0>を探す&lt;/font></string>
+    <string name="super_dial_hint9">札幌のマルイ&lt;font color=#85bee0>に電話&lt;/font></string>
+    <string name="text">テキスト</string>
+    <string name="text_and_string">テキスト%1$s</string>
+    <string name="text_message">テキストメッセージ</string>
+    <string name="vc_hints_alarm_1">&lt;font color=#139cff>アラームの設定&lt;/font>午前6:30</string>
+    <string name="vc_hints_alarm_2">&lt;font color=#139cff>アラームの設定&lt;/font>今から30分後</string>
+    <string name="vc_hints_checkschedule_1">&lt;font color=#139cff>スケジュールを確認&lt;/font></string>
+    <string name="vc_hints_contact_1">達也&lt;font color=#139cff>に連絡&lt;/font></string>
+    <string name="vc_hints_contact_2">和也&lt;font color=#139cff>に連絡する&lt;/font></string>
+    <string name="vc_hints_drivingmode_1">&lt;font color=#139cff>ドライブモード&lt;/font>オン</string>
+    <string name="vc_hints_drivingmode_2">&lt;font color=#139cff>ドライブモード&lt;/font>オフ</string>
+    <string name="vc_hints_email_1">健一&lt;font color=#139cff>にＥメール&lt;/font></string>
+    <string name="vc_hints_email_2">&lt;font color=#139cff>Ｅメールを送信&lt;/font>さくら&lt;font color=#139cff>メッセージ&lt;/font>やろうよ！</string>
+    <string name="vc_hints_email_3">&lt;font color=#139cff>Ｅメール&lt;/font>さくら&lt;font color=#139cff>件名&lt;/font>パン焼き&lt;font color=#139cff>内容&lt;/font>砂糖はある？</string>
+    <string name="vc_hints_goto_1">グーグル&lt;font color=#139cff>に移動&lt;/font></string>
+    <string name="vc_hints_goto_1_china">バイドゥ&lt;font color=#139cff>に移動&lt;/font></string>
+    <string name="vc_hints_map_1">上野動物園&lt;font color=#139cff>の地図&lt;/font></string>
+    <string name="vc_hints_map_2">千代田区一丁目一番地&lt;font color=#139cff>への道筋&lt;/font></string>
+    <string name="vc_hints_map_3">京都竜安寺&lt;font color=#139cff>へナビゲート&lt;/font></string>
+    <string name="vc_hints_memo_1">&lt;font color=#139cff>メモ&lt;/font>母さんに手紙を書く</string>
+    <string name="vc_hints_memo_2">&lt;font color=#139cff>やることリスト&lt;/font>牛乳を買う</string>
+    <string name="vc_hints_message_1">田中&lt;font color=#139cff>にテキスト&lt;/font></string>
+    <string name="vc_hints_message_2">&lt;font color=#139cff>テキスト&lt;/font>翼&lt;font color=#139cff>内容&lt;/font>元気にしてた？</string>
+    <string name="vc_hints_message_3">佐藤さんに&lt;font color=#139cff>テキスト&lt;/font>&lt;font color=#139cff>メッセージ&lt;/font>調子はいかがですか？</string>
+    <string name="vc_hints_open_1">電卓&lt;font color=#139cff>を開く&lt;/font></string>
+    <string name="vc_hints_recordvoice_1">&lt;font color=#139cff>音声の録音&lt;/font></string>
+    <string name="vc_hints_recordvoice_2">&lt;font color=#139cff>音声の録音&lt;/font>ミーティングについて</string>
+    <string name="vc_hints_search_1">&lt;font color=#139cff>検索&lt;/font>ポルトガルの人口</string>
+    <string name="vc_hints_search_2">&lt;font color=#139cff>ツイッターの更新&lt;/font>人類は何で北を目指しちまったんだろうなあ……。</string>
+    <string name="vc_hints_search_3">札幌の期以降</string>
+    <string name="vc_hints_social_1">&lt;font color=#139cff>ツイッター。&lt;/font>仕事初日、うまくいきますように。</string>
+    <string name="vc_hints_social_2">&lt;font color=#139cff>フェイスブック。&lt;/font>渋谷なう。あなたは？</string>
+    <string name="vc_hints_social_3">&lt;font color=#139cff>ツイッターを更新する。&lt;/font>人間はなんで北を目指しちまったんだろうなあ……。</string>
+    <string name="vc_hints_superdial">\"&lt;font color=#568ab3>タクシーを呼ぶ&lt;/font>\"&lt;br/>\"上野のステーキ屋&lt;font color=#568ab3>を見つける&lt;/font>\"&lt;br/>\"ピザーラへと&lt;font color=#568ab3>電話する&lt;/font>\"</string>
+    <string name="vc_hints_voicedial_1">&lt;font color=#139cff>通話&lt;/font>阿部一樹</string>
+    <string name="vc_hints_voicedial_2">まなみ&lt;font color=#139cff>に電話をかける&lt;/font></string>
+    <string name="vc_hints_voicedial_3">&lt;font color=#139cff>リダイアル&lt;/font></string>
+    <string name="wake_up_ready">あるいは「ハロー、ギャラクシー」とおっしゃって下さい</string>
+    <string name="wcis_alarm">音声認識でアラームを設定する</string>
+    <string name="wcis_alarm_ex">\"&lt;font color=#85bee0>アラームの設定&lt;/font>午前6:30\"&lt;br/>\"&lt;font color=#85bee0>アラームの設定&lt;/font>今から30分後\"</string>
+    <string name="wcis_contact_ex">\"&lt;font color=#85bee0>コンタクト&lt;/font>土田\"&lt;br/>\"中村\"</string>
+    <string name="wcis_driving_mode">ドライブモードのオン・オフを喋って切り替える</string>
+    <string name="wcis_driving_mode_ex">\"&lt;font color=#85bee0>ドライブモードオン&lt;/font>\"&lt;br/>\"&lt;font color=#85bee0>ドライブモードオフ&lt;/font>\"</string>
+    <string name="wcis_email_ex">\"中村健一&lt;font color=#85bee0>にＥメール&lt;/font>\"&lt;br/>\"&lt;font color=#85bee0>Ｅメール&lt;/font> 吉田さん &lt;font color=#85bee0>内容&lt;/font> やってみよう！\"&lt;br/>\"&lt;font color=#85bee0>Ｅメール&lt;/font> さくら &lt;font color=#85bee0>件名&lt;/font> パン焼き&lt;font color=#85bee0>内容&lt;/font> 砂糖はある？\"</string>
+    <string name="wcis_email_speak_punctuation">句読点も話すだけでOK。例えばVlingoに「ごきげんいかがですか&lt;font color=#85bee0>はてなまーく&lt;/font>」と、言うと「ご機嫌いかがですか？」と返してきます。</string>
+    <string name="wcis_local_search_ex">\"&lt;font color=#85bee0>検索&lt;/font>江ノ島近くのジェットスキー\"</string>
+    <string name="wcis_maps_ex">\"御徒町&lt;font color=#85bee0>までナビ&lt;/font>&lt;br/>\"羽田国際空港&lt;font color=#85bee0>まで行く&lt;/font>\"&lt;br/>\"図書館&lt;font color=#85bee0>へ行く&lt;/font>\"&lt;br/>\"所沢市&lt;font color=#85bee0>の地図&lt;/font>\"&lt;br/>\"ダイエー&lt;font color=#85bee0>へのルート検索&lt;/font>\"&lt;br/>\"清水寺&lt;font color=#85bee0>への乗り換え案内&lt;/font>\"&lt;br/>\"国道38号線&lt;font color=#85bee0>への道のり&lt;/font>\"&lt;br/>\"瀬戸川ショッピングセンター&lt;font color=#85bee0>へ向かう&lt;/font>\"</string>
+    <string name="wcis_memo_ex">\"&lt;font color=#85bee0>新しいメモ&lt;/font>今夜中に確定申告を済ます。\"&lt;br/>\"&lt;font color=#85bee0>新規メモ&lt;/font>広島行きの飛行機を探す。\"&lt;br/></string>
+    <string name="wcis_music">音声認識で音楽を再生する</string>
+    <string name="wcis_music_ex">\"&lt;font color=#85bee0>音楽を再生&lt;/font>\"&lt;br/></string>
+    <string name="wcis_music_tip">\"&lt;font color=#85bee0>再生&lt;/font>\"と言えば、最後に再生した音楽を聴くことが出来ます。</string>
+    <string name="wcis_nav_ex">\"京都&lt;font color=#85bee0>の地図&lt;/font>\"&lt;br/>\"日光江戸村&lt;font color=#85bee0>への道順&lt;/font>\"&lt;br/>\"茨城県つくば市&lt;font color=#85bee0>へナビゲート&lt;/font>\"</string>
+    <string name="wcis_openapps_ex">\"&lt;font color=#568ab3>目覚ましを開く&lt;/font>\"&lt;br/>\"&lt;font color=#568ab3>音楽を開く&lt;/font>\"&lt;br/>\"&lt;font color=#568ab3>電卓 起動する&lt;/font>\"</string>
+    <string name="wcis_recordvoice">ボイスレコーダーを起動して録音</string>
+    <string name="wcis_recordvoice_ex">\"&lt;font color=#85bee0>音声の録音&lt;/font>\"&lt;br/>\"&lt;font color=#85bee0>音声の録音&lt;/font>ミーティングについて\"</string>
+    <string name="wcis_schedule_ex">\"&lt;font color=#85bee0>スケジュールを確認&lt;/font>\"</string>
+    <string name="wcis_search_ex">\"&lt;font color=#568ab3>Google検索&lt;/font>。ポルトガルの人口\"&lt;br/>\"ボノボ&lt;font color=#568ab3>を検索&lt;/font>\"&lt;br/>\"札幌の期以降\"</string>
+    <string name="wcis_search_ex_china">\"&lt;font color=#568ab3>Baidu検索&lt;/font>。ポルトガルの人口\"&lt;br/>\"ボノボ&lt;font color=#568ab3>を検索&lt;/font>\"&lt;br/>\"札幌の期以降\"</string>
+    <string name="wcis_sms_ex">\"&lt;font color=#85bee0>テキスト&lt;/font>亮太\"&lt;br/>\"&lt;font color=#85bee0>テキスト&lt;/font>あかね&lt;font color=#85bee0>メッセージ&lt;/font>やあ！\"&lt;br/>\"亮太&lt;font color=#85bee0>にメッセージを送る&lt;/font>&lt;font color=#85bee0>本文&lt;/font>調子どう？\"</string>
+    <string name="wcis_social_facebook">フェイスブック</string>
+    <string name="wcis_social_facebook_ex">\"&lt;font color=#568ab3>フェイスブックの更新&lt;/font>。大丈夫だ、問題ない。\"&lt;br/>\"&lt;font color=#568ab3>フェイスブック&lt;/font>。渋谷なう。あなたは？\"</string>
+    <string name="wcis_social_foursquare">フォースクエア</string>
+    <string name="wcis_social_foursquare_ex">\"スターバックス&lt;font color=#568ab3>にて&lt;/font>。\"&lt;br/>\"&lt;font color=#568ab3>シャウト&lt;/font>。竹下通りで合わない！\"&lt;br/>\"&lt;font color=#568ab3>友達はどこ？&lt;/font>\"</string>
+    <string name="wcis_social_twitter">ツイッター</string>
+    <string name="wcis_social_twitter_ex">\"&lt;font color=#568ab3>ツイッター&lt;/font>を更新する。人間はなんで北を目指しちまったんだろうなあ……。\"&lt;br/>\"&lt;font color=#568ab3>ツイッター&lt;/font>。仕事初日、うまくいきますように。\"</string>
+    <string name="wcis_super_dial_ex">\"&lt;font color=#568ab3>タクシーを呼ぶ&lt;/font>\"&lt;br/>\"上野のステーキ屋&lt;font color=#568ab3>を見つける&lt;/font>\"&lt;br/>\"ピザーラへと&lt;font color=#568ab3>電話する&lt;/font>\"</string>
+    <string name="wcis_super_dial_you_can">\"タクシー&lt;font color=#85bee0>を呼ぶ&lt;/font>\"や\"ピザ&lt;font color=#85bee0>を頼む&lt;/font>\"など、特定の企業やサービスを検索することも出来ます。&lt;br/>&lt;br/>場所を特定しない場合、Vlingoは自動で現在位置の近辺を探してくれます。</string>
+    <string name="wcis_voice_dial_contact_ex">\"ミキ&lt;font color=#568ab3>のケータイにかける&lt;/font>\" &lt;br/>\"吉田&lt;font color=#568ab3>に電話&lt;/font>\"</string>
+    <string name="wcis_voice_dial_tip">また\"&lt;font color=#85bee0>リダイアル&lt;/font>\"と言えば、最後の番号にかけ直すことも出来ます。</string>
+    <string name="wcis_website_ex">\"Google&lt;font color=#85bee0>に移動&lt;/font>\"</string>
+    <string name="wcis_website_ex_china">\"バイドゥ&lt;font color=#85bee0>に移動&lt;/font>\"</string>
+    <string name="who_would_you_like_to_call">誰に電話しますか?</string>
+    <string name="work">職場</string>
+    <string name="car_tts_NAV_NAVIGATING_TO_CONFIRM_DEMAND">%1$sへのナビゲーション</string>
+    <string name="note_to_self_subject">やることリスト</string>
+    <string name="alarm_no_time">時間が指定されていません。</string>
+    <string name="alarm_not_supported">アラーム機能の設定はサポートされていません。</string>
+    <string name="alert_dialog_text_entry_email_or_phone">電子メール アドレスまたは電話番号</string>
+    <string name="alert_dialog_text_entry_password">パスワード</string>
+    <string name="android_core_audio_too_short">音声が短すぎます。 もう一度やり直してください。</string>
+    <string name="android_core_listening">聞き取り中...</string>
+    <string name="android_core_missing_permissions">ボイスコマンド に必要な一部の権限がありません) 方法： %1$s 例： %2$s</string>
+    <string name="android_input_method">入力方法</string>
+    <string name="app_launcher_apps">Apps</string>
+    <string name="app_name">ボイスコマンド</string>
+    <string name="arrays_autodial_always">常時</string>
+    <string name="arrays_autodial_confident">確実な場合</string>
+    <string name="arrays_autodial_never">なし</string>
+    <string name="arrays_interval_five_min">5 分</string>
+    <string name="arrays_interval_ten_min">10 分</string>
+    <string name="arrays_interval_thirty_min">30 分</string>
+    <string name="arrays_interval_two_min">2 分</string>
+    <string name="arrays_security_none">なし</string>
+    <string name="arrays_security_ssl">SSL</string>
+    <string name="arrays_security_tls">TLS</string>
+    <string name="arrays_server_imap">IMAP</string>
+    <string name="arrays_server_popthree">POP3</string>
+    <string name="auto_cap">自動大文字化</string>
+    <string name="auto_complete">オート コンプリート</string>
+    <string name="auto_complete_summary">スペースバーを押して句読点を打つと強調表示した語が自動挿入されます</string>
+    <string name="auto_dial_dialog_contact_name">連絡先名</string>
+    <string name="auto_dial_dialog_dialing">ダイヤル中...</string>
+    <string name="auto_dial_dialog_phone_number_format">(xxx) xxx-xxxx</string>
+    <string name="auto_dial_dialog_type">種類</string>
+    <string name="business_detail_screen_map">地図</string>
+    <string name="cantconnect">"サーバーに接続できません
+
+ ネットワークを確認して、もう一度やり直してください。"</string>
+    <string name="car_app_name_youtube">YouTube</string>
+    <string name="car_call_from">発信元</string>
+    <string name="car_dial_business">会社にダイヤル...</string>
+    <string name="car_easter_egg_uri">http://www.youtube.com/watch?v=fgsFH4W36FQ</string>
+    <string name="car_help">ヘルプ</string>
+    <string name="car_home_header_view_listening">今すぐ話す</string>
+    <string name="car_home_header_view_processing">処理中</string>
+    <string name="car_home_header_view_wait">お待ちください</string>
+    <string name="car_item_answer_answer">答え</string>
+    <string name="car_item_answer_play">再生</string>
+    <string name="car_item_answer_question">質問</string>
+    <string name="car_item_check_schedule_location">場所</string>
+    <string name="car_item_check_schedule_time">時間</string>
+    <string name="car_item_control_buttons_wake_up_command">ウェイクアップ コマンド</string>
+    <string name="car_item_exit_carmode_concert_tickets">コンサート チケット</string>
+    <string name="car_item_exit_carmode_leave_incar">ボイストーク を終了してこの操作を完了しますか?</string>
+    <string name="car_item_exit_carmode_web_search">Web 検索...</string>
+    <string name="car_item_memo_saving">保存中...</string>
+    <string name="car_item_nav_list_item_choice">選択肢</string>
+    <string name="car_item_phone_type_mobile">携帯</string>
+    <string name="car_item_phone_type_phone_ex">617.627.5555</string>
+    <string name="car_item_safereader_main_speak_incoming">受信メッセージの読み上げ</string>
+    <string name="car_item_safereader_message_sender">送信者</string>
+    <string name="car_item_sms_message_msg">メッセージ:</string>
+    <string name="car_item_sms_recent_time_ex">2 分前</string>
+    <string name="car_item_sms_sending_sending">送信中...</string>
+    <string name="car_item_vd_autodial_calling">呼び出し中</string>
+    <string name="car_iux_bluetooth_note">Bluetooth に関するメモ</string>
+    <string name="car_iux_continue">続行</string>
+    <string name="car_iux_download_now">今すぐダウンロード</string>
+    <string name="car_iux_item_spotter_double_tap">ホームキーを二回クリックするかヘッドセットボタンを押すことでボイストークを起動することも出来ます。</string>
+    <string name="car_iux_item_spotter_fouroffour">4/4</string>
+    <string name="car_iux_item_spotter_get_started">はじめに</string>
+    <string name="car_iux_item_spotter_long_press">ホームキーのダブルクリックでボイストーク を起動す ることも出 来ます。</string>
+    <string name="car_iux_item_spotter_might_drain">メモ: この操作はバッテリーを消費します</string>
+    <string name="car_iux_item_spotter_when_you_see">このアイコンが表示された場合</string>
+    <string name="car_iux_item_tips_instructions">"1) 発信音が聞こえたらお話しください。
+
+2) 高品質の Bluetooth ヘッドセットを装着している場合以外は、電話に向かって直接話してください。
+
+3) ホーム画面の [タップして話す] ボタンをショートカットとして使用して、言いたいことを何でも話してください。"</string>
+    <string name="car_iux_item_tips_threeofthree">3/3</string>
+    <string name="car_iux_item_tips_tips">ヒント</string>
+    <string name="car_iux_item_welcome_oneofthree">1/3</string>
+    <string name="car_iux_item_welcome_vlingo_is">ボイストーク は活動中に電話を使用するための新しく安全な方法です。初回設定時、&lt;font color=#8fc6ff>左にスクロールすると&lt;/font>、ヒントが表示されます。</string>
+    <string name="car_iux_item_welcome_welcome">ようこそ</string>
+    <string name="car_iux_item_wycs_instructions">画面下の青い [タップして話す] ボタンを押し、ご希望のアクションを話して下さい。</string>
+    <string name="car_iux_item_wycs_twoofthree">2/3</string>
+    <string name="car_iux_item_wycs_using_vlingo">ボイスコマンド の使用方法</string>
+    <string name="car_iux_item_wycs_using_zero">ボイストーク の使用方法</string>
+    <string name="car_iux_later">後で</string>
+    <string name="car_iux_missing_speech">Speech Pack がありません</string>
+    <string name="car_iux_need_froyo">申し訳ありませんが Android 2.1 では Bluetooth ヘッドセットからアプリケーションで音声を聞くことができません。 ヘッドセットを使用して ボイスコマンド に話す場合は、OS をバージョン 2.2 以降(Froyo) にアップグレードしてください。</string>
+    <string name="car_iux_need_speech_synth">ボイストーク を使用するには、Market から Speech Synthesis 言語パックをダウンロードする必要があります。</string>
+    <string name="car_iux_ok">OK</string>
+    <string name="car_iux_oops">エラー</string>
+    <string name="car_iux_setting_up">設定中...</string>
+    <string name="car_leave_vlingo">。ボイストークを終了して操作を完了しますか?</string>
+    <string name="car_mms_subj_empty_header">件名が空です</string>
+    <string name="car_mms_subject_empty_tts">件名が空です。</string>
+    <string name="car_msg_email">電子メール...</string>
+    <string name="car_msg_local_search">ローカル検索...</string>
+    <string name="car_msg_open">開く...</string>
+    <string name="car_nav_address_blank">住所が空白です</string>
+    <string name="car_nav_address_saved">住所が保存されました</string>
+    <string name="car_nav_alert_dialog_enter_address">自宅の住所を入力してください</string>
+    <string name="car_nav_enter_home">自宅の住所を入力してください</string>
+    <string name="car_nav_go">進む</string>
+    <string name="car_nav_go_home">ホームへ戻る</string>
+    <string name="car_nav_home_confirm">自宅の住所を入力してください</string>
+    <string name="car_nav_where_to_go">どこに行きますか?</string>
+    <string name="car_safereader_easter_egg_trigger">話し相手は誰ですか?</string>
+    <string name="car_safereader_hidden_message_body">メッセージ本文が非表示です。</string>
+    <string name="car_safereader_hidden_message_subject">メッセージの件名が非表示です。</string>
+    <string name="car_safereader_no_messages">受信トレイにメッセージがありません</string>
+    <string name="car_server_connect_fail">申し訳ありませんがサーバーに接続できません。 もう一度やり直してください</string>
+    <string name="car_sms_menu_edit">編集</string>
+    <string name="car_sms_message_empty_tts">メッセージが空です。</string>
+    <string name="car_sms_message_tts">メッセージ</string>
+    <string name="car_sms_msg_colon_header">メッセージ:</string>
+    <string name="car_sms_msg_empty_header">メッセージが空です。</string>
+    <string name="car_sms_no_favorites">お気に入りの連絡先がありません。 どうぞ追加してください。</string>
+    <string name="car_sms_no_recent_msgs">最近受信したメッセージはありません。</string>
+    <string name="car_sms_open_sms_app_dialog">SMS アプリケーションで開きますか?</string>
+    <string name="car_sms_radio_off">電話無線がオフのようです。</string>
+    <string name="car_sms_speak_msg_tts">。メッセージを話してください。</string>
+    <string name="car_sms_to_tts">へ</string>
+    <string name="car_sr_msg_readback">メッセージリードバック</string>
+    <string name="car_tts_BLUETOOTH_OFF">"Blue Tooth 'オフ'。"</string>
+    <string name="car_tts_BLUETOOTH_ON">"Blue Tooth 'オン'。"</string>
+    <string name="car_tts_email">電子メール</string>
+    <string name="car_tts_ERROR_OCCURRED">申し訳ありませんがもう一度やり直してください</string>
+    <string name="car_tts_HOME_PROMPT_DEFAULT">何をしますか?</string>
+    <string name="car_tts_KEYWORD_SPOT_OFF_BRIEF_DEMAND">"ウェイクアップ単語検出 'オフ'。"</string>
+    <string name="car_tts_KEYWORD_SPOT_ON_BRIEF_DEMAND">"ウェイクアップ単語検出 'オン'。"</string>
+    <string name="car_tts_local_search">ローカル検索</string>
+    <string name="car_tts_MEMO_PROMPT">なんとお書きしますか？</string>
+    <string name="car_tts_MESSAGES_NO_UNREAD">未読メッセージはありません。</string>
+    <string name="car_tts_NAV_PROMPT_DEMAND">どこに行きますか?</string>
+    <string name="car_tts_NO_MATCH_DEMAND">一致する連絡先がありません</string>
+    <string name="car_tts_PHONE_NO_MATCH_DEMAND">一致する連絡先がありません</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_FROM">新しいメッセージです。</string>
+    <string name="car_tts_SAFEREADER_NEW_SMS_FROM_INTRO">新着メッセージの差出人 %1$s</string>
+    <string name="car_tts_safereader_speak_reply">返信を話してください。</string>
+    <string name="car_tts_SCHEDULE_NO_EVENTS_TODAY">今日はこれ以上イベントがありません。</string>
+    <string name="car_tts_SMS_MESSAGE_BLANK_DEMAND">メッセージが空です。 メッセージを話してください。</string>
+    <string name="car_tts_SMS_MESSAGE_FROM">メッセージ</string>
+    <string name="car_tts_SMS_REPLY">返信</string>
+    <string name="car_tts_SMS_SAY_MESSAGE">メッセージを話してください。</string>
+    <string name="car_tts_SMS_SAY_MESSAGE_CONFIRM_DEMAND">メッセージを話してください</string>
+    <string name="car_tts_SMS_SAY_MESSAGE_CONFIRM_DEMAND_DOT">%1$s. メッセージを話してください</string>
+    <string name="car_tts_STARTUP_PROMPT_DEFAULT">ボイストーク</string>
+    <string name="car_tts_STARTUP_PROMPT_DEFAULT_SAMSUNG">ボイストーク</string>
+    <string name="car_tts_TASK_CANCELLED">はい、キャンセルしました。</string>
+    <string name="car_tts_VD_CALLING_CONFIRM_DEMAND">発信します。</string>
+    <string name="car_tts_VD_CALLING_TO_CONFIRM_DEMAND">発信します,へ%1$s</string>
+    <string name="car_tts_VD_CALLING_TO_TYPE_CONFIRM_DEMAND">発信します,へ%1$s%2$s</string>
+    <string name="car_tts_VD_CHOOSE_TYPE_DEMAND">電話番号を選択してください</string>
+    <string name="car_tts_VD_MULTIPLE_CONTACTS_DEMAND">複数の連絡先が一致しました。</string>
+    <string name="car_tts_VD_MULTIPLE_TYPES_DEMAND">複数の電話番号</string>
+    <string name="car_tts_VD_NO_MATCHING_TYPE">一致するタイプがありません。 もう一度やり直してください。</string>
+    <string name="car_tts_web_search">Web 検索</string>
+    <string name="car_unsupported_action">この操作はサポートされていません。 もう一度やり直してください。</string>
+    <string name="car_util_loading">読み込み中...</string>
+    <string name="car_voicedial_multiple">複数の %1$s 番号が見つかりました。 使用する番号をクリックしてください。</string>
+    <string name="car_voicedial_no_recent_called">最近電話した連絡先はありません。</string>
+    <string name="car_voicedial_or">または</string>
+    <string name="car_voicedial_recobutton_voice_dial">音声ダイヤル</string>
+    <string name="car_voicedial_which">どの %1$s を %2$s したいですか？</string>
+    <string name="car_vvs_handlers_home_spoken">ホーム</string>
+    <string name="car_vvs_handlers_open_tts">開く %1$s</string>
+    <string name="checkEventTitleTimeDetail">におけるタイトル%1$s%2$s</string>
+    <string name="checkEventYouHave">新規\"\"があります</string>
+    <string name="client_core_connecting">接続中...</string>
+    <string name="client_core_initializing">初期化中...</string>
+    <string name="client_core_network_busy">デバイス ネットワークがビジーです。 少し待ってからもう一度やり直してください。</string>
+    <string name="client_core_RECOGNITION_ABORTED">認識が停止しました。 もう一度やり直してください。</string>
+    <string name="client_core_RECORDED_MAX">一度に聞き取れる音声は 50 秒までです。 ここまでの音声を認識しています。</string>
+    <string name="client_core_RECORDER_ERROR">録音できません。 もう一度やり直してください。</string>
+    <string name="client_core_thinking">考え中...</string>
+    <string name="client_core_TOO_LONG">メッセージが長すぎました。もう少し短い台詞で再度やり直してください。</string>
+    <string name="client_core_TOO_SHORT1">音声が短すぎます。 もう一度やり直してください。</string>
+    <string name="client_core_TOO_SHORT2">サイド キーを押したまま話してください。 終わったらキーを離してください。 もう一度やり直してください。.</string>
+    <string name="client_core_UNKNOWN_STATE">状態が不明です%1$s</string>
+    <string name="concat_for">%1$s の</string>
+    <string name="concat_for_nbsp">%1$sの</string>
+    <string name="concat_to">へ%1$s</string>
+    <string name="concat_to_nbsp">へ%1$s</string>
+    <string name="concat_to_nbsp_2">へ%1$s%2$s</string>
+    <string name="contact_top_choice_detail_item_other_choices">その他のオプション</string>
+    <string name="contact_top_choice_item_no_match">該当なし</string>
+    <string name="contact_top_choice_item_top_choice">トップオプション</string>
+    <string name="contacts_available_choices">使用可能な選択肢:</string>
+    <string name="contacts_choose_contact">連絡先を選択</string>
+    <string name="contacts_email_space">電子メール</string>
+    <string name="contacts_no_match_openquote">"%1$s'に一致するものがありません"</string>
+    <string name="contacts_no_matching_contact">一致する連絡先がありません</string>
+    <string name="contacts_other_choices_openparen">その他の選択肢 (%1$s)</string>
+    <string name="did_you_know">便利な使い方</string>
+    <string name="done">完了</string>
+    <string name="email_account_add_manual_add_account">電子メール アカウントの追加</string>
+    <string name="email_account_add_manual_email_address">電子メール アドレス</string>
+    <string name="email_account_add_manual_port">ポート</string>
+    <string name="email_account_add_manual_security_type">セキュリティの種類</string>
+    <string name="email_account_add_manual_server_address">サーバー アドレス</string>
+    <string name="email_account_add_manual_server_details">サーバーの詳細</string>
+    <string name="email_account_add_manual_username">ユーザー名</string>
+    <string name="email_account_detail_view_delete_account">アカウントの削除</string>
+    <string name="email_account_detail_view_speak_email">このアカウントの電子メールを話す</string>
+    <string name="email_account_list_accounts">アカウント</string>
+    <string name="english_ime_name">ボイスコマンド キーボード</string>
+    <string name="english_ime_settings">ボイスコマンド キーボード設定</string>
+    <string name="examples">例</string>
+    <string name="favorites">お気に入り</string>
+    <string name="fifth_space">5回目の</string>
+    <string name="first_space">1回目の</string>
+    <string name="fourth_space">4回目の</string>
+    <string name="handlers_select_email_recipient">電子メール受信者の選択</string>
+    <string name="handlers_select_message_recipient">メッセージ受信者の選択</string>
+    <string name="handlers_send_email_to_tts">電子メール送信先</string>
+    <string name="handlers_send_email_tts">電子メール送信</string>
+    <string name="handlers_send_message_to_tts">メッセージ送信先</string>
+    <string name="handlers_send_message_tts">メッセージを送信</string>
+    <string name="handlers_social_update">更新情報</string>
+    <string name="handlers_subject_space_tts">件名</string>
+    <string name="help_about_copyright">(c)2011 Vlingo Corporation</string>
+    <string name="help_about_privacy">プライバシー ポリシー</string>
+    <string name="help_about_terms">サービス条件</string>
+    <string name="help_about_vlingo">ボイスコマンド バージョン情報</string>
+    <string name="help_about_wakeup_powered_by">Wake-up word powered by:</string>
+    <string name="help_bluetooth_audio_reqs">ボイスコマンド で Bluetooth ヘッドセットから音声を再生するには、A2DP がサポートされており、Android OS 2.1 以降を使用する必要があります。</string>
+    <string name="help_bluetooth_crashes">クラッシュする場合</string>
+    <string name="help_bluetooth_froyo_bug">Bluetooth ヘッドセットを外すと電話がクラッシュすることがある場合、一部の電話の Android 2.2 OS のバグが原因です。 この問題が生じる場合は、Bluetooth をオフにすることができます(ボイスコマンド の [設定] &amp;gt [詳細設定])。</string>
+    <string name="help_bluetooth_info">ボイスコマンド は命令を聞き取り、Bluetooth ヘッドセットから返事をします。 ほとんどのヘッドセットで正常に機能しますが、数点注意すべきことがあります。</string>
+    <string name="help_bluetooth_issues">Bluetooth に関する問題</string>
+    <string name="help_bluetooth_need_froyo">お使いのヘッドセットから ボイスコマンド に話しかけられるようにするには、Android OS 2.2 (Froyo) 以降が必要です。</string>
+    <string name="help_bluetooth_no_audio">音声が聞こえない場合</string>
+    <string name="help_bluetooth_not_recording">録音されない場合</string>
+    <string name="help_bt_help">Bluetooth ヘルプ</string>
+    <string name="help_btn_privacy_uri">http://www.vlingo.com/wap/privacy/ja</string>
+    <string name="help_btn_tos_uri">http://www.vlingo.com/wap/terms/ja</string>
+    <string name="help_menu1">ボイスコマンド の使用方法</string>
+    <string name="help_menu2">ボイストーク の使用方法</string>
+    <string name="help_menu3">キーボード設定</string>
+    <string name="help_menu4">ショートカット</string>
+    <string name="help_menu5">Bluetooth に関する問題</string>
+    <string name="help_menu6">オンライン サポート</string>
+    <string name="help_menu7">設定</string>
+    <string name="help_menu8">バージョン情報</string>
+    <string name="help_menu9">ボイスコマンド の秘密</string>
+    <string name="help_setup_keyboard_add_microphone">マイク ボタンをキーボードに追加します。</string>
+    <string name="help_setup_keyboard_check">ボイスコマンド キーボードの確認</string>
+    <string name="help_setup_keyboard_enable">1) ボイスコマンド キーボードを有効にします。</string>
+    <string name="help_setup_keyboard_open_chooser">キーボード セレクターを開きます。</string>
+    <string name="help_setup_keyboard_open_settings">[設定] 画面を開きます。</string>
+    <string name="help_setup_keyboard_select">ボイスコマンド キーボードを選択</string>
+    <string name="help_setup_keyboard_speak_anywhere">キー入力できる場所で話します。</string>
+    <string name="help_setup_keyboard_switch">2) ボイスコマンド キーボードに切り替えます。</string>
+    <string name="help_setup_keyboard_tap_below">下をタップして、キーボード セレクターを開きます。</string>
+    <string name="help_setup_keyboard_tap_to_open">下をタップして、電話の設定画面を開きます。</string>
+    <string name="help_shortcuts_add_shortcut">ボイスコマンド をホーム画面に追加します。</string>
+    <string name="help_shortcuts_choose_widgets">2) ポップアップで [ウィジェット] を選択します。</string>
+    <string name="help_shortcuts_long_press">1) ホーム画面の任意の空白領域を押したままにします。</string>
+    <string name="help_shortcuts_scroll_select">3) スクロールして、ボイスコマンド ウィジェットを1つ選択します。</string>
+    <string name="help_shortcuts_search_key">電話に検索キーがある場合は、キーを押したままにしてボイスコマンド を有効にすることができます。</string>
+    <string name="help_shortcuts_vlingo_search">検索キーで ボイスコマンド を使用します。</string>
+    <string name="help_subtext1">基本</string>
+    <string name="help_subtext2">ボイストーク ヒント</string>
+    <string name="help_subtext3">キー入力できる場所で話します。</string>
+    <string name="help_subtext4">ボイスコマンド に高速アクセス</string>
+    <string name="help_subtext5">ヘッドセットのトラブル</string>
+    <string name="help_subtext6">問題が解決しない場合は ヘルプを利用</string>
+    <string name="help_subtext7">ボイスコマンド の動作変更</string>
+    <string name="help_subtext8">法的情報とバージョン情報</string>
+    <string name="help_using_vlingo_example">例:「&lt;font color=#85bee0>テキストを送る&lt;/font>田中さん&lt;font color=#85bee0>メッセージ&lt;/font>夕食はいかが？」</string>
+    <string name="help_using_vlingo_keyboard">ボイスコマンドキーボードで</string>
+    <string name="help_using_vlingo_listen_to_new">新しい通知を聞き取ります。</string>
+    <string name="help_using_vlingo_secrets_commands">コマンドを覚える必要はありません。ボイスコマンドは様々な言い回しを理解してくれます。「メッセージを送る」「テキスト」「SMS……」意味が通じる台詞を何でも言ってみましょう。</string>
+    <string name="help_using_vlingo_secrets_flexible">ボイスコマンド は臨機応変...</string>
+    <string name="help_using_vlingo_secrets_punctuation">自動句読点...</string>
+    <string name="help_using_vlingo_secrets_recognition">ボイスコマンド は使いこむほど、音声認識の精度が高まります。 ボイスコマンド はあなたの発音やあなたがよく使用する単語、表現を学習することで、時間と共にあなたに適合して行きます。</string>
+    <string name="help_using_vlingo_secrets_vlingo_learns">学習する ボイスコマンド...</string>
+    <string name="help_using_vlingo_speak">話して用事を足す</string>
+    <string name="help_using_vlingo_speak_anywhere">キー入力できる場所で話します。</string>
+    <string name="help_using_vlingo_type_instead">話さずにキー入力する</string>
+    <string name="help_using_vlingo_with_vlingo">ボイスコマンドキーボードで</string>
+    <string name="help_version">バージョン</string>
+    <string name="help_wcis_contact">連絡先</string>
+    <string name="help_wcis_dial">音声ダイヤル</string>
+    <string name="help_wcis_email">電子メール</string>
+    <string name="help_wcis_hotel">ホテル予約</string>
+    <string name="help_wcis_hotel_sub1">東京で日曜日に泊まる&lt;font color=#85bee0>ホテルを検索する&lt;/font></string>
+    <string name="help_wcis_local_search">ローカル検索</string>
+    <string name="help_wcis_maps">地図</string>
+    <string name="help_wcis_movie">映画チケット</string>
+    <string name="help_wcis_movie_sub1">ハリーポッターの&lt;font color=#85bee0>映画チケットを購入する&lt;/font></string>
+    <string name="help_wcis_open_applications">アプリケーションを開く</string>
+    <string name="help_wcis_open_apps">アプリケーションを開く</string>
+    <string name="help_wcis_schedule">スケジュール</string>
+    <string name="help_wcis_search">検索</string>
+    <string name="help_wcis_social">ソーシャル</string>
+    <string name="help_wcis_super_dial">スーパー ダイヤル</string>
+    <string name="help_wcis_superdialer">SuperDialer</string>
+    <string name="help_wcis_text_message">メッセージ</string>
+    <string name="help_wcis_web_search">Web 検索</string>
+    <string name="home_activation_failed">Vlingo 有効化サーバーに接続できません。 ネットワークを確認して、もう一度やり直してください。</string>
+    <string name="home_activation_url">http://www.vlingo.com/</string>
+    <string name="home_check_activation">有効化ステータスの確認</string>
+    <string name="home_checking_activation">有効化ステータスを確認中...</string>
+    <string name="home_enter_code">有効化コードを入力してください</string>
+    <string name="home_hint_first_time_examples">左にスライドすると例が表示されます >></string>
+    <string name="home_hint_first_time_vlingo_learns">ボイスコマンド は学習します。 時間と共に精度が向上します。</string>
+    <string name="home_hint_first_time_welcome">ボイスコマンドへようこそ！</string>
+    <string name="home_hint_item_empty">空</string>
+    <string name="home_hint_needs_activation">ボイスコマンド を有効にして使用を開始してください。</string>
+    <string name="home_hint_needs_activation_activate">ボイスコマンド を有効にする</string>
+    <string name="home_please_activate">ボイスコマンド を有効にして使用を開始してください。</string>
+    <string name="home_setup_email">電子メールの設定</string>
+    <string name="hotel_hint1">名古屋市の&lt;font color=#85bee0>ホテルを探す&lt;/font></string>
+    <string name="hotel_hint2">京都 竜安寺の近くにある&lt;font color=#85bee0>ホテルを探す&lt;/font></string>
+    <string name="hotel_hint3">金曜の夜、江ノ島近辺の&lt;font color=#85bee0>空室を検索&lt;/font></string>
+    <string name="hotel_hint4">土曜日に空いている福岡の&lt;font color=#85bee0>ホテルを探す&lt;/font></string>
+    <string name="incar">ボイストーク</string>
+    <string name="incar_icon">ボイストーク</string>
+    <string name="invite_all_contacts">すべての連絡先</string>
+    <string name="invite_choose_contacts">招待する連絡先を下から選択する</string>
+    <string name="invite_contact_selected">連絡先が選択されました</string>
+    <string name="invite_contacts_selected">連絡先が選択されました</string>
+    <string name="invite_downloading_link">招待リンクをダウンロードしています...</string>
+    <string name="invite_error">次の相手への招待状の送信中に何かが起きました</string>
+    <string name="invite_getting_link">リンクを取得中...</string>
+    <string name="invite_hold_on">この処理には少し時間がかかりますのでお待ちください。</string>
+    <string name="invite_invite_sent">招待状を送信しました</string>
+    <string name="invite_invites_sent">招待状を送信しました</string>
+    <string name="invite_no_contacts">連絡先がありません。 ぜひ追加してください。</string>
+    <string name="invite_no_name">名前がありません</string>
+    <string name="invite_one_sec">ちょっと...</string>
+    <string name="invite_please_wait">お待ちください</string>
+    <string name="invite_radio_off">電話無線がオフのようです。</string>
+    <string name="invite_recently_texted">最近テキストメッセージを送信した連絡先</string>
+    <string name="invite_request_failed">要求は失敗しました。 もう一度やり直してください</string>
+    <string name="invite_request_timeout">要求はタイムアウトしました。 もう一度やり直してください。</string>
+    <string name="invite_screen_choose_parties">招待する連絡先を下から選択する</string>
+    <string name="invite_screen_send_invite">招待状の送信</string>
+    <string name="invite_sending">送信中...</string>
+    <string name="invite_sending_invites">招待状を送信中</string>
+    <string name="invite_TAF_FALLBACK_DOWNLOAD_URL">http://www.vlingo.com/vlingo/go?r=21</string>
+    <string name="invite_url_retrieve_fail">招待状の url の取得時に問題が発生しました。 もう一度やり直してください</string>
+    <string name="invite_vlingo_pitch">言葉を行動に変える無料音声アプリ、ボイスコマンド をチェックしよう。 ここをクリック</string>
+    <string name="iux_howto_voicetogo">Samsung 音声の使用方法</string>
+    <string name="iux_using_vlingo_finish">完了</string>
+    <string name="iux_using_vlingo_go_handsfree">完全ハンズフリー</string>
+    <string name="iux_using_vlingo_with_incar">ボイストークで</string>
+    <string name="iux_welcome_anthem">電話に話しかけて用事を済ませましょう。</string>
+    <string name="iux_welcome_talk_to_phone">電話に話しかけて用事を済ませましょう。</string>
+    <string name="joe">Joe</string>
+    <string name="joe_pirone">Joe Pirone</string>
+    <string name="label_done_key">完了</string>
+    <string name="label_go_key">進む</string>
+    <string name="launchhandler_appnotsupported">アプリケーションがインストールされていません。 もう一度やり直してください。</string>
+    <string name="launchhandler_appnotsupported_noretry">アプリケーションがインストールされていません。</string>
+    <string name="line1">1 行目</string>
+    <string name="line2">2 行目</string>
+    <string name="local_search_listing_detail_screen_description">説明</string>
+    <string name="local_search_listing_detail_screen_powered_by">Powered by</string>
+    <string name="local_search_listing_detail_screen_sponsored">スポンサード リスティング</string>
+    <string name="local_search_listing_detail_screen_web">Web</string>
+    <string name="localsearch_no_number">使用可能な電話番号がありません</string>
+    <string name="localsearch_no_web_address">使用可能な Web アドレスがありません</string>
+    <string name="localsearch_reviews">レビュー</string>
+    <string name="localsearch_service_miles_abbrev">mi</string>
+    <string name="localsearch_space_review">レビュー</string>
+    <string name="location">場所</string>
+    <string name="memo_layout_speak_button">話す</string>
+    <string name="movie_hint1">星守る犬の&lt;font color=#85bee0>映画チケット&lt;/font></string>
+    <string name="movie_hint2">パイレーツ・オブ・カリビアンの&lt;font color=#85bee0>映画チケット&lt;/font></string>
+    <string name="movie_hint3">渋谷で「プリンセストヨトミ」の&lt;font color=#85bee0>映画チケットを購入する。&lt;/font></string>
+    <string name="movie_hint4">東京都新宿区でブラック・スワンの&lt;font color=#85bee0>映画チケットを購入する。&lt;/font></string>
+    <string name="new_features_action_bar">3) アクションバー</string>
+    <string name="new_features_action_bar_body">それでは話す代わりにリクエストを入力してください。</string>
+    <string name="new_features_action_bar_ex">詳細については、[音声操作の項目]ボタンを押してください。</string>
+    <string name="new_features_hotel_body">ホテル名や場所を言うことでホテルを検索することができます。</string>
+    <string name="new_features_hotel_reservations">1) ホテル予約</string>
+    <string name="new_features_movie_body">近くで何が上映されているか、映画を検索して映画チケットを購入することができます。</string>
+    <string name="new_features_movie_tickets">2) 映画チケット</string>
+    <string name="new_features_title">新機能</string>
+    <string name="no_network">ネットワークを確認して、もう一度やり直してください。</string>
+    <string name="nofify_safereader_on_body">新しいメッセージは読み上げられます。</string>
+    <string name="ok_lc">OK</string>
+    <string name="ok_uc">OK</string>
+    <string name="opening_translate_app">翻訳アプリケーションを開いています。</string>
+    <string name="phone_type_prompt">% の s へ</string>
+    <string name="phone_type_prompt_2">話してください</string>
+    <string name="popular_domain_0">.com</string>
+    <string name="popular_domain_1">.net</string>
+    <string name="popular_domain_2">.org</string>
+    <string name="popular_domain_3">.gov</string>
+    <string name="popular_domain_4">.edu</string>
+    <string name="prediction">単語のサジェスト</string>
+    <string name="prediction_category">単語のサジェスト設定</string>
+    <string name="previous">前へ</string>
+    <string name="processing">処理中...</string>
+    <string name="progress_dialog_getting_ready">準備中...</string>
+    <string name="progress_screen_button_go">実行</string>
+    <string name="prompt_dial_subheading">連絡先に電話</string>
+    <string name="prompt_memo_ex1">書きたいことを話してください</string>
+    <string name="prompt_memo_subheading">メモを作成する</string>
+    <string name="prompt_nav_subheading">道順を探す</string>
+    <string name="prompt_sms_subheading">テキストメッセージ</string>
+    <string name="quick_fixes">クイック修正</string>
+    <string name="quick_fixes_summary">間違いの多い入力を訂正します</string>
+    <string name="radio_player_not_supported">ラジオ プレーヤーはサポートされていません。</string>
+    <string name="recent">最近</string>
+    <string name="reco_error_0">要求の処理ができません。 もう一度やり直してください。</string>
+    <string name="reco_error_1">ネットワーク操作はタイムアウトしました。 もう一度やり直してください。</string>
+    <string name="reco_error_10">ボイストークをご利用なさるには、利用規約に同意して頂く必要があります。</string>
+    <string name="reco_error_11">操作は停止されました。 もう一度やり直してください。</string>
+    <string name="reco_error_12">通話中は音声認識が御使用頂けません。</string>
+    <string name="reco_error_2">ネットワーク エラーです。 もう一度やり直してください。</string>
+    <string name="reco_error_3">聞こえませんでした。 もう一度話してください。</string>
+    <string name="reco_error_4">サーバー エラーです。 もう一度やり直してください。</string>
+    <string name="reco_error_5">予期せぬクライアント エラーです。</string>
+    <string name="reco_error_6">聞こえませんでした。 もう一度話してください。</string>
+    <string name="reco_error_7">分かりませんでした。 分かりやすくお話しください。</string>
+    <string name="reco_error_8">認識サービスがビジーです。 もう一度やり直してください。</string>
+    <string name="reco_error_9">話し方が早すぎます。 もう一度やり直してください。</string>
+    <string name="recordVoiceNotSupported">音声録音が電話にサポートされていません。</string>
+    <string name="redialing">リダイヤル中</string>
+    <string name="request_timeout">"要求のタイムアウト
+
+ ネットワークを確認して、もう一度やり直してください。"</string>
+    <string name="safereader_blank_message">空白メッセージ</string>
+    <string name="safereader_body">本文：</string>
+    <string name="safereader_email_too_large">電子メールが大きすぎます。</string>
+    <string name="safereader_notif_reading_title">読み上げ中: スキップするにはクリックしてください。</string>
+    <string name="safereader_notif_title">新しいメッセージは読み上げられます</string>
+    <string name="safereader_notif_title_silenced">着信音がサイレントです</string>
+    <string name="safereader_notification_main_removing">30 秒以内に削除</string>
+    <string name="safereader_re">RE:</string>
+    <string name="safereader_re_lowercase">re:</string>
+    <string name="safereader_reading_message">メッセージを読み取り中</string>
+    <string name="safereader_removing_in">削除（　　）以内</string>
+    <string name="safereader_replay">再生</string>
+    <string name="safereader_space_seconds">秒以内</string>
+    <string name="safereader_speak_reply">「返信」と話してください</string>
+    <string name="safereader_subj">件名：</string>
+    <string name="safereader_text_space">テキスト</string>
+    <string name="samsung_car_help_continue">続行</string>
+    <string name="samsung_car_help_setting_up">設定中...</string>
+    <string name="samsung_powered_by_vlingo">Powered by Vlingo</string>
+    <string name="samsung_schedule_all_day">すべての日。</string>
+    <string name="samsung_schedule_at">%1$sにて</string>
+    <string name="samsung_schedule_event">%1$s のイベント</string>
+    <string name="samsung_schedule_from">から</string>
+    <string name="samsung_schedule_to">へ</string>
+    <string name="samsung_schedule_with">%1$sと</string>
+    <string name="schedule">スケジュール</string>
+    <string name="sdial_screen_contacts">連絡先</string>
+    <string name="search_hint">Vlingo アクションバー</string>
+    <string name="search_hint1">マンチェスター ユナイテッド スケジュール</string>
+    <string name="search_hint2">ポルトガルの人口</string>
+    <string name="search_hint3">大阪市の天気</string>
+    <string name="search_hint4">メキシコのリゾート</string>
+    <string name="search_label">Vlingo</string>
+    <string name="searchable_button_title">進む</string>
+    <string name="second_space">（　）秒</string>
+    <string name="setting_alarm">アラームの設定</string>
+    <string name="settings_add_account">アカウントの追加</string>
+    <string name="settings_advanced_autopunc_summary">必要に応じて句読点を自動挿入します</string>
+    <string name="settings_advanced_autopunc_title">自動句読点</string>
+    <string name="settings_advanced_BTlisten_summary">コマンドには接続されたBluetoothヘッドセットを使用する</string>
+    <string name="settings_advanced_BTlisten_title">Bluetooth で聞き取り</string>
+    <string name="settings_advanced_useloc_summary">現在の場所を使用して精度を高めます</string>
+    <string name="settings_advanced_useloc_title">場所を使用</string>
+    <string name="settings_auto_start_listening_summary">ボイスコマンド が開くとすぐに聞き取りを開始します</string>
+    <string name="settings_auto_start_listening_title">聞き取りの自動開始</string>
+    <string name="settings_autodial_dialogtitle">自動ダイヤル</string>
+    <string name="settings_autodial_summary">自動ダイヤルの動作</string>
+    <string name="settings_autodial_title">自動ダイヤル</string>
+    <string name="settings_AutoPunctuation">自動句読点</string>
+    <string name="settings_click_to_login">クリックするとログインできます</string>
+    <string name="settings_configure_home_address">住所の設定</string>
+    <string name="settings_default_support_url">http://vlingo-ja.custhelp.com/app/home/p/180</string>
+    <string name="settings_email_accounts">電子メール アカウント</string>
+    <string name="settings_email_confirm_delete">削除の確認</string>
+    <string name="settings_email_confirm_delete_msg">このアカウントを削除しますか?</string>
+    <string name="settings_email_disabled">無効</string>
+    <string name="settings_email_enabled">有効</string>
+    <string name="settings_email_err">エラー</string>
+    <string name="settings_email_err_access_fail">申し訳ありませんが、電子メール アカウントにアクセスできませんでした。 詳細を確認して、もう一度やり直してください。</string>
+    <string name="settings_email_err_account_exists">申し訳ありませんが、その電子メール アカウントは既に存在します。</string>
+    <string name="settings_email_err_unknown">不明なエラーが発生しました</string>
+    <string name="settings_email_please_wait">お待ちください...</string>
+    <string name="settings_email_verifying_settings">電子メール設定を検証中...</string>
+    <string name="settings_EnableAudioFileLog">オーディオ ファイル ログを有効にする</string>
+    <string name="settings_EnableServerLog">サーバー ログを有効にする</string>
+    <string name="settings_EnableTimingLog">タイミング ログを有効にする</string>
+    <string name="settings_general">全般</string>
+    <string name="settings_incar_autolisten_summary">「確認」と言った後で自動的に聞き取りを開始します</string>
+    <string name="settings_incar_autolisten_title">自動聞き取り</string>
+    <string name="settings_incar_autostart_speakerphone_summary">ボイストーク で通話をするときはスピーカーフォンのスイッチを入れてください</string>
+    <string name="settings_incar_autostart_speakerphone_title">スピーカーフォンの自動開始</string>
+    <string name="settings_incar_BTlanuch_summary">Bluetooth ヘッドセット接続時に常に ボイストーク を起動します</string>
+    <string name="settings_incar_BTlaunch_title">Bluetooth を起動</string>
+    <string name="settings_incar_customprompt_summary">何をしますか?</string>
+    <string name="settings_incar_customprompt_title">主なプロンプトのカスタマイズ</string>
+    <string name="settings_incar_homeaddress_summary">住所の設定</string>
+    <string name="settings_incar_homeaddress_title">自宅住所</string>
+    <string name="settings_incar_homescreen">全般</string>
+    <string name="settings_incar_motion_summary">ボイストーク が聞き取りを開始できるようにジェスチャーを設定してください。</string>
+    <string name="settings_incar_motion_title">動作</string>
+    <string name="settings_incar_navigation">ナビゲーション</string>
+    <string name="settings_incar_onwhilecharging_summary">電話の充電中のみウェイクアップ コマンドをオンにします</string>
+    <string name="settings_incar_onwhilecharging_title">充電中のみ</string>
+    <string name="settings_incar_prompt_after_title">読み上げ後にプロンプト</string>
+    <string name="settings_incar_speakanswers_summary">あなたの疑問に音声で回答します。例えば「一マイルって何フィート？」と聞いてみましょう！</string>
+    <string name="settings_incar_speakanswers_title">答えを話す</string>
+    <string name="settings_incar_speakintro_summary">ボイストーク の起動時に「ボイストーク」と話します</string>
+    <string name="settings_incar_speakintro_title">イントロを話す</string>
+    <string name="settings_incar_speakprompts_summary">聞き取り前にプロンプトを話します</string>
+    <string name="settings_incar_speakprompts_title">プロンプトを話す</string>
+    <string name="settings_incar_speakshow_msgbodies_title">メッセージの本文を表示</string>
+    <string name="settings_incar_summary">ボイストーク の設定</string>
+    <string name="settings_incar_texttospeech">音声合成</string>
+    <string name="settings_incar_title">ボイストーク 設定</string>
+    <string name="settings_incar_wakeup">ウェイクアップ コマンド</string>
+    <string name="settings_incar_wakeup_title">ウェイクアップ コマンド</string>
+    <string name="settings_language_dialogtitle">言語</string>
+    <string name="settings_language_summary">入力言語を選択してください</string>
+    <string name="settings_language_title">言語</string>
+    <string name="settings_Location">場所を使用</string>
+    <string name="settings_logged_in_as">ログイン名</string>
+    <string name="settings_login_facebook">Facebook にログイン</string>
+    <string name="settings_login_foursquare">Foursquare にログイン</string>
+    <string name="settings_login_twitter">Twitter にログイン</string>
+    <string name="settings_logout">クリックするとログアウトします</string>
+    <string name="settings_profanityfilter_summary">不適切な可能性がある語句にアスタリスクを付けて隠す</string>
+    <string name="settings_profanityfilter_title">不適切な語句を隠す</string>
+    <string name="settings_ProfanityFiltering">不適切な語句を隠す</string>
+    <string name="settings_search_engine_dialogtitle">検索エンジンを選択してください</string>
+    <string name="settings_search_engine_title">Web 検索エンジン</string>
+    <string name="settings_social_facebook_summary">クリックすると Facebook にログインします</string>
+    <string name="settings_social_facebook_title">Facebook</string>
+    <string name="settings_social_foursquare_summary">クリックすると Foursquare にログインします</string>
+    <string name="settings_social_foursquare_title">Foursquare</string>
+    <string name="settings_social_summary">Facebook および Twitter の設定</string>
+    <string name="settings_social_title">ソーシャル設定</string>
+    <string name="settings_social_twitter_summary">クリックすると Twitter にログインします</string>
+    <string name="settings_social_twitter_title">Twitter</string>
+    <string name="settings_space_accounts">アカウント</string>
+    <string name="settings_space_minute">分</string>
+    <string name="settings_space_minutes">分</string>
+    <string name="settings_TextToSpeechPlayback">音声合成の再生</string>
+    <string name="settings_TTSOptions_full">メッセージ全文</string>
+    <string name="settings_TTSOptions_header">ヘッダーのみ</string>
+    <string name="settings_TTSOptions_off">オフ</string>
+    <string name="settings_voice_command_help_summary">ボイスコマンド のヘルプ</string>
+    <string name="settings_voice_command_help_title">ボイスコマンド ヘルプ</string>
+    <string name="settings_voice_talk_help_summary">ボイストーク のヘルプ</string>
+    <string name="settings_voice_talk_help_title">ボイストーク ヘルプ</string>
+    <string name="settings_voice_talk_prompt_too_long">エラーです 文字数は110字以下で入力して下さい</string>
+    <string name="show_suggestions">候補を表示</string>
+    <string name="show_suggestions_summary">入力時に候補を表示します</string>
+    <string name="showmessage_warning">警告</string>
+    <string name="showmessage_websearchnotsupported">ウェブ検索が未対応です。もう一度やり直してください。</string>
+    <string name="skip">スキップ</string>
+    <string name="social_and_no_spaces">および</string>
+    <string name="social_api_days_ago">日前</string>
+    <string name="social_api_err_auth1">(1) の認証中にエラーが発生しました。</string>
+    <string name="social_api_err_auth2">(2) の認証中にエラーが発生しました。</string>
+    <string name="social_api_error">エラー:</string>
+    <string name="social_api_hours_ago">時間前</string>
+    <string name="social_api_just_now">たった今</string>
+    <string name="social_api_mins_ago">分前</string>
+    <string name="social_api_no_name">名前がありません</string>
+    <string name="social_api_twitter_err_login">Twitter へのログイン中にエラーが発生しました。 ユーザー名/パスワードを確認して、後でもう一度やり直してください。</string>
+    <string name="social_api_twitter_error">Twitter エラー:</string>
+    <string name="social_api_twitter_update_error">Twitter ステータスの更新中にエラーが発生しました。 もう一度やり直してください。</string>
+    <string name="social_dl_foursquare">Foursquare をダウンロードしますか?</string>
+    <string name="social_dl_foursquare_msg">おや、どうやらFoursquareの使用がご希望のようですが、Foursquareがまだインストールされていませんね。ダウンロードしますか？</string>
+    <string name="social_err_msg1">更新中にエラーが発生しました</string>
+    <string name="social_err_msg2">.この問題が解決しない場合は、いったんログアウトしてからログインし直してください</string>
+    <string name="social_facebook_comm_error">Facebook からユーザー情報を取得できません。 後でもう一度ログインしてください。</string>
+    <string name="social_facebook_login_error">Facebook へのログイン中にエラーが発生しました。 ユーザー名/パスワードを確認して、もう一度やり直してください。</string>
+    <string name="social_follow_twitter">Vlingo をフォローしますか?</string>
+    <string name="social_follow_twitter_msg">Twitter で Vlingo をフォローしますか?</string>
+    <string name="social_foursquare_id">電子メール アドレスまたは電話番号</string>
+    <string name="social_foursquare_login">Foursquare にログイン</string>
+    <string name="social_foursquare_login_error">Foursquare へのログイン中にエラーが発生しました。 ユーザー名/パスワードを確認して、もう一度やり直してください。</string>
+    <string name="social_login">ログイン</string>
+    <string name="social_login_problem">ログイン中にエラーが発生しました。ユーザー名/パスワードを確認して、後でもう一度やり直してください。</string>
+    <string name="social_login_to_facebook">Facebook にログインしますか?</string>
+    <string name="social_login_to_facebook_msg">フェイスブックを更新するにはログインする必要があります。</string>
+    <string name="social_login_to_foursquare">Foursquare にログインしますか?</string>
+    <string name="social_login_to_foursquare_msg">Foursquareを更新するにはログインする必要があります。</string>
+    <string name="social_login_to_network">ネットワークにログイン...</string>
+    <string name="social_login_to_network_msg">ステータスを更新するには、ソーシャル ネットワークにログインする必要があります。 使用するネットワークを上から選択してください。</string>
+    <string name="social_login_to_twitter">Twitter にログインしますか?</string>
+    <string name="social_login_to_twitter_msg">Twitterを更新するにはログインする必要があります。</string>
+    <string name="social_logout_facebook">Facebook からログアウトしますか?</string>
+    <string name="social_logout_facebook_msg">本当に Facebook からログアウトしますか?</string>
+    <string name="social_logout_foursquare">Foursquare からログアウトしますか?</string>
+    <string name="social_logout_foursquare_msg">本当に Foursquare からログアウトしますか?</string>
+    <string name="social_logout_twitter">Twitter からログアウトしますか?</string>
+    <string name="social_logout_twitter_msg">本当に Twitter からログアウトしますか?</string>
+    <string name="social_no">いいえ</string>
+    <string name="social_no_network">ソーシャル ネットワークが選択されていません。</string>
+    <string name="social_no_status">ソーシャル ネットワーク ステータスが空白です。</string>
+    <string name="social_none_selected">何も選択されていません</string>
+    <string name="social_not_now">後で</string>
+    <string name="social_password_blank">パスワードが空白です。</string>
+    <string name="social_space_selected">選択済み</string>
+    <string name="social_status_updated">ステータスが更新されました</string>
+    <string name="social_too_long">文字数が多すぎます。 140 文字以内にしてください。</string>
+    <string name="social_twitter_id">ユーザー名または電子メール アドレス</string>
+    <string name="social_twitter_login">Twitter にログイン</string>
+    <string name="social_twitter_login_error">Twitter へのログイン中にエラーが発生しました。 ユーザー名/パスワードを確認して、もう一度やり直してください。</string>
+    <string name="social_update_layout_no_network">ネットワークが選択されていません</string>
+    <string name="social_update_layout_share">共有</string>
+    <string name="social_update_layout_update_on">更新日:</string>
+    <string name="social_update_layout_zero_of_140">0/140</string>
+    <string name="social_updating">更新中...</string>
+    <string name="social_username_blank">ユーザー名が空白です。</string>
+    <string name="social_wait_a_moment">お待ちください。</string>
+    <string name="social_wait_logging_in">ログインしています。お待ちください...</string>
+    <string name="social_yes">はい</string>
+    <string name="sound_on_keypress">キーを押すとサウンド</string>
+    <string name="speak_again">もう一度話す</string>
+    <string name="speak_now">今すぐ話す</string>
+    <string name="superdialer_business_listings">ビジネス リスティング</string>
+    <string name="superdialer_business_search_error">申し訳ありませんが、ビジネス リスティングの検索中にエラーが発生しました。 もう一度やり直してください。</string>
+    <string name="superdialer_find">&lt;font color=#85bee0>検索&lt;/font></string>
+    <string name="superdialer_google">&lt;font color=#ffffff>Google&lt;/font></string>
+    <string name="superdialer_local_search">ローカル検索</string>
+    <string name="superdialer_match_paren">件該当)</string>
+    <string name="superdialer_matches_paren">件該当)</string>
+    <string name="superdialer_no_matches">該当なし</string>
+    <string name="superdialer_no_matches_paren">該当なし)</string>
+    <string name="superdialer_no_results">&lt;font color=#909090>申し訳ありませんが、結果が見つかりません&lt;/font></string>
+    <string name="superdialer_recent_contacts">最近使用した連絡先</string>
+    <string name="superdialer_searching_for">&lt;font color=#ffffff>を検索中&lt;/font></string>
+    <string name="tap_and_speak">タップして話す</string>
+    <string name="tap_to_cancel">タップしてキャンセル</string>
+    <string name="tap_when_done">読み上げが完了したらタップします</string>
+    <string name="testing">テスト中</string>
+    <string name="third_space">3 回目の</string>
+    <string name="tos_accept">同意</string>
+    <string name="tos_accept_samsung">確認</string>
+    <string name="tos_decline">拒否</string>
+    <string name="tos_decline_samsung">前へ</string>
+    <string name="tos_dialog_view_terms">下の[同意する]ボタンをクリックすることによりお客様が Vlingo &lt;a href=\"http://www.vlingo.com/wap/privacy/ja\">サービス条件&lt;a>に従うことに同意し、Vlingo が情報（これには Vlingo &lt;a href=\"http:www.vlingo.comwapprivacyen\">プライバシーポリシー&lt;a>に記載の場所、検索、および他の情報を含むがこれらに限定されない）を収集し使用することに同意されたものとみなされます。</string>
+    <string name="tos_dialog_view_terms_samsung">あなたはここに含まれる全てのアプリケーション、およびそのアプリケーションを介してユーザーに提供されるサービスやコンテンツは、サードパーティプロバイダーによるものであり、Samsung Electronics Co., LTD.（以下、Samsung）によって提供されるものではないことを認め、同意することとします。&lt;br/>&lt;br/>また、あなたはダウンロードやインストール、及びサービスやコンテンツ使用は、利用規約やライセンス契約、個人情報がサードパーティのサービスプロバイダーによって規定されていること従うこと、および、このように提供したあらゆる情報や個人データはサードパーティプロバイダーのプライバシーポリシーに従うことを認め、同意することとします。&lt;br/>&lt;br/>Samsungは、このようなサードパーティサービスプロバイダーの個人データやその他の規約について責任は負わないこと、およびこれら任意のサードパーティアプリケーション、サービス、コンテンツ、ご利用に関して一切責任を負わないことを明示します。</string>
+    <string name="tos_must_accept_to_use">申し訳ありませんが、ボイスコマンド を使用するにはサービス条件にご同意いただく必要があります。</string>
+    <string name="tos_please_uninstall">申し訳ありませんが、古いバージョンの ボイスコマンド をアンインストールしてください。</string>
+    <string name="tos_uninstall">アンインストール</string>
+    <string name="tos_uninstall_old">旧バージョンのアンインストール</string>
+    <string name="tos_uninstall_old_msg">古いバージョンの ボイスコマンド がインストールされているようです。 申し訳ありませんが、新しいバージョンの ボイスコマンド では古いバージョンをアンインストールしないと次に進めません。</string>
+    <string name="tos_vlingo_terms">Vlingo サービス条件</string>
+    <string name="tos_vlingo_terms_samsung">Samsung 免責条項</string>
+    <string name="touch_to_continue">このヒントをタッチすると次に進みます »</string>
+    <string name="touch_to_finish">ここをタッチするとヒントが閉じ、入力を開始できます。</string>
+    <string name="translate_app_not_supported">アプリケーションの翻訳はサポートされていません。</string>
+    <string name="try_saying">お話しください</string>
+    <string name="type">種類</string>
+    <string name="unknown_contact">連絡先が不明です。</string>
+    <string name="update_google_maps">ボイスコマンドでナビゲートを使用するには最新のGoogleマップをインストールして下さい。</string>
+    <string name="update_nav_app_china">ボイスコマンドでナビゲートを使用するには最新のオートナビをインストールして下さい。</string>
+    <string name="util_day_ago">日前</string>
+    <string name="util_hour_ago">時間前</string>
+    <string name="util_min_ago">分前</string>
+    <string name="vibrate_on_keypress">キーを押すとバイブ</string>
+    <string name="Vlingo">ボイスコマンド</string>
+    <string name="vlingo_answers_answer">答え</string>
+    <string name="vlingo_answers_confirm_question">質問内容の確認</string>
+    <string name="vlingo_answers_search_google">Google を検索</string>
+    <string name="vlingo_answers_speak_answer">答えを話す</string>
+    <string name="vlingo_answers_this_is_answer">回答はこちら</string>
+    <string name="vlingo_answers_unknown_location">申し訳ありませんが、あなたの現在の場所を検出できません。</string>
+    <string name="vlingo_not_authorized">この機能を使用するには、ボイスコマンド を有効にしてください。</string>
+    <string name="voice_suggestions">音声候補</string>
+    <string name="voice_suggestions_summary">単語をタップすると別の候補を表示します</string>
+    <string name="wcis">音声操作の項目?</string>
+    <string name="wcis_contact">話しかけて連絡先を検索</string>
+    <string name="wcis_email_send">連絡先、件名、メッセージを話しかけて電子メールを送信</string>
+    <string name="wcis_general_help">全般ヘルプ</string>
+    <string name="wcis_hotels_example">東京の&lt;font color=#85bee0>ホテルを検索&lt;/font>&lt;br/>\"金曜日の夜に泊まる&lt;font color=#85bee0>ホテルを検索&lt;/font>\"</string>
+    <string name="wcis_hotels_example_text">ホテルを名前や場所で検索することができます。&lt;br/>&lt;br/>場所の指定がない場合、Vlingoは現在地の近辺を検索します。</string>
+    <string name="wcis_hotels_tag_line">音声認識でホテルを予約する</string>
+    <string name="wcis_how_to_use">Samsung 音声の使用方法</string>
+    <string name="wcis_how_to_use_caption">ボイストーク 機能のガイド</string>
+    <string name="wcis_how_to_use_VC_caption">ボイスコマンド 機能のガイド</string>
+    <string name="wcis_info_row_more_info">詳細</string>
+    <string name="wcis_maps_directions">地図または指示を取得</string>
+    <string name="wcis_maps_find_businesses">話しかけて会社を検索</string>
+    <string name="wcis_memo">音声認識でメモを作成する</string>
+    <string name="wcis_movies_example">海洋天堂の&lt;font color=#85bee0>映画チケットを購入&lt;/font>&lt;br/>\"薔薇とサムライ&lt;font color=#85bee0>の映画チケットを検索。&lt;/font>\"</string>
+    <string name="wcis_movies_tag_line">上映されている映画とチケットを検索</string>
+    <string name="wcis_nav">住所と会社名を話しかけて地図を起動します。</string>
+    <string name="wcis_openapps_open">アプリ名を話してアプリケーションを開く</string>
+    <string name="wcis_schedule">今日のスケジュールの確認</string>
+    <string name="wcis_search_speak_query">質問を話してインターネットを検索</string>
+    <string name="wcis_sms_speak_text">連絡先、メッセージを話しかけてメッセージを送信</string>
+    <string name="wcis_social_update">話しかけて Facebook、および Twitter を更新</string>
+    <string name="wcis_social_update_fb">話しかけて Facebook を更新</string>
+    <string name="wcis_social_update_fb_and_tw">話しかけて Facebook および Twitter を更新</string>
+    <string name="wcis_social_update_tw">話しかけて Twitter を更新</string>
+    <string name="wcis_super_dial_call_any">米国内のどんなビジネスにも話しかけて電話</string>
+    <string name="wcis_tutorial">チュートリアル</string>
+    <string name="wcis_tutorial_caption">動画を見てボイストークを勉強する</string>
+    <string name="wcis_voice_dial_call">米国内の連絡先またはどんなビジネスにも話しかけて電話</string>
+    <string name="wcis_voice_dial_call_contacts">連絡先に話しかけて電話</string>
+    <string name="wcis_wake_up">ウェイクアップ ボイストーク</string>
+    <string name="wcis_wake_up_caption">ウェイクアップボイストーク のガイド</string>
+    <string name="wcis_website">ウェブサイト名を話しかけて URL に進む</string>
+    <string name="WebSearchEngine">Web 検索エンジン</string>
+    <string name="what_can_i_say">何て言えばいいの？</string>
+    <string name="widget_name">音声</string>
+    <string name="widget_vlingo_incar">ボイストーク</string>
+    <string name="settings_launch_voicetalk_summary">ホームキー​を​2回​押して、​ボイス​トーク​を​起動​します。</string>
+    <string name="settings_launch_voicetalk_title">音声トークを起動</string>
+    <string name="phrasespotter_localized">true</string>
+</resources>

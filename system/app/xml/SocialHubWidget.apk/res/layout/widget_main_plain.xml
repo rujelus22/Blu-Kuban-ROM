@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.widgetapp.socialhub.view.WidgetAccessbilityLayout android:orientation="vertical" android:id="@id/widget_all_layout" android:background="@drawable/widget_stroke_selector" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="5.0px" android:layout_marginTop="4.0px" android:layout_marginRight="5.0px" android:layout_marginBottom="4.0px">
+        <include layout="@layout/widget_2d_layout_status_area" />
+        <com.sec.android.widgetapp.socialhub.view.BouncingListView android:id="@id/feed_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="18.0px" android:layout_marginBottom="14.0px" />
+        <include layout="@layout/widget_2d_layout_empty" />
+    </com.sec.android.widgetapp.socialhub.view.WidgetAccessbilityLayout>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/layout_color" android:layout_width="10.0px" android:layout_height="fill_parent">
+        <com.sec.android.socialhub.view.ListColorView android:id="@id/img_color" android:layout_width="5.0px" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <ImageView android:id="@id/appicon" android:layout_width="48.0px" android:layout_height="48.0px" android:scaleType="fitCenter" android:adjustViewBounds="true" />
+    <LinearLayout android:gravity="center_vertical|clip_horizontal" android:layout_gravity="left|center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="64.0dip" android:layout_marginLeft="2.0dip" android:layout_marginRight="2.0dip" android:layout_centerInParent="true"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textSize="33.0px" android:textColor="@color/text_color_compose_primary" android:ellipsize="marquee" android:id="@id/listdlgname" android:tag="ISPName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/account_dlg_pre_emailaddr" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center" android:id="@id/premiumIcon" android:paddingTop="1.0px" android:paddingRight="5.0px" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+            <TextView android:textSize="21.0px" android:textColor="@color/text_color_compose_secondary" android:ellipsize="marquee" android:id="@id/listdialog" android:tag="address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

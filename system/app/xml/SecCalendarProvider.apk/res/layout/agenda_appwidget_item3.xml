@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/days_days_ag3" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="13.0sp" android:textStyle="bold" android:textColor="@color/appwidget_date" android:id="@id/when_ag3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.659973dip" android:layout_marginTop="8.0dip" android:layout_marginRight="6.659973dip" android:singleLine="true" android:layout_alignParentLeft="true" />
+    <TextView android:textSize="13.0sp" android:textColor="@color/appwidget_title" android:ellipsize="end" android:id="@id/title_ag3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.659973dip" android:layout_marginRight="6.659973dip" android:maxLines="2" android:layout_alignParentLeft="true" />
+</LinearLayout>

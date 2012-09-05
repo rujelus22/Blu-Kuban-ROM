@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:id="@id/theme" android:background="@drawable/theme_border" android:duplicateParentState="true" android:layout_width="399.0px" android:layout_height="89.0px" android:minHeight="89.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:id="@id/LinearLayout01" android:background="@drawable/themeitemselector" android:layout_width="95.0px" android:layout_height="72.0px" android:layout_marginLeft="10.0px" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+        <ImageView android:layout_gravity="center" android:id="@id/ThemePlayImg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:id="@id/LinearLayout02" android:duplicateParentState="true" android:layout_width="200.0px" android:layout_height="fill_parent" android:layout_marginLeft="16.0px" android:layout_toRightOf="@id/LinearLayout01" android:layout_centerVertical="true">
+        <com.sec.android.app.ve.ui.HelveticaTextView android:textSize="26.0px" android:textColor="@drawable/themecolorselector" android:layout_gravity="center" android:id="@id/Lable" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Home Video" android:singleLine="true" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:id="@id/radiobtn" android:background="@drawable/btn_radio_off" android:layout_width="57.0px" android:layout_height="57.0px" android:layout_marginRight="14.0px" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

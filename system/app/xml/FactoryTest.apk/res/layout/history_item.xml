@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:id="@id/history" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.0" android:stretchColumns="2">
+        <TableRow>
+            <TextView android:textSize="19.0sp" android:textColor="@color/black" android:gravity="center" android:id="@id/history_id" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_column="1" android:text="@string/id" />
+            <TextView android:textSize="19.0sp" android:textColor="@color/black" android:gravity="center" android:id="@id/history_item" android:layout_height="wrap_content" android:layout_column="2" android:text="@string/item" />
+            <TextView android:textSize="19.0sp" android:textColor="@color/black" android:gravity="center" android:id="@id/history_result" android:layout_height="wrap_content" android:layout_marginRight="35.0dip" android:layout_column="3" android:text="@string/result_name" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

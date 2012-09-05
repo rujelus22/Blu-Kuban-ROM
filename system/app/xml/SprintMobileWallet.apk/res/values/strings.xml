@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sprint Mobile Wallet</string>
+    <string name="emulatorTesting">false</string>
+    <string name="SMPS_2ID_REST_URL">http://api2.sprintmobilewallet.com/service.svc/</string>
+    <string name="SMPS_2ID_REST_TLS_URL">https://api.sprintmobilewallet.com/service.svc/</string>
+    <string name="VIRTUAL_MAG_ROUTE_URL">http://68.28.31.7/</string>
+    <string name="mdn" />
+    <string name="encryptedNaiKey" />
+    <string name="encryptedNai" />
+    <string name="nai" />
+    <string name="SMPS_Service_Class">com.sprint.smps.service.DefaultSMPSService</string>
+    <string name="timeoutPeriodSec">60</string>
+    <string name="preLogintimeoutPeriodSec">180</string>
+    <string name="groundTruthKey">8fcecde70fdd363c1c2d6db-95c7141c-fd57-11df-5a54-00fe9d16b9d0</string>
+    <string name="merchantName1">Namco Wireless</string>
+    <string name="merchantName2">Skymall</string>
+    <string name="merchantName3">More coming soon……</string>
+    <string name="merchantUrl1">http://www.namco.com</string>
+    <string name="merchantUrl2">http://wap.skymall.com</string>
+    <string name="merchantUrl3">http://mobo.cdnl.net/smpsota/partner.html</string>
+    <string name="NON_3G_ERROR">Must be on the 3g network to authenticate.</string>
+    <string name="E10090">Invalid or Missing ClientID.</string>
+    <string name="E10091">Please exit application and restart, network error.</string>
+    <string name="UNABLE_TO_RETRIEVE_EULA_DATA">Unable to retrieve terms and Conditions at this time.</string>
+    <string name="unableToConnectToServer">Unable to connect to the server, please try again later.</string>
+    <string name="upgrade">Sprint Mobile Wallet Upgrade</string>
+    <string name="mustUpgradeMsg">Update required, please down load and install the update.</string>
+    <string name="upgradeMsg">Update available, do you wish to down load the update and install?</string>
+    <string name="upgradeUrl">market://details?id=com.sprint.smps</string>
+    <string name="legal">Sprint Mobile Wallet</string>
+    <string name="welcome">Welcome</string>
+    <string name="mainmenu">Wallet Main Menu</string>
+    <string name="login">Sprint Mobile Wallet Login</string>
+    <string name="signup1">Step 1 of 3: Profile Information</string>
+    <string name="signup2">Step 2 of 3: Payment Information</string>
+    <string name="signup3">Step 3 of 3: Payment Information</string>
+    <string name="transactionHistory">Transaction History</string>
+    <string name="changePin">Change Your PIN</string>
+    <string name="changeSecurityQuestions">Change Security Questions</string>
+    <string name="forgotPassword">Forgot Password</string>
+    <string name="addressBook">Address Book</string>
+    <string name="profile">Profile</string>
+    <string name="paymentAccts">Payment Accounts</string>
+    <string name="addressDetails">Address Details</string>
+    <string name="addNewAddress">Add New Address</string>
+    <string name="editAddress">Edit Address</string>
+    <string name="addNewPaymentAcct">Add New Payment Account</string>
+    <string name="addNewAmazonAcct">Add New Amazon Account</string>
+    <string name="paymentAccountDetails">Payment Account Details</string>
+    <string name="editPaymentAccount">Edit Payment Account</string>
+    <string name="faqs">Help</string>
+    <string name="faqsDetail">Help</string>
+    <string name="deleteSMPSAccount">Delete Sprint Mobile Wallet Account</string>
+    <string name="partners">Sprint Mobile Wallet Merchant</string>
+</resources>

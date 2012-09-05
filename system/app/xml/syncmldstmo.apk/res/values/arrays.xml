@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="SyncItem">
+        <item>@string/SML_STR_CONTACTS</item>
+        <item>@string/SML_STR_CALENDAR</item>
+    </array>
+    <array name="SyncType">
+        <item>@string/SML_STR_SYNC_TYPE_FULL_SYNC</item>
+        <item>@string/SML_STR_SYNC_TYPE_UPDATE_SYNC</item>
+        <item>@string/SML_STR_SYNC_TYPE_SYNC_FROM_SERVER</item>
+        <item>@string/SML_STR_SYNC_TYPE_SYNC_FROM_CLIENT</item>
+        <item>@string/SML_STR_SYNC_TYPE_REFRESH_FROM_SERVER</item>
+        <item>@string/SML_STR_SYNC_TYPE_REFRESH_FROM_CLIENT</item>
+    </array>
+    <array name="NetworkAuth">
+        <item>@string/SML_STR_NONE</item>
+        <item>@string/SML_STR_SECURE</item>
+        <item>@string/SML_STR_NORMAL</item>
+    </array>
+    <string-array name="WbxmlLog">
+        <item>wbxml on</item>
+        <item>wbxml off</item>
+    </string-array>
+    <string-array name="PrivateLog">
+        <item>Private log on</item>
+        <item>Private log off</item>
+    </string-array>
+    <string-array name="ModelName">
+        <item>SYSTEM</item>
+        <item>GT-I9000</item>
+        <item>GT-I5800</item>
+    </string-array>
+</resources>

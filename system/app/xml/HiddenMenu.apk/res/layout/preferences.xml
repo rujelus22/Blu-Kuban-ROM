@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/call_setting_prefernce">
+        <ListPreference android:entries="@array/tty_options" android:title="@string/tty_list_string" android:key="list_preference" android:summary="@string/tty_value_string" android:dialogTitle="@string/tty_list_string" android:entryValues="@array/tty_mode_values" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="NNNsong">
+        <item quantity="other">%d songs</item>
+        <item quantity="one">1 song</item>
+    </plurals>
+    <plurals name="NNNplaylist">
+        <item quantity="other">%d playlists</item>
+        <item quantity="one">1 playlist</item>
+    </plurals>
+    <plurals name="NNNalbum">
+        <item quantity="other">%d albums</item>
+        <item quantity="one">1 album</item>
+    </plurals>
+    <plurals name="NNNartist">
+        <item quantity="other">%d artists</item>
+        <item quantity="one">1 artist</item>
+    </plurals>
+    <plurals name="NNNgenre">
+        <item quantity="other">%d genres</item>
+        <item quantity="one">1 genre</item>
+    </plurals>
+    <plurals name="NNNfolder">
+        <item quantity="other">%d folders</item>
+        <item quantity="one">1 folder</item>
+    </plurals>
+    <plurals name="NNNcomposer">
+        <item quantity="other">%d composers</item>
+        <item quantity="one">1 composer</item>
+    </plurals>
+    <plurals name="NNNyear">
+        <item quantity="other">%d years</item>
+        <item quantity="one">1 year</item>
+    </plurals>
+    <plurals name="NNNpodcast">
+        <item quantity="other">%d podcasts</item>
+        <item quantity="one">1 podcast</item>
+    </plurals>
+    <plurals name="NNNtrackstoplaylist">
+        <item quantity="other">%d songs added to playlist</item>
+        <item quantity="one">1 song added to playlist.</item>
+    </plurals>
+    <plurals name="NNNtracksdeleted">
+        <item quantity="other">%d songs were deleted</item>
+        <item quantity="one">1 song was deleted</item>
+    </plurals>
+    <plurals name="NNNitemssdeleted">
+        <item quantity="other">%d items deleted</item>
+        <item quantity="one">1 item deleted</item>
+    </plurals>
+    <plurals name="NNNitemssremoved">
+        <item quantity="other">%d items removed</item>
+        <item quantity="one">1 item removed</item>
+    </plurals>
+</resources>

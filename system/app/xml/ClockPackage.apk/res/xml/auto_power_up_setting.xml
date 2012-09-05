@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/auto_power_up_setting"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:title="@string/auto_power_up" android:key="auto_power_up" android:defaultValue="true" />
+</PreferenceScreen>

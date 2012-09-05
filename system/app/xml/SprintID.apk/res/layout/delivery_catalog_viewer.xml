@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/actionbar_search" />
+    <TextView android:ellipsize="end" android:id="@id/feed_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:layout_below="@id/action_bar" style="@style/TextHeader" />
+    <TextView android:ellipsize="end" android:id="@id/description" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/feed_title" style="@style/TextBody" />
+    <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_below="@id/description" style="@style/ListNormal" />
+</RelativeLayout>

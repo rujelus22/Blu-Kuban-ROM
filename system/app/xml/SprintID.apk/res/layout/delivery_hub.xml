@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/actionbar_search" />
+    <TextView android:id="@id/auth_title" android:focusable="false" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/auth_title" android:layout_below="@id/action_bar" style="@style/TextHeader" />
+    <TextView android:id="@id/auth_instructions" android:focusable="false" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/delivery_auth_instructions" android:layout_below="@id/auth_title" style="@style/TextBody" />
+    <EditText android:id="@id/auth_username" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:hint="@string/username" android:layout_below="@id/auth_instructions" android:inputType="textNoSuggestions" android:imeOptions="actionNext" />
+    <EditText android:id="@id/auth_password" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:hint="@string/password" android:layout_below="@id/auth_username" android:inputType="textNoSuggestions|textPassword" />
+    <CheckBox android:textColor="@color/body_text" android:id="@id/show_password" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/show_password" android:layout_below="@id/auth_password" />
+    <LinearLayout android:id="@id/button_bar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/ButtonBar">
+        <Button android:id="@id/auth_go" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/go_button" android:layout_alignParentBottom="true" style="@style/Button" />
+    </LinearLayout>
+</RelativeLayout>

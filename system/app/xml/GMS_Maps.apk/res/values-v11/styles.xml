@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="da_ActionBarButton">
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="da_TravelModePrimaryText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="da_PopupSelector" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/da_PopupSelectorAnimation</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowSoftInputMode">stateUnchanged|adjustResize</item>
+    </style>
+    <style name="da_destinationListItemPrimary" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18.0dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="da_destinationListItemSecondary" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="da_Theme" parent="@android:style/Theme.Holo.NoActionBar" />
+    <style name="da_DestinationPickerTheme" parent="@android:style/Theme.Holo">
+        <item name="android:actionBarStyle">@style/da_DestinationPickerActionBarStyle</item>
+    </style>
+    <style name="da_DisclaimerDialogText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="da_DestinationPickerActionBarStyle" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@drawable/da_destination_action_bar_bg</item>
+        <item name="android:backgroundSplit">@drawable/da_destination_action_bar_bg</item>
+    </style>
+    <style name="da_DestinationPickerPagerTitleStyle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+</resources>

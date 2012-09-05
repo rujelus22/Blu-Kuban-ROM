@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:background="@drawable/search_box_bg" android:layout_width="fill_parent" android:layout_height="64.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="10.0dip">
+                <AutoCompleteTextView android:textColor="@touchwiz:color/tw_color002" android:id="@id/wc_search_txt_find" android:layout_width="fill_parent" android:layout_height="46.669983dip" android:hint="@string/wc_xml_taptxt" android:lines="1" android:drawableRight="@drawable/worldclock_icon_search" android:completionThreshold="3" android:layout_weight="1.0" android:lineSpacingExtra="2.0dip" android:inputType="textCapWords" android:imeOptions="actionDone" android:imeActionLabel="@string/wc_search" />
+                <ImageButton android:id="@id/show_map_button" android:layout_width="46.669983dip" android:layout_height="46.669983dip" android:layout_marginLeft="6.669983dip" android:src="@drawable/worldclock_map_button" android:contentDescription="@string/wc_mapview" />
+            </LinearLayout>
+        </RelativeLayout>
+        <FrameLayout android:id="@id/citylist_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:gravity="center" android:background="@drawable/worldclock_dark_header" android:layout_width="fill_parent" android:layout_height="64.66998dip">
+                    <Button android:textSize="20.0sp" android:ellipsize="marquee" android:layout_gravity="center" android:id="@id/current_location_button" android:layout_width="232.0dip" android:layout_height="48.0dip" android:layout_marginLeft="44.0dip" android:layout_marginTop="3.2999878dip" android:layout_marginRight="44.0dip" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+                </LinearLayout>
+                <ListView android:layout_gravity="top" android:id="@id/worldclock_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:drawSelectorOnTop="false" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/fade_layout" android:background="@drawable/dark_bg" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+</RelativeLayout>

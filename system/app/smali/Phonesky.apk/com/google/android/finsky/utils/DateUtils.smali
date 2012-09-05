@@ -1,0 +1,186 @@
+.class public Lcom/google/android/finsky/utils/DateUtils;
+.super Ljava/lang/Object;
+.source "DateUtils.java"
+
+
+# static fields
+.field private static final DISPLAY_DATE_FORMAT:Ljava/text/DateFormat;
+
+.field private static final ISO8601_DATE_FORMAT:Ljava/text/DateFormat;
+
+.field private static final SHORT_DISPLAY_DATE_FORMAT:Ljava/text/DateFormat;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    .prologue
+    .line 19
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "yyyy-MM-dd"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/google/android/finsky/utils/DateUtils;->ISO8601_DATE_FORMAT:Ljava/text/DateFormat;
+
+    .line 22
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Ljava/text/DateFormat;->getDateInstance(I)Ljava/text/DateFormat;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/finsky/utils/DateUtils;->DISPLAY_DATE_FORMAT:Ljava/text/DateFormat;
+
+    .line 26
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Ljava/text/DateFormat;->getDateInstance(I)Ljava/text/DateFormat;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/finsky/utils/DateUtils;->SHORT_DISPLAY_DATE_FORMAT:Ljava/text/DateFormat;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static declared-synchronized formatDisplayDate(Ljava/util/Date;)Ljava/lang/String;
+    .registers 3
+    .parameter "date"
+
+    .prologue
+    .line 46
+    const-class v1, Lcom/google/android/finsky/utils/DateUtils;
+
+    monitor-enter v1
+
+    :try_start_3
+    sget-object v0, Lcom/google/android/finsky/utils/DateUtils;->DISPLAY_DATE_FORMAT:Ljava/text/DateFormat;
+
+    invoke-virtual {v0, p0}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    :try_end_8
+    .catchall {:try_start_3 .. :try_end_8} :catchall_b
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_b
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method public static declared-synchronized formatIso8601Date(Ljava/lang/String;)Ljava/lang/String;
+    .registers 4
+    .parameter "iso8601Date"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/text/ParseException;
+        }
+    .end annotation
+
+    .prologue
+    .line 35
+    const-class v2, Lcom/google/android/finsky/utils/DateUtils;
+
+    monitor-enter v2
+
+    :try_start_3
+    sget-object v1, Lcom/google/android/finsky/utils/DateUtils;->ISO8601_DATE_FORMAT:Ljava/text/DateFormat;
+
+    invoke-virtual {v1, p0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/google/android/finsky/utils/DateUtils;->formatDisplayDate(Ljava/util/Date;)Ljava/lang/String;
+    :try_end_c
+    .catchall {:try_start_3 .. :try_end_c} :catchall_19
+    .catch Ljava/text/ParseException; {:try_start_3 .. :try_end_c} :catch_f
+
+    move-result-object p0
+
+    .line 39
+    .local v0, e:Ljava/text/ParseException;
+    :cond_d
+    monitor-exit v2
+
+    return-object p0
+
+    .line 36
+    .end local v0           #e:Ljava/text/ParseException;
+    :catch_f
+    move-exception v0
+
+    .line 38
+    .restart local v0       #e:Ljava/text/ParseException;
+    :try_start_10
+    const-string v1, "^\\d\\d\\d\\d$"
+
+    invoke-static {v1, p0}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_d
+
+    .line 41
+    throw v0
+    :try_end_19
+    .catchall {:try_start_10 .. :try_end_19} :catchall_19
+
+    .line 35
+    .end local v0           #e:Ljava/text/ParseException;
+    :catchall_19
+    move-exception v1
+
+    monitor-exit v2
+
+    throw v1
+.end method
+
+.method public static declared-synchronized formatShortDisplayDate(Ljava/util/Date;)Ljava/lang/String;
+    .registers 3
+    .parameter "date"
+
+    .prologue
+    .line 50
+    const-class v1, Lcom/google/android/finsky/utils/DateUtils;
+
+    monitor-enter v1
+
+    :try_start_3
+    sget-object v0, Lcom/google/android/finsky/utils/DateUtils;->SHORT_DISPLAY_DATE_FORMAT:Ljava/text/DateFormat;
+
+    invoke-virtual {v0, p0}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    :try_end_8
+    .catchall {:try_start_3 .. :try_end_8} :catchall_b
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_b
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method

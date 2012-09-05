@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/nav_screen" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="right" android:layout_gravity="top" android:orientation="horizontal" android:id="@id/tabbar" android:background="@drawable/ab_transparent_dark_holo" android:focusable="false" android:layout_width="fill_parent" android:layout_height="43.0dip">
+        <ImageButton android:gravity="center" android:id="@id/newtab" android:padding="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/navscreen_newtab_image" android:contentDescription="@string/accessibility_button_newtab" style="@style/HoloButton" />
+        <ImageButton android:gravity="center" android:id="@id/newincognitotab" android:padding="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/navscreen_incognito_image" android:contentDescription="@string/accessibility_button_newincognitotab" style="@style/HoloButton" />
+    </LinearLayout>
+    <com.android.browser.NavTabScroller android:layout_gravity="center" android:orientation="horizontal" android:id="@id/scroller" android:focusable="true" android:layout_width="fill_parent" android:layout_height="178.0dip" android:layout_marginTop="2.0dip" android:spacing="-85.0dip" android:layout_below="@id/tabbar" />
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/pageIndicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:spacing="4.0dip" android:layout_below="@id/scroller" />
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/tabtitlebar" android:layout_width="278.0dip" android:layout_height="52.0dip" android:layout_below="@id/pageIndicator" android:layout_centerHorizontal="true">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="#ffd7d7d7" android:ellipsize="end" android:gravity="center" android:id="@id/tabtitle" android:layout_width="fill_parent" android:layout_height="24.0dip" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="1.0" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="#ff5397c7" android:ellipsize="end" android:gravity="center" android:id="@id/taburl" android:layout_width="fill_parent" android:layout_height="21.0dip" android:layout_marginBottom="7.0dip" android:scrollHorizontally="true" android:singleLine="true" />
+    </LinearLayout>
+</LinearLayout>

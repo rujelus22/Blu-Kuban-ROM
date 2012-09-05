@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="96.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:paddingTop="5.0dip" android:layout_width="40.0dip" android:layout_height="fill_parent">
+            <ImageView android:layout_gravity="center" android:id="@id/appIcon" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@android:drawable/stat_sys_upload_done" />
+            <TextView android:textSize="14.0dip" android:typeface="sans" android:textColor="@color/noti_per_color" android:layout_gravity="center_horizontal" android:id="@id/progress_text" android:paddingTop="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:paddingTop="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="18.0dip" android:typeface="sans" android:textColor="@color/noti_desc_color" android:ellipsize="marquee" android:layout_gravity="left" android:id="@id/description" android:paddingLeft="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+                <TextView android:textSize="18.0dip" android:typeface="sans" android:textColor="@color/noti_desc_color" android:ellipsize="marquee" android:layout_gravity="right" android:id="@id/file_cnt" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="80.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="0.0" />
+            </LinearLayout>
+            <RelativeLayout android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+                <TextView android:textSize="14.0dip" android:typeface="sans" android:textColor="@color/noti_desc_color" android:ellipsize="marquee" android:id="@id/wait_text" android:paddingLeft="15.0dip" android:paddingRight="25.0dip" android:paddingBottom="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+                <ProgressBar android:id="@id/progress_bar" android:paddingLeft="5.0dip" android:paddingRight="15.0dip" android:paddingBottom="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?android:attr/progressBarStyleHorizontal" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@android:drawable/divider_horizontal_bright" />
+</LinearLayout>

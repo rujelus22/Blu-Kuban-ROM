@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Tasks provider</string>
+    <string name="provider_label">Tasks</string>
+    <string name="no_subject">no subject</string>
+</resources>

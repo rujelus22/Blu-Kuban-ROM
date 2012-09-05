@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.inputmethod.latin.LatinKeyboardView android:id="@android:id/keyboardView" android:background="@drawable/keyboard_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:keyBackground="@drawable/btn_keyboard_key"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

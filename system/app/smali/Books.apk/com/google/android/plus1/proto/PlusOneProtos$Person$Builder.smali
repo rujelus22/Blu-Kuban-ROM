@@ -1,0 +1,433 @@
+.class public final Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+.super Lcom/google/protobuf/GeneratedMessageLite$Builder;
+.source "PlusOneProtos.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Builder"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/protobuf/GeneratedMessageLite$Builder",
+        "<",
+        "Lcom/google/android/plus1/proto/PlusOneProtos$Person;",
+        "Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field private result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 157
+    invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;-><init>()V
+
+    return-void
+.end method
+
+.method static synthetic access$100()Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+    .registers 1
+
+    .prologue
+    .line 151
+    invoke-static {}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->create()Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private static create()Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+    .registers 3
+
+    .prologue
+    .line 160
+    new-instance v0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;-><init>()V
+
+    .line 161
+    .local v0, builder:Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+    new-instance v1, Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2}, Lcom/google/android/plus1/proto/PlusOneProtos$Person;-><init>(Lcom/google/android/plus1/proto/PlusOneProtos$1;)V
+
+    iput-object v1, v0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    .line 162
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public build()Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+    .registers 2
+
+    .prologue
+    .line 190
+    iget-object v0, p0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    if-eqz v0, :cond_11
+
+    invoke-virtual {p0}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->isInitialized()Z
+
+    move-result v0
+
+    if-nez v0, :cond_11
+
+    .line 191
+    iget-object v0, p0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    invoke-static {v0}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->newUninitializedMessageException(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/UninitializedMessageException;
+
+    move-result-object v0
+
+    throw v0
+
+    .line 193
+    :cond_11
+    invoke-virtual {p0}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->buildPartial()Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public buildPartial()Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+    .registers 4
+
+    .prologue
+    .line 206
+    iget-object v1, p0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    if-nez v1, :cond_c
+
+    .line 207
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    const-string v2, "build() has already been called on this Builder."
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 210
+    :cond_c
+    iget-object v0, p0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    .line 211
+    .local v0, returnMe:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    .line 212
+    return-object v0
+.end method
+
+.method public clone()Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+    .registers 3
+
+    .prologue
+    .line 179
+    invoke-static {}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->create()Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->mergeFrom(Lcom/google/android/plus1/proto/PlusOneProtos$Person;)Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic clone()Lcom/google/protobuf/AbstractMessageLite$Builder;
+    .registers 2
+
+    .prologue
+    .line 151
+    invoke-virtual {p0}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->clone()Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic clone()Lcom/google/protobuf/GeneratedMessageLite$Builder;
+    .registers 2
+
+    .prologue
+    .line 151
+    invoke-virtual {p0}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->clone()Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic clone()Ljava/lang/Object;
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
+
+    .prologue
+    .line 151
+    invoke-virtual {p0}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->clone()Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public isInitialized()Z
+    .registers 2
+
+    .prologue
+    .line 187
+    iget-object v0, p0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    invoke-virtual {v0}, Lcom/google/android/plus1/proto/PlusOneProtos$Person;->isInitialized()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public mergeFrom(Lcom/google/android/plus1/proto/PlusOneProtos$Person;)Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+    .registers 3
+    .parameter "other"
+
+    .prologue
+    .line 216
+    invoke-static {}, Lcom/google/android/plus1/proto/PlusOneProtos$Person;->getDefaultInstance()Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    move-result-object v0
+
+    if-ne p1, v0, :cond_7
+
+    .line 223
+    :cond_6
+    :goto_6
+    return-object p0
+
+    .line 217
+    :cond_7
+    invoke-virtual {p1}, Lcom/google/android/plus1/proto/PlusOneProtos$Person;->hasDisplayName()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_14
+
+    .line 218
+    invoke-virtual {p1}, Lcom/google/android/plus1/proto/PlusOneProtos$Person;->getDisplayName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->setDisplayName(Ljava/lang/String;)Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    .line 220
+    :cond_14
+    invoke-virtual {p1}, Lcom/google/android/plus1/proto/PlusOneProtos$Person;->hasThumbnailUrl()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    .line 221
+    invoke-virtual {p1}, Lcom/google/android/plus1/proto/PlusOneProtos$Person;->getThumbnailUrl()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->setThumbnailUrl(Ljava/lang/String;)Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    goto :goto_6
+.end method
+
+.method public mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+    .registers 5
+    .parameter "input"
+    .parameter "extensionRegistry"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 231
+    :cond_0
+    :goto_0
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
+
+    move-result v0
+
+    .line 232
+    .local v0, tag:I
+    sparse-switch v0, :sswitch_data_1e
+
+    .line 236
+    invoke-virtual {p0, p1, p2, v0}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 237
+    :sswitch_d
+    return-object p0
+
+    .line 242
+    :sswitch_e
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->setDisplayName(Ljava/lang/String;)Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    goto :goto_0
+
+    .line 246
+    :sswitch_16
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->setThumbnailUrl(Ljava/lang/String;)Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    goto :goto_0
+
+    .line 232
+    :sswitch_data_1e
+    .sparse-switch
+        0x0 -> :sswitch_d
+        0xa -> :sswitch_e
+        0x12 -> :sswitch_16
+    .end sparse-switch
+.end method
+
+.method public bridge synthetic mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
+    .registers 4
+    .parameter "x0"
+    .parameter "x1"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 151
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite$Builder;
+    .registers 4
+    .parameter "x0"
+    .parameter "x1"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 151
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public setDisplayName(Ljava/lang/String;)Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+    .registers 4
+    .parameter "value"
+
+    .prologue
+    .line 262
+    if-nez p1, :cond_8
+
+    .line 263
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 265
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    const/4 v1, 0x1
+
+    #setter for: Lcom/google/android/plus1/proto/PlusOneProtos$Person;->hasDisplayName:Z
+    invoke-static {v0, v1}, Lcom/google/android/plus1/proto/PlusOneProtos$Person;->access$302(Lcom/google/android/plus1/proto/PlusOneProtos$Person;Z)Z
+
+    .line 266
+    iget-object v0, p0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    #setter for: Lcom/google/android/plus1/proto/PlusOneProtos$Person;->displayName_:Ljava/lang/String;
+    invoke-static {v0, p1}, Lcom/google/android/plus1/proto/PlusOneProtos$Person;->access$402(Lcom/google/android/plus1/proto/PlusOneProtos$Person;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 267
+    return-object p0
+.end method
+
+.method public setThumbnailUrl(Ljava/lang/String;)Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;
+    .registers 4
+    .parameter "value"
+
+    .prologue
+    .line 283
+    if-nez p1, :cond_8
+
+    .line 284
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 286
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    const/4 v1, 0x1
+
+    #setter for: Lcom/google/android/plus1/proto/PlusOneProtos$Person;->hasThumbnailUrl:Z
+    invoke-static {v0, v1}, Lcom/google/android/plus1/proto/PlusOneProtos$Person;->access$502(Lcom/google/android/plus1/proto/PlusOneProtos$Person;Z)Z
+
+    .line 287
+    iget-object v0, p0, Lcom/google/android/plus1/proto/PlusOneProtos$Person$Builder;->result:Lcom/google/android/plus1/proto/PlusOneProtos$Person;
+
+    #setter for: Lcom/google/android/plus1/proto/PlusOneProtos$Person;->thumbnailUrl_:Ljava/lang/String;
+    invoke-static {v0, p1}, Lcom/google/android/plus1/proto/PlusOneProtos$Person;->access$602(Lcom/google/android/plus1/proto/PlusOneProtos$Person;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 288
+    return-object p0
+.end method

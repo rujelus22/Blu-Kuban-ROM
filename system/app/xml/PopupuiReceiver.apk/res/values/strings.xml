@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PopupuiReceiver</string>
+    <string name="btn_text_yes">OK</string>
+    <string name="btn_text_no">Cancel</string>
+    <string name="text_discription">"Network doesn't provide date and time information. Go to date and time settings and set manually."</string>
+    <string name="timezone_toast">Adjust time zone prior to setting time</string>
+    <string name="popup_name">Notification</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="top" android:orientation="horizontal" android:layout_width="310.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textSize="37.0sp" android:gravity="center" android:id="@id/edit" android:layout_width="96.0dip" android:layout_height="80.0dip" android:singleLine="true" android:maxLength="2" android:privateImeOptions="inputType=YearDateTime_edittext" />
+    <Button android:textSize="30.0sp" android:ellipsize="marquee" android:gravity="center" android:id="@id/button" android:layout_width="98.66998dip" android:layout_height="70.0dip" android:layout_marginLeft="8.0dip" android:text="@string/alarm_min" android:singleLine="true" />
+</LinearLayout>

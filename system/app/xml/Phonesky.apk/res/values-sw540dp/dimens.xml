@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="content_entry_large_size">24.0sp</dimen>
+    <dimen name="content_entry_medium_size">20.0sp</dimen>
+    <dimen name="content_entry_small_size">18.0sp</dimen>
+    <dimen name="content_primary_size">18.0sp</dimen>
+    <dimen name="content_secondary_size">16.0sp</dimen>
+    <dimen name="content_intermediate_size">18.0sp</dimen>
+    <dimen name="swipey_tab_strip_height">45.0dip</dimen>
+    <dimen name="swipey_tab_clickable_width">160.0dip</dimen>
+    <dimen name="swipey_tab_text_size">20.0sp</dimen>
+</resources>

@@ -1,0 +1,2034 @@
+﻿﻿﻿
+<~A>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta content="True" name="HandheldFriendly" />
+<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" />
+<meta name="viewport" content="width=device-width" />
+<script type="text/javascript">
+function toggle(id){
+ul = "ul_" + id;
+img = "img_" + id;
+ulElement = document.getElementById(ul);
+imgElement = document.getElementById(img);
+if (ulElement){
+if (ulElement.className == "closed"){
+ulElement.className = "open";
+imgElement.src = "icon_up.png";
+}
+else{
+ulElement.className = "closed";
+imgElement.src = "icon_down.png";
+}
+}
+}
+function collapse(id) {
+var e = document.getElementById(id);
+if(e.style.display == 'block')
+e.style.display = 'none';
+else
+e.style.display = 'block';
+}
+</script>
+<style type="text/css">
+* {
+margin: 0;
+padding: 0;
+}
+a:link {
+text-decoration: none;
+color: #f46f1b;
+}
+a:visited {
+text-decoration: none;
+color: #cc5500;
+}
+body {
+background: #ddd;
+font-family: Arial, Droid Sans, sans-serif;
+width: auto;
+margin: 5px 10px;
+}
+.open {
+display: block;
+}
+.closed, .more, .sub {
+display: none;
+}
+p.tips {
+display: block;
+padding: 0;
+margin: 5px 0;
+}
+.screenshot {
+width: 50%;
+max-width: 500px;
+text-align: center;
+}
+.explcontainer {
+text-align: center;
+}
+.logo {
+width: 21px;
+position: relative;
+top: 0px;
+}
+.keylabel {
+height: 35px;
+position: relative;
+top: 0px;
+}
+.arrow {
+width: 15px;
+padding: 10px 15px 10px 15px;
+}
+.fliparrow {
+-moz-transform: scaleX(-1);
+-o-transform: scaleX(-1);
+-webkit-transform: scaleX(-1);
+transform: scaleX(-1);
+filter: FlipH;
+-ms-filter: "FlipH";
+width: 15px;
+padding: 10px 15px 10px 15px;
+}
+.closed, .open {
+text-align: center;
+width: 100%;
+padding-bottom: 10px;
+}
+.closed p, .open p {
+text-align: left;
+padding: 10px;
+font-size: 0.95em;
+}
+#container {
+min-width: 100px;
+max-width: 100%;
+margin: 5px auto;
+}
+#container #inside {
+margin: 10 px auto; max-width: 550px;
+}
+.swypehelp { 
+-moz-box-shadow: inset 0px 1px 0px 0px #858585;
+-webkit-box-shadow: inset 0px 1px 0px 0px #858585;
+box-shadow: inset 0px 1px 0px 0px #858585;
+background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #595959), color-stop(1, #1f1f1f) );
+background: -moz-linear-gradient( center top, #595959 5%, #1f1f1f 100% );
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#595959', endColorstr='#1f1f1f');
+background-color: #595959; 
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+border: 1px solid #3b3b3b;
+margin: 5px 0;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+-webkit-transition: all .4s ease-in-out;
+-moz-transition: all .4s ease-in-out;
+-o-transition: all .4s ease-in-out;
+transition: all .4s ease-in-out;
+}
+.swypehelp a {
+display: inline-block;
+color: #ffffff;
+padding: 10px 20px; width: auto;
+min-width: 90%;
+text-decoration: none; text-shadow: 0px -1px 1px #000000;
+}
+.swypehelp:active {
+background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1f1f1f), color-stop(1, #595959) );
+background: -moz-linear-gradient( center top, #1f1f1f 5%, #595959 100% );
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1f1f1f', endColorstr='#595959');
+background-color: #1f1f1f;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.swypehelp h1, .moreclose h1 {
+float: left;
+margin: 0; padding: 0; 
+font-size: 0.95em; font-weight: bold;
+}
+.swypehelp img {
+float: right;
+border: 0;
+}
+.moreclose {
+-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+-webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+box-shadow: inset 0px 1px 0px 0px #ffffff;
+background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6) );
+background: -moz-linear-gradient( center top, #ffffff 5%, #f6f6f6 100% );
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6');
+background-color: #ffffff;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+border: 1px solid #ccc;
+margin: 5px;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.moreclose a {
+display: inline-block;
+color: #000000;
+padding: 7px 10px; width: auto;
+text-decoration: none; text-shadow: 0px 1px 1px #ffffff;
+}
+.moreclose:active {
+background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #999999), color-stop(1, #dddddd) );
+background: -moz-linear-gradient( center top, #999999 5%, #dddddd 100% );
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#999999, endColorstr='#dddddd);
+background-color: #dddddd;
+position: relative;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+</style>
+</head>
+<body>
+<div id="container">
+<div id="inside">
+<div class="swypehelp" onclick="toggle('1')" id="1">
+<a href="#1">
+<h1>
+Introducción a Swype
+</h1>
+<img src="icon_down.png" id="img_1" />
+</a>
+</div>
+<div id="ul_1" class="closed">
+<p>
+Swype es una manera rápida de introducir texto. Le permite escribir una palabra dibujando un trayecto por las letras. Swypee una palabra y levante el dedo.
+</p>
+<img class="screenshot" src="Spanish_WhatIsSwype.png" alt="" />
+<p>
+Ponga el dedo en la primera letra de la palabra y describa un trayecto de una letra a la otra. Levante el dedo al llegar a la última letra. Swype insertará espacios cuando sea necesario.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('2x')" id="2x">
+<a href="#2x">
+<h1>
+La tecla Swype
+</h1>
+<img src="icon_down.png" id="img_2x" />
+</a>
+</div>
+<div id="ul_2x" class="closed">
+<p>
+La tecla Swype es la tecla con el logo de Swype. Mantenga presionada la tecla Swype para acceder a las Opciones de Swype.
+</p>
+<div class="explcontainer">
+<img src="Swype_key_orange.png" class="keylabel">
+</div>
+</div>
+<div class="swypehelp" onclick="toggle('2')" id="2">
+<a href="#2">
+<h1>
+Repetir letras
+</h1>
+<img src="icon_down.png" id="img_2" />
+</a>
+</div>
+<div id="ul_2" class="closed">
+<p>
+Para escribir una letra dos veces, haga un ligero garabateo o describa un círculo sobre ella. Por ejemplo, para escribir la "rr" de "carro", garabatee sobre la tecla "r".
+</p>
+<p>
+</p>
+<img class="screenshot" src="Spanish_DoubleLetters.png" alt="" />
+<p>
+Si lo prefiere, también puede ingresar la misma letra dos veces seguidas describiendo un círculo en la tecla. ¡Use el gesto que le parezca más fácil!
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('3')" id="3">
+<a href="#3">
+<h1>
+Lista de selección de palabras
+</h1>
+<img src="icon_down.png" id="img_3" />
+</a>
+</div>
+<div id="ul_3" class="closed">
+<p>
+Para aceptar la palabra sugerida de la lista de selección de palabras, solo tiene que seguir Swypeando. De lo contrario, desplácese por la lista arrastrando su dedo y seleccione la palabra que desea.
+</p>
+<p>
+Puede personalizar la forma en la que se comporta la Lista de selección de palabras mientras toca, solo tiene que dirigirse a Opciones y seleccionar Sugerencia de palabra.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('4')" id="4">
+<a href="#4">
+<h1>
+Uso de mayúsculas
+</h1>
+<img src="icon_down.png" id="img_4" />
+</a>
+</div>
+<div id="ul_4" class="closed">
+<p>
+Ponga mayúscula inicial en una palabra al Swypear deslizando el dedo desde la primera letra hasta más arriba del teclado y, sin levantarlo, deslícelo hasta la siguiente letra de la palabra.
+</p>
+<img class="screenshot" src="Spanish_Capitalization.png" alt="" />
+<p>
+Cambie las mayúsculas y minúsculas de una palabra después de ingresarla o al editar su texto tocando la palabra en el texto y deslizando el dedo desde la tecla Swype hasta la tecla Mayús antes de levantarlo. Aparecerá una lista de selección de palabras con opciones de uso de mayúsculas que le permitirá poner todo en minúsculas, usar mayúscula inicial o TODO EN MAYÚSCULAS.
+</p>
+<p>
+Para ingresar el modo Bloq Mayús tan solo tiene que tocar dos veces la tecla Mayús.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('5')" id="5">
+<a href="#5">
+<h1>
+Espaciado automático
+</h1>
+<img src="icon_down.png" id="img_5" />
+</a>
+</div>
+<div id="ul_5" class="closed">
+<p>
+Swype ingresa automáticamente un espacio entre las palabras al Swypear la siguiente palabra en la oración. Puede activar o desactivar la función de espaciado automático en Opciones de Swype.
+</p>
+<p>
+El espaciado automático se puede desactivar para una palabra Swypeando desde la barra espaciadora hasta la tecla Retroceso. Aparecerá un icono en la barra espaciadora para mostrar que el espaciado automático está desactivado para la palabra siguiente. Ejemplo: Para ingresar "rompeventanas", Swypee "rompe", Swypeando desde la barra espaciadora hasta la tecla Retroceso, y luego Swypee la palabra "ventanas".
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('6')" id="6">
+<a href="#6">
+<h1>
+Cambiar una palabra
+</h1>
+<img src="icon_down.png" id="img_6" />
+</a>
+</div>
+<div id="ul_6" class="closed">
+<p>
+Cambie una palabra tocándola, a continuación seleccione la palabra que desee de la Lista de selección de palabras.
+</p>
+<p>
+O bien, si encuentra una palabra incorrecta, puede sombrearla y oprimir la tecla Swype para editarla. Se mostrará la Lista de selección de palabras, y usted podrá seleccionar la palabra que quiere ingresar. Esta última reemplazará automáticamente la palabra sombreada.
+</p>
+<p>
+Si no encuentra la palabra que quiere en la Lista de selección de palabras, solo tendrá que Swypear la palabra de nuevo y la nueva palabra que ingresó reemplazará la incorrecta.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('7')" id="7">
+<a href="#7">
+<h1>
+Rebote entre letras
+</h1>
+<img src="icon_down.png" id="img_7" />
+</a>
+</div>
+<div id="ul_7" class="closed">
+<img class="screenshot" src="Spanish_SelectWord.png" alt="" />
+<p>
+A veces, evitar letras al Swypear le asegura obtener la palabra que desea la primera vez. Por ejemplo, "por" y "pie" podrían describirse con el mismo trayecto, pero tenga presente que no necesita moverse de una letra a otra usando líneas rectas. Evitar la "o" al deslizar el dedo hasta la "e" asegura que la palabra "pie" sea la primera en la lista de selección de palabras.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('8')" id="8">
+<a href="#8">
+<h1>
+Caracteres alternativos
+</h1>
+<img src="icon_down.png" id="img_8" />
+</a>
+</div>
+<div id="ul_8" class="closed">
+<p>
+Al tocar una tecla y mantener su dedo en ella, aparece una lista de todos los caracteres disponibles en esa tecla, incluidas las teclas alternativas como "ç" y "ё", los símbolos como @ y % y los números.
+</p>
+<p>
+Para ingresar un carácter alternativo explícitamente, toque la Tecla de símbolos (+!=) que se llevará a la capa de símbolos. Como puede notar, hay dos páginas de caracteres alternativos. Si no ve el carácter que está buscando, oprima la tecla Mayús y ésta le mostrará otro conjunto de caracteres.
+</p>
+<p>
+Recuerde que TODOS los caracteres pueden Swypearse a partir del teclado principal (aunque usted no los pueda ver). Puede Swypear con esta vista del teclado, pero solo obtendrá palabras con por lo menos un número o un símbolo.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('9')" id="9">
+<a href="#9">
+<h1>
+Agregar palabras a Swype
+</h1>
+<img src="icon_down.png" id="img_9" />
+</a>
+</div>
+<div id="ul_9" class="closed">
+<p>
+Agregar palabras al diccionario de Swype es fácil. Toque las letras de la palabra y luego selecciónelas de la lista de selección de palabras. Toque el indicador que aparece para agregar la palabra.
+</p>
+<img class="screenshot" src="Spanish_TeachWord.png" alt="" />
+<p>
+Para eliminar una palabra del diccionario, sombree SOLO la palabra que quiere eliminar y luego toque la tecla Swype.
+</p>
+</div>
+<div class="swypehelp" onclick="toggle('10')" id="10">
+<a href="#10">
+<h1>
+Gestos Swype
+</h1>
+<img src="icon_down.png" id="img_10" />
+</a>
+</div>
+<div id="ul_10" class="closed">
+<p>
+Los gestos Swype son métodos abreviados del teclado para realizar tareas comunes rápidamente.
+</p>
+<div class="moreclose" onclick="toggle('10a')" id="10a">
+<a href="#10a">
+<h1>
+Acceder al teclado de edición
+</h1>
+</a>
+</div>
+<div id="ul_10a" class="closed">
+<p class="tips">
+El teclado de edición permite al usuario mover el cursor en el texto, como también realizar otras tareas de edición.  Para acceder al teclado de edición, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la tecla símbolos (+!=) del teclado.
+</p>
+</div>
+<div class="moreclose" onclick="toggle('10b')" id="10b">
+<a href="#10b">
+<h1>
+Acceder al teclado numérico
+</h1>
+</a>
+</div>
+<div id="ul_10b" class="closed">
+<p class="tips">
+Para acceder al teclado numérico rápidamente, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta el número 5.
+</p>
+</div>
+<div class="moreclose" onclick="toggle('10c')" id="10c">
+<a href="#10c">
+<h1>
+Ocultar el teclado
+</h1>
+</a>
+</div>
+<div id="ul_10c" class="closed">
+<p class="tips">
+Para ocultar el teclado fácilmente, solo debe Swypear desde la tecla Swype hasta la tecla retroceder.
+</p>
+<div class="explcontainer">
+<img src="Swype_key_orange.png" class="keylabel">
+<img src="right_arrow_orange.png" class="arrow">
+<img src="backspace_key.png" class="keylabel" />
+</div>
+</div>
+<div class="moreclose" onclick="toggle('10d')" id="10d">
+<a href="#10d">
+<h1>
+Desactivar el espaciado automático
+</h1>
+</a>
+</div>
+<div id="ul_10d" class="closed">
+<p class="tips">
+Puede eliminar el espaciado automático antes de la próxima palabra al deslizarse desde la barra espaciadora hasta la tecla retroceder.
+</p>
+<div class="explcontainer">
+<img src="spacebar.png" class="keylabel" />
+<img src="right_arrow_orange.png" class="arrow">
+<img src="backspace_key.png" class="keylabel">
+</div>
+</div>
+<div class="moreclose" onclick="toggle('10e')" id="10e">
+<a href="#10e">
+<h1>
+Editar mayúsculas y minúsculas de una palabra
+</h1>
+</a>
+</div>
+<div id="ul_10e" class="closed">
+<p class="tips">
+Cambie las mayúsculas y minúsculas de una palabra después de ingresarla o al editar su texto tocando la palabra en el texto y deslizando el dedo desde la tecla Swype hasta la tecla Mayús antes de levantarlo. Aparecerá una lista de selección de palabras con opciones de uso de mayúsculas que le permitirá poner todo en minúsculas, usar mayúscula inicial o TODO EN MAYÚSCULAS.
+</p>
+<div class="explcontainer">
+<img src="Swype_key_orange.png" class="keylabel">
+<img src="right_arrow_orange.png" class="arrow">
+<img src="shift.png" class="keylabel" />
+</div>
+</div>
+<div class="moreclose" onclick="toggle('10g')" id="10g">
+<a href="#10g">
+<h1>
+Selec. todo
+</h1>
+</a>
+</div>
+<div id="ul_10g" class="closed">
+<p class="tips">
+Para seleccionar todo el texto que introdujo, debe Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> a la ‘a’.
+</p>
+</div>
+<div class="moreclose" onclick="toggle('10h')" id="10h">
+<a href="#10h">
+<h1>
+Cortar
+</h1>
+</a>
+</div>
+<div id="ul_10h" class="closed">
+<p class="tips">
+Para eliminar una palabra o un bloque de texto y guardarlo para pegarlo en otro lado, solo seleccione el texto dándole dos toques seguidos a la palabra o use el gesto Seleccionar todo y luego puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la ‘x’.
+</p>
+</div>
+<div class="moreclose" onclick="toggle('10i')" id="10i">
+<a href="#10i">
+<h1>
+Copiar
+</h1>
+</a>
+</div>
+<div id="ul_10i" class="closed">
+<p class="tips">
+Para copiar una palabra o un bloque de texto y guardarlo para pegarlo en otro lado, solo seleccione el texto dándole dos toques seguidos a la palabra o use al gesto Seleccionar todo y luego puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la ‘c’.
+</p>
+</div>
+<div class="moreclose" onclick="toggle('10j')" id="10j">
+<a href="#10j">
+<h1>
+Pegar
+</h1>
+</a>
+</div>
+<div id="ul_10j" class="closed">
+<p class="tips">
+Después de copiar o cortar el texto, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la ‘v’ para pegarlo en otro lado.
+</p>
+</div>
+</div>
+<div class="swypehelp" onclick="toggle('11x')" id="11x">
+<a href="#11x">
+<h1>
+Más ayuda sobre el uso de Swype
+</h1>
+<img src="icon_down.png" id="img_11x" />
+</a>
+</div>
+<div id="ul_11x" class="closed">
+<p>
+Para obtener más ayuda sobre el uso de Swype, vea un manual de usuario de Swype y los consejos y videos de Swype en <a href="http://www.swype.com">www.swype.com</a>, o visite el foro de Swype en línea en <a href="http://forum.swype.com">forum.swype.com</a>.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
+</~A>
+<~B>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+<style type="text/css">
+* { margin: 0; }
+html, body {
+font-family: Droid Sans, sans-serif;
+}
+body {
+text-align: center;
+background: #000; 
+}
+.wrapper {
+position: relative;
+width: 100%;
+margin: 0 auto;
+}
+.header {
+min-height: 20px;
+padding: 12px; margin: 0 0 10px 0;
+background: #424542;
+border-bottom: 1px solid #777;
+}
+.content {
+margin: 0 auto;
+text-align: left;
+width: 100%; max-width: 590px;
+}
+h3 {
+color: #fff;
+text-align: left;
+valign: center;
+font-weight: 400;
+margin: 0 0 0 45px;
+text-shadow: 0 -1px 1px #000;
+}
+p {
+padding: 0 15px;
+color: #fff;
+font: 0.95em Droid Sans, sans-serif;
+}
+b { color: #ffa200; font-style: italic; }
+.info {
+float: left; width: 35px;
+margin: -3px 0 0 0;
+}
+.image {
+text-align: center;
+width: 100%;
+padding: 20px 0;
+}
+img {
+max-width: 480px;
+width: 70%;
+}
+td.space { padding: 5px; }
+.footer {
+height: auto;
+background: #000;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#888888), to(#000000));
+background: -moz-linear-gradient(0% 90% 90deg, #888888, #000000);
+}
+.btncontainer {
+text-align: center;
+width: 100%;
+padding: 10px;
+height: auto;
+clear: both;
+}
+.column {
+font-size: 0.8em;
+color: #000;
+text-decoration: none;
+width: 50%; height: 100%;
+padding: 7px;
+border: 1px solid #dddddd;
+text-align: center;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+background: #ffffff;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#bcbcbc));
+background: -moz-linear-gradient(0% 90% 90deg, #efefef, #bcbcbc);
+-webkit-tap-highlight-color:rgba(0,0,0,0)
+}
+.column:hover, .column:active {
+background: #ccc;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bcbcbc), to(#efefef));
+background: -moz-linear-gradient(0% 90% 90deg, #bcbcbc, #efefef);
+-webkit-tap-highlight-color:rgba(0,0,0,0)
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="header">
+<img src="SwypeLogo.png" class="info" />
+<h3>
+Bienvenido a Swype
+</h3>
+</div>
+<div class="content">
+<p>
+Swypee las palabras dibujando un trayecto por las letras en lugar de tocar cada tecla.
+</p>
+<div class="image">
+<img src="Spanish_WhatIsSwype.png" alt="" />
+<br />
+<br />
+<b>
+rápido
+</b>
+</div>
+</div>
+</div>
+<div class="footer">
+<table class="btncontainer" cellpadding="0" cellspacing="0">
+<tr>
+<td class="column" onclick="window.SwypeHost.showHelp()">
+Conocer más
+</td>
+<td class="space">
+&nbsp;
+</td>
+<td class="column" onclick="window.SwypeHost.cancel()">
+Cancelar
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+</~B>
+<~B1>VER VIDEO</~B1>
+<~B2>VIDEO</~B2>
+<~B3>Para ver Consejos y Ayuda, presione sin soltar la tecla Swype intermitente.</~B3>
+<~B4>Para ver Consejos y Ayuda, presione sin soltar la tecla Swype.</~B4>
+<~U>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" bgcolor="#000000" cellspacing="1" cellpadding="5">
+<tr>
+<td align="center">
+<font color="#dddddd" face="arial">
+<h3>
+<b>
+La tecla Swype
+</b>
+</h3>
+</font>
+<hr />
+</td>
+</tr>
+<table align="center" bgcolor="#000000" cellspacing="1" cellpadding="5">
+<tr>
+<td rowspan="2" align="left">
+<img src="SwKey-New.png" width="40" />
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">
+<font color="#ffffff" face="arial">
+</font>
+<p>
+<b>
+Oprimió la tecla Swype, pero no sabemos qué está tratando de hacer.
+</b>
+</p>
+<p>
+Tocar sin soltar le brinda consejos. Esto mostrará consejos o ayuda útiles para usar Swype.
+</p>
+</td>
+</tr>
+</table>
+</table>
+</body>
+</html></~U>
+<~I>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" border="0" bgcolor="#000000" cellspacing="1" cellpadding="3">
+<tr>
+<th colspan="3" scope="col">
+<font face="arial" color="#FFFF66">
+<b>
+¡Vaya más rápido!
+</b>
+</font>
+<font color="#FFFFFF">
+<hr />
+</font>
+</th>
+</tr>
+<tr>
+<td colspan="3" align="center" valign="middle">
+<img src="SwypeFastSloppy.png" height="99" width="148" alt="Sloppy Entry" />
+</td>
+</tr>
+<tr>
+<td colspan="3" align="center" valign="middle">
+<font face="arial" color="#FFFFCC">
+<b>
+No tiene que ser tan exacto... Trate de escribir más rápido.
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<form method="LINK" action="*HTRI">
+<input type="submit" value="Conocer más" />
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html></~I>
+<~F>
+La palabra sugerida se selecciona automáticamente. Usted puede continuar escribiendo la siguiente.
+</~F>
+<~K>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" border="0" cellspacing="1" bgcolor="#000000" cellpadding="3">
+<tr>
+<td colspan="2" align="center">
+<font color="#FFFF66" face="arial">
+<b>
+Caracteres alternativos
+</b>
+</font>
+<font color="#FFFFFF">
+<hr />
+</font>
+</td>
+</tr>
+<tr>
+<td align="middle">
+<font face="arial" color="#FFFFCC">
+<b>
+Al tocar una tecla y mantener su dedo en ella, aparece una lista de todos los caracteres disponibles en esa tecla, incluidas las teclas alternativas como "ç" y "ё", los símbolos como @ y % y los números.
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+<font face="arial" color="#FFFFCC">
+<b>
+Para ingresar un carácter alternativo explícitamente, toque la Tecla de símbolos (+!=) que se llevará a la capa de símbolos. Como puede notar, hay dos páginas de caracteres alternativos. Si no ve el carácter que está buscando, oprima la tecla Mayús y ésta le mostrará otro conjunto de caracteres.
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center" colspan="2">
+<form method="LINK" action="*HWCH">
+<input type="submit" value="Conocer más" />
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html></~K>
+<~G>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" border="0" bgcolor="#000000" cellspacing="1" cellpadding="3">
+<tr>
+<td align="center">
+<font face="arial" color="#FFFF66">
+<b>
+</b>
+</font>
+<font color="#FFFFFF">
+<hr />
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<font face="arial" color="#FFFFCC">
+<b>
+Para enseñarle una palabra nueva a Swype, simplemente toque cada una de sus letras, una a una, seguidas del espacio.
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center" colspan="2">
+<form method="LINK" action="*HADW">
+<input type="submit" value="Conocer más" />
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html></~G>
+<~C>
+Swype insertará espacios automáticamente cuando sea necesario. No es necesario que usted lo haga.
+</~C>
+<~H>
+Intente swypear desde los signos de puntuación como “.” “?” y “!” hacia la barra espaciadora.
+</~H>
+<~E>
+Para escribir una letra en mayúsculas, deslice el dedo o lápiz desde la letra hasta más allá de la parte superior del teclado y de regreso para seguir escribiendo la palabra.
+</~E>
+<~D>
+Para escribir una letra dos veces, haga un ligero garabateo o describa un círculo sobre ella.
+</~D>
+<~J>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" border="0" cellspacing="1" bgcolor="#000000" cellpadding="3">
+<tr>
+<td style="vertical-align:middle" align="center">
+<font color="#FFFF66" face="arial">
+<b>
+Trayectos de Swype avanzados
+</b>
+</font>
+<font color="#FFFFFF">
+<hr />
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<img src="SwypePut.png" width="145" height="48" alt="Image shows Swyping the word 'put.'" />
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<font face="arial" color="#FFFFCC">
+<b>
+Para mejorar la exactitud puede hacer una curva con el dedo alrededor de las letras que no desea, como en "put" arriba.
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<form method="LINK" action="*HTRI">
+<input type="submit" value="Conocer más" />
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html></~J>
+<~L>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" border="0" cellspacing="1" bgcolor="#000000" cellpadding="3">
+<tr>
+<td align="center" style="vertical-align:middle">
+<font color="#FFFF66" face="arial">
+<b>
+¡Lo sentimos!
+</b>
+</font>
+<font color="#FFFFFF">
+<hr />
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<font face="arial" color="#FFFFCC">
+<b>
+Para corregir una palabra de una letra, borre la palabra y escríbala nuevamente.
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+</td>
+</tr>
+</table>
+</body>
+</html></~L>
+<~M>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" border="0" cellspacing="1" bgcolor="#000000" cellpadding="2">
+<tr>
+<td style="vertical-align:middle" align="center">
+<font face="arial" color="#FFFFCC">
+<b>
+No hay otras opciones disponibles para esta palabra.
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+</td>
+</tr>
+</table>
+</body>
+</html></~M>
+<~N>
+Campo de contraseña: Swype no guardará palabras en el diccionario ni ofrecerá sugerencias de palabras.
+</~N>
+<~O>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" border="0" cellspacing="1" bgcolor="#000000" cellpadding="3">
+<tr>
+<td colspan="2" align="center">
+<font color="#FFFF66" face="arial">
+<b>
+No hay una ventana de lista de palabras para las contraseñas
+</b>
+</font>
+<font color="#FFFFFF">
+<hr />
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<font face="arial" color="#FFFFCC">
+<b>
+Por su seguridad, la ventana de lista de palabras no puede mostrarse mientras ingresa texto en un campo para contraseñas.
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<form method="LINK" action="*HALT">
+<input type="submit" value="Conocer más" />
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html></~O>
+<~P>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" bgcolor="#000000" cellspacing="1" cellpadding="5">
+<tr>
+<td align="center">
+<font color="#dddddd" face="arial">
+<h3>
+<b>
+La tecla Swype
+</b>
+</h3>
+</font>
+<hr />
+</td>
+</tr>
+<table align="center" bgcolor="#000000" cellspacing="1" cellpadding="5">
+<tr>
+<td rowspan="2" align="left">
+<img src="SwKey-New.png" width="40" />
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">
+<font color="#ffffff" face="arial">
+</font>
+<p>
+<b>
+Oprimió la tecla Swype, pero no sabemos qué está tratando de hacer.
+</b>
+</p>
+<p>
+Tocar sin soltar le brinda consejos. Esto mostrará consejos o ayuda útiles para usar Swype.
+</p>
+</td>
+</tr>
+</table>
+</table>
+</body>
+</html></~P>
+<~Q>Esta copia por tiempo limitado de Swype ha vencido.</~Q>
+<~R>Surgió un problema al abrir la base de datos de Swype. Es posible que esté dañada o en el formato equivocado.</~R>
+<~S>La conversión a chino tiene un límite de «<^^>» caracteres.</~S>
+<~T>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" border="0" cellspacing="1" bgcolor="#000000" cellpadding="3">
+<tr>
+<td style="vertical-align:middle" align="center">
+<font color="#FFFF66" face="arial">
+<b>
+Se agregó al diccionario
+</b>
+</font>
+<font color="#FFFFFF">
+<hr />
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<font face="arial" color="#FFFFCC">
+<b>
+La(s) siguiente(s) palabra(s) se ha(n) agregado a su diccionario:
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<font face="arial" color="#FFFFCC">
+</font>
+<p>
+<ul style="list-style-type:none">
+<b>
+<i>
+"<^^>"
+</i>
+</b>
+</ul>
+</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<form method="LINK" action="*HADW">
+<input type="submit" value="Conocer más" />
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html></~T>
+<~V>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" border="0" cellspacing="1" bgcolor="#000000" cellpadding="3">
+<tr>
+<td style="vertical-align:middle" align="center">
+<font color="#FFFF66" face="arial">
+<b>
+No se puede agregar
+</b>
+</font>
+<font color="#FFFFFF">
+<hr />
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<font face="arial" color="#FFFFCC">
+<b>
+La palabra «<^^>» no puede agregarse a su diccionario Swype porque «<^^>» no es un carácter permitido para una palabra de diccionario.
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<form method="LINK" action="*HADW">
+<input type="submit" value="Conocer más" />
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html></~V>
+<~W>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" border="0" cellspacing="1" bgcolor="#000000" cellpadding="3">
+<tr>
+<td style="vertical-align:middle" align="center">
+<font color="#FFFF66" face="arial">
+<b>
+Palabra 'oculta'
+</b>
+</font>
+<font color="#FFFFFF">
+<hr />
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<font face="arial" color="#FFFFCC">
+<b>
+La palabra que acaba de ingresar («<^^>») ha sido 'ocultada' por la palabra «<^^>», agregada previamente al diccionario Swype. Si quiere eliminar la palabra «<^^>» de su diccionario, ingrésela en cualquier texto y sombréela, luego active la  tecla Swype
+</b>
+</font>
+.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<form method="LINK" action="*HCHW">
+<input type="submit" value="Conocer más" />
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html></~W>
+<~X>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+<style type="text/css">
+* { margin: 0; }
+html, body {
+font-family: Droid Sans, sans-serif;
+overflow: -moz-scrollbars-vertical;
+overflow: scroll-vertical;
+}
+.logo {
+width: 21px;
+position: relative;
+top: 0px;
+}
+body {
+text-align: center;
+background: #000; 
+}
+.wrapper {
+position: relative;
+width: 100%;
+margin: 0 auto;
+}
+.header {
+min-height: 20px;
+padding: 12px; margin: 0 0 10px 0;
+background: #424542;
+border-bottom: 1px solid #777;
+}
+.content {
+margin: 0 auto;
+text-align: left;
+width: 100%; max-width: 590px;
+}
+h3 {
+color: #fff;
+text-align: left;
+valign: center;
+font-weight: 400;
+margin: 0 0 0 45px;
+text-shadow: 0 -1px 1px #000;
+}
+p {
+padding: 0 15px;
+color: #fff;
+font: 0.95em Droid Sans, sans-serif;
+}
+b { color: #ffa200; font-style: italic; }
+.info {
+float: left; width: 35px;
+margin: -3px 0 0 0;
+}
+.image {
+text-align: center;
+width: 100%;
+padding: 20px 0;
+}
+img {
+max-width: 480px;
+width: 70%;
+}
+td.space { padding: 5px; }
+.footer {
+height: auto;
+background: #000;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#888888), to(#000000));
+background: -moz-linear-gradient(0% 90% 90deg, #888888, #000000);
+}
+.btncontainer {
+text-align: center;
+width: 100%;
+padding: 10px;
+height: auto;
+clear: both;
+}
+.column {
+font-size: 0.8em;
+color: #000;
+text-decoration: none;
+width: 50%; height: 100%;
+padding: 7px;
+border: 1px solid #dddddd;
+text-align: center;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+background: #ffffff;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#bcbcbc));
+background: -moz-linear-gradient(0% 90% 90deg, #efefef, #bcbcbc);
+-webkit-tap-highlight-color:rgba(0,0,0,0)
+}
+.column:hover, .column:active {
+background: #ccc;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bcbcbc), to(#efefef));
+background: -moz-linear-gradient(0% 90% 90deg, #bcbcbc, #efefef);
+-webkit-tap-highlight-color:rgba(0,0,0,0)
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="header">
+<img src="SwypeLogo.png" class="info" />
+<h3>
+Swype 천지인 사용하기
+</h3>
+</div>
+<div class="content">
+<p>
+Swype 천지인 자판에서는 스와이프와 태핑 방식이 모두 가능합니다. 가로 모드는 쿼티 자판을 지원합니다. 자세한 내용은 <img src="SwLogo.png" class="logo">를 길게 눌러서 설정을 열고 'Swype 천지인 사용하기'를 참조하세요.
+</p>
+<div class="image">
+<img src="KoreanCJ_WhatIsSwype.png" alt="" />
+</div>
+</div>
+<div class="footer">
+<table class="btncontainer" cellpadding="0" cellspacing="0">
+<tr>
+<td class="column" onclick="window.SwypeHost.showHelp()">
+더 알아보기
+</td>
+<td class="space">
+&nbsp;
+</td>
+<td class="column" onclick="window.SwypeHost.cancel()">
+취소
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+</~X>
+<~Z>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" border="0" cellspacing="1" bgcolor="#000000" cellpadding="3">
+<tr>
+<td colspan="2" align="center">
+<font color="#FFFF66" face="arial">
+<b>
+Puntuación incrustada
+</b>
+</font>
+<font color="#FFFFFF">
+<hr />
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<font face="arial" color="#FFFFCC">
+<b>
+Para las palabras que necesitan un apóstrofo, Swypee por encima de la tecla del apóstrofo, que es la misma de  '.'
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<form method="LINK" action="*HALT">
+<input type="submit" value="Conocer más" />
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html></~Z>
+<~s>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+</head>
+<body bgcolor="#000000">
+<table align="center" bgcolor="#000000" border="0" cellspacing="1" cellpadding="3">
+<tr>
+<td colspan="2" align="center">
+<font color="#FFFF66" face="arial">
+<b>
+¡Uy!
+</b>
+</font>
+<font color="FFFCCC">
+<hr />
+</font>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center">
+<b>
+<font color="#ffffff">
+Necesitas actualizar tu diccionario de «<^^>».
+</font>
+</b>
+<br />
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle" align="center" colspan="2">
+<form method="LINK" action="*LNOVI">
+<input type="submit" value="Abrir la Tienda Ovi" />
+</form>
+<font color="#FFFFFF">
+<hr />
+</font>
+</td>
+</tr>
+</table>
+</body>
+</html></~s>
+<~$>
+<html>
+<head>
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name='viewport' content='width=device-width' />
+
+<script type="text/javascript">
+function showToast(text) {
+window.SwypeHost.showToast(text)
+}
+function cancel() {
+window.SwypeHost.cancel()
+}
+</script>
+<style type="text/css">
+* { margin: 0; }
+html, body { font-family: Droid Sans, sans-serif; }
+body {
+text-align: center;
+background: #000;
+}
+.wrapper {
+position: relative;
+width: 100%;
+margin: 0 auto;
+}
+.header {
+min-height: 20px;
+padding: 12px; margin: 0 0 10px 0;
+background: #424542;
+}
+.content {
+margin: 0 auto;
+text-align: left;
+width: 100%;
+}
+h3 {
+color: #fff;
+text-align: left;
+valign: center;
+margin: -2px 0 0 45px;
+text-shadow: 0 -1px 1px #000;
+}
+p {
+padding: 0 10px 0.9em; margin: 0 0 -3px 0;
+color: #fff;
+font: 0.9em Droid Sans, sans-serif;
+}
+.logo {
+width: 21px;
+position: relative;
+top: 0px;
+}
+.info {
+float: left; width: 28px;
+margin: -3px 0 0 0;
+}
+td.space { padding: 5px; }
+.footer {
+position: relative;
+width: 100%;
+margin: 0 auto;
+}
+.footer { height: auto; }
+.btncontainer {
+text-align: center;
+width: 100%;
+padding: 10px;
+height: auto;
+clear: both;
+}
+.column {
+font-size: 0.8em;
+color: #000;
+text-decoration: none;
+width: 50%; height: 100%;
+padding: 7px;
+border: 1px solid #dddddd;
+text-align: center;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+background: #ffffff;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#bcbcbc));
+background: -moz-linear-gradient(0% 90% 90deg, #efefef, #bcbcbc);
+-webkit-tap-highlight-color:rgba(0,0,0,0)
+}
+.column:hover, .column:active {
+background: #ccc;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bcbcbc), to(#efefef));
+background: -moz-linear-gradient(0% 90% 90deg, #bcbcbc, #efefef);
+-webkit-tap-highlight-color:rgba(0,0,0,0)
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="header">
+<img src="InfoIcon.png" class="info" />
+<h3>
+Gestos Swype
+</h3>
+</div>
+<div class="content">
+<p>
+Para seleccionar todo, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la “a”
+</p>
+<p>
+Para copiar, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la “c”
+</p>
+<p>
+Para cortar, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la “x”
+</p>
+<p>
+Para pegar, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la “v”
+</p>
+</div>
+</div>
+<div class="footer">
+<table class="btncontainer" cellpadding="0" cellspacing="0">
+<tr>
+<td class="column" onclick="window.SwypeHost.doNotShow('Tag')">
+No mostrar otra vez
+</td>
+<td class="space">
+&nbsp;
+</td>
+<td class="column" onclick="window.SwypeHost.cancel()">
+Cancelar
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html></~$>
+<~@>Confirme la eliminación de la palabra</~@>
+<~#>¿Quiere eliminar la palabra «<^^>» del diccionario Swype?</~#>
+<~!>
+Esc</~!>
+<~%>
+Insert</~%>
+<~&>
+Borrar</~&>
+<~+>Bloq
+Des</~+>
+<~,>
+Pausar</~,>
+<~->
+Inter</~->
+<~.>Impr
+Pant</~.>
+<~/>Cancelar</~/>
+<~~>Lista de palabras</~~>
+<~X~>Si la ventana de lista de palabras se muestra</~X~>
+<~0>Nunca</~0>
+<~X0>Siempre</~X0>
+<~^>Velocidad vs exactitud</~^>
+<~X^>Cómo responde Swype a la entrada de datos</~X^>
+<~1>Velocidad</~1>
+<~X1>Exactitud</~X1>
+<~2>No mostrar otra vez</~2>
+<~3>Números</~3>
+<~4>Edit</~4>
+<~4a>Edit</~4a>
+<~5>Edit</~5>
+<~6>Esto detendrá el programa de instalación. ¿Está seguro?</~6>
+<~7>Texto de la EULA</~7>
+<~8>Acepto</~8>
+<~9>Sig</~9>
+<~X9>Atrás</~X9>
+<~:>Tab</~:>
+<~;>Mayús</~;>
+<~<>MAYÚS</~<>
+<~=>Espacio</~=>
+<~>>Ctrl</~>>
+<~?>OP.</~?>
+<~[>Funcionamiento</~[>
+<~]>Guía</~]>
+<~X]>Aprenda a usar Swype rápidamente</~X]>
+<~a>Procesando …</~a>
+<~b>Toque-Swype</~b>
+<~c>Estándar</~c>
+<~d>Toque múltiple</~d>
+<~e>¡Instalación de Swype no autorizada!</~e>
+<~f>Copia de evaluación - ¡Vence «<^^>» días después de la compilación!</~f>
+<~g>Si desea más ayuda, visite <a href="http://www.swype.com">www.swype.com</a> para ver consejos y videos.</~g>
+<~h>Su periodo de prueba ha finalizado. Actualice su copia de Swype.</~h>
+<~i>Swype no pudo escribir el siguiente archivo: «<^^>»</~i>
+<~j>Swype no pudo leer el siguiente archivo: «<^^>»</~j>
+<~k>Swype está cerrando.</~k>
+<~l>¡No se puede iniciar Swype!</~l>
+<~m>Swype</~m>
+<~n>Opciones</~n>
+<~o>Acerca de</~o>
+<~Xo>Versión</~Xo>
+<~p>Ayuda</~p>
+<~q>Inserción automática</~q>
+<~Xq>Período de espera antes de seleccionar automáticamente la primera palabra</~Xq>
+<~Xr>3 seg</~Xr>
+<~Xs>20 seg</~Xs>
+<~Ys>seg</~Ys>
+<~r>Swype(TM)</~r>
+<~t>Mostrar trayecto</~t>
+<~Xt>Mostrar o no el trayecto completo de Swype</~Xt>
+<~u>Menor</~u>
+<~Xu>Mayor</~Xu>
+<~v>Predet.</~v>
+<~w>Espaciado automático</~w>
+<~Xw>Insertar espacios automáticamente entre palabras</~Xw>
+<~Yw>Mayús. automáticas</~Yw>
+<~Zw>Usar mayúsculas automáticamente en la primera letra de las palabras iniciales en una oración</~Zw>
+<~x>Predicción de palab.</~x>
+<~Xx>Predecir palabras al teclear en Swype</~Xx>
+<~y></~y>
+<~z>Mostrar caracteres azules</~z>
+<~{>Activar roce</~{>
+<~|>Sonidos</~|>
+<~X|>Activar los sonidos de Swype</~X|>
+<~}>Registrar estadísticas</~}>
+<~_>
+Password field: Swype will not save words to the dictionary or offer word choices.
+</~_>
+<~AA>Opciones</~AA>
+<~AB>Ayuda de Swype</~AB>
+<~XB>Manual del usuario de Swype</~XB>
+<~AC>Idioma</~AC>
+<~AD>Idioma de la ayuda</~AD>
+<~AE>Idioma de Swype</~AE>
+<~AF>Acerca de Swype</~AF>
+<~AG>Preferencias</~AG>
+<~AH>Más consejos</~AH>
+<~AI>Más ayuda</~AI>
+<~AJ>Activar consejos</~AJ>
+<~XJ>Activar el indicador intermitente para ayuda rápida</~XJ>
+<~BA>ABC</~BA>
+<~BB>123</~BB>
+<~ZA>SÍM</~ZA>
+<~ZC>Des-
+hacer</~ZC>
+<~ZD>Re-
+hacer</~ZD>
+<~ZE>Re
+Pág</~ZE>
+<~ZF>Av
+Pág</~ZF>
+<~ZG>
+Cortar</~ZG>
+<~ZH>
+Pegar</~ZH>
+<~ZI>
+Copiar</~ZI>
+<~ZJ>
+Inicio</~ZJ>
+<~ZK>
+Fin</~ZK>
+<~ZL>Selec.
+texto</~ZL>
+<~ZM>Pasar
+cursor</~ZM>
+<~ZN>Selec.
+todo</~ZN>
+<~BD>Retroceso</~BD>
+<~BE>Tab</~BE>
+<~BF>Intro</~BF>
+<~BG>Mayús</~BG>
+<~BH>Ctrl-</~BH>
+<~BI>Alt</~BI>
+<~BJ>Pausar</~BJ>
+<~BK>Bloq Mayús</~BK>
+<~BL>Esc</~BL>
+<~BM>Espacio</~BM>
+<~BN>Re Pág</~BN>
+<~BO>Av Pág</~BO>
+<~BP>Fin</~BP>
+<~BQ>Inicio</~BQ>
+<~BR>Izquierda</~BR>
+<~BS>Arriba</~BS>
+<~BT>Derecha</~BT>
+<~BU>Abajo</~BU>
+<~BW>Impr Pant</~BW>
+<~BX>Insert</~BX>
+<~BY>Supr</~BY>
+<~BZ>Menú</~BZ>
+<~CA>F1</~CA>
+<~CB>F2</~CB>
+<~CC>F3</~CC>
+<~CD>F4</~CD>
+<~CE>F5</~CE>
+<~CF>F6</~CF>
+<~CG>F7</~CG>
+<~CH>F8</~CH>
+<~CI>F9</~CI>
+<~CJ>F10</~CJ>
+<~CK>F11</~CK>
+<~CL>F12</~CL>
+<~CM>Bloq Des</~CM>
+<~CN>Selec. todo</~CN>
+<~CO>Inicio de la página</~CO>
+<~CP>Final de la página</~CP>
+<~CQ>Final del documento</~CQ>
+<~CR>Inicio del documento</~CR>
+<~CS>Palabra a la izquierda</~CS>
+<~CT>Regresar al párrafo</~CT>
+<~CU>Palabra a la derecha</~CU>
+<~CV>Avanzar en el párrafo</~CV>
+<~CW>Página siguiente</~CW>
+<~CY>Símbolos</~CY>
+<~CZ>Swype</~CZ>
+<~DA>Fn</~DA>
+<~DB>Sin espacio automático</~DB>
+<~DC>Idioma</~DC>
+<~DD>Opciones</~DD>
+<~DE>Modo Selección de texto</~DE>
+<~DF>Modo Pasar cursor</~DF>
+<~DG>Borrar palabra a la izq.</~DG>
+<~DH>Cortar</~DH>
+<~DI>Copiar</~DI>
+<~DJ>Pegar</~DJ>
+<~DK>Deshacer</~DK>
+<~DL>Rehacer</~DL>
+<~DM>Ayuda</~DM>
+<~DN>Borrar palabra a la derecha</~DN>
+<~DO>:-) ...</~DO>
+<~DP>Entrada de voz</~DP>
+<~DQ>Acción de aplicación</~DQ>
+<~DR>Alternar idioma</~DR>
+<~EA>Espere</~EA>
+<~EB>Sí</~EB>
+<~EC>No</~EC>
+<~ED>Aceptar</~ED>
+<~EE>Más ayuda</~EE>
+<~EF>Guía de Swype</~EF>
+<~EG>Toque aquí para empezar</~EG>
+<~EH>Seleccionar el idioma para Swype</~EH>
+<~EI>Consejos</~EI>
+<~EJ>Consejo de Swype</~EJ>
+<~EK>Para ver y usar la guía correctamente, use el modo retrato.</~EK>
+<~EL>Seleccionar Método de entrada</~EL>
+<~EM>Seleccione otro método de entrada.</~EM>
+<~EN>No podemos cambiar su método de entrada dentro de Swype. Para cambiar el método de entrada, toque sin soltar cualquier campo de entrada de texto y seleccione "Método de entrada" en ese menú.</~EN>
+<~EO>Lo sentimos, no podemos encontrar el video Swype. Visite <a href="http://www.swype.com">www.swype.com</a> para más información.</~EO>
+<~EP>Salir</~EP>
+<~EQ>Método de entrada Swype</~EQ>
+<~ER>Swype todavía se está ejecutando en segundo plano.</~ER>
+<~ES>Para salir use el menú de contexto del icono en la bandeja del sistema.</~ES>
+<~ET>Cargando ...</~ET>
+<~EU>Vibración del teclado</~EU>
+<~EV>El teclado predeterminado es Swype. Para cambiar el método de entrada, toque sin soltar en cualquier campo de texto y seleccione "Método de entrada" en ese menú.</~EV>
+<~EW>Video</~EW>
+<~EX>Avanzadas</~EX>
+<~EY>Opciones avanzadas de Swype</~EY>
+<~FA>Reiniciar el teléfono después de la instalación de Swype.</~FA>
+<~FB>Reiniciar el teléfono después de la desinstalación de Swype.</~FB>
+<~FC>Reiniciar el teléfono para que este cambio sea efectivo.</~FC>
+<~FD>Seleccionar NO para el Método de entrada de Swype en Opciones de Swype antes de actualizar/desinstalar.</~FD>
+<~FE>Guardar</~FE>
+<~FF>Cerrar</~FF>
+<~FG>Listo</~FG>
+<~FH>Por favor, primero reinicie y luego actualice o desinstale Swype.</~FH>
+<~FI>Tamaño del teclado</~FI>
+<~FJ>Pequeño</~FJ>
+<~FK>Grande</~FK>
+<~FL>Preparando...</~FL>
+<~FM>Hable ahora</~FM>
+<~FN>Procesando</~FN>
+<~FO>Elegir el tamaño del teclado en modo paisaje</~FO>
+<~FP>Más idiomas...</~FP>
+<~FQ>Error. Por favor, intente otra vez.</~FQ>
+<~FR>No pudo conectarse</~FR>
+<~FS>Error, el discurso es muy largo.</~FS>
+<~FT>Problemas de sonido</~FT>
+<~FU>Error del servidor.</~FU>
+<~FV>No pudo captarse discurso alguno.</~FV>
+<~FW>No se encontraron coincidencias</~FW>
+<~FX>No tiene instalado Búsqueda por voz</~FX>
+<~FY>Opciones de Swype</~FY>
+<~FZ>Agregar «<^^>» al diccionario</~FZ>
+<~GA>Una nueva versión de Swype está disponible. Debe actualizar para seguir usando Swype. Visite beta.swype.com para más información.</~GA>
+<~GB></~GB>
+<~GC>Debe tener seleccionado al menos un idioma para que la tecla de globo funcione correctamente</~GC>
+<~GD>Sugerencia de palabra</~GD>
+<~GE>Sugerir palabras mientras teclea</~GE>
+<~GF>Corrección automática</~GF>
+<~GG>Usar automáticamente la palabra sugerida al presionar la barra espaciadora</~GG>
+<~GH>Ver palabra sugerida</~GH>
+<~GI>Mostrar la palabra sugerida en el campo de texto al teclear</~GI>
+<~GJ>Finalización de palabra</~GJ>
+<~GK>Usar automáticamente la palabra sugerida al presionar la barra espaciadora</~GK>
+<~GL>Agregar «<^^>» al diccionario</~GL>
+<~GM>Agregar todo al diccionario</~GM>
+<~GN>Restablecer dicc. de Swype</~GN>
+<~GO>Eliminar todas las palabras que ha agregado al diccionario Swype</~GO>
+<~GP>Esto borrará todas las palabras que agregó a Swype. ¿Continuar?</~GP>
+<~GQ>SÍ</~GQ>
+<~GR>NO</~GR>
+<~GS>Estilo de trazo del trayecto</~GS>
+<~GT>Longitud</~GT>
+<~GU>Estilo</~GU>
+<~GV>Ninguno</~GV>
+<~GW>Línea</~GW>
+<~GX>Línea sicodélica</~GX>
+<~GY>Estrellas</~GY>
+<~GZ>Círculos</~GZ>
+<~HA>Cuadrados</~HA>
+<~HB>Color</~HB>
+<~HC>Azul</~HC>
+<~HD>Rojo</~HD>
+<~HE>Verde</~HE>
+<~HF>Azul oscuro</~HF>
+<~HG>Naranjo</~HG>
+<~HH>Negro</~HH>
+<~HI>Gris ceniza</~HI>
+<~HJ>Transparencia</~HJ>
+<~HK>Grosor</~HK>
+<~HL>Difuminado</~HL>
+<~HM>Difuminado de cola</~HM>
+<~HN>Gracias por probar esta versión de evaluación de Swype. Para obtener ayuda, visite http://www.swypeinc.com/help.html. Esta versión de Swype tiene solo una parte de la funcionalidad completa. Si le interesa evaluar o distribuir la versión comercial con la funcionalidad completa de Swype en su producto, escriba a bizdev@swypeinc.com. Esta versión de Swype se rige por los términos de http://swypemedia.swype.com/meego/terms_use_meego.html.</~HN>
+<~HP>Tocar para agregar todo al diccionario</~HP>
+<~HQ>Tocar para agregar «<^^>» al diccionario</~HQ>
+<~HR>Tocar para quitar "<^^>" del diccionario</~HR>
+<~HS>Activar Swype</~HS>
+<~HT>Desactivar Swype</~HT>
+<~HU>Cómo Swypear</~HU>
+<~HV>Swype le permite escribir una palabra dibujando un trayecto por las letras.</~HV>
+<~HW>Repetición de letras</~HW>
+<~HX>Describa un círculo o garabatee sobre la letra que desea repetir.</~HX>
+<~HY>Lista de selección de palabras</~HY>
+<~HZ>Se muestran alternativas para la palabra que se ingresa.</~HZ>
+<~IA>Letras en mayúscula</~IA>
+<~IB>Swypee hasta más arriba del teclado y hacia abajo.</~IB>
+<~IC>Rebote</~IC>
+<~ID>Evite las letras que no desee para mejorar la precisión</~ID>
+<~IE>La tecla Swype</~IE>
+<~IF>Aprenda sobre la tecla Swype</~IF>
+<~IK>La(s) siguiente(s) palabra(s) se ha(n) agregado a su diccionario: «<^^>»</~IK>
+<~IV>Bienvenido a Swype</~IV>
+<~JA>'rápido'</~JA>
+<~JD>Opciones</~JD>
+<~JB>Descomponer palabras</~JB>
+<~JC>Divida las palabras en porciones más pequeñas para aumentar la precisión</~JC>
+<~IG>Activo</~IG>
+<~IH>Actual</~IH>
+<~II>Seleccionar skin de teclado</~II>
+<~IJ>Cambiar apariencia y funcionamiento del teclado</~IJ>
+<~IL>Una nueva manera de escribir.</~IL>
+<~IM>Swype es una nueva manera de escribir.</~IM>
+<~IN>Swype es una manera más rápida de escribir.</~IN>
+<~IO>Activar Swype</~IO>
+<~IP>Establecer como teclado por defecto</~IP>
+<~IQ>Se ha seleccionado Swype como teclado predeterminado</~IQ>
+<~IR>No, gracias</~IR>
+<~IS>Tocar para quitar "<^^>"</~IS>
+<~IT>Quitar "<^^>" del diccionario</~IT>
+<~IU>Basta con que describa un trayecto por las letras de la palabra.</~IU>
+<~JE>Diccionario personal</~JE>
+<~JF>Administre su diccionario personal</~JF>
+<~JG>Esa palabra ya se encuentra en Swype</~JG>
+<~JH>Borrar</~JH>
+<~JI>Palabra seleccionada se borrará</~JI>
+<~JK>\u0025\u0064 palabras serán eliminados</~JK>
+<~JL>Mostrar sugerencias</~JL>
+<~JM>Encienda consejos útiles de Swype</~JM>
+<~JN>Vuelva a intentarlo</~JN>
+<~JP>Presione sin soltar %ICON% para abrir las opciones</~JP>
+<~JO>Adicional</~JO>
+<~JP~></~JP~>
+<~JQ>Seleccionar el idioma secundario</~JQ>
+<~JR>Idioma secundario</~JR>
+<~JS>Idiomas</~JS>
+<~JT>Cambiar</~JT>
+<~JU>Seleccionar</~JU>
+<~JV>Sugerir palabras al teclear</~JV>
+<~JW>Mostrar la palabra sugerida en el campo de texto al teclear</~JW>
+<~JX>Cambiar el idioma actual</~JX>
+<~JY>Gestos</~JY>
+<~JZ>Conocer más</~JZ>
+<~KA>%s ya existe en el diccionario</~KA>
+<~KB>Presione sin soltar una tecla para obtener caracteres alternativos</~KB>
+<~KC>Gestos Swype</~KC>
+<~KD>No se encontraron coincidencias. Vuelva a intentarlo.</~KD>
+<~KE>Vuelva a intentarlo</~KE>
+<~KF>Presione sin soltar <img src="SwLogo.png" class="logo"> para ir a las opciones</~KF>
+<~KG>Presione sin soltar %ICON% para abrir las opciones</~KG>
+<~KH>Presione sin soltar la tecla Swype <img src="SwLogo.png" class="logo"> para abrir las opciones</~KH>
+<~KI>Presione sin soltar la tecla Swype para abrir las opciones</~KI>
+<~KJ>Vacío</~KJ>
+<~KK>Diccionario</~KK>
+<~KL>Pronunciación</~KL>
+<~KM>Conversión</~KM>
+<~KN>Cambiar de teclado</~KN>
+<~KO>Ver y modificar opciones de Swype</~KO>
+<~KP>Opciones de idioma</~KP>
+<~KQ>Activar y configurar idiomas</~KQ>
+<~KR>Actualizar</~KR>
+<~KS>Instalar la actualización</~KS>
+<~KT>Licencia</~KT>
+<~KU>Términos del servicio</~KU>
+<~KV>Idioma adicional</~KV>
+<~KW>Si desea más ayuda, visite <a href="http://www.swype.com">www.swype.com</a> para ver consejos y videos.</~KW>
+<~KX>Los gestos Swype son métodos abreviados del teclado para realizar tareas comunes rápidamente.</~KX>
+<~KY>Puede eliminar el espaciado automático antes de la próxima palabra al deslizarse desde la barra espaciadora hasta la tecla retroceder.</~KY>
+<~KZ>Acceder al teclado de edición</~KZ>
+<~LA>Acceder al teclado numérico</~LA>
+<~LB>Ocultar el teclado</~LB>
+<~LC>Desactivar el espaciado automático</~LC>
+<~LD>Para alternar entre dos idiomas, simplemente debe Swypear desde la tecla Swype hasta la tecla con las iniciales del idioma.</~LD>
+<~LE>Para seleccionar todo el texto que introdujo, debe Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> a la ‘a’.</~LE>
+<~LF>Selec. todo:</~LF>
+<~LG>Cambiar de idioma</~LG>
+<~LH>Copiar</~LH>
+<~LI>Cortar</~LI>
+<~LJ>Pegar</~LJ>
+<~LK>Para seleccionar todo, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la “a”</~LK>
+<~LL>Para copiar, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la “c”</~LL>
+<~LM>Para cortar, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la “x”</~LM>
+<~LN>Para pegar, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la “v”</~LN>
+<~LO>Para ocultar el teclado fácilmente, solo debe Swypear desde la tecla Swype hasta la tecla retroceder.</~LO>
+<~LP>El teclado de edición permite al usuario mover el cursor en el texto, como también realizar otras tareas de edición.  Para acceder al teclado de edición, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la tecla símbolos (+!=) del teclado.</~LP>
+<~LQ>Para acceder al teclado numérico rápidamente, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta el número 5.</~LQ>
+<~LR>Para copiar una palabra o un bloque de texto y guardarlo para pegarlo en otro lado, solo seleccione el texto dándole dos toques seguidos a la palabra o use al gesto Seleccionar todo y luego puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la ‘c’.</~LR>
+<~LS>Para eliminar una palabra o un bloque de texto y guardarlo para pegarlo en otro lado, solo seleccione el texto dándole dos toques seguidos a la palabra o use el gesto Seleccionar todo y luego puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la ‘x’.</~LS>
+<~LT>Después de copiar o cortar el texto, puede Swypear desde la tecla Swype <img src="SwLogo.png" class="logo"> hasta la ‘v’ para pegarlo en otro lado.</~LT>
+<~LU>ConnectClient</~LU>
+<~LV>Connect Preferences</~LV>
+<~LW>Preferred Connection</~LW>
+<~LX>Select the preferred connection</~LX>
+<~LY>Preferred Connection</~LY>
+<~LZ>Swype</~LZ>
+<~MA>Actualizar</~MA>
+<~MB>Versión</~MB>
+<~MF>Términos del servicio</~MF>
+<~MH>Versión de Swype Connect</~MH>
+<~MI>Swype Connect Messages</~MI>
+<~MJ>Mensaje</~MJ>
+<~MK>Eliminar</~MK>
+<~ML>Actualizar</~ML>
+<~MM>Swype Download</~MM>
+<~MN>Descarga finalizada…verificando</~MN>
+<~MO>%s%% complete.</~MO>
+<~MP>Mostrar las teclas de flechas</~MP>
+<~MQ>Se mostrarán las flechas de navegación</~MQ>
+<~MR>¿Borrar todas las palabras?</~MR>
+<~MS>¿Borrar %d palabras?</~MS>
+<~MT>Tocar + para agregar</~MT>
+<~NA>Preferencias de conexión de Swype</~NA>
+<~NB>Descarga finalizada…verificando</~NB>
+<~NC>Instalar</~NC>
+<~ND>Eliminar</~ND>
+<~NE>¡Detener!</~NE>
+<~NF>¿Está seguro que desea eliminar %d idiomas?</~NF>
+<~NG>Optimizar Swype</~NG>
+<~NH>Enviar información de uso anónima</~NH>
+<~NI>Conocer más</~NI>
+<~NJ>Estado de la licencia</~NJ>
+<~NK>Tipo de licencia</~NK>
+<~NL>Condiciones de uso</~NL>
+<~NM>Descargar y eliminar idiomas</~NM>
+<~NN>Descargar idiomas</~NN>
+<~NO>Eliminar idiomas</~NO>
+<~NP>Instalando el %s...</~NP>
+<~NQ>Descargar idiomas</~NQ>
+<~NR>Seleccionar idiomas para descargar</~NR>
+<~NS>Datos de telefonía móvil</~NS>
+<~NT>Habilitar los datos de telefonía móvil para permitir las actualizaciones de Swype, descargas de idiomas y otras funciones de Swype Connect a través de su conexión de datos. </~NT>
+<~NU>No se pudo descargar %s Vuelva a intentarlo.</~NU>
+<~NV>¡Uy! No existe suficiente espacio libre para actualizar Swype.</~NV>
+<~NW>¡Uy! Swype necesita más espacio libre para poder descargar esta función.</~NW>
+<~NX>Versión de Swype Connect</~NX>
+<~NY>ID de usuario Swype</~NY>
+<~NZ>Administrar idiomas</~NZ>
+<~OA>No hay suficiente espacio en su dispositivo para actualizar Swype.</~OA>
+<~OB>En cola para descargar...</~OB>
+<~OC>Instalando...</~OC>
+<~OD>No hay conexión Wifi</~OD>
+<~OE>Para descargar las actualizaciones, idiomas y otras funciones de conexión, asegúrese de que los datos de telefonía móvil están habilitados. </~OE>
+<~OF>Buzón</~OF>
+<~OH>Administrar privacidad</~OH>
+<~OI>Eliminar idiomas descargados</~OI>
+<~OJ>Licencia válida</~OJ>
+<~OK>Eliminar idiomas</~OK>
+<~OL>Licencia vencida</~OL>
+<~OM>Licencia rescindida</~OM>
+<~ON>Alfa</~ON>
+<~OO>Beta</~OO>
+<~OP>Comercial</~OP>
+<~OQ>Demostración</~OQ>
+<~OR>Analista</~OR>
+<~OS>Complementos de Swype</~OS>
+<~OT>Aceptar</~OT>
+<~OU>Haga clic para explorar los nuevos complementos de Swype</~OU>
+<~OV>Complementos de Swype</~OV>
+<~OW>Instalando el %s...</~OW>
+<~OX>Descargando %s…</~OX>
+<~OY>Aceptar</~OY>
+<~OZ>No hay conexión Wifi</~OZ>
+<~PA>Para descargar las actualizaciones, idiomas y otras funciones de conexión, asegúrese de que los datos de telefonía móvil están habilitados. </~PA>
+<~PB>Eliminar idiomas</~PB>
+<~PC>\n\nHaga clic para descargar e instalar %s</~PC>
+<!-- this used to be the connect string "connect_addon_is_installed_desc" 
+Taken out because we don't have translations for the phrase "installed" on its own
+so this will not localize and will fall back to whatever is in the strings.xml file
+<~PD>\n\nInstalado. Hacer clic para ejecutar.</~PD>-->

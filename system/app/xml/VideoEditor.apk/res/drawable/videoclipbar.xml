@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:visibility="visible" android:layout_width="800.0px" android:layout_height="348.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SeekBar android:id="@id/VideoClipSeekbar" android:paddingTop="36.0px" android:layout_width="800.0px" android:layout_height="48.0px" android:thumb="@drawable/videoclip_btn1" />
+    <TextView android:id="@id/DurationView" android:paddingLeft="678.0px" android:visibility="invisible" android:layout_width="830.0px" android:layout_height="39.0px" android:text="@string/app_name" />
+</FrameLayout>

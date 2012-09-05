@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/wc_tamp_popup" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/topLayout" android:layout_width="227.34dip" android:layout_height="57.339996dip" android:layout_marginLeft="26.0dip" android:layout_marginTop="5.669983dip">
+        <TextView android:textSize="28.0dip" android:textStyle="bold" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:gravity="left" android:layout_gravity="center" android:id="@id/worldclock_cityname" android:layout_width="184.34dip" android:layout_height="36.339996dip" android:singleLine="true" />
+        <LinearLayout android:layout_width="5.3399963dip" android:layout_height="fill_parent" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/worldclock_add" android:layout_width="33.329987dip" android:layout_height="33.329987dip" android:src="@drawable/worldclock_add_icon" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="227.34dip" android:layout_height="94.0dip" android:layout_marginLeft="26.0dip" android:layout_marginBottom="8.329987dip">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="51.0dip">
+            <TextView android:textSize="42.669983dip" android:textColor="@touchwiz:color/tw_color001" android:gravity="left|center" android:id="@id/worldclock_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:shadowColor="@touchwiz:color/tw_color002" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="0.5" />
+            <LinearLayout android:layout_width="2.3399963dip" android:layout_height="fill_parent" />
+            <TextView android:textSize="18.669983dip" android:textColor="@touchwiz:color/tw_color001" android:gravity="left|center" android:id="@id/worldclock_time_ampm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:shadowColor="@touchwiz:color/tw_color002" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="0.5" />
+        </LinearLayout>
+        <TextView android:textSize="16.0dip" android:textColor="@touchwiz:color/tw_color001" android:gravity="left|center" android:layout_gravity="center" android:id="@id/worldclock_calendar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:shadowColor="@touchwiz:color/tw_color002" android:shadowDy="-1.0" android:shadowRadius="0.5" />
+    </LinearLayout>
+</LinearLayout>

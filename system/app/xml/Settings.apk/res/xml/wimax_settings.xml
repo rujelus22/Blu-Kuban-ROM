@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/wimax_settings_category"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:persistent="false" android:title="@string/wimax_notify_open_networks" android:key="open_network_notifications_enabled" android:summary="@string/wimax_notify_open_networks_summary" />
+    <PreferenceCategory android:persistent="true" android:title="@string/preferencecategory" android:key="wimax_settings" />
+</PreferenceScreen>

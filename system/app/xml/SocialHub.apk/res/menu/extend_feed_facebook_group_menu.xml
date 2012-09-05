@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_all_rate_refresh_scan_update_all_synchronise" android:id="@id/group_refresh" android:title="@string/setting_refresh" />
+    <item android:icon="@drawable/ic_menu_compose" android:id="@id/wall_post" android:visible="true" android:title="@string/str_title_wallpost" />
+    <item android:icon="@drawable/ic_menu_search_topic_search" android:id="@id/search" android:visible="true" android:title="@string/search" />
+</menu>

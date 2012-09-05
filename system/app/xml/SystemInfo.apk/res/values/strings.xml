@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World!</string>
+    <string name="app_name">SystemInfo</string>
+    <string name="process_name">android.samsung.SystemInfo</string>
+    <string name="installer_activity_text">Installing widget.Please wait....</string>
+</resources>

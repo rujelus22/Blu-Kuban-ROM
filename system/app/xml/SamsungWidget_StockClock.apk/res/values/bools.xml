@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="cts_check_wifi_state">false</bool>
+</resources>

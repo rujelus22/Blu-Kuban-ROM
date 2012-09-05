@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard android:keyWidth="23.334003%p" android:keyHeight="9.500003%p" android:horizontalGap="1.2500048%p" android:verticalGap="0.49999952%p"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Row android:keyHeight="41.499996%">
+        <Key android:keyWidth="73.958336%p" android:horizontalGap="0.0px" android:codes="-210" android:iconPreview="@drawable/handwriting_status_icon_space" />
+        <Row android:keyHeight="0.0px" android:verticalGap="0.99999905%p" />
+        <Row android:keyHeight="9.500003%p">
+            <Key android:horizontalGap="75.20833%p" android:codes="-5" android:keyEdgeFlags="right" android:isRepeatable="true" android:keyLabel="StrEmpty" />
+        </Row>
+        <Row android:keyHeight="9.500003%p">
+            <Key android:horizontalGap="75.20833%p" android:codes="10" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+        </Row>
+        <Row android:keyHeight="9.500003%p">
+            <Key android:horizontalGap="75.20833%p" android:codes="32" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+        </Row>
+        <Row android:keyHeight="9.500003%p">
+            <Key android:horizontalGap="75.20833%p" android:codes="-103" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+        </Row>
+        <Row android:keyHeight="0.0px" android:verticalGap="0.99999905%p" />
+    </Row>
+</Keyboard>

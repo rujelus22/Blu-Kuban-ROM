@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <Button android:textSize="14.0sp" android:id="@id/run_dump_all" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/run_dump_all" />
+        <Button android:textSize="14.0sp" android:id="@id/delete_dump" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/delete_dump" />
+        <Button android:textSize="14.0sp" android:id="@id/run_dump" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/run_dump" />
+        <Button android:textSize="14.0sp" android:id="@id/kernel_log" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/kernel_log" />
+        <Button android:textSize="14.0sp" android:id="@id/modem_log" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/modem_log" />
+        <Button android:textSize="14.0sp" android:id="@id/copy_to_sdcard" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/copy_to_sdcard" />
+        <Button android:textSize="14.0sp" android:id="@id/dbg_state" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/dbg_state_enable" />
+        <Button android:textSize="14.0sp" android:id="@id/ramdump_mode" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/ramdump_mode_str" />
+        <Button android:textSize="14.0sp" android:id="@id/mdm_silent_reset" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/mdm_silent_reset" />
+        <Button android:textSize="14.0sp" android:id="@id/exit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/exit" />
+        <Button android:textSize="14.0sp" android:id="@id/start_ril_log" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/start_ril" />
+        <Button android:textSize="14.0sp" android:id="@id/cp_ril_log" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/cp_ril" />
+    </LinearLayout>
+</ScrollView>

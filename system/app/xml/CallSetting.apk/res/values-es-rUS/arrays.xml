@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="calldiverting_list">
+        <item>Siempre</item>
+        <item>Ocupado</item>
+        <item>Sin respuesta</item>
+        <item>No localizable</item>
+        <item>Cancelar todo</item>
+    </string-array>
+    <string-array name="callbarring_list">
+        <item>Todas las llamadas salientes</item>
+        <item>Llamadas internacionales salientes</item>
+        <item>Llamadas internacionales excepto país de origen</item>
+        <item>Todas las llamadas entrantes</item>
+        <item>Llamadas entrantes en el extranjero</item>
+        <item>Cancelar todo</item>
+    </string-array>
+    <string-array name="waiting_time">
+        <item>5 seg</item>
+        <item>10 seg</item>
+        <item>15 segundos</item>
+        <item>20 segundos</item>
+        <item>25 segundos</item>
+        <item>30 segundos</item>
+    </string-array>
+    <string-array name="automatic_time">
+        <item>1 segundo</item>
+        <item>2 seg</item>
+        <item>3 segundos</item>
+        <item>4 segundos</item>
+        <item>5 seg</item>
+    </string-array>
+    <string-array name="autoreject_alert">
+        <item>Registros</item>
+        <item>Contactos</item>
+    </string-array>
+    <string-array name="fakecallerimage_alert">
+        <item>Imagen</item>
+        <item>Tomar foto</item>
+    </string-array>
+    <string-array name="callerimage_alert_video_default">
+        <item>Imágenes</item>
+        <item>Videos</item>
+    </string-array>
+    <string-array name="callerimage_alert_video_changed">
+        <item>Imagen predeterminada</item>
+        <item>Imágenes</item>
+        <item>Videos</item>
+    </string-array>
+    <string-array name="callerimage_alert_default">
+        <item>Imágenes</item>
+        <item>Videos</item>
+        <item>Tomar foto</item>
+        <item>Grabar video</item>
+    </string-array>
+    <string-array name="callerimage_alert_changed">
+        <item>Imagen predeterminada</item>
+        <item>Imágenes</item>
+        <item>Videos</item>
+        <item>Tomar imagen</item>
+        <item>Grabar video</item>
+    </string-array>
+    <string-array name="entries_list_preference">
+        <item>Desactivado</item>
+        <item>Después de 1 segundo</item>
+        <item>Después de 2 segundos</item>
+        <item>Después de 3 segundos</item>
+        <item>Después de 4 segundos</item>
+        <item>Después de 5 segundos</item>
+    </string-array>
+    <string-array name="entryvalues_list_preference">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="match_criteria_entries">
+        <item>Exactamente igual a</item>
+        <item>Comenzar</item>
+        <item>Termina en</item>
+        <item>Incluye</item>
+    </string-array>
+    <string-array name="match_criteria_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="auto_reject_mode">
+        <item>Desactivado</item>
+        <item>Todos los números</item>
+        <item>Número rechazo automático</item>
+    </string-array>
+    <string-array name="auto_reject_mode_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

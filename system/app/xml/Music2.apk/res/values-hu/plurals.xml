@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="Nsongs">
+        <item quantity="other">%1$d DAL</item>
+        <item quantity="one">1 DAL</item>
+    </plurals>
+    <plurals name="Nsongs_accessibility">
+        <item quantity="other">%1$d dal</item>
+        <item quantity="one">1 dal</item>
+    </plurals>
+    <plurals name="Nalbums">
+        <item quantity="other">%1$d ALBUM</item>
+        <item quantity="one">1 ALBUM</item>
+    </plurals>
+    <plurals name="Nalbums_accessibility">
+        <item quantity="other">%1$d album</item>
+        <item quantity="one">1 album</item>
+    </plurals>
+    <plurals name="Nsongs_search_result">
+        <item quantity="other">%1$d dal</item>
+        <item quantity="one">1 dal</item>
+    </plurals>
+    <plurals name="Nalbums_search_result">
+        <item quantity="other">%1$d album</item>
+        <item quantity="one">1 album</item>
+    </plurals>
+    <plurals name="NNNtrackstoplaylist">
+        <item quantity="other">%1$d dal felkerült a(z) %2$s lejátszási listára.</item>
+        <item quantity="one">1 dal felkerült a(z) %2$s lejátszási listára.</item>
+    </plurals>
+</resources>

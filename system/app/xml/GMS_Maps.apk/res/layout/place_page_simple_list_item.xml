@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/place_page_simple_list_item" android:paddingTop="@dimen/place_page_padding_top" android:paddingBottom="@dimen/list_item_padding_bottom" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/text" android:paddingLeft="@dimen/place_page_padding_left" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <include layout="@layout/place_page_divider" />
+</LinearLayout>

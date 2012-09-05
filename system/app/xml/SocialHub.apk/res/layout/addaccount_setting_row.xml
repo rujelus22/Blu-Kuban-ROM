@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/row" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/list_title_bar_layout" layout="@layout/common_list_item_title_bar" />
+    <LinearLayout android:id="@id/header_divider_layout" android:background="@color/messages_contents_read" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/row_contents_layout" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <ImageView android:id="@id/spIcon_type" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="7.0dip" />
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="left" android:id="@id/view_by_list_row_itemName_textView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:maxLines="2" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/header_footer_layout" android:background="@color/messages_contents_read" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

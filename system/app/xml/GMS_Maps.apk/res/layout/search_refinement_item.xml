@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="left|center" android:id="@id/searchRefinementItem" android:background="@drawable/primary_background" android:paddingLeft="10.0dip" android:paddingTop="3.0dip" android:paddingRight="10.0dip" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center_vertical" android:layout_gravity="left|center" android:id="@id/searchRefinementItemLabel" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/searchRefinementItemOptions" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+        <RadioGroup android:orientation="horizontal" android:id="@id/searchRefinementItemRadioGroup" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

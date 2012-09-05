@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:id="@id/mx_soft_key" android:background="@drawable/gray" android:layout_width="fill_parent" android:layout_height="54.669983dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="16.0dip" android:id="@id/mx_button1" android:nextFocusDown="@id/mx_button2" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="3.2999878dip" android:layout_marginTop="4.669983dip" android:layout_marginBottom="2.669983dip" android:text="@string/ok" android:layout_weight="1.0" android:layout_below="@id/mx_soft_key" android:layout_alignParentLeft="true" />
+    <Button android:textSize="16.0dip" android:id="@id/mx_button2" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="4.669983dip" android:layout_marginRight="3.2999878dip" android:layout_marginBottom="2.669983dip" android:text="@string/cancel" android:layout_weight="1.0" android:layout_below="@id/mx_soft_key" android:layout_alignParentRight="true" />
+</LinearLayout>

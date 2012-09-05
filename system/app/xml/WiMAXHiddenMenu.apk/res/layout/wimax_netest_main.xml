@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:layout_gravity="top" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="70.0sp" android:layout_marginBottom="130.0sp"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:layout_gravity="top" android:id="@id/wimax_label" android:paddingLeft="20.0sp" android:paddingTop="20.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wimax_state" />
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="24.0dip" android:textColor="#ffb1fb17" android:layout_gravity="top" android:id="@id/wimax_val" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/linearLayout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <Button android:textAppearance="?android:textAppearanceLarge" android:layout_gravity="bottom" android:id="@id/wimax_on" android:clickable="true" android:layout_width="fill_parent" android:layout_height="80.0sp" android:text="@string/wimax_on" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="96.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/layout_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0px" android:layout_marginBottom="8.0px">
+        <ImageView android:id="@id/image_group" android:layout_width="80.0px" android:layout_height="80.0px" android:layout_marginLeft="10.0px" android:layout_marginRight="13.0px" android:src="@drawable/hub_list_img_facebook_group" android:scaleType="fitXY" />
+        <TextView android:textSize="21.0px" android:textColor="@color/color_palette_05" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/txt_group_update" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_toRightOf="@id/image_group" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        <TextView android:textSize="33.0px" android:textColor="@color/color_palette_01" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/txt_group_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_toRightOf="@id/image_group" android:layout_above="@id/txt_group_update" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_alignWithParentIfMissing="true" />
+    </RelativeLayout>
+</LinearLayout>

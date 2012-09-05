@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/back_black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/iv_main_logo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/about_logo" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/ll_about_info" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:textSize="13.329987dip" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/tv_about_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ⓒ2012 INFRAWARE, Inc. All Right Reserved" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="13.329987dip" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/tv_about_homepage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.669983dip" android:layout_marginBottom="31.329987dip" android:text="@string/cm_infraware_homepage" android:layout_below="@id/tv_about_right" android:layout_centerHorizontal="true" />
+        <Button android:textStyle="bold" android:textColor="#ffb4b4b4" android:id="@id/bt_manual_update_button" android:background="@drawable/insert_shape_btn_selector" android:layout_width="126.66998dip" android:layout_height="48.0dip" android:layout_marginBottom="13.329987dip" android:text="@string/cm_setting_update" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:contentDescription="@string/cm_setting_update" />
+        <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ffb4b4b4" android:id="@id/tv_about_version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.669983dip" android:text="version 3.0(build 4500)" android:layout_above="@id/bt_manual_update_button" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>

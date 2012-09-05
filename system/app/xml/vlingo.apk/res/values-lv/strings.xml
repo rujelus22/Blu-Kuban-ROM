@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Braukšanas režīms</string>
+    <string name="app_name">Balss pavēle</string>
+    <string name="Vlingo">Balss komandas</string>
+    <string name="widget_name">Balss</string>
+</resources>

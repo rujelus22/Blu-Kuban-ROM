@@ -1,0 +1,651 @@
+.class public Lcom/android/providers/settings/SettingsHelper;
+.super Ljava/lang/Object;
+.source "SettingsHelper.java"
+
+
+# static fields
+.field private static final TAG:Ljava/lang/String; = "SettingsHelper"
+
+
+# instance fields
+.field private mAudioManager:Landroid/media/AudioManager;
+
+.field private mContentService:Landroid/content/IContentService;
+
+.field private mContext:Landroid/content/Context;
+
+.field private mPowerManager:Landroid/os/IPowerManager;
+
+.field private mSilent:Z
+
+.field private mVibrate:Z
+
+
+# direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
+    .parameter "context"
+
+    .prologue
+    .line 49
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 50
+    iput-object p1, p0, Lcom/android/providers/settings/SettingsHelper;->mContext:Landroid/content/Context;
+
+    .line 51
+    const-string v0, "audio"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/AudioManager;
+
+    iput-object v0, p0, Lcom/android/providers/settings/SettingsHelper;->mAudioManager:Landroid/media/AudioManager;
+
+    .line 53
+    invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/providers/settings/SettingsHelper;->mContentService:Landroid/content/IContentService;
+
+    .line 54
+    const-string v0, "power"
+
+    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/providers/settings/SettingsHelper;->mPowerManager:Landroid/os/IPowerManager;
+
+    .line 56
+    return-void
+.end method
+
+.method private setAutoRestore(Z)V
+    .registers 4
+    .parameter "enabled"
+
+    .prologue
+    .line 83
+    :try_start_0
+    const-string v1, "backup"
+
+    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/app/backup/IBackupManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/backup/IBackupManager;
+
+    move-result-object v0
+
+    .line 85
+    .local v0, bm:Landroid/app/backup/IBackupManager;
+    if-eqz v0, :cond_f
+
+    .line 86
+    invoke-interface {v0, p1}, Landroid/app/backup/IBackupManager;->setAutoRestore(Z)V
+    :try_end_f
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_f} :catch_10
+
+    .line 89
+    .end local v0           #bm:Landroid/app/backup/IBackupManager;
+    :cond_f
+    :goto_f
+    return-void
+
+    .line 88
+    :catch_10
+    move-exception v1
+
+    goto :goto_f
+.end method
+
+.method private setBrightness(I)V
+    .registers 4
+    .parameter "brightness"
+
+    .prologue
+    .line 112
+    :try_start_0
+    const-string v1, "power"
+
+    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/os/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
+
+    move-result-object v0
+
+    .line 114
+    .local v0, power:Landroid/os/IPowerManager;
+    if-eqz v0, :cond_f
+
+    .line 115
+    invoke-interface {v0, p1}, Landroid/os/IPowerManager;->setBacklightBrightness(I)V
+    :try_end_f
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_f} :catch_10
+
+    .line 120
+    .end local v0           #power:Landroid/os/IPowerManager;
+    :cond_f
+    :goto_f
+    return-void
+
+    .line 117
+    :catch_10
+    move-exception v1
+
+    goto :goto_f
+.end method
+
+.method private setGpsLocation(Ljava/lang/String;)V
+    .registers 6
+    .parameter "value"
+
+    .prologue
+    .line 92
+    const-string v0, "gps"
+
+    .line 93
+    .local v0, GPS:Ljava/lang/String;
+    const-string v2, "gps"
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_22
+
+    const-string v2, "gps,"
+
+    invoke-virtual {p1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_22
+
+    const-string v2, ",gps"
+
+    invoke-virtual {p1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_22
+
+    const-string v2, ",gps,"
+
+    invoke-virtual {p1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2f
+
+    :cond_22
+    const/4 v1, 0x1
+
+    .line 98
+    .local v1, enabled:Z
+    :goto_23
+    iget-object v2, p0, Lcom/android/providers/settings/SettingsHelper;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "gps"
+
+    invoke-static {v2, v3, v1}, Landroid/provider/Settings$Secure;->setLocationProviderEnabled(Landroid/content/ContentResolver;Ljava/lang/String;Z)V
+
+    .line 100
+    return-void
+
+    .line 93
+    .end local v1           #enabled:Z
+    :cond_2f
+    const/4 v1, 0x0
+
+    goto :goto_23
+.end method
+
+.method private setRingerMode()V
+    .registers 5
+
+    .prologue
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    .line 123
+    iget-boolean v2, p0, Lcom/android/providers/settings/SettingsHelper;->mSilent:Z
+
+    if-eqz v2, :cond_12
+
+    .line 124
+    iget-object v2, p0, Lcom/android/providers/settings/SettingsHelper;->mAudioManager:Landroid/media/AudioManager;
+
+    iget-boolean v3, p0, Lcom/android/providers/settings/SettingsHelper;->mVibrate:Z
+
+    if-eqz v3, :cond_10
+
+    :goto_c
+    invoke-virtual {v2, v0}, Landroid/media/AudioManager;->setRingerMode(I)V
+
+    .line 132
+    :goto_f
+    return-void
+
+    :cond_10
+    move v0, v1
+
+    .line 124
+    goto :goto_c
+
+    .line 127
+    :cond_12
+    iget-object v2, p0, Lcom/android/providers/settings/SettingsHelper;->mAudioManager:Landroid/media/AudioManager;
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v2, v3}, Landroid/media/AudioManager;->setRingerMode(I)V
+
+    .line 128
+    iget-object v2, p0, Lcom/android/providers/settings/SettingsHelper;->mAudioManager:Landroid/media/AudioManager;
+
+    iget-boolean v3, p0, Lcom/android/providers/settings/SettingsHelper;->mVibrate:Z
+
+    if-eqz v3, :cond_22
+
+    :goto_1e
+    invoke-virtual {v2, v1, v0}, Landroid/media/AudioManager;->setVibrateSetting(II)V
+
+    goto :goto_f
+
+    :cond_22
+    move v0, v1
+
+    goto :goto_1e
+.end method
+
+.method private setSoundEffects(Z)V
+    .registers 3
+    .parameter "enable"
+
+    .prologue
+    .line 103
+    if-eqz p1, :cond_8
+
+    .line 104
+    iget-object v0, p0, Lcom/android/providers/settings/SettingsHelper;->mAudioManager:Landroid/media/AudioManager;
+
+    invoke-virtual {v0}, Landroid/media/AudioManager;->loadSoundEffects()V
+
+    .line 108
+    :goto_7
+    return-void
+
+    .line 106
+    :cond_8
+    iget-object v0, p0, Lcom/android/providers/settings/SettingsHelper;->mAudioManager:Landroid/media/AudioManager;
+
+    invoke-virtual {v0}, Landroid/media/AudioManager;->unloadSoundEffects()V
+
+    goto :goto_7
+.end method
+
+
+# virtual methods
+.method applyAudioSettings()V
+    .registers 3
+
+    .prologue
+    .line 190
+    new-instance v0, Landroid/media/AudioManager;
+
+    iget-object v1, p0, Lcom/android/providers/settings/SettingsHelper;->mContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1}, Landroid/media/AudioManager;-><init>(Landroid/content/Context;)V
+
+    .line 191
+    .local v0, am:Landroid/media/AudioManager;
+    invoke-virtual {v0}, Landroid/media/AudioManager;->reloadAudioSettings()V
+
+    .line 192
+    return-void
+.end method
+
+.method getLocaleData()[B
+    .registers 7
+
+    .prologue
+    .line 135
+    iget-object v4, p0, Lcom/android/providers/settings/SettingsHelper;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v0
+
+    .line 136
+    .local v0, conf:Landroid/content/res/Configuration;
+    iget-object v2, v0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+
+    .line 137
+    .local v2, loc:Ljava/util/Locale;
+    invoke-virtual {v2}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 138
+    .local v3, localeString:Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 139
+    .local v1, country:Ljava/lang/String;
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_31
+
+    .line 140
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "_"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 142
+    :cond_31
+    invoke-virtual {v3}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v4
+
+    return-object v4
+.end method
+
+.method public restoreValue(Ljava/lang/String;Ljava/lang/String;)Z
+    .registers 6
+    .parameter "name"
+    .parameter "value"
+
+    .prologue
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    .line 68
+    const-string v2, "screen_brightness"
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_13
+
+    .line 69
+    invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-direct {p0, v0}, Lcom/android/providers/settings/SettingsHelper;->setBrightness(I)V
+
+    :cond_11
+    :goto_11
+    move v0, v1
+
+    .line 78
+    :goto_12
+    return v0
+
+    .line 70
+    :cond_13
+    const-string v2, "sound_effects_enabled"
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_26
+
+    .line 71
+    invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    if-ne v2, v1, :cond_22
+
+    move v0, v1
+
+    :cond_22
+    invoke-direct {p0, v0}, Lcom/android/providers/settings/SettingsHelper;->setSoundEffects(Z)V
+
+    goto :goto_11
+
+    .line 72
+    :cond_26
+    const-string v2, "location_providers_allowed"
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_32
+
+    .line 73
+    invoke-direct {p0, p2}, Lcom/android/providers/settings/SettingsHelper;->setGpsLocation(Ljava/lang/String;)V
+
+    goto :goto_12
+
+    .line 75
+    :cond_32
+    const-string v2, "backup_auto_restore"
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_11
+
+    .line 76
+    invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    if-ne v2, v1, :cond_41
+
+    move v0, v1
+
+    :cond_41
+    invoke-direct {p0, v0}, Lcom/android/providers/settings/SettingsHelper;->setAutoRestore(Z)V
+
+    goto :goto_11
+.end method
+
+.method setLocaleData([B)V
+    .registers 14
+    .parameter "data"
+
+    .prologue
+    const/4 v11, 0x2
+
+    .line 152
+    iget-object v9, p0, Lcom/android/providers/settings/SettingsHelper;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v2
+
+    .line 153
+    .local v2, conf:Landroid/content/res/Configuration;
+    iget-object v7, v2, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+
+    .line 157
+    .local v7, loc:Ljava/util/Locale;
+    iget-boolean v9, v2, Landroid/content/res/Configuration;->userSetLocale:Z
+
+    if-eqz v9, :cond_12
+
+    .line 183
+    :cond_11
+    :goto_11
+    return-void
+
+    .line 159
+    :cond_12
+    iget-object v9, p0, Lcom/android/providers/settings/SettingsHelper;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v9}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Landroid/content/res/AssetManager;->getLocales()[Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 160
+    .local v1, availableLocales:[Ljava/lang/String;
+    new-instance v8, Ljava/lang/String;
+
+    invoke-direct {v8, p1}, Ljava/lang/String;-><init>([B)V
+
+    .line 161
+    .local v8, localeCode:Ljava/lang/String;
+    new-instance v6, Ljava/lang/String;
+
+    const/4 v9, 0x0
+
+    invoke-direct {v6, p1, v9, v11}, Ljava/lang/String;-><init>([BII)V
+
+    .line 162
+    .local v6, language:Ljava/lang/String;
+    array-length v9, p1
+
+    const/4 v10, 0x4
+
+    if-le v9, v10, :cond_58
+
+    new-instance v4, Ljava/lang/String;
+
+    const/4 v9, 0x3
+
+    invoke-direct {v4, p1, v9, v11}, Ljava/lang/String;-><init>([BII)V
+
+    .line 163
+    .local v4, country:Ljava/lang/String;
+    :goto_31
+    const/4 v7, 0x0
+
+    .line 164
+    const/4 v5, 0x0
+
+    .local v5, i:I
+    :goto_33
+    array-length v9, v1
+
+    if-ge v5, v9, :cond_43
+
+    .line 165
+    aget-object v9, v1, v5
+
+    invoke-virtual {v9, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_5b
+
+    .line 166
+    new-instance v7, Ljava/util/Locale;
+
+    .end local v7           #loc:Ljava/util/Locale;
+    invoke-direct {v7, v6, v4}, Ljava/util/Locale;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 170
+    .restart local v7       #loc:Ljava/util/Locale;
+    :cond_43
+    if-eqz v7, :cond_11
+
+    .line 173
+    :try_start_45
+    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
+
+    move-result-object v0
+
+    .line 174
+    .local v0, am:Landroid/app/IActivityManager;
+    invoke-interface {v0}, Landroid/app/IActivityManager;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v3
+
+    .line 175
+    .local v3, config:Landroid/content/res/Configuration;
+    iput-object v7, v3, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+
+    .line 177
+    const/4 v9, 0x1
+
+    iput-boolean v9, v3, Landroid/content/res/Configuration;->userSetLocale:Z
+
+    .line 179
+    invoke-interface {v0, v3}, Landroid/app/IActivityManager;->updateConfiguration(Landroid/content/res/Configuration;)V
+    :try_end_55
+    .catch Landroid/os/RemoteException; {:try_start_45 .. :try_end_55} :catch_56
+
+    goto :goto_11
+
+    .line 180
+    .end local v0           #am:Landroid/app/IActivityManager;
+    .end local v3           #config:Landroid/content/res/Configuration;
+    :catch_56
+    move-exception v9
+
+    goto :goto_11
+
+    .line 162
+    .end local v4           #country:Ljava/lang/String;
+    .end local v5           #i:I
+    :cond_58
+    const-string v4, ""
+
+    goto :goto_31
+
+    .line 164
+    .restart local v4       #country:Ljava/lang/String;
+    .restart local v5       #i:I
+    :cond_5b
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_33
+.end method

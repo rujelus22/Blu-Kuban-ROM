@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DialogWhenLarge" parent="@style/FinskyDialogTheme">
+        <item name="android:ratingBarStyleSmall">@style/FinskyRatingBarSmall</item>
+    </style>
+</resources>

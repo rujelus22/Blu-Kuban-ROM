@@ -1,0 +1,53 @@
+.class Lcom/google/android/finsky/previews/PreviewPlayer$4;
+.super Ljava/lang/Object;
+.source "PreviewPlayer.java"
+
+# interfaces
+.implements Landroid/media/AudioManager$OnAudioFocusChangeListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/finsky/previews/PreviewPlayer;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
+
+
+# direct methods
+.method constructor <init>(Lcom/google/android/finsky/previews/PreviewPlayer;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 362
+    iput-object p1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$4;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onAudioFocusChange(I)V
+    .registers 3
+    .parameter "focusChange"
+
+    .prologue
+    .line 365
+    iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer$4;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
+
+    #setter for: Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioFocusState:I
+    invoke-static {v0, p1}, Lcom/google/android/finsky/previews/PreviewPlayer;->access$602(Lcom/google/android/finsky/previews/PreviewPlayer;I)I
+
+    .line 366
+    return-void
+.end method

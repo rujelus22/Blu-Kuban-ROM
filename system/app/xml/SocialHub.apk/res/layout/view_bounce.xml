@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/color_listbounce_background" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/layout_bounce_update" android:layout_width="fill_parent" android:layout_height="96.0px">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/layout_last_update" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0px">
+            <ImageView android:id="@id/img_current_state" android:background="@drawable/ic_pull_down" android:visibility="gone" android:layout_width="24.0px" android:layout_height="24.0px" android:layout_marginRight="10.0px" />
+            <ProgressBar android:id="@id/progressbar_more" android:layout_width="24.0px" android:layout_height="24.0px" android:layout_marginRight="10.0px" android:indeterminateDrawable="@drawable/spinner" />
+            <TextView android:textSize="24.0px" android:textStyle="bold" android:textColor="@color/color_winset_1" android:id="@id/txt_current_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ids_uinbox_loading" android:singleLine="true" />
+        </LinearLayout>
+        <TextView android:textSize="21.0px" android:textColor="@color/color_winset_3" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txt_last_update" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/str_last_update" />
+    </LinearLayout>
+</LinearLayout>

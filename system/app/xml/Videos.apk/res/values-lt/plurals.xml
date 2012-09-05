@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="years_ago">
+        <item quantity="other">Prieš %1$d m.</item>
+        <item quantity="one">Prieš 1 m.</item>
+    </plurals>
+    <plurals name="months_ago">
+        <item quantity="other">Prieš %1$d mėn.</item>
+        <item quantity="one">Prieš 1 mėn.</item>
+    </plurals>
+    <plurals name="weeks_ago">
+        <item quantity="other">Prieš %1$d sav.</item>
+        <item quantity="one">Prieš 1 sav.</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">Prieš %1$d d.</item>
+        <item quantity="one">prieš 1 d.</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="other">Prieš %1$d val.</item>
+        <item quantity="one">Prieš 1 val.</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="other">Prieš %1$d min.</item>
+        <item quantity="one">Prieš 1 min.</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="other">Prieš %1$d sek.</item>
+        <item quantity="one">Prieš 1 sek.</item>
+    </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Baigiasi po %1$d d.</item>
+        <item quantity="one">Gal. l. baig. po 1 d.</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Baigiasi po %1$d val.</item>
+        <item quantity="one">Gal. l. baig. po 1 val.</item>
+    </plurals>
+</resources>

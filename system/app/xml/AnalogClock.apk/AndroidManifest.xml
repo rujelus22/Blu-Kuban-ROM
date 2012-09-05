@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.shared" android:versionCode="1" android:versionName="1.0" package="com.sec.android.widgetapp.analogclock"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:label="@string/app_name" android:icon="@drawable/clock">
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:name=".AnalogClockActivity">
+            <intent-filter>
+                <action android:name="com.samsung.sec.android.SAMSUNG_APP_WIDGET_ACTION" />
+                <category android:name="com.samsung.sec.android.SAMSUNG_APP_WIDGET" />
+            </intent-filter>
+            <meta-data android:name="com.samsung.sec.android.SAMSUNG_WIDGET.analogclock.moderntheme" android:resource="@xml/modern_theme" />
+            <meta-data android:name="com.samsung.sec.android.SAMSUNG_WIDGET.analogclock.classictheme" android:resource="@xml/classic_theme" />
+            <meta-data android:name="com.samsung.sec.android.SAMSUNG_WIDGET.analogclock.simpletheme" android:resource="@xml/simple_theme" />
+            <meta-data android:name="com.samsung.sec.android.SAMSUNG_WIDGET.analogclock.uniquetheme" android:resource="@xml/unique_theme" />
+        </activity>
+        <uses-library android:name="touchwiz" />
+    </application>
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="15" />
+</manifest>

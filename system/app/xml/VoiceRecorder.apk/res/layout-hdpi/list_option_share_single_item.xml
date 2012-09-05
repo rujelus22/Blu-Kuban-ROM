@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/row_text1" android:layout_width="fill_parent" android:layout_height="64.0dip" android:layout_marginLeft="3.2999878dip" android:layout_weight="0.8">
+        <TableRow android:layout_width="fill_parent" android:layout_height="29.329987dip" android:layout_marginTop="6.0dip">
+            <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLinePrimary" android:ellipsize="marquee" android:layout_gravity="left" android:id="@id/topLabel" android:layout_width="fill_parent" android:layout_height="29.329987dip" android:layout_marginLeft="8.0dip" android:singleLine="true" android:layout_weight="1.0" />
+        </TableRow>
+        <TableRow android:layout_width="fill_parent" android:layout_height="22.0dip" layout_marginBottom="6.67dip">
+            <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLineSecondary" android:layout_gravity="center_vertical" android:id="@id/bottomLabel" android:layout_width="130.0dip" android:layout_height="24.0dip" android:layout_marginLeft="10.0dip" android:singleLine="true" android:layout_weight="1.4" />
+            <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLinePrimary" android:textSize="14.0sp" android:gravity="right|center" android:layout_gravity="right" android:id="@id/bottomRightLabel" android:layout_width="130.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:singleLine="true" android:layout_weight="1.4" />
+        </TableRow>
+    </LinearLayout>
+    <RadioButton android:id="@id/radioBtn" android:focusable="false" android:visibility="invisible" android:clickable="false" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="12.0dip" />
+</LinearLayout>

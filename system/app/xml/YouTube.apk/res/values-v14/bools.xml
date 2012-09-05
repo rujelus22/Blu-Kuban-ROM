@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="handle_external_upload_intents">true</bool>
+</resources>

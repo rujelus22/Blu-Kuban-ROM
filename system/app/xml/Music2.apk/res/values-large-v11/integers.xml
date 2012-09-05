@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="grid_max_overscroll_x">0</integer>
+    <integer name="grid_max_overscroll_y">90</integer>
+    <integer name="grid_label_multiline_pile">3</integer>
+    <integer name="grid_label_font_opacity_pile">255</integer>
+    <integer name="grid_label_secondary_font_opacity_pile">191</integer>
+    <integer name="grid_label_tertiary_font_opacity_pile">191</integer>
+    <integer name="grid_label_max_lines_pile">1</integer>
+    <integer name="grid_label_background_color_pile">0</integer>
+    <integer name="grid_label_multiline_item">3</integer>
+    <integer name="grid_label_font_opacity_item">255</integer>
+    <integer name="grid_label_secondary_font_opacity_item">191</integer>
+    <integer name="grid_label_tertiary_font_opacity_item">191</integer>
+    <integer name="grid_label_max_lines_item">1</integer>
+    <integer name="grid_label_background_color_item">0</integer>
+    <integer name="grid_label_multiline_pile_expanded_banner">1</integer>
+    <integer name="grid_label_font_opacity_pile_expanded_banner">255</integer>
+    <integer name="grid_label_secondary_font_opacity_pile_expanded_banner">255</integer>
+    <integer name="grid_label_tertiary_font_opacity_pile_expanded_banner">191</integer>
+    <integer name="grid_label_max_lines_pile_expanded_banner">1</integer>
+    <integer name="grid_label_background_color_pile_expanded_banner">0</integer>
+    <integer name="grid_label_multiline_item_expanded">3</integer>
+    <integer name="grid_label_font_opacity_item_expanded">255</integer>
+    <integer name="grid_label_secondary_font_opacity_item_expanded">255</integer>
+    <integer name="grid_label_tertiary_font_opacity_item_expanded">191</integer>
+    <integer name="grid_label_max_lines_item_expanded">1</integer>
+    <integer name="grid_label_background_color_item_expanded">0</integer>
+    <integer name="music_album_wall_style">1</integer>
+    <integer name="grid_label_background_color_pile_expanded">0</integer>
+</resources>

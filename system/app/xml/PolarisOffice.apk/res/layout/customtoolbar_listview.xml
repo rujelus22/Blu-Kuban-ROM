@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.infraware.common.control.dragndroplist.DragNDropListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    <LinearLayout android:orientation="horizontal" android:background="#ffb4b4b4" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/toolbar_Reset_btn" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="3.0dip" android:text="@string/dm_toolbar_reset" android:layout_weight="1.0" android:onClick="OnReset" />
+        <Button android:id="@id/toolbar_OK_btn" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="3.0dip" android:text="@string/cm_btn_ok" android:layout_weight="1.0" android:onClick="OnOk" />
+        <Button android:id="@id/toolbar_Cancel_btn" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="3.0dip" android:text="@string/cm_btn_cancel" android:layout_weight="1.0" android:onClick="OnCancel" />
+    </LinearLayout>
+</LinearLayout>

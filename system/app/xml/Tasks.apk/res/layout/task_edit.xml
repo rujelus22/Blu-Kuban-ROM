@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/ScrollView01" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout style="@style/EditLinearGuide_1">
+                <TextView android:id="@id/subject" android:text="@string/subject" style="@style/EditTextStyle_small_label" />
+                <EditText android:id="@id/ed_subject" android:hint="@string/subject_hint_name" android:singleLine="false" style="@style/EditTextStyle_button_text" />
+            </LinearLayout>
+            <View style="@style/TaskEditSeperator" />
+            <LinearLayout android:id="@id/start_date_container" android:visibility="gone" style="@style/EditLinearGuide_1">
+                <TextView android:id="@id/tv_startDate" android:text="@string/start_date" style="@style/EditTextStyle_small_label" />
+                <Button android:id="@id/start_date" style="@style/EditButtonStyle" />
+            </LinearLayout>
+            <View android:id="@id/start_date_line_view" style="@style/TaskEditSeperator" />
+            <LinearLayout android:id="@id/due_date_container" style="@style/EditLinearGuide_1">
+                <TextView android:id="@id/tv_endDate" android:text="@string/due_date" style="@style/EditTextStyle_small_label" />
+                <Button android:id="@id/due_date" style="@style/EditButtonStyle" />
+            </LinearLayout>
+            <View style="@style/TaskEditSeperator" />
+            <LinearLayout android:id="@id/no_due_date_container" style="@style/EditLinearGuide_2">
+                <LinearLayout android:id="@id/no_due_date" android:background="@drawable/tasks_list_selector_background" android:focusable="true" android:clickable="true" android:layout_weight="1.0" style="@style/EditLinearGuide_4">
+                    <TextView android:textColor="@drawable/task_text_first" android:gravity="right|center" android:text="@string/no_due_date" android:layout_weight="1.0" style="@style/EditTextStyle_big_label" />
+                    <CheckBox android:layout_gravity="center_vertical" android:id="@id/no_due_date_check" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="7.3299866dip" />
+                </LinearLayout>
+            </LinearLayout>
+            <View style="@style/TaskEditSeperator" />
+            <LinearLayout android:id="@id/calendar_container" android:background="@drawable/tasks_list_selector_background" android:focusable="true" android:clickable="true" style="@style/EditLinearGuide_4">
+                <LinearLayout android:duplicateParentState="true" android:layout_weight="1.0" style="@style/EditLinearGuide_2">
+                    <TextView android:text="@string/task" style="@style/EditTextStyle_big_label" />
+                    <LinearLayout android:orientation="horizontal" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:layout_gravity="center_vertical" android:id="@id/task_icon" android:layout_width="@dimen/account_color_bar_width_size" android:layout_height="@dimen/edit_account_color_bar_height_size" android:layout_marginLeft="13.039978dip" />
+                        <TextView android:id="@id/tv_task_type" android:layout_marginLeft="4.689972dip" style="@style/EditTextStyle_secondary_text" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <View style="@style/TaskEditSeperator" />
+            <LinearLayout android:id="@id/priority_container" android:background="@drawable/tasks_list_selector_background" android:focusable="true" android:clickable="true" style="@style/EditLinearGuide_4">
+                <LinearLayout android:duplicateParentState="true" android:layout_weight="1.0" style="@style/EditLinearGuide_2">
+                    <TextView android:text="@string/priority" style="@style/EditTextStyle_big_label" />
+                    <LinearLayout android:orientation="horizontal" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:layout_gravity="center_vertical" android:id="@id/priority_icon" android:layout_width="@dimen/priority_image_size_1" android:layout_height="@dimen/priority_image_size_1" android:layout_marginLeft="13.039978dip" />
+                        <TextView android:id="@id/priority_textview" android:layout_marginLeft="4.689972dip" style="@style/EditTextStyle_secondary_text" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <View android:id="@id/reminder_line_view" style="@style/TaskEditSeperator" />
+            <LinearLayout android:id="@id/reminder_container" android:background="@drawable/tasks_list_selector_background" android:focusable="true" android:clickable="true" style="@style/EditLinearGuide_3">
+                <LinearLayout android:duplicateParentState="true" android:layout_weight="1.0" style="@style/EditLinearGuide_1">
+                    <TextView android:text="@string/reminder" style="@style/EditTextStyle_big_label" />
+                    <TextView android:id="@id/reminder_type" android:layout_marginLeft="13.039978dip" android:text="@string/off" style="@style/EditTextStyle_secondary_text" />
+                </LinearLayout>
+                <Button android:textSize="@dimen/edit_text_size_5" android:layout_gravity="center_vertical" android:id="@id/reminder_time_button" android:layout_width="107.869995dip" android:layout_height="48.23999dip" android:layout_marginTop="5.7099915dip" android:layout_marginRight="@dimen/edit_margin_right_size_1" />
+            </LinearLayout>
+            <View style="@style/TaskEditSeperator" />
+            <LinearLayout style="@style/EditLinearGuide_1">
+                <TextView android:text="@string/note" style="@style/EditTextStyle_small_label" />
+                <EditText android:id="@id/note" android:hint="@string/note" android:singleLine="false" style="@style/EditTextStyle_button_text" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <include android:id="@id/softkeyview" layout="@layout/softkeys" />
+</LinearLayout>

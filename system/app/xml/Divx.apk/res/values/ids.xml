@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="settingscroll">false</item>
+    <item type="id" name="settinglayout">false</item>
+    <item type="id" name="divider1">false</item>
+    <item type="id" name="divx_deregistration_code">false</item>
+    <item type="id" name="divx_deregistration">false</item>
+    <item type="id" name="divx_deregistration_info">false</item>
+    <item type="id" name="divx_register_button">false</item>
+    <item type="id" name="divx_cancel_register_button">false</item>
+    <item type="id" name="divx_registration">false</item>
+    <item type="id" name="divx_registration_code">false</item>
+    <item type="id" name="divx_registration_website">false</item>
+    <item type="id" name="roamingList">false</item>
+    <item type="id" name="roaming_network">false</item>
+</resources>

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_easy_connection">Sobre o Easy connection</string>
+    <string name="about_easy_connection_description">Agite o dispositivo duas vezes para procurar dispositivos Kies air</string>
+    <string name="access_request">Pedido de acesso</string>
+    <string name="access_request_body">Permitir pedidos de autorização de outros dispositivos durante a utilização de Kies air</string>
+    <string name="all">Todos</string>
+    <string name="allow">Permitir</string>
+    <string name="allow_access_from">Permitir acesso a partir de:</string>
+    <string name="bookmarks">Favoritos</string>
+    <string name="calendar">Calendário</string>
+    <string name="call">Chamadas</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="configure_timeout">Configurar o tempo limite para o servidor da Web encerrar automaticamente para poupar a bateria</string>
+    <string name="contacts">Contatos</string>
+    <string name="contentlock">Bloquear conteúdos</string>
+    <string name="deny">Declinar</string>
+    <string name="do_not_ask_again">Não mostrar novamente</string>
+    <string name="enable_network">Ligar a rede</string>
+    <string name="file_explorer">Explorador de arquivos</string>
+    <string name="hardwareDataKeyOff">"Network not available.
+To enable network, turn on the data connection key at the bottom of right side."</string>
+    <string name="help">Ajuda</string>
+    <string name="IDS_KA_BODY_YOU_CAN_CONNECT_TO_ANOTHER_DEVICE_BY_SHAKING_YOUR_MOBILE_TWICE_OR_TAPPING_SCAN_IN_THE_MENU_HELP_MSG">"Você pode conectar a outro dispositivo ao agitar o seu celular duas vezes ou tocar em Pesquisar no menu.
+Os recursos o ajudam a encontrar dispositivos Kies air em uma rede sem que seja necessário inserir o URL em um navegador.
+
+Observação: selecione Ativar visibilidade no Kies air > Configurações de forma que você possa tornar seu dispositivo móvel acessível para outros dispositivos ao agitá-lo ou tocar em Pesquisar.
+- Selecione Ativação do movimento > Configurações > Movimento para usar Agitar"</string>
+    <string name="IDS_KA_HEADER_RESTART_MOBILE_AP">Reiniciar roteador Wi-Fi</string>
+    <string name="IDS_KA_HEADER_RESTART_WI_FI">Reiniciar Wi-Fi</string>
+    <string name="IDS_KA_HEADER_RESTART_WIFI_HOTSPOT">Reiniciar hotspot Wi-Fi portátil</string>
+    <string name="messages">Mensagens</string>
+    <string name="mobileap">Roteador Wi-Fi</string>
+    <string name="mobileap2">Roteador Wi-Fi</string>
+    <string name="music">Música</string>
+    <string name="no_button">Não</string>
+    <string name="ok_button">OK</string>
+    <string name="photo">Fotos</string>
+    <string name="reset">Zerar</string>
+    <string name="reset_settings">Configurações de restauração</string>
+    <string name="reset_settings_description">Repor as definições padrão</string>
+    <string name="reset_settings_toast">Configurações restauradas para padrão</string>
+    <string name="restart_network_text">Rede indisponível</string>
+    <string name="ringtone">Toques</string>
+    <string name="scan_kies_air_server">Procurar servidor do Kies air</string>
+    <string name="scanning">Procurando</string>
+    <string name="securityManagerChallange_commit">OK</string>
+    <string name="securityManagerChallange_device">Conexão: %s</string>
+    <string name="security_manager_challange_private">Privado</string>
+    <string name="security_manager_challange_public">Público</string>
+    <string name="securityManagerChallange_remember">Lembrar hoje</string>
+    <string name="security_manager_check_box_prompt">Torne seu dispositivo visível na rede</string>
+    <string name="security_manager_check_box_title">Ativar visibilidade</string>
+    <string name="security_manager_title">Configurações</string>
+    <string name="settings">Configurações</string>
+    <string name="start">Iniciar</string>
+    <string name="status">Status:</string>
+    <string name="stop">Parar</string>
+    <string name="stop_access">Parar acesso</string>
+    <string name="stop_network">Parar o acesso através da rede</string>
+    <string name="timeout">Tempo esgotado</string>
+    <string name="video">Vídeos</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="yes_button">Sim</string>
+    <string name="applet_cant_start_when_unmounted">Impossível iniciar enquanto o modo de armazenamento USB estiver ativo</string>
+    <string name="appName">Kies air</string>
+    <string name="clear_cache">Clear Cache</string>
+    <string name="concurrent_calls_not_supported">Concurrent calls not supported</string>
+    <string name="connection_is_reset">Connection is reset</string>
+    <string name="connection_settings">Connection Settings</string>
+    <string name="connection_stub1">"Terry's PC in the Hall"</string>
+    <string name="connection_stub2">"Loven's Laptop"</string>
+    <string name="contact_could_not_be_deleted">Contact could not be deleted</string>
+    <string name="current_connection_will_be_denied">A ligação atual será bloqueada</string>
+    <string name="day_ago">%s day ago</string>
+    <string name="days_ago">%s days ago</string>
+    <string name="delete">Apagar</string>
+    <string name="developerMode">Developer mode</string>
+    <string name="developerModeMessage">"This phone is not rooted.
+Would you like to open access of all files to all users? THIS IS A SECURITY RISK!"</string>
+    <string name="device_name">Nome do dispositivo</string>
+    <string name="downloadError">Pesquisar</string>
+    <string name="downloading">Downloading...</string>
+    <string name="enable_network_to_use">Ativar a rede %s para utilizar o Kies air?</string>
+    <string name="free_memory">Free Memory: %1$s/%2$s</string>
+    <string name="go_to_server_configuration">Configuration</string>
+    <string name="hour_ago">%s hour ago</string>
+    <string name="hours_ago">%s hours ago</string>
+    <string name="initializing">LOADING</string>
+    <string name="install_samsung_server">"Install
+SWIFT"</string>
+    <string name="ip_address">URL:</string>
+    <string name="last_activity">"
+Last activity: %s"</string>
+    <string name="loopback">Loopback</string>
+    <string name="manyMinutes">%d minutos</string>
+    <string name="minute_ago">%s minute ago</string>
+    <string name="minutes_ago">%s minutes ago</string>
+    <string name="month_ago">%s month ago</string>
+    <string name="months_ago">%s months ago</string>
+    <string name="my_calendar">Meu calendário</string>
+    <string name="my_task">Tarefa concluída</string>
+    <string name="no">NO</string>
+    <string name="no_contact_found_with_id">No contact found with id</string>
+    <string name="no_devices">Nenhum dispositivo</string>
+    <string name="no_network_connectivity">No network connectivity</string>
+    <string name="off">Desativado</string>
+    <string name="oneHour">1 hora</string>
+    <string name="please_hold_the_handset_horizontally">Please hold the handset horizontally.</string>
+    <string name="please_hold_the_handset_vertically">Please hold the handset vertically.</string>
+    <string name="please_install_and_start_the_samsung_server">Please install and start</string>
+    <string name="processes_tidied_up">Processes tidied up:</string>
+    <string name="refresh">Atualizar</string>
+    <string name="restart_button">Restart %s</string>
+    <string name="restart_network_button">Restart network</string>
+    <string name="restartServer">RESTARTING</string>
+    <string name="running">RUNNING</string>
+    <string name="scan">Pesquisar</string>
+    <string name="second_ago">%s second ago</string>
+    <string name="seconds_ago">%s seconds ago</string>
+    <string name="security_manager_challange_deny">Negar acesso</string>
+    <string name="security_manager_challange_deny_desc">Deny access for this connection</string>
+    <string name="securityManagerChallange_header">A device is trying to connect to your phone</string>
+    <string name="security_manager_challange_instructions">Choose on option to continue</string>
+    <string name="securityManagerChallange_localApplication">Local application</string>
+    <string name="securityManagerChallange_notification_detailText">Select to authorise connection</string>
+    <string name="securityManagerChallange_notification_tickertext">Incoming connection</string>
+    <string name="security_manager_challange_private_desc">"Allow only this connection, and 
+no other"</string>
+    <string name="security_manager_challange_public_desc">"Allow this connection and ask about
+more connections"</string>
+    <string name="security_manager_challange_security_high">high</string>
+    <string name="security_manager_challange_security_low">low</string>
+    <string name="security_manager_challange_security_medium">medium</string>
+    <string name="security_manager_challange_security_rating">Security: %s</string>
+    <string name="security_manager_challange_title">Please authorise connection</string>
+    <string name="securityManagerChallange_title">Connecting</string>
+    <string name="security_manager_change_remove">Forget</string>
+    <string name="security_manager_change_status">Change Status</string>
+    <string name="security_manager_edit_box">Rename</string>
+    <string name="security_manager_inline_button_pompt_2">Change the device name to a name of your choice</string>
+    <string name="security_manager_inline_button_prompt_allowed_connection">Access to your phone is allowed</string>
+    <string name="security_manager_inline_button_prompt_allowed_network">Access to your phone is allowed</string>
+    <string name="security_manager_inline_button_prompt_ask">Ask when a connection is attempted</string>
+    <string name="security_manager_inline_button_prompt_blocked_connection">Access to your phone is blocked</string>
+    <string name="security_manager_inline_button_prompt_blocked_network">Access to your phone is blocked</string>
+    <string name="security_manager_inline_button_prompt_expired">Ask when a connection is attempted</string>
+    <string name="security_manager_network_title">%1$s (%2$s)</string>
+    <string name="security_manager_subheading_2">Devices</string>
+    <string name="security_manager_subheading_3">Networks</string>
+    <string name="skip_button">Skip</string>
+    <string name="starting">Starting...</string>
+    <string name="stopped">STOPPED</string>
+    <string name="switch_off_network">Desligar também %s?</string>
+    <string name="SYS_GN_COWORKERS">Colegas de trabalho</string>
+    <string name="SYS_GN_FAMILY">Família</string>
+    <string name="SYS_GN_FRIENDS">Amigos</string>
+    <string name="SYS_GN_MYCONTACTS">Meus contatos</string>
+    <string name="the_socket_listener_thread_has_ended">Native bridge offline</string>
+    <string name="trustNetwork">Rede: %s</string>
+    <string name="unknown">UNKNOWN</string>
+    <string name="unnamedConnection">&lt;unknown></string>
+    <string name="unnamedNetwork">&lt;unknown></string>
+    <string name="unzipping_file">Descompactando arquivo...</string>
+    <string name="view_in_browser">View in Browser</string>
+    <string name="waiting_for_network">CONNECTING</string>
+    <string name="waiting_for_server">STARTING</string>
+    <string name="web_root">Home</string>
+    <string name="week_ago">%s week ago</string>
+    <string name="weeks_ago">%s weeks ago</string>
+    <string name="year_ago">%s year ago</string>
+    <string name="years_ago">%s years ago</string>
+    <string name="yes">YES</string>
+    <string name="IDS_KA_BODY_BROWSE_YOUR_PHONE_FROM_ANOTHER_DEVICE">2. Procure seu dispositivo móvel a partir do outro dispositivo</string>
+    <string name="IDS_KA_BODY_CONNECT_ANOTHER_DEVICE_TO_THE_SAME_NETWORK_AS_YOURS">Ligar outro dispositivo à sua rede</string>
+    <string name="IDS_KA_BODY_ENABLE_VISIBILITY">Ativar visibilidade</string>
+    <string name="IDS_KA_BODY_HOW_TO_CONNECT_WITH_DEVICES_FOR_USING_KIES_NOTI_MSG">"Em outro dispositivo, abra o navegador. Em seguida, digite o URL na barra de endereços do navegador.
+* Ambos os dispositivos devem estar conectados à mesma rede.
+
+Dica: Se você ligar seu ponto de aceso Wi-Fi portátil ao seu dispositivo móvel, o Kies air poderá ser usado em qualquer lugar"</string>
+    <string name="IDS_KA_BODY_KIES_AIR_CONNECTS_YOUR_DEVICE_WIRELESSLY_TO_ANY_OTHER_HELP_MSG">O Kies air permitirá que você gerencie o conteúdo de seu dispositivo facilmente via Wi-Fi. Ao usar o navegador em outro dispositivo, você poderá exibir imagens, ouvir músicas, baixar arquivos, enviar mensagens e editar seus contatos</string>
+    <string name="IDS_KA_BODY_KIES_AIR_WORKS_WITH_A_WI_FI_ACCESS_POINT_OR_WITH_MOBILE_AP_ON_YOUR_DEVICE_HELP_MSG">Se você tocar em Iniciar, o Kies air exibirá um URL que poderá ser usado para navegar em seu dispositivo móvel a partir de outro dispositivo, como um PC</string>
+    <string name="IDS_KA_BODY_YOU_CAN_SHOW_UP_YOUR_DEVICE_ON_ANY_PC_OR_PHONE_IN_YOUR_NETWORK">Você pode permitir que o seu dispositivo móvel seja exibido em qualquer PC ou dispositivo em sua rede</string>
+    <string name="IDS_KA_HEADER_SECURITY">Segurança</string>
+    <string name="IDS_KA_HEADER_STARTING_KIES_AIR_ON_YOUR_PHONE">1. Inicie o Kies air em seu dispositivo móvel</string>
+    <string name="IDS_KA_HEADER_USING_KIES_AIR">Como usar o Kies air</string>
+    <string name="IDS_KA_HEADER_WHAT_IS_KIES_AIR_Q">O que é o Kies air?</string>
+    <string name="view_licence">Licenças de software livre</string>
+    <string name="view_licence_text">"Open Source Announcement
+
+Some software components of this product covered under the GNU Lesser General Public License(LGPL), BSD, the PHP License and Apache License.
+
+This product includes PHP, freely available from &lt;http://www.php.net/>
+
+Below is the list of components covered under LGPL.
+[component] : [License]
+ FFMPEF : LGPL 2.1
+ JCIFS : LGPL 2.1
+
+To obtain the source code covered under LGPL, please contact oss.request@samsung.com.
+
+
+Copyright (c) 2011, Yahoo! Inc.
+All rights reserved.
+
+Redistribution and use of this software in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * Neither the name of Yahoo! Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission of Yahoo! Inc.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS AS IS AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Copyright (c) 1997-2009 University of Cambridge
+Copyright (c) 2007-2008, Google Inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * Neither the name of the University of Cambridge nor the name of Google Inc. nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS AS IS AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Copyright (c) 2004, Jan Kneschke, incremental
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * Neither the name of the 'incremental' nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS AS IS AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+ Copyright (c) 2005 The Android Open Source Project
+
+
+ Licensed under the Apache License, Version 2.0 (the License);
+ you may not use this file except in compliance with the License.
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an AS IS BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+
+
+ Apache License
+ Version 2.0, January 2004
+ http://www.apache.org/licenses/
+
+ TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+ 1. Definitions.
+
+ License shall mean the terms and conditions for use, reproduction,
+ and distribution as defined by Sections 1 through 9 of this document.
+
+ Licensor shall mean the copyright owner or entity authorized by
+ the copyright owner that is granting the License.
+
+ Legal Entity shall mean the union of the acting entity and all
+ other entities that control, are controlled by, or are under common
+ control with that entity. For the purposes of this definition,
+ control means (i) the power, direct or indirect, to cause the
+ direction or management of such entity, whether by contract or
+ otherwise, or (ii) ownership of fifty percent (50%) or more of the
+ outstanding shares, or (iii) beneficial ownership of such entity.
+
+ You (or Your) shall mean an individual or Legal Entity
+ exercising permissions granted by this License.
+
+ Source form shall mean the preferred form for making modifications,
+ including but not limited to software source code, documentation
+ source, and configuration files.
+
+ Object form shall mean any form resulting from mechanical
+ transformation or translation of a Source form, including but
+ not limited to compiled object code, generated documentation,
+ and conversions to other media types.
+
+ Work shall mean the work of authorship, whether in Source or
+ Object form, made available under the License, as indicated by a
+ copyright notice that is included in or attached to the work
+ (an example is provided in the Appendix below).
+
+ Derivative Works shall mean any work, whether in Source or Object
+ form, that is based on (or derived from) the Work and for which the
+ editorial revisions, annotations, elaborations, or other modifications
+ represent, as a whole, an original work of authorship. For the purposes
+ of this License, Derivative Works shall not include works that remain
+ separable from, or merely link (or bind by name) to the interfaces of,
+ the Work and Derivative Works thereof.
+
+ Contribution shall mean any work of authorship, including
+ the original version of the Work and any modifications or additions
+ to that Work or Derivative Works thereof, that is intentionally
+ submitted to Licensor for inclusion in the Work by the copyright owner
+ or by an individual or Legal Entity authorized to submit on behalf of
+ the copyright owner. For the purposes of this definition, submitted
+ means any form of electronic, verbal, or written communication sent
+ to the Licensor or its representatives, including but not limited to
+ communication on electronic mailing lists, source code control systems,
+ and issue tracking systems that are managed by, or on behalf of, the
+ Licensor for the purpose of discussing and improving the Work, but
+ excluding communication that is conspicuously marked or otherwise
+ designated in writing by the copyright owner as Not a Contribution.
+
+ Contributor shall mean Licensor and any individual or Legal Entity
+ on behalf of whom a Contribution has been received by Licensor and
+ subsequently incorporated within the Work.
+
+ 2. Grant of Copyright License. Subject to the terms and conditions of
+ this License, each Contributor hereby grants to You a perpetual,
+ worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+ copyright license to reproduce, prepare Derivative Works of,
+ publicly display, publicly perform, sublicense, and distribute the
+ Work and such Derivative Works in Source or Object form.
+
+ 3. Grant of Patent License. Subject to the terms and conditions of
+ this License, each Contributor hereby grants to You a perpetual,
+ worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+ (except as stated in this section) patent license to make, have made,
+ use, offer to sell, sell, import, and otherwise transfer the Work,
+ where such license applies only to those patent claims licensable
+ by such Contributor that are necessarily infringed by their
+ Contribution(s) alone or by combination of their Contribution(s)
+ with the Work to which such Contribution(s) was submitted. If You
+ institute patent litigation against any entity (including a
+ cross-claim or counterclaim in a lawsuit) alleging that the Work
+ or a Contribution incorporated within the Work constitutes direct
+ or contributory patent infringement, then any patent licenses
+ granted to You under this License for that Work shall terminate
+ as of the date such litigation is filed.
+
+ 4. Redistribution. You may reproduce and distribute copies of the
+ Work or Derivative Works thereof in any medium, with or without
+ modifications, and in Source or Object form, provided that You
+ meet the following conditions:
+
+ (a) You must give any other recipients of the Work or
+ Derivative Works a copy of this License; and
+
+ (b) You must cause any modified files to carry prominent notices
+ stating that You changed the files; and
+
+ (c) You must retain, in the Source form of any Derivative Works
+ that You distribute, all copyright, patent, trademark, and
+ attribution notices from the Source form of the Work,
+ excluding those notices that do not pertain to any part of
+ the Derivative Works; and
+
+ (d) If the Work includes a NOTICE text file as part of its
+ distribution, then any Derivative Works that You distribute must
+ include a readable copy "</string>
+    <string name="about">Sobre</string>
+    <string name="about_easyconnect">About easy Connection</string>
+    <string name="authorised_device">Dispositivo autorizado</string>
+    <string name="connection_denied_info_popup">Reiniciar o Kies air para %s poder acessar o servidor</string>
+    <string name="copyright">Copyright © Samsung Electronics Co., Ltd.</string>
+    <string name="dont_show_again">Do not show again</string>
+    <string name="help_in_start_msg1">Introduzir URL no navegador do PC.</string>
+    <string name="help_in_start_msg2">Conectar à mesma rede.</string>
+    <string name="help_in_start_msg3">Introduza a URL no navegador do computador ou do celular.</string>
+    <string name="help_in_start_msg4">Inserir URL no navegador</string>
+    <string name="help_in_stop">O Kies air é um aplicativo móvel que possibilita conexões Wi-Fi dispositivo a dispositivo e o gerenciamento baseado em navegador. O Kies air pode ser usado sem software de PC ou uma conexão USB</string>
+    <string name="help_in_stop2">Você pode utilizar o Kies air sem precisar usar software ou conexão USB.</string>
+    <string name="help_in_waiting_mobile_ap">Ponto de acesso Wi-Fi desativado. Ativar</string>
+    <string name="help_in_waiting_wifi">Rede Wi-Fi não ligada. Conecte-se</string>
+    <string name="inactivity_timeout">O Kies air fechou devido a inatividade</string>
+    <string name="installerTitle">Instalador Kies air</string>
+    <string name="must_choose_a_network">Você deve selecionar uma rede para utilizar o Kies air</string>
+    <string name="network">Rede</string>
+    <string name="nonSamsungHandset">O Kies air só funciona em dispositivos Samsung. Instalação cancelada</string>
+    <string name="notification_ongoing_contextText">Selecionar para ver o Kies air</string>
+    <string name="notification_ongoing_tickertext">Kies air online</string>
+    <string name="ok">OK</string>
+    <string name="press_back_return_webstudio">Toque em Anterior para voltar ao Kies air</string>
+    <string name="securityManagerChallange_notification">Autorizar o acesso ao Kies air</string>
+    <string name="server_app_description">Desenvolvedor de aplicação Kies air</string>
+    <string name="server_shut_down">O Kies air parou. Você deve conectar-se para executar o Kies air</string>
+    <string name="stop_device_text">Parar o acesso de %s ao seu telefone para conectar a outro dispositivo?</string>
+    <string name="unmounted_media_shutdown">O Kies air fechou porque o suporte externo foi removido</string>
+    <string name="version">Versão</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="years_ago">
+        <item quantity="other">%1$d aastat tagasi</item>
+        <item quantity="one">1 aasta tagasi</item>
+    </plurals>
+    <plurals name="months_ago">
+        <item quantity="other">%1$d kuud tagasi</item>
+        <item quantity="one">1 kuu tagasi</item>
+    </plurals>
+    <plurals name="weeks_ago">
+        <item quantity="other">%1$d nädalat tagasi</item>
+        <item quantity="one">1 nädal tagasi</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">%1$d päeva tagasi</item>
+        <item quantity="one">1 päev tagasi</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="other">%1$d tundi tagasi</item>
+        <item quantity="one">1 tund tagasi</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="other">%1$d minutit tagasi</item>
+        <item quantity="one">1 minut tagasi</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="other">%1$d sekundit tagasi</item>
+        <item quantity="one">1 sekund tagasi</item>
+    </plurals>
+    <plurals name="recent_uploads">
+        <item quantity="other">uued üleslaadimised</item>
+        <item quantity="one">uus üleslaadimine</item>
+    </plurals>
+    <plurals name="recent_activity">
+        <item quantity="other">uued sündmused</item>
+        <item quantity="one">uus sündmus</item>
+    </plurals>
+    <plurals name="playlist_size">
+        <item quantity="other">%1$,d videot</item>
+        <item quantity="one">1 video</item>
+    </plurals>
+</resources>

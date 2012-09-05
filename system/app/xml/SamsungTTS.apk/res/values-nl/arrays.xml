@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voice_effects_entries">
+        <item>Normaal</item>
+        <item>Lage stem</item>
+        <item>Hoge stem</item>
+        <item>Zachte stem</item>
+        <item>Zware stem</item>
+        <item>Robotstem</item>
+        <item>Heliumeffect</item>
+    </string-array>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="safe_search_levels">
+        <item>ไม่ต้องกรอง</item>
+        <item>ปานกลาง</item>
+        <item>เข้มงวด</item>
+    </string-array>
+    <string-array name="subtitles_size_entries">
+        <item>ขนาดเล็ก</item>
+        <item>ปานกลาง</item>
+        <item>ใหญ่</item>
+        <item>ใหญ่มาก</item>
+    </string-array>
+</resources>

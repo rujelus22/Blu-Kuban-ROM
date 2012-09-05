@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="ImageView01">false</item>
+    <item type="id" name="LinearLayout01">false</item>
+    <item type="id" name="modelLinearLayout">false</item>
+    <item type="id" name="TextView01">false</item>
+    <item type="id" name="LinearLayout02">false</item>
+    <item type="id" name="TextView09">false</item>
+    <item type="id" name="TextView22">false</item>
+    <item type="id" name="LinearLayout03">false</item>
+    <item type="id" name="TextView_sn1">false</item>
+    <item type="id" name="TextView100">false</item>
+    <item type="id" name="LinearLayout04">false</item>
+    <item type="id" name="TextView_sn2">false</item>
+</resources>

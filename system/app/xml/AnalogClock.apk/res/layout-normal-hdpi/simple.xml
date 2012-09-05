@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/simple_root_layout" android:layout_width="160.0dip" android:layout_height="160.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/simple_layout" android:background="@drawable/simple_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/simple_image_hour" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/simple_image_sec" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/simple_image_min" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/UpperLayout" android:paddingTop="2.669983dip" android:layout_width="160.0dip" android:layout_height="100.0dip">
+        <FrameLayout android:layout_width="138.66998dip" android:layout_height="30.669983dip" android:layout_marginLeft="10.669983dip" android:layout_marginRight="10.669983dip">
+            <LinearLayout android:gravity="left|center" android:orientation="horizontal" android:id="@id/UpperCityLayout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:ellipsize="marquee" android:gravity="left|center" android:id="@id/UpperCityText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+            </LinearLayout>
+            <LinearLayout android:gravity="left|center" android:orientation="horizontal" android:id="@id/UpperCityLayoutWithDst" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:ellipsize="marquee" android:gravity="left|center" android:id="@id/UpperCityTextWithDst" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="114.0dip" android:singleLine="true" />
+                <ImageView android:id="@id/UpperDstImage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.669983dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/UpperCityLayoutWithAmPm" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:gravity="left|center" android:orientation="horizontal" android:layout_width="107.32999dip" android:layout_height="fill_parent">
+                    <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:ellipsize="marquee" android:gravity="left|center" android:id="@id/UpperCityTextWithAmPm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                </LinearLayout>
+                <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:layout_width="26.669983dip" android:layout_height="fill_parent" android:layout_marginLeft="4.669983dip">
+                    <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:gravity="right|center" android:id="@id/UpperAmPm" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/UpperCityLayoutWithDstAmPm" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:gravity="left|center" android:orientation="horizontal" android:layout_width="107.32999dip" android:layout_height="fill_parent">
+                    <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:ellipsize="marquee" android:gravity="left|center" android:id="@id/UpperCityTextWithDstAmPm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="82.66998dip" android:singleLine="true" />
+                    <ImageView android:id="@id/UpperDstImageWithDstAmPm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.669983dip" />
+                </LinearLayout>
+                <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:layout_width="26.669983dip" android:layout_height="fill_parent" android:layout_marginLeft="4.669983dip">
+                    <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:gravity="right|center" android:id="@id/UpperAmPmWithDst" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+        <LinearLayout android:id="@id/UpperLine" android:background="@drawable/dualclock_line" android:layout_width="fill_parent" android:layout_height="0.6700001dip" android:layout_marginLeft="10.669983dip" android:layout_marginRight="10.669983dip" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="4.0dip" />
+        <LinearLayout android:orientation="horizontal" android:paddingLeft="7.3299866dip" android:layout_width="160.0dip" android:layout_height="60.0dip">
+            <FrameLayout android:layout_width="36.0dip" android:layout_height="60.0dip" android:layout_marginLeft="0.0dip">
+                <ImageView android:id="@id/UpperClockHour01" android:layout_width="36.0dip" android:layout_height="60.0dip" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="36.0dip" android:layout_height="60.0dip" android:layout_marginLeft="-4.669983dip">
+                <ImageView android:id="@id/UpperClockHour02" android:layout_width="36.0dip" android:layout_height="60.0dip" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="10.0dip" android:layout_height="60.0dip" android:layout_marginLeft="0.0dip">
+                <ImageView android:id="@id/UpperClockColon" android:layout_width="10.0dip" android:layout_height="60.0dip" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="36.0dip" android:layout_height="60.0dip" android:layout_marginLeft="0.0dip">
+                <ImageView android:id="@id/UpperClockMinute01" android:layout_width="36.0dip" android:layout_height="60.0dip" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="36.0dip" android:layout_height="60.0dip" android:layout_marginLeft="-4.669983dip">
+                <ImageView android:id="@id/UpperClockMinute02" android:layout_width="36.0dip" android:layout_height="60.0dip" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/LowerLayout" android:layout_width="160.0dip" android:layout_height="100.0dip">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/LowerSetCityLayout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <FrameLayout android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="70.0dip" android:layout_marginTop="26.669983dip" android:layout_marginRight="70.0dip">
+                    <ImageView android:id="@id/LowerAddImage" android:layout_width="20.0dip" android:layout_height="20.0dip" />
+                </FrameLayout>
+                <FrameLayout android:layout_width="fill_parent" android:layout_height="23.0dip" android:layout_marginTop="10.669983dip">
+                    <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:gravity="top|center" android:id="@id/LowerSetCityText" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                </FrameLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/LowerCityAndClockLayout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <FrameLayout android:layout_width="138.66998dip" android:layout_height="30.669983dip" android:layout_marginLeft="10.669983dip" android:layout_marginRight="10.669983dip">
+                    <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:id="@id/LowerCityLayout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:ellipsize="marquee" android:gravity="left|center" android:id="@id/LowerCityText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:id="@id/LowerCityLayoutWithDst" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <ImageView android:id="@id/LowerDstImage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.669983dip" />
+                        <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:ellipsize="marquee" android:gravity="left|center" android:id="@id/LowerCityTextWithDst" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="114.0dip" android:singleLine="true" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:id="@id/LowerCityLayoutWithAmPm" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <LinearLayout android:gravity="left|center" android:orientation="horizontal" android:layout_width="26.669983dip" android:layout_height="fill_parent" android:layout_marginRight="4.669983dip">
+                            <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:gravity="left|center" android:id="@id/LowerAmPm" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:layout_width="107.32999dip" android:layout_height="fill_parent">
+                            <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:ellipsize="marquee" android:gravity="left|center" android:id="@id/LowerCityTextWithAmPm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:id="@id/LowerCityLayoutWithDstAmPm" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:layout_width="26.669983dip" android:layout_height="fill_parent" android:layout_marginRight="4.669983dip">
+                            <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:gravity="left|center" android:id="@id/LowerAmPmWithDst" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:layout_width="107.32999dip" android:layout_height="fill_parent">
+                            <ImageView android:id="@id/LowerDstImageWithDstAmPm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.669983dip" />
+                            <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="@color/color1" android:ellipsize="marquee" android:gravity="left|center" android:id="@id/LowerCityTextWithDstAmPm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="82.66998dip" android:singleLine="true" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+                <LinearLayout android:id="@id/LowerLine" android:background="@drawable/dualclock_line" android:layout_width="fill_parent" android:layout_height="0.6700001dip" android:layout_marginLeft="10.669983dip" android:layout_marginRight="10.669983dip" />
+                <LinearLayout android:layout_width="fill_parent" android:layout_height="4.0dip" />
+                <LinearLayout android:orientation="horizontal" android:paddingLeft="7.3299866dip" android:layout_width="160.0dip" android:layout_height="60.0dip">
+                    <FrameLayout android:layout_width="36.0dip" android:layout_height="60.0dip" android:layout_marginLeft="0.0dip">
+                        <ImageView android:id="@id/LowerClockHour01" android:layout_width="36.0dip" android:layout_height="60.0dip" />
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="36.0dip" android:layout_height="60.0dip" android:layout_marginLeft="-4.669983dip">
+                        <ImageView android:id="@id/LowerClockHour02" android:layout_width="36.0dip" android:layout_height="60.0dip" />
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="10.0dip" android:layout_height="60.0dip" android:layout_marginLeft="0.0dip">
+                        <ImageView android:id="@id/LowerClockColon" android:layout_width="10.0dip" android:layout_height="60.0dip" />
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="36.0dip" android:layout_height="60.0dip" android:layout_marginLeft="0.0dip">
+                        <ImageView android:id="@id/LowerClockMinute01" android:layout_width="36.0dip" android:layout_height="60.0dip" />
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="36.0dip" android:layout_height="60.0dip" android:layout_marginLeft="-4.669983dip">
+                        <ImageView android:id="@id/LowerClockMinute02" android:layout_width="36.0dip" android:layout_height="60.0dip" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/list_nowplaying_item_layout" android:background="@drawable/music_play_list_btn_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="47.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout android:id="@id/list_nowplaying_item" android:background="@drawable/list_music_button_selector" android:focusable="true" android:layout_width="fill_parent" android:layout_height="36.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_centerInParent="true">
+            <ImageView android:id="@id/nowplaying_icon" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/list_nowplaying_layout_divider" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/music_play_list_btn_line" android:layout_toRightOf="@id/nowplaying_icon" />
+            <TextView android:textSize="19.0sp" android:textColor="@color/tw_white" android:id="@id/nowplaying_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:singleLine="true" android:layout_toRightOf="@id/list_nowplaying_layout_divider" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</merge>

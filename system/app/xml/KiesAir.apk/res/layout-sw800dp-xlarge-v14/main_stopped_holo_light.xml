@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingTop="164.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@id/stopped" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/stopped_holo_light" />
+        <include android:id="@id/button_area_stopped" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="51.0dip" android:layout_below="@id/stopped" layout="@layout/button_stopped_holo_light" />
+    </RelativeLayout>
+</merge>

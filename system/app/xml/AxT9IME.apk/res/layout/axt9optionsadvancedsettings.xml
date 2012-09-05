@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/s_xt9_advanced_settings" android:key="xt9_advanced_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_Word_completion" android:key="word_completion" android:summary="@string/s_Word_completion_Summary" android:defaultValue="true" />
+    <ListPreference android:title="@string/s_Word_completion_point" android:key="word_completion_point" android:dependency="word_completion" android:defaultValue="2" android:dialogTitle="@string/s_Word_completion_point" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_Continuous_input" android:key="trace" android:defaultValue="false" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_Spell_correction" android:key="spell_correction" android:defaultValue="true" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_Next_word_prediction" android:key="next_word_prediction" android:defaultValue="true" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_Auto_append" android:key="auto_append" android:defaultValue="false" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_Auto_substitution" android:key="auto_subtitution" android:summary="@string/s_Auto_substitution_Summary" android:defaultValue="false" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_Regional_correction" android:key="regional_correction" android:defaultValue="false" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_Recapture" android:key="recapture" android:summary="@string/s_Recapture_Summary" android:defaultValue="false" />
+    <Preference android:title="@string/s_T9_My_Words" android:key="axt9_ime_setting_mywords"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <Preference android:title="@string/s_T9_Auto_substitution" android:key="axt9_ime_setting_autosubstitution"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+</PreferenceScreen>

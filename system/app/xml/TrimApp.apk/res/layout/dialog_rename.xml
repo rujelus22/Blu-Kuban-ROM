@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#aa000000" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:layout_gravity="bottom|left|center" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="10.0dip" android:text="@string/title_newFilename" android:layout_alignParentLeft="true" />
+    <View android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="2.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <EditText android:textAppearance="?android:textAppearanceMedium" android:gravity="left|center" android:id="@id/edit_filename" android:layout_width="350.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="10.0dip" android:singleLine="true" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/btn_ok" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@android:string/ok" android:layout_weight="1.0" android:onClick="onRenameDialogButtonClick" />
+        <Button android:id="@id/btn_cancel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@android:string/cancel" android:layout_weight="1.0" android:onClick="onRenameDialogButtonClick" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginBottom="4.669983dip" android:layout_weight="1.0">
+        <ImageButton android:id="@id/ppt_Slidelayout_Img01" android:background="@drawable/slide_layout_bg_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.669983dip" android:layout_weight="1.0" />
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.669983dip" android:layout_weight="1.0">
+            <ImageButton android:id="@id/ppt_Slidelayout_Img04" android:background="@drawable/slide_layout_bg_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ico_slidelayout_03" />
+        </FrameLayout>
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageButton android:id="@id/ppt_Slidelayout_Img05" android:background="@drawable/slide_layout_bg_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ico_slidelayout_04" />
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.669983dip" android:layout_weight="1.0">
+            <ImageButton android:id="@id/ppt_Slidelayout_Img03" android:background="@drawable/slide_layout_bg_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ico_slidelayout_02" />
+        </FrameLayout>
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.669983dip" android:layout_weight="1.0">
+            <ImageButton android:id="@id/ppt_Slidelayout_Img02" android:background="@drawable/slide_layout_bg_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ico_slidelayout_01" />
+        </FrameLayout>
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageButton android:id="@id/ppt_Slidelayout_Img06" android:background="@drawable/slide_layout_bg_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ico_slidelayout_05" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

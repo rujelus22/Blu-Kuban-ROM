@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="app_icon">false</item>
+    <item type="id" name="app_name">false</item>
+    <item type="id" name="app_check">false</item>
+    <item type="id" name="shareapp_search">false</item>
+    <item type="id" name="shareapp_list">false</item>
+    <item type="id" name="shareapp_list_emptyview">false</item>
+    <item type="id" name="shareapp_list_emptyview_image">false</item>
+    <item type="id" name="shareapp_list_emptyview_text">false</item>
+    <item type="id" name="shareapp_btn_done">false</item>
+    <item type="id" name="shareapp_btn_cancel">false</item>
+</resources>

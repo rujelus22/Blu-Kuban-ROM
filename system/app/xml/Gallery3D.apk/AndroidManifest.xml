@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="30682" android:versionName="1.1.30682" package="com.cooliris.media"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <original-package android:name="com.cooliris.media" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.android.email.permission.ACCESS_PROVIDER" />
+    <uses-permission android:name="com.android.email.permission.READ_ATTACHMENT" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.STATUS_BAR" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_GMAIL" />
+    <uses-permission android:name="com.google.android.gm.permission.READ_GMAIL" />
+    <uses-permission android:name="android.permission.ACCESS_DEV_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <supports-screens android:anyDensity="true" android:smallScreens="false" android:normalScreens="false" android:largeScreens="true" />
+    <application android:label="@string/app_name" android:icon="@drawable/icon" android:hardwareAccelerated="false">
+        <activity android:theme="@style/NoAnimation" android:label="@string/app_name" android:name="com.cooliris.media.Gallery" android:clearTaskOnLaunch="true" android:stateNotNeeded="true" android:configChanges="keyboardHidden|orientation|screenSize" android:noHistory="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+                <category android:name="android.intent.category.OPENABLE" />
+                <data android:mimeType="vnd.android.cursor.dir/image" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+                <category android:name="android.intent.category.OPENABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MULTIPLE_PICK" />
+                <category android:name="android.intent.category.OPENABLE" />
+                <data android:mimeType="vnd.android.cursor.dir/image" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MULTIPLE_PICK" />
+                <category android:name="android.intent.category.OPENABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/pjpeg" />
+                <data android:mimeType="image/jpeg" />
+                <data android:mimeType="image/gif" />
+                <data android:mimeType="image/png" />
+                <data android:mimeType="image/x-ms-bmp" />
+                <data android:mimeType="image/vnd.wap.wbmp" />
+                <data android:mimeType="image/jpg" />
+                <data android:mimeType="image/bmp" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/image" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/video" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/image" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/image" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/pjpeg" />
+                <data android:mimeType="image/jpeg" />
+                <data android:mimeType="image/gif" />
+                <data android:mimeType="image/png" />
+                <data android:mimeType="image/x-ms-bmp" />
+                <data android:mimeType="image/vnd.wap.wbmp" />
+                <data android:mimeType="image/jpg" />
+                <data android:mimeType="image/bmp" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/crop_label" android:name="com.cooliris.media.CropImage" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter android:label="@string/crop_label">
+                <action android:name="com.android.camera.action.CROP" />
+                <data android:mimeType="image/*" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.ALTERNATIVE" />
+                <category android:name="android.intent.category.SELECTED_ALTERNATIVE" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:icon="@drawable/home_wallpaper" android:name="com.cooliris.media.Photographs" android:configChanges="keyboardHidden|orientation">
+            <intent-filter android:label="@string/camera_setas_wallpaper">
+                <action android:name="android.intent.action.ATTACH_DATA" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:scheme="htpp" />
+                <data android:scheme="https" />
+                <data android:mimeType="image/pjpeg" />
+                <data android:mimeType="image/jpeg" />
+                <data android:mimeType="image/gif" />
+                <data android:mimeType="image/png" />
+                <data android:mimeType="image/x-ms-bmp" />
+                <data android:mimeType="image/vnd.wap.wbmp" />
+                <data android:mimeType="image/jpg" />
+                <data android:mimeType="image/bmp" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.SET_WALLPAPER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:icon="@drawable/lock_wallpaper" android:name="com.cooliris.media.LockScreenPhotographs" android:configChanges="keyboardHidden|orientation">
+            <intent-filter android:label="@string/camera_setas_wallpaperLockScreen">
+                <action android:name="android.intent.action.ATTACH_DATA" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:scheme="htpp" />
+                <data android:scheme="https" />
+                <data android:mimeType="image/pjpeg" />
+                <data android:mimeType="image/jpeg" />
+                <data android:mimeType="image/gif" />
+                <data android:mimeType="image/png" />
+                <data android:mimeType="image/x-ms-bmp" />
+                <data android:mimeType="image/vnd.wap.wbmp" />
+                <data android:mimeType="image/jpg" />
+                <data android:mimeType="image/bmp" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:label="@string/camera_setas_wallpaperLockScreen">
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <provider android:label="Picasa Web Albums" android:name="com.cooliris.picasa.PicasaContentProvider" android:authorities="com.cooliris.picasa.contentprovider" android:syncable="true" android:grantUriPermissions="true" />
+        <service android:label="Picasa Sync Service" android:name="com.cooliris.picasa.PicasaService">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter" />
+        </service>
+        <service android:label="CacheService" android:name="com.cooliris.cache.CacheService" />
+        <receiver android:label="BootReceiver" android:name="com.cooliris.cache.BootReceiver" android:enabled="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.BOOT_COMPLETE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_SCANNER_FINISHED" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_EJECT" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_THUMBWORKER_SUSPEND" />
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/gadget_title" android:icon="@drawable/thumb_gallery" android:name="com.cooliris.media.PhotoAppWidgetProvider">
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/mytabloidwidgetprovider" />
+            <meta-data android:name="com.sec.android.appwidget.widgetinfo" android:resource="@xml/mytabloidwidgetinfo" />
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.sec.android.widgetapp.APPWIDGET_RESIZE" />
+                <action android:name="sec.android.intent.action.HOME_RESUME" />
+                <action android:name="sec.android.intent.action.HOME_PAUSE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
+        </receiver>
+        <activity android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.cooliris.media.PhotoAppWidgetConfigure" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.NoDisplay" android:name="com.cooliris.media.PhotoAppWidgetBind" android:permission="android.permission.BIND_APPWIDGET" android:exported="true" />
+        <activity android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.cooliris.media.PhotoAppWidgetClickHandler" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <receiver android:name="com.cooliris.picasa.PicasaReceiver">
+            <intent-filter>
+                <action android:name="android.accounts.LOGIN_ACCOUNTS_CHANGED_ACTION" />
+            </intent-filter>
+        </receiver>
+        <uses-library android:name="sechardware" />
+        <activity android:name="SetDefaultDestinationListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="GetNewContactNewEmail">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.sec.android.app.mediabrowser.NEW_EMAIL" />
+                <action android:name="com.sec.android.app.mediabrowser.NEW_CONTACT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".ImageGateReceiver">
+            <intent-filter>
+                <action android:name="com.sec.android.gate.GATE" />
+            </intent-filter>
+        </receiver>
+        <uses-library android:name="sec_feature" />
+    </application>
+</manifest>

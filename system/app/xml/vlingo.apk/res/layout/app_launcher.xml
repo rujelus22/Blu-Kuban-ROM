@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/radial_black_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0dip" android:textStyle="bold" android:textColor="#fff0f0f0" android:gravity="center" android:id="@id/title" android:background="@drawable/header_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="center" android:text="@string/app_launcher_apps" />
+    <TableLayout android:id="@id/TableLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="40.0dip">
+        <TableRow android:gravity="center" android:layout_gravity="center" android:layout_marginBottom="40.0dip">
+            <Button android:gravity="center" android:layout_gravity="center" android:id="@id/button_websearch" android:background="@drawable/websearch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" />
+            <Button android:gravity="center" android:layout_gravity="center" android:id="@id/button_voicedial" android:background="@drawable/voicedial" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" />
+            <Button android:gravity="center" android:layout_gravity="center" android:id="@id/button_sms" android:background="@drawable/sms" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" />
+        </TableRow>
+        <TableRow android:gravity="center" android:layout_gravity="center">
+            <Button android:gravity="center" android:layout_gravity="center" android:id="@id/button_email" android:background="@drawable/email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" />
+            <Button android:gravity="center" android:layout_gravity="center" android:id="@id/button_none" android:background="@drawable/sms" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" />
+            <Button android:gravity="center" android:layout_gravity="center" android:id="@id/button_none" android:background="@drawable/sms" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

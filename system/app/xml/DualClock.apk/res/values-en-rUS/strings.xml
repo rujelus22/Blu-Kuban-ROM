@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dual clock</string>
+    <string name="am">AM</string>
+    <string name="pm">PM</string>
+    <string name="taptxt">Search cities</string>
+    <string name="default_country">London</string>
+    <string name="no_result">No results</string>
+    <string name="max_input">Up to %d characters available</string>
+    <string name="current_location">Current location</string>
+    <string name="search">Searching...</string>
+    <string name="set_city">Set city</string>
+    <string name="min_width">310</string>
+    <string name="min_height">200</string>
+    <string name="analogclock">"Analog
+dual clock"</string>
+    <string name="digitalclock">"Digital
+dual clock"</string>
+    <string name="citychoice_popup">Select city</string>
+</resources>

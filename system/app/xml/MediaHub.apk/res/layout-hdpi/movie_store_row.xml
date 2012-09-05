@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="101.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/iv_cover_art" android:layout_width="71.32999dip" android:layout_height="101.0dip" android:scaleType="fitXY" />
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_weight="1.0">
+        <TextView android:textSize="17.329987sp" android:textColor="@drawable/selector_list_title_color" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:maxLines="2" android:layout_weight="1.0" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_hd_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.3299866dip" android:src="@drawable/hd_icon" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_hdmi_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/hdmi_icon" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.3299866dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_feature_list" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.669983dip" android:src="@drawable/top5_icon" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip">
+                <TextView android:textSize="12.0sp" android:textColor="@drawable/selector_list_sub_title_color" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tv_released" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:maxLines="2" />
+                <TextView android:textSize="12.0sp" android:textColor="@drawable/selector_list_sub_title_color" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tv_actors" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:singleLine="true" />
+                <TextView android:textSize="12.0sp" android:textColor="@drawable/selector_list_sub_title_color" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tv_genre" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:singleLine="true" />
+                <TextView android:textSize="12.0sp" android:textColor="@drawable/selector_list_sub_title_color" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tv_mpaa_rating" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

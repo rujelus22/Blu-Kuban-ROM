@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/contactlist_heading_background" android:padding="5.0dip" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <QuickContactBadge android:id="@id/image_contact" android:background="@drawable/quickcontact_badge_small" android:layout_width="65.0dip" android:layout_height="65.0dip" android:layout_marginRight="10.0dip" />
+        <TextView android:textSize="20.0dip" android:textStyle="bold" android:textColor="#fff0f0f0" android:id="@id/text_contact_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/contact_top_choice_item_top_choice" android:shadowColor="#ff000000" android:shadowRadius="2.0" android:layout_toRightOf="@id/image_contact" android:layout_centerVertical="true" />
+        <TextView android:textSize="20.0dip" android:textStyle="bold" android:textColor="#fff0f0f0" android:id="@id/text_contact_no_match" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/contact_top_choice_item_no_match" android:shadowColor="#ff000000" android:shadowRadius="2.0" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/image_star" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:src="@drawable/btn_star_big_on" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

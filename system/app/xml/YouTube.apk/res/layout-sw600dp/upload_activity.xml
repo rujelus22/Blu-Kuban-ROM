@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:yt="http://schemas.android.com/apk/res/com.google.android.youtube">
+    <include android:id="@id/upload_video_frame" layout="@layout/upload_form_video_frame" />
+    <RelativeLayout android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/upload_video_frame">
+        <include layout="@layout/upload_form" />
+    </RelativeLayout>
+</RelativeLayout>

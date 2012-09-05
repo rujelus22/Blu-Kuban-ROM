@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/crumb_holder" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeightSmall">
+        <com.android.browser.BreadCrumbView android:id="@id/crumbs" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <View android:id="@id/add_divider" android:background="?android:dividerVertical" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/add_new_folder" android:background="?android:selectableItemBackground" android:paddingRight="8.0dip" android:focusable="true" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/new_folder" android:drawableLeft="@drawable/ic_add_string" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TableLayout android:id="@id/default_view" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="1" android:shrinkColumns="1">
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_gravity="center_vertical" android:id="@id/titleText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="19.0dip" android:text="@string/editbookmark_title" />
+                <EditText android:textAppearance="?android:textAppearanceMedium" android:ellipsize="end" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:selectAllOnFocus="true" android:maxLength="2048" android:layout_below="@id/titleText" android:inputType="textCapSentences|textNoSuggestions" />
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_gravity="center_vertical" android:id="@id/addressText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="19.0dip" android:text="@string/location" />
+                <EditText android:textAppearance="?android:textAppearanceMedium" android:ellipsize="end" android:id="@id/address" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:hint="@string/http" android:selectAllOnFocus="true" android:maxLength="2048" android:layout_below="@id/addressText" android:inputType="textUri" />
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_gravity="center_vertical" android:id="@id/folderText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="19.0dip" android:text="@string/folder" />
+                <LinearLayout android:gravity="left|center" android:orientation="horizontal" android:id="@id/more" android:background="@drawable/btn_more" android:paddingTop="0.0dip" android:paddingBottom="0.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:layout_below="@id/folderText">
+                    <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/black" android:ellipsize="end" android:gravity="fill_horizontal|center" android:layout_gravity="center_vertical" android:id="@id/folder" android:paddingLeft="6.0dip" android:paddingBottom="7.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+                </LinearLayout>
+            </TableLayout>
+        </ScrollView>
+        <LinearLayout android:orientation="vertical" android:id="@id/folder_selector" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <view android:id="@id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" class="com.android.browser.AddBookmarkPage$CustomListView" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="italic" android:id="@id/empty" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="16.0dip" android:text="@string/no_subfolders" />
+        </LinearLayout>
+    </FrameLayout>
+</merge>

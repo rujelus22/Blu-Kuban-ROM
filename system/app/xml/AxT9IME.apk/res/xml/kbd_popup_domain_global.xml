@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard android:keyWidth="80.0dip" android:keyHeight="39.333984dip" android:horizontalGap="1.3339844dip" android:verticalGap="0.66700006dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Row android:rowEdgeFlags="top">
+        <Key android:keyEdgeFlags="left|right" android:keyOutputText="@string/s_dot_gov" android:keyLabel="@string/s_dot_gov" />
+    </Row>
+    <Row>
+        <Key android:keyEdgeFlags="left|right" android:keyOutputText="@string/s_dot_edu" android:keyLabel="@string/s_dot_edu" />
+    </Row>
+    <Row>
+        <Key android:keyEdgeFlags="left|right" android:keyOutputText="@string/s_dot_org" android:keyLabel="@string/s_dot_org" />
+    </Row>
+    <Row android:rowEdgeFlags="bottom">
+        <Key android:keyEdgeFlags="left|right" android:keyOutputText="@string/s_dot_net" android:keyLabel="@string/s_dot_net" />
+    </Row>
+</Keyboard>

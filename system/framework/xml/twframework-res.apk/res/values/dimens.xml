@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tw_softkey_textsize_singleline">16.0dip</dimen>
+    <dimen name="tw_softkey_textsize_singleline_min">16.0dip</dimen>
+    <dimen name="tw_softkey_textsize_twoline">16.0dip</dimen>
+    <dimen name="tw_softkey_textsize_twoline_min">16.0dip</dimen>
+    <dimen name="tw_softkey_textsize_threeline">16.0dip</dimen>
+    <dimen name="tw_softkey_text_margin_criteria">2.0dip</dimen>
+    <dimen name="tw_tabwidget_horizontal_padding_with_twotabs">32.0dip</dimen>
+    <dimen name="tw_indexview_rect_width">65.0dip</dimen>
+    <dimen name="tw_indexview_rect_height">61.0dip</dimen>
+    <dimen name="tw_indexview_index_textsize">56.0sp</dimen>
+    <dimen name="tw_indexview_index_textbg_top_margin">178.0dip</dimen>
+    <dimen name="tw_indexview_first_handle_textsize">14.599976sp</dimen>
+    <dimen name="tw_indexview_first_handle_top_margin">1.0dip</dimen>
+    <dimen name="tw_indexview_first_handle_width">18.0dip</dimen>
+    <dimen name="tw_indexview_first_handle_height_atoz">430.0dip</dimen>
+    <dimen name="tw_indexview_second_handle_width">19.299988dip</dimen>
+    <dimen name="tw_indexview_second_handle_gap">9.299988dip</dimen>
+    <dimen name="tw_indexview_characters_width">40.0dip</dimen>
+    <dimen name="tw_indexview_first_handle_width_clock">28.0dip</dimen>
+    <dimen name="test_textsize_default">28.0sp</dimen>
+    <dimen name="test_itemheight_default">63.0dip</dimen>
+    <dimen name="tw_indexview_index_textbg_top_margin_horizontal">69.29999dip</dimen>
+    <dimen name="tw_indexview_first_handle_textgap">15.5dip</dimen>
+    <dimen name="tw_indexview_second_handle_textgap">25.299988dip</dimen>
+    <dimen name="tw_indexview_first_handle_toppading">7.299988dip</dimen>
+    <dimen name="tw_indexview_second_handle_toppading">10.599976dip</dimen>
+    <dimen name="tw_clipboard_port_height">223.32999dip</dimen>
+    <dimen name="tw_clipboard_land_height">193.32999dip</dimen>
+    <dimen name="tw_clipboard_panel_port_height">198.0dip</dimen>
+    <dimen name="tw_clipboard_panel_land_height">168.0dip</dimen>
+    <dimen name="tw_clipitem_width">153.29999dip</dimen>
+    <dimen name="tw_clipitem_height">86.599976dip</dimen>
+    <dimen name="tw_clip_column_width">153.0dip</dimen>
+    <dimen name="tw_clipboard_html_image_width">53.299988dip</dimen>
+    <dimen name="tw_clipboard_html_image_height">64.599976dip</dimen>
+    <item type="dimen" name="APKTOOL_DUMMY_0023">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0024">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0025">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0026">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0027">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0028">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0029">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_002a">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_002b">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_002c">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_002d">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_002e">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_002f">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0030">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0031">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0032">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0033">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0034">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0035">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0036">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0037">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0038">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0039">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_003a">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_003b">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_003c">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_003d">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_003e">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_003f">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0040">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0041">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0042">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0043">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0044">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0045">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0046">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0047">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0048">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0049">false</item>
+</resources>

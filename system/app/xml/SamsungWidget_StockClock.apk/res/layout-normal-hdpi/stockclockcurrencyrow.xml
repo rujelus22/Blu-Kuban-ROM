@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="74.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="left|center" android:layout_width="fill_parent" android:layout_height="74.0dip">
+        <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLinePrimary" android:textSize="22.0dip" android:ellipsize="marquee" android:gravity="left" android:id="@id/currency_conname" android:paddingLeft="1.0dip" android:layout_width="122.599976dip" android:layout_height="wrap_content" android:layout_marginLeft="12.699982dip" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+        <View android:layout_width="fill_parent" android:layout_height="0.6dip" />
+        <TextView android:textSize="16.599976dip" android:textColor="#ffffffff" android:gravity="left" android:id="@id/currency_price" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.699982dip" android:layout_marginTop="28.0dip" />
+    </RelativeLayout>
+    <ImageView android:id="@id/country_image" android:layout_width="44.599976dip" android:layout_height="30.599976dip" android:src="@drawable/flag_usd" android:layout_centerInParent="true" />
+    <RelativeLayout android:gravity="right|center" android:layout_width="fill_parent" android:layout_height="74.0dip">
+        <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLinePrimary" android:textSize="22.0dip" android:ellipsize="marquee" android:gravity="right" android:id="@id/currency_conname2" android:paddingLeft="1.0dip" android:layout_width="122.599976dip" android:layout_height="wrap_content" android:layout_marginRight="12.699982dip" android:singleLine="true" android:layout_alignParentRight="true" android:marqueeRepeatLimit="marquee_forever" />
+        <View android:layout_width="fill_parent" android:layout_height="0.6dip" />
+        <TextView android:textSize="16.599976dip" android:textColor="#ffffffff" android:gravity="right" android:id="@id/currency_price2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="28.0dip" android:layout_marginRight="12.699982dip" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:phone="http://schemas.android.com/apk/res/com.android.phone">
+    <PreferenceCategory android:title="@string/mobile_networks" />
+    <CheckBoxPreference android:persistent="false" android:title="@string/data_enabled" android:key="button_data_enabled_key" android:summaryOff="@string/data_enable_summary" android:disableDependentsState="true" />
+</PreferenceScreen>

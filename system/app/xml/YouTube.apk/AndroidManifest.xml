@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="3505" android:versionName="3.5.5" package="com.google.android.youtube"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.youtube" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.YouTubeUser" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-sdk android:minSdkVersion="13" />
+    <application android:theme="@style/Theme" android:label="@string/application_name" android:icon="@mipmap/ic_launcher_youtube" android:name=".app.YouTubeApplication" android:logo="@drawable/ic_logo_wide" android:hardwareAccelerated="true" android:largeHeap="true">
+        <activity android:theme="@android:style/Theme.NoDisplay" android:name=".app.honeycomb.Shell$HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="vnd.youtube.launch" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Home" android:name=".app.honeycomb.tablet.HomeActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden" />
+        <activity android:theme="@style/Theme.Home" android:name=".app.honeycomb.phone.HomeActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden" />
+        <activity-alias android:name=".HomeActivity" android:exported="true" android:targetActivity=".app.honeycomb.Shell$HomeActivity" />
+        <activity-alias android:name=".app.tablet.HomeActivity" android:exported="true" android:targetActivity=".app.honeycomb.Shell$HomeActivity" />
+        <activity-alias android:name=".app.froyo.phone.HomeActivity" android:exported="true" android:targetActivity=".app.honeycomb.Shell$HomeActivity" />
+        <activity android:theme="@android:style/Theme.NoDisplay" android:name=".app.honeycomb.Shell$ResultsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <action android:name="android.intent.action.MEDIA_SEARCH" />
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+        </activity>
+        <activity android:theme="@style/Theme.Results" android:name=".app.honeycomb.tablet.ResultsActivity" android:configChanges="keyboardHidden">
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name=".app.honeycomb.phone.ResultsActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize">
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+        </activity>
+        <activity-alias android:name=".ResultsActivity" android:exported="true" android:targetActivity=".app.honeycomb.Shell$ResultsActivity" />
+        <activity-alias android:name=".app.froyo.phone.ResultsActivity" android:exported="true" android:targetActivity=".app.honeycomb.Shell$ResultsActivity" />
+        <activity android:theme="@android:style/Theme.NoDisplay" android:name=".app.honeycomb.Shell$ChannelActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="youtube.com" />
+                <data android:host="www.youtube.com" />
+                <data android:pathPrefix="/user/" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Channel" android:name=".app.honeycomb.tablet.ChannelActivity" android:configChanges="keyboardHidden" />
+        <activity android:name=".app.honeycomb.phone.ChannelActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity-alias android:name=".ChannelActivity" android:exported="true" android:targetActivity=".app.honeycomb.Shell$ChannelActivity" />
+        <activity-alias android:name=".app.froyo.phone.ChannelActivity" android:exported="true" android:targetActivity=".app.honeycomb.Shell$ChannelActivity" />
+        <activity android:theme="@android:style/Theme.NoDisplay" android:name=".app.honeycomb.Shell$UploadActivity">
+            <intent-filter>
+                <action android:name="com.google.android.youtube.intent.action.UPLOAD" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+        </activity>
+        <activity-alias android:name=".UploadIntentHandlingActivity" android:enabled="@bool/handle_external_upload_intents" android:targetActivity=".app.honeycomb.Shell$UploadActivity">
+            <intent-filter android:label="@string/application_name">
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.ALTERNATIVE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+        </activity-alias>
+        <activity android:name=".app.honeycomb.phone.UploadActivity" android:configChanges="keyboardHidden|orientation" android:windowSoftInputMode="stateHidden" />
+        <activity android:theme="@android:style/Theme.Holo.Dialog.NoActionBar" android:name=".app.honeycomb.tablet.UploadActivity" android:configChanges="keyboardHidden|orientation" android:windowSoftInputMode="stateHidden" />
+        <activity android:theme="@style/Theme.Playlist" android:name=".app.honeycomb.tablet.PlaylistActivity" android:configChanges="keyboardHidden" />
+        <activity android:name=".app.honeycomb.phone.PlaylistActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".app.honeycomb.Shell$PlaylistActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="youtube.com" />
+                <data android:host="www.youtube.com" />
+                <data android:path="/playlist" />
+                <data android:path="/view_play_list" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".app.honeycomb.phone.MyUploadsActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".app.honeycomb.phone.MyFavoritesActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".app.honeycomb.phone.WatchLaterActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".app.honeycomb.phone.MyPlaylistsActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".app.honeycomb.phone.MySubscriptionsActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".app.honeycomb.phone.WatchHistoryActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".app.honeycomb.phone.BrowseActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".app.honeycomb.phone.EditVideoActivity" android:configChanges="keyboardHidden|orientation" android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".app.honeycomb.phone.LiveActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden" />
+        <activity android:theme="@android:style/Theme.NoDisplay" android:name=".app.honeycomb.Shell$WatchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="youtube.com" />
+                <data android:host="www.youtube.com" />
+                <data android:pathPrefix="/watch" />
+                <data android:pathPrefix="/v/" />
+                <data android:pathPrefix="/e/" />
+                <data android:pathPrefix="/embed/" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="youtube.com" />
+                <data android:host="www.youtube.com" />
+                <data android:pathPrefix="/watch" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="vnd.youtube" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Watch" android:name=".app.honeycomb.tablet.WatchActivity" android:screenOrientation="sensor" android:configChanges="keyboardHidden|orientation|uiMode|screenSize" />
+        <activity android:name=".app.honeycomb.phone.WatchActivity" android:screenOrientation="sensor" android:configChanges="keyboardHidden|orientation|uiMode|screenSize" android:allowTaskReparenting="true" />
+        <activity-alias android:name=".WatchActivity" android:exported="true" android:targetActivity=".app.honeycomb.Shell$WatchActivity" />
+        <activity-alias android:name=".app.froyo.phone.WatchActivity" android:exported="true" android:targetActivity=".app.honeycomb.Shell$WatchActivity" />
+        <activity android:theme="@style/Theme.Settings" android:label="@string/settings" android:name=".app.honeycomb.SettingsActivity" android:configChanges="keyboardHidden" />
+        <activity-alias android:theme="@style/Theme.Settings" android:label="@string/settings" android:name=".ManageNetworkUsageActivity" android:enabled="false" android:targetActivity=".app.honeycomb.SettingsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+        <activity android:theme="@style/LicensesHolo" android:label="@string/open_source_licenses_title" android:name=".core.LicensesActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <meta-data android:name="android.app.default_searchable" android:value=".app.honeycomb.Shell$ResultsActivity" />
+        <service android:name=".core.transfer.UploadService" />
+        <provider android:name=".core.suggest.SuggestionProvider" android:authorities="com.google.android.youtube.SuggestionProvider" />
+        <receiver android:name=".app.honeycomb.widget.WidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.google.android.youtube.action.widget_update" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info" />
+        </receiver>
+        <service android:name=".app.honeycomb.widget.WidgetUpdateService" android:permission="android.permission.BIND_REMOTEVIEWS" android:exported="false" />
+        <service android:name=".core.transfer.DownloadService" />
+        <receiver android:name=".core.transfer.DownloadService$BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name=".app.honeycomb.widget.WidgetActivity" android:configChanges="keyboardHidden|orientation" />
+        <service android:name=".core.async.UserAuthorizer$AccountsChangedService" />
+        <receiver android:name=".core.async.UserAuthorizer$AccountsChangedReceiver">
+            <intent-filter>
+                <action android:name="android.accounts.LOGIN_ACCOUNTS_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".core.player.AdultContentHelper$AccountsChangedService" />
+        <receiver android:name=".core.player.AdultContentHelper$AccountsChangedReceiver">
+            <intent-filter>
+                <action android:name="android.accounts.LOGIN_ACCOUNTS_CHANGED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_mylocation" android:id="@id/mylocation" android:menuCategory="container" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_directions" android:id="@id/directions" android:menuCategory="container" android:showAsAction="always" />
+    <group android:id="@id/contextual_group" android:menuCategory="secondary" />
+    <item android:id="@id/clear_map" android:menuCategory="alternative" android:showAsAction="never" />
+    <item android:id="@id/places" android:menuCategory="alternative" android:showAsAction="never" />
+    <item android:id="@id/layers" android:menuCategory="alternative" android:showAsAction="never" />
+    <item android:id="@id/join_latitude" android:menuCategory="alternative" android:showAsAction="never" />
+    <item android:id="@id/latitude" android:menuCategory="alternative" android:showAsAction="never" />
+    <item android:id="@id/my_places" android:menuCategory="alternative" android:showAsAction="never" />
+    <item android:id="@id/settings" android:menuCategory="alternative" android:showAsAction="never" />
+    <item android:id="@id/help" android:menuCategory="alternative" android:showAsAction="never" />
+</menu>

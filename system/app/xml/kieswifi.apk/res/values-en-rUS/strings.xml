@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kies via Wi-Fi</string>
+    <string name="kieswifi_restart">Wi-Fi disconnected. Restart Kies via Wi-Fi?</string>
+    <string name="invalid_action">Error occurred</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="network_fail">Network failed</string>
+    <string name="connect_wifi">Connect to Wi-Fi network to use Kies</string>
+    <string name="setting">Settings</string>
+    <string name="no_device">No devices</string>
+    <string name="refresh">Refresh</string>
+    <string name="waiting">Waiting...</string>
+    <string name="waiting_confirmation">Waiting for confirmation from %s...</string>
+    <string name="connected_with">Connected with %s</string>
+    <string name="sync_with">You can sync with %s</string>
+    <string name="usb_connected">Connecting to Kies via USB will turn off Wi-Fi connection to Kies. Continue?</string>
+    <string name="select_player_header">Wi-Fi devices on %s</string>
+    <string name="wpa">Enter %s in WPA field</string>
+    <string name="disconn">Disconnect</string>
+    <string name="kies_launcher_title">Network connections</string>
+    <string name="attention">Attention</string>
+    <string name="already_using_usb">Unable to connect to Kies via Wi-Fi. Already connected to Kies via USB</string>
+    <string name="noti_text">Tap to disconnect</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="hotspot">Portable Wi-Fi hotspot</string>
+    <string name="auto_conn">Auto connect</string>
+    <string name="change_device">Change device</string>
+    <string name="scanning">Scanning</string>
+    <string name="enable_network">Connect to network</string>
+</resources>

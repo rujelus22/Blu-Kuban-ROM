@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/listrow_checkbox_item" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="0.8">
+        <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="13.329987dip" android:layout_marginTop="3.0dip" android:layout_weight="0.8">
+            <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLinePrimary" android:ellipsize="marquee" android:id="@id/topLabel" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="13.329987dip" android:layout_marginBottom="3.0dip" android:layout_weight="1.0">
+            <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLineSecondary" android:layout_gravity="center_vertical" android:id="@id/bottomLabel" android:layout_width="130.0dip" android:layout_height="fill_parent" android:singleLine="true" android:layout_weight="1.0" />
+            <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLinePrimary" android:textSize="14.0sp" android:gravity="right|center" android:id="@id/bottomRightLabel" android:layout_width="130.0dip" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:singleLine="true" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <CheckBox android:id="@id/listrow_checkbox_item_checkbox" android:focusable="false" android:visibility="invisible" android:clickable="false" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="12.0dip" />
+</LinearLayout>

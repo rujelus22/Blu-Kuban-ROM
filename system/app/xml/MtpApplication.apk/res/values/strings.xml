@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MtpApplication!</string>
+    <string name="app_name">MTP Application</string>
+    <string name="error_title">Attention</string>
+    <string name="bluetooth_running">Activating USB mode will deactivate Bluetooth. Continue?</string>
+    <string name="alert_dialog_yes">Yes</string>
+    <string name="alert_dialog_no">No</string>
+    <string name="animation_initializing">Initializing...</string>
+    <string name="animation_connected">Connected</string>
+    <string name="animation_synchronizing">Synchronizing...</string>
+    <string name="animation_downloading">Downloading...</string>
+    <string name="animation_sending">Sending...</string>
+    <string name="notification_mtp_connected">MTP connected</string>
+    <string name="notification_usb_connected">USB Connected</string>
+    <string name="notification_mtp_initialization">MTP initialization</string>
+    <string name="alert_dialog_ok">OK</string>
+    <string name="alert_dialog_cancel">Cancel</string>
+    <string name="non_idle_toast">"PC connection available only in idle screen.
+Close running applications."</string>
+    <string name="media_scanner_running">Media scanner running...</string>
+    <string name="media_scanner_finished">Media scanning completed</string>
+    <string name="kies_software_check">Checking the Kies(PC connection S/W)</string>
+</resources>

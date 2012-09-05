@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/mainLayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/RInputBar" android:background="@drawable/header_1_bg" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <ImageButton android:id="@id/bookclip_add_button" android:background="@drawable/addbtn_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.669983dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/bookclip_add_button" />
+        <EditText android:id="@id/bookclip_edit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.669983dip" android:layout_marginRight="6.0dip" android:singleLine="true" android:maxLength="40" android:capitalize="sentences" android:layout_toLeftOf="@id/bookclip_add_button" android:layout_alignTop="@id/bookclip_add_button" android:imeOptions="actionDone" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/docViewLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ListView android:id="@id/BookClipListView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="#ff555555" />
+    </RelativeLayout>
+</LinearLayout>

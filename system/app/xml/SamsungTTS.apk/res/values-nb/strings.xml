@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="general_settings">Generelle innst</string>
+    <string name="samsungtts_settings">Samsung TTS-innstillinger</string>
+    <string name="open_source_licenses">Åpne kildelisenser</string>
+    <string name="advanced_settings">Avanserte innstillinger</string>
+    <string name="change_voice_effects">Stemmeeffekter</string>
+    <string name="change_voice_effects_summary">Bruker forskjellige stemmeeffekter for uttalt tekst</string>
+    <string name="installed_languages">Installerte språk</string>
+    <string name="female">Kvinne</string>
+    <string name="male">Mann</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="config_avatar_cache_max_bytes">1000000</integer>
+    <integer name="config_avatar_cache_max_bitmaps">24</integer>
+    <integer name="places_map_aspect_ratio">150</integer>
+    <integer name="notifications_default_count">0</integer>
+    <integer name="stream_post_max_length">250</integer>
+    <integer name="stream_post_max_document_length">72</integer>
+    <integer name="plus_one_button_text_lines">2</integer>
+    <integer name="plus_one_button_image_size">3</integer>
+</resources>

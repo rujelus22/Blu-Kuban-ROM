@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_enable_vis1">false</bool>
+    <bool name="config_enable_vis2">false</bool>
+    <bool name="config_enable_vis3">false</bool>
+    <bool name="config_enable_vis4">true</bool>
+    <bool name="config_enable_vis5">false</bool>
+</resources>

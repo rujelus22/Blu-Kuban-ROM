@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="listType">
+        <item>@string/all_songs</item>
+        <item>@string/playlists</item>
+        <item>@string/albums</item>
+        <item>@string/artists</item>
+        <item>@string/genres</item>
+        <item>@string/folders</item>
+        <item>@string/composers</item>
+        <item>@string/years</item>
+        <item>@string/current_playlist</item>
+        <item>@string/podcasts</item>
+        <item>@string/quicklist</item>
+        <item>@string/mostplayed</item>
+        <item>@string/recentlyplayed</item>
+        <item>@string/recently_added</item>
+    </array>
+    <array name="auto_off_entries">
+        <item>@string/off</item>
+        <item>@string/after_30_min</item>
+        <item>@string/after_1_hour</item>
+        <item>@string/after_1_hour_30_min</item>
+        <item>@string/after_2_hour</item>
+    </array>
+    <string-array name="auto_off_values">
+        <item>0</item>
+        <item>1800000</item>
+        <item>3600000</item>
+        <item>5400000</item>
+        <item>7200000</item>
+    </string-array>
+</resources>

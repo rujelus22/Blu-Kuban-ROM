@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/title_layout" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout style="@style/TabBar">
+                <com.google.android.apps.plus.views.TabButton android:id="@id/circles_tab_button" android:text="@string/circles_circles_tab_text" style="@style/Tab" />
+                <View style="@style/TabSeparator" />
+                <com.google.android.apps.plus.views.TabButton android:id="@id/people_tab_button" android:text="@string/circles_people_tab_text" style="@style/Tab" />
+            </LinearLayout>
+            <com.google.android.apps.plus.views.TabContainer android:id="@id/fragment_container" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <FrameLayout android:id="@id/circle_list_fragment" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <FrameLayout android:id="@id/people_list_fragment" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </com.google.android.apps.plus.views.TabContainer>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

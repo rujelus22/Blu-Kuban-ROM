@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchColumns="2">
+        <View android:background="#ff909090" android:layout_height="2.0dip" />
+        <TableRow>
+            <TextView android:gravity="left" android:text="@string/current_data_state_call_log" />
+        </TableRow>
+        <TableRow>
+            <TextView android:padding="3.0dip" android:layout_column="1" android:text="@string/current_data_state_incoming_call" />
+            <TextView android:gravity="left" android:id="@id/incoming_call_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:padding="3.0dip" android:layout_column="1" android:text="@string/current_data_state_outgoing_call" />
+            <TextView android:gravity="left" android:id="@id/outgoing_call_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:padding="3.0dip" android:layout_column="1" android:text="@string/current_data_state_missed_call" />
+            <TextView android:gravity="left" android:id="@id/missed_call_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_height="2.0dip" />
+        <TableRow>
+            <TextView android:text="@string/current_data_state_system_space" />
+            <TextView android:gravity="left" android:id="@id/system_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_height="2.0dip" />
+        <TableRow>
+            <TextView android:text="@string/current_data_state_user_space" />
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/current_data_state_photo" />
+            <TextView android:gravity="left" android:id="@id/photo_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/current_data_state_video" />
+            <TextView android:gravity="left" android:id="@id/video_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/current_data_state_mp3" />
+            <TextView android:gravity="left" android:id="@id/mp3_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/current_data_state_voice_memo" />
+            <TextView android:gravity="left" android:id="@id/voice_memo" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_height="2.0dip" />
+        <TableRow>
+            <TextView android:text="@string/current_data_state_phone_book" />
+            <TextView android:gravity="left" android:id="@id/phone_book" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/current_data_state_phone_booksim" />
+            <TextView android:gravity="left" android:id="@id/phone_booksim" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_height="2.0dip" />
+        <TableRow>
+            <TextView android:text="@string/current_data_state_schedule" />
+            <TextView android:gravity="left" android:id="@id/schedule_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_height="2.0dip" />
+        <TableRow>
+            <TextView android:text="@string/current_data_state_message" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_column="1" android:text="@string/current_data_state_inbox" />
+            <TextView android:gravity="left" android:id="@id/inbox_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_column="1" android:text="@string/current_data_state_outbox" />
+            <TextView android:gravity="left" android:id="@id/outbox_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_column="1" android:text="@string/current_data_state_sentbox" />
+            <TextView android:gravity="left" android:id="@id/sentbox_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_column="1" android:text="@string/current_data_state_drafts" />
+            <TextView android:gravity="left" android:id="@id/drafts_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_column="1" android:text="@string/current_data_state_failed" />
+            <TextView android:gravity="left" android:id="@id/failed_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_column="1" android:text="@string/current_data_state_queued" />
+            <TextView android:gravity="left" android:id="@id/queued_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_column="1" android:text="@string/current_data_state_mmsinbox" />
+            <TextView android:gravity="left" android:id="@id/mmsinbox_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_column="1" android:text="@string/current_data_state_mmsoutbox" />
+            <TextView android:gravity="left" android:id="@id/mmsoutbox_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_column="1" android:text="@string/current_data_state_mmssentbox" />
+            <TextView android:gravity="left" android:id="@id/mmssentbox_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_column="1" android:text="@string/current_data_state_mmsdrafts" />
+            <TextView android:gravity="left" android:id="@id/mmsdrafts_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_height="2.0dip" />
+        <TableRow>
+            <TextView android:text="@string/current_data_state_ring_tone" />
+            <TextView android:id="@id/ringtone_name" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_height="2.0dip" />
+        <TableRow>
+            <TextView android:text="@string/current_data_state_screen" />
+            <TextView android:id="@id/screen_name" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_height="2.0dip" />
+        <TableRow>
+            <TextView android:text="@string/current_data_state_imei_esn" />
+            <TextView android:id="@id/imei_esn_flag" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_height="2.0dip" />
+        <TableRow>
+            <TextView android:text="@string/current_data_state_error_log" />
+            <TextView android:id="@id/error_log_flag" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_height="2.0dip" />
+    </TableLayout>
+</ScrollView>

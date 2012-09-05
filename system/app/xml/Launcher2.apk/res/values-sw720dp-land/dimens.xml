@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="apps_customize_pageLayoutWidthGap">28.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutHeightGap">16.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingLeft">16.0dip</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingRight">16.0dip</dimen>
+</resources>

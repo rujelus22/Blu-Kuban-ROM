@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@drawable/winset_softkey_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <com.sec.android.socialhub.view.EditTextEx android:id="@id/common_edit_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="3" android:maxLength="100000" android:capitalize="sentences" />
+    </LinearLayout>
+    <LinearLayout android:gravity="bottom" android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="5.0px" android:layout_weight="0.0">
+        <TextView android:textSize="20.0px" android:textColor="#ffc9c9c9" android:gravity="right" android:layout_gravity="bottom|right|center" android:id="@id/common_count_text" android:paddingLeft="3.0px" android:paddingRight="5.0px" android:visibility="gone" android:layout_width="100.0px" android:layout_height="wrap_content" />
+        <Button android:textSize="22.0px" android:layout_gravity="bottom" android:id="@id/common_softkey_button" android:layout_width="100.0px" android:layout_height="72.0px" android:text="@string/cancel_button" />
+    </LinearLayout>
+</LinearLayout>

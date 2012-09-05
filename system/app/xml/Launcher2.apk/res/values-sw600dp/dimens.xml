@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="qsb_bar_height">56.0dip</dimen>
+    <dimen name="workspace_cell_width">96.0dip</dimen>
+    <dimen name="workspace_cell_height">96.0dip</dimen>
+    <dimen name="folder_cell_width">96.0dip</dimen>
+    <dimen name="folder_cell_height">96.0dip</dimen>
+    <dimen name="app_icon_padding_top">4.0dip</dimen>
+    <dimen name="toolbar_button_vertical_padding">12.0dip</dimen>
+    <dimen name="toolbar_button_horizontal_padding">12.0dip</dimen>
+    <dimen name="apps_customize_tab_bar_height">60.0dip</dimen>
+    <dimen name="apps_customize_tab_bar_margin_top">8.0dip</dimen>
+    <dimen name="app_icon_size">72.0dip</dimen>
+    <dimen name="apps_customize_cell_width">96.0dip</dimen>
+    <dimen name="apps_customize_cell_height">98.0dip</dimen>
+    <dimen name="apps_customize_widget_cell_width_gap">36.0dip</dimen>
+    <dimen name="apps_customize_widget_cell_height_gap">36.0dip</dimen>
+    <dimen name="smallScreenExtraSpacing">0.0dip</dimen>
+    <dimen name="allAppsSmallScreenVerticalMarginLandscape">30.0dip</dimen>
+    <dimen name="allAppsSmallScreenVerticalMarginPortrait">60.0dip</dimen>
+    <dimen name="status_bar_height">48.0dip</dimen>
+    <dimen name="dragViewOffsetX">0.0dip</dimen>
+    <dimen name="dragViewOffsetY">-12.0dip</dimen>
+    <dimen name="folder_preview_size">78.0dip</dimen>
+    <dimen name="folder_preview_padding">4.0dip</dimen>
+    <dimen name="workspace_content_large_only_top_margin">36.0dip</dimen>
+    <dimen name="external_drop_icon_rect_radius">10.0dip</dimen>
+    <dimen name="all_apps_button_vertical_padding">4.0dip</dimen>
+    <dimen name="wallpaper_chooser_grid_width">196.0dip</dimen>
+    <dimen name="wallpaper_chooser_grid_height">140.0dip</dimen>
+    <dimen name="live_wallpaper_grid_item_padding">8.0dip</dimen>
+    <dimen name="alert_dialog_content_inset">0.0dip</dimen>
+</resources>

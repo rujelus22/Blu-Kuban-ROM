@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/header_button_icon_check" android:id="@id/ok_actionbar" android:title="@string/ok" android:showAsAction="always|withText" />
+    <item android:icon="@drawable/header_button_icon_cancel" android:id="@id/cancel_actionbar" android:title="@string/cancel" android:showAsAction="always|withText" />
+</menu>

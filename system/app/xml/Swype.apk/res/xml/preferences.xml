@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:swypeime="http://schemas.android.com/apk/res/com.swype.android.inputmethod">
+    <CheckBoxPreference android:title="@string/pref_quiet" android:key="enableAudioFeedback" android:summary="@string/pref_quiet_desc" />
+    <CheckBoxPreference android:title="@string/pref_haptic_feedback" android:key="enableHapticFeedback" />
+    <CheckBoxPreference android:title="@string/pref_show_toast_tips" android:key="showToastTips" android:summary="@string/pref_show_toast_tips_desc" />
+    <CheckBoxPreference android:title="@string/pref_show_navigation_bar" android:key="showNavigationBar" android:summary="@string/pref_show_navigation_bar_desc" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/pref_auto_spacing" android:key="autoSpaceCheck" android:summary="@string/pref_auto_spacing_desc" />
+    <CheckBoxPreference android:title="@string/pref_auto_caps" android:key="enableAutoCaps" android:summary="@string/pref_auto_caps_desc" />
+    <CheckBoxPreference android:title="@string/pref_display_trace" android:key="displayTraceBool" android:summary="@string/pref_display_trace_desc" />
+    <PreferenceScreen android:title="@string/pref_word_suggestion" android:key="WordSuggestionScreen" android:summary="@string/pref_word_suggestion_summary">
+        <intent android:targetPackage="com.swype.android.inputmethod" android:action="android.intent.action.VIEW" android:targetClass="com.swype.android.settings.WordSuggestionSetting" />
+    </PreferenceScreen>
+    <com.swype.android.settings.SeekBarPreference android:title="@string/pref_response_time" android:key="z1Operation" android:summary="@string/pref_response_time_desc" swypeime:labelMin="@string/pref_response_time_label_min" swypeime:labelMax="@string/pref_response_time_label_max" swypeime:valueMin="0" swypeime:valueMax="1000" />
+    <com.swype.android.settings.SeekBarPreference android:title="@string/pref_word_choice_window" android:key="showWCW" android:summary="@string/pref_word_choice_window_desc" swypeime:labelMin="@string/pref_word_choice_window_label_min" swypeime:labelMax="@string/pref_word_choice_window_label_max" swypeime:valueMin="0" swypeime:valueMax="1000" />
+    <PreferenceScreen android:title="@string/pref_connect_title" android:key="connect_preference_activity">
+        <intent android:action="com.swype.android.connect.settings.ConnectPreferenceActivity" />
+    </PreferenceScreen>
+    <Preference android:title="@string/pref_erase_udb_title" android:key="erase_udb" android:summary="@string/pref_erase_udb_desc" />
+    <ListPreference android:entries="@array/keyapd_size_entries" android:title="@string/pref_keypad_size" android:key="activeDisplay" android:summary="" android:dialogTitle="@string/pref_keypad_size" android:entryValues="@array/keyapd_size_entry_values" />
+    <PreferenceCategory android:title="@string/pref_about_title">
+        <Preference android:title="@string/pref_version_title" android:key="version" android:summary="My version" />
+    </PreferenceCategory>
+</PreferenceScreen>

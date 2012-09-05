@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/listHeader" android:focusable="false" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/directionsStartBox" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="7.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="@color/light_grey" android:gravity="bottom|right|center" android:id="@id/marker" android:layout_width="53.0dip" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
+        <TextView android:id="@id/address" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/marker" android:layout_centerVertical="true" style="?android:attr/spinnerStyle" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="horizontal" android:id="@id/directionsEndBox" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="7.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="@color/light_grey" android:gravity="bottom|right|center" android:id="@id/marker" android:layout_width="53.0dip" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:id="@id/address" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/marker" android:layout_centerVertical="true" style="?android:attr/spinnerStyle" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/directionSummary" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:focusable="false" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip">
+        <TextView android:textSize="18.0sp" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/via" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="28.0sp" android:textStyle="bold" android:gravity="center" android:layout_gravity="top|center" android:id="@id/distance" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="28.0sp" android:textStyle="bold" android:gravity="center" android:layout_gravity="center" android:id="@id/duration" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="16.0sp" android:gravity="center" android:layout_gravity="center" android:id="@id/inTraffic" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-10.0dip" android:layout_marginBottom="5.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+        <com.google.googlenav.ui.android.TemplateView android:layout_gravity="center" android:id="@id/travelAdvisories" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <include layout="@layout/template_text_parent" />
+        </com.google.googlenav.ui.android.TemplateView>
+    </LinearLayout>
+    <include layout="@layout/direction_summary_list_item" />
+    <View android:id="@id/headerDividerBottom" android:background="@android:drawable/divider_horizontal_bright" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

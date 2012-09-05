@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Configuración de licencia</string>
+    <string name="license_settings_title">Configuración de licencia</string>
+    <string name="expiry_reminder">Recordatorio de caducidad</string>
+    <string name="roaming_network">Red de Roaming</string>
+    <string name="roaming_network_summary">Descarga automática</string>
+    <string name="roaming_option_auto_download">Descarga automática</string>
+    <string name="roaming_option_manual">Manual</string>
+    <string name="roaming_option_always_reject">Rechazar siempre</string>
+    <string name="roaming_network_dialog_title">Red de Roaming</string>
+    <string name="dialog_cancel_button">Canc.</string>
+    <string name="dialog_ok_button">Aceptar</string>
+    <string name="dialog_deregistration_button">Aceptar</string>
+    <string name="dialog_registration_button">Aceptar</string>
+    <string name="dialog_cancel_registration_button">Canc.</string>
+    <string name="dialog_ok_registration_button">Aceptar</string>
+    <string name="expiry_reminder_summary">Descarga automática</string>
+    <string name="divx_registration_summary">Proceso de registro de DivX</string>
+    <string name="clear_license">Eliminar licencias</string>
+    <string name="clear_license_summary">Eliminar todas las licencias de DRM</string>
+    <string name="unable_to_remove_license">No se pueden eliminar licencias</string>
+    <string name="all_licenses_are_clearing">Eliminando...</string>
+    <string name="all_licenses_are_removed">Eliminado</string>
+    <string name="clear_license_popup">El contenido que requiere licencias debe volver a adquirirse si se desea utilizar de nuevo. ¿Desea eliminar las licencias?</string>
+    <string name="divx_vod">DivX® VOD</string>
+    <string name="divx_registration">Registrar</string>
+    <string name="divx_deregistration">Cancelar registro</string>
+    <string name="divx_registration_info">Debe registrar su dispositivo para reproducir vídeos DivX protegidos</string>
+    <string name="divx_registration_code">Código de registro: %s</string>
+    <string name="divx_register_website">Registrar en %s</string>
+    <string name="divx_deregistration_code">Código de cancelación de registro: %s</string>
+    <string name="divx_deregister_website">Cancelar registro de %s</string>
+    <string name="divx_deregistration_info">¿Continuar con registro?</string>
+    <string name="dialog_deregister_confirmation_message">Su dispositivo ya está registrado. ¿Está seguro de que desea cancelar el registro?</string>
+</resources>

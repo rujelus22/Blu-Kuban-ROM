@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_connect_title" android:key="pref_connect_main">
+        <Preference android:title="@string/refresh" android:key="pref_refresh" />
+        <Preference android:title="@string/pref_connect_messages" android:key="pref_messages" />
+        <Preference android:title="@string/pref_connect_version_title" android:key="pref_version" />
+        <Preference android:title="@string/pref_connect_privacy_title" android:key="pref_privacy" />
+        <CheckBoxPreference android:title="@string/pref_connect_enable_data_connection" android:key="pref_connect_enable_data_connection" android:summary="@string/pref_connect_enable_data_connection_desc" />
+    </PreferenceCategory>
+</PreferenceScreen>

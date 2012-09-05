@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="center" android:id="@id/paper_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/contents" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_gravity="center" android:id="@id/outer_layout" android:paddingTop="@dimen/preview_portrait_paper_padding_top" android:paddingBottom="@dimen/preview_portrait_paper_padding_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ViewFlipper android:gravity="center" android:id="@id/preview_flipper" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:gravity="center" android:id="@id/curtain_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ProgressBar android:id="@id/loading_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="?android:attr/progressBarStyleInverse" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/title_layout" android:layout_width="fill_parent" android:layout_height="@dimen/preview_portrait_paper_padding_top" android:layout_weight="0.0">
+                <TextView android:textSize="@dimen/preview_printer_info_text_size" android:typeface="sans" android:textStyle="normal" android:id="@id/printer_name" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_devices" android:maxLines="1" android:singleLine="true" style="@style/textAppearance_cyan_fg" />
+                <TextView android:textSize="@dimen/preview_printer_info_text_size" android:typeface="sans" android:textStyle="normal" android:id="@id/paper_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:visible="false" style="@style/textAppearance_cyan_fg" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:id="@id/center_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="5.0">
+                <TextView android:textSize="34.0dip" android:textColor="#50ff0000" android:layout_gravity="center" android:id="@id/simulation_mode" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:id="@id/bottom_layout" android:layout_width="fill_parent" android:layout_height="@dimen/preview_portrait_paper_padding_bottom" android:layout_weight="0.0">
+                <TextView android:textSize="@dimen/preview_printer_info_text_size" android:typeface="sans" android:textStyle="normal" android:id="@id/preview_pages" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true" style="@style/textAppearance_cyan_fg" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

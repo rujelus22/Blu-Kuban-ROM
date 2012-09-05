@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="WidgetHotStyle">
+        <item name="android:textSize">21.329987sp</item>
+        <item name="android:textColor">@color/color131</item>
+    </style>
+    <style name="WidgetCoolStyle">
+        <item name="android:textSize">21.329987sp</item>
+        <item name="android:textColor">@color/color129</item>
+    </style>
+    <style name="WidgetNowStyle">
+        <item name="android:textSize">40.0sp</item>
+        <item name="android:textColor">@touchwiz:color/tw_color001</item>
+    </style>
+</resources>

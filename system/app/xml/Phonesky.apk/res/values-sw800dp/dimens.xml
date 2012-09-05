@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="content_entry_large_size">26.0sp</dimen>
+    <dimen name="content_entry_medium_size">22.0sp</dimen>
+    <dimen name="content_entry_small_size">18.0sp</dimen>
+    <dimen name="content_primary_size">20.0sp</dimen>
+    <dimen name="content_secondary_size">18.0sp</dimen>
+    <dimen name="content_intermediate_size">20.0sp</dimen>
+</resources>

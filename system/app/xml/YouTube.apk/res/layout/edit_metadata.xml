@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <EditText android:id="@id/title" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/edit_metadata_title_hint" android:editable="true" />
+        <EditText android:id="@id/description" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/edit_metadata_description_hint" android:editable="true" />
+        <com.google.android.youtube.app.ui.PrivacySpinner android:id="@id/privacy" android:paddingTop="6.0dip" android:paddingBottom="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <EditText android:id="@id/keywords" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/edit_metadata_keywords_hint" android:editable="true" />
+    </LinearLayout>
+</ScrollView>

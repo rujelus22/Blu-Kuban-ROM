@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DetailsPage_BylineText" parent="@style/DetailsPage_SummaryText">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/details_content_text_color</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="DetailsPage_ContentText">
+        <item name="android:textAppearance">?android:textAppearance</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:textColor">@color/details_content_text_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:lineSpacingExtra">5.0sp</item>
+    </style>
+    <style name="SetupWizardTitle">
+        <item name="android:textSize">@dimen/setup_wizard_title_text_size</item>
+        <item name="android:textColor">@color/setup_wizard_title_color</item>
+        <item name="android:layout_height">0.0dip</item>
+        <item name="android:layout_weight">0.2</item>
+    </style>
+    <style name="SetupWizardContentHeight">
+        <item name="android:layout_height">0.0dip</item>
+        <item name="android:layout_weight">0.7</item>
+    </style>
+    <style name="SetupWizardBottomMargin">
+        <item name="android:layout_height">0.0dip</item>
+        <item name="android:layout_weight">0.1</item>
+    </style>
+    <style name="SetupWizardContentWidth">
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_weight">0.8</item>
+    </style>
+    <style name="DetailsHeader">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/title_background</item>
+        <item name="android:paddingLeft">@dimen/details_left_padding</item>
+        <item name="android:paddingTop">@dimen/details_top_padding</item>
+        <item name="android:paddingRight">@dimen/details_right_padding</item>
+        <item name="android:paddingBottom">@dimen/details_bottom_padding</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

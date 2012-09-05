@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pakage_weather_date_sync">
+        <item>com.sec.ccl.csp.app.secretwallpaper.themeone</item>
+        <item>com.sec.android.app.clockpackage.deskclock</item>
+        <item>com.android.internal.policy.impl</item>
+    </string-array>
+</resources>

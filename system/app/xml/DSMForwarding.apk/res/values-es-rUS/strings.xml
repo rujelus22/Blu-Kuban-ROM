@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="via_samsungdive">Buscado por SamsungDive</string>
+    <string name="call_forwarded">Llamada desviada</string>
+    <string name="sms_forwarded">SMS reenviado</string>
+</resources>

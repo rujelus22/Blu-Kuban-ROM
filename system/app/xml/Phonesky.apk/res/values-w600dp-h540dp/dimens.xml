@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="grid_thumbnail_width">50.0dip</dimen>
+    <dimen name="grid_item_margin_left_right">8.0dip</dimen>
+    <dimen name="grid_item_margin_bottom">4.0dip</dimen>
+    <dimen name="grid_item_strip_width">4.0dip</dimen>
+    <dimen name="grid_item_rating_padding_bottom">3.0dip</dimen>
+    <dimen name="rating_bar_small_height">16.0dip</dimen>
+    <dimen name="rating_bar_padding_bottom">2.0dip</dimen>
+    <dimen name="bucket_entry_height">110.0dip</dimen>
+    <dimen name="bucket_entry_search_height">96.0dip</dimen>
+    <dimen name="screenshots_max_height">259.0dip</dimen>
+    <dimen name="badge_annotation">16.0dip</dimen>
+</resources>

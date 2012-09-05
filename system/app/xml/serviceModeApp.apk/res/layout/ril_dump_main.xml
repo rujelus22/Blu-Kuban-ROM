@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <Button android:textSize="12.0sp" android:id="@id/dpram_dump" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/dpram_dump" />
+        <Button android:textSize="12.0sp" android:id="@id/logcat_radio" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/logcat_radio" />
+        <Button android:textSize="12.0sp" android:id="@id/view_log" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/view_log" />
+        <Button android:textSize="12.0sp" android:id="@id/clear_log" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/clear_log" />
+        <Button android:textSize="12.0sp" android:id="@id/ipcdump_log" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/ipcdump_log" />
+        <Button android:textSize="12.0sp" android:id="@id/view_ipcdump_log" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/view_ipcdump_log" />
+        <Button android:textSize="12.0sp" android:id="@id/ipcdump_bin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/ipcdump_bin" />
+        <Button android:textSize="12.0sp" android:id="@id/copy_to_sdcard" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/copy_to_sdcard" />
+        <Button android:textSize="14.0sp" android:id="@id/mms_provisioning" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/mms_provisioning" />
+        <Button android:textSize="12.0sp" android:id="@id/nv_backup" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/nv_backup" />
+        <Button android:textSize="12.0sp" android:id="@id/nv_delete" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/nv_delete" />
+        <Button android:textSize="12.0sp" android:id="@id/apn_protocol_enable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/apn_protocol_enable" />
+        <Button android:textSize="12.0sp" android:id="@id/exit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/exit" />
+    </LinearLayout>
+</ScrollView>

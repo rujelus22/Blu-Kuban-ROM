@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@color/divider" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <RelativeLayout android:id="@id/rl_purchase_header" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_purchase" android:background="@drawable/dark_header" android:paddingLeft="13.329987dip" android:paddingRight="13.329987dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:minHeight="50.0dip">
+            <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/color1" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/total_price" />
+            <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/color1" android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/tv_price" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_purechase_confirm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="64.0dip">
+            <TextView android:textSize="20.0sp" android:textColor="@color/color29" android:layout_gravity="center_vertical" android:background="@drawable/dark_header" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/purchase_information_and_notice" />
+            <LinearLayout android:orientation="vertical" android:paddingLeft="6.669983dip" android:paddingRight="6.669983dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                <TextView android:textSize="16.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/tv_purchase_date" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                <TextView android:textSize="16.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/tv_ordernum" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                <TextView android:textSize="16.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/tv_transcaction_stat" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:background="@color/divider" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+</LinearLayout>

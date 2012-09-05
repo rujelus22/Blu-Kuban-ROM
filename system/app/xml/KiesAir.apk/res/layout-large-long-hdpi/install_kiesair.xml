@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/kiesair_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/kiesairlogo" android:paddingTop="104.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/kiesair_logo" />
+    <TextView android:textSize="16.0dip" android:textColor="#ff000000" android:gravity="top|center" android:id="@id/installHelpText" android:paddingTop="304.66406dip" android:focusable="true" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginRight="18.0dip" android:text="@string/help_in_stop" android:lineSpacingMultiplier="1.14" />
+    <TextView android:textSize="13.329987dip" android:textColor="#ff000000" android:gravity="left" android:id="@id/installStatus" android:paddingTop="466.66406dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginRight="18.0dip" />
+    <ProgressBar android:id="@id/installProgressBar" android:layout_width="fill_parent" android:layout_height="14.0dip" android:layout_marginLeft="18.0dip" android:layout_marginTop="492.0dip" android:layout_marginRight="18.0dip" android:max="100" android:progress="0" android:progressDrawable="@drawable/kiesair_progressbar" style="@android:style/Widget.ProgressBar.Horizontal" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/layoutSoftkeyInstall" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="54.669983dip" android:layout_alignParentBottom="true" style="@android:style/ButtonBar">
+        <Button android:textColor="#ffff0000" android:id="@id/installButton" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="70.0dip" android:layout_marginRight="70.0dip" android:text="@string/start" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

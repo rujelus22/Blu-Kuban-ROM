@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_settings_title">Settings</string>
+    <string name="menu_settings_unit">Unit</string>
+    <string name="menu_settings_subtitle_general">General</string>
+    <string name="menu_settings_subtitle_widget">Widget</string>
+    <string name="menu_settings_update">Auto refresh</string>
+    <string name="refresh_time_none">None</string>
+    <string name="refresh_time_1h">Every 1 hour</string>
+    <string name="refresh_time_3h">Every %d hours</string>
+    <string name="refresh_time_6h">Every %d hours</string>
+    <string name="refresh_time_12h">Every %d hours</string>
+    <string name="refresh_time_24h">Every %d hours</string>
+    <string name="message_network_connnection_failed">Connection failed</string>
+    <string name="notice_gps_turn_off_message">GPS is turned off</string>
+    <string name="message_donot_show">Do not show again</string>
+    <string name="sunny">Sunny</string>
+    <string name="mostly_sunny">Mostly sunny</string>
+    <string name="partly_sunny">Partly sunny</string>
+    <string name="intermittent_clouds">Intermittent clouds</string>
+    <string name="hazy_sunshine">Hazy sunshine</string>
+    <string name="mostly_cloudy">Mostly cloudy</string>
+    <string name="cloudy">Cloudy</string>
+    <string name="dreary">Dreary</string>
+    <string name="fog">Fog</string>
+    <string name="showers">Showers</string>
+    <string name="mostly_cloudy_with_showers">Mostly cloudy with showers</string>
+    <string name="partly_sunny_with_showers">Partly sunny with showers</string>
+    <string name="thunderstorms">Thunderstorms</string>
+    <string name="mostly_cloudy_with_thunder_showers">Mostly cloudy with thunder showers</string>
+    <string name="partly_sunny_with_thunder_showers">Partly sunny with thunder showers</string>
+    <string name="rain">Rain</string>
+    <string name="flurries">Flurries</string>
+    <string name="mostly_cloudy_with_flurries">Mostly cloudy with flurries</string>
+    <string name="partly_sunny_with_flurries">Partly sunny with flurries</string>
+    <string name="snow">Snow</string>
+    <string name="mostly_cloudy_with_snow">Mostly cloudy with snow</string>
+    <string name="ice">Ice</string>
+    <string name="sleet">Sleet</string>
+    <string name="freezing_rain">Freezing rain</string>
+    <string name="rain_and_snow_mixed">Rain and snow mixed</string>
+    <string name="hot">Hot</string>
+    <string name="cold">Cold</string>
+    <string name="windy">Windy</string>
+    <string name="clear">Clear</string>
+    <string name="mostly_clear">Mostly clear</string>
+    <string name="partly_cloudy">Partly cloudy</string>
+    <string name="hazy">Hazy</string>
+    <string name="partly_cloudy_with_showers">Partly cloudy with showers</string>
+    <string name="partly_cloudy_with_thunder_showers">Partly cloudy with thunder showers</string>
+    <string name="farenheit">°F</string>
+    <string name="centigrade">°C</string>
+    <string name="apply_daylight_saving_time">Apply daylight saving time?</string>
+    <string name="slog">SLog</string>
+    <string name="slog_all_logs">All logs</string>
+    <string name="slog_err_log">Err log</string>
+    <string name="slog_log_off">Log off</string>
+    <item type="string" name="APKTOOL_DUMMY_0037">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0038">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0039">false</item>
+    <item type="string" name="APKTOOL_DUMMY_003a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_003b">false</item>
+    <item type="string" name="APKTOOL_DUMMY_003c">false</item>
+    <item type="string" name="APKTOOL_DUMMY_003d">false</item>
+    <item type="string" name="APKTOOL_DUMMY_003e">false</item>
+    <item type="string" name="APKTOOL_DUMMY_003f">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0040">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0041">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0042">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0043">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0044">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0045">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0046">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0047">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0048">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0049">false</item>
+    <item type="string" name="APKTOOL_DUMMY_004a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_004b">false</item>
+    <item type="string" name="APKTOOL_DUMMY_004c">false</item>
+    <item type="string" name="APKTOOL_DUMMY_004d">false</item>
+    <item type="string" name="APKTOOL_DUMMY_004e">false</item>
+    <item type="string" name="APKTOOL_DUMMY_004f">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0050">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0051">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0052">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0053">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0054">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0055">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0056">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0057">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0058">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0059">false</item>
+    <item type="string" name="APKTOOL_DUMMY_005a">false</item>
+</resources>

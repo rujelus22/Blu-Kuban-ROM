@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/install_status_area" android:layout_width="fill_parent" android:layout_height="40.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0dip" android:textColor="#ff000000" android:gravity="left" android:id="@id/installStatus" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ProgressBar android:id="@id/installProgressBar" android:focusable="true" android:layout_width="fill_parent" android:layout_height="8.0dip" android:layout_marginTop="10.0dip" android:max="100" android:progress="0" android:progressDrawable="@drawable/kiesair_progressbar_holo_light" style="@android:style/Widget.ProgressBar.Horizontal" />
+</LinearLayout>

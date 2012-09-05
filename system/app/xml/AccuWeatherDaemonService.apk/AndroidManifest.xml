@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1" android:versionName="12.01.12.01" package="com.sec.android.daemonapp.accuweather"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <application android:label="Accuweather Weather Daemon" android:icon="@drawable/icon">
+        <activity android:label="@string/menu_settings_title" android:name="MenuSettings" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="AccuWeatherDaemonService" android:enabled="true">
+            <intent-filter>
+                <action android:name="com.sec.android.widgetapp.accuweatherdaemon.action.CHANGE_SETTING" />
+                <action android:name="com.sec.android.widgetapp.accuweatherdaemon.action.AUTOREFRESH" />
+                <action android:name="com.sec.android.widgetapp.accuweatherdaemon.action.SYNC_DATA_WITH_WIDGET" />
+                <action android:name="com.sec.android.widgetapp.accuweatherdaemon.action.SYNC_SETTING_WITH_WIDGET" />
+                <action android:name="com.sec.android.widgetapp.accuweatherdaemon.action.CURRENT_LOCATION_WEATHER_DATA" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

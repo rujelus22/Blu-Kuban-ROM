@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout style="@style/home_gallery_item"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/image" style="@style/home_gallery_item" />
+    <TextView android:id="@id/textView" android:visibility="visible" android:text="@string/current_id_pack" android:shadowColor="@color/black" android:shadowDx="0.0" android:shadowDy="1.0" android:shadowRadius="1.0" style="@style/TextCurrentPack" />
+</RelativeLayout>

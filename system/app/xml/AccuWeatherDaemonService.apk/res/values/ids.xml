@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="username_view">false</item>
+    <item type="id" name="log_group">false</item>
+    <item type="id" name="log_low">false</item>
+    <item type="id" name="log_mid">false</item>
+    <item type="id" name="log_high">false</item>
+    <item type="id" name="username_edit">false</item>
+</resources>

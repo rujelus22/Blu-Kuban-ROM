@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:id="@id/TV_ON" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WiBroPath_app_name" />
+    <RadioGroup android:id="@id/RadioGroup03" android:layout_width="wrap_content" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RadioButton android:textSize="25.0sp" android:id="@id/RB_SDIO" android:paddingRight="20.0sp" android:paddingBottom="10.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/SDIO" android:layout_centerHorizontal="true" />
+        <RadioButton android:textSize="25.0sp" android:id="@id/RB_DM" android:paddingRight="20.0sp" android:paddingBottom="10.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/DM" android:layout_centerHorizontal="true" />
+    </RadioGroup>
+    <RelativeLayout android:id="@id/RelativeLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Button android:textSize="25.0sp" android:id="@id/BT_OK" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0sp" android:text="@string/OK" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

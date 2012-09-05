@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/ImageThumbnailLayout" android:layout_width="640.0px" android:layout_height="340.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.app.ve.view.addmedia.AddImagePickerView android:scrollbarStyle="outsideInset" android:layout_gravity="top" android:id="@id/ImageThumbnail" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0px" android:layout_marginTop="70.0px" android:listSelector="@drawable/grid_background" android:drawSelectorOnTop="true" android:horizontalSpacing="17.0px" android:verticalSpacing="40.0px" android:columnWidth="142.0px" android:numColumns="4"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/no_image_img" android:visibility="invisible" android:layout_width="174.0px" android:layout_height="174.0px" android:layout_marginTop="80.0px" android:src="@drawable/no_items_image" />
+    <TextView android:textSize="33.0px" android:textColor="@color/novideo" android:layout_gravity="center_horizontal" android:id="@id/no_image_text" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="257.0px" android:text="@string/no_image" />
+    <include layout="@layout/selected_addmedia_title" />
+</FrameLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_font">@color/white</color>
+    <color name="primary_background">@color/ics_dark_grey</color>
+    <color name="secondary_font">@color/ics_light_grey</color>
+    <color name="primary_contrast_font">@color/white</color>
+    <color name="secondary_contrast_font">@color/ics_light_grey</color>
+    <color name="video_item_duration_background">#91000000</color>
+    <color name="dialog_background">#ff282828</color>
+    <color name="positive_message_font">#ff99cc00</color>
+    <color name="sidebar_divider">#ff333333</color>
+</resources>

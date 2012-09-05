@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="?android:dividerHorizontal" android:showDividers="middle" android:dividerPadding="0.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ExpandableListView android:id="@id/date_ordered_list" android:paddingLeft="0.0dip" android:paddingRight="0.0dip" android:paddingBottom="16.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ListView android:id="@id/size_ordered_list" android:paddingLeft="0.0dip" android:paddingRight="0.0dip" android:paddingBottom="16.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textStyle="bold" android:gravity="center" android:id="@id/empty" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/no_downloads"
+          xmlns:android="http://schemas.android.com/apk/res/android" />
+    </FrameLayout>
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/sort_menu" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?android:attr/buttonBarStyle">
+        <Button android:id="@id/sort_button" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" style="?android:attr/buttonBarButtonStyle" />
+        <Button android:id="@id/clear_all_button" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/download_menu_clear_all" android:layout_weight="1.0" style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/empty_view" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/empty_image" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:src="@drawable/noitems_downloads" android:scaleType="fitCenter" />
+            <TextView android:textSize="24.0sp" android:textColor="#ff666666" android:gravity="center" android:id="@id/empty_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_downloads"
+              xmlns:android="http://schemas.android.com/apk/res/android" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Nie gekoppel nie</string>
+    <string name="authentication_failure_no_network">Jy sal aan die internet gekoppel word om jou Musiek-rekening te staaf.</string>
+    <string name="authentication_failure">Nie gestaaf nie</string>
+    <string name="authentication_failure_error">Kon nie jou Musiek-rekening staaf nie.</string>
+    <string name="positive_button_text">OK</string>
+    <string name="negative_button_text">Kanselleer</string>
+    <string name="save_button_text">Stoor</string>
+    <string name="not_save_button_text">Moenie stoor nie</string>
+    <string name="shuffle_all">Skommel almal</string>
+    <string name="play_all">Speel alles</string>
+    <string name="songs_all">Alle liedjies</string>
+    <string name="shuffle">Skommel</string>
+    <string name="search">Soek</string>
+    <string name="settings">Instellings</string>
+    <string name="library_options">Vertoonopsies</string>
+    <string name="manage_music">Maak vanlyn beskikbaar</string>
+    <string name="available_offline">Vanlyn beskikbaar</string>
+    <string name="hide_labels">Versteek etikette</string>
+    <string name="show_labels">Wys etikette</string>
+    <string name="options">Opsies</string>
+    <string name="shop_artist">Koop meer van kunstenaar</string>
+    <string name="show_offline_music_only">Slegs vanlyn musiek</string>
+    <string name="show_all_music">Wys alle musiek</string>
+    <string name="new_playlist_title">Snitlysnaam</string>
+    <string name="add_to_playlist_title">Snitlysnaam</string>
+    <string name="rename_playlist_title">Hernoem \"%s\" na</string>
+    <string name="search_section_header_artists">KUNSTENAARS</string>
+    <string name="search_section_header_albums">ALBUMS</string>
+    <string name="search_section_header_songs">LIEDJIES</string>
+    <string name="search_section_header_playlists">SNITLYSTE</string>
+    <string name="shuffle_all_songs">Skommel almal</string>
+    <string name="stream_settings">Musiek-instellings</string>
+    <string name="refresh_title">Herlaai</string>
+    <string name="refresh_summary">Herlaai musiek uit Google Play</string>
+    <string name="account_settings_title">Google Play-rekening</string>
+    <string name="no_account_selected_summary">Raak om rekening te kies</string>
+    <string name="account_selected_summary">Koppel aan Google Play met gebruik van %s</string>
+    <string name="hide_when_not_connected_title">Versteek niebeskikbare musiek</string>
+    <string name="hide_when_not_connected_summary">Wys net beskikbare musiek wanneer vanlyn</string>
+    <string name="stream_only_on_wifi_title">Stroom net via Wi-Fi</string>
+    <string name="stream_only_on_wifi_summary">Stroom musiek net wanneer gekoppel via Wi-Fi</string>
+    <string name="stream_only_hq_title">Stroom hoë gehalte</string>
+    <string name="stream_only_hq_summary">Stroom musiek altyd teen die hoogste gehalte.</string>
+    <string name="lock_screen_controls_title">Kontroles vir sluitskerm</string>
+    <string name="lock_screen_controls_summary">Wys musiekkontroles bo-op die sluitskerm.</string>
+    <string name="offlinedl_only_on_wifi_title">Laai net via Wi-Fi af</string>
+    <string name="offlinedl_only_on_wifi_summary">Laai musiek via Wi-Fi af vir beskikbaarheid vanlyn</string>
+    <string name="cache_streamed_title">Gekaste musiek</string>
+    <string name="cache_streamed_summary">Stoor gestroomde musiek tydelik</string>
+    <string name="download_queue_title">Aflaai-waglys</string>
+    <string name="download_queue_summary">Wys die liedjies wat tans afgelaai word</string>
+    <string name="help_title">Hulp</string>
+    <string name="show_no_downloads_title">Geen liedjies in waglys vir aflaai nie</string>
+    <string name="music_version_title">Musiekweergawe</string>
+    <string name="music_version_summary">Onbekende weergawe</string>
+    <string name="nowplaying_title">Speel tans</string>
+    <string name="artists_title">Kunstenaars</string>
+    <string name="albums_title">Albums</string>
+    <string name="genres_title">Genres</string>
+    <string name="tracks_title">Liedjies</string>
+    <string name="playlists_title">Snitlyste</string>
+    <string name="recent_title">Onlangs</string>
+    <string name="search_title">Soek</string>
+    <string name="no_tracks_title">Geen liedjies nie</string>
+    <string name="delete_playlist_menu">Vee uit</string>
+    <string name="edit_playlist_menu">Redigeer</string>
+    <string name="rename_playlist_menu">Hernoem</string>
+    <string name="playlist_delete_confirmation">Wil jy die snitlys \"%s\" uitvee?</string>
+    <string name="delete_playlist_button_confirm">Vee uit</string>
+    <string name="playlist_deleted_message">Snitlys uitgevee.</string>
+    <string name="playlist_created_message">Snitlys \"%s\" geskep.</string>
+    <string name="playlist_renamed_message">Snitlys hernoem na \"%s\".</string>
+    <string name="recentlyadded">Laaste bygevoeg</string>
+    <string name="recentlyadded_title">Laaste bygevoeg</string>
+    <string name="all_songs_list">Alle liedjies</string>
+    <string name="all_songs_list_title">Alle liedjies</string>
+    <string name="storemusic_list">Gratis en aangekoop</string>
+    <string name="storemusic_list_title">Gratis en aangekoop</string>
+    <string name="freemusic_list">Gratis liedjies</string>
+    <string name="freemusic_list_title">Gratis liedjies</string>
+    <string name="thumbsup_list">Duime op</string>
+    <string name="thumbsup_list_title">Duime op</string>
+    <string name="unknown_artist_name">Onbekende kunstenaar</string>
+    <string name="unknown_album_name">Onbekende album</string>
+    <string name="unknown_playlist_name">Onbekende snitlys</string>
+    <string name="shuffle_on_notif">Skommel is aan.</string>
+    <string name="shuffle_off_notif">Skommel is af.</string>
+    <string name="repeat_off_notif">Herhaling is af.</string>
+    <string name="repeat_current_notif">Herhaal huidige liedjie.</string>
+    <string name="repeat_all_notif">Herhaal alle liedjies.</string>
+    <string name="ringtone_menu">Gebruik as luitoon</string>
+    <string name="ringtone_set">\"%s\" gestel as luitoon.</string>
+    <string name="ringtone_set_failed">Kon nie luitoon skep nie.</string>
+    <string name="ringtone_needs_download">Luitoon sal gestel word wanneer afgelaai.</string>
+    <string name="play_selection">Speel</string>
+    <string name="add_to_playlist">Voeg by snitlys</string>
+    <string name="rename_playlist_menu_item">Hernoem</string>
+    <string name="add_to_playlist_selector_title">Voeg by snitlys</string>
+    <string name="queue">Huidige snitlys</string>
+    <string name="new_playlist_for_content">Nuwe snitlys</string>
+    <string name="new_empty_playlist">Nuwe snitlys</string>
+    <string name="new_playlist_name_template">Snitlys %d</string>
+    <string name="removed_from_playlist">\"%1$s\" van snitlys verwyder.</string>
+    <string name="playlist_too_many_songs">Te veel liedjies. Limiet is %d per snitlys.</string>
+    <string name="emptyplaylist">Die snitlys wat jy gekies het is leeg.</string>
+    <string name="playlist_edit_label">NAAM</string>
+    <string name="create_playlist_create_text">OK</string>
+    <string name="rename_playlist_rename_text">Hernoem</string>
+    <string name="service_start_error_title">Terugspeelprobleem</string>
+    <string name="service_start_error_msg">Kon nie die liedjie speel nie.</string>
+    <string name="service_start_error_button">OK</string>
+    <string name="weekpicker_set">Klaar</string>
+    <string name="weekpicker_title">Stel tyd</string>
+    <string name="musicbrowserlabel">Play Music</string>
+    <string name="musicshortcutlabel">Musieksnitlys</string>
+    <string name="mediaplaybacklabel">Musiek</string>
+    <string name="app_name">Google Play-musiek</string>
+    <string name="playback_failed">Kon nie die snit speel wat jy versoek het nie.</string>
+    <string name="cancel">Kanselleer</string>
+    <string name="remove_from_playlist">Verwyder van snitlys</string>
+    <string name="streamloadingtext">Verbind tans met %s...</string>
+    <string name="search_hint">Deursoek musiek</string>
+    <string name="working_artists">Kunstenaars…</string>
+    <string name="working_albums">Albums…</string>
+    <string name="loading">Laai tans…</string>
+    <string name="sort_by_track">Snitte</string>
+    <string name="music_picker_title">Kies musieksnit</string>
+    <string name="fail_to_start_stream">Kan nie die stroom speel wat jy aangevra het nie.</string>
+    <string name="search_settings_description">Kunstenaars, albums en snitte</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">Musiek</string>
+    <string name="music_library">Musiekbiblioteek</string>
+    <string name="playlist_label">Snitlys</string>
+    <string name="faux_art_all_songs_label">Alle liedjies</string>
+    <string name="faux_art_playlist_label">Snitlys</string>
+    <string name="faux_art_playlist_instant_mix_label">Kitssamestelling</string>
+    <string name="faux_art_playlist_auto_playlist_label">Outosnitlys</string>
+    <string name="buffering">Buffer tans…</string>
+    <string name="keep_on_phone">Vanlyn beskikbaar</string>
+    <string name="no_music_add_music_header">MANIERE OM MUSIEK BY TE VOEG</string>
+    <string name="no_music_shop_body">Doen inkopies en kies uit miljoene liedjies, insluitend honderde gratis snitte.</string>
+    <string name="no_music_shop_button">WINKEL</string>
+    <string name="no_music_upload_body">Laai 20 000 liedjies gratis op na Google Play.</string>
+    <string name="no_music_upload_button">KOM MEER TE WETE</string>
+    <string name="no_music_usb_copy_body">"Kopieer musiek na jou foon met 'n USB-kabel."</string>
+    <string name="no_music_usb_copy_button">KOM MEER TE WETE</string>
+    <string name="no_music_heading">Musiekbiblioteek is leeg</string>
+    <string name="no_music_setup_uploader_heading">Stroom jou musiek draadloos.</string>
+    <string name="no_music_setup_uploader_body">Jy kan jou persoonlike musiekversameling met Google Play-musiek stroom.</string>
+    <string name="no_music_setup_usb_heading">Kopieer musiek na jou toestel</string>
+    <string name="no_music_setup_usb_body">"Kopieer musiek na jou foon met 'n USB-kabel."</string>
+    <string name="no_local_music_heading">Geen vanlyn musiek nie</string>
+    <string name="no_local_music_body">"Jy is tans in vanlynmodus, dus sal net musiek wat op jou toestel gestoor is, gewys word.
+
+Om die musiek te kies wat jy op jou toestel wil stoor, kies "<b>Maak vanlyn beskikbaar</b> uit die kieslys.</string>
+    <string name="no_music_learn_more">Kom meer te wete</string>
+    <string name="no_playlists_heading">Jy het geen snitlyste in jou biblioteek nie.</string>
+    <string name="no_playlists_body">"Jy kan 'n snitlys skep deur na die Liedjielys-aansig te gaan en uit 'n liedjie se kontekskieslys te raak aan \"Voeg by snitlys\"."</string>
+    <string name="no_music_syncing_heading">Musiek sinchroniseer tans.</string>
+    <string name="no_music_syncing_body">Musiek word tans vanaf bediener gesinchroniseer en behoort binnekort te verskyn.</string>
+    <string name="no_music_scanning_heading">Skandeer vir musiek op die toestel.</string>
+    <string name="no_music_scanning_body">Die toestel word tans geskandeer om musiek te kry.</string>
+    <string name="sync_disabled">Jy moet sinchronisering opstel voor musiek uit Google Play-musiek sal verskyn. Wil jy dit nou doen?</string>
+    <string name="tutorial_welcome_heading">Welkom by Google Play-musiek</string>
+    <string name="tutorial_welcome_body">"Laai tot 20 000 liedjies op vanuit jou persoonlike musiekversameling.
+
+Speel dadelik musiek wat van Google Play gekoop is.
+
+Luister na al jou musiek op die web of enige foon of tablet. Laai maklik af om jou musiek vanlyn te speel.
+
+Alles gratis."</string>
+    <string name="tutorial_select_account_heading">"Kies 'n rekening"</string>
+    <string name="tutorial_select_account_body">"Koppel jou rekening aan Google Play Music sodat jy jou musiekbiblioteek kan speel en aankope kan stoor.
+
+Watter rekening wil jy gebruik?"</string>
+    <string name="tutorial_sign_in">Koppel jou rekening aan Google Play Music sodat jy jou musiekbiblioteek kan speel en aankope kan stoor.</string>
+    <string name="tutorial_free_music_heading">Kry gratis musiek</string>
+    <string name="tutorial_free_music_body">Blaai deur honderde gratis snitte op Google Play deur sommige van die grootste name in Rock, Hip-Hop en nog meer.</string>
+    <string name="tutorial_account_heading">Welkom</string>
+    <string name="tutorial_account_body">Jy is genooi na Google Play-musiek. Jy kan hierdie speler gebruik om dadelik toegang te kry tot die liedjies wat jy by Google Play-musiek voeg asook ander musiek wat jy na jou Android-toestel gekopieer het.</string>
+    <string name="tutorial_account_list_header">"Begin deur 'n Google-rekening te kies om hierdie speler aan Google Play-musiek te koppel:"</string>
+    <string name="tutorial_done_heading">Geniet</string>
+    <string name="tutorial_done_body">"Die musiekspeler is nou gekoppel aan jou Google-rekening.
+
+As jy reeds jou musiekversameling by Google Play-musiek gevoeg het, sal dit in hierdie speler begin verskyn.
+
+As jy steeds musiek by Google Play-musiek wil voeg, begin deur ons webwerf vanaf jou rekenaar te besoek:"</string>
+    <string name="tutorial_skip">Slaan oor</string>
+    <string name="tutorial_next">Volgende</string>
+    <string name="tutorial_done">Klaar</string>
+    <string name="tutorial_add_account">Voeg rekening by</string>
+    <string name="tutorial_free_music">Kry gratis liedjies</string>
+    <string name="spinner_carousel">Onlangs</string>
+    <string name="spinner_album">Albums</string>
+    <string name="spinner_artist">Kunstenaars</string>
+    <string name="spinner_songs">Liedjies</string>
+    <string name="spinner_playlists">Snitlyste</string>
+    <string name="spinner_genres">Genres</string>
+    <string name="sort_by_title">Rangskik A-Z</string>
+    <string name="sort_by_artist">Rangskik volgens kunstenaar</string>
+    <string name="sort_by_album">Rangskik volgens album</string>
+    <string name="sort_by_date">Sorteer volgens datum bygevoeg</string>
+    <string name="more_by_artist">Meer deur kunstenaar</string>
+    <string name="make_available_offline">Maak vanlyn beskikbaar</string>
+    <string name="search_web">Deursoek web</string>
+    <string name="manage_done">Klaar</string>
+    <string name="too_many_items_title">Te veel items</string>
+    <string name="too_many_items_body">"Daar is nie genoeg spasie om al die items wat jy gekies het te stoor nie. Deselekteer 'n paar items om plek te maak."</string>
+    <string name="save_manage_music_change_title">Ongestoorde veranderinge</string>
+    <string name="save_manage_music_change_body">Wil jy die geselekteerde musiek vanlyn beskikbaar stel?</string>
+    <string name="not_all_items_can_be_kept_body">Daar is nie genoeg spasie om al die items wat jy gekies het te stoor nie. Nie al hierdie items sal afgelaai word nie.</string>
+    <string name="free_space_overfull">Berging vol (%s oor)</string>
+    <string name="free_space">%s BESKIKBAAR</string>
+    <string name="stream_error_no_space_available">Geen plek beskikbaar nie</string>
+    <string name="stream_error_only_on_wifi">"Jy moet op 'n Wi-Fi-netwerk wees om hierdie liedjie te speel."</string>
+    <string name="stream_error_no_connection">Jy moet aanlyn wees om hierdie liedjie te speel.</string>
+    <string name="stream_error_unauthorized">Verkeerde gebruikernaam of wagwoord.</string>
+    <string name="stream_error_another_stream_being_played">"Musiek is laat wag omdat jy na jou versameling op 'n ander toestel luister."</string>
+    <string name="stream_error_rate_limit_reached">"Musiek tydelik nie beskikbaar nie. Maak asseblief seker dat jy jou versameling op net een toestel op 'n keer speel."</string>
+    <string name="stream_error_device_not_authorized">"Jou musiekbiblioteek kan gebruik word met tot 8 toestelle. Jy sal een van jou toestelle se magtiging moet intrek voordat jy 'n ander een byvoeg."</string>
+    <string name="stream_error_learn_more">Kom meer te wete</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Musiek laat wag.</string>
+    <string name="stream_error_rate_limit_reached_short">Musiek tydelik nie beskikbaar nie.</string>
+    <string name="stream_error_device_not_authorized_short">Te veel toestelle word gebruik met musiekbiblioteek.</string>
+    <string name="hide_now_playing_bar">Versteek \"speel tans\"-balk</string>
+    <string name="show_now_playing_bar">Wys \"Speel tans\"-balk</string>
+    <string name="show_options">Wys opsies</string>
+    <string name="hide_options">Versteek opsies</string>
+    <string name="all_songs_in_genre">"Alle liedjies van genre
+%s"</string>
+    <string name="preview_header">GEDEEL OP GOOGLE+</string>
+    <string name="shared_playback_full">GRATIS VOLSPEEL</string>
+    <string name="shared_playback_partial">VOORBEELD</string>
+    <string name="btn_buy">Koop</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Maak tans musiek vanlyn beskikbaar...</string>
+    <string name="notification_downloading_when_on_wifi">"Liedjies wat as vanlyn gemerk is sal laai sodra jy koppel aan 'n Wi-Fi-netwerk."</string>
+    <string name="notification_downloading_excessive_errors">Kan nie nou liedjies aflaai nie. Kontroleer jou internetverbinding.</string>
+    <string name="notification_downloading_done">Sekere liedjies is nou vanlyn beskikbaar.</string>
+    <string name="notification_ticker_ringtone_set">Luitoon gestel as \"%s\".</string>
+    <string name="notification_title_ringtone_set">Luitoon gestel as \"%s\"</string>
+    <string name="notification_content_ringtone_set">Raak om hierdie luitoon te wysig.</string>
+    <string name="notification_ticker_ringtone_set_failed">Kon nie luitoon skep nie.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_songcount">%d nuwe liedjies</string>
+    <string name="notification_newsongs_subtitle">By Google Play-musiek gevoeg</string>
+    <string name="carousel_label_shuffle_all">Skommel almal</string>
+    <string name="song_label">LIEDJIE</string>
+    <string name="artist_label">KUNSTENAAR</string>
+    <string name="album_label">ALBUM</string>
+    <string name="effectspanel">Klankeffekte</string>
+    <string name="menu_make_instant_mix">Maak kitssamestelling</string>
+    <string name="instant_mix_default_name">%s-mengsel</string>
+    <string name="creating_instant_mix">"Voeg 'n kitssamestelling
+by snitlyste."</string>
+    <string name="creating_instant_mix_with_seed">"Voeg tans 'n kitssamestelling
+by snitlyste, gebaseer op 
+%s."</string>
+    <string name="create_instant_mix_failed">Kon nie kitssamestelling skep nie. Probeer weer.</string>
+    <string name="create_instant_mix_failed_insufficient_results">"Daar was nie genoeg enerse liedjies in jou versameling om 'n kitssamestelling van \"%s\" te skep nie. Probeer 'n kitssamestelling van 'n ander liedjie maak."</string>
+    <string name="create_instant_mix_sync_timeout">"Die kitssamestelling is
+geskep en sal binnekort
+op jou snitlyste verskyn."</string>
+    <string name="create_instant_mix_btn_ok">OK</string>
+    <string name="delete">Vee uit</string>
+    <string name="confirm_delete_local_only">Wil jy \"%s\" uitvee?</string>
+    <string name="confirm_delete_has_remote">\"%s\" is intussen-opgelaai en opgelaai na Google Play-musiek. Net intussen-opgelaaide items sal uitgevee word. Wil jy dit uitvee?</string>
+    <string name="waiting_share">Deel %s</string>
+    <string name="share">Deel</string>
+    <string name="share_failure">Kon nie jou musiek deel nie.</string>
+    <string name="share_google_plus_footer">Deel stel mense in jou sirkels in staat om een volle gratis speel te kry</string>
+    <string name="accessibility_play">Speel</string>
+    <string name="accessibility_pause">Laat wag</string>
+    <string name="accessibility_stop">Stop</string>
+    <string name="accessibility_next">Volgende</string>
+    <string name="accessibility_prev">Vorige</string>
+    <string name="accessibility_shuffle">Skommel</string>
+    <string name="accessibility_repeat">Herhaal</string>
+    <string name="accessibility_thumbsUp">Duim op</string>
+    <string name="accessibility_thumbsDown">Duim af</string>
+    <string name="accessibility_star1">1 ster</string>
+    <string name="accessibility_star2">Twee sterre</string>
+    <string name="accessibility_star3">Drie sterre</string>
+    <string name="accessibility_star4">5 sterre</string>
+    <string name="accessibility_star5">Vyf sterre</string>
+    <string name="accessibility_contractor">Brei liedjie-inligting uit</string>
+    <string name="accessibility_back">Terug</string>
+    <string name="accessibility_contextMenu">Liedjiekieslys</string>
+    <string name="accessibility_home">Musiek-tuiste</string>
+    <string name="accessibility_search">Soek</string>
+    <string name="accessibility_search_cancel">Kanselleer huidige soektog</string>
+    <string name="accessibility_current">Huidige liedjie</string>
+    <string name="accessibility_createnewplaylist">Skep nuwe snitlys</string>
+    <string name="accessibility_menu">Kieslys</string>
+    <string name="accessibility_shop">Koop musiek</string>
+    <string name="ringtone_replace_alert_button">Vervang</string>
+    <string name="ringtone_replace_alert_title">Vervang luitoon</string>
+    <string name="ringtone_replace_alert_message">"'n Luitoon met hierdie naam bestaan ​​reeds. Wil jy dit vervang?"</string>
+    <string name="legal_information">Regsinligting</string>
+    <string name="license_title">Oopbronlisensies</string>
+    <string name="license_error">Kon nie lisensies laai nie.</string>
+    <string name="market_wrong_account" formatted="false">"Die musiek wat jy probeer speel, is gekoop met die rekening %s
+
+Jy is tans aangemeld by Google Play-musiek met die rekening %s
+
+Om na jou aankoop te luister, wissel eers rekeninge."</string>
+    <string name="gplus_wrong_account" formatted="false">"Die musiek wat jy probeer speel, is gedeel met die rekening %s
+
+Jy is tans aangemeld by Google Play-musiek met die rekening %s
+
+Om na jou gedeelde musiek te luister, wissel eers rekeninge."</string>
+    <string name="switch_account_button">Verander rekeninge</string>
+    <string name="retry_button">Probeer weer</string>
+    <string name="wait_for_item">Wag vir musiek om te sinkroniseer</string>
+    <string name="wait_for_item_failure">Kon nie jou musiek laai nie.</string>
+    <string name="ringtone_title">Hersien luitoon</string>
+    <string name="edit_ringtone">Verander luitoon</string>
+    <string name="ringtone_done">KLAAR</string>
+    <string name="set_ringtone_title">Gebruik as luitoon</string>
+    <string name="set_ringtone_message">Stel as luitoon.</string>
+    <string name="start_edit_ringtone">Redigeer luitoon</string>
+    <string name="ringtone_file_edited_name">Knipsel van %1$s</string>
+    <string name="progress_dialog_saving">Stoor tans…</string>
+    <string name="start_handle">Begin-handvatsel</string>
+    <string name="resize_handle">Verander handvatsel se grootte</string>
+    <string name="menu_reset">Stel terug</string>
+    <string name="save_success_message">%1$s is gestoor as verstek luitoon.</string>
+    <string name="save_failure_message">Jammer, %1$s kon nie as luitoon gestoor word nie.</string>
+    <string name="play_error">Kon nie hierdie medialêer speel nie.</string>
+    <string name="write_error">Kon nie na die lêer skryf nie.</string>
+    <string name="read_error">Kon nie die lêer lees nie.</string>
+    <string name="no_space_error">Daar is nie genoeg spasie op jou SD-kaart om hierdie lêer te stoor nie.</string>
+    <string name="bad_extension_error">Kan nie hierdie tipe lêer redigeer nie.</string>
+    <string name="no_extension_error">"Kan nie 'n lêer wysig wat nie 'n .mp3- of .wav-uitbreiding het nie."</string>
+    <string name="alert_title_success">Sukses</string>
+    <string name="alert_title_failure">Fout</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="store_tutorial_title">"Koop en speel in 'n kits"</string>
+    <string name="store_tutorial_content">Soek-en-koop vir miljoene MP3-snitte in Google Play, insluitende honderde gratis liedjies.</string>
+    <string name="store_tutorial_instruction">Om die winkel te besoek, tik die inkopiesak-ikoon</string>
+</resources>

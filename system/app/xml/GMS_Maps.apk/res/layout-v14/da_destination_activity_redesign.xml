@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/buttons" android:layout_centerHorizontal="true" layout="@layout/da_destination_activity_button_group" />
+    <ListView android:id="@android:id/list" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/da_destination_activity_btn_margin_tablet" android:layout_marginRight="@dimen/da_destination_activity_btn_margin_tablet" android:dividerHeight="1.0dip" android:layout_below="@id/buttons" />
+    <android.support.v4.view.ViewPager android:layout_gravity="top" android:id="@id/viewPager" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/buttons">
+        <android.support.v4.view.PagerTitleStrip android:textAppearance="@style/da_DestinationPickerPagerTitleStyle" android:layout_gravity="top" android:id="@id/title_strip" android:background="@drawable/da_destination_action_bar_bg" android:paddingLeft="@dimen/da_destination_activity_pager_title_padding_horizontal" android:paddingTop="@dimen/da_destination_activity_pager_title_padding_vertical" android:paddingRight="@dimen/da_destination_activity_pager_title_padding_horizontal" android:paddingBottom="@dimen/da_destination_activity_pager_title_padding_vertical" android:layout_width="fill_parent" android:layout_height="@dimen/da_destination_activity_pager_title_height" />
+    </android.support.v4.view.ViewPager>
+</RelativeLayout>

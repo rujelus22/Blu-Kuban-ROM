@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@touchwiz:color/tw_color002" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/view_switch_container" android:background="@drawable/calendar_tab_03" android:layout_width="@dimen/tab_width" android:layout_height="fill_parent">
+        <Button android:id="@id/month_button" style="@style/TabStyle_Land_Month" />
+        <Button android:id="@id/week_button" style="@style/TabStyle_Land_Week" />
+        <Button android:id="@id/day_button" style="@style/TabStyle_Land_Day_Unsel" />
+        <Button android:id="@id/list_button" style="@style/TabStyle_Land_List" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <LinearLayout android:background="@drawable/calendar_month_view_title_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/prev_btn" style="@style/LeftArrow" />
+            <LinearLayout android:gravity="center_horizontal" android:id="@id/title_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <TextView android:textSize="@dimen/month_title_text_size" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="none" android:gravity="center_vertical" android:id="@id/title_left" android:paddingRight="13.329987dip" android:fadingEdge="none" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" />
+                <TextView android:textSize="@dimen/month_title_text_size" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="none" android:gravity="center_vertical" android:id="@id/title_right" android:fadingEdge="none" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" />
+            </LinearLayout>
+            <Button android:id="@id/next_btn" style="@style/RightArrow" />
+        </LinearLayout>
+        <FrameLayout android:id="@id/body_container" android:background="@color/day_background_color" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" android:foregroundGravity="fill_horizontal|top|center">
+            <ViewSwitcher android:id="@id/switcher" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

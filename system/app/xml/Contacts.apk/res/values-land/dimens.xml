@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="quick_contact_top_position">-1.0dip</dimen>
+    <dimen name="dialpad_digits_text_size">28.0sp</dimen>
+    <dimen name="dialpad_digits_margin_bottom">50.0dip</dimen>
+</resources>

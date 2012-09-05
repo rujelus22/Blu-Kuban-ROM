@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="draglayer_shortcut_width">73.33298dip</dimen>
+    <dimen name="draglayer_shortcut_childview_bottommargin">4.6666565dip</dimen>
+    <dimen name="flingview_height">82.0dip</dimen>
+    <dimen name="cradle_clock_weather_withcalendar_margin_top">314.0dip</dimen>
+    <dimen name="cradle_clock_weather_notcalendar_margin_top">200.0dip</dimen>
+    <dimen name="cradle_clock_weather_withcalendar_margin_left">14.666687dip</dimen>
+    <dimen name="cradle_clock_weather_notcalendar_margin_left">14.666687dip</dimen>
+    <dimen name="cradle_month_height">160.0dip</dimen>
+    <dimen name="cradle_home_weather_withcalendar_margin_top">329.33594dip</dimen>
+    <dimen name="cradle_home_weather_notcalendar_margin_top">234.999dip</dimen>
+    <dimen name="cradle_home_weather_withcalendar_margin_left">12.0dip</dimen>
+    <dimen name="cradle_home_weather_notcalendar_margin_left">12.0dip</dimen>
+    <dimen name="dragLayer_shortcut_childView_del_leftMargin">22.0dip</dimen>
+</resources>

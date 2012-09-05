@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Mod la volan</string>
+    <string name="app_name">Comenzi vocale</string>
+    <string name="incar">Discuţie vocală</string>
+    <string name="incar_icon">Discuţie vocală</string>
+    <string name="Vlingo">Comenzi vocale</string>
+    <string name="widget_name">Voce</string>
+</resources>

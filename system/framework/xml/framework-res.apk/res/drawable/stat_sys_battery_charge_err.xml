@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:maxLevel="2">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="7">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="12">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="17">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="22">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="27">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="32">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="37">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="42">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="47">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="52">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="57">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="62">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="67">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="72">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="77">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="82">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="87">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="92">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="97">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="100">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+            <item android:duration="1000" android:drawable="@drawable/zzz_null" />
+        </animation-list>
+    </item>
+</level-list>

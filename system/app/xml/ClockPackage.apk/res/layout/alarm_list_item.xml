@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@drawable/alarm_list_bg" android:layout_width="fill_parent" android:layout_height="103.32999dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/alarm_item_leftside" android:background="@drawable/alarm_list_bg_pressed" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:textSize="16.0dip" android:textColor="@drawable/style_txt_color" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/alarm_item_name" android:paddingLeft="12.0dip" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="26.659973dip" android:layout_marginTop="5.3299866dip" android:singleLine="true" android:includeFontPadding="false" style="@style/AlarmListText" />
+        <LinearLayout android:gravity="bottom" android:paddingLeft="10.0dip" android:layout_width="fill_parent" android:layout_height="42.0dip">
+            <TextView android:textSize="42.0dip" android:textColor="@drawable/style_txt_color" android:gravity="bottom" android:layout_gravity="bottom" android:id="@id/alarm_item_time" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:includeFontPadding="false" style="@style/AlarmListText" />
+            <TextView android:textSize="25.329987dip" android:textColor="@drawable/style_txt_color" android:gravity="bottom" android:id="@id/alarm_item_ampm" android:paddingLeft="4.0dip" android:paddingBottom="5.3299866dip" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:includeFontPadding="false" style="@style/AlarmListText" />
+        </LinearLayout>
+        <LinearLayout android:gravity="bottom" android:layout_width="220.66dip" android:layout_height="22.0dip" android:layout_marginTop="3.3299866dip">
+            <View android:layout_width="12.0dip" android:layout_height="fill_parent" />
+            <TextView android:id="@id/alarm_item_sunday" android:text="@string/sun1" style="@style/AlarmListText.Days" />
+            <View android:layout_width="5.669983dip" android:layout_height="fill_parent" />
+            <TextView android:id="@id/alarm_item_monday" android:text="@string/mon1" style="@style/AlarmListText.Days" />
+            <View android:layout_width="5.669983dip" android:layout_height="fill_parent" />
+            <TextView android:id="@id/alarm_item_tuesday" android:text="@string/tue1" style="@style/AlarmListText.Days" />
+            <View android:layout_width="5.669983dip" android:layout_height="fill_parent" />
+            <TextView android:id="@id/alarm_item_wednesday" android:text="@string/wed1" style="@style/AlarmListText.Days" />
+            <View android:layout_width="5.669983dip" android:layout_height="fill_parent" />
+            <TextView android:id="@id/alarm_item_thursday" android:text="@string/thu1" style="@style/AlarmListText.Days" />
+            <View android:layout_width="5.669983dip" android:layout_height="fill_parent" />
+            <TextView android:id="@id/alarm_item_friday" android:text="@string/fri1" style="@style/AlarmListText.Days" />
+            <View android:layout_width="5.669983dip" android:layout_height="fill_parent" />
+            <TextView android:id="@id/alarm_item_saturday" android:text="@string/sat1" style="@style/AlarmListText.Days" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:id="@id/divider" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/alarm_list_line" />
+    <com.sec.android.app.clockpackage.alarm.CenterToggleButton android:id="@id/toggle_alarm_button" style="@style/ToggleButton.Alarm" />
+    <CheckBox android:gravity="center_vertical" android:id="@id/toggle_list_check" android:background="@drawable/alarm_list_bg_pressed" android:focusable="false" android:clickable="false" android:layout_width="55.0dip" android:layout_height="fill_parent" />
+</LinearLayout>

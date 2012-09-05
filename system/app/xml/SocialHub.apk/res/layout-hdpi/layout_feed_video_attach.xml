@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/layout_attach_txt" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0px">
+        <TextView android:textSize="21.0px" android:typeface="sans" android:textStyle="normal" android:textColor="@color/caption_color" android:textColorLink="#ffbebebe" android:id="@id/txt_attachment_caption1" android:paddingRight="10.0px" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="21.0px" android:typeface="sans" android:textStyle="normal" android:textColor="@color/description_color" android:textColorLink="#ffbebebe" android:id="@id/txt_attachment_description2" android:paddingRight="10.0px" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

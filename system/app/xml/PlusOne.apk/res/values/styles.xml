@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme" parent="@android:style/Theme" />
+    <style name="Theme.EmeraldSea" parent="@android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="buttonBarStyle">@android:style/ButtonBar</item>
+        <item name="buttonBarButtonStyle">?android:buttonStyle</item>
+        <item name="listSelector">@android:drawable/list_selector_background</item>
+        <item name="editAudienceBackground">@android:drawable/edit_text</item>
+        <item name="editLocationBackground">@android:drawable/edit_text</item>
+        <item name="buttonSelectableBackground">@drawable/title_button_background</item>
+    </style>
+    <style name="Theme.EmeraldSea.NoTitle" parent="@style/Theme.EmeraldSea" />
+    <style name="Theme.EmeraldSea.Dialog" parent="@android:style/Theme.Dialog" />
+    <style name="Theme.EmeraldSea.Dark" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="buttonBarStyle">@android:style/ButtonBar</item>
+        <item name="buttonBarButtonStyle">?android:buttonStyle</item>
+        <item name="listSelector">@android:drawable/list_selector_background</item>
+        <item name="editAudienceBackground">@android:drawable/edit_text</item>
+        <item name="editLocationBackground">@android:drawable/edit_text</item>
+        <item name="buttonSelectableBackground">@drawable/title_button_background</item>
+    </style>
+    <style name="Theme.EmeraldSea.Dark.Dialog" parent="@style/Theme.EmeraldSea.Dialog" />
+    <style name="Theme.Streams" parent="@style/Theme.EmeraldSea">
+        <item name="android:windowContentOverlay">@drawable/title_bar_with_tabs_shadow</item>
+    </style>
+    <style name="Signup" />
+    <style name="Signup.Title" parent="@style/Signup">
+        <item name="android:background">@drawable/title_bar_background</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">46.0dip</item>
+    </style>
+    <style name="Signup.Info" parent="@style/Signup">
+        <item name="android:background">@color/signup_title_color</item>
+        <item name="android:padding">@dimen/oob_items_padding</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="Signup.Info.Title" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">#ddffffff</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">0.1</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+    </style>
+    <style name="Signup.Info.Desc" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:paddingTop">2.0dip</item>
+        <item name="android:paddingBottom">2.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="Signup.Entry" parent="@style/Signup" />
+    <style name="Signup.Entry.Layout" parent="@style/Signup.Entry">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">5.0dip</item>
+        <item name="android:paddingRight">5.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5.0dip</item>
+    </style>
+    <style name="Signup.Entry.Label" parent="@style/Signup.Entry">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/default_bg</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">2.0dip</item>
+        <item name="android:layout_marginTop">2.0dip</item>
+    </style>
+    <style name="Signup.Entry.Input" parent="@style/Signup.Entry">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">2.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="Signup.Entry.Text" parent="@style/Signup.Entry">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">#ff666666</item>
+        <item name="android:textColorLink">#ff7e84ff</item>
+        <item name="android:linksClickable">true</item>
+        <item name="android:saveEnabled">false</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">1.0dip</item>
+        <item name="android:layout_marginTop">2.0dip</item>
+    </style>
+    <style name="Signup.Entry.Checkbox" parent="@style/Signup.Entry">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">#ff666666</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="Signup.Entry.Birthday" parent="@style/Signup.Entry">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minDate">1/1/1900</item>
+    </style>
+    <style name="SignupErrorAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff990000</item>
+    </style>
+    <style name="HomeScreenGridViewLandscape" parent="@android:style/Widget.GridView">
+        <item name="android:listSelector">@drawable/home_grid_item_selector</item>
+        <item name="android:numColumns">5</item>
+    </style>
+    <style name="HomeScreenGridViewPortrait" parent="@android:style/Widget.GridView">
+        <item name="android:listSelector">@drawable/home_grid_item_selector</item>
+        <item name="android:numColumns">2</item>
+    </style>
+    <style name="PhotosHome" />
+    <style name="PhotosHome.ListView" parent="@style/PhotosHome">
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:background">@color/photo_home_background_color</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:listSelector">@drawable/album_view_selector</item>
+        <item name="android:drawSelectorOnTop">true</item>
+        <item name="android:divider">@drawable/photo_home_item_divider_color</item>
+        <item name="android:dividerHeight">@dimen/photo_home_item_divider_height</item>
+    </style>
+    <style name="AlbumView" />
+    <style name="AlbumView.GridView" parent="@style/AlbumView">
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:background">@color/album_background_color</item>
+        <item name="android:paddingLeft">0.0dip</item>
+        <item name="android:paddingTop">0.0dip</item>
+        <item name="android:paddingRight">0.0dip</item>
+        <item name="android:paddingBottom">0.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:cacheColorHint">@color/album_background_color</item>
+        <item name="android:horizontalSpacing">@dimen/album_grid_horizontal_spacing</item>
+        <item name="android:verticalSpacing">@dimen/album_grid_vertical_spacing</item>
+        <item name="android:stretchMode">columnWidth</item>
+        <item name="android:columnWidth">@dimen/album_grid_width</item>
+        <item name="android:numColumns">auto_fit</item>
+    </style>
+    <style name="AlbumView.Photo" parent="@style/AlbumView">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">@dimen/album_photo_width</item>
+        <item name="android:layout_height">@dimen/album_photo_height</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+    <style name="AlbumView.Instructions" parent="@style/AlbumView">
+        <item name="android:textColor">@color/album_instructions_text_color</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/album_instructions_background_color</item>
+        <item name="android:paddingLeft">@dimen/album_instructions_left_padding</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/album_instructions_height</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="AlbumView.BottomActionBar" parent="@style/AlbumView">
+        <item name="android:background">@color/title_background</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/album_bottom_action_bar_height</item>
+    </style>
+    <style name="AlbumView.BottomActionBar.ActionButton" parent="@style/AlbumView.BottomActionBar">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/album_bottom_action_bar_enabled_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/album_view_selector</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:drawablePadding">4.0dip</item>
+    </style>
+    <style name="AlbumView.BottomActionBar.ActionButton.Disabled" parent="@style/AlbumView.BottomActionBar.ActionButton">
+        <item name="android:textColor">@color/album_bottom_action_bar_disabled_color</item>
+    </style>
+    <style name="PhotoViewTheme.Default" parent="@style/CircleBrowserTheme">
+        <item name="android:windowBackground">@drawable/photo_view_background</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="PhotoViewTheme" parent="@style/PhotoViewTheme.Default" />
+    <style name="VideoViewTheme.Default" parent="@style/CircleBrowserTheme">
+        <item name="android:windowBackground">@drawable/photo_view_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="VideoViewTheme" parent="@style/VideoViewTheme.Default" />
+    <style name="PhotoView" />
+    <style name="PhotoView.Photo" parent="@style/PhotoView">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="PhotoView.PhotoPager" parent="@style/PhotoView">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="PhotoView.Tag" parent="@style/PhotoView">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="PhotoView.Tag.Avatar" parent="@style/PhotoView.Tag">
+        <item name="android:background">@drawable/photo_tag_selector</item>
+        <item name="android:paddingLeft">@dimen/photo_tag_scroller_avatar_padding_left</item>
+        <item name="android:paddingTop">@dimen/photo_tag_scroller_avatar_padding_top</item>
+        <item name="android:paddingRight">@dimen/photo_tag_scroller_avatar_padding_right</item>
+        <item name="android:paddingBottom">@dimen/photo_tag_scroller_avatar_padding_bottom</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">@dimen/photo_tag_scroller_avatar_width</item>
+        <item name="android:layout_height">@dimen/photo_tag_scroller_avatar_height</item>
+    </style>
+    <style name="PhotoView.Tag.Action" parent="@style/PhotoView.Tag">
+        <item name="android:background">@drawable/photo_tag_selector</item>
+        <item name="android:layout_width">60.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="Widgets" />
+    <style name="CircleBrowserTheme.Default" parent="@style/Theme.EmeraldSea">
+        <item name="contact_list_item_height">64.0dip</item>
+        <item name="contact_list_item_padding_top">0.0dip</item>
+        <item name="contact_list_item_padding_bottom">0.0dip</item>
+        <item name="contact_list_item_padding_left">16.0dip</item>
+        <item name="contact_list_item_padding_right">16.0dip</item>
+        <item name="contact_list_item_gap_between_image_and_text">10.0dip</item>
+        <item name="contact_list_item_name_text_size">18.0</item>
+        <item name="contact_list_item_circle_icon_drawable">@drawable/circle</item>
+        <item name="contact_list_item_circle_icon_size">12.0dip</item>
+        <item name="contact_list_item_circles_text_size">16.0</item>
+        <item name="contact_list_item_circles_text_color">#ff999999</item>
+        <item name="contact_list_item_gap_between_name_and_circles">0.0dip</item>
+        <item name="contact_list_item_gap_between_icon_and_circles">8.0dip</item>
+        <item name="contact_list_item_gap_between_text_and_button">10.0dip</item>
+        <item name="contact_list_item_action_button_background">@android:drawable/list_selector_background</item>
+        <item name="contact_list_item_action_button_width">64.0dip</item>
+        <item name="contact_list_item_vertical_divider_width">1.0dip</item>
+        <item name="contact_list_item_vertical_divider_padding">8.0dip</item>
+        <item name="circle_list_item_height">72.0dip</item>
+        <item name="circle_list_item_padding_top">4.0dip</item>
+        <item name="circle_list_item_padding_bottom">9.0dip</item>
+        <item name="circle_list_item_padding_left">16.0dip</item>
+        <item name="circle_list_item_padding_right">16.0dip</item>
+        <item name="circle_list_item_gap_between_icon_and_text">8.0dip</item>
+        <item name="circle_list_item_name_text_size">18.0</item>
+        <item name="circle_list_item_name_text_bold">false</item>
+        <item name="circle_list_item_avatar_size">@dimen/tiny_avatar_dimension</item>
+        <item name="circle_list_item_avatar_spacing">0.0dip</item>
+        <item name="circle_list_item_circle_icon_size_small">24.0dip</item>
+        <item name="circle_list_item_circle_icon_size_large">24.0dip</item>
+        <item name="circle_list_item_gap_between_name_and_count">4.0dip</item>
+        <item name="circle_list_item_gap_between_count_and_checkbox">20.0dip</item>
+        <item name="circle_list_item_member_count_text_color">#ff999999</item>
+    </style>
+    <style name="CircleBrowserTheme.Default.Tabs" parent="@style/CircleBrowserTheme.Default">
+        <item name="android:windowContentOverlay">@drawable/title_bar_with_tabs_shadow</item>
+    </style>
+    <style name="CircleBrowserTheme" parent="@style/CircleBrowserTheme.Default" />
+    <style name="CircleBrowserTheme.Tabs" parent="@style/CircleBrowserTheme.Default.Tabs" />
+    <style name="CircleBrowserTheme.FastScroller" parent="@style/CircleBrowserTheme.Default">
+        <item name="android:textColorPrimary">#ffffffff</item>
+    </style>
+    <style name="EditAudienceTheme" parent="@style/CircleBrowserTheme">
+        <item name="circle_list_item_height">64.0dip</item>
+        <item name="circle_list_item_padding_left">24.0dip</item>
+        <item name="circle_list_item_name_text_bold">false</item>
+    </style>
+    <style name="SuggestedPeopleTheme" parent="@style/CircleBrowserTheme">
+        <item name="contact_list_item_height">48.0dip</item>
+        <item name="contact_list_item_action_button_width">48.0dip</item>
+    </style>
+    <style name="CircleSelectorTheme" parent="@style/Theme.EmeraldSea.Dialog" />
+    <style name="CircleSelectorList" parent="@style/Theme.EmeraldSea">
+        <item name="circle_list_item_height">48.0dip</item>
+        <item name="circle_list_item_padding_top">4.0dip</item>
+        <item name="circle_list_item_padding_bottom">4.0dip</item>
+        <item name="circle_list_item_padding_left">24.0dip</item>
+        <item name="circle_list_item_padding_right">16.0dip</item>
+        <item name="circle_list_item_gap_between_icon_and_text">8.0dip</item>
+        <item name="circle_list_item_name_text_size">18.0</item>
+        <item name="circle_list_item_circle_icon_size_small">24.0dip</item>
+        <item name="circle_list_item_circle_icon_size_large">24.0dip</item>
+        <item name="circle_list_item_gap_between_name_and_count">4.0dip</item>
+        <item name="circle_list_item_gap_between_count_and_checkbox">20.0dip</item>
+        <item name="circle_list_item_member_count_text_color">#ff999999</item>
+    </style>
+    <style name="PeopleSearchTheme" parent="@style/CircleBrowserTheme">
+        <item name="android:windowBackground">@color/search_translucent_bg_color</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+    <style name="RealTimeChat.ConversationList.ConversationName" parent="@style/Theme.EmeraldSea">
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff303030</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="RealTimeChat.ConversationList.TimeSince" parent="@style/Theme.EmeraldSea">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">#ffc0c0c0</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="RealTimeChat.ConversationList.LastMessage" parent="@style/Theme.EmeraldSea">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ff707070</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="RealTimeChat.ConversationList.UnreadCount" parent="@style/Theme.EmeraldSea">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/ic_messenger_count</item>
+        <item name="android:paddingLeft">4.0dip</item>
+        <item name="android:paddingRight">4.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">18.0dip</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="RealTimeChat.ConversationList.MutedIcon" parent="@style/Theme.EmeraldSea">
+        <item name="android:gravity">center</item>
+        <item name="android:src">@drawable/ic_messenger_mute</item>
+    </style>
+    <style name="RealTimeChat.ConversationHeader.ConversationName" parent="@style/Theme.EmeraldSea">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="RealTimeChat.ParticipantHeader.ParticipantCount" parent="@style/Theme.EmeraldSea">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="RealTimeChat.Message.Author" parent="@style/Theme.EmeraldSea">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff303030</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="RealTimeChat.Message.TimeSince" parent="@style/Theme.EmeraldSea">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">#ffc0c0c0</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="RealTimeChat.Message.Text" parent="@style/Theme.EmeraldSea">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ff707070</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">false</item>
+    </style>
+    <style name="RealTimeChat.Participant.Name" parent="@style/Theme.EmeraldSea">
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#ff303030</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="ComposeUpdate" />
+    <style name="ComposeUpdate.Editor" parent="@style/ComposeUpdate">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">@color/solid_black</item>
+        <item name="android:gravity">top</item>
+        <item name="android:hint">@string/post_body_hint</item>
+        <item name="android:minLines">3</item>
+        <item name="android:completionThreshold">3</item>
+        <item name="android:popupBackground">@android:drawable/alert_light_frame</item>
+        <item name="android:inputType">textLongMessage|textCapSentences|textAutoCorrect|textMultiLine</item>
+    </style>
+    <style name="ComposeUpdate.AutoComplete" parent="@style/ComposeUpdate">
+        <item name="android:longClickable">false</item>
+        <item name="android:drawSelectorOnTop">false</item>
+        <item name="android:cacheColorHint">@color/compose_update_bg</item>
+    </style>
+    <style name="ListItemAction">
+        <item name="android:background">@android:drawable/list_selector_background</item>
+    </style>
+    <style name="TabBar">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/tab_background_color</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="Tab">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/tab_text_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/tab_indicator</item>
+        <item name="android:paddingLeft">8.0dip</item>
+        <item name="android:paddingRight">8.0dip</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">48.0dip</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="TabSeparator">
+        <item name="android:background">#ff636363</item>
+        <item name="android:layout_width">1.0px</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_marginTop">8.0dip</item>
+        <item name="android:layout_marginBottom">14.0dip</item>
+    </style>
+    <style name="CirclesButton">
+        <item name="android:background">@drawable/widgets_gray_button_background</item>
+        <item name="android:paddingLeft">8.0dip</item>
+        <item name="android:drawableLeft">@drawable/chip_circle_gray</item>
+        <item name="circle_button_icon_spacing">6.0dip</item>
+        <item name="circle_button_label_spacing">8.0dip</item>
+    </style>
+    <style name="AddToCirclesButton" parent="@style/CirclesButton">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">@drawable/widgets_red_button_background</item>
+        <item name="android:drawableLeft">@drawable/chip_circle_white</item>
+    </style>
+    <style name="BottomActionBar">
+        <item name="android:background">@color/button_bar_background</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">48.0dip</item>
+    </style>
+    <style name="BottomActionBar.Button" parent="@style/BottomActionBar">
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="BottomActionBar.Label" parent="@style/Theme.EmeraldSea">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">2.0dip</item>
+    </style>
+    <style name="BottomActionBar.ActionButton" parent="@style/BottomActionBar.Label">
+        <item name="android:background">?buttonSelectableBackground</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="Divider">
+        <item name="android:layout_gravity">right</item>
+        <item name="android:background">?android:listDivider</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0dip</item>
+    </style>
+    <style name="ProfileItemLabel">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">#ff999999</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="QuickActions" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/tooltip_top_left_background</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowEnterAnimation">@anim/quick_actions_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/quick_actions_fade_out</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+    </style>
+    <style name="QuickActionsItem">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="People" />
+    <style name="People.Avatar" parent="@style/People" />
+    <style name="People.Avatar.TrayAvatar" parent="@style/People.Avatar">
+        <item name="android:padding">1.0dip</item>
+        <item name="android:layout_width">42.0dip</item>
+        <item name="android:layout_height">@dimen/tray_avatar_height</item>
+        <item name="android:layout_marginRight">2.0dip</item>
+    </style>
+    <style name="Theme.Hangout" parent="@style/Theme.EmeraldSea.NoTitle" />
+    <style name="Theme.HangoutLaunch" parent="@style/Theme.EmeraldSea.NoTitle" />
+    <style name="TextAppearance.SlidingTabNormal" parent="@android:attr/textAppearanceMedium">
+        <item name="android:textSize">28.0sp</item>
+        <item name="android:textColor">?android:textColorTertiary</item>
+        <item name="android:shadowColor">@android:color/black</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">5.0</item>
+    </style>
+    <style name="TextAppearance.SlidingTabActive" parent="@android:attr/textAppearanceMedium">
+        <item name="android:textSize">28.0sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="SdkTheme" parent="@style/CircleBrowserTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="SdkActivityDefault">
+        <item name="android:background">@drawable/dialog_full_holo_light</item>
+        <item name="android:padding">@dimen/sdk_activity_padding</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="SdkActivity" parent="@style/SdkActivityDefault" />
+</resources>

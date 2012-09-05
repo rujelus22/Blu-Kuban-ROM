@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.music.widgets.EmptyMusicView android:orientation="vertical" android:id="@id/empty_views"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topbar_spacer" layout="@layout/no_music_streaming_enabled" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topbar_spacer" layout="@layout/no_music_streaming_disabled" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topbar_spacer" layout="@layout/no_local_music" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topbar_spacer" layout="@layout/no_playlists" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topbar_spacer" layout="@layout/no_music_syncing" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topbar_spacer" layout="@layout/no_music_scanning" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/topbar_spacer" layout="@layout/no_music_add_music_title" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/no_music_shop" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/no_music_upload" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/no_music_usb_copy" />
+</com.google.android.music.widgets.EmptyMusicView>

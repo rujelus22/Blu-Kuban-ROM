@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_all_rate_refresh_scan_update_all_synchronise" android:id="@id/message_refresh" android:visible="false" android:title="@string/setting_refresh" />
+    <item android:icon="@drawable/ic_menu_compose" android:id="@id/compose_message" android:title="@string/ids_uinbox_create" />
+    <item android:icon="@drawable/ic_menu_delete" android:id="@id/message_delete" android:title="@string/delete" />
+    <item android:icon="@drawable/ic_menu_search_topic_search" android:id="@id/message_search" android:visible="false" android:title="@string/search" />
+    <item android:icon="@drawable/ic_menu_viewmode" android:id="@id/message_viewmode" android:title="@string/str_view_mode" />
+    <item android:icon="@drawable/ic_menu_list_by" android:id="@id/message_listby" android:title="@string/str_list_by" />
+    <item android:icon="@drawable/ic_menu_account" android:id="@id/message_account" android:title="@string/accounttxt" />
+</menu>

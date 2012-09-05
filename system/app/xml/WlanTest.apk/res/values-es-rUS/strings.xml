@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name_mac">WLAN MAC address</string>
+    <string name="helloMac">Dirección MAC</string>
+    <string name="Channel">Frecuencia</string>
+    <string name="Power">Potencia</string>
+    <string name="Start">Iniciar</string>
+    <string name="Stop">Parar</string>
+    <string name="Clear">Eliminar</string>
+    <string name="Error">Error</string>
+    <string name="Received">Recibido</string>
+</resources>

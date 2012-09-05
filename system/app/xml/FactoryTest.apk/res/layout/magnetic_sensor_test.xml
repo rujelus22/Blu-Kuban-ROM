@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:id="@id/magnetic_title" android:paddingLeft="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/MAGNETIC_Sensor" />
+    <View android:background="@drawable/separator" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TableLayout android:id="@id/menu" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:background="@drawable/separator" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <TableRow>
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_initialized" android:padding="3.0dip" android:text="@string/MAGNETIC_Initialized" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_init_str" android:padding="3.0dip" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_self_title" android:padding="3.0dip" android:text="@string/HX" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_x_str" android:padding="3.0dip" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_self_title" android:padding="3.0dip" android:text="@string/HY" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_y_str" android:padding="3.0dip" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_self_title" android:padding="3.0dip" android:text="@string/HZ" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_z_str" android:padding="3.0dip" />
+        </TableRow>
+        <View android:background="@drawable/separator" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <TableRow>
+            <TextView android:textSize="16.0sp" android:id="@id/invisible" android:padding="3.0dip" android:visibility="invisible" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:padding="3.0dip" android:text="@string/X" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:padding="3.0dip" android:text="@string/Y" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:padding="3.0dip" android:text="@string/Z" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:padding="3.0dip" android:text="@string/MAGNETIC_DAC" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_dac_x_str" android:padding="3.0dip" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_dac_y_str" android:padding="3.0dip" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_dac_z_str" android:padding="3.0dip" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:padding="3.0dip" android:text="@string/MAGNETIC_ADC" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_adc_x_str" android:padding="3.0dip" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_adc_y_str" android:padding="3.0dip" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/magnetic_adc_z_str" android:padding="3.0dip" />
+        </TableRow>
+    </TableLayout>
+    <View android:background="@drawable/separator" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="80.0sp" android:gravity="center" android:id="@id/result" android:paddingLeft="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_marginBottom="4.0dip" android:text="@string/FAIL" />
+</LinearLayout>

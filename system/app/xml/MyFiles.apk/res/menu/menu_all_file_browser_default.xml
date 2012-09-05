@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_share" android:id="@id/menu_share" android:title="@string/share" />
+    <item android:icon="@drawable/ic_menu_create" android:id="@id/menu_create" android:title="@string/create_folder" />
+    <item android:icon="@drawable/ic_menu_delete" android:id="@id/menu_delete" android:title="@string/delete" />
+    <item android:icon="@drawable/ic_menu_view_by" android:id="@id/menu_view_by" android:title="@string/view_by" />
+    <item android:icon="@drawable/ic_menu_list_by" android:id="@id/menu_list_by" android:title="@string/list_by" />
+    <item android:icon="@drawable/ic_menu_go_to" android:id="@id/menu_move" android:title="@string/move" />
+    <item android:icon="@drawable/ic_menu_copy" android:id="@id/menu_copy" android:title="@string/copy" />
+    <item android:icon="@drawable/ic_menu_rename" android:id="@id/menu_rename" android:title="@string/rename" />
+    <item android:icon="@drawable/ic_menu_settings" android:id="@id/menu_settings" android:title="@string/settings" />
+</menu>

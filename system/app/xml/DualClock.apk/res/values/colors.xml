@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#ff000000</color>
+    <color name="listblack">#00000000</color>
+    <color name="secondary">#ffffae00</color>
+    <color name="normal">#ffffffff</color>
+    <color name="red">#fff00101</color>
+    <color name="marinblue">#ff0036ff</color>
+    <color name="skyblue">#ff10a5ff</color>
+    <color name="yellowgren">#ff8bc500</color>
+    <color name="popup_secondary">#ffed5f00</color>
+    <color name="disabled">#ff787878</color>
+    <color name="split_line">#ff636363</color>
+    <color name="edittext_bg">#ff202020</color>
+    <color name="color1">#ffffffff</color>
+    <color name="color2">#00000000</color>
+    <color name="color49">#ffe60000</color>
+    <color name="color51">#ff10a5ff</color>
+    <color name="color52">#ff8c0000</color>
+    <color name="setcity">#ffffffff</color>
+    <color name="setcitypress">#ff009bff</color>
+</resources>

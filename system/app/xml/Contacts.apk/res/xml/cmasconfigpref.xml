@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Enable/Disable CMAS">
+        <CheckBoxPreference android:title="Enable Emergency Alerts" android:key="\#cmas#type##all#enabled" android:summary="Allow the device to receive Presidential, Severe, Extreme, Amber and Test Alerts" android:defaultValue="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

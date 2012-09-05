@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/MENU_START_DM" android:title="Start DM" />
+    <item android:id="@id/MENU_REQ_NBR_LIST" android:title="NBR Lists" />
+</menu>

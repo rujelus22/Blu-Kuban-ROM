@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+    <com.sec.android.touchwiz.widget.TwScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.sec.android.touchwiz.widget.TwRadioGroup android:orientation="vertical" android:id="@id/repeat_radio" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/repeat_item4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarmrepeat_type4" style="@style/AlarmRadioButtonText" />
+            <com.sec.android.app.clockpackage.alarm.RepeatBtnGroup android:gravity="center" android:id="@id/week_daybutton_container" android:layout_width="fill_parent" android:layout_height="64.0dip" />
+            <View style="@style/LineSeperator" />
+            <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/repeat_item2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarmrepeat_type2" style="@style/AlarmRadioButtonText" />
+            <View style="@style/LineSeperator" />
+            <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/repeat_item3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarmrepeat_type3" style="@style/AlarmRadioButtonText" />
+            <View style="@style/LineSeperator" />
+            <com.sec.android.touchwiz.widget.TwRadioButton android:id="@id/repeat_item1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/alarmrepeat_type1" style="@style/AlarmRadioButtonText" />
+            <com.sec.android.app.clockpackage.alarm.RepeatBtnGroup android:gravity="center" android:id="@id/once_daybutton_container" android:layout_width="fill_parent" android:layout_height="64.0dip" />
+            <View style="@style/LineSeperator" />
+        </com.sec.android.touchwiz.widget.TwRadioGroup>
+    </com.sec.android.touchwiz.widget.TwScrollView>
+    <com.sec.android.touchwiz.widget.TwSoftkeyView android:layout_width="fill_parent" android:layout_height="59.329987dip"
+      xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+        <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/repeat_save" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@android:string/ok" />
+        <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/repeat_cancel" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/cancel" />
+    </com.sec.android.touchwiz.widget.TwSoftkeyView>
+</LinearLayout>

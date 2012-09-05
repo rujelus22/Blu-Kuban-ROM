@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:orientation="vertical" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:enabled="false" android:textSize="18.0dip" android:textColor="#ffb1b1b1" android:id="@id/tv_user_info1" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.329987dip" android:layout_marginTop="11.329987dip" android:layout_marginRight="11.329987dip" android:text="@string/cm_msg_regist_info1" />
+            <EditText android:id="@id/et_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.329987dip" android:layout_marginTop="11.329987dip" android:layout_marginRight="11.329987dip" android:hint="@string/cm_hint_name_s" android:singleLine="true" android:capitalize="sentences" />
+            <EditText android:id="@id/et_email" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.329987dip" android:layout_marginTop="11.329987dip" android:layout_marginRight="11.329987dip" android:hint="@string/cm_hint_email_s" android:singleLine="true" android:maxLength="60" android:inputType="textEmailAddress" />
+            <TextView android:enabled="true" android:textSize="18.0dip" android:textColor="#ffb1b1b1" android:id="@id/tv_user_info2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.329987dip" android:layout_marginTop="11.329987dip" android:layout_marginRight="11.329987dip" android:text="@string/cm_msg_regist_info2" />
+            <CheckBox android:textSize="18.0dip" android:id="@id/check_after_week" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="11.329987dip" android:text="@string/cm_msg_regist_not_show" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@android:style/ButtonBar"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <Button android:id="@id/btn_later" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/cm_btn_later" android:layout_weight="1.0" />
+        <Button android:id="@id/btn_register" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/cm_btn_register" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

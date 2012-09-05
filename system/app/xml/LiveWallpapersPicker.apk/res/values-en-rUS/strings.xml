@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="application_name">Live wallpaper picker</string>
+    <string name="live_wallpaper_picker_title">Live wallpapers</string>
+    <string name="live_wallpaper_picker_label">Live wallpapers</string>
+    <string name="live_wallpaper_preview_title">Live wallpaper preview</string>
+    <string name="configure_wallpaper">Settings</string>
+    <string name="wallpaper_instructions">Set wallpaper</string>
+    <string name="live_wallpaper_empty">No live wallpapers</string>
+    <string name="set_live_wallpaper">Set wallpaper</string>
+    <string name="live_wallpaper_loading">Loading live wallpaper...</string>
+    <string name="picker_dialog_title">Set wallpaper</string>
+    <string name="picker_dialog_sentence">The same live wallpaper will be applied to the home screen too</string>
+    <string name="picker_positive_button">OK</string>
+    <string name="picker_nagative_button">Cancel</string>
+    <string name="wallpaper_cancel">Cancel</string>
+</resources>

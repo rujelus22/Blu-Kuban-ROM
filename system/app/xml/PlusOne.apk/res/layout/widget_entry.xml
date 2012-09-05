@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/widget_entry" android:background="@color/solid_white" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/user_image" android:paddingRight="5.0dip" android:paddingBottom="7.0dip" android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="fitXY" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:textSize="@dimen/stream_name_text_size" android:textStyle="bold" android:textColor="@color/stream_name_color" android:id="@id/user_name" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:layout_toRightOf="@id/user_image" android:layout_alignParentTop="true" android:layout_alignWithParentIfMissing="true" />
+    <LinearLayout android:orientation="vertical" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/user_image" android:layout_below="@id/user_name">
+        <TextView android:textSize="@dimen/stream_content_text_size" android:textColor="@color/stream_content_color" android:id="@id/content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="3" />
+        <TextView android:textSize="@dimen/stream_original_author_name_text_size" android:textStyle="bold" android:textColor="@color/stream_name_color" android:id="@id/original_author" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/detail_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/reshare_line" android:visibility="gone" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="3.0dip" android:layout_marginBottom="7.0dip" android:src="@color/stream_reshare_line_color" />
+            <ImageView android:id="@id/reshare_spacer" android:visibility="invisible" android:layout_width="10.0dip" android:layout_height="fill_parent" android:layout_marginTop="3.0dip" android:layout_marginBottom="7.0dip" android:src="@color/clear" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageView android:layout_gravity="center_vertical" android:id="@id/detail_media" android:paddingLeft="5.0dip" android:paddingTop="1.0dip" android:paddingRight="5.0dip" android:paddingBottom="7.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <ImageView android:layout_gravity="center_vertical" android:id="@id/detail_media_small" android:paddingLeft="5.0dip" android:paddingTop="1.0dip" android:paddingRight="5.0dip" android:paddingBottom="2.0dip" android:visibility="gone" android:layout_width="@dimen/fav_icon_size" android:layout_height="@dimen/fav_icon_size" android:scaleType="centerCrop" />
+                    <TextView android:textSize="@dimen/stream_content_text_size" android:textColor="@color/stream_content_color" android:id="@id/detail_text" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="4" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView android:layout_gravity="center" android:id="@id/media_1_1" android:paddingBottom="7.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <ImageView android:layout_gravity="center" android:id="@id/media_overlay_1_1" android:paddingBottom="7.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/video_overlay" />
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView android:layout_gravity="center" android:id="@id/media_1_2" android:paddingBottom="7.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <ImageView android:layout_gravity="center" android:id="@id/media_overlay_1_2" android:paddingBottom="7.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/video_overlay" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:paddingTop="2.0dip" android:paddingBottom="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/plus_one_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_plus_one" />
+            <TextView android:textSize="@dimen/stream_feedback_text_size" android:textColor="@color/stream_link_color" android:layout_gravity="center_vertical" android:id="@id/plus_one_count" android:paddingLeft="5.0dip" android:paddingRight="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/comment_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_comment" />
+            <TextView android:textSize="@dimen/stream_feedback_text_size" android:textColor="@color/stream_link_color" android:layout_gravity="center_vertical" android:id="@id/comment_count" android:paddingLeft="5.0dip" android:paddingRight="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

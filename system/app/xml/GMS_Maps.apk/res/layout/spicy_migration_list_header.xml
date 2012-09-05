@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/primary_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:id="@id/subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" />
+        <TextView android:id="@id/paragraph" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" />
+        <include android:id="@id/select_all_header" layout="@layout/spicy_migration_select_all" />
+    </LinearLayout>
+    <View android:background="@drawable/foreground_panel_top_shadow" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

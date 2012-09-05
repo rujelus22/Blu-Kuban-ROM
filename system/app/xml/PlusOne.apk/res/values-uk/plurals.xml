@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="album_photo_count">
+        <item quantity="other">%d фото</item>
+        <item quantity="zero">%d фото</item>
+        <item quantity="one">%d фото</item>
+    </plurals>
+    <plurals name="from_your_phone_selected_count">
+        <item quantity="other">Вибрано: %d.</item>
+        <item quantity="one">Вибрано: %d.</item>
+    </plurals>
+    <plurals name="delete_photo_dialog_title">
+        <item quantity="other">Видалити всі копії цих фотографій?</item>
+        <item quantity="one">Видалити всі копії цієї фотографії?</item>
+    </plurals>
+    <plurals name="delete_remote_photo_dialog_message">
+        <item quantity="other">Дійсно видалити ці фото з альбому Google+? Цю дію неможливо скасувати.</item>
+        <item quantity="one">Дійсно видалити це фото з альбому Google+? Цю дію неможливо скасувати.</item>
+    </plurals>
+    <plurals name="delete_local_photo_dialog_message">
+        <item quantity="other">Дійсно видалити ці фото з телефону й альбому Google+? Цю дію неможливо скасувати.</item>
+        <item quantity="one">Дійсно видалити це фото з телефону й альбому Google+? Цю дію неможливо скасувати.</item>
+    </plurals>
+    <plurals name="delete_photo_pending">
+        <item quantity="other">Видалення фотографій...</item>
+        <item quantity="one">Видалення фотографії...</item>
+    </plurals>
+    <plurals name="plus_one_people_more_plus_ones">
+        <item quantity="other">ще %d</item>
+        <item quantity="one">ще 1</item>
+    </plurals>
+    <plurals name="plusoned_by_unknowns">
+        <item quantity="other">від %d корист.</item>
+        <item quantity="one">від 1 користувача</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_unknowns">
+        <item quantity="other">від вас і ще %d</item>
+        <item quantity="one">від вас і ще 1 користувача</item>
+    </plurals>
+    <plurals name="plusoned_by_one_known_and_unknowns">
+        <item quantity="other">від користувача %s та ще %d</item>
+        <item quantity="one">від користувача %s і ще 1 особи</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_one_known_and_unknowns">
+        <item quantity="other">від вас, користувача %s та ще %d</item>
+        <item quantity="one">від вас, користувача %s і ще 1 особи</item>
+    </plurals>
+    <plurals name="plusoned_by_two_known_and_unknowns">
+        <item quantity="other">від користувачів %s, %s та ще %d</item>
+        <item quantity="one">від користувачів %s, %s і ще 1 особи</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_two_known_and_unknowns">
+        <item quantity="other">від вас, користувачів %s, %s і ще %d</item>
+        <item quantity="one">від вас, користувачів %s, %s і ще 1 особи</item>
+    </plurals>
+    <plurals name="comments">
+        <item quantity="other">%d коментаря</item>
+        <item quantity="one">%d коментар</item>
+    </plurals>
+    <plurals name="delete_photo">
+        <item quantity="other">Видалити фотографії</item>
+        <item quantity="one">Видалити фотографію</item>
+    </plurals>
+    <plurals name="circle_entry_content_description">
+        <item quantity="other">%s; кількість учасників: %d</item>
+        <item quantity="one">%s; кількість учасників: %d</item>
+    </plurals>
+    <plurals name="notifications_ticker_text">
+        <item quantity="other">Нові сповіщення Google+</item>
+        <item quantity="one">Нове сповіщення Google+</item>
+    </plurals>
+    <plurals name="notifications_content_text">
+        <item quantity="other">%1$s (%2$d)</item>
+        <item quantity="one">%1$s (%2$d)</item>
+    </plurals>
+    <plurals name="audience_display_selection_count">
+        <item quantity="other">Вибрано %d</item>
+        <item quantity="one">Вибрано %d</item>
+    </plurals>
+    <plurals name="circle_count_and_matched_email">
+        <item quantity="other">Кола: %d, %s</item>
+        <item quantity="one">Кола: %d, %s</item>
+    </plurals>
+    <plurals name="circle_selection_count">
+        <item quantity="other">Кіл: %d</item>
+        <item quantity="one">Кіл: %d</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_title">
+        <item quantity="other">Видалити коло</item>
+        <item quantity="one">Видалити коло</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_message">
+        <item quantity="other">Видалити ці кола остаточно?</item>
+        <item quantity="one">Видалити це коло остаточно?</item>
+    </plurals>
+    <plurals name="delete_circles_operation_pending">
+        <item quantity="other">Видалення кіл...</item>
+        <item quantity="one">Видалення кола...</item>
+    </plurals>
+    <plurals name="circle_people_count">
+        <item quantity="other">Людей: %d</item>
+        <item quantity="one">Користувачів: %d</item>
+    </plurals>
+    <plurals name="remove_people_dialog_title">
+        <item quantity="other">Видалити людей</item>
+        <item quantity="one">Видалити користувача</item>
+    </plurals>
+    <plurals name="remove_people_dialog_message">
+        <item quantity="other">Видалити цих користувачів із кола?</item>
+        <item quantity="one">Видалити цього користувача з кола?</item>
+    </plurals>
+    <plurals name="add_people_operation_pending">
+        <item quantity="other">Додавання користувачів...</item>
+        <item quantity="one">Додавання користувача...</item>
+    </plurals>
+    <plurals name="remove_people_operation_pending">
+        <item quantity="other">Видалення користувачів...</item>
+        <item quantity="one">Видалення користувача...</item>
+    </plurals>
+    <plurals name="dismiss_people_operation_pending">
+        <item quantity="other">Відхилення користувачів...</item>
+        <item quantity="one">Відхилення користувача...</item>
+    </plurals>
+    <plurals name="circle_button_more_circles">
+        <item quantity="other">і ще %d</item>
+        <item quantity="one">і ще %d</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d хв.</item>
+        <item quantity="one">%d хв.</item>
+    </plurals>
+    <plurals name="num_hours_ago">
+        <item quantity="other">%d год.</item>
+        <item quantity="one">%d год.</item>
+    </plurals>
+    <plurals name="num_days_ago">
+        <item quantity="other">%d дн.</item>
+        <item quantity="one">%d дн.</item>
+    </plurals>
+    <plurals name="ads_plus_one_annotation_count_only">
+        <item quantity="other">Ще %1$d людей</item>
+        <item quantity="one">Ще %1$d особа</item>
+    </plurals>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voice_effects_entries">
+        <item>正常</item>
+        <item>低沉聲</item>
+        <item>高亢聲</item>
+        <item>薄弱聲</item>
+        <item>粗厚聲</item>
+        <item>機器人聲</item>
+        <item>氦氣效果</item>
+    </string-array>
+</resources>

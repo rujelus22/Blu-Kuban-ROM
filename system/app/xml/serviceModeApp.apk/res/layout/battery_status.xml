@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true">
+        <TextView android:textSize="14.0sp" android:id="@id/view_status" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <TextView android:textSize="12.0sp" android:id="@id/view_help" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <Button android:textColor="#ffff0000" android:id="@id/quickstart" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/QuickStart" />
+    </LinearLayout>
+</ScrollView>

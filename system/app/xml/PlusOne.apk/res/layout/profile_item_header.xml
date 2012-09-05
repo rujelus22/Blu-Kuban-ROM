@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="120.0dip" android:layout_height="120.0dip">
+        <ImageView android:id="@id/avatar_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="#ffffffff" android:gravity="center" android:id="@id/choose_photo_text" android:background="#99000000" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/add" android:singleLine="true" android:layout_alignParentBottom="true" />
+        <View android:id="@id/avatar_action" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/ListItemAction" />
+        <ProgressBar android:id="@id/photo_progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" android:layout_centerInParent="true" style="?android:attr/progressBarStyleSmall" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="16.0dip" android:layout_weight="1.0">
+        <com.google.android.apps.plus.views.CirclesButton android:id="@id/circles_button" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/avatar_view" android:layout_centerVertical="true" style="@style/CirclesButton" />
+        <com.google.android.apps.plus.views.CirclesButton android:id="@id/add_to_circles_button" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add_to_circles" android:layout_toRightOf="@id/avatar_view" android:layout_centerVertical="true" style="@style/AddToCirclesButton" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ffaa0000" android:id="@id/blocked" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_person_blocked" android:layout_toRightOf="@id/avatar_view" android:layout_centerVertical="true" />
+        <ProgressBar android:id="@id/progress_bar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:indeterminate="true" android:layout_toRightOf="@id/avatar_view" android:layout_centerVertical="true" style="?android:attr/progressBarStyleSmall" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="14.0sp" android:textColor="#ff999999" android:ellipsize="marquee" android:id="@id/tag_line" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:maxLines="2" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/plus_one" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/plus_one_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_plus_one" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/plus_one_by_me_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_plus_one_by_me" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="12.0sp" android:textColor="#ff6f8fc7" android:layout_gravity="center_vertical" android:id="@id/plus_one_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

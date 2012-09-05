@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/ACCELEROMETER_Sensor" />
+    <View android:background="@drawable/separator" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="15.0dip" />
+    <TextView android:textSize="15.0sp" android:id="@id/tv_x" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginBottom="5.0dip" />
+    <TextView android:textSize="15.0sp" android:id="@id/tv_y" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginBottom="5.0dip" />
+    <TextView android:textSize="15.0sp" android:id="@id/tv_z" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginBottom="5.0dip" />
+    <TextView android:textSize="15.0sp" android:id="@id/tv_calibration" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginBottom="5.0dip" />
+    <View android:background="@drawable/separator" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_marginBottom="15.0dip" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/btn_calibration" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:text="@string/acc_sensor_calibration" android:layout_alignParentLeft="true" />
+        <Button android:id="@id/btn_calibration_erase" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginRight="25.0dip" android:text="@string/acc_sensor_calibration_data_erase" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

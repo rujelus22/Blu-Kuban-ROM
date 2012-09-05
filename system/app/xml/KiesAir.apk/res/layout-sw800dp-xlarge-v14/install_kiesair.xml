@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/kiesairlogo" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="164.0dip" android:src="@drawable/kiesair_logo" android:layout_centerHorizontal="true" android:contentDescription="@string/appName" />
+    <TextView android:textSize="22.0dip" android:textColor="#ffffffff" android:gravity="top|center" android:id="@id/installHelpText" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="100.0dip" android:layout_marginTop="418.0dip" android:layout_marginRight="100.0dip" android:text="@string/help_in_stop" android:lineSpacingMultiplier="1.13" />
+    <TextView android:textSize="18.0dip" android:textColor="#ffa6a6a6" android:gravity="left" android:id="@id/installStatus" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="164.0dip" android:layout_marginTop="613.0dip" android:layout_marginRight="164.0dip" />
+    <ProgressBar android:id="@id/installProgressBar" android:focusable="true" android:layout_width="fill_parent" android:layout_height="8.0dip" android:layout_marginLeft="164.0dip" android:layout_marginTop="643.0dip" android:layout_marginRight="164.0dip" android:max="100" android:progress="0" android:progressDrawable="@drawable/kiesair_progressbar" style="@android:style/Widget.ProgressBar.Horizontal" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/layoutSoftkeyInstall" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="109.0dip" android:layout_alignParentBottom="true">
+        <Button android:textColor="#ffff0000" android:id="@id/installButton" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="140.0dip" android:layout_marginRight="140.0dip" android:text="@string/start" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

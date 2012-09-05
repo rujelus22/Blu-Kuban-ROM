@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Tw_Primary_Text_Style">
+        <item name="android:textSize">33.0px</item>
+        <item name="android:textColor">@color/color_palette_29</item>
+    </style>
+    <style name="Tw_Secondary_Text_Style">
+        <item name="android:textSize">21.0px</item>
+        <item name="android:textColor">@color/color_palette_03</item>
+    </style>
+    <style name="Tw_Title_Style">
+        <item name="android:textSize">21.0px</item>
+        <item name="android:textColor">@color/color_palette_28</item>
+    </style>
+    <style name="Tw_Sub_Title_Style">
+        <item name="android:textSize">21.0px</item>
+        <item name="android:textColor">@color/color_palette_28</item>
+    </style>
+    <style name="Tw_Soft_Button_Style">
+        <item name="android:textSize">24.0px</item>
+        <item name="android:textColor">@color/color_palette_02</item>
+    </style>
+    <style name="TwSoftkeyItemStyle" parent="@android:style/Widget">
+        <item name="android:textAppearance">@style/TwTextAppearanceSoftkey</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">0.0dip</item>
+        <item name="android:paddingBottom">0.0dip</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:maxLines">2</item>
+    </style>
+    <style name="TwTextAppearanceTitle">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/tw_textappearance_title</item>
+    </style>
+    <style name="TwTextAppearanceTab">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_tab</item>
+    </style>
+    <style name="TwTextAppearanceMenuSmall">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_menusmall</item>
+    </style>
+    <style name="TwTextAppearanceSoftkey">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_softkey</item>
+    </style>
+    <style name="TwTextAppearancePopupOneLine">
+        <item name="android:textSize">30.0px</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_popup_oneline</item>
+    </style>
+    <style name="TwTextAppearanceListOneLine">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listoneline</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLinePrimary">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listtwolineprimary</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLineSecondary">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listtwolinesecondary</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLineSecondaryOrange">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listtwolinesecondaryorange</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLineSecondaryGrey">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listtwolinesecondarygrey</item>
+    </style>
+    <style name="TwTextAppearanceGroupTitle">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/tw_textappearance_grouptitle</item>
+    </style>
+    <style name="EmailSenderReadColor">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/email_sender_read_color</item>
+    </style>
+    <style name="EmailContentReadColor">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/email_content_read_color</item>
+    </style>
+    <style name="EmailTitleReadColor">
+        <item name="android:textSize">20.659973sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/email_title_read_color</item>
+    </style>
+    <style name="SocialHubTheme" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:windowActionBar">false</item>
+    </style>
+</resources>

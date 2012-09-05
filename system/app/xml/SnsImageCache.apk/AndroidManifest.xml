@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1" android:versionName="1.0" package="com.sec.android.app.snsimagecache"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.sec.android.app.sns.permission.RECEIVE_SNS_BROADCAST" />
+    <permission android:name="com.sec.android.app.snsimagecache.permission.READ_SNSIMAGECACHE_DB" />
+    <permission android:name="com.sec.android.app.snsimagecache.permission.WRITE_SNSIMAGECACHE_DB" />
+    <application android:label="SnsImageCache" android:icon="@drawable/icon">
+        <service android:name=".SnsImageCacheService" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.sec.android.app.snsimagecache.ISnsImageCacheService" />
+                <action android:name="com.sec.android.app.snsimagecache.ISnsImageCacheCallback" />
+            </intent-filter>
+        </service>
+        <provider android:name=".SnsImageCacheContentProvider" android:readPermission="com.sec.android.app.snsimagecache.permission.READ_SNSIMAGECACHE_DB" android:writePermission="com.sec.android.app.snsimagecache.permission.WRITE_SNSIMAGECACHE_DB" android:authorities="com.sec.android.app.provider.snsimagecache" />
+        <receiver android:name=".SnsImageCacheBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.sec.android.app.sns.action.REMOVE_ALL_ACCOUNT" />
+                <action android:name="com.sec.android.app.sns.action.DEBUG" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15" />
+</manifest>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_connect_title" android:key="pref_connect_main">
+        <Preference android:title="@string/pref_license_status" android:key="pref_license_status" />
+        <Preference android:title="@string/pref_license_type" android:key="pref_license_type" />
+        <Preference android:title="@string/pref_terms_use" android:key="pref_terms_use" />
+        <Preference android:title="@string/pref_swyper_id" android:key="pref_swyper_id" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DataCreate</string>
+    <string name="current_data_state_call_log">Registro de llamadas</string>
+    <string name="current_data_state_incoming_call">Llamadas entrantes</string>
+    <string name="current_data_state_outgoing_call">Llamada saliente</string>
+    <string name="current_data_state_missed_call">Llamada perdida</string>
+    <string name="current_data_state_photo">Foto</string>
+    <string name="current_data_state_video">Video</string>
+    <string name="current_data_state_mp3">MP3</string>
+    <string name="current_data_state_voice_memo">Nota de voz</string>
+    <string name="current_data_state_phone_book">Agenda</string>
+    <string name="current_data_state_schedule">Cita</string>
+    <string name="current_data_state_tasks">Tareas</string>
+    <string name="current_data_state_memo">Nota</string>
+    <string name="current_data_state_message">Mensaje</string>
+    <string name="current_data_state_mmsinbox">Buzón de entrada de mensaje multimedia</string>
+    <string name="current_data_state_mmsoutbox">Buzón de salida de mensajes multimedia</string>
+    <string name="current_data_state_ring_tone">Tono de llamada</string>
+    <string name="current_data_state_screen">Pantalla</string>
+    <string name="current_data_state_not_available">N/A</string>
+    <string name="current_data_state_calculating">Calculando...</string>
+    <string name="data_copy_inbox">B. entrada</string>
+    <string name="data_copy_outbox">Buz. salida</string>
+    <string name="data_copy_sentbox">Enviados</string>
+    <string name="data_copy_draftbox">Borrador</string>
+    <string name="data_copy_phonebook">Agenda</string>
+    <string name="data_copy_calllog">Registro de llamadas</string>
+    <string name="data_copy_incoming_call">Llamadas entrantes</string>
+    <string name="data_copy_outgoing_call">Llamada saliente</string>
+    <string name="data_copy_missed_call">Llamada perdida</string>
+    <string name="data_copy_etc">Etc.</string>
+    <string name="data_copy_schedule">Cita</string>
+    <string name="data_copy_memo">Nota</string>
+    <string name="file_copy_photo">Imagen</string>
+    <string name="file_copy_mp3">MP3</string>
+    <string name="file_copy_video">Video</string>
+    <string name="file_copy_voice_memo">Nota de voz</string>
+    <string name="file_copy_reset">Restablecer</string>
+    <string name="ver_version_name">Versión</string>
+    <string name="ver_label_FTA">Modo de prueba</string>
+    <string name="ver_version">Versión</string>
+</resources>

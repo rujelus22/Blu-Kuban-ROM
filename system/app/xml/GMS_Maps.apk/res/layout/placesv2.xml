@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/primary_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/places2_wizard_header" />
+        <include layout="@layout/places2_location_selector" />
+        <ScrollView android:id="@id/scrollView" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:tileMode="repeat">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="vertical" android:id="@id/defaultCategories" android:paddingTop="12.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/progressView" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ProgressBar android:layout_gravity="center" android:padding="10.0dip" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <TextView android:id="@id/label" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <include android:id="@id/informationPanel" android:visibility="gone" layout="@layout/places_information_panel" />
+                <include layout="@layout/places_profile_panel" />
+                <View android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="50.0dip" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <include layout="@layout/places_snaptoplace" />
+</FrameLayout>

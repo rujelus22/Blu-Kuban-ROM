@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voice_effects_entries">
+        <item>Normale</item>
+        <item>Voce profonda</item>
+        <item>Voce acuta</item>
+        <item>Voce sottile</item>
+        <item>Voce spessa</item>
+        <item>Voce robotizzata</item>
+        <item>Voce con effetto elio</item>
+    </string-array>
+</resources>

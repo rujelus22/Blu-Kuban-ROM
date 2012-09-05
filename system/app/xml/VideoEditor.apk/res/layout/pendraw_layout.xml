@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/pendrawActivityParent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.app.ve.view.paint.CanvasView android:id="@id/canvas" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="10.0" />
+    <include layout="@layout/drawactivity_title" />
+</RelativeLayout>

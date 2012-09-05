@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="paper_size_entries">
+        <item>A4</item>
+        <item>Letter</item>
+    </string-array>
+    <string-array name="paper_size_values">
+        <item>A4</item>
+        <item>Letter</item>
+    </string-array>
+    <array name="orientation_entries">
+        <item>@string/auto</item>
+        <item>@string/portrait</item>
+        <item>@string/landscape</item>
+    </array>
+    <string-array name="orientation_values">
+        <item>auto</item>
+        <item>portrait</item>
+        <item>landscape</item>
+    </string-array>
+    <array name="paper_type_entries">
+        <item>@string/normal</item>
+    </array>
+    <string-array name="paper_type_values">
+        <item>Normal</item>
+    </string-array>
+    <array name="color_mode_entries">
+        <item>@string/mono</item>
+        <item>@string/color</item>
+    </array>
+    <string-array name="color_mode_values">
+        <item>mono</item>
+        <item>color</item>
+    </string-array>
+    <array name="duplex_mode_entries">
+        <item>@string/none</item>
+        <item>@string/long_edge</item>
+        <item>@string/short_edge</item>
+    </array>
+    <string-array name="duplex_mode_values">
+        <item>none</item>
+        <item>duplex_long</item>
+        <item>duplex_short</item>
+    </string-array>
+</resources>

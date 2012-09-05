@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@id/directionsActionBarView" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/routeSummary" android:background="@drawable/action_bar_button" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:textAppearance="@style/DirectionsBannerGreySmall" android:textSize="13.0sp" android:id="@id/to" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_alignBaseline="@id/line1" />
+        <TextView android:textAppearance="@style/WhiteBoldLarge" android:textSize="16.0sp" android:id="@id/line1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_toRightOf="@id/to" />
+        <TextView android:textAppearance="@style/DirectionsBannerGrey" android:id="@id/line2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/line1" android:layout_alignLeft="@id/line1" />
+        <ImageView android:id="@id/trafficDot" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_toLeftOf="@id/line2" android:layout_alignTop="@id/line2" android:layout_alignBottom="@id/line2" />
+    </RelativeLayout>
+</LinearLayout>

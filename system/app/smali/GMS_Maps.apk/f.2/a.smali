@@ -1,0 +1,90 @@
+.class Lf/a;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field private final a:Landroid/os/Handler;
+
+
+# direct methods
+.method constructor <init>(Landroid/location/LocationListener;Landroid/os/Looper;)V
+    .registers 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lf/b;
+
+    invoke-direct {v0, p0, p2, p1}, Lf/b;-><init>(Lf/a;Landroid/os/Looper;Landroid/location/LocationListener;)V
+
+    iput-object v0, p0, Lf/a;->a:Landroid/os/Handler;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()V
+    .registers 3
+
+    iget-object v0, p0, Lf/a;->a:Landroid/os/Handler;
+
+    const/4 v1, 0x3
+
+    invoke-static {v0, v1}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    return-void
+.end method
+
+.method public a(ILandroid/os/Bundle;)V
+    .registers 6
+
+    iget-object v0, p0, Lf/a;->a:Landroid/os/Handler;
+
+    const/4 v1, 0x2
+
+    const/4 v2, -0x1
+
+    invoke-static {v0, v1, p1, v2, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;IIILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    return-void
+.end method
+
+.method public a(Landroid/location/Location;)V
+    .registers 4
+
+    iget-object v0, p0, Lf/a;->a:Landroid/os/Handler;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1, p1}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    return-void
+.end method
+
+.method public b()V
+    .registers 3
+
+    iget-object v0, p0, Lf/a;->a:Landroid/os/Handler;
+
+    const/4 v1, 0x4
+
+    invoke-static {v0, v1}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    return-void
+.end method

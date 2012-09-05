@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/actionbar" />
+    <ScrollView android:id="@id/welcome_scroll" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/button_bar" android:layout_below="@id/action_bar">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="22.0dip" android:textColor="#ffffffff" android:id="@id/title_firstrun" android:paddingLeft="9.0dip" android:paddingTop="10.0dip" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/title_firstrun" android:maxLines="2" android:shadowColor="#ff272727" android:shadowRadius="2.0" />
+            <TextView android:textSize="16.0dip" android:textColor="#ffffffff" android:id="@id/body_firstrun" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/body_firstrun" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="vertical" android:id="@id/button_bar" android:layout_alignParentBottom="true" style="@style/ButtonBar">
+        <Button android:layout_gravity="center_horizontal" android:id="@id/cont" android:layout_width="296.0dip" android:layout_height="wrap_content" android:text="@string/cont" android:layout_centerHorizontal="true" style="@style/Button" />
+    </LinearLayout>
+</RelativeLayout>

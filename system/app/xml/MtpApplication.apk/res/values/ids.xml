@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="handle1">false</item>
+    <item type="id" name="mtp_animation_status">false</item>
+</resources>

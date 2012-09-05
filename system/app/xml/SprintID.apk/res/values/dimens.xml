@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="actionbar_compat_height">49.0dip</dimen>
+    <dimen name="body_padding_medium">10.0dip</dimen>
+    <dimen name="body_padding_large">10.0dip</dimen>
+    <dimen name="text_size_xsmall">12.0sp</dimen>
+    <dimen name="text_size_small">14.0sp</dimen>
+    <dimen name="text_size_medium">18.0sp</dimen>
+    <dimen name="text_size_large">20.0sp</dimen>
+    <dimen name="text_size_xlarge">22.0sp</dimen>
+</resources>

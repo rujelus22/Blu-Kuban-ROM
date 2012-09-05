@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, ShutdownPreference!</string>
+    <string name="app_name">ShutdownApp</string>
+    <string name="shutdown">Shutdown</string>
+    <string name="shutdownSummary">Enable to Shutdown on End call long press</string>
+</resources>

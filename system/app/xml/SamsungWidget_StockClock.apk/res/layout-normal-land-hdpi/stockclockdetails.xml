@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:background="@drawable/title_bar_normal" android:layout_width="fill_parent" android:layout_height="36.599976dip">
+        <ImageView android:id="@id/block_a" android:background="@drawable/title_bar_selector" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:src="@drawable/finance_logo_title_normal" android:layout_centerVertical="true" />
+        <com.sec.android.widgetapp.stockclock.stockview.MyViewFlipper android:id="@id/indices_flipper" android:layout_width="308.0dip" android:layout_height="29.299988dip" android:layout_marginRight="3.2999878dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="219.29999dip">
+        <com.sec.android.widgetapp.stockclock.stockview.StockClockGallery android:id="@id/gallery" android:focusable="true" android:fadingEdge="none" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/left_arrow" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="54.69998dip" android:src="@drawable/ic_flicking_arrow_l" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        <ImageView android:id="@id/right_arrow" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="54.69998dip" android:src="@drawable/ic_flicking_arrow_r" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/bottomline" android:background="@drawable/bottom_line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottom_bg" android:layout_width="fill_parent" android:layout_height="36.599976dip">
+        <LinearLayout android:gravity="right|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <Button android:textSize="10.599976dip" android:textColor="#80ffffff" android:gravity="center" android:id="@id/detailquotesdelayedbg" android:background="@drawable/quotes_delayed_selector" android:paddingLeft="5.299988dip" android:paddingRight="5.299988dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1.2999878dip" android:text="@string/detail_quotesdelayed" />
+            <TextView android:textSize="10.599976dip" android:textColor="#80ffffff" android:gravity="center_vertical" android:id="@id/detaillastupdate" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="6.5999756dip" android:includeFontPadding="false" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/detailfreshbtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.2999878dip">
+                <ImageView android:id="@id/detailupdatebutton" android:background="@drawable/refresh_selector" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/refresh_anim" android:scaleType="center" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

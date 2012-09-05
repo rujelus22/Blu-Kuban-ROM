@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/MusicPlayer_View_new" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/music_player_head" />
+    <com.sec.android.app.music.widget.MusicPlayerTouchHandleLayout android:id="@id/music_player_main_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <include layout="@layout/music_player_album" />
+        <com.sec.android.touchwiz.widget.TwSeekBarBubble android:id="@id/volumeseekbubble" android:layout_width="120.0dip" android:layout_height="@dimen/music_player_view_volume_pannel_height" android:layout_marginTop="33.0dip" android:layout_alignParentRight="true">
+            <com.sec.android.touchwiz.widget.TwSeekBar android:layout_gravity="right" android:id="@id/volumeseekbar" android:background="@drawable/volume_slider_bg" android:paddingTop="23.0dip" android:paddingBottom="30.0dip" android:focusable="true" android:clickable="true" android:layout_width="60.0dip" android:layout_height="fill_parent" style="@style/volume_seekbar" />
+        </com.sec.android.touchwiz.widget.TwSeekBarBubble>
+    </com.sec.android.app.music.widget.MusicPlayerTouchHandleLayout>
+    <RelativeLayout android:id="@id/MusicPlayerControls" android:background="@drawable/music_play_controller_bg" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/music_player_view_port_control_height">
+        <include layout="@layout/music_player_control" />
+    </RelativeLayout>
+</LinearLayout>

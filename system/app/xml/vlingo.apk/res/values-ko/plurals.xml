@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="samsung_schedule_multiple_events">
+        <item quantity="other">%1$d 개 이벤트가 있습니다.</item>
+        <item quantity="one">%1$d 개 이벤트가 있습니다.</item>
+    </plurals>
+    <plurals name="checkEventNameTimeDetail">
+        <item quantity="other">, 시간 %2$s , %1$s</item>
+    </plurals>
+    <plurals name="checkEventTimeDetail">
+        <item quantity="other">시간 %1$s</item>
+    </plurals>
+    <plurals name="numberOfUnreadSMS">
+        <item quantity="other">%1$d 개 새 메시지</item>
+        <item quantity="one">%1$d 개 새 메시지</item>
+    </plurals>
+    <plurals name="numberOfMissedCalls">
+        <item quantity="other">%1$d 개 부재중 전화가 있습니다</item>
+        <item quantity="one">%1$d 개 부재중 전화가 있습니다</item>
+    </plurals>
+    <plurals name="numberOfFiredEvents">
+        <item quantity="other">%1$d 개 지난 이벤트가 있습니다</item>
+        <item quantity="one">%1$d 개 지난 이벤트가 있습니다</item>
+    </plurals>
+    <plurals name="samsung_schedule_multiple_events_remaining">
+        <item quantity="other">%1$d 개 이벤트가 남아 있습니다. 계속하시려면 다음, 그만두시려면 취소라고 말하십시오.</item>
+        <item quantity="one">1 개 이벤트가 남아 있습니다. 계속하시려면 다음, 그만두시려면 취소라고 말하십시오.</item>
+    </plurals>
+</resources>

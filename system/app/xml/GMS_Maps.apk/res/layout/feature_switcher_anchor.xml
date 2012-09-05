@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/btn_feature_switcher" android:background="@drawable/header_bar_button" android:focusable="false" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/feature_switcher_icon" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_feature_map" android:scaleType="center" />
+    <ImageView android:layout_gravity="center_vertical" android:paddingRight="4.0dip" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/switcher_dropdown_triangle" android:scaleType="center" />
+    <View android:id="@id/featureSwitcherDivider" android:background="@drawable/header_divider_line" android:layout_width="2.0px" android:layout_height="fill_parent" android:layout_marginTop="2.0dip" />
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1" android:versionName="0.1" package="com.sec.android.app.voicerecorder"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.STATUS_BAR" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.ACCESS_DEV_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE">
+        <group gid="media_rw" />
+    </uses-permission>
+    <application android:label="@string/app_name" android:icon="@drawable/homescreen_icon_voicerec">
+        <activity android:theme="@android:style/Theme.DeviceDefault.NoActionBar" android:name=".VoiceRecorderMainActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.MediaStore.RECORD_SOUND" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".NoSdCardActivity" />
+        <activity android:theme="@android:style/Theme.DeviceDefault.Dialog" android:name=".VoiceListOptionRenameDialogActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/recorded_files" android:name="VoiceListNoFileActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/recorded_files" android:name=".VoiceListActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/settings" android:name=".SettingsActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/rename_title" android:name="VoiceListOptionRenameActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/delete" android:name="VoiceListOptionDeleteActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/share" android:name=".VoiceListOptionShareSingleActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/share" android:name="VoiceListOptionShareMultiActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@android:style/Theme.DeviceDefault.Dialog" android:name=".VoiceListOptionShareAppListActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@android:style/Theme.DeviceDefault.Dialog" android:name=".VoiceListDetailsActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <receiver android:name=".util.MediaButtonReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".util.VoiceRecGateReceiver">
+            <intent-filter>
+                <action android:name="com.sec.android.gate.GATE" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".service.VoiceRecorderService" android:enabled="true">
+            <intent-filter>
+                <action android:name=".backgroundservice.RecorderService" />
+                <action android:name="com.android.voicerecorder.HIDENOTIFICATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name=".service.VoiceRecorderServiceCallback">
+            <intent-filter>
+                <action android:name="com.sec.android.app.voicerecorder.service.VoiceRecorderService" />
+            </intent-filter>
+        </service>
+        <uses-library android:name="touchwiz" />
+        <uses-library android:name="sec_feature" />
+        <uses-library android:name="secmediarecorder" />
+    </application>
+</manifest>

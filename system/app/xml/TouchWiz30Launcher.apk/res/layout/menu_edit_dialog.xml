@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/menu_edit_dialog" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center" android:background="@drawable/mainmenu_pop_image" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="18.0dip">
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@color/menu_edit_dialog_hightlight" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:text="@string/menumanage_make_folder" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_edit_dialog_add_folder_detail" android:inputType="textMultiLine" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="19.0dip" android:layout_marginRight="19.0dip" android:layout_marginBottom="19.0dip">
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@color/menu_edit_dialog_hightlight" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:text="@string/menumanager_make_page" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_edit_dialog_add_page_detail" android:inputType="textMultiLine" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="19.0dip" android:layout_marginRight="19.0dip">
+            <CheckBox android:layout_gravity="center" android:id="@id/menu_edit_dialog_reminder" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:text="@string/motion_dialog_do_not_ask_again" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

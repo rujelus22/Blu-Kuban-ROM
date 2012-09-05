@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Режим Шофиране</string>
+    <string name="app_name">Гласови команди</string>
+    <string name="incar">Гласово разговаряне</string>
+    <string name="incar_icon">Гласово разговаряне</string>
+    <string name="Vlingo">Гласови команди</string>
+    <string name="widget_name">Глас</string>
+</resources>

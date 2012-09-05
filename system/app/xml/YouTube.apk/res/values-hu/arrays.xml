@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="safe_search_levels">
+        <item>Nincs szűrés</item>
+        <item>Közepes</item>
+        <item>Szigorú</item>
+    </string-array>
+    <string-array name="subtitles_size_entries">
+        <item>Kicsi</item>
+        <item>Közepes</item>
+        <item>Nagy</item>
+        <item>Óriási</item>
+    </string-array>
+</resources>

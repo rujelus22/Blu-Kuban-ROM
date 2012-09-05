@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard android:keyWidth="23.334003%p" android:keyHeight="8.749998%p" android:horizontalGap="1.2500048%p" android:verticalGap="1.2500048%p"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Row android:keyHeight="0.0px" android:verticalGap="1.4999986%p">
+        <Key android:keyWidth="100.0%p" android:codes="-255" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:rowEdgeFlags="top" android:keyboardMode="@id/symbol_page_email_1">
+        <Key android:horizontalGap="1.4583349%p" android:codes="33" android:keyEdgeFlags="left" android:keyLabel="!" />
+        <Key android:codes="63" android:keyLabel="\?" />
+        <Key android:codes="126" android:keyLabel="~" />
+        <Key android:codes="-5" android:keyEdgeFlags="right" android:isRepeatable="true" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyboardMode="@id/symbol_page_email_1">
+        <Key android:horizontalGap="1.4583349%p" android:codes="43" android:keyEdgeFlags="left" android:keyLabel="+" />
+        <Key android:codes="61" android:keyLabel="=" />
+        <Key android:codes="47" android:keyLabel="/" />
+        <Key android:codes="10" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyboardMode="@id/symbol_page_email_1">
+        <Key android:horizontalGap="1.4583349%p" android:codes="38" android:keyEdgeFlags="left" android:keyLabel="&amp;" />
+        <Key android:codes="37" android:keyLabel="%" />
+        <Key android:codes="36" android:keyLabel="$" />
+        <Key android:codes="-102" android:keyEdgeFlags="right" android:keyLabel="StrModeChange" />
+    </Row>
+    <Row android:rowEdgeFlags="bottom" android:keyboardMode="@id/symbol_page_email_1">
+        <Key android:horizontalGap="1.4583349%p" android:codes="-106" android:keyEdgeFlags="left" android:keyLabel="StrEmpty" />
+        <Key android:codes="123" android:keyLabel="{" />
+        <Key android:codes="125" android:keyLabel="}" />
+        <Key android:codes="-103" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:rowEdgeFlags="top" android:keyboardMode="@id/symbol_page_email_2">
+        <Key android:horizontalGap="1.4583349%p" android:codes="94" android:keyEdgeFlags="left" android:keyLabel="^" />
+        <Key android:codes="35" android:keyLabel="\#" />
+        <Key android:codes="42" android:keyLabel="*" />
+        <Key android:codes="-5" android:keyEdgeFlags="right" android:isRepeatable="true" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyboardMode="@id/symbol_page_email_2">
+        <Key android:horizontalGap="1.4583349%p" android:codes="124" android:keyEdgeFlags="left" android:keyLabel="|" />
+        <Key android:codes="96" android:keyLabel="`" />
+        <Key android:codes="39" android:keyLabel="'" />
+        <Key android:codes="10" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyboardMode="@id/symbol_page_email_2">
+        <Key android:horizontalGap="1.4583349%p" android:codes="92" android:keyEdgeFlags="left" android:keyLabel="\\" />
+        <Key android:codes="45" android:keyLabel="-" />
+        <Key android:codes="95" android:keyLabel="_" />
+        <Key android:codes="-102" android:keyEdgeFlags="right" android:keyLabel="StrModeChange" />
+    </Row>
+    <Row android:rowEdgeFlags="bottom" android:keyboardMode="@id/symbol_page_email_2">
+        <Key android:horizontalGap="1.4583349%p" android:codes="-106" android:keyEdgeFlags="left" android:keyLabel="StrEmpty" />
+        <Key android:codes="46" android:keyLabel="." />
+        <Key android:codes="44" android:keyLabel="," />
+        <Key android:codes="-103" android:keyEdgeFlags="right" android:keyLabel="StrEmpty" />
+    </Row>
+    <Row android:keyHeight="0.0px" android:verticalGap="1.2500048%p" />
+</Keyboard>

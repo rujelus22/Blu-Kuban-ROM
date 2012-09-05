@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <CheckedTextView android:gravity="center_vertical" android:id="@android:id/text1" android:paddingLeft="40.0dip" android:paddingTop="16.0dip" android:paddingRight="4.0dip" android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight" android:checkMark="?android:listChoiceIndicatorMultiple" android:drawableTop="@drawable/udb_btn_selectall" android:drawablePadding="0.0dip" />
+        <View android:background="@android:color/background_light" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip" />
+    </LinearLayout>
+    <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <LinearLayout android:gravity="center" android:id="@android:id/empty" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="&lt;Empty>" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageButton android:id="@android:id/button1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/udb_btn_delete" android:layout_weight="1.0" />
+        <ImageButton android:id="@android:id/button2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/udb_btn_cancel" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

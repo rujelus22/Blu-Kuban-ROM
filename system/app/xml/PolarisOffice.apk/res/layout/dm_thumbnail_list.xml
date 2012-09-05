@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <GridView android:gravity="center" android:id="@id/gv_thumbnail_list" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:scrollbars="horizontal|vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/dm_thumbnail_selector" android:verticalSpacing="10.0dip" android:stretchMode="spacingWidthUniform" android:columnWidth="130.0dip" android:numColumns="2" />
+    <GridView android:gravity="center" android:id="@id/gv_thumbnail_list_land" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:visibility="gone" android:scrollbars="horizontal|vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/dm_thumbnail_selector" android:verticalSpacing="10.0dip" android:stretchMode="spacingWidthUniform" android:columnWidth="130.0dip" android:numColumns="4" />
+</LinearLayout>

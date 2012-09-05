@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1" android:versionName="1.0" package="com.sec.android.widgetapp.digitalclock"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:label="@string/app_name" android:icon="@drawable/preview">
+        <receiver android:label="@string/app_name" android:name=".DigitalClockWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="sec.android.intent.action.HOME_RESUME" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/digitalclock_appwidget_info" />
+        </receiver>
+        <service android:name=".DigitalClockService">
+            <intent-filter>
+                <action android:name="digitalclock.action.startservice" />
+                <action android:name="digitalclock.action.stopservice" />
+            </intent-filter>
+        </service>
+        <uses-library android:name="touchwiz" />
+    </application>
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="15" />
+</manifest>

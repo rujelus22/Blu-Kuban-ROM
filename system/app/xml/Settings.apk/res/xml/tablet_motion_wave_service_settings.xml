@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/pan_title" android:key="parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:persistent="false" android:title="@string/use_pan_title" android:key="wave_activation" />
+    <Preference android:title="@string/sensitivity_title" android:key="sensitivity" android:dependency="wave_activation" />
+    <PreferenceCategory android:title="@string/learn_about_pan_title" />
+</PreferenceScreen>

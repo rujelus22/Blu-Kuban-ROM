@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout01" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0dip" android:id="@id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/car_item_answer_question" />
+        <TextView android:textSize="20.0dip" android:textColor="?android:textColorPrimary" android:id="@id/text_question" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="30.0dip" android:text="@string/vlingo_answers_confirm_question" />
+        <TextView android:textSize="20.0dip" android:id="@id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vlingo_answers_answer" />
+        <TextView android:textSize="20.0dip" android:textColor="?android:textColorPrimary" android:id="@id/text_answer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="30.0dip" android:text="@string/vlingo_answers_this_is_answer" />
+        <Button android:textColor="@drawable/car_home_button_text_color" android:id="@id/btn_speak_answer" android:background="@drawable/car_dark_gray_btn" android:paddingLeft="20.0dip" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginBottom="15.0dip" android:text="@string/vlingo_answers_speak_answer" android:drawableLeft="@drawable/car_logo_safereader" android:drawablePadding="-55.0dip" />
+        <Button android:textColor="@drawable/car_home_button_text_color" android:id="@id/btn_search_google" android:background="@drawable/car_dark_gray_btn" android:paddingLeft="25.0dip" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginBottom="15.0dip" android:text="@string/vlingo_answers_search_google" android:drawableLeft="@drawable/ic_mag_glass" android:drawablePadding="-44.0dip" />
+        <CheckBox android:id="@id/checkbox_autospeak_answer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Automatically speak answer" />
+    </LinearLayout>
+</ScrollView>

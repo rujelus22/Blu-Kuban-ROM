@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.finsky.layout.ObservableScrollView android:background="@color/details_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/details_scroller_container" android:background="@drawable/pinstripe_details_tile" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include android:id="@id/creator_hero" android:layout_width="fill_parent" android:layout_height="@dimen/wide_graphic_max_height" layout="@layout/hero_graphic" />
+        <View android:id="@id/leading_strip" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+        <LinearLayout android:orientation="vertical" android:id="@id/creator_tagline" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/content_entry_large_size" android:textColor="@color/black" android:ellipsize="end" android:gravity="bottom|left|center" android:id="@id/creator_title" android:background="@color/details_background" android:paddingLeft="@dimen/details_left_padding" android:paddingTop="8.0dip" android:paddingRight="@dimen/details_right_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+            <include android:id="@id/description_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_text_flat" />
+        </LinearLayout>
+        <include android:id="@id/summary_plusone_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_summary_plusone" />
+        <include android:id="@id/share_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_share" />
+        <include android:id="@id/song_list" layout="@layout/music_song_list" />
+        <include android:id="@id/body_of_work_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_pack_layout" />
+        <include android:id="@id/related_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_pack_layout" />
+        <include android:id="@id/links_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_listing_layout" />
+        <include android:id="@id/flag_content_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_listing_layout" />
+        <include android:id="@id/loading_footer" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/details_loading_footer" />
+    </LinearLayout>
+</com.google.android.finsky.layout.ObservableScrollView>

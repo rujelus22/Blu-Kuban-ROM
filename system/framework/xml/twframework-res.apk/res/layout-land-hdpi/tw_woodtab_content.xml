@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.touchwiz.widget.TwWoodTabHost android:id="@android:id/tabhost" android:background="@drawable/APKTOOL_DUMMY_011c" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.sec.android.touchwiz.widget.TwWoodTabWidget android:id="@android:id/tabs" android:background="@drawable/APKTOOL_DUMMY_011e" android:paddingLeft="58.0px" android:paddingRight="410.0px" android:layout_width="fill_parent" android:layout_height="44.0px" android:layout_weight="0.0" />
+        <FrameLayout android:id="@android:id/tabcontent" android:paddingLeft="15.0px" android:paddingTop="10.0px" android:paddingRight="15.0px" android:paddingBottom="10.0px" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    </LinearLayout>
+</com.sec.android.touchwiz.widget.TwWoodTabHost>

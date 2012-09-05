@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Licence settings</string>
+    <string name="license_settings_title">Licence settings</string>
+    <string name="expiry_reminder">Expiry reminder</string>
+    <string name="roaming_network">Roaming network</string>
+    <string name="roaming_network_summary">Auto download</string>
+    <string name="roaming_option_auto_download">Auto download</string>
+    <string name="roaming_option_manual">Manual</string>
+    <string name="roaming_option_always_reject">Always reject</string>
+    <string name="roaming_network_dialog_title">Roaming network</string>
+    <string name="dialog_cancel_button">Cancel</string>
+    <string name="dialog_ok_button">OK</string>
+    <string name="dialog_deregistration_button">OK</string>
+    <string name="dialog_registration_button">OK</string>
+    <string name="dialog_cancel_registration_button">Cancel</string>
+    <string name="dialog_ok_registration_button">OK</string>
+    <string name="expiry_reminder_summary">Auto download</string>
+    <string name="divx_registration_summary">DivX registration process</string>
+    <string name="clear_license">Clear licences</string>
+    <string name="clear_license_summary">Delete all DRM licences</string>
+    <string name="unable_to_remove_license">Unable to clear licences</string>
+    <string name="all_licenses_are_clearing">Clearing...</string>
+    <string name="all_licenses_are_removed">Cleared</string>
+    <string name="clear_license_popup">"Content that requires licences must be acquired again if you want to use them.
+Do you want to delete licences?"</string>
+    <string name="divx_vod">DivX® VOD</string>
+    <string name="divx_registration">Register</string>
+    <string name="divx_deregistration">Deregister</string>
+    <string name="divx_registration_info">You must register your device to play DivX® protected videos.</string>
+    <string name="divx_registration_code">Registration code: %1$s</string>
+    <string name="divx_register_website">Register at %1$s</string>
+    <string name="divx_deregistration_code">Deregistration code: %1$s</string>
+    <string name="divx_deregister_website">Deregister at %1$s</string>
+    <string name="divx_deregistration_info">Continue with registration?</string>
+    <string name="dialog_deregister_confirmation_message">Your device is already registered. Are you sure you wish to deregister?</string>
+</resources>

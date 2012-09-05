@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/top" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/popup_header" />
+    <LinearLayout android:orientation="vertical" android:background="@drawable/popup_center_bright" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <com.google.googlenav.ui.android.WebViewWrapper android:scrollbarStyle="insideOverlay" android:id="@id/webView" android:layout_width="wrap_content" android:layout_height="500.0px" />
+    </LinearLayout>
+    <include layout="@layout/themed_dialog_button_panels" />
+</LinearLayout>

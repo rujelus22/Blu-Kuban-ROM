@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ff777777" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/title_layout" android:background="@drawable/status_bar_header_bg" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <TextView android:textSize="14.0dip" android:typeface="sans" android:ellipsize="end" android:layout_gravity="left" android:id="@id/contents_name" android:paddingTop="5.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="24.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="6.0dip" android:maxLines="1" android:singleLine="true" style="@style/textAppearance_white_fg_black_weak_solid" />
+        <RelativeLayout android:id="@id/printer_info" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/printer_icon" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="3.0dip" android:src="@drawable/ic_print_printer" android:layout_alignParentLeft="true" />
+            <TextView android:textSize="16.0dip" android:typeface="sans" android:textStyle="bold" android:ellipsize="end" android:gravity="top" android:id="@id/printer_name" android:paddingTop="7.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_devices" android:maxLines="1" android:singleLine="true" android:layout_toRightOf="@id/printer_icon" style="@style/textAppearance_white_fg_black_weak_solid" />
+            <ImageButton android:id="@id/setting_btn" android:background="@drawable/print_setting_btn" android:layout_width="58.0dip" android:layout_height="36.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="4.0dip" android:src="@drawable/ic_print_setting" android:layout_alignParentRight="true" android:contentDescription="@string/settings" />
+            <TextView android:textSize="14.0dip" android:typeface="sans" android:gravity="top" android:id="@id/paper_name" android:paddingTop="9.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_toLeftOf="@id/setting_btn" style="@style/textAppearance_white_fg_black_weak_solid" />
+        </RelativeLayout>
+    </LinearLayout>
+    <FrameLayout android:layout_gravity="center" android:id="@id/paper_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="5.0">
+        <RelativeLayout android:id="@id/contents" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_gravity="center" android:id="@id/outer_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="4.0dip" android:layout_marginBottom="4.0dip">
+                <ViewFlipper android:gravity="center" android:id="@id/preview_flipper" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="3.0" />
+            </LinearLayout>
+            <TextView android:id="@id/preview_pages" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:layout_centerHorizontal="true" style="@style/textAppearance_black_fg_white_neon" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center" android:id="@id/curtain_layout" android:background="#ff777777" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ProgressBar android:id="@id/loading_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="?android:attr/progressBarStyleInverse" />
+        </LinearLayout>
+        <TextView android:textSize="34.0dip" android:textColor="#50ff0000" android:layout_gravity="center" android:id="@id/simulation_mode" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </FrameLayout>
+    <include android:id="@id/footer" layout="@layout/bottom_buttons" />
+</LinearLayout>

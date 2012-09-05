@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/s_Samsung_keypad_settings" android:key="axt9_ime_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference android:title="@string/s_keypad_types" android:key="inputmethod_type" android:defaultValue="0" android:dialogTitle="@string/s_keypad_types" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_xt9" android:key="xt9_enabled" android:summary="@string/s_predictive_text" android:defaultValue="false" />
+    <Preference android:title="@string/s_xt9_advanced_settings" android:key="xt9_advanced_settings" android:dependency="xt9_enabled"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <Preference android:title="@string/s_umlaut_settings" android:key="umlaut_settings" android:summary="@string/s_select_umlaut"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_keypad_sweeping" android:key="keypad_sweeping" android:defaultValue="true" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_bubble_preview" android:key="bubble_preview" android:defaultValue="true" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_Auto_capitalization" android:key="Auto_capitalization" android:defaultValue="true" />
+    <Preference android:title="@string/s_handwriting_settings" android:key="handwriting_settings"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_Voice_input" android:key="voice_input_enabled" android:defaultValue="true" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/s_Auto_period" android:key="Auto_period" android:defaultValue="false" />
+    <Preference android:title="@string/s_Tutorial" android:key="axt9_ime_setting_tutorial"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+</PreferenceScreen>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="music_album_wall_item_minor_axis_nb_items">4</integer>
+    <integer name="music_album_wall_cell_moc_size">176</integer>
+    <integer name="music_album_wall_cluster_single_moc_size">160</integer>
+    <integer name="music_album_wall_cluster_mutliple_moc_size">144</integer>
+    <integer name="music_album_wall_margin_moc_size">32</integer>
+    <integer name="music_album_wall_stack_spacing">40</integer>
+</resources>

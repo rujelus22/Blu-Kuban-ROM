@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/background" android:background="@color/background" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff0000ff" android:id="@id/powerdown" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/POWERDOWN" android:lines="1" android:layout_weight="0.3" />
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff000000" android:id="@id/powerdown_result" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:layout_weight="0.7" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff0000ff" android:id="@id/measure" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/MEASURE" android:lines="1" android:layout_weight="0.3" />
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff000000" android:id="@id/measure_result" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:layout_weight="0.7" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff0000ff" android:id="@id/int_st" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/ST" android:lines="1" android:layout_weight="0.25" />
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff000000" android:id="@id/int_st_result" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:layout_weight="0.23" />
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff0000ff" android:id="@id/tmps" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/TMPS" android:lines="1" android:layout_weight="0.24" />
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff000000" android:id="@id/tmps_result" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:layout_weight="0.28" />
+    </LinearLayout>
+    <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center_horizontal" android:id="@id/dac_xyz" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:capitalize="none" android:layout_weight="1.0" />
+    <LinearLayout android:orientation="horizontal" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff0000ff" android:id="@id/degree" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/DEGREE" android:lines="1" android:layout_weight="0.21" />
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff000000" android:id="@id/DEGREE_RESULT" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:layout_weight="0.25" />
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff0000ff" android:id="@id/HDST" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/HDST" android:lines="1" android:layout_weight="0.23" />
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:textColor="#ff000000" android:id="@id/HDST_RESULT" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:layout_weight="0.31" />
+    </LinearLayout>
+</LinearLayout>

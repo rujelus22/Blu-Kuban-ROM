@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="left|center" android:orientation="vertical" android:id="@id/time_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.app.clockpackage.deskclock.DigitalClock android:id="@id/time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <View android:id="@id/SaverView01" android:layout_width="43.329987dip" android:layout_height="60.0dip" android:layout_weight="1.0" />
+                <View android:id="@id/SaverView02" android:layout_width="43.329987dip" android:layout_height="60.0dip" android:layout_marginLeft="2.0dip" android:layout_weight="1.0" />
+                <View android:id="@id/SaverView03" android:background="@drawable/clock_colon" android:layout_width="23.329987dip" android:layout_height="60.0dip" android:layout_marginLeft="9.329987dip" android:layout_weight="1.0" />
+                <View android:id="@id/SaverView04" android:layout_width="43.329987dip" android:layout_height="60.0dip" android:layout_marginLeft="9.329987dip" android:layout_weight="1.0" />
+                <View android:id="@id/SaverView05" android:layout_width="43.329987dip" android:layout_height="60.0dip" android:layout_marginLeft="2.0dip" android:layout_weight="1.0" />
+                <View android:gravity="top" android:id="@id/am_pm" android:layout_width="34.666656dip" android:layout_height="27.333313dip" android:layout_marginLeft="4.0dip" />
+            </LinearLayout>
+            <TextView android:textSize="26.0sp" android:gravity="left" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" />
+            <FrameLayout android:layout_gravity="top|left|center" android:id="@id/screen_weather_frame" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="4.0dip" android:layout_marginTop="8.0dip">
+                <include layout="@layout/city_weather" />
+            </FrameLayout>
+        </LinearLayout>
+    </com.sec.android.app.clockpackage.deskclock.DigitalClock>
+</LinearLayout>

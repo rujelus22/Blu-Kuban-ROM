@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/Layout1" android:paddingTop="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:textAppearance="?android:textAppearanceMedium" android:gravity="center_horizontal" android:id="@id/key_value" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:editable="false" android:inputType="phone" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/TableLayout01" android:layout_width="fill_parent" android:layout_height="100.0px">
+        <Button android:id="@id/enter_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/enter_button" android:layout_weight="1.0" />
+        <Button android:id="@id/left_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/left_button" android:layout_weight="1.0" />
+        <Button android:id="@id/right_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/right_button" android:layout_weight="1.0" />
+        <Button android:id="@id/up_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/up_button" android:layout_weight="1.0" />
+        <Button android:id="@id/down_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/down_button" android:layout_weight="1.0" />
+        <Button android:id="@id/ok_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/ok_button" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

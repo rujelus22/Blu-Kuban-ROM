@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="2" android:versionName="1.1" package="com.sec.android.app.FileTransferClient"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:theme="@android:style/Theme.DeviceDefault" android:label="@string/app_name_direct" android:icon="@drawable/icon">
+        <activity android:theme="@android:style/Theme.DeviceDefault" android:label="@string/app_name_direct" android:name=".FTCDeviceListActivity" android:clearTaskOnLaunch="true" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="application/*" />
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="text/vnd.sun.j2me.app-descriptor" />
+                <data android:mimeType="text/html" />
+                <data android:mimeType="text/x-vnote" />
+                <data android:mimeType="text/x-vCalendar" />
+                <data android:mimeType="text/x-vcard" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="application/*" />
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="text/vnd.sun.j2me.app-descriptor" />
+                <data android:mimeType="text/html" />
+                <data android:mimeType="text/x-vnote" />
+                <data android:mimeType="text/x-vCalendar" />
+                <data android:mimeType="text/x-vcard" />
+            </intent-filter>
+        </activity>
+        <service android:name=".FTCService" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.sec.android.app.FileTransferClient.FTC_SERVICE_START" />
+                <action android:name="com.sec.android.app.FileTransferClient.BIND_SERVICE" />
+            </intent-filter>
+        </service>
+        <activity android:theme="@android:style/Theme.DeviceDefault" android:name=".Ui.FTCUploadSessionList" android:clearTaskOnLaunch="true" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize" android:noHistory="true" />
+        <activity android:theme="@android:style/Theme.DeviceDefault" android:name=".Ui.FTCResultSessionList" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize" android:allowTaskReparenting="true" android:noHistory="true" />
+        <activity android:theme="@android:style/Theme.DeviceDefault" android:name=".Ui.FTCDialogForWait" android:clearTaskOnLaunch="true" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize" android:noHistory="true">
+            <intent-filter>
+                <action android:name="com.sec.android.app.FileTransferClient.SHOW_WAIT_POPUP" />
+            </intent-filter>
+        </activity>
+    </application>
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES" />
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+</manifest>

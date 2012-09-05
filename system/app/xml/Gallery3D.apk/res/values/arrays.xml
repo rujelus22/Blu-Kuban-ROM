@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="supportCellSizeArray">
+        <item>2x1</item>
+        <item>2x2</item>
+        <item>2x3</item>
+        <item>2x4</item>
+        <item>2x5</item>
+        <item>3x2</item>
+        <item>3x3</item>
+        <item>3x4</item>
+        <item>3x5</item>
+        <item>4x2</item>
+        <item>4x3</item>
+        <item>4x4</item>
+        <item>4x5</item>
+        <item>5x2</item>
+        <item>5x3</item>
+        <item>5x4</item>
+        <item>5x5</item>
+    </string-array>
+    <string-array name="months_abbreviated">
+        <item>Jan.</item>
+        <item>Feb.</item>
+        <item>Mar.</item>
+        <item>Apr.</item>
+        <item>May.</item>
+        <item>Jun.</item>
+        <item>Jul.</item>
+        <item>Aug.</item>
+        <item>Sep.</item>
+        <item>Oct.</item>
+        <item>Nov.</item>
+        <item>Dec.</item>
+    </string-array>
+    <string-array name="defalut_dest_list_activity">
+        <item>Contacts</item>
+        <item>New Email address</item>
+        <item>New Phone number</item>
+    </string-array>
+</resources>

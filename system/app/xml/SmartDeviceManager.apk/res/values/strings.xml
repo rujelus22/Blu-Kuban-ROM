@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Device Manager</string>
+    <string name="debug_name">V3 Debug</string>
+    <string name="splash">Sprint Location Services</string>
+    <string name="splash_powered">Powered by Sparkle™ from Location Labs</string>
+    <string name="splash_url">www.locationlabs.com</string>
+    <string name="lockscreen_locking_main_text">Automatic unlock at</string>
+    <string name="lockscreen_dwd_main_text" />
+    <string name="lockscreen_locking_toast_message_text">Your phone will be locked shortly.</string>
+    <string name="lockscreen_dwd_toast_message_text">Motion has been detected! Driving mode and lock engaging shortly.</string>
+    <string name="lockscreen_locking_override_popup_title_text">Override?</string>
+    <string name="lockscreen_dwd_override_popup_title_text">Exit?</string>
+    <string name="lockscreen_override_popup_message_text">This action may notify your account holder.</string>
+    <string name="lockscreen_override_popup_positive_button_text">OK</string>
+    <string name="lockscreen_override_popup_negative_button_text">Cancel</string>
+    <string name="locking_sms_auto_reply_text">I am currently unavailable to text. I will respond as soon as possible. Thanks!</string>
+    <string name="dwd_sms_auto_reply_text">I am currently driving and using my phone to auto-respond. I will respond to your message as soon as I come to a stop. Thanks!</string>
+    <string name="lockscreen_locking_override_button_text">Unlock</string>
+    <string name="lockscreen_dwd_override_button_text">Exit</string>
+    <string name="lockscreen_locking_emergency_button_text">Emergency</string>
+    <string name="lockscreen_dwd_emergency_button_text">911</string>
+    <string name="lockscreen_incoming_sms_popup_button_text">Close</string>
+    <string name="drivesim_clickdrive" />
+    <string name="drivesim_clickdrive2" />
+    <string name="drivesim_delaySec_key" />
+    <string name="drivesim_delaySec_title" />
+    <string name="drivesim_delaySec_summary" />
+    <string name="drivesim_durationSec_key" />
+    <string name="drivesim_durationSec_title" />
+    <string name="drivesim_durationSec_summary" />
+    <string name="drivesim_whitelistedApps_key" />
+    <string name="drivesim_whitelistedApps_title" />
+    <string name="drivesim_whitelistedApps_summary" />
+</resources>

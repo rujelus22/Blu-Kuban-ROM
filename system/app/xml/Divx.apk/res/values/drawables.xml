@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="white">#ffffffff</item>
+    <item type="drawable" name="black">#ff000000</item>
+    <item type="drawable" name="transparent_background">#a0000000</item>
+    <item type="drawable" name="fav_ch_color">#ffc2c2c2</item>
+    <item type="drawable" name="all_ch_info_color">#ffffae00</item>
+</resources>

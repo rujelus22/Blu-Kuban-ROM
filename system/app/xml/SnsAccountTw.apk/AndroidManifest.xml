@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="com.sec.android.app.snsuser" android:versionCode="1" android:versionName="1.0" package="com.sec.android.app.snsaccounttw"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="com.sec.android.app.sns.permission.READ_SNSDB" />
+    <uses-permission android:name="com.sec.android.app.sns.permission.WRITE_SNSDB" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="com.sec.android.app.sns.permission.RECEIVE_SNS_BROADCAST" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <application android:label="SNSAccountTw" android:icon="@drawable/icon_twitter" android:process="com.sec.android.app.snsaccount">
+        <activity android:label="" android:name=".activity.SnsAccountTwInformationActivity" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="com.sec.android.app.snsaccounttw.SetupAccount" />
+                <action android:name="com.sec.android.app.snsdisclaimeragree.snsacounttw" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="SNS AccountTw" android:name=".activity.SnsAccountTwAuthenticatorActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateAlwaysVisible">
+            <intent-filter>
+                <action android:name="com.sec.android.app.snsaccounttw.AuthenticatorActivity" />
+                <action android:name="com.sec.android.app.snsaccounttw.RETRY_LOGIN_TWITTER" />
+                <action android:name="com.sec.android.app.snsdisclaimeragree.feedsandupdatetw" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:name=".activity.SnsAccountTwIntervalSetupActivity" />
+        <activity android:label="" android:name=".activity.SnsAccountTwSyncSetupActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <service android:label="SnsAccountTwAuthenticatorService" android:name=".twitter.SnsAccountTwAuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator_twitter" />
+        </service>
+        <service android:label="SnsAccountTwSyncAdapterMessageService" android:name=".twitter.SnsAccountTwSyncAdapterMessageService">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter_message_twitter" />
+        </service>
+        <provider android:name=".SnsAccountTwContentProvider" android:authorities="com.sec.android.app.provider.snsaccounttw" />
+        <receiver android:name=".SnsAccountTwBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.sec.android.app.sns.action.RETRY_LOGIN_TWITTER" />
+                <action android:name="com.sec.android.app.sns.action.RETRY_LOGIN_TWITTER_BY_APPS" />
+                <action android:name="com.sec.android.app.sns.action.DEBUG" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-sdk android:minSdkVersion="13" android:targetSdkVersion="15" />
+</manifest>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Administrador de descarga</string>
+    <string name="permlab_downloadManager">Acceder al administrador de descarga</string>
+    <string name="permdesc_downloadManager">Permite que la aplicación acceda al administrador de descargas y lo utilice para descargar archivos. Las aplicaciones maliciosas pueden utilizarlo para interrumpir descargas y acceder a información privada</string>
+    <string name="permlab_downloadManagerAdvanced">Funciones avanzadas del administrador de descargas</string>
+    <string name="permdesc_downloadManagerAdvanced">Permite que la aplicación acceda a las funciones avanzadas del administrador de descargas. Las aplicaciones maliciosas pueden utilizarlo para interrumpir descargas y acceder a información privada</string>
+    <string name="permlab_downloadCompletedIntent">Enviar notificaciones de descarga</string>
+    <string name="permdesc_downloadCompletedIntent">Permite que la aplicación envíe notificaciones sobre las descargas completas. Las aplicaciones maliciosas pueden utilizar esto para confundir a otras aplicaciones que descargan archivos</string>
+    <string name="permlab_seeAllExternal">Ver todas las descargas de la tarjeta SD</string>
+    <string name="permdesc_seeAllExternal">Permite que una aplicación vea todas las descargas de la tarjeta SD, independiente de la aplicación que las realizó</string>
+    <string name="permlab_downloadCacheNonPurgeable">Reservar espacio en la memoria caché de descarga</string>
+    <string name="permdesc_downloadCacheNonPurgeable">Permite que la aplicación descargue archivos a la memoria caché de descarga que no se puede eliminar automáticamente cuando el administrador de descargas necesita más espacio</string>
+    <string name="permlab_downloadWithoutNotification">descargar archivos sin notificación</string>
+    <string name="permdesc_downloadWithoutNotification">Permite que la aplicación descargue archivos con el administrador de descargas sin mostrar ninguna notificación al usuario</string>
+    <string name="permlab_accessAllDownloads">Acceso a todas las descargas del sistema</string>
+    <string name="permdesc_accessAllDownloads">Permite que la aplicación vea y modifique todas las descargas iniciadas por cualquier aplicación del sistema</string>
+    <string name="download_unknown_title">&lt;Sin título></string>
+    <string name="notification_filename_separator">", "</string>
+    <string name="notification_filename_extras">y %d más</string>
+    <string name="notification_download_complete">Descarga completa</string>
+    <string name="notification_download_failed">Descarga incorrecta</string>
+    <string name="notification_need_wifi_for_size">Tamaño de archivo demasiado grande. Es necesaria una red Wi-Fi.</string>
+    <string name="notification_paused_in_background">Interrupción de fondo</string>
+    <string name="wifi_required_title">Tamaño de archivo demasiado grande para la red del operador</string>
+    <string name="wifi_required_body" formatted="false">"Debes usar WiFi para completar esta %s descarga. 
+
+Haz clic en %s  para iniciar esta descarga la próxima vez que te conectes a una red de WiFi."</string>
+    <string name="wifi_recommended_title">¿Desea poner en cola para descargar más tarde?</string>
+    <string name="wifi_recommended_body" formatted="false">"Iniciar esta %s  descarga ahora puede acortar la vida útil de la batería u ocasionar un uso excesivo de la conexión de datos móviles. Esto, a su vez, puede producir cargos de tu operador móvil dependiendo de tu plan de datos.
+
+ Haz clic %s a continuación para comenzar esta descarga la próxima vez que te conectes a una red de WiFi."</string>
+    <string name="button_queue_for_wifi">Cola</string>
+    <string name="button_cancel_download">Cancelar</string>
+    <string name="button_start_now">Iniciar ahora</string>
+    <string name="download_percent">%d%%</string>
+</resources>

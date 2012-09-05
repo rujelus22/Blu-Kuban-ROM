@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/click_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/layout_ori_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true"
+      xmlns:app="http://schemas.android.com/apk/res/com.arcsoft.quickview">
+        <RelativeLayout android:id="@id/layout_menu1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="100.0px" android:layout_weight="1.0">
+            <com.arcsoft.widget.ArcImageButton android:id="@id/menu1_image" android:background="@drawable/menu_btn_bg_l2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@android:drawable/ic_menu_add" />
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="150.0px" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                <com.arcsoft.widget.TextViewEx android:id="@id/menu1_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/OPTION_1" android:layout_centerHorizontal="true" app:textColor="#ffffffff" app:textSize="28.0px" />
+            </RelativeLayout>
+            <ImageView android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/menu_splitter_l2" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_menu2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="100.0px" android:layout_weight="1.0">
+            <com.arcsoft.widget.ArcImageButton android:id="@id/menu2_image" android:background="@drawable/menu_btn_bg_l2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@android:drawable/ic_menu_edit" />
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="150.0px" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                <com.arcsoft.widget.TextViewEx android:id="@id/menu2_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/OPTION_2" android:layout_centerHorizontal="true" app:textColor="#ffffffff" app:textSize="28.0px" />
+            </RelativeLayout>
+            <ImageView android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/menu_splitter_l2" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_menu3" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="100.0px" android:layout_weight="1.0">
+            <com.arcsoft.widget.ArcImageButton android:id="@id/menu3_image" android:background="@drawable/menu_btn_bg_l2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@android:drawable/ic_menu_call" />
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="150.0px" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                <com.arcsoft.widget.TextViewEx android:id="@id/menu3_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/OPTION_3" android:layout_centerHorizontal="true" app:textColor="#ffffffff" app:textSize="28.0px" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

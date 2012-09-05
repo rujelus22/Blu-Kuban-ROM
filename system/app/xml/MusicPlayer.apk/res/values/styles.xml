@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MusicDefault.NoActionBar" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+    <style name="music_player_progressbar">
+        <item name="android:maxHeight">8.0dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/music_play_tw3_horizontal_seekbar</item>
+        <item name="android:minHeight">8.0dip</item>
+        <item name="android:thumb">@drawable/music_play_tw3_progressive_point</item>
+        <item name="android:thumbOffset">19.0dip</item>
+    </style>
+    <style name="volume_seekbar" parent="@touchwiz:style/TwSeekBar">
+        <item name="touchwiz:twMax">15</item>
+        <item name="touchwiz:progress">12</item>
+        <item name="touchwiz:twProgressDrawable">@drawable/volume_slider_bar</item>
+        <item name="touchwiz:twIndicatorThickness">10.0dip</item>
+        <item name="touchwiz:twProgressOrientation">vertical</item>
+        <item name="touchwiz:twSeekBarThumb">@drawable/music_play_tw3_volume_progressive_point</item>
+        <item name="touchwiz:twSeekThumbFontSize">24.0dip</item>
+    </style>
+    <style name="eq_progress_bar">
+        <item name="touchwiz:twMax">12</item>
+        <item name="touchwiz:progress">6</item>
+        <item name="touchwiz:twBackgroundDrawable">@drawable/music_play_set_eq_progressive_bg</item>
+        <item name="touchwiz:twProgressDrawable">@drawable/music_play_set_eq_progressive_bar</item>
+        <item name="touchwiz:twIndicatorThickness">10.0dip</item>
+        <item name="touchwiz:twProgressOrientation">vertical</item>
+        <item name="touchwiz:twSeekBarThumb">@drawable/music_play_tw3_setting_equlizer_custom_seek_thumb</item>
+    </style>
+</resources>

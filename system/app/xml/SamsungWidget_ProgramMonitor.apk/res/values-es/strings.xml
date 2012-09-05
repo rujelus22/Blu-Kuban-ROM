@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Monitor del programa</string>
+    <string name="running_programs">Aplicaciones activas</string>
+    <string name="text_ea">EA</string>
+</resources>

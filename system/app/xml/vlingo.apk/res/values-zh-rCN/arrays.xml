@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="web_search_engine_preference_cn">
+        <item>百度</item>
+        <item>必应</item>
+        <item>雅虎</item>
+    </string-array>
+    <string-array name="prediction_modes">
+        <item>高级选项</item>
+        <item>基本</item>
+        <item>无内容</item>
+    </string-array>
+</resources>

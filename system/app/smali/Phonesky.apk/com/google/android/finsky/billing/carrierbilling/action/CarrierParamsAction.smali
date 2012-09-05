@@ -1,0 +1,251 @@
+.class public Lcom/google/android/finsky/billing/carrierbilling/action/CarrierParamsAction;
+.super Ljava/lang/Object;
+.source "CarrierParamsAction.java"
+
+
+# instance fields
+.field private final mResponse:Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;)V
+    .registers 2
+    .parameter "response"
+
+    .prologue
+    .line 19
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 20
+    iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierParamsAction;->mResponse:Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
+
+    .line 21
+    return-void
+.end method
+
+
+# virtual methods
+.method createCarrierBillingParameters(Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
+    .registers 10
+    .parameter "metadata"
+
+    .prologue
+    const/4 v3, 0x0
+
+    const/4 v6, 0x1
+
+    const/4 v7, 0x0
+
+    .line 41
+    const/4 v4, 0x0
+
+    .line 42
+    .local v4, proto:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+    if-nez p1, :cond_7
+
+    .line 75
+    :cond_6
+    :goto_6
+    return-object v3
+
+    .line 45
+    :cond_7
+    invoke-virtual {p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getBillingParameterList()Ljava/util/List;
+
+    move-result-object v5
+
+    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :cond_f
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_22
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+
+    .line 46
+    .local v0, candidate:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+    invoke-virtual {v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getBillingInstrumentType()I
+
+    move-result v5
+
+    if-ne v5, v6, :cond_f
+
+    .line 48
+    move-object v4, v0
+
+    .line 52
+    .end local v0           #candidate:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+    :cond_22
+    if-eqz v4, :cond_6
+
+    .line 58
+    :try_start_24
+    new-instance v5, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    invoke-direct {v5}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;-><init>()V
+
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getId()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setId(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getName()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setName(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getMncMccList()Ljava/util/List;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setMncMccs(Ljava/util/List;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v4, v6}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getBackendUrl(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setGetProvisioningUrl(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    const/4 v6, 0x1
+
+    invoke-virtual {v4, v6}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getBackendUrl(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setGetCredentialsUrl(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getIconId()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setCarrierIconId(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getInstrumentTosRequired()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setShowCarrierTos(Z)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getApiVersion()I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setCarrierApiVersion(I)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getPerTransactionCredentialsRequired()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setPerTransactionCredentialsRequired(Z)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getSendSubscriberIdWithCarrierBillingRequests()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setSendSubscriberInfoWithCarrierRequests(Z)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->build()Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
+    :try_end_7e
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_24 .. :try_end_7e} :catch_80
+
+    move-result-object v3
+
+    .local v3, params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
+    goto :goto_6
+
+    .line 71
+    .end local v3           #params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
+    :catch_80
+    move-exception v2
+
+    .line 72
+    .local v2, iae:Ljava/lang/IllegalArgumentException;
+    const-string v5, "Missing fields for creating carrier billing parameters"
+
+    new-array v6, v7, [Ljava/lang/Object;
+
+    invoke-static {v5, v6}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 73
+    const/4 v3, 0x0
+
+    .restart local v3       #params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
+    goto/16 :goto_6
+.end method
+
+.method public run(Ljava/lang/Runnable;)V
+    .registers 5
+    .parameter "finishCallback"
+
+    .prologue
+    .line 28
+    iget-object v1, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierParamsAction;->mResponse:Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
+
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierParamsAction;->createCarrierBillingParameters(Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
+
+    move-result-object v0
+
+    .line 29
+    .local v0, carrierBillingParams:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
+    if-eqz v0, :cond_13
+
+    .line 30
+    invoke-static {}, Lcom/google/android/finsky/billing/BillingLocator;->getCarrierBillingStorage()Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;->setParams(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;)V
+
+    .line 34
+    :goto_f
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+
+    .line 35
+    return-void
+
+    .line 32
+    :cond_13
+    const-string v1, "Saving carrier billing params failed."
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_f
+.end method

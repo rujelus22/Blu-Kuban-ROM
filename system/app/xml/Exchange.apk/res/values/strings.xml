@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exchange_name">Corporate</string>
+    <string name="exchange_name_alternate">Microsoft Exchange ActiveSync</string>
+    <string name="meeting_accepted">Accepted: %s</string>
+    <string name="meeting_declined">Declined: %s</string>
+    <string name="meeting_tentative">Tentative: %s</string>
+    <string name="meeting_canceled">Canceled: %s</string>
+    <string name="meeting_updated">Updated: %s</string>
+    <string name="meeting_when">When: %s</string>
+    <string name="meeting_where">Where: %s</string>
+    <string name="meeting_recurring">When: %s (recurring)</string>
+    <string name="provider_label">Tasks</string>
+    <string name="meeting_allday">When: %s (all day)</string>
+    <string name="meeting_allday_recurring">When: %s (all day, recurring)</string>
+    <string name="notification_exchange_calendar_added">Exchange calendar added</string>
+    <string name="app_name">Exchange Services</string>
+    <string name="exception_cancel">This event has been canceled for: %s</string>
+    <string name="exception_updated">The details of this event have been changed for: %s</string>
+    <string name="account_settings_resync_label">Resync</string>
+    <string name="account_settings_resync_in_progress_message">Resyncing...</string>
+    <string name="account_settings_resync_complete_message">Resynced. Initial sync started</string>
+    <string name="blocked_device_message">Permission denied</string>
+    <string name="search_error">Unable to search</string>
+    <string name="policy_app_blacklist">Do not allow selected applications</string>
+    <string name="policy_app_whitelist">Only allow selected applications</string>
+    <string name="message_compose_display_name">%1$s and %2$d others</string>
+    <string name="messageview_body_overflow_message">[Message clipped]</string>
+    <string name="policy_dont_allow_unsigned_apps">"don't allow unsigned applications"</string>
+    <string name="policy_dont_allow_unsigned_installers">"don't allow unsigned application installers"</string>
+</resources>

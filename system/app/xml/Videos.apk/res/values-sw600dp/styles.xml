@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.PagedGridView" parent="@android:style/Widget.Holo.GridView">
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:paddingRight">11.0dip</item>
+        <item name="android:fadingEdge">vertical</item>
+        <item name="android:layout_marginLeft">11.0dip</item>
+        <item name="android:layout_marginTop">11.0dip</item>
+        <item name="android:listSelector">@color/full_transparent</item>
+        <item name="android:cacheColorHint">@color/full_transparent</item>
+        <item name="android:animateLayoutChanges">false</item>
+    </style>
+    <style name="PlusOneSignupHolo" parent="@android:style/Theme.Holo.Dialog.NoActionBar" />
+</resources>

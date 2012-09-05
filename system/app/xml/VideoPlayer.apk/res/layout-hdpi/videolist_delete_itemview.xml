@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/RootLayout" android:background="@color/defaultBackground" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/lySelectAll" android:background="@drawable/list_selector_selectall" android:clickable="true" android:layout_width="fill_parent" android:layout_height="95.0px"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textSize="30.0px" android:textColor="@color/subtitle_color_01" android:gravity="left|center" android:id="@id/videolist_selectall_itemview_text" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:text="@string/select_all" android:singleLine="true" android:layout_weight="1.0" />
+        <CheckBox android:id="@id/videolist_selectall_itemview_checkbox" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <GridView android:id="@id/ListView" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:transcriptMode="disabled" android:layout_weight="1.0" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ResultEmpty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:layout_gravity="center" android:id="@id/No_Item_Icon" android:background="@drawable/noitems_video_based" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0px" android:layout_below="@id/ResultEmpty" />
+        <TextView android:textSize="22.0px" android:textStyle="bold" android:textColor="@color/No_item" android:gravity="center" android:id="@id/EmptyText" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/search_empty" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/winset_softkey_bg" android:layout_width="fill_parent" android:layout_height="74.0px"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <Button android:enabled="false" android:id="@id/button_done" android:layout_width="192.0px" android:layout_height="60.0px" android:text="@string/menu_Delete" android:layout_weight="1.0" />
+        <Button android:id="@id/button_cancel" android:layout_width="192.0px" android:layout_height="60.0px" android:text="@string/cancel" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

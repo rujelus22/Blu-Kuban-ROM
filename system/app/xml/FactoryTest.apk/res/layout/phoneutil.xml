@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="24.0sp" android:id="@id/uart_name" android:background="#77ffffff" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/uart_name" />
+        <RadioGroup android:orientation="vertical" android:id="@id/uart" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RadioButton android:textSize="26.0sp" android:id="@id/uart_modem" android:layout_height="60.0dip" android:text="@string/pda_to_modem" />
+            <RadioButton android:textSize="26.0sp" android:id="@id/uart_pda" android:layout_height="60.0dip" android:text="@string/modem_to_pda" />
+        </RadioGroup>
+        <TextView android:textSize="24.0sp" android:id="@id/type_text_length" android:background="#77ffffff" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/usb_name" />
+        <RadioGroup android:orientation="vertical" android:id="@id/usb" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RadioButton android:textSize="26.0sp" android:id="@id/usb_modem" android:layout_height="60.0dip" android:text="@string/pda_to_modem" />
+            <RadioButton android:textSize="26.0sp" android:id="@id/usb_pda" android:layout_height="60.0dip" android:text="@string/modem_to_pda" />
+            <RadioButton android:textSize="26.0sp" android:id="@id/sideloading" android:visibility="gone" android:layout_height="60.0dip" android:text="@string/sideloading" />
+        </RadioGroup>
+    </LinearLayout>
+</ScrollView>

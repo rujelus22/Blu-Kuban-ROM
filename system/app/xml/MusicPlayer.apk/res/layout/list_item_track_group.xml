@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.app.music.widget.CheckedLinearLayout android:orientation="vertical" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" ididan:checkableId="@id/checkbox"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:ididan="http://schemas.android.com/apk/res/com.sec.android.app.music">
+    <include android:id="@id/list_item_title_layout" layout="@layout/list_item_title" />
+    <RelativeLayout android:id="@id/list_item_track_layout" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <include layout="@layout/list_item_track_text_common" />
+    </RelativeLayout>
+</com.sec.android.app.music.widget.CheckedLinearLayout>

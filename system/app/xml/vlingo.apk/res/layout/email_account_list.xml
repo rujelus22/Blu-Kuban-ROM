@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center_vertical" android:id="@id/add_email_account" android:background="@android:drawable/list_selector_background" android:padding="6.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight" android:text="@string/email_account_add_manual_add_account" android:drawableLeft="@drawable/sym_action_add" android:drawablePadding="5.0dip" />
+    </RelativeLayout>
+    <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/text_other_choice_count" android:background="@drawable/contactlist_heading_background" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/email_account_list_accounts" android:shadowColor="#ff000000" android:shadowRadius="2.0" />
+    <ListView android:id="@id/ListView01" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="downloading_books">
+        <item quantity="other">%1$d van %2$d boeke</item>
+        <item quantity="one">Een boek</item>
+    </plurals>
+    <plurals name="concurrent_access_denied_message">
+        <item quantity="other">"Gelyktydige lees van hierdie boek word tot %1$d toestelle of rekenaars beperk en jy het hierdie limiet bereik. Maak hierdie boek op ander lesers toe, wag 'n paar minute en probeer weer."</item>
+        <item quantity="one">"Gelyktydige lees van hierdie boek word tot een toestel of rekenaar beperk en jy het hierdie limiet bereik. Maak hierdie boek op die ander leser toe, wag 'n paar minute en probeer weer."</item>
+    </plurals>
+</resources>

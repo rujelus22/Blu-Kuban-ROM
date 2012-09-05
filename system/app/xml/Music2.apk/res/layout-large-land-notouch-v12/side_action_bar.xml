@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/sidebar_grad"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/top_bar_height">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/home_icon" android:background="@drawable/menuitem_background" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:contentDescription="@string/accessibility_home">
+            <ImageView android:gravity="center_vertical" android:paddingLeft="20.0dip" android:paddingTop="8.0dip" android:paddingRight="8.0dip" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/top_bar_height" android:src="@drawable/home_icon" />
+            <View android:background="@drawable/topbar_divider" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.google.android.music.widgets.SideBarDisplayModeSelector android:id="@id/modeselector" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/sidebar_album_info" />
+    <View android:background="@drawable/sidebar_item_divider" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/search" android:background="@drawable/menuitem_background" android:focusable="true" android:layout_width="fill_parent" android:layout_height="@dimen/sidebar_item_height" android:contentDescription="@string/accessibility_search">
+        <TextView android:id="@id/search_text" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:text="@string/search" android:layout_centerVertical="true" style="@style/Widget.SideBarTv_ButtonText" />
+    </LinearLayout>
+    <View android:id="@id/actionbar_spacer" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/now_playing_bar_height" layout="@layout/nowplaying" />
+</LinearLayout>

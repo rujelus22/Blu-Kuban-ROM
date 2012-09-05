@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:panel="http://schemas.android.com/apk/res/com.sec.android.app.calculator">
+    <ImageView android:layout_width="fill_parent" android:layout_height="204.0dip" android:src="@drawable/calculator_panel_light" />
+    <ScrollView android:addStatesFromChildren="true" android:layout_width="fill_parent" android:layout_height="584.0dip">
+        <EditText android:textSize="96.0dip" android:typeface="sans" android:textColor="#ffffffff" android:gravity="right" android:id="@id/history" android:background="#00000000" android:paddingLeft="9.329987dip" android:paddingTop="0.0dip" android:paddingRight="9.329987dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cursorVisible="false" android:includeFontPadding="false" android:lineSpacingExtra="1.0dip" />
+    </ScrollView>
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <EditText android:scrollbarStyle="outsideOverlay" android:textSize="96.0dip" android:typeface="sans" android:textColor="#ffffffff" android:gravity="right" android:id="@id/txtCalc" android:background="#00000000" android:paddingLeft="9.329987dip" android:paddingTop="0.0dip" android:paddingRight="9.329987dip" android:paddingBottom="3.0dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="243.0dip" android:layout_marginTop="0.0dip" android:cursorVisible="false" android:includeFontPadding="false" android:lineSpacingExtra="1.0dip" />
+    </RelativeLayout>
+    <com.sec.android.widgetapp.calculator.Panel android:layout_gravity="bottom" android:id="@id/bottomPanel" android:layout_width="fill_parent" android:layout_height="wrap_content" panel:position="bottom" panel:handle="@id/panelHandle" panel:content="@id/panelContent" panel:openedHandle="@drawable/handler_close_selector" panel:closedHandle="@drawable/handler_open_selector">
+        <Button android:id="@id/panelHandle" android:layout_width="fill_parent" android:layout_height="31.0dip" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/panelContent" android:background="@drawable/calculator_bg" android:layout_width="fill_parent" android:layout_height="323.5dip">
+            <LinearLayout android:gravity="center" android:id="@id/ll_onehand_left" android:focusable="true" android:layout_width="88.0dip" android:layout_height="fill_parent">
+                <ImageButton android:id="@id/iv_onehand_left" android:background="@drawable/onehand_left_selector" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <AbsoluteLayout android:layout_width="312.0dip" android:layout_height="fill_parent">
+                <Button android:id="@id/bt_clear" android:background="@drawable/port_clear_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="6.0dip" android:layout_y="8.0dip" android:contentDescription="@string/description_clear" />
+                <Button android:id="@id/bt_div" android:background="@drawable/port_div_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="76.0dip" android:layout_y="8.0dip" android:contentDescription="@string/description_div" />
+                <Button android:id="@id/bt_mul" android:background="@drawable/port_mul_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="146.0dip" android:layout_y="8.0dip" android:contentDescription="@string/description_mul" />
+                <Button android:id="@id/bt_backspace" android:background="@drawable/port_backspace_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="216.0dip" android:layout_y="8.0dip" android:contentDescription="@string/description_backspace" />
+                <Button android:id="@id/bt_07" android:background="@drawable/port_7_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="6.0dip" android:layout_y="65.399994dip" android:contentDescription="@string/description_7" />
+                <Button android:id="@id/bt_08" android:background="@drawable/port_8_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="76.0dip" android:layout_y="65.399994dip" android:contentDescription="@string/description_8" />
+                <Button android:id="@id/bt_09" android:background="@drawable/port_9_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="146.0dip" android:layout_y="65.399994dip" android:contentDescription="@string/description_9" />
+                <Button android:id="@id/bt_sub" android:background="@drawable/port_sub_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="216.0dip" android:layout_y="65.399994dip" android:contentDescription="@string/description_sub" />
+                <Button android:id="@id/bt_04" android:background="@drawable/port_4_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="6.0dip" android:layout_y="122.899994dip" android:contentDescription="@string/description_4" />
+                <Button android:id="@id/bt_05" android:background="@drawable/port_5_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="76.0dip" android:layout_y="122.899994dip" android:contentDescription="@string/description_5" />
+                <Button android:id="@id/bt_06" android:background="@drawable/port_6_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="146.0dip" android:layout_y="122.899994dip" android:contentDescription="@string/description_6" />
+                <Button android:id="@id/bt_add" android:background="@drawable/port_add_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="216.0dip" android:layout_y="122.899994dip" android:contentDescription="@string/description_add" />
+                <Button android:id="@id/bt_01" android:background="@drawable/port_1_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="6.0dip" android:layout_y="180.4dip" android:contentDescription="@string/description_1" />
+                <Button android:id="@id/bt_02" android:background="@drawable/port_2_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="76.0dip" android:layout_y="180.4dip" android:contentDescription="@string/description_2" />
+                <Button android:id="@id/bt_03" android:background="@drawable/port_3_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="146.0dip" android:layout_y="180.4dip" android:contentDescription="@string/description_3" />
+                <Button android:id="@id/bt_parenthesis" android:background="@drawable/port_parenthesis_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="216.0dip" android:layout_y="180.4dip" android:contentDescription="@string/description_parenthesis" />
+                <Button android:id="@id/bt_00" android:background="@drawable/port_0_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="6.0dip" android:layout_y="237.9dip" android:contentDescription="@string/description_0" />
+                <Button android:id="@id/bt_dot" android:background="@drawable/port_dot_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="76.0dip" android:layout_y="237.9dip" android:contentDescription="@string/description_dot" />
+                <Button android:id="@id/bt_plusminus" android:background="@drawable/port_plusminus_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="146.0dip" android:layout_y="237.9dip" android:contentDescription="@string/description_plusminus" />
+                <Button android:id="@id/bt_equal" android:background="@drawable/port_equal_selector" android:layout_width="68.5dip" android:layout_height="56.0dip" android:layout_x="216.0dip" android:layout_y="237.9dip" android:contentDescription="@string/description_equal" />
+            </AbsoluteLayout>
+            <LinearLayout android:gravity="center" android:id="@id/ll_onehand_right" android:focusable="true" android:visibility="gone" android:layout_width="88.0dip" android:layout_height="fill_parent">
+                <ImageButton android:id="@id/iv_onehand_right" android:background="@drawable/onehand_right_selector" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <AbsoluteLayout android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <Button android:id="@id/bt_root" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_persentage" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_fact" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_sin" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_log" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_cos" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_ln" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_tan" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_1divx" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_e_y" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_x_2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_x_y" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_abs" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_pie" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/bt_e" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </AbsoluteLayout>
+    </com.sec.android.widgetapp.calculator.Panel>
+</FrameLayout>

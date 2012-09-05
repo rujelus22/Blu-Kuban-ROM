@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="@drawable/search_bg_global" android:paddingTop="8.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:id="@id/shareapp_search" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/search_app" android:drawableRight="@drawable/ic_btn_search" android:imeOptions="actionDone" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ListView android:id="@id/shareapp_list" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/shareapp_list_emptyview" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center" android:id="@id/shareapp_list_emptyview_image" android:background="@drawable/noitems_unnamed_based" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="22.0dip" android:textColor="#ff606060" android:layout_gravity="center" android:id="@id/shareapp_list_emptyview_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/emptyview_loading" />
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@android:style/ButtonBar">
+        <Button android:id="@id/shareapp_btn_done" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/btn_done" android:layout_weight="1.0" />
+        <Button android:id="@id/shareapp_btn_cancel" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/btn_cancel" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

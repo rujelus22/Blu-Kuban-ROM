@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:phone="http://schemas.android.com/apk/res/com.android.phone">
+    <PreferenceCategory android:title="Domestic" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/settings_voice" android:key="domestic_voice_roaming_settings" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/settings_data" android:key="domestic_data_roaming_settings" />
+    <PreferenceCategory android:title="International" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/settings_voice" android:key="international_voice_roaming_settings" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/settings_data" android:key="international_data_roaming_settings" />
+</PreferenceScreen>

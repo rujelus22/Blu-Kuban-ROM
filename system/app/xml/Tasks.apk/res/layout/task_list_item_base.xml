@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/task_list_item_base" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="bottom" android:layout_width="@dimen/account_color_bar_width_size" android:layout_height="fill_parent">
+        <ImageView android:id="@id/account_color_bar" android:layout_width="@dimen/account_color_bar_width_size" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="9.079987dip" android:layout_weight="1.0">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/subject" android:singleLine="true" style="@style/TextStyle_List_Subject" />
+            <LinearLayout android:gravity="center_vertical" android:id="@id/task_list_complete_image" android:paddingTop="@dimen/padding_top_size_1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:background="@drawable/task_list_completed" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="center" />
+            </LinearLayout>
+        </FrameLayout>
+        <TextView android:ellipsize="end" android:id="@id/due_date" android:singleLine="true" style="@style/TextStyle_List_Date" />
+    </LinearLayout>
+</LinearLayout>

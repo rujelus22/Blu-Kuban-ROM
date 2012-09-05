@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/wifi_ap_advanced"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference android:persistent="false" android:entries="@array/wifi_ap_maxclient" android:title="@string/wifi_ap_maxclient" android:key="wifi_ap_maxclient" android:dialogTitle="@string/wifi_ap_maxclient" android:entryValues="@array/wifi_ap_maxclient_values" />
+    <Preference android:persistent="false" android:title="@string/wifiap_lan_settings" android:key="wifiap_lan_settings_preference" />
+</PreferenceScreen>

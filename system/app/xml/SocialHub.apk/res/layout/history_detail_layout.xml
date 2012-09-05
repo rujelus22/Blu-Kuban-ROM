@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/HistoryDetailLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/history_comment_receiver_linearLayout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <include android:id="@id/history_comment_receiver" layout="@layout/history_comment_receiver_layout" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="13.0px" android:layout_marginBottom="5.0dip">
+                <ImageView android:id="@id/history_detail_title_imageView" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/contacts_default_image_small" android:scaleType="fitXY" android:layout_weight="0.0" />
+                <RelativeLayout android:orientation="vertical" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:textAppearance="@style/TwTextAppearanceListTwoLineSecondary" android:textSize="24.0px" android:textStyle="bold" android:ellipsize="marquee" android:id="@id/history_detail_name_textView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" />
+                    <TextView android:textAppearance="@style/TwTextAppearanceListTwoLineSecondaryGrey" android:textSize="21.0px" android:id="@id/history_detail_date_textView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/history_detail_name_textView" />
+                    <TextView android:textSize="24.0px" android:textColor="#ffffffff" android:textColorHighlight="#ff000ad8" android:textColorLink="#ff00d8ff" android:gravity="left|center" android:autoLink="web" android:id="@id/history_detail_message_textView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/history_detail_date_textView" />
+                </RelativeLayout>
+                <CheckBox android:layout_gravity="right|center" android:id="@id/history_detail_checkBox" android:focusable="false" android:clickable="false" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0px" android:layout_weight="0.0" android:layout_alignParentRight="true" />
+            </LinearLayout>
+            <View android:id="@id/comment_list_row_divider" android:background="@drawable/divider_horizontal_dark_opaque" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

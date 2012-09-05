@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/compose_header_root_layout" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/compose_header_to_layout" android:paddingTop="3.3299866dip" android:paddingBottom="3.3299866dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/compose_header_recipient_root_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/attendees_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/attendees_label" style="@style/TextAppearance.EditEvent_Label" />
+            <LinearLayout android:id="@id/compose_header_recipient_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.android.calendar.ToBtnLayout android:id="@id/compose_header_recipient_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="7.3299866dip" android:layout_weight="1.0" />
+                <ImageView android:layout_gravity="top|center" android:id="@id/schedule_button" android:background="@drawable/calendar_edit_button_background" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="7.3299866dip" android:src="@drawable/calendar_edit_timetable_button" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/compose_header_recipient_edit_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.android.calendar.ConvNameEditText android:scrollbarStyle="outsideOverlay" android:textColor="@color/tw_color002" android:gravity="center_vertical" android:id="@id/compose_header_recipient_edit" android:nextFocusUp="@id/location" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="7.3299866dip" android:layout_marginTop="3.0dip" android:layout_marginRight="5.0dip" android:hint="@string/hint_attendees" android:maxLength="8000" android:completionThreshold="1" android:layout_weight="1.0" android:inputType="textEmailAddress" android:dropDownWidth="251.0dip" android:imeActionLabel="@string/enter" android:dropDownHeight="wrap_content" android:dropDownVerticalOffset="-7.0dip" />
+                <ImageButton android:gravity="center_vertical" android:id="@id/compose_header_btn_add_contact" android:background="@drawable/calendar_edit_button_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginRight="7.3299866dip" android:src="@drawable/calendar_edit_parti_button" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vlingo.client.superdialer.items.SDItemContactView android:paddingLeft="6.0dip" android:paddingTop="6.0dip" android:paddingRight="10.0dip" android:paddingBottom="6.0dip" android:descendantFocusability="beforeDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/contact_image_badge" android:layout_width="40.0dip" android:layout_height="40.0dip" android:scaleType="center" android:layout_centerVertical="true" />
+        <TextView android:textAppearance="@style/ListCellContactTextSmall" android:id="@id/contact_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="@string/auto_dial_dialog_contact_name" android:layout_toRightOf="@id/contact_image_badge" />
+        <TextView android:textAppearance="@style/ListCellPhoneTypeTextSmall" android:id="@id/phone_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="@string/auto_dial_dialog_type" android:layout_toRightOf="@id/contact_image_badge" android:layout_below="@id/contact_name" />
+        <TextView android:textAppearance="@style/ListCellPhoneNumberTextSmall" android:id="@id/phone_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="6175551212" android:layout_toRightOf="@id/phone_type" android:layout_below="@id/contact_name" />
+        <ImageView android:id="@id/check_box" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/checkbox" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</com.vlingo.client.superdialer.items.SDItemContactView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="safe_search_levels">
+        <item>Betg filtrar</item>
+        <item>Moderà</item>
+        <item>Strict</item>
+    </string-array>
+    <string-array name="subtitles_size_entries">
+        <item>Pitschen</item>
+        <item>Mesaun</item>
+        <item>Grond</item>
+        <item>Fitg grond</item>
+    </string-array>
+</resources>

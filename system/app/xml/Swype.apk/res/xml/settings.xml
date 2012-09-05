@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.swype.android.inputmethod">
+    <com.swype.android.settings.IconPreferenceScreen android:title="@string/inputmethod_settings_title" android:key="inputmethod" android:summary="@string/inputmethod_settings_desc" settings:icon="@drawable/ic_settings_inputmethod" />
+    <com.swype.android.settings.IconPreferenceScreen android:title="@string/help_settings_title" android:summary="@string/help_settings_desc" settings:icon="@drawable/ic_settings_help">
+        <intent android:targetPackage="com.swype.android.inputmethod" android:action="android.intent.action.VIEW" android:targetClass="com.swype.android.settings.HelpActivity" />
+    </com.swype.android.settings.IconPreferenceScreen>
+    <com.swype.android.settings.IconPreferenceScreen android:title="@string/dictionary_settings_title" android:key="settings_dictionary" android:summary="@string/dictionary_settings_desc" settings:icon="@drawable/ic_settings_dictionary">
+        <intent android:targetPackage="com.swype.android.inputmethod" android:action="android.intent.action.VIEW" android:targetClass="com.swype.android.settings.ManageUdbActivity" />
+    </com.swype.android.settings.IconPreferenceScreen>
+    <com.swype.android.settings.IconPreferenceScreen android:title="@string/preferences_settings_title" android:summary="@string/preferences_settings_desc" settings:icon="@drawable/ic_settings_preferences">
+        <intent android:targetPackage="com.swype.android.inputmethod" android:action="android.intent.action.VIEW" android:targetClass="com.swype.android.settings.SwypeInputMethodSettings" />
+    </com.swype.android.settings.IconPreferenceScreen>
+    <com.swype.android.settings.IconPreferenceScreen android:title="@string/languages_settings_title" android:key="language_select" android:summary="@string/languages_settings_desc" settings:icon="@drawable/ic_settings_languages">
+        <intent android:targetPackage="com.swype.android.inputmethod" android:action="android.intent.action.VIEW" android:targetClass="com.swype.android.settings.SwypeInputMethodSettingsLanguages" />
+    </com.swype.android.settings.IconPreferenceScreen>
+    <com.swype.android.settings.IconPreferenceScreen android:title="@string/settings_connect_upgrade" android:key="connectUpgrade" android:summary="@string/settings_connect_upgrade_desc" settings:icon="@drawable/ic_connect_logo" />
+</PreferenceScreen>

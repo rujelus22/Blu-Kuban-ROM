@@ -1,0 +1,1158 @@
+<ui3d>
+  <scene scene_name="./world_clock.my" landscape="0" background_3d_enabled="1" main_camera_type="built_in_camera" main_camera_id="5242880" near_plane="0.050000" far_plane="500.000000" themes_file_name="" items_layout_file="./world_clock_layout.xml" mem_usage="3500" image_mem_usage="10500" hold_model_images="1">
+    <extra_geometry>
+      <geometry type="billboard" id="1" anchor_mesh_id="9437201" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="2" anchor_mesh_id="9437193" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="3" anchor_mesh_id="9437200" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="4" anchor_mesh_id="9437197" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="5" anchor_mesh_id="9437188" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="6" anchor_mesh_id="9437228" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="7" anchor_mesh_id="9437204" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="8" anchor_mesh_id="9437191" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="9" anchor_mesh_id="9437186" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="10" anchor_mesh_id="9437195" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="11" anchor_mesh_id="9437213" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="12" anchor_mesh_id="9437229" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="13" anchor_mesh_id="9437227" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="14" anchor_mesh_id="9437217" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="15" anchor_mesh_id="9437199" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="16" anchor_mesh_id="9437192" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="17" anchor_mesh_id="9437466" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="18" anchor_mesh_id="9437190" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="19" anchor_mesh_id="9437222" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="20" anchor_mesh_id="9437207" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="21" anchor_mesh_id="9437189" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="22" anchor_mesh_id="9437224" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="23" anchor_mesh_id="9437206" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="24" anchor_mesh_id="9437194" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="25" anchor_mesh_id="9437218" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="26" anchor_mesh_id="9437225" offset_x_2d="-20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="27" anchor_mesh_id="9437203" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="28" anchor_mesh_id="9437184" offset_x_2d="-25" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="29" anchor_mesh_id="9437219" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="30" anchor_mesh_id="9437198" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="31" anchor_mesh_id="9437205" offset_x_2d="18" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="32" anchor_mesh_id="9437208" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="33" anchor_mesh_id="9437211" offset_x_2d="0" offset_y_2d="5" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="34" anchor_mesh_id="9437185" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="35" anchor_mesh_id="9437196" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="36" anchor_mesh_id="9437216" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="37" anchor_mesh_id="9437223" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="38" anchor_mesh_id="9437214" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="39" anchor_mesh_id="9437210" offset_x_2d="-5" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="40" anchor_mesh_id="9437467" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="41" anchor_mesh_id="9437202" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="42" anchor_mesh_id="9437220" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="43" anchor_mesh_id="9437209" offset_x_2d="20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="44" anchor_mesh_id="9437226" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="45" anchor_mesh_id="9437221" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="46" anchor_mesh_id="9437215" offset_x_2d="20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="47" anchor_mesh_id="9437468" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="48" anchor_mesh_id="9437187" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="49" anchor_mesh_id="9437212" offset_x_2d="18" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="50" anchor_mesh_id="9437271" offset_x_2d="15" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="51" anchor_mesh_id="9437270" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="52" anchor_mesh_id="9437253" offset_x_2d="-20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="53" anchor_mesh_id="9437250" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="54" anchor_mesh_id="9437267" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="55" anchor_mesh_id="9437248" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="56" anchor_mesh_id="9437238" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="57" anchor_mesh_id="9437469" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="58" anchor_mesh_id="9437252" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="59" anchor_mesh_id="9437255" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="60" anchor_mesh_id="9437246" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="61" anchor_mesh_id="9437249" offset_x_2d="-35" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="62" anchor_mesh_id="9437273" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="63" anchor_mesh_id="9437256" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="64" anchor_mesh_id="9437266" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="65" anchor_mesh_id="9437470" offset_x_2d="-47" offset_y_2d="20" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="66" anchor_mesh_id="9437240" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="67" anchor_mesh_id="9437234" offset_x_2d="20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="68" anchor_mesh_id="9437262" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="69" anchor_mesh_id="9437241" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="70" anchor_mesh_id="9437239" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="71" anchor_mesh_id="9437264" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="72" anchor_mesh_id="9437235" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="73" anchor_mesh_id="9437265" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="74" anchor_mesh_id="9437258" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="75" anchor_mesh_id="9437242" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="76" anchor_mesh_id="9437245" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="77" anchor_mesh_id="9437272" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="78" anchor_mesh_id="9437247" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="79" anchor_mesh_id="9437259" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="80" anchor_mesh_id="9437230" offset_x_2d="30" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="81" anchor_mesh_id="9437251" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="82" anchor_mesh_id="9437237" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+
+      <geometry type="billboard" id="84" anchor_mesh_id="9437261" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="85" anchor_mesh_id="9437263" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="86" anchor_mesh_id="9437471" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="87" anchor_mesh_id="9437236" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="88" anchor_mesh_id="9437275" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="89" anchor_mesh_id="9437231" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="90" anchor_mesh_id="9437269" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="91" anchor_mesh_id="9437232" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="92" anchor_mesh_id="9437244" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="93" anchor_mesh_id="9437472" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="94" anchor_mesh_id="9437268" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="95" anchor_mesh_id="9437243" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="96" anchor_mesh_id="9437260" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="97" anchor_mesh_id="9437257" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="98" anchor_mesh_id="9437274" offset_x_2d="-13" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="99" anchor_mesh_id="9437254" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="100" anchor_mesh_id="9437281" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="101" anchor_mesh_id="9437279" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="102" anchor_mesh_id="9437316" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="103" anchor_mesh_id="9437288" offset_x_2d="-15" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="104" anchor_mesh_id="9437287" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="105" anchor_mesh_id="9437324" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="106" anchor_mesh_id="9437314" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="107" anchor_mesh_id="9437307" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="108" anchor_mesh_id="9437317" offset_x_2d="-30" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="109" anchor_mesh_id="9437318" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="110" anchor_mesh_id="9437323" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="111" anchor_mesh_id="9437289" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="112" anchor_mesh_id="9437302" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="113" anchor_mesh_id="9437278" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="114" anchor_mesh_id="9437319" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="115" anchor_mesh_id="9437313" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="116" anchor_mesh_id="9437291" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="117" anchor_mesh_id="9437306" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="118" anchor_mesh_id="9437303" offset_x_2d="20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="119" anchor_mesh_id="9437312" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="120" anchor_mesh_id="9437320" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="121" anchor_mesh_id="9437308" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="122" anchor_mesh_id="9437299" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="123" anchor_mesh_id="9437321" offset_x_2d="-30" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="124" anchor_mesh_id="9437309" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="125" anchor_mesh_id="9437297" offset_x_2d="25" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="126" anchor_mesh_id="9437286" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="127" anchor_mesh_id="9437294" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="128" anchor_mesh_id="9437305" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="129" anchor_mesh_id="9437283" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="130" anchor_mesh_id="9437284" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="131" anchor_mesh_id="9437280" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="132" anchor_mesh_id="9437296" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="133" anchor_mesh_id="9437290" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="134" anchor_mesh_id="9437295" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="135" anchor_mesh_id="9437277" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="136" anchor_mesh_id="9437298" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="137" anchor_mesh_id="9437301" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="138" anchor_mesh_id="9437311" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="139" anchor_mesh_id="9437293" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="140" anchor_mesh_id="9437282" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="141" anchor_mesh_id="9437292" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="142" anchor_mesh_id="9437322" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="143" anchor_mesh_id="9437473" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="144" anchor_mesh_id="9437276" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="145" anchor_mesh_id="9437300" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="146" anchor_mesh_id="9437310" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="147" anchor_mesh_id="9437304" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="148" anchor_mesh_id="9437285" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="149" anchor_mesh_id="9437315" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="150" anchor_mesh_id="9437383" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="151" anchor_mesh_id="9437425" offset_x_2d="20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="152" anchor_mesh_id="9437445" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="153" anchor_mesh_id="9437380" offset_x_2d="-10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="154" anchor_mesh_id="9437372" offset_x_2d="-10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="155" anchor_mesh_id="9437360" offset_x_2d="-12" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="156" anchor_mesh_id="9437342" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="157" anchor_mesh_id="9437426" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="158" anchor_mesh_id="9437474" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="159" anchor_mesh_id="9437385" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="160" anchor_mesh_id="9437386" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="161" anchor_mesh_id="9437387" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="162" anchor_mesh_id="9437361" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="163" anchor_mesh_id="9437369" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="164" anchor_mesh_id="9437341" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="165" anchor_mesh_id="9437379" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="166" anchor_mesh_id="9437332" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="167" anchor_mesh_id="9437384" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="168" anchor_mesh_id="9437393" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="169" anchor_mesh_id="9437441" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="170" anchor_mesh_id="9437407" offset_x_2d="-20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="171" anchor_mesh_id="9437345" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="172" anchor_mesh_id="9437388" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="173" anchor_mesh_id="9437437" offset_x_2d="30" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="174" anchor_mesh_id="9437431" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="175" anchor_mesh_id="9437405" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="176" anchor_mesh_id="9437397" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="177" anchor_mesh_id="9437419" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="178" anchor_mesh_id="9437375" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="179" anchor_mesh_id="9437432" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="180" anchor_mesh_id="9437433" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="181" anchor_mesh_id="9437486" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="182" anchor_mesh_id="9437475" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="183" anchor_mesh_id="9437356" offset_x_2d="-8" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="184" anchor_mesh_id="9437418" offset_x_2d="-20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="185" anchor_mesh_id="9437366" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="186" anchor_mesh_id="9437391" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="187" anchor_mesh_id="9437476" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="188" anchor_mesh_id="9437447" offset_x_2d="20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="189" anchor_mesh_id="9437413" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="190" anchor_mesh_id="9437371" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="191" anchor_mesh_id="9437394" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="192" anchor_mesh_id="9437362" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="193" anchor_mesh_id="9437452" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="194" anchor_mesh_id="9437392" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="195" anchor_mesh_id="9437352" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="196" anchor_mesh_id="9437355" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="197" anchor_mesh_id="9437477" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="198" anchor_mesh_id="9437233" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="199" anchor_mesh_id="9437416" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="200" anchor_mesh_id="9437412" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="201" anchor_mesh_id="9437381" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="202" anchor_mesh_id="9437478" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="203" anchor_mesh_id="9437490" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="204" anchor_mesh_id="9437330" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="205" anchor_mesh_id="9437329" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="206" anchor_mesh_id="9437401" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="207" anchor_mesh_id="9437454" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="208" anchor_mesh_id="9437328" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="209" anchor_mesh_id="9437336" offset_x_2d="-5" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="210" anchor_mesh_id="9437414" offset_x_2d="-10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="211" anchor_mesh_id="9437382" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="212" anchor_mesh_id="9437400" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="213" anchor_mesh_id="9437374" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="214" anchor_mesh_id="9437440" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="215" anchor_mesh_id="9437451" offset_x_2d="20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="216" anchor_mesh_id="9437358" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="217" anchor_mesh_id="9437327" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="218" anchor_mesh_id="9437396" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="219" anchor_mesh_id="9437331" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="220" anchor_mesh_id="9437417" offset_x_2d="25" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="221" anchor_mesh_id="9437343" offset_x_2d="8" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="222" anchor_mesh_id="9437429" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="223" anchor_mesh_id="9437351" offset_x_2d="-13" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="224" anchor_mesh_id="9437410" offset_x_2d="40" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="225" anchor_mesh_id="9437389" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="226" anchor_mesh_id="9437434" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="227" anchor_mesh_id="9437422" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="228" anchor_mesh_id="9437479" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="229" anchor_mesh_id="9437334" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="230" anchor_mesh_id="9437444" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="231" anchor_mesh_id="9437409" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="232" anchor_mesh_id="9437484" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="233" anchor_mesh_id="9437450" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="234" anchor_mesh_id="9437455" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="235" anchor_mesh_id="9437453" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="236" anchor_mesh_id="9437480" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="237" anchor_mesh_id="9437449" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="238" anchor_mesh_id="9437406" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="239" anchor_mesh_id="9437353" offset_x_2d="-10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="240" anchor_mesh_id="9437359" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="241" anchor_mesh_id="9437326" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="242" anchor_mesh_id="9437430" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="243" anchor_mesh_id="9437427" offset_x_2d="27" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="244" anchor_mesh_id="9437423" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="245" anchor_mesh_id="9437424" offset_x_2d="25" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="246" anchor_mesh_id="9437489" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="247" anchor_mesh_id="9437436" offset_x_2d="0" offset_y_2d="-10" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="248" anchor_mesh_id="9437373" offset_x_2d="35" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="249" anchor_mesh_id="9437442" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="250" anchor_mesh_id="9437404" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="251" anchor_mesh_id="9437446" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="252" anchor_mesh_id="9437435" offset_x_2d="-35" offset_y_2d="-4" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="253" anchor_mesh_id="9437448" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="254" anchor_mesh_id="9437421" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="255" anchor_mesh_id="9437335" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="256" anchor_mesh_id="9437338" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="257" anchor_mesh_id="9437340" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="258" anchor_mesh_id="9437346" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="259" anchor_mesh_id="9437350" offset_x_2d="15" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="260" anchor_mesh_id="9437349" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="261" anchor_mesh_id="9437411" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="262" anchor_mesh_id="9437370" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="263" anchor_mesh_id="9437439" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="264" anchor_mesh_id="9437363" offset_x_2d="-25" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="265" anchor_mesh_id="9437399" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="266" anchor_mesh_id="9437398" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="267" anchor_mesh_id="9437402" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="268" anchor_mesh_id="9437339" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="269" anchor_mesh_id="9437364" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="270" anchor_mesh_id="9437403" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="271" anchor_mesh_id="9437347" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="272" anchor_mesh_id="9437348" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="273" anchor_mesh_id="9437443" offset_x_2d="25" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="274" anchor_mesh_id="9437408" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="275" anchor_mesh_id="9437344" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="276" anchor_mesh_id="9437438" offset_x_2d="-50" offset_y_2d="10" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="277" anchor_mesh_id="9437481" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="278" anchor_mesh_id="9437428" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="279" anchor_mesh_id="9437337" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="280" anchor_mesh_id="9437415" offset_x_2d="-13" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="281" anchor_mesh_id="9437485" offset_x_2d="-15" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="282" anchor_mesh_id="9437377" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="283" anchor_mesh_id="9437378" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="284" anchor_mesh_id="9437354" offset_x_2d="-15" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="285" anchor_mesh_id="9437482" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="286" anchor_mesh_id="9437395" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="287" anchor_mesh_id="9437367" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="288" anchor_mesh_id="9437376" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="289" anchor_mesh_id="9437420" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="290" anchor_mesh_id="9437357" offset_x_2d="15" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="291" anchor_mesh_id="9437390" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="292" anchor_mesh_id="9437368" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="293" anchor_mesh_id="9437365" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="294" anchor_mesh_id="9437333" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="295" anchor_mesh_id="9437325" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="296" anchor_mesh_id="9437457" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="297" anchor_mesh_id="9437463" offset_x_2d="40" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="298" anchor_mesh_id="9437465" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="299" anchor_mesh_id="9437464" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="300" anchor_mesh_id="9437460" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="301" anchor_mesh_id="9437462" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="302" anchor_mesh_id="9437488" offset_x_2d="10" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="303" anchor_mesh_id="9437459" offset_x_2d="40" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="304" anchor_mesh_id="9437458" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="top"/>
+      <geometry type="billboard" id="305" anchor_mesh_id="9437461" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="306" anchor_mesh_id="9437456" offset_x_2d="20" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="307" anchor_mesh_id="9437483" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+      <geometry type="billboard" id="308" anchor_mesh_id="9437487" offset_x_2d="0" offset_y_2d="0" offset_depth="-0.00003" width="wrap_content" height="wrap_content" pick_offset_x="0" pick_offset_y="50" render_anchored_mesh="0" geometry_id_threshold="9437494" min_blend_threshold="6" max_blend_threshold="8.5" align_y="bottom"/>
+    </extra_geometry>
+  </scene>
+  <triggers>
+    <trigger type="ONLOAD">
+      <action type="parallel" finish_with_first="0">
+        <action type="send_event" name="rotation_node" param="9437494" />
+        <action type="send_event" name="north_node" param="14680064" />
+        <action type="send_event" name="dark_node" param="14680065" />
+        <action type="send_event" name="front_node" param="14680067" />
+        <action type="send_event" name="camera_id" param="5242880" />
+        <action type="send_event" name="rotate_change" param="" />
+        <action type="send_event" name="ONLOAD_finished" param="" />
+      </action>
+    </trigger>
+  </triggers>
+  <interactions>
+    <trigger type="FLICK_LEFT">
+      <element type="area">
+        <action type="sequenced">
+          <action type="rotation" geometry_id="9437494" on_interrupt="stop" preevent="1" postevent="1">
+            <interpolator type="set">
+              <interpolator type="deceleration" acceleration_percentage="0.3" />
+            </interpolator>
+          </action>
+          <action type="send_event" name="rotate_change" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="36-48" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="rotation" geometry_id="9437494" on_interrupt="stop" preevent="1" postevent="1">
+            <interpolator type="deceleration" acceleration_percentage="0.3" />
+          </action>
+          <action type="send_event" name="rotate_change" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="FLICK_RIGHT">
+      <element type="area">
+        <action type="sequenced">
+          <action type="rotation" geometry_id="9437494" on_interrupt="stop" preevent="1" postevent="1">
+            <interpolator type="set">
+              <interpolator type="deceleration" acceleration_percentage="0.3" />
+            </interpolator>
+          </action>
+          <action type="send_event" name="rotate_change" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="36-48" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="rotation" geometry_id="9437494" on_interrupt="stop" preevent="1" postevent="1">
+            <interpolator type="deceleration" acceleration_percentage="0.3" />
+          </action>
+          <action type="send_event" name="rotate_change" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="DRAG">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="0" />
+          <action type="forward_animation" postevent="1" name="world_clock_Zoom.clp" cyclic="0" refresh_content="0" durationX="70.000000" durationY="0.000000" />
+        </action>
+        <condition type="condition_orientation" orientation="landscape" />
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="0-13" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="1" />
+          <action type="forward_animation" postevent="1" name="world_clock_Zoom.clp" cyclic="0" refresh_content="0" durationX="70.000000" durationY="0.000000" />
+        </action>
+        <condition type="condition_orientation" orientation="landscape" />
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="14-25" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="2" />
+          <action type="forward_animation" postevent="1" name="world_clock_Zoom.clp" cyclic="0" refresh_content="0" durationX="70.000000" durationY="0.000000" />
+        </action>
+        <condition type="condition_orientation" orientation="landscape" />
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="26-35" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="3" />
+          <action type="forward_animation" postevent="1" name="world_clock_Zoom.clp" cyclic="0" refresh_content="0" durationX="70.000000" durationY="0.000000" />
+        </action>
+        <condition type="condition_orientation" orientation="landscape" />
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="36-43" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="4" />
+          <action type="forward_animation" postevent="1" name="world_clock_Zoom.clp" cyclic="0" refresh_content="0" durationX="70.000000" durationY="0.000000" />
+        </action>
+        <condition type="condition_orientation" orientation="landscape" />
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="44-48" />
+      </element>
+
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="0" />
+          <action type="forward_animation" postevent="1" name="world_clock_Zoom.clp" cyclic="0" refresh_content="0" durationX="50.000000" durationY="0.000000" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="0-13" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="1" />
+          <action type="forward_animation" postevent="1" name="world_clock_Zoom.clp" cyclic="0" refresh_content="0" durationX="50.000000" durationY="0.000000" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="14-25" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="2" />
+          <action type="forward_animation" postevent="1" name="world_clock_Zoom.clp" cyclic="0" refresh_content="0" durationX="50.000000" durationY="0.000000" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="26-35" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="3" />
+          <action type="forward_animation" postevent="1" name="world_clock_Zoom.clp" cyclic="0" refresh_content="0" durationX="50.000000" durationY="0.000000" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="36-43" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="4" />
+          <action type="forward_animation" postevent="1" name="world_clock_Zoom.clp" cyclic="0" refresh_content="0" durationX="50.000000" durationY="0.000000" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="44-48" />
+      </element>
+    </trigger>
+    <trigger type="END_DRAG">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="0" />
+          <action type="send_event" name="rotate_change" param="" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="0-13" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="1" />
+          <action type="send_event" name="rotate_change" param="" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="14-25" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="2" />
+          <action type="send_event" name="rotate_change" param="" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="26-35" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="3" />
+          <action type="send_event" name="rotate_change" param="" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="36-43" />
+      </element>
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="4" />
+          <action type="send_event" name="rotate_change" param="" />
+        </action>
+        <condition type="condition_animation" animation="world_clock_Zoom.clp" position="44-48" />
+      </element>
+    </trigger>
+    <trigger type="CLICK">
+      <element type="3d" id_list="1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;27;28;29;30;31;32;33;34;35;36;37;38;39;40;41;42;43;44;45;46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63;64;65;66;67;68;69;70;71;72;73;74;75;76;77;78;79;80;81;82;84;85;86;87;88;89;90;91;92;93;94;95;96;97;98;99;100;101;102;103;104;105;106;107;108;109;110;111;112;113;114;115;116;117;118;119;120;121;122;123;124;125;126;127;128;129;130;131;132;133;134;135;136;137;138;139;140;141;142;143;144;145;146;147;148;149;150;151;152;153;154;155;156;157;158;159;160;161;162;163;164;165;166;167;168;169;170;171;172;173;174;175;176;177;178;179;180;181;182;183;184;185;186;187;188;189;190;191;192;193;194;195;196;197;198;199;200;201;202;203;204;205;206;207;208;209;210;211;212;213;214;215;216;217;218;219;220;221;222;223;224;225;226;227;228;229;230;231;232;233;234;235;236;237;238;239;240;241;242;243;244;245;246;247;248;249;250;251;252;253;254;255;256;257;258;259;260;261;262;263;264;265;266;267;268;269;270;271;272;273;274;275;276;277;278;279;280;281;282;283;284;285;286;287;288;289;290;291;292;293;294;295;296;297;298;299;300;301;302;303;304;305;306;307;308">
+        <action type="send_content_touched" id="city_selected" />
+      </element>
+    </trigger>
+    <trigger type="CUSTOM1">
+      <element type="area">
+        <action type="forward_animation" name="world_clock_Shadow.clp" cyclic="1" refresh_content="0" durationX="-6.250000" durationY="0.000000" />
+      </element>
+    </trigger>
+    <trigger type="CUSTOM2">
+      <element type="area">
+        <action type="sequenced">
+          <action type="pause" />
+          <action type="set_animation" name="world_clock_Zoom.clp" position="0" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM3">
+      <element type="area">
+        <action type="sequenced">
+          <action type="rotation" geometry_id="9437494" on_interrupt="finish" preevent="1" postevent="1">
+            <interpolator type="const_velocity" speed="0.4" />
+          </action>
+          <action type="pause" />
+          <action type="send_event" name="rotate_change" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM4">
+      <element type="area">
+        <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="0" />
+      </element>
+    </trigger>
+    <trigger type="CUSTOM5">
+      <element type="area">
+        <action type="set_animation" name="world_clock_Zone.clp" position="0" />
+      </element>
+    </trigger>
+    <trigger type="CUSTOM8">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-11" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="106" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM10">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-10" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="103" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM11">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-9:30" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="100" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM12">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-9" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="97" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM14">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-8" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="94" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM16">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-7" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="91" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM18">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-6" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="88" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM20">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-5" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="85" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM21">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-4:30" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="82" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM22">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-4" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="79" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM23">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-3:30" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="76" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM24">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-3" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="73" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM26">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-2" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="70" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM28">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="-1" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="67" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM30">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+0" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="1" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM32">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+1" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="4" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM34">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+2" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="7" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM36">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+3" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="10" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM37">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+3:30" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="13" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM38">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+4" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="16" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM39">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+4:30" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="19" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM40">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+5" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="22" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM41">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+5:30" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="25" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM42">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+6" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="28" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM43">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+6:30" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="31" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM44">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+7" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="34" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM46">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+8" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="37" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM48">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+9" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="40" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM49">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+9:30" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="43" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM50">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+10" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="46" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM51">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+10:30" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="49" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM52">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+11" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="52" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM53">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+11:30" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="55" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM54">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+12" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="58" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM55">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+12:30" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="61" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM56">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+13" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="64" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM60">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="0" />
+          <action type="animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" direction="nearest_anchor" toReset="0" on_interrupt="stop" cyclic="0" refresh_content="0" anchors="0" step="0" stay_on_anchor="1">
+            <interpolator type="set" time_like_first="0">
+              <interpolator type="const_velocity" time_limit="0" revert_direction="0" speed="3.000000" />
+            </interpolator>
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM61">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="1" />
+          <action type="animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" direction="nearest_anchor" toReset="0" on_interrupt="stop" cyclic="0" refresh_content="0" anchors="14" step="0" stay_on_anchor="1">
+            <interpolator type="set" time_like_first="0">
+              <interpolator type="const_velocity" time_limit="0" revert_direction="0" speed="3.000000" />
+            </interpolator>
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM62">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="2" />
+          <action type="animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" direction="nearest_anchor" toReset="0" on_interrupt="stop" cyclic="0" refresh_content="0" anchors="30" step="0" stay_on_anchor="1">
+            <interpolator type="set" time_like_first="0">
+              <interpolator type="const_velocity" time_limit="0" revert_direction="0" speed="3.000000" />
+            </interpolator>
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM63">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="3" />
+          <action type="animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" direction="nearest_anchor" toReset="0" on_interrupt="stop" cyclic="0" refresh_content="0" anchors="40" step="0" stay_on_anchor="1">
+            <interpolator type="set" time_like_first="0">
+              <interpolator type="const_velocity" time_limit="0" revert_direction="0" speed="3.000000" />
+            </interpolator>
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM64">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="4" />
+          <action type="animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" direction="nearest_anchor" toReset="0" on_interrupt="stop" cyclic="0" refresh_content="0" anchors="48" step="0" stay_on_anchor="1">
+            <interpolator type="set" time_like_first="0">
+              <interpolator type="const_velocity" time_limit="0" revert_direction="0" speed="3.000000" />
+            </interpolator>
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM65">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="0" />
+          <action type="set_animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" position="0" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM66">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="1" />
+          <action type="set_animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" position="14" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM67">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="2" />
+          <action type="set_animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" position="30" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM68">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="3" />
+          <action type="set_animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" position="40" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM69">
+      <element type="area">
+        <action type="sequenced">
+          <action type="send_event" name="zoom_change" param="4" />
+          <action type="set_animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" position="48" />
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM70">
+      <element type="area">
+        <action type="parallel">
+          <action type="sequenced">
+            <action type="rotation" geometry_id="9437494" on_interrupt="finish" preevent="1" postevent="1">
+              <interpolator type="const_velocity" speed="0.4" />
+            </action>
+            <action type="pause" />
+            <action type="send_event" name="rotate_change" />
+          </action>
+          <action type="sequenced">
+
+            <action type="send_event" name="zoom_change" param="0" />
+            <action type="animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" direction="nearest_anchor" toReset="0" on_interrupt="stop" cyclic="0" refresh_content="0" anchors="0" step="0" stay_on_anchor="1">
+              <interpolator type="set" time_like_first="0">
+                <interpolator type="const_velocity" time_limit="0" revert_direction="0" speed="3.000000" />
+              </interpolator>
+            </action>
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM71">
+      <element type="area">
+        <action type="parallel">
+          <action type="sequenced">
+            <action type="rotation" geometry_id="9437494" on_interrupt="finish" preevent="1" postevent="1">
+              <interpolator type="const_velocity" speed="0.4" />
+            </action>
+            <action type="pause" />
+            <action type="send_event" name="rotate_change" />
+          </action>
+          <action type="sequenced">
+
+            <action type="send_event" name="zoom_change" param="1" />
+            <action type="animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" direction="nearest_anchor" toReset="0" on_interrupt="stop" cyclic="0" refresh_content="0" anchors="14" step="0" stay_on_anchor="1">
+              <interpolator type="set" time_like_first="0">
+                <interpolator type="const_velocity" time_limit="0" revert_direction="0" speed="3.000000" />
+              </interpolator>
+            </action>
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM72">
+      <element type="area">
+        <action type="parallel">
+          <action type="sequenced">
+            <action type="rotation" geometry_id="9437494" on_interrupt="finish" preevent="1" postevent="1">
+              <interpolator type="const_velocity" speed="0.4" />
+            </action>
+            <action type="pause" />
+            <action type="send_event" name="rotate_change" />
+          </action>
+          <action type="sequenced">
+
+            <action type="send_event" name="zoom_change" param="2" />
+            <action type="animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" direction="nearest_anchor" toReset="0" on_interrupt="stop" cyclic="0" refresh_content="0" anchors="30" step="0" stay_on_anchor="1">
+              <interpolator type="set" time_like_first="0">
+                <interpolator type="const_velocity" time_limit="0" revert_direction="0" speed="3.000000" />
+              </interpolator>
+            </action>
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM73">
+      <element type="area">
+        <action type="parallel">
+          <action type="sequenced">
+            <action type="rotation" geometry_id="9437494" on_interrupt="finish" preevent="1" postevent="1">
+              <interpolator type="const_velocity" speed="0.4" />
+            </action>
+            <action type="pause" />
+            <action type="send_event" name="rotate_change" />
+          </action>
+          <action type="sequenced">
+
+            <action type="send_event" name="zoom_change" param="3" />
+            <action type="animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" direction="nearest_anchor" toReset="0" on_interrupt="stop" cyclic="0" refresh_content="0" anchors="40" step="0" stay_on_anchor="1">
+              <interpolator type="set" time_like_first="0">
+                <interpolator type="const_velocity" time_limit="0" revert_direction="0" speed="3.000000" />
+              </interpolator>
+            </action>
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM74">
+      <element type="area">
+        <action type="parallel">
+          <action type="sequenced">
+            <action type="rotation" geometry_id="9437494" on_interrupt="finish" preevent="1" postevent="1">
+              <interpolator type="const_velocity" speed="0.4" />
+            </action>
+            <action type="pause" />
+            <action type="send_event" name="rotate_change" />
+          </action>
+          <action type="sequenced">
+
+            <action type="send_event" name="zoom_change" param="4" />
+            <action type="animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" direction="nearest_anchor" toReset="0" on_interrupt="stop" cyclic="0" refresh_content="0" anchors="48" step="0" stay_on_anchor="1">
+              <interpolator type="set" time_like_first="0">
+                <interpolator type="const_velocity" time_limit="0" revert_direction="0" speed="3.000000" />
+              </interpolator>
+            </action>
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM75">
+      <element type="area">
+        <action type="parallel">
+          <action type="sequenced">
+            <action type="rotation" geometry_id="9437494" on_interrupt="finish" preevent="1" postevent="1">
+              <interpolator type="const_velocity" speed="0.4" />
+            </action>
+            <action type="pause" />
+            <action type="send_event" name="rotate_change" />
+          </action>
+          <action type="sequenced">
+
+            <action type="send_event" name="zoom_change" param="0" />
+            <action type="set_animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" position="0" />
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM76">
+      <element type="area">
+        <action type="parallel">
+          <action type="sequenced">
+            <action type="rotation" geometry_id="9437494" on_interrupt="finish" preevent="1" postevent="1">
+              <interpolator type="const_velocity" speed="0.4" />
+            </action>
+            <action type="pause" />
+            <action type="send_event" name="rotate_change" />
+          </action>
+          <action type="sequenced">
+
+            <action type="send_event" name="zoom_change" param="1" />
+            <action type="set_animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" position="14" />
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM77">
+      <element type="area">
+        <action type="parallel">
+          <action type="sequenced">
+            <action type="rotation" geometry_id="9437494" on_interrupt="finish" preevent="1" postevent="1">
+              <interpolator type="const_velocity" speed="0.4" />
+            </action>
+            <action type="pause" />
+            <action type="send_event" name="rotate_change" />
+          </action>
+          <action type="sequenced">
+
+            <action type="send_event" name="zoom_change" param="2" />
+            <action type="set_animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" position="30" />
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM78">
+      <element type="area">
+        <action type="parallel">
+          <action type="sequenced">
+            <action type="rotation" geometry_id="9437494" on_interrupt="finish" preevent="1" postevent="1">
+              <interpolator type="const_velocity" speed="0.4" />
+            </action>
+            <action type="pause" />
+            <action type="send_event" name="rotate_change" />
+          </action>
+          <action type="sequenced">
+
+            <action type="send_event" name="zoom_change" param="3" />
+            <action type="set_animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" position="40" />
+          </action>
+        </action>
+      </element>
+    </trigger>
+    <trigger type="CUSTOM79">
+      <element type="area">
+        <action type="parallel">
+          <action type="sequenced">
+            <action type="rotation" geometry_id="9437494" on_interrupt="finish" preevent="1" postevent="1">
+              <interpolator type="const_velocity" speed="0.4" />
+            </action>
+            <action type="pause" />
+            <action type="send_event" name="rotate_change" />
+          </action>
+          <action type="sequenced">
+
+            <action type="send_event" name="zoom_change" param="4" />
+            <action type="set_animation" postevent="1" preevent="1" name="world_clock_Zoom.clp" position="48" />
+          </action>
+        </action>
+      </element>
+    </trigger>
+	<trigger type="CUSTOM80">
+      <element type="area">
+        <action type="parallel" finish_with_first="0">
+          <action type="send_event" name="timezone_set" param="+5:45" />
+          <action type="refresh_content" force_refresh="1" last_touched_only="0" geometry_id="-1" />
+          <action type="set_animation" name="world_clock_Zone.clp" position="109" />
+        </action>
+      </element>
+    </trigger>
+  </interactions>
+</ui3d>

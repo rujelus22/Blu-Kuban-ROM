@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/Widget_Popup_Layout" android:background="@drawable/widget_main_bg_normal02" android:padding="0.0dip" android:focusable="true" android:nextFocusLeft="@id/networkretry" android:nextFocusRight="@id/networkcancel" android:nextFocusDown="@id/networkretry" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/info_err_retry" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="6.0dip" android:layout_marginBottom="16.0dip" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+        <TextView android:textSize="16.0sp" android:typeface="sans" android:gravity="center" android:id="@id/errview" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/info_DBFullMsg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="6.0dip">
+        <TextView android:textSize="16.0sp" android:typeface="sans" android:gravity="center" android:id="@id/noselectview" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/not_enough_space_dialog_title" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/logoview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="6.0dip" android:layout_alignParentBottom="true" />
+    <ImageView android:background="@drawable/main_bg" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

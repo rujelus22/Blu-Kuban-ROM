@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/selected_view_title" />
+    <GridView android:gravity="center" android:id="@id/GridView01" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="360.0px" android:layout_marginLeft="1.0px" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:horizontalSpacing="1.0px" android:verticalSpacing="1.0px" android:columnWidth="399.0px" android:numColumns="2" />
+    <FrameLayout android:layout_gravity="bottom" android:orientation="horizontal" android:background="@color/winsetback" android:layout_width="fill_parent" android:layout_height="82.0px">
+        <Button android:textSize="26.0px" android:textColor="@drawable/projectnewcolorselector" android:layout_gravity="center_horizontal" android:id="@id/NextBtn" android:background="@drawable/projectbuttonselector" android:focusable="true" android:layout_width="400.0px" android:layout_height="70.0px" android:layout_marginTop="6.0px" android:text="@string/next" android:contentDescription="@string/accessibility_next" />
+    </FrameLayout>
+</LinearLayout>

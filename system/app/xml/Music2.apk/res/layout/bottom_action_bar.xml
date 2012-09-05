@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/ab_bottom_transparent_dark_holo"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.music.widgets.ActionBarItem android:id="@id/nowplayinggroup" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.google.android.music.widgets.NowPlayingActionbarItem android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <com.google.android.music.AsyncAlbumArtImageView android:layout_gravity="center_vertical" android:id="@id/nowplayingicon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="0.0dip" android:layout_marginRight="8.0dip" android:scaleType="fitXY" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <TextView android:textAppearance="@style/TextAppearanceExtraExtraSmall" android:textStyle="bold" android:textColor="@color/secondary_text" android:ellipsize="end" android:gravity="bottom|left|center" android:id="@id/song" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+                <TextView android:textAppearance="@style/TextAppearanceExtraExtraSmall" android:textColor="@color/tertiary_text" android:ellipsize="end" android:gravity="top|left|center" android:id="@id/artist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+            </LinearLayout>
+        </com.google.android.music.widgets.NowPlayingActionbarItem>
+    </com.google.android.music.widgets.ActionBarItem>
+    <View android:id="@id/actionbar_spacer" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    <ProgressBar android:id="@id/sync_progress" android:visibility="gone" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginRight="32.0dip" android:indeterminate="true" />
+    <com.google.android.music.widgets.ActionBarItem android:id="@id/shop" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:contentDescription="@string/accessibility_shop">
+        <ImageView android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_menu_shop_holo_dark" />
+    </com.google.android.music.widgets.ActionBarItem>
+    <com.google.android.music.widgets.ActionBarItem android:id="@id/new_playlist" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_menu_add_playlist_holo_dark" />
+    </com.google.android.music.widgets.ActionBarItem>
+    <com.google.android.music.widgets.ActionBarItem android:id="@id/search" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_menu_search_holo_dark" android:contentDescription="@string/accessibility_search" />
+    </com.google.android.music.widgets.ActionBarItem>
+    <com.google.android.music.widgets.ActionBarItem android:id="@id/menu_button" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_menu" android:contentDescription="@string/accessibility_menu" />
+    </com.google.android.music.widgets.ActionBarItem>
+</LinearLayout>

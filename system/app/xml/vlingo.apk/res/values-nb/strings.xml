@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driving_mode">Kjøremodus</string>
+    <string name="app_name">"Tale-
+kommando"</string>
+    <string name="incar">Tale</string>
+    <string name="incar_icon">Tale</string>
+    <string name="Vlingo">Talekommandoer</string>
+    <string name="widget_name">Tale</string>
+</resources>

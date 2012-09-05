@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/modern_root_layout" android:layout_width="146.66dip" android:layout_height="146.66dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/modern_layout" android:background="@drawable/modern_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/modern_image_hour" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/modern_image_sec" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/modern_image_min" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+</LinearLayout>

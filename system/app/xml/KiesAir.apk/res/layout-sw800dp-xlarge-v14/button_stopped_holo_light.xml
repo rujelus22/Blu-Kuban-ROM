@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/start_button_area" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="18.0dip" android:textColor="#ff000000" android:gravity="center" android:id="@id/scan_button_stopped" android:focusable="true" android:visibility="visible" android:layout_width="348.0dip" android:layout_height="40.0dip" android:layout_marginRight="5.0dip" android:text="@string/scan" />
+    <Button android:textSize="18.0dip" android:textColor="#ff000000" android:gravity="center" android:id="@id/startButton" android:focusable="true" android:visibility="visible" android:layout_width="348.0dip" android:layout_height="40.0dip" android:layout_marginLeft="5.0dip" android:text="@string/start" />
+</LinearLayout>

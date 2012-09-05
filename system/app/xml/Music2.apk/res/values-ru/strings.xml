@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Нет подключения</string>
+    <string name="authentication_failure_no_network">Для аутентификации аккаунта требуется подключение к Интернету.</string>
+    <string name="authentication_failure">Ошибка аутентификации</string>
+    <string name="authentication_failure_error">Не удалось выполнить аутентификацию аккаунта.</string>
+    <string name="positive_button_text">ОК</string>
+    <string name="negative_button_text">Отмена</string>
+    <string name="save_button_text">Сохранить</string>
+    <string name="not_save_button_text">Не сохранять</string>
+    <string name="shuffle_all">Перемешать все</string>
+    <string name="play_all">Воспроизвести все</string>
+    <string name="songs_all">Все треки</string>
+    <string name="shuffle">Перемешать</string>
+    <string name="search">Поиск</string>
+    <string name="settings">Настройки</string>
+    <string name="library_options">Параметры показа</string>
+    <string name="manage_music">Офлайн-доступ</string>
+    <string name="available_offline">Офлайн-доступ</string>
+    <string name="hide_labels">Скрыть метки</string>
+    <string name="show_labels">Показать метки</string>
+    <string name="options">Параметры</string>
+    <string name="shop_artist">Искать по исполнителю</string>
+    <string name="show_offline_music_only">Только офлайн-музыка</string>
+    <string name="show_all_music">Все треки</string>
+    <string name="new_playlist_title">Название плейлиста</string>
+    <string name="add_to_playlist_title">Название плейлиста</string>
+    <string name="rename_playlist_title">Переименовать \"%s\" в</string>
+    <string name="search_section_header_artists">ИСПОЛНИТЕЛИ</string>
+    <string name="search_section_header_albums">АЛЬБОМЫ</string>
+    <string name="search_section_header_songs">ТРЕКИ</string>
+    <string name="search_section_header_playlists">ПЛЕЙЛИСТЫ</string>
+    <string name="shuffle_all_songs">Перемешать все</string>
+    <string name="stream_settings">Настройки</string>
+    <string name="refresh_title">Обновить</string>
+    <string name="refresh_summary">Обновить треки из Google Play Музыки</string>
+    <string name="account_settings_title">Аккаунт Google Play</string>
+    <string name="no_account_selected_summary">Нажмите, чтобы выбрать аккаунт</string>
+    <string name="account_selected_summary">Подключаться к Google Play через аккаунт %s</string>
+    <string name="hide_when_not_connected_title">Скрыть недоступную музыку</string>
+    <string name="hide_when_not_connected_summary">В автономном режиме отображать только доступную музыку</string>
+    <string name="stream_only_on_wifi_title">Потоковая передача только через Wi-Fi</string>
+    <string name="stream_only_on_wifi_summary">Потоковое воспроизведение только при подключении по Wi-Fi</string>
+    <string name="stream_only_hq_title">Высокое качество</string>
+    <string name="stream_only_hq_summary">Всегда передавать потоковую музыку с наилучшим качеством</string>
+    <string name="lock_screen_controls_title">Управление блок. экрана</string>
+    <string name="lock_screen_controls_summary">Показывать элементы управления музыкой вверху экрана блокировки</string>
+    <string name="offlinedl_only_on_wifi_title">Загрузка только через Wi-Fi</string>
+    <string name="offlinedl_only_on_wifi_summary">Загрузить музыку, чтобы сделать ее доступной в автономном режиме (только через Wi-Fi)</string>
+    <string name="cache_streamed_title">Кэширование музыки</string>
+    <string name="cache_streamed_summary">Временно сохранять потоковую музыку</string>
+    <string name="download_queue_title">Очередь загрузки</string>
+    <string name="download_queue_summary">Показать композиции, загружаемые в настоящий момент</string>
+    <string name="help_title">Справка</string>
+    <string name="show_no_downloads_title">Нет треков в очереди на загрузку</string>
+    <string name="music_version_title">Версия приложения</string>
+    <string name="music_version_summary">Неизвестная версия</string>
+    <string name="nowplaying_title">Сейчас воспроизводится</string>
+    <string name="artists_title">Исполнители</string>
+    <string name="albums_title">Альбомы</string>
+    <string name="genres_title">Жанры</string>
+    <string name="tracks_title">Треки</string>
+    <string name="playlists_title">Плейлисты</string>
+    <string name="recent_title">Недавние</string>
+    <string name="search_title">Поиск</string>
+    <string name="no_tracks_title">Нет треков</string>
+    <string name="delete_playlist_menu">Удалить</string>
+    <string name="edit_playlist_menu">Изменить</string>
+    <string name="rename_playlist_menu">Переименовать</string>
+    <string name="playlist_delete_confirmation">Удалить плейлист \"%s\"?</string>
+    <string name="delete_playlist_button_confirm">Удалить</string>
+    <string name="playlist_deleted_message">Плейлист удален.</string>
+    <string name="playlist_created_message">Создан плейлист \"%s\".</string>
+    <string name="playlist_renamed_message">Плейлист переименован в \"%s\".</string>
+    <string name="recentlyadded">Недавно добавленные</string>
+    <string name="recentlyadded_title">Недавно добавленные</string>
+    <string name="all_songs_list">Все треки</string>
+    <string name="all_songs_list_title">Все треки</string>
+    <string name="storemusic_list">Бесплатные и купленные</string>
+    <string name="storemusic_list_title">Бесплатные и купленные</string>
+    <string name="freemusic_list">Бесплатные треки</string>
+    <string name="freemusic_list_title">Бесплатные треки</string>
+    <string name="thumbsup_list">Избранное</string>
+    <string name="thumbsup_list_title">Избранное</string>
+    <string name="unknown_artist_name">Неизвестный исполнитель</string>
+    <string name="unknown_album_name">Неизвестный альбом</string>
+    <string name="unknown_playlist_name">Неизвестный плейлист</string>
+    <string name="shuffle_on_notif">Режим случайного воспроизведения включен.</string>
+    <string name="shuffle_off_notif">Режим случайного воспроизведения отключен.</string>
+    <string name="repeat_off_notif">Режим повторного воспроизведения отключен.</string>
+    <string name="repeat_current_notif">Включен повтор текущего трека</string>
+    <string name="repeat_all_notif">Включен повтор всех треков</string>
+    <string name="ringtone_menu">Использовать как мелодию звонка</string>
+    <string name="ringtone_set">Трек \"%s\" поставлен на звонок.</string>
+    <string name="ringtone_set_failed">Не удалось создать рингтон.</string>
+    <string name="ringtone_needs_download">Мелодия будет установлена после загрузки.</string>
+    <string name="play_selection">Воспроизвести</string>
+    <string name="add_to_playlist">Добавить в плейлист</string>
+    <string name="rename_playlist_menu_item">Переименовать</string>
+    <string name="add_to_playlist_selector_title">Добавить в плейлист</string>
+    <string name="queue">Текущий плейлист</string>
+    <string name="new_playlist_for_content">Новый плейлист</string>
+    <string name="new_empty_playlist">Новый плейлист</string>
+    <string name="new_playlist_name_template">Плейлист \"%d\"</string>
+    <string name="removed_from_playlist">Трек \"%1$s\" удален из плейлиста.</string>
+    <string name="playlist_too_many_songs">Максимальное число треков в плейлисте: %d</string>
+    <string name="emptyplaylist">Выбранный плейлист пуст.</string>
+    <string name="playlist_edit_label">НАЗВАНИЕ</string>
+    <string name="create_playlist_create_text">ОК</string>
+    <string name="rename_playlist_rename_text">Переименовать</string>
+    <string name="service_start_error_title">Сбой при воспроизведении</string>
+    <string name="service_start_error_msg">Не удалось воспроизвести трек.</string>
+    <string name="service_start_error_button">ОК</string>
+    <string name="weekpicker_set">Готово</string>
+    <string name="weekpicker_title">Установить время</string>
+    <string name="musicbrowserlabel">Play Музыка</string>
+    <string name="musicshortcutlabel">Плейлист</string>
+    <string name="mediaplaybacklabel">Музыка</string>
+    <string name="app_name">Google Play Музыка</string>
+    <string name="playback_failed">Не удалось воспроизвести трек.</string>
+    <string name="cancel">Отмена</string>
+    <string name="remove_from_playlist">Удалить из плейлиста</string>
+    <string name="streamloadingtext">Подключение к %s</string>
+    <string name="search_hint">Поиск музыки</string>
+    <string name="working_artists">Исполнители...</string>
+    <string name="working_albums">Альбомы…</string>
+    <string name="loading">Загрузка…</string>
+    <string name="sort_by_track">Дорожки</string>
+    <string name="music_picker_title">Выберите трек</string>
+    <string name="fail_to_start_stream">Не удалось начать потоковую передачу.</string>
+    <string name="search_settings_description">Исполнители, альбомы и треки</string>
+    <string name="fast_scroll_alphabet">" АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"</string>
+    <string name="title_tv">Музыка</string>
+    <string name="music_library">Фонотека</string>
+    <string name="playlist_label">Плейлист</string>
+    <string name="faux_art_all_songs_label">Все треки</string>
+    <string name="faux_art_playlist_label">Плейлист</string>
+    <string name="faux_art_playlist_instant_mix_label">Автомикс</string>
+    <string name="faux_art_playlist_auto_playlist_label">Автоматический плейлист</string>
+    <string name="buffering">Буферизация…</string>
+    <string name="keep_on_phone">Доступно офлайн</string>
+    <string name="no_music_add_music_header">ДОБАВЛЕНИЕ МУЗЫКИ</string>
+    <string name="no_music_shop_body">Вы найдете миллионы треков, сотни из которых можно слушать бесплатно.</string>
+    <string name="no_music_shop_button">МАГАЗИН</string>
+    <string name="no_music_upload_body">В Google Play Музыке можно бесплатно хранить до 20 000 треков.</string>
+    <string name="no_music_upload_button">ПОДРОБНЕЕ...</string>
+    <string name="no_music_usb_copy_body">Скопируйте музыку на телефон при помощи USB-кабеля.</string>
+    <string name="no_music_usb_copy_button">ПОДРОБНЕЕ...</string>
+    <string name="no_music_heading">В музыкальной библиотеке нет записей</string>
+    <string name="no_music_setup_uploader_heading">Слушайте свою музыку, где бы вы ни были.</string>
+    <string name="no_music_setup_uploader_body">Добавьте свои треки и слушайте их онлайн в Google Play Музыке.</string>
+    <string name="no_music_setup_usb_heading">Скопируйте музыку на свое устройство</string>
+    <string name="no_music_setup_usb_body">Скопируйте музыку на телефон при помощи USB-кабеля.</string>
+    <string name="no_local_music_heading">Нет музыки в офлайн-доступе</string>
+    <string name="no_local_music_body">"В офлайн-режиме отображается только сохраненная на устройстве музыка.
+
+Чтобы выбрать треки, которые вы сможете слушать не подключаясь к Google Музыке, воспользуйтесь опцией "<b>Офлайн-доступ</b>.</string>
+    <string name="no_music_learn_more">Подробнее...</string>
+    <string name="no_playlists_heading">В вашей фонотеке нет плейлистов.</string>
+    <string name="no_playlists_body">Чтобы создать плейлист, откройте список треков и в контекстном меню трека выберите \"Добавить в плейлист\".</string>
+    <string name="no_music_syncing_heading">Синхронизация...</string>
+    <string name="no_music_syncing_body">Идет синхронизация с сервером. Музыка скоро появится на вашем устройстве.</string>
+    <string name="no_music_scanning_heading">Поиск музыки на устройстве.</string>
+    <string name="no_music_scanning_body">Поиск музыки...</string>
+    <string name="sync_disabled">Для доступа к трекам из Google Play Музыки необходимо настроить синхронизацию. Сделать это прямо сейчас?</string>
+    <string name="tutorial_welcome_heading">Добро пожаловать в Google Play Музыку!</string>
+    <string name="tutorial_welcome_body">"Ваша музыкальная коллекция вмещает до 20 000 треков.
+
+Музыка из Google Play доступна для прослушивания сразу после покупки.
+
+Треки можно не только слушать онлайн, на телефонах и планшетных ПК, но и загружать их для офлайн-доступа.
+
+Сервис предоставляется бесплатно!"</string>
+    <string name="tutorial_select_account_heading">Выбор аккаунта</string>
+    <string name="tutorial_select_account_body">"Свяжите свой аккаунт с Google Play Музыкой, чтобы слушать треки из фонотеки и магазина.
+
+Какой аккаунт использовать?"</string>
+    <string name="tutorial_sign_in">Свяжите свой аккаунт с Google Play Музыкой, чтобы слушать треки из фонотеки и магазина.</string>
+    <string name="tutorial_free_music_heading">Бесплатная музыка</string>
+    <string name="tutorial_free_music_body">В Google Play собраны сотни бесплатных треков. Здесь вы найдете множество композиций от известных исполнителей.</string>
+    <string name="tutorial_account_heading">Добро пожаловать!</string>
+    <string name="tutorial_account_body">Добро пожаловать! С помощью этого проигрывателя вы сможете слушать треки, добавленные в Google Play Музыку и сохраненные на вашем Android-устройстве.</string>
+    <string name="tutorial_account_list_header">Чтобы связать проигрыватель с сервисом \"Google Play Музыка\", выберите аккаунт Google:</string>
+    <string name="tutorial_done_heading">Наслаждайтесь!</string>
+    <string name="tutorial_done_body">"Теперь проигрыватель связан с вашем аккаунтом Google.
+
+Если вы уже добавили свою фонотеку в Google Play Музыку, она появится в этом проигрывателе.
+
+Если у вас еще нет фонотеки, посетите этот веб-сайт:"</string>
+    <string name="tutorial_skip">Пропустить</string>
+    <string name="tutorial_next">Далее</string>
+    <string name="tutorial_done">Готово</string>
+    <string name="tutorial_add_account">Добавить аккаунт</string>
+    <string name="tutorial_free_music">Бесплатные треки</string>
+    <string name="spinner_carousel">Недавние</string>
+    <string name="spinner_album">Альбомы</string>
+    <string name="spinner_artist">Исполнители</string>
+    <string name="spinner_songs">Треки</string>
+    <string name="spinner_playlists">Плейлисты</string>
+    <string name="spinner_genres">Жанры</string>
+    <string name="sort_by_title">Сортировать от A до Я</string>
+    <string name="sort_by_artist">Сортировать по исполнителю</string>
+    <string name="sort_by_album">Сортировать по альбому</string>
+    <string name="sort_by_date">Сортировать по дате добавления</string>
+    <string name="more_by_artist">Еще от исполнителя</string>
+    <string name="make_available_offline">Офлайн-доступ</string>
+    <string name="search_web">Искать в Интернете</string>
+    <string name="manage_done">Готово</string>
+    <string name="too_many_items_title">Слишком много элементов</string>
+    <string name="too_many_items_body">Недостаточно места для всех файлов. Отмените выбор некоторых из них.</string>
+    <string name="save_manage_music_change_title">Есть несохраненные изменения</string>
+    <string name="save_manage_music_change_body">Сохранить выбранные треки для офлайн-доступа?</string>
+    <string name="not_all_items_can_be_kept_body">Недостаточно места для всех файлов, поэтому будут загружены лишь некоторые из них.</string>
+    <string name="free_space_overfull">Нет места (лимит: %s)</string>
+    <string name="free_space">СВОБОДНО: %s</string>
+    <string name="stream_error_no_space_available">Нет свободного места</string>
+    <string name="stream_error_only_on_wifi">Чтобы прослушать этот трек, нужно подключиться к сети Wi-Fi.</string>
+    <string name="stream_error_no_connection">Чтобы прослушать этот трек, нужно подключиться к Интернету.</string>
+    <string name="stream_error_unauthorized">Неверное имя пользователя или пароль.</string>
+    <string name="stream_error_another_stream_being_played">Воспроизведение приостановлено, поскольку ваша коллекция проигрывается на другом устройстве.</string>
+    <string name="stream_error_rate_limit_reached">Музыка временно недоступна. Убедитесь, что ваша коллекция не воспроизводится на других устройствах.</string>
+    <string name="stream_error_device_not_authorized">Фонотеку можно открыть максимум для десяти устройств. Чтобы добавить новое устройство, отключите одно из существующих.</string>
+    <string name="stream_error_learn_more">Подробнее</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Воспроизведение приостановлено.</string>
+    <string name="stream_error_rate_limit_reached_short">Музыка временно недоступна.</string>
+    <string name="stream_error_device_not_authorized_short">К фонотеке подключено слишком много устройств.</string>
+    <string name="hide_now_playing_bar">Скрыть панель воспроизводимого</string>
+    <string name="show_now_playing_bar">Показать панель воспроизводимого</string>
+    <string name="show_options">Показать параметры</string>
+    <string name="hide_options">Скрыть параметры</string>
+    <string name="all_songs_in_genre">"Все треки в жанре
+\"%s\""</string>
+    <string name="preview_header">ОПУБЛИКОВАНО В GOOGLE+</string>
+    <string name="shared_playback_full">ПЕРВОЕ ПРОСЛУШИВАНИЕ БЕСПЛАТНО</string>
+    <string name="shared_playback_partial">ДЛЯ ОЗНАКОМЛЕНИЯ</string>
+    <string name="btn_buy">Купить</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Загрузка музыки для офлайн-доступа...</string>
+    <string name="notification_downloading_when_on_wifi">Композиции, помеченные как автономные, будут загружены, когда вы подключитесь к сети Wi-Fi.</string>
+    <string name="notification_downloading_excessive_errors">Не удается загрузить треки. Проверьте подключение к Интернету.</string>
+    <string name="notification_downloading_done">Выбранные треки теперь доступны офлайн.</string>
+    <string name="notification_ticker_ringtone_set">Трек \"%s\" поставлен на звонок.</string>
+    <string name="notification_title_ringtone_set">Установлена мелодия \"%s\"</string>
+    <string name="notification_content_ringtone_set">Нажмите, чтобы изменить рингтон.</string>
+    <string name="notification_ticker_ringtone_set_failed">Не удалось создать рингтон.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s – %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s – %s</string>
+    <string name="notification_newsongs_songcount">Новых треков: %d</string>
+    <string name="notification_newsongs_subtitle">Добавлено в Google Play Музыку</string>
+    <string name="carousel_label_shuffle_all">Перемешать все</string>
+    <string name="song_label">ТРЕК</string>
+    <string name="artist_label">ИСПОЛНИТЕЛЬ</string>
+    <string name="album_label">АЛЬБОМ</string>
+    <string name="effectspanel">Звуковые эффекты</string>
+    <string name="menu_make_instant_mix">Создать автомикс</string>
+    <string name="instant_mix_default_name">Микс на основе композиции %s</string>
+    <string name="creating_instant_mix">"Добавление быстрого микса
+в плейлисты."</string>
+    <string name="creating_instant_mix_with_seed">"Добавление быстрого микса
+по следующим критериям:
+%s"</string>
+    <string name="create_instant_mix_failed">Не удалось создать быстрый микс. Повторите попытку.</string>
+    <string name="create_instant_mix_failed_insufficient_results">В вашей коллекции недостаточно похожей музыки для создания быстрого микса на основе трека \"%s\". Попробуйте сделать быстрый микс из другого трека.</string>
+    <string name="create_instant_mix_sync_timeout">"Автомикс создан
+и скоро появится
+в ваших плейлистах."</string>
+    <string name="create_instant_mix_btn_ok">ОК</string>
+    <string name="delete">Удалить</string>
+    <string name="confirm_delete_local_only">Вы собираетесь удалить \"%s\". Продолжить?</string>
+    <string name="confirm_delete_has_remote">Файл \"%s\" загружен на устройство и добавлен в Google Play Музыку. Файлы с устройства будут удалены. Продолжить?</string>
+    <string name="waiting_share">\"%s\" – публикация</string>
+    <string name="share">Поделиться</string>
+    <string name="share_failure">Возникла ошибка при попытке опубликовать музыку.</string>
+    <string name="share_google_plus_footer">Когда вы делитесь музыкой, первое прослушивание для участников ваших кругов будет бесплатным</string>
+    <string name="accessibility_play">Воспроизвести</string>
+    <string name="accessibility_pause">Пауза</string>
+    <string name="accessibility_stop">Стоп</string>
+    <string name="accessibility_next">Следующий трек</string>
+    <string name="accessibility_prev">Предыдущий трек</string>
+    <string name="accessibility_shuffle">Перемешать</string>
+    <string name="accessibility_repeat">Повтор</string>
+    <string name="accessibility_thumbsUp">Нравится</string>
+    <string name="accessibility_thumbsDown">Не нравится</string>
+    <string name="accessibility_star1">1</string>
+    <string name="accessibility_star2">2</string>
+    <string name="accessibility_star3">3</string>
+    <string name="accessibility_star4">4</string>
+    <string name="accessibility_star5">5</string>
+    <string name="accessibility_contractor">Подробнее о треке</string>
+    <string name="accessibility_back">Назад</string>
+    <string name="accessibility_contextMenu">Меню трека</string>
+    <string name="accessibility_home">На главную</string>
+    <string name="accessibility_search">Поиск</string>
+    <string name="accessibility_search_cancel">Отмена</string>
+    <string name="accessibility_current">Текущий трек</string>
+    <string name="accessibility_createnewplaylist">Создать плейлист</string>
+    <string name="accessibility_menu">Меню</string>
+    <string name="accessibility_shop">Покупка музыки</string>
+    <string name="ringtone_replace_alert_button">Заменить</string>
+    <string name="ringtone_replace_alert_title">Смена рингтона</string>
+    <string name="ringtone_replace_alert_message">Рингтон с таким названием уже существует. Заменить его?</string>
+    <string name="legal_information">Правовая информация</string>
+    <string name="license_title">Лицензии открытого ПО</string>
+    <string name="license_error">Не удалось загрузить лицензии.</string>
+    <string name="market_wrong_account" formatted="false">"Вы пытаетесь воспроизвести трек, приобретенный через %s.
+
+Его нельзя прослушать из другого аккаунта.
+
+Текущий аккаунт: %s."</string>
+    <string name="gplus_wrong_account" formatted="false">"Вы пытаетесь воспроизвести трек, отправленный в %s.
+
+Его нельзя прослушать из другого аккаунта.
+
+Текущий аккаунт: %s."</string>
+    <string name="switch_account_button">Другой аккаунт</string>
+    <string name="retry_button">Повторить</string>
+    <string name="wait_for_item">Синхронизация музыки...</string>
+    <string name="wait_for_item_failure">При добавлении музыки произошла ошибка.</string>
+    <string name="ringtone_title">Прослушать рингтон</string>
+    <string name="edit_ringtone">Изменить рингтон</string>
+    <string name="ringtone_done">ГОТОВО</string>
+    <string name="set_ringtone_title">Поставить на звонок</string>
+    <string name="set_ringtone_message">Установлено на звонок.</string>
+    <string name="start_edit_ringtone">Изменить рингтон</string>
+    <string name="ringtone_file_edited_name">Фрагмент трека \"%1$s\"</string>
+    <string name="progress_dialog_saving">Сохранение…</string>
+    <string name="start_handle">Начать</string>
+    <string name="resize_handle">Изменить размер</string>
+    <string name="menu_reset">Сбросить</string>
+    <string name="save_success_message">\"%1$s\" теперь рингтон по умолчанию.</string>
+    <string name="save_failure_message">Не удалось поставить \"%1$s\" на звонок.</string>
+    <string name="play_error">Не удалось воспроизвести файл.</string>
+    <string name="write_error">Не удалось сохранить файл.</string>
+    <string name="read_error">Не удалось открыть файл.</string>
+    <string name="no_space_error">На SD-карте недостаточно места для сохранения файла.</string>
+    <string name="bad_extension_error">Не поддерживается редактирование подобных файлов.</string>
+    <string name="no_extension_error">Поддерживается редактирование только файлов в формате MP3 и WAV.</string>
+    <string name="alert_title_success">Выполнено</string>
+    <string name="alert_title_failure">Ошибка</string>
+    <string name="alert_ok_button">ОК</string>
+    <string name="store_tutorial_title">Приобретайте музыку и сразу же слушайте ее!</string>
+    <string name="store_tutorial_content">В Google Play вы найдете миллионы треков, сотни из которых можно слушать бесплатно.</string>
+    <string name="store_tutorial_instruction">Чтобы перейти в Android Маркет, нажмите на соответствующий значок.</string>
+</resources>

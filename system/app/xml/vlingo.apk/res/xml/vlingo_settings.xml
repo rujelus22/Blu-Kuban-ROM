@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/settings_general" android:key="general_settings">
+        <ListPreference android:entries="@array/languages_names" android:title="@string/settings_language_title" android:key="language" android:summary="@string/settings_language_summary" android:defaultValue="en-US" android:dialogTitle="@string/settings_language_dialogtitle" android:negativeButtonText="@string/cancel" android:entryValues="@array/languages_iso" />
+        <CheckBoxPreference android:persistent="true" android:title="@string/settings_launch_voicetalk_title" android:key="launch_voicetalk" android:summary="@string/settings_launch_voicetalk_summary" android:defaultValue="false" />
+        <ListPreference android:entries="@array/web_search_engine_preference" android:title="@string/settings_search_engine_title" android:key="web_search_engine" android:summary="" android:defaultValue="Google" android:dialogTitle="@string/settings_search_engine_dialogtitle" android:negativeButtonText="@string/cancel" android:entryValues="@array/web_search_names" />
+        <ListPreference android:entries="@array/auto_dial_preference" android:title="@string/settings_autodial_title" android:key="auto_dial" android:summary="@string/settings_autodial_summary" android:defaultValue="confident" android:dialogTitle="@string/settings_autodial_dialogtitle" android:negativeButtonText="@string/cancel" android:entryValues="@array/auto_dial_preference_values" />
+        <CheckBoxPreference android:persistent="true" android:title="@string/settings_advanced_useloc_title" android:key="location_enabled" android:summary="@string/settings_advanced_useloc_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:persistent="true" android:title="@string/settings_profanityfilter_title" android:key="profanity_filter" android:summary="@string/settings_profanityfilter_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:persistent="true" android:title="@string/settings_advanced_autopunc_title" android:key="auto_punctuation" android:summary="@string/settings_advanced_autopunc_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:persistent="true" android:title="@string/settings_advanced_BTlisten_title" android:key="listen_over_bluetooth" android:summary="@string/settings_advanced_BTlisten_summary" android:defaultValue="true" />
+        <Preference android:persistent="true" android:title="@string/settings_uuid_title" android:key="uuid" android:summary="@string/settings_uuid_summary" />
+        <Preference android:title="@string/help_menu8" android:key="help_about" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/app_name" android:key="voicecommand">
+        <CheckBoxPreference android:persistent="true" android:title="@string/settings_auto_start_listening_title" android:key="auto_listen" android:summary="@string/settings_auto_start_listening_summary" android:defaultValue="false" />
+        <Preference android:title="@string/settings_voice_command_help_title" android:key="help_voice_command" android:summary="@string/settings_voice_command_help_summary" />
+        <PreferenceScreen android:title="@string/settings_social_title" android:key="social_settings" android:summary="@string/settings_social_summary">
+            <intent android:action="com.vlingo.client.settings.SOCIAL_SETTING" />
+            <PreferenceCategory android:title="@string/settings_social_facebook_title" android:key="facebook_preference_category">
+                <com.vlingo.client.settings.ImagePreference android:title="@string/settings_social_facebook_title" android:key="facebook_account" android:summary="@string/settings_social_facebook_summary" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/settings_social_twitter_title" android:key="twitter_preference_category">
+                <com.vlingo.client.settings.ImagePreference android:title="@string/settings_social_twitter_title" android:key="twitter_account" android:summary="@string/settings_social_twitter_summary" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/incar" android:key="voicetalk">
+        <PreferenceScreen android:title="@string/settings_incar_title" android:key="vlingo_car_settings" android:summary="@string/settings_incar_summary">
+            <intent android:action="com.vlingo.client.settings.VOICE_TALK_SETTINGS" />
+            <PreferenceCategory android:title="@string/settings_incar_homescreen" android:key="car_general">
+                <CheckBoxPreference android:persistent="true" android:title="@string/settings_incar_BTlaunch_title" android:key="launch_car_on_bt_connect" android:summary="@string/settings_incar_BTlanuch_summary" android:defaultValue="false" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/settings_incar_autostart_speakerphone_title" android:key="car_auto_start_speakerphone" android:summary="@string/settings_incar_autostart_speakerphone_summary" android:defaultValue="true" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/settings_incar_speakshow_msgbodies_title" android:key="car_safereader_read_message" android:summary="@string/settings_incar_speakshow_msgbodies_summary" android:defaultValue="false" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/settings_incar_wakeup" android:key="car_wakeup">
+                <CheckBoxPreference android:persistent="true" android:title="@string/settings_incar_wakeup_title" android:key="car_word_spotter_enabled" android:summary="@string/settings_incar_wakeup_summary" android:defaultValue="true" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/settings_incar_onwhilecharging_title" android:key="car_word_spotter_when_charging_only" android:summary="@string/settings_incar_onwhilecharging_summary" android:dependency="car_word_spotter_enabled" android:defaultValue="false" />
+                <Preference android:persistent="true" android:title="@string/settings_incar_motion_title" android:key="car_word_spotter_motion" android:summary="@string/settings_incar_motion_summary" android:dependency="car_word_spotter_enabled" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/settings_incar_texttospeech" android:key="car_tts_settings">
+                <CheckBoxPreference android:persistent="true" android:title="@string/settings_incar_speakprompts_title" android:key="tts_carmode_prompt" android:summary="@string/settings_incar_speakprompts_summary" android:defaultValue="true" />
+                <EditTextPreference android:title="@string/settings_incar_customprompt_title" android:key="tts_carmode_home_prompt" android:summary="@string/settings_incar_customprompt_summary" android:dependency="tts_carmode_prompt" android:positiveButtonText="@string/ok_uc" android:negativeButtonText="@string/cancel" android:inputType="textCapSentences" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/settings_incar_navigation" android:key="car_nav_settings">
+                <EditTextPreference android:title="@string/settings_incar_homeaddress_title" android:key="car_nav_home_address" android:summary="@string/settings_incar_homeaddress_summary" android:positiveButtonText="@string/ok_uc" android:negativeButtonText="@string/cancel" android:inputType="textCapSentences" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <Preference android:title="@string/settings_voice_talk_help_title" android:key="help_voice_talk" android:summary="@string/settings_voice_talk_help_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

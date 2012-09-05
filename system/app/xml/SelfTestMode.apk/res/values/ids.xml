@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="acc_imageview">false</item>
+    <item type="id" name="bluetooth_test_text">false</item>
+    <item type="id" name="camera">false</item>
+    <item type="id" name="camera_preview">false</item>
+    <item type="id" name="shutter_button">false</item>
+    <item type="id" name="focus_rectangle">false</item>
+    <item type="id" name="focus_success_indicator">false</item>
+    <item type="id" name="focus_fail_indicator">false</item>
+    <item type="id" name="background_layout">false</item>
+    <item type="id" name="info">false</item>
+    <item type="id" name="self_test_listview_item">false</item>
+    <item type="id" name="test_name">false</item>
+    <item type="id" name="self_test_list">false</item>
+</resources>

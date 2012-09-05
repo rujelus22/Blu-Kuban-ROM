@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Share app</string>
+    <string name="app_title">Select app to share</string>
+    <string name="btn_done">Done</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="package_info">"I recommend %1$s.
+Visit the links from your android device.
+%2$s"</string>
+    <string name="title_share_via">Share via</string>
+    <string name="emptyview_loading">Loading...</string>
+    <string name="emptyview_noresult">No search result</string>
+    <string name="no_item_selected">No items selected</string>
+    <string name="no_item_searched">No search results</string>
+    <string name="search_app">Search apps</string>
+</resources>

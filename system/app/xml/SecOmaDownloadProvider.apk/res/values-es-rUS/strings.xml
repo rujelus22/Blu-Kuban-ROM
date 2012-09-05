@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Proveedor descargas SEC</string>
+    <string name="permlab_downloadManager">Acceder al administrador de descarga</string>
+    <string name="permdesc_downloadManager">Permite que la aplicación acceda al administrador de descargas y lo utilice para descargar archivos. Las aplicaciones maliciosas pueden utilizarlo para interrumpir descargas y acceder a información privada</string>
+    <string name="permlab_accessAllDownloads">Acceso a todas las descargas del sistema</string>
+    <string name="permdesc_accessAllDownloads">Permite que la aplicación vea y modifique todas las descargas iniciadas por cualquier aplicación del sistema</string>
+    <string name="permlab_downloadManagerAdvanced">Funciones avanzadas del administrador de descargas</string>
+    <string name="permdesc_downloadManagerAdvanced">Permite que la aplicación acceda a las funciones avanzadas del administrador de descargas. Las aplicaciones maliciosas pueden utilizarlo para interrumpir descargas y acceder a información privada</string>
+    <string name="permlab_cacheFilesystem">Usar caché del sistema</string>
+    <string name="permdesc_cacheFilesystem">Permite que la aplicación acceda, modifique y elimine directamente la memoria caché del sistema. Las aplicaciones maliciosas pueden utilizarlo para interrumpir gravemente las descargas y otras aplicaciones, así como para acceder a datos privados</string>
+    <string name="permlab_downloadCompletedIntent">Enviar notificaciones de descarga</string>
+    <string name="permdesc_downloadCompletedIntent">Permite que la aplicación envíe notificaciones sobre las descargas completas. Las aplicaciones maliciosas pueden utilizar esto para confundir a otras aplicaciones que descargan archivos</string>
+    <string name="permlab_seeAllExternal">Ver todas las descargas de la tarjeta SD</string>
+    <string name="permdesc_seeAllExternal">Permite que una aplicación vea todas las descargas de la tarjeta SD, independiente de la aplicación que las realizó</string>
+    <string name="download_unknown_title">&lt;Sin título></string>
+    <string name="notification_filename_separator">", "</string>
+    <string name="notification_filename_extras">y %d más</string>
+    <string name="notification_download_complete">Descarga completa</string>
+    <string name="notification_download_failed">Descarga incorrecta</string>
+    <string name="notification_downloaded_folder">Descargado en %s</string>
+</resources>

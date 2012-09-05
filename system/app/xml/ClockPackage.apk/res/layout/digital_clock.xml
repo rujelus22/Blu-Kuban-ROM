@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sec.android.app.clockpackage.alarm.DigitalClock android:gravity="center" android:id="@id/clock" style="@style/clock"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="64.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/timeDisplay" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <LinearLayout android:orientation="vertical" android:id="@id/am_pm" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="4.0dip">
+        <TextView android:textSize="28.0sp" android:gravity="bottom" android:id="@id/am" android:layout_width="wrap_content" android:layout_height="fill_parent" android:includeFontPadding="false" android:layout_weight="0.5" />
+        <TextView android:textSize="28.0sp" android:gravity="top" android:id="@id/pm" android:layout_width="wrap_content" android:layout_height="fill_parent" android:includeFontPadding="false" android:layout_weight="0.5" />
+    </LinearLayout>
+</com.sec.android.app.clockpackage.alarm.DigitalClock>

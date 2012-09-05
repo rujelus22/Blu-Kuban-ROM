@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:layout_width="fill_parent" android:layout_height="fill_parent" android:title="@string/menu_settings_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/menu_settings_subtitle_general">
+        <ListPreference android:persistent="false" android:title="@string/menu_settings_unit" android:key="unit" />
+        <CheckBoxPreference android:persistent="false" android:title="@string/enable_current_location_message" android:key="location" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/menu_settings_subtitle_widget">
+        <ListPreference android:persistent="false" android:title="@string/menu_settings_auto_scroll" android:key="autoscroll" />
+        <ListPreference android:persistent="false" android:title="@string/menu_settings_update" android:key="autorefresh" />
+    </PreferenceCategory>
+</PreferenceScreen>

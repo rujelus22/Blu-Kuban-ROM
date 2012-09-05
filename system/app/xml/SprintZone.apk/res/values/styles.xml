@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme" parent="@android:style/Theme.Black" />
+    <style name="Theme.SpintZone" parent="@style/Theme">
+        <item name="android:windowBackground">@drawable/page_about_bg</item>
+    </style>
+</resources>

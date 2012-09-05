@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/TopScrollView" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:id="@id/TopRelative" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/AppNameAndLogo1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+            <RelativeLayout android:padding="30.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                <TextView android:textSize="20.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:layout_gravity="center_horizontal" android:id="@id/TextViewVoiceCommand" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name" android:layout_centerHorizontal="true" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/TextViewVoiceCommand" android:layout_centerHorizontal="true">
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/by" android:paddingTop="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/help_about_by_vlingo" />
+                    <ImageView android:layout_gravity="center_horizontal" android:id="@id/image_logo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/samsung_logo_color" android:layout_below="@id/TextViewVoiceCommand" android:layout_centerHorizontal="true" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/Separate" android:background="@drawable/sep_background_gradient" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="20.0dip" android:layout_below="@id/AppNameAndLogo1" />
+        <TextView android:layout_gravity="center_horizontal" android:id="@id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip" android:text="@string/help_about_copyright" android:layout_below="@id/Separate" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="12.0dip" android:layout_gravity="center_horizontal" android:id="@id/text_version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:text="Version 1.0" android:layout_below="@id/TextView02" android:layout_centerHorizontal="true" />
+        <Button android:id="@id/btn_tos" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="@string/help_about_terms" android:layout_below="@id/text_version" />
+        <Button android:id="@id/btn_privacy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/help_about_privacy" android:layout_below="@id/btn_tos" />
+        <TextView android:textSize="12.0dip" android:layout_gravity="center_horizontal" android:id="@id/text_sensory" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="7.0dip" android:text="@string/help_about_wakeup_powered_by" android:layout_above="@id/ImageView01" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="35.0dip" android:src="@drawable/logo_sensory" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Personalizar</string>
+    <string name="label_perso">Bloqueo de red</string>
+    <string name="label_mcc_mnc">MCC/MNC</string>
+    <string name="label_nsp">NSP</string>
+    <string name="label_sp">SP</string>
+    <string name="label_cp">CP</string>
+    <string name="label_second">NCK</string>
+    <string name="label_control_key">Tecla de control</string>
+    <string name="sim_perso_ok_text">Aceptar</string>
+    <string name="sim_perso_dismiss_text">Rechazar</string>
+    <string name="requesting_lock">Solicitando bloqueo...</string>
+    <string name="lock_failed">Solicitud de bloqueo incorrecta</string>
+    <string name="lock_success">bloqueo correcto</string>
+    <string name="requesting_unlock">Solicitando desbloqueo...</string>
+    <string name="unlock_failed">Contraseña incorrecta</string>
+    <string name="unlock_success">Desbloqueo correcto</string>
+    <string name="label_perso_unlock_tile">Desbloqueo de red</string>
+    <string name="label_unlock">Introducir tecla de control</string>
+    <string name="label_unlock_np">Bloqueo de red</string>
+    <string name="label_unlock_nsp">Bloqueo de subconjunto de red</string>
+    <string name="label_unlock_sp">Bloqueo SP</string>
+    <string name="label_unlock_cp">Bloqueo CP</string>
+    <string name="label_controlkey_np">Introducir clave de control de bloqueo de red</string>
+    <string name="label_controlkey_nsp">Introducir clave de control de bloqueo de subconjunto de red</string>
+    <string name="label_controlkey_sp">Introducir clave de control de bloqueo de SP</string>
+    <string name="label_controlkey_cp">Introducir clave de control de bloqueo de CP</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="phoneDumpMessage">mensaje de volcado</string>
+    <string name="OK">Aceptar</string>
+    <string name="END">Restablecer</string>
+    <string name="phoneDump">Volcado de RAM del teléfono</string>
+    <string name="SS_LOWBATTERY_PHONE_WILL_BE_SHUTDOWN_TITLE">Apagar</string>
+    <string name="SS_LOWBATTERY_PHONE_WILL_SHUT_DOWN">Batería baja. El teléfono se apagará</string>
+    <string name="SS_SIM_CARD_REMOVED_PHONE_WILL_BE_SHUTDOWN_TITLE">Reiniciar</string>
+    <string name="SS_SIM_CARD_REMOVED_PHONE_WILL_SHUT_DOWN">Se ha extraído la tarjeta SIM. El teléfono se reiniciará automáticamente</string>
+    <string name="SS_SIM_CARD_INSERTED_PHONE_WILL_REBOOT_TITLE">Reiniciar</string>
+</resources>

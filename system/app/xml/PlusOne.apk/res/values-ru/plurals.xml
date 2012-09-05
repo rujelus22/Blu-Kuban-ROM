@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="album_photo_count">
+        <item quantity="other">%d фото</item>
+        <item quantity="zero">%d фото</item>
+        <item quantity="one">%d фото</item>
+    </plurals>
+    <plurals name="from_your_phone_selected_count">
+        <item quantity="other">Выбрано: %d</item>
+        <item quantity="one">Выбрано: %d</item>
+    </plurals>
+    <plurals name="delete_photo_dialog_title">
+        <item quantity="other">Удалить все копии этих фото?</item>
+        <item quantity="one">Удалить все копии этого фото?</item>
+    </plurals>
+    <plurals name="delete_remote_photo_dialog_message">
+        <item quantity="other">Удалить фото из альбома Google+ навсегда?</item>
+        <item quantity="one">Удалить фото из альбома Google+ навсегда?</item>
+    </plurals>
+    <plurals name="delete_local_photo_dialog_message">
+        <item quantity="other">Удалить фото из телефона и альбома Google+ навсегда?</item>
+        <item quantity="one">Удалить фото из телефона и альбома Google+ навсегда?</item>
+    </plurals>
+    <plurals name="delete_photo_pending">
+        <item quantity="other">Удаление...</item>
+        <item quantity="one">Удаление...</item>
+    </plurals>
+    <plurals name="plus_one_people_more_plus_ones">
+        <item quantity="other">и еще %d чел.</item>
+        <item quantity="one">и еще 1 чел.</item>
+    </plurals>
+    <plurals name="plusoned_by_unknowns">
+        <item quantity="other">%d чел.</item>
+        <item quantity="one">1 чел.</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_unknowns">
+        <item quantity="other">вы и еще %d чел.</item>
+        <item quantity="one">вы и еще 1 чел.</item>
+    </plurals>
+    <plurals name="plusoned_by_one_known_and_unknowns">
+        <item quantity="other">%s и еще %d чел.</item>
+        <item quantity="one">%s и еще 1 чел.</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_one_known_and_unknowns">
+        <item quantity="other">вы, %s и еще %d</item>
+        <item quantity="one">вы, %s и еще 1 чел.</item>
+    </plurals>
+    <plurals name="plusoned_by_two_known_and_unknowns">
+        <item quantity="other">%s, %s и еще %d чел.</item>
+        <item quantity="one">%s, %s и еще 1 чел.</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_two_known_and_unknowns">
+        <item quantity="other">вы, %s, %s и еще %d</item>
+        <item quantity="one">вы, %s, %s и еще 1 чел.</item>
+    </plurals>
+    <plurals name="comments">
+        <item quantity="other">Комментариев: %d</item>
+        <item quantity="one">Комментариев: %d</item>
+    </plurals>
+    <plurals name="delete_photo">
+        <item quantity="other">Удалить</item>
+        <item quantity="one">Удалить</item>
+    </plurals>
+    <plurals name="circle_entry_content_description">
+        <item quantity="other">%s: %d чел.</item>
+        <item quantity="one">%s: %d чел.</item>
+    </plurals>
+    <plurals name="notifications_ticker_text">
+        <item quantity="other">Новые оповещения Google+</item>
+        <item quantity="one">Новое оповещение Google+</item>
+    </plurals>
+    <plurals name="notifications_content_text">
+        <item quantity="other">%1$s (%2$d)</item>
+        <item quantity="one">%1$s (%2$d)</item>
+    </plurals>
+    <plurals name="audience_display_selection_count">
+        <item quantity="other">Выбрано: %d</item>
+        <item quantity="one">Выбрано: %d</item>
+    </plurals>
+    <plurals name="circle_count_and_matched_email">
+        <item quantity="other">круги %d, %s</item>
+        <item quantity="one">Круг \"%d\", %s</item>
+    </plurals>
+    <plurals name="circle_selection_count">
+        <item quantity="other">Кругов: %d</item>
+        <item quantity="one">Кругов: %d</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_title">
+        <item quantity="other">Удаление кругов</item>
+        <item quantity="one">Удаление круга</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_message">
+        <item quantity="other">Удалить эти круги навсегда?</item>
+        <item quantity="one">Удалить этот круг навсегда?</item>
+    </plurals>
+    <plurals name="delete_circles_operation_pending">
+        <item quantity="other">Удаление кругов...</item>
+        <item quantity="one">Удаление круга...</item>
+    </plurals>
+    <plurals name="circle_people_count">
+        <item quantity="other">%d чел.</item>
+        <item quantity="one">%d</item>
+    </plurals>
+    <plurals name="remove_people_dialog_title">
+        <item quantity="other">Удаление участников</item>
+        <item quantity="one">Удаление участника</item>
+    </plurals>
+    <plurals name="remove_people_dialog_message">
+        <item quantity="other">Удалить этих людей из круга?</item>
+        <item quantity="one">Удалить этого человека из круга?</item>
+    </plurals>
+    <plurals name="add_people_operation_pending">
+        <item quantity="other">Добавление...</item>
+        <item quantity="one">Добавление участника...</item>
+    </plurals>
+    <plurals name="remove_people_operation_pending">
+        <item quantity="other">Удаление пользователей...</item>
+        <item quantity="one">Удаление участника...</item>
+    </plurals>
+    <plurals name="dismiss_people_operation_pending">
+        <item quantity="other">Удаление...</item>
+        <item quantity="one">Удаление...</item>
+    </plurals>
+    <plurals name="circle_button_more_circles">
+        <item quantity="other">еще %d</item>
+        <item quantity="one">и еще %d</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d мин.</item>
+        <item quantity="one">%d мин.</item>
+    </plurals>
+    <plurals name="num_hours_ago">
+        <item quantity="other">%d ч.</item>
+        <item quantity="one">%d ч.</item>
+    </plurals>
+    <plurals name="num_days_ago">
+        <item quantity="other">%d дн.</item>
+        <item quantity="one">%d дн.</item>
+    </plurals>
+    <plurals name="ads_plus_one_annotation_count_only">
+        <item quantity="other">%1$d чел.</item>
+        <item quantity="one">%1$d чел.</item>
+    </plurals>
+</resources>

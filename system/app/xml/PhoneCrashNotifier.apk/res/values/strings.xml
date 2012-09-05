@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CrashNotifier</string>
+    <string name="phoneDumpMessage">dump message</string>
+    <string name="message">"Doing Modem RAM Dump!!!!!!!!!!!!! 
+ Do not touch anything for 10 minutes."</string>
+    <string name="OK">OK</string>
+    <string name="END">RESET</string>
+    <string name="phoneDump">Phone ram dumping...</string>
+    <string name="SS_LOWBATTERY_PHONE_WILL_BE_SHUTDOWN_TITLE">Power Off</string>
+    <string name="SS_LOWBATTERY_PHONE_WILL_SHUT_DOWN">Low Battery. Phone will shutdown</string>
+    <string name="SS_SIM_CARD_REMOVED_PHONE_WILL_BE_SHUTDOWN_TITLE">Reboot</string>
+    <string name="SS_SIM_CARD_REMOVED_PHONE_WILL_SHUT_DOWN">SIM card removed. Phone will reboot</string>
+    <string name="SS_SIM_CARD_INSERTED_PHONE_WILL_REBOOT_TITLE">Reboot</string>
+    <string name="SS_SIM_CARD_INSERTED_PHONE_WILL_REBOOT">SIM card inserted. Phone will reboot</string>
+</resources>

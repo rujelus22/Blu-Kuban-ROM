@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_force32BitWindowAlways">true</bool>
+    <bool name="config_useFullScreenQuickViewLandscape">false</bool>
+    <bool name="config_useMainMenuConcentrationEffect">false</bool>
+    <bool name="mm_enableListMode">true</bool>
+    <bool name="pageindicator_largeDrawableOnly">false</bool>
+    <bool name="pageindicator_showhide_enable">false</bool>
+</resources>

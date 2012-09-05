@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="72.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:layout_gravity="center_horizontal" android:background="@drawable/widget_background" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageButton android:id="@id/open_vlingo_button" android:background="@drawable/icon" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="3.0dip" android:layout_marginRight="7.0dip" android:layout_centerVertical="true" />
+        <FrameLayout android:id="@id/FrameLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/vlingoRecordButton" android:layout_toRightOf="@id/open_vlingo_button">
+            <ImageButton android:layout_gravity="center_vertical" android:id="@id/btn_open_search" android:background="@drawable/textfield_search_empty" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="4.0dip" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/ImageView01" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:src="@drawable/widget_logo" />
+        </FrameLayout>
+        <ImageButton android:id="@id/vlingoRecordButton" android:background="@drawable/btn_search_dialog_voice" android:layout_width="48.0dip" android:layout_height="fill_parent" android:src="@drawable/widget_speak_now" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

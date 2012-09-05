@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher2.DragLayer android:id="@id/drag_layer" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher">
+    <com.android.launcher2.Workspace android:id="@id/workspace" android:paddingLeft="@dimen/qsb_bar_height" android:paddingRight="@dimen/button_bar_height" android:layout_width="fill_parent" android:layout_height="fill_parent" launcher:defaultScreen="2" launcher:cellCountX="4" launcher:cellCountY="4" launcher:pageSpacing="@dimen/workspace_page_spacing" launcher:scrollIndicatorPaddingLeft="@dimen/qsb_bar_height" launcher:scrollIndicatorPaddingRight="@dimen/button_bar_height">
+        <include android:id="@id/cell1" layout="@layout/workspace_screen" />
+        <include android:id="@id/cell2" layout="@layout/workspace_screen" />
+        <include android:id="@id/cell3" layout="@layout/workspace_screen" />
+        <include android:id="@id/cell4" layout="@layout/workspace_screen" />
+        <include android:id="@id/cell5" layout="@layout/workspace_screen" />
+    </com.android.launcher2.Workspace>
+    <include android:layout_gravity="left" android:id="@id/qsb_divider" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/qsb_bar_height" layout="@layout/workspace_divider" />
+    <include android:layout_gravity="right" android:id="@id/dock_divider" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/button_bar_height" layout="@layout/workspace_divider" />
+    <include android:layout_gravity="bottom" android:id="@id/paged_view_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/scroll_indicator" />
+    <include android:layout_gravity="right" android:id="@id/hotseat" android:layout_width="@dimen/button_bar_height_plus_padding" android:layout_height="fill_parent" layout="@layout/hotseat" />
+    <include android:id="@id/qsb_bar" layout="@layout/qsb_bar" />
+    <include android:id="@id/apps_customize_pane" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/apps_customize_pane" />
+    <include android:id="@id/workspace_cling" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/workspace_cling" />
+    <include android:id="@id/folder_cling" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/folder_cling" />
+</com.android.launcher2.DragLayer>

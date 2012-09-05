@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.googlenav.ui.android.ButtonContainer android:id="@id/button_container" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:id="@id/map_copyrights" android:paddingLeft="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="70.0dip" android:maxLines="2" android:layout_toLeftOf="@id/btn_zoom_down" android:layout_alignBottom="@id/btn_zoom_down" />
+        <View android:id="@id/btn_zoom_down" android:background="@drawable/btn_zoom_down" android:visibility="gone" android:layout_width="42.0dip" android:layout_height="@dimen/btn_zoom_down_height" android:layout_marginRight="10.0dip" android:layout_above="@id/btn_back_to_nav" android:layout_alignParentRight="true" />
+        <View android:id="@id/btn_zoom_up" android:background="@drawable/btn_zoom_up" android:visibility="gone" android:layout_width="42.0dip" android:layout_height="@dimen/btn_zoom_up_height" android:layout_marginTop="8.0dip" android:layout_marginRight="10.0dip" android:layout_above="@id/btn_zoom_down" android:layout_alignParentRight="true" />
+        <ViewStub android:id="@id/refinement_banner_stub" android:layout="@layout/refinement_banner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="52.0dip" android:layout_marginBottom="20.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        <LinearLayout android:id="@id/measure_btn_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_above="@id/btn_zoom_up" android:layout_alignParentRight="true" android:layout_alignWithParentIfMissing="true">
+            <View android:id="@id/btn_measure" android:background="@drawable/btn_measure" android:visibility="gone" android:layout_width="42.0dip" android:layout_height="@dimen/btn_measure_height" android:layout_marginTop="8.0dip" />
+            <View android:id="@id/btn_measure_clear" android:background="@drawable/btn_measure_clear" android:visibility="gone" android:layout_width="42.0dip" android:layout_height="@dimen/btn_measure_height" android:layout_marginTop="8.0dip" />
+        </LinearLayout>
+        <ViewStub android:id="@id/floor_picker_layout_stub" android:layout="@layout/floorpicker_tablet" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="@dimen/floorpicker_margin_top_tablet" android:layout_marginRight="@dimen/floorpicker_margin_right" android:layout_above="@id/measure_btn_container" android:layout_alignParentRight="true" />
+        <View android:id="@id/btn_back_to_nav" android:background="@drawable/btn_back_to_nav" android:visibility="gone" android:layout_width="42.0dip" android:layout_height="@dimen/btn_back_to_nav_height" android:layout_marginTop="8.0dip" android:layout_marginRight="10.0dip" android:layout_above="@id/spacer" android:layout_alignParentRight="true" android:layout_alignWithParentIfMissing="true" />
+        <View android:id="@id/spacer" android:layout_width="0.0dip" android:layout_height="10.0dip" android:layout_alignParentBottom="true" />
+    </com.google.googlenav.ui.android.ButtonContainer>
+</merge>

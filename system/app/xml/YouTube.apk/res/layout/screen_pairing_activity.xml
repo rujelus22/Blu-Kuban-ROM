@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="@dimen/small_font_size" android:textColor="@color/primary_text" android:ellipsize="end" android:layout_gravity="center" android:id="@id/done_button" android:paddingLeft="50.0dip" android:paddingRight="50.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:layout_marginBottom="24.0dip" android:text="@string/add_screen" android:maxLines="1" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    <ScrollView android:id="@id/form_fields" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/done_button">
+        <LinearLayout android:orientation="vertical" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/secondary_font" android:gravity="bottom" android:id="@id/pair_with_screen_message" android:layout_width="fill_parent" android:layout_height="24.0dip" android:text="@string/pair_with_screen_message" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff0099cc" android:gravity="bottom" android:id="@id/show_me_how" android:layout_width="fill_parent" android:layout_height="24.0dip" android:text="@string/show_me_how" />
+            <RelativeLayout android:paddingLeft="3.0dip" android:paddingTop="24.0dip" android:paddingRight="3.0dip" android:layout_width="fill_parent" android:layout_height="64.0dip">
+                <ImageView android:id="@id/scan_pairing_code" android:background="@drawable/textfield_searchview_right_holo_light" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_remote_qrcode" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+                <EditText android:gravity="bottom" android:id="@id/pairing_code" android:background="@drawable/textfield_searchview_holo_light" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/enter_pairing_code" android:maxLength="20" android:layout_toLeftOf="@id/scan_pairing_code" android:layout_alignParentBottom="true" android:inputType="phone" />
+            </RelativeLayout>
+            <EditText android:gravity="bottom" android:id="@id/screen_name" android:layout_width="fill_parent" android:layout_height="48.0dip" android:hint="@string/edit_screen_name" android:maxLength="20" android:inputType="textAutoCorrect" />
+        </LinearLayout>
+    </ScrollView>
+    <ImageView android:layout_gravity="center_horizontal" android:paddingLeft="16.0dip" android:paddingTop="24.0dip" android:paddingRight="16.0dip" android:paddingBottom="24.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/screen_pairing_graphic" android:layout_above="@id/form_fields" android:layout_alignParentTop="true" />
+</RelativeLayout>

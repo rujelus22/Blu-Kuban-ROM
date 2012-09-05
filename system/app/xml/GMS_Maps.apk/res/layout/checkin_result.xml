@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/rootFrame" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@id/resultBase" layout="@layout/checkin_result_base" />
+        <ImageView android:layout_gravity="right" android:id="@id/earnedPointBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageView android:id="@id/flash" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/checkin_awards_flash" />
+        <ImageView android:id="@id/crown" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/checkin_awards_crown" />
+    </FrameLayout>
+</ScrollView>

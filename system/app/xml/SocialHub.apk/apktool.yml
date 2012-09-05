@@ -1,0 +1,6 @@
+version: 1.4.3
+apkFileName: SocialHub.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1

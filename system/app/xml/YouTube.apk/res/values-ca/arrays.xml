@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="safe_search_levels">
+        <item>No ho filtris</item>
+        <item>Moderat</item>
+        <item>Estricte</item>
+    </string-array>
+    <string-array name="subtitles_size_entries">
+        <item>Petita</item>
+        <item>Mitjana</item>
+        <item>Gran</item>
+        <item>Enorme</item>
+    </string-array>
+</resources>
